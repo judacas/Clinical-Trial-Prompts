@@ -1,0 +1,135 @@
+you are an encoder/translater. your only job is to encode a list of requirements into a mongo db query written in Mongo DB Query Language (MQL for short). MQL uses the operators {$and, $or, $not} which can be nested an infinite amount of times to represent matches. it also uses equality operators such as "gte","lt" and many more. Additionally when seeing if a condition has certain values it can use in array ""$in": ["Value1", "Value2"]"
+You must not use the "$exists" operator. Instead, have the condition be a boolean. 
+for example say "has prior systematic Therapy": true
+However, you must avoid using true or falses if you can use a category instead. For example 
+DO NOT say "has lung cancer": true. 
+INSTEAD YOU SHOULD SAY "cancer type": "Lung Cancer"
+Requirements must be in the format of Mongo DB Query language. Mongo DB query language is VERY important, IT MUST BE MONGO DB QUERY LANGUAGE (MQL). Only use the equality operators for numbers.
+If it is a yes or no question you are to put true or false as the value.
+There must only be one condition at a time for each segment. Conditions must be wrapped in quotation marks and specific, for example don't say "stage", instead say "Cancer Stage". No amount of text is too complicated or long to put into MongoDB query language, it will always be possible. DO NOT, UNDER ANY CIRCUMSTANCES MAKE ASSUMPTIONS. Only translate what is in the text and nothing else. Whenever possible, use numbers. For example, don't describe the age in words such as child, adult, or senior adult. Instead, use numbers and equalities lt 18, gt18 and lt 65 and gt 65
+From now on, you will only be given a list of requirements which must all be met. You will respond with only the MongoDB Query language translation.
+After making the MQL translation, you will verify to make sure it is valid Mongo query language. It is CRITICAL that the translation be proper MQL.
+
+Text:
+MQL translation:
+
+
+
+
+
+
+Make sure to include an enter at the end of the completion. makes the formating much better, otherwise it gets all thrown in one line and not accurate.
+
+
+
+
+
+
+
+Your role is to separate large strings of text into separate sections. The texts within each section must be related to each other. If the text is already naturally sepreated with new lines leave it as is. If it says inclusion or exlcusion criteria, use it to seperate the text. Each section must be able to make sense on its own, if a section depends on another section to make sense then they should be merged. YOU ARE LIMITED IN HOW YOU MAY ALTER THE TEXT, YOU MAY ONLY REMOVE PHRASES (such as "Step 1:") which ARE NOT IMPORTANT IN IDENTIFYING WHETHER A PATIENT QUALIFIES OR NOT. YOU WILL NOT ALTER THE TEXT IN ANY OTHER WAY OTHER THAN WHAT WAS LISTED BEFORE AND FORMATING.   You will seperate each section of text with a new line and nothing else, no numeration.
+ 
+Text to seperate:
+
+Seperated Sections:
+
+
+
+
+
+
+
+You will be given a string that has escape characters and unicode characters. your role is to decode the escape characters
+
+
+
+
+
+
+
+
+
+
+
+
+Previous bad version
+
+
+you are an encoder/translater. your only job is to encode plain text paragraphs into lists of 
+requirements written in a concise manner. You will split up the paragraph into individual segments. these requirements may be combined in various manners such as {$and, $or, $not}. These operaters can be nested an infinite amount of times. 
+you will split up the paragraph untill each individual segment is to be $and with the other segments to make up the paragaph. In other words, the outermost operator of a segment will never be $and, if it is then split it into two segments. An individual segment can have $and but only if the $and is nested within an $or or a $not. 
+Requirements must be in the format of Mongo DB Query language. Mongo DB query language is VERY important, IT MUST BE MONGO DB QUERY LANGUAGE (MQL). Only use the equality operators for numbers.
+If it is a yes or no question you are to put true or false as the value.
+There must only be one condition at a time for each segment. No amount of text is too complicated or long to put into MongoDB query language, it will always be possible. If for any reason you think it is too complicated, split it into smaller segments and then combine them. DO NOT UNDER ANY CIRCUMSTANCES MAKE ASSUMPTIONS. Only translate what is in the text and nothing else
+You will use a specific format indicated below between the curly brackets
+{
+[
+"Phrase or sentence"
+{Corresponding translation}
+]
+
+[
+"Phrase or sentence"
+{Corresponding translation}
+]
+}
+
+The following between curly brackets are examples to guide you
+
+{
+[
+"Males and females aged ≥ 1.0 year and < 66.0 years"
+{{"Gender": ["Male", "Female"]},
+{"Age": [1, 66]}}
+]
+
+[
+"Patients must have a related or unrelated donor as follows:\n\n   1. Related donor must be an 8/8 match for human leukocyte antigen (HLA)-A, -B, and -C at intermediate (or higher) resolution, and -DRB1 at high resolution using DNA-based typing. Pediatric related donors must weigh \u00e2\u2030\u00a5 25.0 kg., must have adequate peripheral venous catheter access for leukapheresis or must agree to placement of a central catheter, must be willing to (1) donate bone marrow and (2) receive G-CSF followed by donation of peripheral blood stem cells (product to be determined by randomization post enrollment) and must meet institutional criteria for donation.\n   2. Unrelated donor must be an 8/8 match at HLA-A, -B, -C and -DRB1 at high resolution using DNA-based typing. Unrelated donor must be medically eligible to donate according to National Marrow Donor Program (NMDP) (or equivalent donor search organization) criteria. At time of enrollment, the donor should not have any known preferences or contraindications to donate bone marrow or peripheral blood stem cells. (Selection of unrelated donors is to be performed according to institutional practice. It is recommended that the time from collection to initiation of the cell processing be considered when prioritizing donors, as data shows better results for CD34 selection when cell processing begins within 36 hours of the end of collection)\n"
+{
+"$or": [
+{
+"$and": [
+{"Donor": "Related"},
+{"Match": "8/8 human leukocyte antigen (HLA)-A, -B, and -C at intermediate (or higher) resolution"},
+{"-DRB1": "high resolution using DNA-based typing"},
+{"Pediatric related donors weight": {"$gte": 25}},
+{"Peripheral venous catheter access": "Adequate"},
+{"Agreement to central catheter placement": "Yes"},
+{"Willing to donate bone marrow": "Yes"},
+{"Willing to receive G-CSF followed by donation of peripheral blood stem cells": "Yes"},
+{"Meet institutional criteria for donation": "Yes"}
+]
+},
+{
+"$and": [
+{"Donor": "Unrelated"},
+{"Match": "8/8 human leukocyte antigen (HLA)-A, -B, -C, and -DRB1 at high resolution using DNA-based typing"},
+{"Medically eligible to donate according to NMDP criteria": "Yes"},
+{"No known preferences or contraindications to donate bone marrow or peripheral blood stem cells": "Yes"}
+]
+}
+]
+}
+]
+
+[
+"Exclusion Criteria:
+
+Prior autologous or allogeneic hematopoietic stem cell transplant
+Karnofsky or Lansky Performance Score < 70%"
+{"$and": [
+{"Prior autologous hematopoietic stem cell transplant": false},
+{"Prior allogeneic hematopoietic stem cell transplant": false},
+{"Karnofsky Performance Score": {"$gte": 70}},
+{"Lansky Performance Score": {"$gte": 70}}
+]
+}]}
+
+
+
+
+
+
+const encodedString = "Inclusion Criteria:\\n\\n1. Males and females aged \\u00e2\\u2030\\u00a5 1.0 year and \\\\< 66.0 years\\n2. Patients with acute leukemia in morphologic complete remission with or without hematologic recovery or with myelodysplasia (MDS) with no circulating blasts and with less than 5% blasts in the bone marrow. Patients with CMML must have a WBC count \\u00e2\\u2030\\u00a4 10,000 cells/\\u00c2\\u00b5L and \\\\< 5% blasts in the marrow. Patients with \\u00e2\\u2030\\u00a5 5% blasts due to a regenerating marrow must contact the protocol chairs for review.\\n3. Planned myeloablative conditioning regimen\\n4. Patients must have a related or unrelated donor as follows:\\n\\n   1. Related donor must be an 8/8 match for human leukocyte antigen (HLA)-A, -B, and -C at intermediate (or higher) resolution, and -DRB1 at high resolution using DNA-based typing. Pediatric related donors must weigh \\u00e2\\u2030\\u00a5 25.0 kg., must have adequate peripheral venous catheter access for leukapheresis or must agree to placement of a central catheter, must be willing to (1) donate bone marrow and (2) receive G-CSF followed by donation of peripheral blood stem cells (product to be determined by randomization post enrollment) and must meet institutional criteria for donation.\\n   2. Unrelated donor must be an 8/8 match at HLA-A, -B, -C and -DRB1 at high resolution using DNA-based typing. Unrelated donor must be medically eligible to donate according to National Marrow Donor Program (NMDP) (or equivalent donor search organization) criteria. At time of enrollment, the donor should not have any known preferences or contraindications to donate bone marrow or peripheral blood stem cells. (Selection of unrelated donors is to be performed according to institutional practice. It is recommended that the time from collection to initiation of the cell processing be considered when prioritizing donors, as data shows better results for CD34 selection when cell processing begins within 36 hours of the end of collection)\\n5. Cardiac function: Ejection fraction at rest \\u00e2\\u2030\\u00a5 45.0% or shortening fraction of \\u00e2\\u2030\\u00a5 27.0% by echocardiogram or radionuclide scan (MUGA).\\n6. Estimated creatinine clearance (for patients \\\\< 12 years) greater than 50.0 mL/minute (using the Cockcroft-Gault formula and actual body weight); for pediatric patients (\\\\> 1 year to 12 years), Glomerular Filtration Rate (GFR) estimated by the updated Schwartz formula \\u00e2\\u2030\\u00a5 90.0 mL/min/1.73 m\\\\^2. If the estimated creatinine clearance is \\\\< 90 mL/min/1.73 m\\\\^2, then renal function must be measured by 24-hour creatinine clearance or nuclear GFR, and must be \\\\< 70.0 mL/min/1.73 m\\\\^2.\\n7. Pulmonary function: Diffusing capacity of the lung for carbon monoxide (DLCO) \\u00e2\\u2030\\u00a5 50% (adjusted for hemoglobin), and forced expiratory volume in one second (FEV1) or forced vital capacity (FVC) \\u00e2\\u2030\\u00a5 50%; for children who are unable to perform for Pulmonary Function Tests (PFTs) due to age or developmental ability, there must be no evidence of dyspnea and no need for supplemental oxygen, as evidenced by O2 saturation \\u00e2\\u2030\\u00a5 92% on room air.\\n8. Liver function: total bilirubin \\\\< 2x the upper limit of normal (unless elevated bilirubin is attributed to Gilbert's Syndrome) and alanine aminotransferase (ALT) / aspartate aminotransferase (AST) \\\\< 2.5x the upper limit of normal.\\n9. Signed informed consent.\\n\\nExclusion Criteria:\\n\\n1. Prior autologous or allogeneic hematopoietic stem cell transplant\\n2. Karnofsky or Lansky Performance Score \\\\< 70%\\n3. Active central nervous system (CNS) involvement by malignant cells\\n4. Patients with uncontrolled bacterial, viral or fungal infections (currently taking medication and with progression or no clinical improvement) at time of enrollment\\n5. Presence of fluid collection (ascites, pleural or pericardial effusion) that interferes with methotrexate clearance or makes methotrexate use contraindicated\\n6. Patients seropositive for HIV-1 or -2\\n7. Patients seropositive for Human T-Lymphotrophic Virus (HTLV)-I or -II\\n8. Patients with active Hepatitis B or C viral replication by polymerase chain reaction (PCR)\\n9. Documented allergy to iron dextran or murine proteins\\n10. Women who are pregnant (positive serum or urine \\u00ce\\u00b2HCG) or breastfeeding\\n11. Females of childbearing potential (FCBP) or men who have sexual contact with FCBP unwilling to use 2 effective forms of birth control or abstinence for one year after transplantation\\n12. History of uncontrolled autoimmune disease or on active treatment\\n13. Patients with prior malignancies, except resected non-melanoma or treated cervical carcinoma in situ. Cancer treated with curative intent \\u00e2\\u2030\\u00a5 5 years previously will be allowed. Cancer treated with curative intent \\\\< 5 years previously will not be allowed unless approved by the Protocol Officer or one of the Protocol Chairs.\\n14. Patient unable to comply with the treatment protocol including appropriate supportive care, follow-up and research tests\\n15. Planned post-transplant maintenance therapy except for FLT3 inhibitors or TKIs must be declared prior to randomization.\\n16. If it is known prior to enrollment that the hematopoietic stem cell product will need to be cryopreserved, the patient should not be enrolled.\\n17. German centers only: Treatment with any known non-marketed drug substance or experimental therapy within 5 terminal half lives or 4 weeks prior to enrollment, whichever is longer, or participation in any other interventional clinical study."
+
+const decodedString = JSON.parse(`"${encodedString}"`);
+console.log(decodedString);
