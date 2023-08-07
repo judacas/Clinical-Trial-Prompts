@@ -1,22 +1,87 @@
 import json
 import pymongo
-import subprocess
+# import subprocess
 import os
+import AI
 
 import requests
 
 
 class Database:
 
-    def __init__(self, client_uri, database_name, collection_name):
+    def __init__(self, client_uri="mongodb://localhost:27017/", database_name="ClinicalTrialsDB", JSON_collection_name="ClinicalTrialsJSON", MQL_collection_name="ClinicalTrialsMQL"):
         self.client_uri = client_uri
         self.database_name = database_name
-        self.collection_name = collection_name
+        self.JSON_collection_name = JSON_collection_name
+        self.MQL_collection_name = MQL_collection_name
+        self.collection_name = JSON_collection_name
 
         self.connectToMongoDB()
 
         if self.collection.count_documents({}) == 0:
             self.importJSONData()
+
+        self.collection = self.database[self.MQL_collection_name]
+
+        if self.collection.count_documents({}) == 0:
+            print("Translating all trials to MQL")
+            self.translateAllTrialsToMQL()
+
+    def translateOneTrialToMQL(self, doc):
+        # doc.pop("_id", None)
+        # mql = json.dumps(doc)
+        # mql = json.loads(mql)
+        try:
+            criteriaText = doc["eligibilityModule"]
+        except KeyError:
+            print("eligibilityModule not found in document")
+            return
+        print(criteriaText)
+
+        # add functionality to include the rest of the things in eligibility module later
+        criteriaMQL = AI.TranslateTextToMQL(str(criteriaText))
+
+        tries = 3
+
+        for i in range(tries+1):
+            try:
+                criteriaMQL = json.loads(criteriaMQL)
+                break
+            except:
+                if i != tries:
+                    print(
+                        f"\n\n\nFailed to  convert to json\n\n\nAttempting to fix json, try: {i}\n\n\n")
+                    criteriaMQL = AI.FixJSON(criteriaMQL)
+        else:
+            print(
+                f"\n\n\nFailed to convert to json\n\n\n{criteriaMQL}\n\n\n")
+            return None
+
+        criteriaMQL = {
+            "nctid": doc["nctId"],
+            "title": doc["officialTitle"],
+            **criteriaMQL
+        }
+        try:
+            self.database[self.MQL_collection_name].insert_one(criteriaMQL)
+        except Exception as e:
+            print(
+                f"Error inserting document into {self.MQL_collection_name}: {e}")
+
+    def translateAllTrialsToMQL(self):
+        self.collection = self.database[self.MQL_collection_name]
+        if self.collection is None:
+            print("Collection is not set")
+            raise ValueError("Collection is not set")
+
+        alltrials = self.database[self.JSON_collection_name].find(projection={
+            "nctId": 1, "officialTitle": 1, "eligibilityModule": 1})
+        for trial in alltrials:
+            currentTrial = self.translateOneTrialToMQL(trial)
+            if currentTrial is not None:
+                self.collection.insert_one(currentTrial)
+
+        # mqldocuments = map(self.translateOneTrialToMQL, alltrials)
 
     def connectToMongoDB(self):
         self.client = pymongo.MongoClient(self.client_uri)
@@ -91,3 +156,32 @@ class Database:
         official_titles = [doc["officialTitle"] for doc in cursor]
 
         return official_titles
+
+    def change_collection(self, new_collection_name):
+        self.collection_name = new_collection_name
+        self.collection = self.database[self.collection_name]
+
+    def count_properties(database, mql_collection_name):
+        property_counts = {}
+
+        # Get all MQL documents from the database
+        mql_documents = database[mql_collection_name].find()
+
+        def count_properties_recursive(document):
+            for property_name, value in document.items():
+                # If the property is not already in the dictionary, add it with a count of 1
+                if property_name not in property_counts:
+                    property_counts[property_name] = 1
+                # If the property is already in the dictionary, increment its count by 1
+                else:
+                    property_counts[property_name] += 1
+                # If the value is a dictionary, recursively count its properties
+                if isinstance(value, dict):
+                    count_properties_recursive(value)
+
+        # Loop through each MQL document
+        for mql_document in mql_documents:
+            # Recursively iterate through the document and count the occurrences of each property
+            count_properties_recursive(mql_document)
+
+        return property_counts
