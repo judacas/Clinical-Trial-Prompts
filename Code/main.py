@@ -1,6 +1,7 @@
-import json
-import AI
+# import json
+# import AI
 import Database as db
+import operator
 
 
 def main():
@@ -9,6 +10,10 @@ def main():
     myDB = db.Database("mongodb://localhost:27017/",
                        "ClinicalTrialsDB", "ClinicalTrialsJSON")
 
+    propertyCount = myDB.count_properties()
+    sorted_dict = dict(sorted(propertyCount.items(),
+                       key=operator.itemgetter(1)))
+    print(sorted_dict)
     # Get the current trial
     # currentTitle = myDB.get_official_titles()[0]
     # document = myDB.collection.find_one({"officialTitle": currentTitle})

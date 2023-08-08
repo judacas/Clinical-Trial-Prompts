@@ -1,3 +1,5 @@
+import io
+import csv
 from langchain.chains import LLMChain
 from langchain.chains import SimpleSequentialChain
 from langchain.llms import OpenAI
@@ -38,6 +40,36 @@ def FixJSON(jsonText):
     return fixJSONChain.run(jsonText)
 
 
+# possible problem is merging something like standard ages [adult] and minimum age : 18. this is different data types for the value. can attack with another llm call but wait to see if have any other ideas
+def MergeVariations(listToMerge: list, listOfAllVariations: list):
+    mergeVariationsTemplate = """You are a merger. You will be given two lists of properties. Your job is to identify if any property from one list can be classified as the same as a property on the other list. They may differ by wording, capitalization or synonyms but must mean the same thing. For example the properties "ECOG Status" and "ecog medical status" mean the same thing and must be merged. You will return a csv with 3 columns and as many rows as needed. each row will contain a pair of properties that can be merged and what they will be merged to. Be specific with the property.
+    An example row could be: "able to provide informed consent", "capable of providing informed consent", "Able to provide consent".
+    
+    List 1: {list1}
+    
+    List 2: {list2}
+    
+    CSV Output:
+    
+    """
+
+    mergeVariationsPrompt = PromptTemplate(
+        input_variables=["list1", "list2"], template=mergeVariationsTemplate)
+    textSeperatorChain = LLMChain(
+        llm=llm, prompt=mergeVariationsPrompt, verbose=False)
+
+    output = textSeperatorChain.run(listToMerge, listOfAllVariations)
+
+    # Convert the CSV string to a file-like object
+    csv_file = io.StringIO(output)
+
+    # Parse the CSV file into a 2-dimensional list
+    csv_reader = csv.reader(csv_file)
+    csv_list = [row for row in csv_reader]
+
+    return csv_list
+
+
 def TranslateTextToMQL(TextEligibility):
     textSeperatorTemplate = """Your role is to separate large strings of text into separate sections. The texts within each section must be related to each other. If the text is already naturally sepreated with new lines leave it as is. If it says inclusion or exlcusion criteria, use it to seperate the text. Each section must be able to make sense on its own, if a section depends on another section to make sense then they should be merged. YOU ARE LIMITED IN HOW YOU MAY ALTER THE TEXT, YOU MAY ONLY REMOVE PHRASES (such as \"Step 1:\") which ARE NOT IMPORTANT IN IDENTIFYING WHETHER A PATIENT QUALIFIES OR NOT. YOU WILL NOT ALTER THE TEXT IN ANY OTHER WAY OTHER THAN WHAT WAS LISTED BEFORE AND FORMATING.   You will seperate each section of text with a new line and nothing else, no numeration.
     Text to be seperated: {text}
@@ -56,6 +88,7 @@ def TranslateTextToMQL(TextEligibility):
     INSTEAD YOU SHOULD SAY \"cancer type\": \"Lung Cancer\"
     Requirements must be in the format of Mongo DB Query language. Mongo DB query language is VERY important, IT MUST BE MONGO DB QUERY LANGUAGE (MQL). Only use the equality operators for numbers. All brackets my be closed and all properties must be surrounded in double quotes.
     If it is a yes or no question you are to put true or false as the value.
+    If there is a number somewhere then the number is to go in the value not the property. for example say \"age\": gt: 18 INSTEAD OF THE WRONG SAYING \"age greater than 18\": true. Numbers should be in the value not the property and with a gt, lt, gte, lte, or eq operator.
     There must only be one condition at a time for each segment. Conditions must be wrapped in quotation marks and specific, for example don't say \"stage\", instead say \"Cancer Stage\". No amount of text is too complicated or long to put into MongoDB query language, it will always be possible. DO NOT, UNDER ANY CIRCUMSTANCES MAKE ASSUMPTIONS. Only translate what is in the text and nothing else. Whenever possible, use numbers. For example, don't describe the age in words such as child, adult, or senior adult. Instead, use numbers and equalities lt 18, gt18 and lt 65 and gt 65
     From now on, you will only be given a list of requirements which must all be met. You will respond with only the MongoDB Query language translation.
     After making the MQL translation, you will verify to make sure it is valid Mongo query language. It is CRITICAL that the translation be proper MQL.
