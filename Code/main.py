@@ -11,9 +11,19 @@ def main():
                        "ClinicalTrialsDB", "ClinicalTrialsJSON")
 
     propertyCount = myDB.count_properties()
-    sorted_dict = dict(sorted(propertyCount.items(),
-                       key=operator.itemgetter(1)))
-    print(sorted_dict)
+
+    print(" | ".join(propertyCount.keys()))
+
+    print("\n\n\n\n")
+
+    randDoc = myDB.collection.find_one()
+
+    print(" | ".join(db.countPropertiesInDoc(randDoc).keys()))
+
+    # sorted_dict = dict(sorted(propertyCount.items(),
+    #                    key=operator.itemgetter(1)))
+    # print(sorted_dict)
+
     # Get the current trial
     # currentTitle = myDB.get_official_titles()[0]
     # document = myDB.collection.find_one({"officialTitle": currentTitle})

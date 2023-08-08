@@ -175,6 +175,13 @@ class Database:
             property_counts = add_dictionaries(
                 property_counts, countPropertiesInDoc(mql_document))
 
+        unImportantProperties = ["_id", "nctid",
+                                 "title", "$and", "$or", "$not"]
+
+        for property in unImportantProperties:
+            if property in property_counts:
+                property_counts.pop(property)
+
         return property_counts
 
 

@@ -45,11 +45,14 @@ def MergeVariations(listToMerge: list, listOfAllVariations: list):
     mergeVariationsTemplate = """You are a merger. You will be given two lists of properties. Your job is to identify if any property from one list can be classified as the same as a property on the other list. They may differ by wording, capitalization or synonyms but must mean the same thing. For example the properties "ECOG Status" and "ecog medical status" mean the same thing and must be merged. You will return a csv with 3 columns and as many rows as needed. each row will contain a pair of properties that can be merged and what they will be merged to. Be specific with the property.
     An example row could be: "able to provide informed consent", "capable of providing informed consent", "Able to provide consent".
     
+    The delimiter for the csv is no longer a coma, it will be the pipe character " | ". this is true for both the input lists and the output csv. use a " | " to seperate the columns and a new line to seperate the rows.
+    
     List 1: {list1}
     
     List 2: {list2}
     
     CSV Output:
+    Property From List 1, Property From List 2, Merged Property
     
     """
 
