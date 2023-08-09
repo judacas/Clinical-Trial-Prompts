@@ -1,5 +1,5 @@
 # import json
-# import AI
+import AI
 import Database as db
 import operator
 
@@ -10,15 +10,11 @@ def main():
     myDB = db.Database("mongodb://localhost:27017/",
                        "ClinicalTrialsDB", "ClinicalTrialsJSON")
 
-    propertyCount = myDB.count_properties()
+    # propertyCount = myDB.count_properties()
 
-    print(" | ".join(propertyCount.keys()))
+    # print(" | ".join(propertyCount.keys()))
 
-    print("\n\n\n\n")
-
-    randDoc = myDB.collection.find_one()
-
-    print(" | ".join(db.countPropertiesInDoc(randDoc).keys()))
+    # print("\n\n\n\n")
 
     # sorted_dict = dict(sorted(propertyCount.items(),
     #                    key=operator.itemgetter(1)))

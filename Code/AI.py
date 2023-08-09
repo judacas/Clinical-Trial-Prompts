@@ -42,35 +42,39 @@ def FixJSON(jsonText):
 
 # possible problem is merging something like standard ages [adult] and minimum age : 18. this is different data types for the value. can attack with another llm call but wait to see if have any other ideas
 def MergeVariations(listToMerge: list, listOfAllVariations: list):
-    mergeVariationsTemplate = """You are a merger. You will be given two lists of properties. Your job is to identify if any property from one list can be classified as the same as a property on the other list. They may differ by wording, capitalization or synonyms but must mean the same thing. For example the properties "ECOG Status" and "ecog medical status" mean the same thing and must be merged. You will return a csv with 3 columns and as many rows as needed. each row will contain a pair of properties that can be merged and what they will be merged to. Be specific with the property.
-    An example row could be: "able to provide informed consent", "capable of providing informed consent", "Able to provide consent".
+    mergeVariationsTemplate = """You are a merger. You will be given two lists of properties. Your job is to identify if any property from one list can be classified as the same as a property on the other list. They may differ by wording, capitalization or synonyms but must mean the same thing. For example the properties "ECOG Status" and "ecog medical status" mean the same thing and must be merged. You will return a csv with 3 columns and as many rows as needed. each row will contain a pair of properties that can be merged and what they will be merged to. Do not merge them if they do not mean the same thing or have nothing to do with each other. THEY MUST BE ONLY BE MERGED IF THEY MEAN THE SAME THING, DO NOT MERGE TWO PROPERTIES WHICH DON'T CORRELATE.
+    An example row could be: "able to provide informed consent", "capable of providing informed consent", "can provide consent".
     
-    The delimiter for the csv is no longer a coma, it will be the pipe character " | ". this is true for both the input lists and the output csv. use a " | " to seperate the columns and a new line to seperate the rows.
+    each item in the list will seperated by a pipe character |. For example: item1| item2| item3
+    your output will also seperate the items with a pipe character |. it MUST be in the following format: Exact property from list 1| EXACT property from list 2| merged property\n
+    
+    DO NOT MERGE TWO THINGS THAT ARE EXACTLY THE SAME, ONLY IF THEY DIFFER BY WORDING, CAPITALIZATION OR SYNONYMS BUT MEAN THE SAME THING.
+    if there is nothing to merge then ouptut "nothing to merge" DO NOT OUTPUT ANYTHING ELSE.
     
     List 1: {list1}
     
     List 2: {list2}
     
-    CSV Output:
-    Property From List 1, Property From List 2, Merged Property
+    | seperate values Output:
     
     """
 
     mergeVariationsPrompt = PromptTemplate(
         input_variables=["list1", "list2"], template=mergeVariationsTemplate)
     textSeperatorChain = LLMChain(
-        llm=llm, prompt=mergeVariationsPrompt, verbose=False)
+        llm=llm, prompt=mergeVariationsPrompt, verbose=True)
 
-    output = textSeperatorChain.run(listToMerge, listOfAllVariations)
+    output = textSeperatorChain.__call__(
+        {"list1": listToMerge, "list2": listOfAllVariations})
 
-    # Convert the CSV string to a file-like object
-    csv_file = io.StringIO(output)
+    # # Convert the CSV string to a file-like object
+    # csv_file = io.StringIO(output)
 
-    # Parse the CSV file into a 2-dimensional list
-    csv_reader = csv.reader(csv_file)
-    csv_list = [row for row in csv_reader]
+    # # Parse the CSV file into a 2-dimensional list
+    # csv_reader = csv.reader(csv_file)
+    # csv_list = [row for row in csv_reader]
 
-    return csv_list
+    return output
 
 
 def TranslateTextToMQL(TextEligibility):
@@ -81,7 +85,7 @@ def TranslateTextToMQL(TextEligibility):
     textSeperatorPrompt = PromptTemplate(
         input_variables=["text"], template=textSeperatorTemplate)
     textSeperatorChain = LLMChain(
-        llm=llm, prompt=textSeperatorPrompt, verbose=False)
+        llm=llm, prompt=textSeperatorPrompt, verbose=True)
 
     listToMQLTemplate = """You are an encoder/translater. your only job is to encode a list of requirements into a mongo db query written in Mongo DB Query Language (MQL for short) which follows the json formatting rules. MQL uses the operators ["$and", "$or", "$not"] which can be nested an infinite amount of times to represent matches. it also uses equality operators such as \"gte\",\"lt\" and many more. Additionally when seeing if a condition has certain values it can use in array \"\"$in\": [\"Value1\", \"Value2\"]\"
     You must not use the \"$exists\" operator. Instead, have the condition be a boolean. 
@@ -100,7 +104,7 @@ def TranslateTextToMQL(TextEligibility):
     """
     listToMQLPrompt = PromptTemplate(
         input_variables=["ListOfRequirements"], template=listToMQLTemplate)
-    listToMQLChain = LLMChain(llm=llm, prompt=listToMQLPrompt, verbose=False)
+    listToMQLChain = LLMChain(llm=llm, prompt=listToMQLPrompt, verbose=True)
 
     textToMQLChain = SimpleSequentialChain(
         chains=[textSeperatorChain, listToMQLChain], verbose=True)
