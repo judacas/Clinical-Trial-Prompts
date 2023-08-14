@@ -1,0 +1,44 @@
+"$and": [
+    {
+        "$and": [
+            {
+                "black or white race"
+            },
+            {
+                "non-Hispanic ethnicity"
+            },
+            {
+                "$and": [
+                    {
+                        "age 19-65 years"
+                    },
+                    {
+                        "able to travel to the UAB Bionutrition Unit daily to retrieve meals"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "$not": {
+            "$or": [
+                {
+                    "has gastrointestinal (GI) conditions"
+                },
+                {
+                    "has taken antibiotics or probiotics in the last 90 days"
+                },
+                {
+                    "smokes/uses tobacco"
+                },
+                {
+                    "consumes heavy alcohol"
+                },
+                {
+                    "has major medical conditions"
+                }
+            ]
+        }
+    }
+]
+// NCT04538482
