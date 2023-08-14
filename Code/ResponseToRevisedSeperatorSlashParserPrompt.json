@@ -100,25 +100,28 @@
 //       "OLDER_ADULT"
 //     ]
 
-
+Output:
 "$and": [
+    {
+        "$or": [
+            {
+                "black race"
+            },
+            {
+                "white race"
+            }
+        ]
+    },
+    {
+        "non-Hispanic ethnicity"
+    },
     {
         "$and": [
             {
-                "black or white race"
+                "age 19-65 years"
             },
             {
-                "non-Hispanic ethnicity"
-            },
-            {
-                "$and": [
-                    {
-                        "age 19-65 years"
-                    },
-                    {
-                        "able to travel to the UAB Bionutrition Unit daily to retrieve meals"
-                    }
-                ]
+                "able to travel to the UAB Bionutrition Unit daily to retrieve meals"
             }
         ]
     },
@@ -129,7 +132,7 @@
                     "has gastrointestinal (GI) conditions"
                 },
                 {
-                    "has taken antibiotics or probiotics in the last 90 days"
+                    "has taken antibiotics or probiotics in the past 90 days"
                 },
                 {
                     "smokes/uses tobacco"
@@ -144,4 +147,3 @@
         }
     }
 ]
-// NCT04538482
