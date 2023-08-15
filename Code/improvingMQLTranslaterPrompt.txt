@@ -16,11 +16,25 @@ Be concise when possible without removing clarity.
 
 The entire thing must be surrounded in curly brackets {}. This is critical for it to be valid MQL
 
-if the property can be read standalone then make it a true or false statement.
+If the property can be read standalone, then make it a true or false statement.
 
 in the case of a range of numbers, use both a "$gt" and an "$lt"
 
 Additional Requirements:
+
+All timeframes, whether they are in weeks, months, years, or days, should be translated into a representation in days.
+1 week = 7 days
+1 month is approximately 30 days
+1 year = 365 days
+Do not output a mathematical expression; instead,  compute the number of days
+Examples:
+AVOID: "weeks since last chemotherapy": {"$lt": 3}
+AVOID: "days since last chemotherapy": {"$lt": 3 * 7}
+PREFER: "days since last chemotherapy": {"$lt": 21}
+
+When a criterion relates to the timeframe a patient has been off a medication or treatment, use a numerical representation to indicate the number of days since the last time they received that medication or treatment. Remember to represent timeframes in days. For example:
+AVOID: "has had immunotherapy of any kind within the last 2 years": true
+PREFER: "days since last immunotherapy": {"$gt": 730}
 
 Don't use "$exists", instead represent conditions as booleans. For example:
 AVOID: "prior systematic Therapy" : {"$exists" : true}
@@ -305,7 +319,10 @@ Output:
 					}
 				},
 				{
-					"cancer type": "Merkel cell carcinoma (MCC)"
+					"histological confirmation of diagnosis": "Merkel cell carcinoma (MCC)",
+					"AJCC version 8 stage": {
+						"$in": [1, 2, 3, "IIIb"]
+					}
 				},
 				{
 					"$not": {
@@ -317,16 +334,20 @@ Output:
 								"distant metastatic disease (stage IV)": true
 							},
 							{
-								"positive margins": true
+								"microscopically positive margins": true
 							}
 						]
 					}
 				},
 				{
-					"all macroscopic Merkel cell carcinoma resected": true
+					"number of days since surgery": {
+						"$lt": 16 * 7
+					}
 				},
 				{
-					"disease-free status": true
+					"number of days since last physical examination and imaging": {
+						"$lt": 8 * 7
+					}
 				},
 				{
 					"has history of distant metastatic disease": false
@@ -359,9 +380,7 @@ Output:
 				{
 					"AST": {
 						"$lt": 2.5
-					}
-				},
-				{
+					},
 					"ALT": {
 						"$lt": 2.5
 					}
@@ -395,7 +414,7 @@ Output:
 						{
 							"$and": [
 								{
-									"has HBV or HCV infection": true
+									"has hepatitis B virus (HBV) or hepatitis C virus (HCV) infection": true
 								},
 								{
 									"viral loads are undetectable": true
@@ -419,16 +438,15 @@ Output:
 						"has a history of life threatening virus": true
 					},
 					{
-						"has had other invasive cancer diagnoses in the last two years": true
+						"has had other (beside non-melanoma skin cancers, or recent indolent cancers e.g.: resected low grade prostate cancer) invasive cancer diagnoses in the last two years": true
 					},
 					{
-						"has had immunotherapy of any kind within the last 2 years": true
+						"number of days since last immunotherapy": {
+							"$lt": 2 * 365
+						}
 					},
 					{
-						"has a history of (non-infectious) pneumonitis that required steroids": true
+						"has a history of (non-infectious) pneumonitis that required steroids or has current pneumonitis": true
 					}
 				]
-			}
-		}
-	]
-}
+			
