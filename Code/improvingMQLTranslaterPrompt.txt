@@ -22,47 +22,49 @@ in the case of a range of numbers, use both a "$gt" and an "$lt"
 
 Additional Requirements:
 
-All timeframes, whether they are in weeks, months, years, or days, should be translated into a representation in days.
-1 week = 7 days
-1 month is approximately 30 days
-1 year = 365 days
-Do not output a mathematical expression; instead,  compute the number of days
-Examples:
-AVOID: "weeks since last chemotherapy": {"$lt": 3}
-AVOID: "days since last chemotherapy": {"$lt": 3 * 7}
-PREFER: "days since last chemotherapy": {"$lt": 21}
-
-When a criterion relates to the timeframe a patient has been off a medication or treatment, use a numerical representation to indicate the number of days since the last time they received that medication or treatment. Remember to represent timeframes in days. For example:
-AVOID: "has had immunotherapy of any kind within the last 2 years": true
-PREFER: "days since last immunotherapy": {"$gt": 730}
-
-Don't use "$exists", instead represent conditions as booleans. For example:
-AVOID: "prior systematic Therapy" : {"$exists" : true}
-PREFER: "has prior systematic Therapy": true
-
-Prefer categories over booleans when possible.
-AVOID: "has lung cancer": true
-PREFER: "cancer type": "Lung Cancer"
-
-Always place numbers in the value, not the property. for example:
-AVOID: "age greater than 18": true
-PREFER: "age": {"$gt": 18}
+In cases where numbers are presented in roman numerals, convert them to the Arabic number system. For example:
+AVOID: "cancer stage" : {"$lte": III}
+PREFER: "cancer stage":{"$lte":3}
 
 In cases where numbers are presented in word form (e.g., 'eighteen' instead of '18'), convert them to their numeric counterparts.
 AVOID: "ECOG status" : {"$gt" : "four"}
 PREFER: "ECOG status" : {"$gt": 4}
 
-Do not capitalize anything unless it is an acronym or specific term/medicine. for example
+Always place numbers in the value, not the property. for example:
+AVOID: "age greater than 18": true
+PREFER: "age": {"$gt": 18}
+
+Prefer numbers over descriptive words whenever possible. For example:
+AVOID: "age" : "Adult"
+PREFER: "age": {"$gt": 18, "$lt": 65}.
+
+All timeframes, whether they are in weeks, months, years, or days, should be translated into a representation in days. 1 week = 7 days. 1 month is approximately 30 days. 1 year = 365 days. For example:
+AVOID: "weeks since last chemotherapy": {"$lt": 3}
+PREFER: "days since last chemotherapy": {"$lt": 21}
+
+Do not output a mathematical expression; instead,  compute the expression. For example:
+AVOID: "days since last radiation": {"$lt": 4 * 30}
+PREFER:"days since last radiation":{"$lt":120}
+
+When a criterion relates to the timeframe a patient has been off a medication or treatment, use a numerical representation to indicate the number of days since the last time they received that medication or treatment. Remember to represent timeframes in days. For example:
+AVOID: "has had immunotherapy of any kind within the last 2 years": true
+PREFER: "days since last immunotherapy": {"$gt": 730}
+
+Don't use "$exists", instead, represent conditions as booleans. For example:
+AVOID: "prior systematic therapy" : {"$exists" : true}
+PREFER: "has prior systematic therapy": true
+
+Prefer categories over booleans when possible.
+AVOID: "has lung cancer": true
+PREFER: "cancer type": "lung cancer"
+
+Do not capitalize anything unless it is an acronym or a specific term/medicine. for example
 AVOID: "Able to consent"
 PREFER: "able to consent"
 
 Make conditions specific, for example:
 AVOID:"stage"
 PREFER:"Cancer Stage"
-
-Prefer numbers over descriptive words whenever possible. For example:
-AVOID: "age" : "Adult"
-PREFER: "age": {"$gt": 18, "$lt": 65}.
 
 Format:
 Every MongoDB operator and condition must be surrounded by double quotes.
@@ -104,7 +106,7 @@ given the following input:
                     "has gastrointestinal (GI) conditions"
                 },
                 {
-                    "has taken antibiotics or probiotics in the past 90 days"
+                    "has taken antibiotics or probiotics in the past 3 months"
                 },
                 {
                     "smokes/uses tobacco"
@@ -319,34 +321,33 @@ Output:
 					}
 				},
 				{
-					"histological confirmation of diagnosis": "Merkel cell carcinoma (MCC)",
-					"AJCC version 8 stage": {
-						"$in": [1, 2, 3, "IIIb"]
+					"cancer stage": {
+						"$in": [1, 2, 3, 3.1, 3.2]
 					}
 				},
 				{
 					"$not": {
 						"$or": [
 							{
-								"Stage I patients with positive sentinel lymph node biopsy": true
+								"sentinel lymph node biopsy": true
 							},
 							{
-								"distant metastatic disease (stage IV)": true
+								"distant metastatic disease": true
 							},
 							{
-								"microscopically positive margins": true
+								"positive margins": true
 							}
 						]
 					}
 				},
 				{
-					"number of days since surgery": {
-						"$lt": 16 * 7
+					"days since last surgery": {
+						"$lt": 112
 					}
 				},
 				{
-					"number of days since last physical examination and imaging": {
-						"$lt": 8 * 7
+					"days since last physical exam and imaging": {
+						"$lt": 56
 					}
 				},
 				{
@@ -380,7 +381,9 @@ Output:
 				{
 					"AST": {
 						"$lt": 2.5
-					},
+					}
+				},
+				{
 					"ALT": {
 						"$lt": 2.5
 					}
@@ -409,12 +412,12 @@ Output:
 				{
 					"$or": [
 						{
-							"HIV+ with undetectable HIV viral load": true
+							"HIV+ with undetectable viral load": true
 						},
 						{
 							"$and": [
 								{
-									"has hepatitis B virus (HBV) or hepatitis C virus (HCV) infection": true
+									"has HBV or HCV infection": true
 								},
 								{
 									"viral loads are undetectable": true
@@ -438,15 +441,18 @@ Output:
 						"has a history of life threatening virus": true
 					},
 					{
-						"has had other (beside non-melanoma skin cancers, or recent indolent cancers e.g.: resected low grade prostate cancer) invasive cancer diagnoses in the last two years": true
+						"has had other invasive cancer diagnoses in the last two years": true
 					},
 					{
-						"number of days since last immunotherapy": {
-							"$lt": 2 * 365
+						"days since last immunotherapy": {
+							"$gt": 730
 						}
 					},
 					{
 						"has a history of (non-infectious) pneumonitis that required steroids or has current pneumonitis": true
 					}
 				]
-			
+			}
+		}
+	]
+}
