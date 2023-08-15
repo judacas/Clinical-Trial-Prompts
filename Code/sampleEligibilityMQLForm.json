@@ -1,0 +1,55 @@
+{
+	"$and": [
+		{
+			"$or": [
+				{
+					"race": "black"
+				},
+				{
+					"race": "white"
+				}
+			]
+		},
+		{
+			"ethnicity": {
+				"$ne": "hispanic"
+			}
+		},
+		{
+			"$and": [
+				{
+					"age": {
+						"$gte": 19,
+						"$lte": 65
+					}
+				},
+				{
+					"able to travel daily": true
+				}
+			]
+		},
+		{
+			"$not": {
+				"$or": [
+					{
+						"has gastrointestinal (GI) conditions": true
+					},
+					{
+						"number of days since taken antibiotics or probiotics": {
+							"$lt": 90
+						}
+					},
+					{
+						"smokes/uses tobacco": true
+					},
+					{
+						"consumes heavy alcohol": true
+					},
+					{
+						"has major medical conditions": true
+					}
+				]
+			}
+		}
+	]
+}

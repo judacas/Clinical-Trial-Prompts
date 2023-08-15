@@ -1,7 +1,4 @@
-You are an encoder/translator with expertise in Mongo DB Query Language (MQL). Your task is to encode a structured Boolean algebra representation into a query written in MQL. This language strictly follows the JSON formatting rules.
-
-Context:
-The input will be a boolean algebra structure which uses the same operators as MQL. However the key value pairs inside of the "$and", "$or", and "$not" operators do not follow the MQL or JSON formatting rules.
+Context:You will be given a boolean algebra representation of criteria to participate in a clinical trial. While the Boolean algebra representation uses logical operators like "$and", "$or", and "$not", which are consistent with MQL, the internal key-value pairs do not follow MQL's conventions. Your job is to ensure that both the operators and their internal content align with MQL standards.
 
 Guidelines:
 
@@ -10,6 +7,20 @@ Use MQL logical operators ["$and", "$or", "$not"]. They represent the relationsh
 For number-based criteria, use numerical equality operators ["$eq", "$ne", "$gt", "$gte", "$lt", "$lte"]
 
 For categorical-based criteria, use categorical equality operators ["$in", "$nin"]
+
+Ensure a single condition for each segment.
+
+Avoid making assumptions; translate only the given text.
+
+Be concise when possible without removing clarity.
+
+The entire thing must be surrounded in curly brackets {}. This is critical for it to be valid MQL
+
+if the property can be read standalone then make it a true or false statement.
+
+in the case of a range of numbers, use both a "$gt" and an "$lt"
+
+Additional Requirements:
 
 Don't use "$exists", instead represent conditions as booleans. For example:
 AVOID: "prior systematic Therapy" : {"$exists" : true}
@@ -23,24 +34,401 @@ Always place numbers in the value, not the property. for example:
 AVOID: "age greater than 18": true
 PREFER: "age": {"$gt": 18}
 
-Ensure a single condition for each segment.
+In cases where numbers are presented in word form (e.g., 'eighteen' instead of '18'), convert them to their numeric counterparts.
+AVOID: "ECOG status" : {"$gt" : "four"}
+PREFER: "ECOG status" : {"$gt": 4}
+
+Do not capitalize anything unless it is an acronym or specific term/medicine. for example
+AVOID: "Able to consent"
+PREFER: "able to consent"
 
 Make conditions specific, for example:
 AVOID:"stage"
 PREFER:"Cancer Stage"
 
-Avoid making assumptions; translate only the given text.
-
-Prefer numbers over descriptive words. For example:
+Prefer numbers over descriptive words whenever possible. For example:
 AVOID: "age" : "Adult"
 PREFER: "age": {"$gt": 18, "$lt": 65}.
 
-
 Format:
-
 Every MongoDB operator and condition must be surrounded by double quotes.
 All brackets (both [] and {}) must be appropriately paired and closed.
+Your response MUST adhere to JSOM and MQL formatting standards.
+
+
+Refer to the provided example for a clearer understanding of the input and expected output.
+
+given the following input:
+"$and": [
+    {
+        "$or": [
+            {
+                "black race"
+            },
+            {
+                "white race"
+            }
+        ]
+    },
+    {
+        "non-Hispanic ethnicity"
+    },
+    {
+        "$and": [
+            {
+                "age 19-65 years"
+            },
+            {
+                "able to travel to the UAB Bionutrition Unit daily to retrieve meals"
+            }
+        ]
+    },
+    {
+        "$not": {
+            "$or": [
+                {
+                    "has gastrointestinal (GI) conditions"
+                },
+                {
+                    "has taken antibiotics or probiotics in the past 90 days"
+                },
+                {
+                    "smokes/uses tobacco"
+                },
+                {
+                    "consumes heavy alcohol"
+                },
+                {
+                    "has major medical conditions"
+                }
+            ]
+        }
+    }
+]
+
+you would provide the following MQL:
+{
+	"$and": [
+		{
+			"$or": [
+				{
+					"race": "black"
+				},
+				{
+					"race": "white"
+				}
+			]
+		},
+		{
+			"ethnicity": {
+				"$ne": "hispanic"
+			}
+		},
+		{
+			"$and": [
+				{
+					"age": {
+						"$gte": 19,
+						"$lte": 65
+					}
+				},
+				{
+					"able to travel daily": true
+				}
+			]
+		},
+		{
+			"$not": {
+				"$or": [
+					{
+						"has gastrointestinal (GI) conditions": true
+					},
+					{
+						"number of days since taken antibiotics or probiotics": {
+							"$lt": 90
+						}
+					},
+					{
+						"smokes/uses tobacco": true
+					},
+					{
+						"consumes heavy alcohol": true
+					},
+					{
+						"has major medical conditions": true
+					}
+				]
+			}
+		}
+	]
+}
+
 
 
 Task:
 Convert the provided Boolean algebra representation into a valid MongoDB query. Once done, ensure it adheres strictly to MQL standards and output only the finished MongoDB query.
+
+Instructions Finished, complete task now.
+
+Input:
+"$and": [
+    {
+        "$and": [
+            {
+                "greater than or equal to 18 years old"
+            },
+            {
+                "Eastern Cooperative Oncology Group (ECOG) performance status: 0, 1, or 2"
+            },
+            {
+                "histological confirmation of diagnosis of Merkel cell carcinoma (MCC), pathologic stages (American Joint Committee on Cancer [AJCC] version 8) I-IIIb"
+            },
+            {
+                "$not": {
+                    "$or": [
+                        {
+                            "Stage I patients with positive sentinel lymph node biopsy"
+                        },
+                        {
+                            "Patients with distant metastatic disease (stage IV)"
+                        },
+                        {
+                            "The primary tumor has microscopically positive margins"
+                        }
+                    ]
+                }
+            },
+            {
+                "all macroscopic Merkel cell carcinoma (either identified by physical exam or imaging) have been completely resected by surgery within 16 weeks before randomization"
+            },
+            {
+                "disease-free status documented by a complete physical examination and conventional imaging studies within 8 weeks prior to randomization"
+            },
+            {
+                "$not": {
+                    "has history of distant metastatic disease"
+                }
+            },
+            {
+                "White blood count greater than or equal to 2000/uL (within 4 weeks prior to randomization)"
+            },
+            {
+                "Absolute neutrophil count (ANC) greater than or equal to 1000/uL (within 4 weeks prior to randomization)"
+            },
+            {
+                "Platelets greater than or equal to 75 x 10^3/uL (within 4 weeks prior to randomization)"
+            },
+            {
+                "Hemoglobin greater than or equal to 8 g/dL (greater than or equal to 80 g/L; may be transfused) (within 4 weeks prior to randomization)"
+            },
+            {
+                "Creatinine less than 2.0 x institutional upper limit of normal (ULN) (within 4 weeks prior to randomization)"
+            },
+            {
+                "Aspartate aminotransferase (AST) and alanine aminotransferase (ALT) less than 2.5 x institutional ULN (within 4 weeks prior to randomization)"
+            },
+            {
+                "$or": [
+                    {
+                        "Total bilirubin less than 2.0 x institutional ULN"
+                    },
+                    {
+                        "$and": [
+                            {
+                                "has Gilbert's syndrome"
+                            },
+                            {
+                                "Total bilirubin less than 3.0 mg/dL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "$or": [
+                    {
+                        "is human immunodeficiency virus (HIV)+ with undetectable HIV viral load"
+                    },
+                    {
+                        "$and": [
+                            {
+                                "has hepatitis B virus (HBV) or hepatitis C virus (HCV) infection"
+                            },
+                            {
+                                "viral loads are undetectable"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "$not": {
+            "$or": [
+                {
+                    "is pregnant or breast-feeding"
+                },
+                {
+                    "is on active immunosuppression"
+                },
+                {
+                    "has a history of life threatening virus"
+                },
+                {
+                    "has had other (beside non-melanoma skin cancers, or recent indolent cancers e.g.: resected low grade prostate cancer) invasive cancer diagnoses in the last two years"
+                },
+                {
+                    "has had immunotherapy of any kind within the last 2 years prior to randomization"
+                },
+                {
+                    "has a history of (non-infectious) pneumonitis that required steroids or has current pneumonitis"
+                }
+            ]
+        }
+    }
+]
+
+Output:
+{
+	"$and": [
+		{
+			"$and": [
+				{
+					"age": {
+						"$gte": 18
+					}
+				},
+				{
+					"ECOG performance status": {
+						"$in": [0, 1, 2]
+					}
+				},
+				{
+					"cancer type": "Merkel cell carcinoma (MCC)"
+				},
+				{
+					"$not": {
+						"$or": [
+							{
+								"Stage I patients with positive sentinel lymph node biopsy": true
+							},
+							{
+								"distant metastatic disease (stage IV)": true
+							},
+							{
+								"positive margins": true
+							}
+						]
+					}
+				},
+				{
+					"all macroscopic Merkel cell carcinoma resected": true
+				},
+				{
+					"disease-free status": true
+				},
+				{
+					"has history of distant metastatic disease": false
+				},
+				{
+					"white blood count": {
+						"$gte": 2000
+					}
+				},
+				{
+					"absolute neutrophil count": {
+						"$gte": 1000
+					}
+				},
+				{
+					"platelets": {
+						"$gte": 75000
+					}
+				},
+				{
+					"hemoglobin": {
+						"$gte": 8
+					}
+				},
+				{
+					"creatinine": {
+						"$lt": 2.0
+					}
+				},
+				{
+					"AST": {
+						"$lt": 2.5
+					}
+				},
+				{
+					"ALT": {
+						"$lt": 2.5
+					}
+				},
+				{
+					"$or": [
+						{
+							"total bilirubin": {
+								"$lt": 2.0
+							}
+						},
+						{
+							"$and": [
+								{
+									"has Gilbert's syndrome": true
+								},
+								{
+									"total bilirubin": {
+										"$lt": 3.0
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"$or": [
+						{
+							"HIV+ with undetectable HIV viral load": true
+						},
+						{
+							"$and": [
+								{
+									"has HBV or HCV infection": true
+								},
+								{
+									"viral loads are undetectable": true
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"$not": {
+				"$or": [
+					{
+						"is pregnant or breast-feeding": true
+					},
+					{
+						"is on active immunosuppression": true
+					},
+					{
+						"has a history of life threatening virus": true
+					},
+					{
+						"has had other invasive cancer diagnoses in the last two years": true
+					},
+					{
+						"has had immunotherapy of any kind within the last 2 years": true
+					},
+					{
+						"has a history of (non-infectious) pneumonitis that required steroids": true
+					}
+				]
+			}
+		}
+	]
+}
