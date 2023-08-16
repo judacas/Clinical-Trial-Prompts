@@ -1,7 +1,7 @@
-# import json
+import json
 import AI
 import Database as db
-import operator
+# import operator
 
 
 def main():
@@ -22,17 +22,21 @@ def main():
 
     # Get the current trial
     # currentTitle = myDB.get_official_titles()[0]
-    # document = myDB.collection.find_one({"officialTitle": currentTitle})
+    # document = myDB.collection.find_one()
 
-    # If the trial is not found, print an error message
+    # # If the trial is not found, print an error message
     # if document is None:
     #     print("Document not found")
     #     return
 
-    # Convert the document to a JSON object
+    # # Convert the document to a JSON object
     # document["_id"] = str(document["_id"])
     # json_document = json.dumps(document)
 
+    # print("Document to be translated is:", json_document)
+    # mql = myDB.translateOneTrialToMQL(document)
+    # print("\n\n\n")
+    # print(mql)
     # # Get the description of the document
     # description = AI.GetDescription("five year old", json_document)
     # print(description)

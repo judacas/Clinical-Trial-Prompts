@@ -141,13 +141,13 @@ class Database:
             currentTrial = self.translateOneTrialToMQL(trial)
             if currentTrial is not None:
                 self.collection.insert_one(currentTrial)
-                allProperties = self.removeVariations(
-                    currentTrial, allProperties)
+                # allProperties = self.removeVariations(
+                #     currentTrial, allProperties)
                 print("\n\n\nAll properties now is ", dict(sorted(allProperties.items(),
                                                                   key=operator.itemgetter(1))), "\n\n\n")
 
-        self.database[self.PropertyCount_collection_name].insert_one(
-            allProperties)
+        # self.database[self.PropertyCount_collection_name].insert_one(
+        #     allProperties)
 
         # mqldocuments = map(self.translateOneTrialToMQL, alltrials)
         # Can maybe in theory make this work in parallel but then that doesn't allow me to merge as I go
