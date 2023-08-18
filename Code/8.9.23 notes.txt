@@ -15,9 +15,29 @@ might also have the problem where it explains things. for example when it says  
 
 update seperator sometimes has ANDs inside of ANDs and ORs inside of ORs which is technicaly unneccesary but does not make it less accurate and does not impact performance so will leave it be as a known bug.
 
-A possible proplem could be not just the different properties but also different values. This is much more dangerous. For example If there are options for both cancer: lung and cancer: lung cancer then depending on which one I pick some clinical trials could get removed even though I still fit the criteria
+A possible problem could be not just the different properties but also different values. This is much more dangerous. For example If there are options for both cancer: lung and cancer: lung cancer then depending on which one I pick some clinical trials could get removed even though I still fit the criteria
 
 
 prompt is getting quite long so with only 4k tokens the prompt and input might not leave any remaining tokens for the output. may need to make a function which splits up clinical trials to then make parts of the mql and then put it all back together
 
+
 Being specific and providing specific examples in prompt helps with consistency.
+
+
+make own examples with all of the edge cases to truly show how to do it
+
+
+Remember how I was saying the prompt was getting quite long and wont leave any remaining for the output? well yeah its too long. Will shorten prompts by removing unnecessary whitespace in the formatting of the jsons. The json does not need to be formatted nicely in order for it to be a valid json. Each indent is four spaces which each acounts for a token so they add up really quickly
+
+By removing the whitespace the boolean algebra seperator went from 1,448 to 655 tokens
+and the mql translator went from 2,084 to 1,292. This is even more pronounced when you take into the account that the input to it is now shorter since the boolean seperator is producing less token heavy output.
+
+still too long for some, to the point where all 4k tokens get used in prompt when input is added. 
+Instead of splitting it up, Will try and see what happens with chatgpt16k. this should be able to handle all trials and will also have knowledge of the original input when making the mql. fear that since chatgpt is trained to make a conversation it will be worse. hopefully system message can help in that. might also improve functionality since it will know what was before and it will still remember the original description of the clinical trial
+
+
+should make use of langchains caching to reduce api calls. don't know how it will affect performance but can look into it.
+
+
+
+add another requirement which makes it so that instead of saying never had blank before: true make it so it says, forbidden previous surgeries: blank

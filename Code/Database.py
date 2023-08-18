@@ -31,33 +31,17 @@ class Database:
             self.translateAllTrialsToMQL()
 
     def translateOneTrialToMQL(self, doc):
-        # doc.pop("_id", None)
-        # mql = json.dumps(doc)
-        # mql = json.loads(mql)
         try:
             criteriaText = doc["eligibilityModule"]
         except KeyError:
             print("eligibilityModule not found in document")
-            return
+            return None
         print(criteriaText)
 
         # add functionality to include the rest of the things in eligibility module later
         criteriaMQL = AI.TranslateTextToMQL(str(criteriaText))
-
-        tries = 3
-
-        for i in range(tries+1):
-            try:
-                criteriaMQL = json.loads(criteriaMQL)
-                break
-            except:
-                if i != tries:
-                    print(
-                        f"\n\n\nFailed to  convert to json\n\n\nAttempting to fix json, try: {i}\n\n\n")
-                    criteriaMQL = AI.FixJSON(criteriaMQL)
-        else:
-            print(
-                f"\n\n\nFailed to convert to json\n\n\n{criteriaMQL}\n\n\n")
+        if criteriaMQL is None:
+            print("Failed to properly translate to MQL")
             return None
 
         criteriaMQL = {

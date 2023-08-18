@@ -10,6 +10,11 @@ def main():
     myDB = db.Database("mongodb://localhost:27017/",
                        "ClinicalTrialsDB", "ClinicalTrialsJSON")
 
+    properties = myDB.count_properties()
+
+    for key in properties:
+        print(key, properties[key])
+
     # propertyCount = myDB.count_properties()
 
     # print(" | ".join(propertyCount.keys()))
