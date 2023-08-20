@@ -1,0 +1,141 @@
+"""Inclusion Criteria:\n\n• Patients with pathologically confirmed pancreatic cancer referred for image guided radiation therapy (IGRT)\n*White or Asian race but can't be hispanic ethnicity\n\nECOG status less than III\nExclusion Criteria:\n\n* Age \\<18\n* Inability to consent\n* Known coagulopathy/thrombocytopenia (INR \\>1.5, platelets \\<75)\n* Patients on antiplatelet/anticoagulant medication that cannot safely be discontinued five to seven weeks prior to the procedure\n* Gold allergy\n* Current infection\n*EUS evidence of vessel interfering with path of fiducial marker\n* Pregnancy"""
+{
+    {
+    "$and":[
+        {
+            "$and": [
+                {
+                    "$and": [
+                        {"pathologically confirmed pancreatic cancer"},
+                        {"referred for image guided radiation therapy (IGRT)"}
+                    ]
+                },
+                {
+                    "$and"[
+                        {
+                            "$or": [
+                                {"white race"},
+                                {"asian race"}
+                            ]
+                        },
+                        {"Ethnicity not hispanic"}
+                    ]
+                },
+                {"ECOG status less than III"}
+            ]
+        },
+        {
+            "$not": {
+                "$or": [
+                    {"less than 18 years old"},
+                    {"Unable to consent"},
+                    {"has Known coagulopathy/thrombocytopenia"},
+                    {
+                        "$and":[
+                            {"is on antiplatelet/anticoagulant medication"},
+                            {"cannot get off antiplatelet/anticoagulant medication five to seven weeks prior to procedure"}
+                        ]
+                    },
+                    {"has gold allergy"},
+                    {"has current infection"},
+                    {"has EUS evidence of vessel interfering with path of fiducial marker"},
+                    {"is pregnant"}
+                ]
+            }
+        }
+    ]
+    },
+
+
+
+
+
+    {
+        "and": [
+            {
+                "$and": [
+                    {
+                        "$and": [
+                            {
+                                "Cancer type": {
+                                    "$in": [
+                                        "pancreatic cancer"
+                                    ]
+                                }
+                            },
+                            {
+                                "Therapies refered for": {
+                                    "$in": [
+                                        "image guided radiation therapy (IGRT)"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "$and":[
+                            {   
+                                "$or": [
+                                    {
+                                        "race": "black"
+                                    },
+                                    {
+                                        "race": "white"
+                                    }
+                                ]
+                            },
+                            {
+                                "ethnicity": {
+                                    "$nin": [
+                                        "hispanic"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "ECOG status": {
+                            "$lt": 3
+                        }
+                    }   
+                ]
+            },
+            {
+                "$and": [
+                    {
+                        "age": {
+                            "$gte": 19,
+                            "$lte": 65
+                        }
+                    },
+                    {
+                        "able to travel daily": true
+                    }
+                ]
+            },
+            {
+                "$not": {
+                    "$or": [
+                        {
+                            "has gastrointestinal (GI) conditions": true
+                        },
+                        {
+                            "number of days since taken antibiotics or probiotics": {
+                                "$lt": 90
+                            }
+                        },
+                        {
+                            "smokes/uses tobacco": true
+                        },
+                        {
+                            "consumes heavy alcohol": true
+                        },
+                        {
+                            "has major medical conditions": true
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

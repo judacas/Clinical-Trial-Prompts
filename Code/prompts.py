@@ -17,7 +17,7 @@ class BackgroundPrompt:
                 "content": example[0]
             })
             self.messages.append({
-                "role": "system",
+                "role": "assistant",
                 "name": "example_assistant",
                 "content": example[1]
             })
@@ -50,36 +50,48 @@ Ensure all opened brackets, whether square [] or curly {}, are properly closed. 
 Output:
 Your output should strictly adhere to the provided format. Represent ANDs and ORs with [], while NOTs use {}. The goal is to output this structured Boolean algebra representation. Do not output anything else besides the boolean algebra representation. NEVER break character.
 """
-textToBoolExample = ("""Inclusion Criteria:\n\n• Patients with pathologically confirmed pancreatic cancer referred for image guided radiation therapy (IGRT)\n\nExclusion Criteria:\n\n* Age \\<18\n* Inability to consent\n* Known coagulopathy/thrombocytopenia (INR \\>1.5, platelets \\<75)\n* Patients on antiplatelet/anticoagulant medication that cannot safely be discontinued 5-7 days prior to the procedure\n* Gold allergy\n* Current infection\n* EUS evidence of vessel interfering with path of fiducial marker\n* Pregnancy""",
+textToBoolExample = ("""Inclusion Criteria:\n\n• Patients with pathologically confirmed pancreatic cancer referred for image guided radiation therapy (IGRT)\n*White or Asian\n\nExclusion Criteria:\n\n* Age \\<18\n* Inability to consent\n* Known coagulopathy/thrombocytopenia (INR \\>1.5, platelets \\<75)\n* Patients on antiplatelet/anticoagulant medication that cannot safely be discontinued 5-7 days prior to the procedure\n* Gold allergy\n* Current infection\n*EUS evidence of vessel interfering with path of fiducial marker\n* Pregnancy""",
                      """{
-"$and":[
-{
-"$and": [
-{"pathologically confirmed pancreatic cancer"},
-{"referred for image guided radiation therapy (IGRT)"}
-]
-},
-{
-"$not": {
-"$or": [
-{"less than 18 years old"},
-{"Unable to consent"},
-{"has Known coagulopathy/thrombocytopenia"},
-{
-"$and":[
-{"is on antiplatelet/anticoagulant medication"},
-{"cannot get off antiplatelet/anticoagulant medication 5-7 days prior to procedure"}
-]
-},
-{"has gold allergy"},
-{"has current infection"},
-{"has EUS evidence of vessel interfering with path of fiducial marker"},
-{"is pregnant"}
-]
-}
-}
-]
+    "$and":[
+        {
+            "$and": [
+                {
+                    "$and": [
+                        {"pathologically confirmed pancreatic cancer"},
+                        {"referred for image guided radiation therapy (IGRT)"}
+                    ]
+                },
+                {
+                    "$or": [
+                        {"white race"},
+                        {"asian race"}
+                    ]
+                }
+            ]
+        },
+        {
+            "$not": {
+                "$or": [
+                    {"less than 18 years old"},
+                    {"Unable to consent"},
+                    {"has Known coagulopathy/thrombocytopenia"},
+                    {
+                        "$and":[
+                            {"is on antiplatelet/anticoagulant medication"},
+                            {"cannot get off antiplatelet/anticoagulant medication 5-7 days prior to procedure"}
+                        ]
+                    },
+                    {"has gold allergy"},
+                    {"has current infection"},
+                    {"has EUS evidence of vessel interfering with path of fiducial marker"},
+                    {"is pregnant"}
+                ]
+            }
+        }
+    ]
 }""")
+booleanPrompt = BackgroundPrompt(systemMessage=textToBoolSystemMessage,
+                                 examples=[textToBoolExample])
 
 boolToMQLSystemMessage = """Context:You will be given a boolean algebra representation of criteria to participate in a clinical trial. While the Boolean algebra representation uses logical operators like "$and", "$or", and "$not", which are consistent with MQL, the internal key-value pairs do not follow MQL's conventions. Your job is to ensure that both the operators and their internal content align with MQL standards.
 
@@ -117,7 +129,7 @@ Always place numbers in the value, not the property. for example:
 AVOID: "age greater than 18": true
 PREFER: "age": {"$gt": 18}
 
-Prefer numbers over descriptive words whenever possible. For example:
+Prefer numbers over descriptive words whenever possible. Child means under 18 years, Adult means between 18 and 65, Senior means over 65. For example:
 AVOID: "age" : "Adult"
 PREFER: "age": {"$gt": 18, "$lt": 65}.
 
@@ -157,27 +169,43 @@ Every MongoDB operator and condition must be surrounded by double quotes.
 All brackets (both [] and {}) must be appropriately paired and closed.
 Your response MUST adhere to JSOM and MQL formatting standards. Only output the MQL query, nothing else. NEVER break character."""
 boolToMQLExample = ("""{
-"$and":[
-{
-"$and": [
-{"black or white race"},
-{"non-Hispanic ethnicity"},
-{"age 19-65 years"},
-{"able to travel to the UAB Bionutrition Unit daily to retrieve meals"}
-]
-},
-{
-"$not": {
-"$or": [
-{"has gastrointestinal (GI) conditions"},
-{"has used antibiotics or probiotics in the previous 90 days"},
-{"is a smoker/tobacco user"},
-{"has heavy alcohol consumption"},
-{"has major medical conditions"}
-]
-}
-}
-]
+    "$and":[
+        {
+            "$and": [
+                {
+                    "$and": [
+                        {"pathologically confirmed pancreatic cancer"},
+                        {"referred for image guided radiation therapy (IGRT)"}
+                    ]
+                },
+                {
+                    "$or": [
+                        {"white race"},
+                        {"asian race"}
+                    ]
+                }
+            ]
+        },
+        {
+            "$not": {
+                "$or": [
+                    {"less than 18 years old"},
+                    {"Unable to consent"},
+                    {"has Known coagulopathy/thrombocytopenia"},
+                    {
+                        "$and":[
+                            {"is on antiplatelet/anticoagulant medication"},
+                            {"cannot get off antiplatelet/anticoagulant medication 5-7 days prior to procedure"}
+                        ]
+                    },
+                    {"has gold allergy"},
+                    {"has current infection"},
+                    {"has EUS evidence of vessel interfering with path of fiducial marker"},
+                    {"is pregnant"}
+                ]
+            }
+        }
+    ]
 }""", """{
 "and": [
 {
@@ -210,6 +238,8 @@ boolToMQLExample = ("""{
 ]
 }
 """)
+MQLPrompt = BackgroundPrompt(systemMessage=boolToMQLSystemMessage,
+                             examples=[boolToMQLExample])
 
 fixJSONSystemMessage = """Context:
 You will be provided with a MongoDB query written in Mongo DB Query Language (MQL), which is structured in JSON format. Your role is to validate the format and ensure it adheres strictly to the JSON formatting rules.
@@ -251,12 +281,7 @@ Review the provided MQL in JSON format. If it adheres to the JSON format without
 Input:
 """
 
-booleanPrompt = BackgroundPrompt(system_message=textToBoolSystemMessage,
-                                 examples=[textToBoolExample])
 
-MQLPrompt = BackgroundPrompt(system_message=boolToMQLSystemMessage,
-                             examples=[boolToMQLExample])
-
-fixJSONPrompt = BackgroundPrompt(system_message=fixJSONSystemMessage)
+fixJSONPrompt = BackgroundPrompt(systemMessage=fixJSONSystemMessage)
 
 # textHomogenizerTemplate = """Your role is to homogenize text. You will have a text and a list. your job is to modify the text to use the same modal expressions and terms as the list. You will replace words in the text with with their corresponding modal expressions and  terms in the list IF THEY HAVE THE SAME MEANING AND IT WON'T CHANGE THE MEANING OF THE TEXT. Do not change a word if it will change the meaning of the text. You will return the modified text. You will not change the text in any other way other than replacing modal expressions and terms with their corresponding pairs from the list. You will ONLY replace modal expressions and terms in the text and add Any important modal expressions and terms that were not altered to the list. DO NOT include any numbers in the list. The items in the list will be seperated via commas. Never return the list as "N/A", instead make the list based on the text. In either case, You will return two things: the modified text, and the updated list of words/phrases"""

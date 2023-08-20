@@ -1,43 +1,93 @@
+from typing import Optional, Any
+from dotenv import load_dotenv, find_dotenv
 import os
 import openai
 import json
+
+from sqlalchemy import null
 from prompts import booleanPrompt, MQLPrompt, fixJSONPrompt, BackgroundPrompt
 from termcolor import colored
 
 # from dotenv import load_dotenv, find_dotenv
 # load_dotenv(find_dotenv())
 
-GPTmodel = "gpt-3.5-turbo-16k"
+GPTmodel = "gpt-3.5-turbo"
 
-
+load_dotenv(find_dotenv())
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
-def AskAI(prompt: BackgroundPrompt, text: str, model: str = GPTmodel, temperature: float = 0, verbose: bool = True) -> str:
-    allMessages = prompt.messages
-    allMessages.append(text)
-    response = openai.ChatCompletion.create(
-        model=model, messages=allMessages, temperature=temperature, verbose=verbose)
+def AskAI(text: str, prompt: Optional[BackgroundPrompt] = None, model: str = GPTmodel, temperature: float = 0, maxAttempts: int = 3, verbose: bool = True) -> Optional[str]:
+    print("ASKING AI")
+    if prompt is not None:
+        allMessages = prompt.messages
+        allMessages.append(formatTextAsMessage(text, role="user"))
+    else:
+        allMessages = [formatTextAsMessage(text, role="user")]
 
-    return response.choices[0]["message"]["content"]
+    i = 0
+    response = None
+    for i in range(3):
+        try:
+            response = openai.ChatCompletion.create(  # ignore
+                model=model, messages=allMessages, temperature=temperature)  # ignore
+            break
+        except Exception as e:
+            print(f"Attempt {i+1} was a failer\n Error: {e}. Retrying...")
+            continue
+
+    if i == maxAttempts-1:
+        print(f"Failed to get response from AI after {maxAttempts} attempts.")
+        return None
+
+    assert response
+    if verbose:
+        allMessages.append(formatTextAsMessage(
+            extractResponse(response=response), role="assistant"))
+        pretty_print_conversation(messages=allMessages)
+
+    return extractResponse(response)
 
 
-def ConvertTextToBool(text: str, model: str = GPTmodel, temperature: float = 0, verbose: bool = True) -> str:
+def extractResponse(response) -> str:
+    return response["choices"][0]["message"]["content"]
+
+
+def formatTextAsMessage(text: str, role: str = "user", name: Optional[str] = None) -> "dict[str,str]":
+    message = {
+        "role": role,
+        "content": text
+    }
+    if name:
+        message["name"] = name
+    return message
+
+
+def ConvertTextToBool(text: str, model: str = GPTmodel, temperature: float = 0, verbose: bool = True) -> Optional[str]:
+    print("converting text to bool")
     return AskAI(prompt=booleanPrompt, text=text, model=model, temperature=temperature, verbose=verbose)
 
 
-def ConvertBoolToMQL(text: str, model: str = GPTmodel, temperature: float = 0, verbose: bool = True) -> str:
+def ConvertBoolToMQL(text: str, model: str = GPTmodel, temperature: float = 0, verbose: bool = True) -> Optional[str]:
+    print("converting bool to MQL")
     return AskAI(prompt=MQLPrompt, text=text, model=model, temperature=temperature, verbose=verbose)
 
 
-def TranslateTextToMQL(TextEligibility, jsonTries: int = 3):
-    listFormat = ConvertTextToBool(TextEligibility)
-    MQL = ConvertBoolToMQL(listFormat)
-    ProperMQL = fixJSON(MQL, jsonTries)
+def TranslateTextToMQL(TextEligibility: str, jsonTries: int = 3) -> Any | None:
+    listFormat: str | None = ConvertTextToBool(TextEligibility)
+    if listFormat is None:
+        print("Could not convert to list")
+        return None
+    MQL: str | None = ConvertBoolToMQL(listFormat)
+    if MQL is None:
+        print("Could not convert to MQL")
+        return None
+    ProperMQL: Any | None = fixJSON(MQL, jsonTries)
     return ProperMQL
 
 
-def fixJSON(text, tries: int = 3, maxTemperature: float = 1):
+def fixJSON(text: str, tries: int = 3, maxTemperature: float = 1) -> Any | None:
+    print("fixing json")
     jsonText = text
     jsonAttempt = None
 
@@ -49,9 +99,14 @@ def fixJSON(text, tries: int = 3, maxTemperature: float = 1):
         print("Your json is not valid, attempting to fix it.")
 
     for i in range(tries):
-        temperature = i*(maxTemperature/(tries-1))
+        temperature: float = i*(maxTemperature/(tries-1))
+        assert jsonText
         jsonText = AskAI(prompt=fixJSONPrompt, text=jsonText,
                          temperature=temperature)
+        if jsonText is None:
+            print(
+                f"\n\n\nAttempt {i+1} at a temperature of {temperature} Failed to  correct json. \n\n Attempt resulted in OpenAi failing\n\n\n\n\n")
+            continue
         try:
             jsonAttempt = json.loads(jsonText)
             print(
@@ -65,8 +120,9 @@ def fixJSON(text, tries: int = 3, maxTemperature: float = 1):
     return None
 
 
-def pretty_print_conversation(messages):
-    role_to_color = {
+def pretty_print_conversation(messages: "list[dict[str, str]]"):
+    print("printing conversation\n\n")
+    role_to_color: dict[str, str] = {
         "system": "red",
         "user": "green",
         "assistant": "blue",
@@ -91,12 +147,24 @@ def pretty_print_conversation(messages):
                 f"function ({message['name']}): {message['content']}\n", role_to_color[message["role"]]))
 
 
+# print("getting response")
+# response = AskAI(text="hello")
+# print(response)
+TranslateTextToMQL("""eligibilityCriteria": "Inclusion Criteria:\n\n* Understand and voluntarily sign an informed consent document prior to conducting any study related assessments or procedures.\n* Histologically proven invasive adenocarcinoma of breast.\n* Must have marker clip indicating location of target tumor in breast.\n* Unifocal tumor less than or equal to 2 cm based on contrast-enhanced prone-breast MRI.\n* Must be clinically and radiographically node negative (N0) to participate on this protocol. Clinically suspicious regional nodes by imaging or physical exam require biopsy evaluation to exclude disease involvement.\n* Appropriate candidate for breast-conserving surgery based on multi-disciplinary assessment.\n* Females age ≥ 50 years.\n* Able to tolerate prone body positioning during radiation therapy.\n* No prior ipsilateral-breast or thoracic radiotherapy.\n* As defined on MRI, target lesion must be at least 10 mm distance from skin (defined as volume encompassing first 3 mm from breast surface).\n* Must be estrogen receptor (ER) positive.\n* Must be negative for Her-2 amplification. (Either 1+ on semi-quantitative evaluation of immunostain or negative by fluorescent in-situ hybridization).\n* No implanted hardware or other material that would prohibit appropriate treatment planning or treatment delivery in the investigator's opinion.\n* No history of an invasive malignancy (other than this breast cancer, or non-metastatic basal or squamous skin cancers) in the last 5 years.\n* Must not have received nor be planned for neoadjuvant chemotherapy prior to SABR or surgery.\n* ECOG performance status less than 2.\n* Females of childbearing potential must have a negative urine pregnancy test prior to simulation and within seven days of SABR start.\n\nExclusion Criteria:\n\n* Have invasive lobular carcinoma.\n* Have a Tumor \\> 2 cm as measured on prone contrast-enhanced breast MRI.\n* Have presence of histologically proven lymph node disease.\n* Are not a candidate for breast conserving surgery.\n* Have had prior ipsilateral-breast or thoracic radiotherapy.\n* History of scleroderma or lupus erythematosus with either cutaneous manifestation or requiring active treatment.\n* An MRI defined target tumor that is within 10 mm of skin (defined as volume encompassing first 3 mm from skin surface).\n* Have amplification of Her-2 (Either 3+ by semi-quantitative immunostain or positive by Fluorescent in-situ hybridization (FISH)).\n* Have implanted hardware or other material that would prohibit appropriate treatment planning or treatment delivery in the investigator's opinion.\n* History of an invasive malignancy (other than this breast cancer, or non-metastatic basal or squamous skin cancers) in the last 5 years.\n* Have received or plan to receive neoadjuvant chemotherapy either before radiotherapy or before surgery.\n* A known carrier of BRCA1 or BRCA2 gene mutation.\n* Pregnant or unwilling to undergo pregnancy screening.",
+#     "healthyVolunteers": false,
+#     "sex": "FEMALE",
+#     "minimumAge": "50 Years",
+#     "stdAges": [
+#       "ADULT",
+#       "OLDER_ADULT"
+#     ]""")
+
 # def GetDescription(level: str, clinicalTrial: str) -> str:
 #     descriptionTemplate = "You will be given a json containing information about a clinical trial. you will provide a one paragraph summary that a {level} can understand. Do not change any of the facts, you must not alter any of the meanings. the clinical trial json is as follows: {clinicalTrial}"
 #     descriptionPrompt = PromptTemplate.from_template(descriptionTemplate)
 #     descriptionChain = LLMChain(llm=llm, prompt=descriptionPrompt)
 
-    # return descriptionChain.run(level, clinicalTrial)
+# return descriptionChain.run(level, clinicalTrial)
 
 
 # # possible problem is merging something like standard ages [adult] and minimum age : 18. this is different data types for the value. can attack with another llm call but wait to see if have any other ideas
