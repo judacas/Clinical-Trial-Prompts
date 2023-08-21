@@ -1,5 +1,6 @@
 import operator
 import os
+from typing import Any
 import AI
 
 import requests
@@ -36,7 +37,6 @@ class Database:
         except KeyError:
             print("eligibilityModule not found in document")
             return None
-        print(criteriaText)
 
         # add functionality to include the rest of the things in eligibility module later
         criteriaMQL = AI.TranslateTextToMQL(str(criteriaText))
@@ -61,61 +61,7 @@ class Database:
         update = {"$rename": {oldPropertyName: newPropertyName}}
         self.collection.update_many(query, update)
 
-    def removeVariations(self, doc, allProperties: dict) -> dict:
-        docProperties = countPropertiesInDoc(doc)
-
-        if len(allProperties) == 0:
-            return docProperties
-
-        print("allProperty keys is: ", ",".join(allProperties.keys()))
-        print("docProperty keys is: ", ",".join(docProperties.keys()))
-
-        toMerge = AI.MergeVariations(",".join(allProperties.keys()), ",".join(docProperties.keys()))[
-            "text"].strip()
-
-        print("toMerge is: ", toMerge)
-
-        rows = toMerge.split("\n")
-        data = [row.strip().split("|") for row in rows]
-        # data = [[item.strip("'") for item in row] for row in data]
-        print("After split up it is: ", data)
-
-        if toMerge.lower() == "nothing to merge":
-            print("Nothing to merge")
-            return allProperties
-
-        for row in data:
-            if len(row) != 3:
-                print(
-                    "somehow there is not 3 columns per row go fix your ai call: ", row)
-                break
-            for property in row:
-                if property.lower() == "nothing to merge":
-                    print(
-                        "somehow it printed nothing to merge as an option inside of a list go fix your ai call: ", row)
-                    break
-            else:
-                try:
-                    allProperties[row[2]] = allProperties.pop(row[0])
-                except KeyError:
-                    print("\nAll properties does not have the property: ",
-                          row[0], "\n\n")
-                try:
-                    docProperties[row[2]] = docProperties.pop(row[1])
-                except KeyError:
-                    print("\nDoc properties does not have the property: ",
-                          row[1], "\n\n")
-
-                if row[0] != row[2]:
-                    self.updateDocumentsWithOldPropertyName(row[0], row[2])
-                if row[1] != row[2]:
-                    self.updateDocumentsWithOldPropertyName(row[1], row[2])
-
-        allProperties = add_dictionaries(docProperties, allProperties)
-
-        return allProperties
-
-    def translateAllTrialsToMQL(self):
+    def translateAllTrialsToMQL(self) -> None:
         self.collection = self.database[self.MQL_collection_name]
 
         alltrials = self.database[self.JSON_collection_name].find(projection={
@@ -123,18 +69,20 @@ class Database:
         allProperties = {}
         for trial in alltrials:
             currentTrial = self.translateOneTrialToMQL(trial)
-            if currentTrial is not None:
-                self.collection.insert_one(currentTrial)
-                # allProperties = self.removeVariations(
-                #     currentTrial, allProperties)
-                print("\n\n\nAll properties now is ", dict(sorted(allProperties.items(),
-                                                                  key=operator.itemgetter(1))), "\n\n\n")
+            if currentTrial is None:
+                print("Failed to translate trial to MQL")
+                continue
+            self.collection.insert_one(currentTrial)
 
-        # self.database[self.PropertyCount_collection_name].insert_one(
-        #     allProperties)
-
-        # mqldocuments = map(self.translateOneTrialToMQL, alltrials)
-        # Can maybe in theory make this work in parallel but then that doesn't allow me to merge as I go
+        try:
+            allProperties: dict[str, int] = self.count_properties()
+            print("\n\n\nAll properties now is ", dict(sorted(allProperties.items(),
+                                                              key=operator.itemgetter(1))), "\n\n\n")
+            self.database[self.PropertyCount_collection_name].insert_one(
+                allProperties)
+        except:
+            print("Your code still sucks for counting properties")
+            return
 
     def connectToMongoDB(self):
         self.client = pymongo.MongoClient(self.client_uri)
@@ -214,8 +162,8 @@ class Database:
         self.collection_name = new_collection_name
         self.collection = self.database[self.collection_name]
 
-    def count_properties(self):
-        property_counts = {}
+    def count_properties(self) -> dict[str, int]:
+        property_counts: dict[str, int] = {}
 
         # Get all MQL documents from the database
         mql_documents = self.database[self.MQL_collection_name].find()
@@ -224,34 +172,36 @@ class Database:
         for mql_document in mql_documents:
             # Recursively iterate through the document and count the occurrences of each property
             property_counts = add_dictionaries(
-                property_counts, countPropertiesInDoc(mql_document))
+                countPropertiesInDoc(mql_document), property_counts,)
 
         return property_counts
 
+# right now this does not double count properties that show up twice in an or statement.
 
-def countPropertiesInDoc(document):
-    property_counts = {}
-    for property_name, value in document.items():
-        # If the property is not already in the dictionary, add it with a count of 1
-        if property_name not in property_counts:
-            property_counts[property_name.lower()] = 1
-        # If the property is already in the dictionary, increment its count by 1
-        else:
-            property_counts[property_name.lower()] += 1
-        # If the value is a dictionary, recursively count its properties
-        # Print the type of the value
-        # print(f"{property_name} is {type(value)}")
-        if isinstance(value, list):
-            for item in value:
-                property_counts = add_dictionaries(
-                    property_counts, countPropertiesInDoc(item))
 
-    unImportantProperties = ["_id", "nctid",
-                             "title", "$and", "$or", "$not"]
-    for property in unImportantProperties:
-        if property in property_counts:
-            property_counts.pop(property)
-    return property_counts
+def countPropertiesInDoc(document: dict[str, Any]) -> dict[str, int]:
+    property_counts: dict[str, int] = {}
+
+    def recurse(current):
+        if isinstance(current, dict):
+            for key, value in current.items():
+                property_counts[key] = 1
+                recurse(value)
+
+        elif isinstance(current, list):
+            for item in current:
+                recurse(item)
+
+    recurse(document)
+
+    unImportantProperties: list[str] = ["_id", "nctid",
+                                        "title"]
+    importantPropertyCounts = {}
+    for property_name, count in property_counts.items():
+        if property_name not in unImportantProperties and not (isinstance(property_name, str) and property_name.startswith("$")):
+            importantPropertyCounts[property_name] = count
+
+    return importantPropertyCounts
 
 
 # if you want to make this efficient then d1 should be the smaller one and d2 should be the larger more encompassing one

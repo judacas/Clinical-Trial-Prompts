@@ -7,8 +7,8 @@ import Database as db
 def main():
 
     # Connect to the database
-    myDB = db.Database("mongodb://localhost:27017/",
-                       "ClinicalTrialsDB", "ClinicalTrialsJSON")
+    myDB = db.Database(client_uri="mongodb://localhost:27017/", database_name="ClinicalTrialsDB",
+                       JSON_collection_name="ClinicalTrialsJSON", MQL_collection_name="CTMQL8.20.23")
 
     properties = myDB.count_properties()
 
