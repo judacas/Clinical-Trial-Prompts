@@ -1,0 +1,677 @@
+{
+	"_id": {
+		"$oid": "64e29ca171a8c404a9d437b5"
+	},
+	"nctid": "NCT02862275",
+	"title": "A Pilot Study of Atezolizumab (MPDL3280A) Following Adoptive Cell Transfer in Active Hematologic or Solid Tumor Malignancies",
+	"eligibilityCriteria": {
+		"$and": [
+			{
+				"$and": [
+					{
+						"$or": [
+							{
+								"histologically confirmed malignancy (hematologic or solid tumor) that is metastatic or unresectable and for which standard of care therapy does not exist or is no longer effective": true
+							},
+							{
+								"$and": [
+									{
+										"ACT infusion prior to study enrollment": true
+									},
+									{
+										"$or": [
+											{
+												"ACT with tumor infiltrating lymphocytes (TIL)": true
+											},
+											{
+												"human leukocyte antigen (HLA)-class I T cell receptor (TCR)-engineered lymphocytes": true
+											},
+											{
+												"HLA-class II TCR-engineered lymphocytes": true
+											},
+											{
+												"chimeric antigen receptor (CAR)-engineered T cells": true
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"$or": [
+							{
+								"prior ACT therapy completed and residual disease documented by either radiographic progression or active disease observed on biopsy": true
+							},
+							{
+								"$and": [
+									{
+										"hematologic or solid tumor malignancy deemed active by the treating investigator": true
+									},
+									{
+										"$or": [
+											{
+												"pre-treatment biopsy demonstrating viable tumor cells": true
+											},
+											{
+												"clinical progression of disease": true
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"$or": [
+							{
+								"solid tumor patients with measurable disease": {
+									"$and": [
+										{
+											"at least one lesion that can be accurately measured in at least one dimension": true
+										},
+										{
+											"$or": [
+												{
+													"longest diameter to be recorded for non-nodal lesions and short axis for nodal lesions greater than or equal to 20 mm (2 cm) with conventional techniques": true
+												},
+												{
+													"longest diameter to be recorded for non-nodal lesions and short axis for nodal lesions greater than or equal to 15 mm (1.5 cm) with spiral computed tomography (CT) scan, magnetic resonance imaging (MRI), or calipers by clinical exam": true
+												}
+											]
+										}
+									]
+								}
+							},
+							{
+								"leukemia and non-Hodgkin's lymphoma patients with measurable disease according to the revised response criteria for malignant lymphoma": true
+							}
+						]
+					},
+					{
+						"disease suitable for assessment by pre- and post-biopsies": true
+					},
+					{
+						"no limit to the number of lines of prior therapy": true
+					},
+					{
+						"$not": {
+							"prior anti-programmed cell death (PD)-1 or anti-PD-ligand (L)1 therapy and other immunotherapies": true
+						}
+					},
+					{
+						"$not": {
+							"prior anti-PD-1 or anti-PD-L1 therapy administered after ACT and before study atezolizumab (MPDL3280A) administration": true
+						}
+					},
+					{
+						"$not": {
+							"ACT related toxicities resolved to grade 1 with the exception of alopecia, vitiligo and endocrine abnormalities requiring replacement therapy which may be grade 2": true
+						}
+					},
+					{
+						"$not": {
+							"prior other anti-cancer therapy, including ACT, for 28 days prior to study administration of atezolizumab": true
+						}
+					},
+					{
+						"age": {
+							"$gte": 18
+						}
+					},
+					{
+						"ECOG performance status": {
+							"$lt": 2
+						}
+					},
+					{
+						"life expectancy": {
+							"$gt": 3
+						}
+					},
+					{
+						"absolute neutrophil count": {
+							"$gte": 1000
+						}
+					},
+					{
+						"platelets": {
+							"$gte": 75000
+						}
+					},
+					{
+						"hemoglobin": {
+							"$gte": 8
+						}
+					},
+					{
+						"total bilirubin": {
+							"$lte": 1.5
+						}
+					},
+					{
+						"$or": [
+							{
+								"$and": [
+									{
+										"known Gilbert disease": true
+									},
+									{
+										"serum bilirubin level": {
+											"$lte": 3
+										}
+									}
+								]
+							},
+							{
+								"$not": {
+									"known Gilbert disease": true
+								}
+							}
+						]
+					},
+					{
+						"$and": [
+							{
+								"aspartate aminotransferase (AST) (serum glutamic-oxaloacetic transaminase [SGOT])/ alanine aminotransferase (ALT) (serum glutamate pyruvate transaminase [SGPT])": {
+									"$lte": 3
+								}
+							},
+							{
+								"$or": [
+									{
+										"$and": [
+											{
+												"liver involvement": true
+											},
+											{
+												"AST and/or ALT": {
+													"$lte": 5
+												}
+											}
+										]
+									},
+									{
+										"$not": {
+											"liver involvement": true
+										}
+									}
+								]
+							}
+						]
+					},
+					{
+						"creatinine clearance": {
+							"$gte": 30
+						}
+					},
+					{
+						"international normalized ratio (INR) and activated partial thromboplastin time (aPTT)": {
+							"$lte": 1.5
+						}
+					},
+					{
+						"$or": [
+							{
+								"$not": {
+									"therapeutic anticoagulation": true
+								}
+							},
+							{
+								"$and": [
+									{
+										"therapeutic anticoagulation": true
+									},
+									{
+										"$not": {
+											"INR and aPTT": {
+												"$gt": 1.5
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					{
+						"administration of atezolizumab may have an adverse effect on pregnancy and poses a risk to the human fetus": true
+					},
+					{
+						"$or": [
+							{
+								"$and": [
+									{
+										"women of child-bearing potential": true
+									},
+									{
+										"agree to use adequate contraception prior to study entry, for the duration of study participation, and for 5 months (150 days) after the last dose of study agent": true
+									}
+								]
+							},
+							{
+								"$not": {
+									"women of child-bearing potential": true
+								}
+							}
+						]
+					},
+					{
+						"ability to understand and the willingness to sign a written informed consent document": true
+					}
+				]
+			},
+			{
+				"$not": {
+					"$or": [
+						{
+							"$and": [
+								{
+									"chemotherapy or radiotherapy within 4 weeks (6 weeks for nitrosoureas or mitomycin C) prior to entering the study": true
+								},
+								{
+									"$not": {
+										"recovered from adverse events (other than alopecia) due to agents administered more than 4 weeks earlier": true
+									}
+								},
+								{
+									"$or": [
+										{
+											"$and": [
+												{
+													"hormone-replacement therapy or oral contraceptives": true
+												},
+												{
+													"$not": {
+														"herbal therapy greater than 1 week prior to cycle 1, day 1": true
+													}
+												}
+											]
+										},
+										{
+											"palliative radiotherapy for bone metastases greater than 2 weeks prior to cycle 1, day 1": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"$and": [
+								{
+									"prior treatment with anti-CTLA-4 antibody": true
+								},
+								{
+									"$and": [
+										{
+											"greater than 6 weeks from the last dose": true
+										},
+										{
+											"$not": {
+												"history of severe immune-related adverse effects from anti-CTLA-4 antibody (NCI CTCAE grade 3 and 4)": true
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"treatment with any other investigational agent within 4 weeks prior to cycle 1, day 1": true
+						},
+						{
+							"treatment with systemic immunostimulatory agents within 6 weeks prior to cycle 1, day 1": true
+						},
+						{
+							"treatment with systemic immunosuppressive medications within 2 weeks prior to cycle 1, day 1": true
+						},
+						{
+							"$and": [
+								{
+									"$not": {
+										"acute, low dose, systemic immunosuppressant medications": true
+									}
+								},
+								{
+									"$or": [
+										{
+											"$not": {
+												"inhaled corticosteroids and mineralocorticoids": true
+											}
+										},
+										{
+											"$not": {
+												"low-dose supplemental corticosteroids for adrenocortical insufficiency": true
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"bisphosphonate therapy for symptomatic hypercalcemia": true
+						},
+						{
+							"$and": [
+								{
+									"known primary central nervous system (CNS) malignancy or symptomatic CNS metastases": true
+								},
+								{
+									"$or": [
+										{
+											"$and": [
+												{
+													"asymptomatic untreated CNS disease": true
+												},
+												{
+													"$and": [
+														{
+															"no more than 3 lesions": true
+														},
+														{
+															"less than 1 cm in size each": true
+														},
+														{
+															"evaluable or measurable disease outside the CNS": true
+														},
+														{
+															"$not": {
+																"metastases to brain stem, midbrain, pons, medulla, cerebellum, or within 10 mm of the optic apparatus (optic nerves and chiasm)": true
+															}
+														},
+														{
+															"$not": {
+																"history of intracranial hemorrhage or spinal cord hemorrhage": true
+															}
+														},
+														{
+															"$not": {
+																"ongoing requirement for dexamethasone for CNS disease": true
+															}
+														},
+														{
+															"$not": {
+																"neurosurgical resection or brain biopsy within 28 days prior to cycle 1, day 1": true
+															}
+														}
+													]
+												}
+											]
+										},
+										{
+											"$and": [
+												{
+													"asymptomatic treated CNS metastases": true
+												},
+												{
+													"$and": [
+														{
+															"radiographic demonstration of improvement upon the completion of CNS directed therapy": true
+														},
+														{
+															"$not": {
+																"interim progression between the completion of CNS-directed therapy and the screening radiographic study": true
+															}
+														},
+														{
+															"$not": {
+																"stereotactic radiation or whole-brain radiation within 28 days prior to cycle 1, day 1": true
+															}
+														},
+														{
+															"$and": [
+																{
+																	"screening CNS radiographic study": {
+																		"$gte": 4
+																	}
+																},
+																{
+																	"$and": [
+																		{
+																			"greater than or equal to 2 weeks from discontinuation of corticosteroids": true
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"known hypersensitivity to Chinese hamster ovary cell products or other recombinant human antibodies": true
+						},
+						{
+							"history of severe allergic, anaphylactic, or other hypersensitivity reactions to chimeric or humanized antibodies or fusion proteins": true
+						},
+						{
+							"known clinically significant liver disease": true
+						},
+						{
+							"$or": [
+								{
+									"$and": [
+										{
+											"known past or resolved hepatitis B infection": true
+										},
+										{
+											"$not": {
+												"negative hepatitis B surface antigen (HBsAg) test": true
+											}
+										},
+										{
+											"$not": {
+												"positive anti-HBc (antibody to hepatitis B core antigen) antibody test": true
+											}
+										}
+									]
+								},
+								{
+									"$and": [
+										{
+											"positive for hepatitis C virus (HCV) antibody": true
+										},
+										{
+											"$not": {
+												"negative for HCV ribonucleic acid (RNA) by polymerase chain reaction (PCR)": true
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"history or risk of autoimmune disease that threatens vital organ function": true
+						},
+						{
+							"$and": [
+								{
+									"$not": {
+										"history of immune related events to anti-CTLA-4": true
+									}
+								},
+								{
+									"$or": [
+										{
+											"$not": {
+												"history of grade 3 and 4 pulmonary, CNS and renal events attributed to anti-CTLA-4 agents": true
+											}
+										},
+										{
+											"$not": {
+												"history of autoimmune hypothyroidism on a stable dose of thyroid replacement hormone": true
+											}
+										},
+										{
+											"$not": {
+												"controlled type 1 diabetes mellitus on a stable insulin regimen": true
+											}
+										},
+										{
+											"$and": [
+												{
+													"eczema, psoriasis, lichen simplex chronicus, or vitiligo with dermatologic manifestations only": true
+												},
+												{
+													"$and": [
+														{
+															"baseline ophthalmologic exam to rule out ocular manifestations for psoriasis": true
+														},
+														{
+															"$and": [
+																{
+																	"rash covers less than 10% of body surface area (BSA)": true
+																},
+																{
+																	"$and": [
+																		{
+																			"disease well controlled at baseline": true
+																		},
+																		{
+																			"$or": [
+																				{
+																					"no acute exacerbations of underlying condition within the last 12 months": true
+																				},
+																				{
+																					"$and": [
+																						{
+																							"not requiring psoralen plus ultraviolet A radiation (PUVA), methotrexate, retinoids, biologic agents, oral calcineurin inhibitors, or high potency or oral steroids": true
+																						}
+																					]
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"$or": [
+								{
+									"$and": [
+										{
+											"known idiopathic pulmonary fibrosis, pneumonitis, or organizing pneumonia": true
+										},
+										{
+											"$not": {
+												"active tuberculosis (TB)": true
+											}
+										}
+									]
+								},
+								{
+									"$not": {
+										"requirement for RANKL inhibitor (e.g. denosumab)": true
+									}
+								},
+								{
+									"$not": {
+										"severe infections within 4 weeks prior to cycle 1, day 1": true
+									}
+								},
+								{
+									"$not": {
+										"signs or symptoms of infection within 2 weeks prior to cycle 1, day 1": true
+									}
+								},
+								{
+									"$not": {
+										"major surgical procedure within 28 days prior to cycle 1, day 1": true
+									}
+								},
+								{
+									"$not": {
+										"administration of a live, attenuated vaccine within 4 weeks before cycle 1, day 1": true
+									}
+								},
+								{
+									"$and": [
+										{
+											"influenza vaccination during influenza season only": true
+										},
+										{
+											"$not": {
+												"live, attenuated influenza vaccine within 4 weeks prior to cycle 1, day 1": true
+											}
+										}
+									]
+								},
+								{
+									"$not": {
+										"uncontrolled intercurrent illness": true
+									}
+								},
+								{
+									"$and": [
+										{
+											"$not": {
+												"human immunodeficiency virus (HIV) positive": true
+											}
+										},
+										{
+											"$or": [
+												{
+													"$and": [
+														{
+															"stable regimen of highly active anti-retroviral therapy (HAART)": true
+														},
+														{
+															"$not": {
+																"requirement for concurrent antibiotics or antifungal agents for the prevention of opportunistic infections": true
+															}
+														},
+														{
+															"$and": [
+																{
+																	"CD4 count above 250 cells/mcL": true
+																},
+																{
+																	"undetectable HIV viral load on standard PCR-based tests": true
+																}
+															]
+														}
+													]
+												},
+												{
+													"$not": {
+														"HIV-positive patients": true
+													}
+												}
+											]
+										}
+									]
+								},
+								{
+									"$not": {
+										"pregnant women": true
+									}
+								}
+							]
+						},
+						{
+							"ability to understand and the willingness to sign a written informed consent document": true
+						}
+					]
+				}
+			}
+		]
+	},
+	"healthyVolunteers": false,
+	"sex": "ALL",
+	"minimumAge": {
+		"$gte": 18
+	},
+	"stdAges": [
+		"ADULT",
+		"OLDER_ADULT"
+	]
+}

@@ -27,13 +27,14 @@ textToBoolSystemMessage = """Context:
 You will be provided text detailing eligibility criteria for a cancer research clinical trial. The text will typically consist of sections named "Inclusion Criteria" and "Exclusion Criteria". If a section's name isn't specified, treat it as "Inclusion Criteria" by default.
 
 Task:
+you will be converting plain text into a boolean algebra representation. this plain text may have ands, ors, buts, and other modifiers. Words like ineligible indicate that it should be in the exclusion criteria. This means that there are multiple conditions in one sentence. seperate them out and use operators. there should only be one condition per pair of {} brackets. input sentences may not have any operator between individual criteria, if that is the case you are to infer based on the following rules:
 
 Inclusion Criteria: Combine all criteria using the "$and" operator.
-Example: If criteria are (A,B,C), format them as:
+Example: If criteria are A.B.C format them as:
 "$and" : [{A},{B},{C}]
 
 Exclusion Criteria: Use the "$or" operator between criteria and encompass the entire set with the "$not" operator.
-Example: If the criteria are (A,B,C), format them as:
+Example: If the criteria are A.B.C format them as:
 "$not":{"$or":[{A}{B}{C}]}
 
 After formatting both sets, combine them with the "$and" operator.
@@ -45,10 +46,16 @@ PREFER:"$or"[
 {"Lung Cancer"}
 ]
 
-Ensure all opened brackets, whether square [] or curly {}, are properly closed. Nested conditions might be present; handle them recursively following the same rules.
+Some text may say canot participate if they have condition A, unless/until they have condition B. In this case it is part of the exclusion criteria, you will format it inside the exclusion not section as:
+"$and" : [
+{"A"},
+{"$not":{"B"}}
+]
+
+Ensure all opened brackets, whether square [] or curly {}, are properly closed. Nested conditions might be present, you may nest as far as needed; 
 
 Output:
-Your output should strictly adhere to the provided format. Represent ANDs and ORs with [], while NOTs use {}. The goal is to output this structured Boolean algebra representation. Do not output anything else besides the boolean algebra representation. NEVER break character.
+Your output should strictly adhere to the provided format. Represent ANDs and ORs with [], while NOTs use {}. The goal is to output this structured Boolean algebra representation. Do not output anything else besides the boolean algebra representation. The following is an example input and what a valid output would look like:\n
 """
 textToBoolExample = ("""Inclusion Criteria:\n\n• Patients with pathologically confirmed pancreatic cancer referred for image guided radiation therapy (IGRT)\n*White or Asian\n\nExclusion Criteria:\n\n* Age \\<18\n* Inability to consent\n* Known coagulopathy/thrombocytopenia (INR \\>1.5, platelets \\<75)\n* Patients on antiplatelet/anticoagulant medication that cannot safely be discontinued 5-7 days prior to the procedure\n* Gold allergy\n* Current infection\n*EUS evidence of vessel interfering with path of fiducial marker\n* Pregnancy""",
                      """{

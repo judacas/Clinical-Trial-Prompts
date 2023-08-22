@@ -33,7 +33,7 @@ class Database:
 
     def translateOneTrialToMQL(self, doc):
         try:
-            criteriaText = doc["eligibilityModule"]
+            criteriaText = doc["eligibilityModule"]["eligibilityCriteria"]
         except KeyError:
             print("eligibilityModule not found in document")
             return None
