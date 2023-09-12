@@ -1,19 +1,15 @@
-import json
-import AI
 import Database as db
-# import operator
 
 
 def main():
 
-    # Connect to the database
-    myDB = db.Database(client_uri="mongodb://localhost:27017/", database_name="ClinicalTrialsDB",
-                       JSON_collection_name="ClinicalTrialsJSON", MQL_collection_name="CTMQL8.20.23")
+    myDB = db.Database(database_name="SampleTrials")
+    myDB.export_mongo_to_json()
 
-    properties = myDB.count_properties()
+    # properties = myDB.count_properties()
 
-    for key in properties:
-        print(key, properties[key])
+    # for key in properties:
+    #     print(key, properties[key])
 
     # propertyCount = myDB.count_properties()
 

@@ -1,7 +1,6 @@
 class BackgroundPrompt:
     def __init__(self, systemMessage, examples=None):
         self.systemMessage = systemMessage
-        self.examples = examples
         self.messages = [
             {
                 "role": "system",
@@ -55,7 +54,7 @@ Some text may say canot participate if they have condition A, unless/until they 
 Ensure all opened brackets, whether square [] or curly {}, are properly closed. Nested conditions might be present, you may nest as far as needed; 
 
 Output:
-Your output should strictly adhere to the provided format. Represent ANDs and ORs with [], while NOTs use {}. The goal is to output this structured Boolean algebra representation. Do not output anything else besides the boolean algebra representation. The following is an example input and what a valid output would look like:\n
+Your output should strictly adhere to the provided format. Represent ANDs and ORs with [], while NOTs use {}. The goal is to output this structured Boolean algebra representation. Do not output anything else besides the boolean algebra representation. The following is an example user and what an example assitant would output for that specific input. only use the examples for formatting and pattern recognition, do not include the specific criteria from the example in your final output \n
 """
 textToBoolExample = ("""Inclusion Criteria:\n\n• Patients with pathologically confirmed pancreatic cancer referred for image guided radiation therapy (IGRT)\n*White or Asian\n\nExclusion Criteria:\n\n* Age \\<18\n* Inability to consent\n* Known coagulopathy/thrombocytopenia (INR \\>1.5, platelets \\<75)\n* Patients on antiplatelet/anticoagulant medication that cannot safely be discontinued 5-7 days prior to the procedure\n* Gold allergy\n* Current infection\n*EUS evidence of vessel interfering with path of fiducial marker\n* Pregnancy""",
                      """{

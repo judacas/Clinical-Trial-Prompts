@@ -1,23 +1,71 @@
+"""Database.py
+
+This module provides functionality for interacting with a MongoDB database 
+to store and query clinical trial data.
+
+Classes:
+
+Database: Handles connecting to MongoDB, importing/exporting data, and 
+         translating documents between JSON and MQL formats.
+
+Functions:
+
+count_properties: Recursively counts property occurrences in a document.
+
+add_dictionaries: Merges two dictionaries by adding values for shared keys.
+
+The Database class is the primary interface for working with the database.
+Key capabilities:
+
+- Connect to a MongoDB database and access collections.
+- Import clinical trial JSON data from a file or API.
+- Translate individual docs between JSON and MQL format.
+- Translate all docs in a collection between JSON and MQL.  
+- Export docs from MongoDB back to the filesystem as JSON.
+- Get a count of all properties used across documents.
+
+The count_properties and add_dictionaries functions are helpers for 
+tallying property usage and combining results.
+
+Typical usage often involves:
+
+1. Instantiating a Database object to connect to MongoDB.
+2. Importing JSON data into the desired collection. 
+3. Translating the collection docs to MQL format.
+4. Exporting the collection back to JSON.
+
+"""
+import json
 import operator
 import os
+from datetime import datetime
 from typing import Any
-import AI
+from urllib import response
 
-import requests
+import AI
 import pymongo
-from collections import defaultdict
-import json
+import requests
+
+trialsToUse = ["03834493", "03426891", "04579380", "01810913",
+               "04511013", "04614103", "04671667", "04614103", "04092283", "02339571"]
 
 
 class Database:
+    date_suffix = datetime.now().strftime("%m.%d.%y")
 
-    def __init__(self, client_uri="mongodb://localhost:27017/", database_name="ClinicalTrialsDB", JSON_collection_name="ClinicalTrialsJSON", MQL_collection_name="ClinicalTrialsMQL", PropertyCount_collection_name="PropertyCount"):
+    def __init__(self, client_uri="mongodb://localhost:27017/",
+                 database_name="ClinicalTrialsDB",
+                 JSON_collection_name=f"CTJSON{date_suffix}",
+                 badMQL_collection_name=f"CTBadMQL{date_suffix}",
+                 MQL_collection_name=f"CTMQL{date_suffix}",
+                 boolean_collection_name=f"CTBoolean{date_suffix}", property_collection_name=f"CTTotalProperties{date_suffix}"):
         self.client_uri = client_uri
         self.database_name = database_name
-
         self.JSON_collection_name = JSON_collection_name
         self.MQL_collection_name = MQL_collection_name
-        self.PropertyCount_collection_name = PropertyCount_collection_name
+        self.boolean_collection_name = boolean_collection_name
+        self.badMQL_collection_name = badMQL_collection_name
+        self.PropertyCount_collection_name = property_collection_name
         self.collection_name = JSON_collection_name
 
         self.connectToMongoDB()
@@ -31,22 +79,65 @@ class Database:
             print("Translating all trials to MQL")
             self.translateAllTrialsToMQL()
 
+        self.export_mongo_to_json()
+
+    def change_collection(self, new_collection_name):
+        self.collection_name = new_collection_name
+        self.collection = self.database[self.collection_name]
+
     def translateOneTrialToMQL(self, doc):
         try:
-            criteriaText = doc["eligibilityModule"]["eligibilityCriteria"]
+            # print(doc)
+            criteriaText = doc["protocolSection"]["eligibilityModule"]["eligibilityCriteria"]
         except KeyError:
             print("eligibilityModule not found in document")
-            return None
+            return
+
+        try:
+            currentId = doc["protocolSection"]["identificationModule"]["nctId"]
+            currentTitle = doc["protocolSection"]["identificationModule"]["officialTitle"]
+        except KeyError:
+            print("identification information not found in document")
+            currentId = "NotValidNCTId"
+            currentTitle = "NotValidTitle"
 
         # add functionality to include the rest of the things in eligibility module later
-        criteriaMQL = AI.TranslateTextToMQL(str(criteriaText))
-        if criteriaMQL is None:
+        criteriaBool, criteriabadMQL, criteriaMQL = AI.TranslateTextToMQL(
+            str(criteriaText))
+        if criteriaBool is None:
+            print("Failed to properly translate to Boolean Algebra")
+            return
+
+        self.change_collection(self.boolean_collection_name)
+        booleanJSON = {"nctId": currentId, "title": currentTitle,
+                       "booleanRepresentation": criteriaBool}
+        self.collection.insert_one(booleanJSON)
+
+        if criteriabadMQL is None:
             print("Failed to properly translate to MQL")
-            return None
+            return
+
+        self.change_collection(self.badMQL_collection_name)
+        try:
+            badMQLJSON = json.loads(criteriabadMQL)
+            badMQLJSON["nctId"] = currentId
+            badMQLJSON["title"] = currentTitle
+            self.collection.insert_one(badMQLJSON)
+        except ValueError:
+            badMQLJSON = {"nctId": currentId, "title": currentTitle,
+                          "Not yet fixed MQL": criteriabadMQL}
+            self.collection.insert_one(badMQLJSON)
+
+        if criteriaMQL is None:
+            print("Failed to properly assert MQL adheres to JSON rules")
+            return
+
+        self.change_collection(self.MQL_collection_name)
+        self.collection.insert_one(criteriaMQL)
 
         criteriaMQL = {
-            "nctid": doc["nctId"],
-            "title": doc["officialTitle"],
+            "nctId": currentId,
+            "title": currentTitle,
             **criteriaMQL
         }
         return criteriaMQL
@@ -64,15 +155,10 @@ class Database:
     def translateAllTrialsToMQL(self) -> None:
         self.collection = self.database[self.MQL_collection_name]
 
-        alltrials = self.database[self.JSON_collection_name].find(projection={
-            "nctId": 1, "officialTitle": 1, "eligibilityModule": 1})
+        alltrials = self.database[self.JSON_collection_name].find()
         allProperties = {}
         for trial in alltrials:
-            currentTrial = self.translateOneTrialToMQL(trial)
-            if currentTrial is None:
-                print("Failed to translate trial to MQL")
-                continue
-            self.collection.insert_one(currentTrial)
+            self.translateOneTrialToMQL(trial)
 
         try:
             allProperties: dict[str, int] = self.count_properties()
@@ -95,7 +181,7 @@ class Database:
 
         # Check if the JSON file exists, otherwise fetch it from clinical trials.org
         if not os.path.exists(json_file_path):
-            Database.fetch_clinical_trials()
+            Database.fetch_clinical_trials(trials=trialsToUse)
 
         # Load the JSON data from the file
         with open(json_file_path) as f:
@@ -113,8 +199,74 @@ class Database:
         print(
             f"Imported {len(data)} documents into {self.database_name}.{self.collection_name}")
 
+    def get_official_titles(self):
+        if self.collection is None:
+            print("Collection is not set")
+            raise ValueError("Collection is not set")
+
+        cursor = self.collection.find({}, {"_id": 0, "officialTitle": 1})
+        official_titles = [doc["officialTitle"] for doc in cursor]
+
+        return official_titles
+
+    def count_properties(self) -> dict[str, int]:
+        property_counts: dict[str, int] = {}
+
+        # Get all MQL documents from the database
+        mql_documents = self.database[self.MQL_collection_name].find()
+
+        # Loop through each MQL document
+        for mql_document in mql_documents:
+            # Recursively iterate through the document and count the occurrences of each property
+            property_counts = add_dictionaries(
+                countPropertiesInDoc(mql_document), property_counts,)
+
+        return property_counts
+
+    # NOTE: this is super sloppy rn and doesn't use correct oop priniciples, only temporary solution to quickly export all the documents in the database
+
+    def export_mongo_to_json(self):
+        db = self.database
+        print(db.list_collection_names())
+        for collection_name in db.list_collection_names():
+            if collection_name == self.PropertyCount_collection_name:
+                print("Skipping PropertyCount collection")
+                continue
+            collection = db[collection_name]
+            collection_path = os.path.join(self.database_name, collection_name)
+            os.makedirs(collection_path, exist_ok=True)
+
+            for document in collection.find():
+                try:
+                    docID = str(document["protocolSection"]
+                                ["identificationModule"]["nctId"])
+                except KeyError:
+                    try:
+                        docID = str(document["nctId"])
+                    except KeyError:
+                        print("Document does not have nctID or nctid")
+                        docID = "NotValidNCTID" + str(document["_id"])
+                document_path = os.path.join(collection_path, f"{docID}.json")
+                document["_id"] = str(document["_id"])
+                with open(document_path, "w") as f:
+                    json.dump(document, f)
+
     @staticmethod
-    def fetch_clinical_trials():
+    def fetch_clinical_trials(trials=None):
+        if trials is not None:
+            totalTrials = []
+
+            # NOTE:This will change the structure ofthe jsons to a more correct nested json, it will no longer work with previous code
+            for trial in trials:
+                response = requests.get(
+                    f"""https://clinicaltrials.gov/api/v2/studies/NCT{trial}?format=json&fields=NCTId%2CEligibilityModule%2CBriefTitle%2COfficialTitle%2CBriefSummary%2CDetailedDescription""")
+                print(response)
+                totalTrials.append(response.json())
+
+            with open("clinical_trials_simplified.json", "w") as f:
+                json.dump(totalTrials, f)
+            return
+
         url = "https://clinicaltrials.gov/api/v2/studies?format=json&query.parser=simple&query.cond=Cancer&query.locn=Moffitt+Cancer+Center&query.intr=Intervention"
 
         # OLD WAY TO GET API REQUEST NOT USING REQUESTS
@@ -148,33 +300,6 @@ class Database:
         with open("clinical_trials_simplified.json", "w") as f:
             json.dump(trials, f)
 
-    def get_official_titles(self):
-        if self.collection is None:
-            print("Collection is not set")
-            raise ValueError("Collection is not set")
-
-        cursor = self.collection.find({}, {"_id": 0, "officialTitle": 1})
-        official_titles = [doc["officialTitle"] for doc in cursor]
-
-        return official_titles
-
-    def change_collection(self, new_collection_name):
-        self.collection_name = new_collection_name
-        self.collection = self.database[self.collection_name]
-
-    def count_properties(self) -> dict[str, int]:
-        property_counts: dict[str, int] = {}
-
-        # Get all MQL documents from the database
-        mql_documents = self.database[self.MQL_collection_name].find()
-
-        # Loop through each MQL document
-        for mql_document in mql_documents:
-            # Recursively iterate through the document and count the occurrences of each property
-            property_counts = add_dictionaries(
-                countPropertiesInDoc(mql_document), property_counts,)
-
-        return property_counts
 
 # right now this does not double count properties that show up twice in an or statement.
 
