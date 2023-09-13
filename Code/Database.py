@@ -39,7 +39,6 @@ import json
 import operator
 import os
 import shutil
-from calendar import c
 from datetime import datetime
 from typing import Any
 
@@ -47,6 +46,7 @@ import AI
 import pymongo
 import requests
 
+# TODO: 04614103 is written twice here make sure to fix that
 trialsToUse = ["03834493", "03426891", "04579380", "01810913",
                "04511013", "04614103", "04671667", "04614103", "04092283", "02339571"]
 
