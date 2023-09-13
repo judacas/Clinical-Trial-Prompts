@@ -3,8 +3,7 @@ import Database as db
 
 def main():
 
-    myDB = db.Database(database_name="SampleTrials")
-    myDB.export_mongo_to_json()
+    myDB = db.Database(database_name="SampleTrialsUpdated")
 
     # properties = myDB.count_properties()
 

@@ -38,9 +38,10 @@ Typical usage often involves:
 import json
 import operator
 import os
+import shutil
+from calendar import c
 from datetime import datetime
 from typing import Any
-from urllib import response
 
 import AI
 import pymongo
@@ -101,6 +102,8 @@ class Database:
             currentId = "NotValidNCTId"
             currentTitle = "NotValidTitle"
 
+        identificationDict = {"nctId": currentId, "title": currentTitle}
+
         # add functionality to include the rest of the things in eligibility module later
         criteriaBool, criteriabadMQL, criteriaMQL = AI.TranslateTextToMQL(
             str(criteriaText))
@@ -109,8 +112,8 @@ class Database:
             return
 
         self.change_collection(self.boolean_collection_name)
-        booleanJSON = {"nctId": currentId, "title": currentTitle,
-                       "booleanRepresentation": criteriaBool}
+        booleanJSON = {"booleanRepresentation": criteriaBool}
+        booleanJSON.update(identificationDict)
         self.collection.insert_one(booleanJSON)
 
         if criteriabadMQL is None:
@@ -120,27 +123,20 @@ class Database:
         self.change_collection(self.badMQL_collection_name)
         try:
             badMQLJSON = json.loads(criteriabadMQL)
-            badMQLJSON["nctId"] = currentId
-            badMQLJSON["title"] = currentTitle
-            self.collection.insert_one(badMQLJSON)
         except ValueError:
-            badMQLJSON = {"nctId": currentId, "title": currentTitle,
-                          "Not yet fixed MQL": criteriabadMQL}
-            self.collection.insert_one(badMQLJSON)
+            badMQLJSON = {"Not yet fixed MQL": criteriabadMQL}
+
+        badMQLJSON.update(identificationDict)
+        self.collection.insert_one(badMQLJSON)
 
         if criteriaMQL is None:
             print("Failed to properly assert MQL adheres to JSON rules")
             return
 
         self.change_collection(self.MQL_collection_name)
+        criteriaMQL.update(identificationDict)
         self.collection.insert_one(criteriaMQL)
-
-        criteriaMQL = {
-            "nctId": currentId,
-            "title": currentTitle,
-            **criteriaMQL
-        }
-        return criteriaMQL
+        return booleanJSON, badMQLJSON, criteriaMQL
 
     def updateDocumentsWithOldPropertyName(self, oldPropertyName, newPropertyName):
         # documentsToUpdate = self.collection.find(
@@ -170,7 +166,7 @@ class Database:
             print("Your code still sucks for counting properties")
             return
 
-    def connectToMongoDB(self):
+    def connectToMongoDB(self) -> None:
         self.client = pymongo.MongoClient(self.client_uri)
 
         self.database = self.client[self.database_name]
@@ -226,30 +222,42 @@ class Database:
     # NOTE: this is super sloppy rn and doesn't use correct oop priniciples, only temporary solution to quickly export all the documents in the database
 
     def export_mongo_to_json(self):
-        db = self.database
-        print(db.list_collection_names())
-        for collection_name in db.list_collection_names():
-            if collection_name == self.PropertyCount_collection_name:
-                print("Skipping PropertyCount collection")
-                continue
-            collection = db[collection_name]
-            collection_path = os.path.join(self.database_name, collection_name)
-            os.makedirs(collection_path, exist_ok=True)
 
-            for document in collection.find():
-                try:
-                    docID = str(document["protocolSection"]
-                                ["identificationModule"]["nctId"])
-                except KeyError:
+        exportFolder = "exportedJSONS"
+        if os.path.exists(exportFolder):
+            shutil.rmtree(exportFolder)
+        unnecessaryDatabases = ["admin", "config", "local"]
+        unnecessaryCollections = [self.PropertyCount_collection_name]
+        for db in (self.client[dbName] for dbName in self.client.list_database_names()):
+            print(db.name)
+            if db.name in unnecessaryDatabases:
+                print(f"Skipping unneccessary {db.name} database")
+                continue
+            for collection in (db[collectionName] for collectionName in db.list_collection_names()):
+                if collection.name in unnecessaryCollections:
+                    print(
+                        f"Skipping unneccessary {collection.name} collection")
+                    continue
+                collection_path = os.path.join(
+                    exportFolder, db.name, collection.name)
+                os.makedirs(collection_path, exist_ok=True)
+
+                for document in collection.find():
                     try:
-                        docID = str(document["nctId"])
+                        docID = str(document["protocolSection"]
+                                    ["identificationModule"]["nctId"])
                     except KeyError:
-                        print("Document does not have nctID or nctid")
-                        docID = "NotValidNCTID" + str(document["_id"])
-                document_path = os.path.join(collection_path, f"{docID}.json")
-                document["_id"] = str(document["_id"])
-                with open(document_path, "w") as f:
-                    json.dump(document, f)
+                        try:
+                            docID = str(document["nctId"])
+                        except KeyError:
+                            print(
+                                f"currently in {db.name}.{collection.name} and a document with id {str(document['_id'])} does not have a nctId or nctid")
+                            docID = "NotValidNCTID" + str(document["_id"])
+                    document_path = os.path.join(
+                        collection_path, f"{docID}.json")
+                    document["_id"] = str(document["_id"])
+                    with open(document_path, "w") as f:
+                        json.dump(document, f)
 
     @staticmethod
     def fetch_clinical_trials(trials=None):
