@@ -3,12 +3,7 @@ import Database as db
 
 def main():
 
-<<<<<<< HEAD
-    myDB = db.Database(database_name="SampleTrialsUpdated")
-=======
-    myDB = db.Database(database_name="SampleTrials", boolean_collection_name="CTBoolean09.12.23",
-                       JSON_collection_name="CTJSON09.12.23", MQL_collection_name="CTMQL09.12.23", badMQL_collection_name="CTBadMQL09.12.23")
->>>>>>> a5aa248999d9d0cb8697177bf1d279fe990d4976
+    myDB = db.Database()
 
     # properties = myDB.count_properties()
 

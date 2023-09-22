@@ -52,14 +52,9 @@ trialsToUse = ["03834493", "03426891", "04579380", "01810913",
 
 
 class Database:
-    date_suffix = datetime.now().strftime("%m.%d.%y")
+    date_suffix = datetime.now().strftime("%m-%d-%y")
 
-    def __init__(self, client_uri="mongodb://localhost:27017/",
-                 database_name="ClinicalTrialsDB",
-                 JSON_collection_name=f"CTJSON{date_suffix}",
-                 badMQL_collection_name=f"CTBadMQL{date_suffix}",
-                 MQL_collection_name=f"CTMQL{date_suffix}",
-                 boolean_collection_name=f"CTBoolean{date_suffix}", property_collection_name=f"CTTotalProperties{date_suffix}"):
+    def __init__(self, client_uri="mongodb://localhost:27017/", database_name="Eligibilty-" + date_suffix, JSON_collection_name="CTJSON", badMQL_collection_name="CTBadMQL", MQL_collection_name="CTMQL", boolean_collection_name="CTBoolean", property_collection_name="CTTotalProperties"):
         self.client_uri = client_uri
         self.database_name = database_name
         self.JSON_collection_name = JSON_collection_name
