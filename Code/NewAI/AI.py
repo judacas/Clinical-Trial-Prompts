@@ -1,5 +1,4 @@
 import os
-from tabnanny import verbose
 from time import sleep
 from typing import Any, Optional
 from dotenv import load_dotenv, find_dotenv
@@ -27,6 +26,9 @@ class Ai:
         self.maxAttempts = maxAttempts
         self.verbose = verbose
         self.messages = systemMessage.getSytemPrompt()
+
+    def clearMessages(self, newSystemMessage=SystemPrompt()):
+        self.messages = newSystemMessage.getSytemPrompt()
 
     def removeMessagesUntillShortEnough(self, model, newTokens=0):
         tokens = self.num_tokens_from_messages(
@@ -139,9 +141,13 @@ class Ai:
         assert currentWait <= waitTime
         return currentWait
 
-    def extractResponse(self, response) -> str:
+    def extractResponse(self, response=None) -> str:
         if self.verbose:
             print("extracting response")
+        if response is None:
+            if len(self.messages) == 0:
+                raise RuntimeError("No messages to extract response from")
+            response = self.messages[-1]
         return response["choices"][0]["message"]["content"]
 
     def formatTextAsMessage(self, text: str, role: str = "user", name: Optional[str] = None) -> "dict[str,Any]":

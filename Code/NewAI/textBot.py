@@ -1,4 +1,4 @@
-import AI as Ai
+from AI import Ai
 
 
 def getValidInput():
@@ -11,7 +11,7 @@ def getValidInput():
 
 
 def main():
-    ai = Ai.Ai()
+    ai = Ai()
     while True:
         user_input = getValidInput()
         ai.AskAI(user_input)
