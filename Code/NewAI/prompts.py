@@ -34,6 +34,12 @@ class SystemPrompt:
 
 
 class prepPrompts:
+
+    @staticmethod
+    def getToLowerCasePrompt():
+        message = "You will do one thing and one thing only. Change every letter to its lowercase representation and output only the modified text. Nothing else."
+        return SystemPrompt(message)
+
     @staticmethod
     def getChangeToNumericalPromp():
         message = "You will do one thing and one thing only. Should a numerical value be represented in anything except for a numerical value (for example: roman numeral, number word, etc.) you will swap it out with its numerical value. You will only change non numerical representations of numbers to their corresponding numerical value. Do not do anything else. You will only output the modified text, nothinng more. The following are all examples of how example inputs should be altered"

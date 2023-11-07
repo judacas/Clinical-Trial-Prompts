@@ -6,7 +6,7 @@ class ClinicalTrial:
     def __init__(self, rawText):
 
         ai = Ai(verbose=False, temperature=0,
-                systemMessage=prepPrompts.getChangeToNumericalPromp())
+                systemMessage=prepPrompts.getToLowerCasePrompt())
         ai.AskAI(rawText.lower())
         ai.pretty_print_conversation()
 
