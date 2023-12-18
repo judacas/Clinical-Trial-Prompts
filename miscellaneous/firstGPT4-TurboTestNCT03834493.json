@@ -1,0 +1,103 @@
+{
+    "$and": [
+        {
+            "$and": [
+                {"cancer type": {"$eq": "prostate adenocarcinoma"}},
+                {"cancer histology": {"$nin": ["small cell"]}},
+                {"progression on androgen deprivation": true},
+                {"days since progression": {"$lte": 180}},
+                {
+                    "$or": [
+                        {"metastatic disease bone lesions": true},
+                        {"metastatic disease soft tissue": true}
+                    ]
+                },
+                {
+                    "$or": [
+                        {"abiraterone-naïve": true},
+                        {
+                            "$and": [
+                                {"prior abiraterone for mHSPC or mCRPC": true},
+                                {"treatment duration weeks with abiraterone": {"$gte": 4}},
+                                {"no progression on abiraterone": true}
+                            ]
+                        },
+                        {
+                            "$and": [
+                                {"progressed on abiraterone": true},
+                                {"treatment duration weeks with abiraterone": {"$gte": 8}},
+                                {
+                                    "$or": [
+                                        {"progression type": {"$ne": "bone"}},
+                                        {"treatment duration weeks with abiraterone": {"$gte": 14}}
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {"serum testosterone ng/dL": {"$lt": 50}},
+                {"stable bone resorptive therapy": true},
+                {
+                    "$and": [
+                        {"refrain from sperm donation": true},
+                        {"abstinence or condom use": true}
+                    ]
+                },
+                {
+                    "$or": [
+                        {"newly obtained core biopsy": true},
+                        {"biopsy within days": {"$lte": 365}},
+                        {"biopsy not previously irradiated": true},
+                        {"biopsy from irradiated progression": true},
+                        {"bone only or predominant disease bone biopsy": true}
+                    ]
+                },
+                {"ECOG performance status": {"$in": [0, 1]}},
+                {"ECOG assessment days within": {"$lte": 7}}
+            ]
+        },
+        {
+            "$not": {
+                "$or": [
+                    {"additional malignancy active or treated within years": {"$lte": 3}},
+                    {"active autoimmune disease systemic treatment within days": {"$lte": 730}},
+                    {"diagnosis of immunodeficiency": true},
+                    {"chronic systemic steroids": true},
+                    {"major surgery recovery days": {"$lte": 28}},
+                    {"gastrointestinal disorder affecting absorption": true},
+                    {"unable to swallow tablets or capsules": true},
+                    {"active infection requiring systemic therapy": true},
+                    {"history of pneumonitis or interstitial lung disease": true},
+                    {"current pneumonitis or interstitial lung disease": true},
+                    {"active HIV": true},
+                    {"active HBV": true},
+                    {"active HCV": true},
+                    {"active CNS metastases": true},
+                    {"carcinomatous meningitis": true},
+                    {"known hypersensitivity to trial meds": true},
+                    {"history of seizure": true},
+                    {"condition predisposing to seizure": true},
+                    {"loss of consciousness within days": {"$lte": 365}},
+                    {"hypotension systolic mmHg": {"$lt": 86}},
+                    {"uncontrolled hypertension systolic mmHg": {"$gt": 170}},
+                    {"uncontrolled hypertension diastolic mmHg": {"$gt": 105}},
+                    {"bradycardia bpm": {"$lt": 50}},
+                    {"history of cancer progression on ketoconazole": true},
+                    {"prior treatment with CYP17 inhibitors other than abiraterone": true},
+                    {"prior therapy anti-PD-1 or PD-L1 or PD-L2": true},
+                    {"stimulatory or coinhibitory T-cell receptor therapy": true},
+                    {"prior radium or radiopharmaceuticals for prostate cancer": true},
+                    {"prior docetaxel or chemotherapy for mCRPC": true},
+                    {"prior anti-cancer monoclonal antibody": true},
+                    {"used herbal products affecting PSA levels": true},
+                    {"live vaccine within days": {"$lte": 30}},
+                    {"participation in investigational study within days": {"$lte": 28}},
+                    {"superscan bone scan": true},
+                    {"expecting to conceive or father children duration": {"$lte": 90}},
+                    {"allogenic tissue or organ transplant": true}
+                ]
+            }
+        }
+    ]
+}
