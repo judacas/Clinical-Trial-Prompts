@@ -41,6 +41,10 @@ def split_and_preserve_indentation(text):
     return blocks
 
 
+def saveTrialsToFile(n):
+    with open("trials.json", "w") as f:
+        json.dump(getTrials(n), f, indent=4)
+
 def getTrials(n: int) -> dict:
     if n < 1 or n > 1000:
         raise ValueError(
@@ -353,7 +357,10 @@ def preProcessData(data):
     return data
 
 
-criteria =getTrials(1)["studies"][0]["eligibilityModule"]
 
-pyperclip.copy(formatJSON(criteria))
-print(formatJSON(criteria))
+saveTrialsToFile(10)
+
+# criteria =getTrials(1)["studies"][0]["eligibilityModule"]
+
+# pyperclip.copy(formatJSON(criteria))
+# print(formatJSON(criteria))
