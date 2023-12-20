@@ -1,7 +1,7 @@
 import json
 import os
 import time
-from typing import Any, Dict, List
+from typing import Any
 
 import dotenv
 from dotenv import find_dotenv, load_dotenv
@@ -95,7 +95,7 @@ def getResponse(thread)-> str:
 def runAndGetResponse(assistant = None, thread=None, wait :bool=True, newMsg :str ="", verbose :bool =False):
     assistant = assertAssistant(assistant)
     thread = assertThread(thread)
-    runObj = run(assistant=assistant, thread=thread, wait=wait, newMsg=newMsg, verbose=verbose)
+    run(assistant=assistant, thread=thread, wait=wait, newMsg=newMsg, verbose=verbose)
     return getResponse(thread=thread)
 
 def pretty_print(messages):

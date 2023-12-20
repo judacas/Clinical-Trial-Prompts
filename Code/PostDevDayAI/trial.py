@@ -1,32 +1,29 @@
 import json
 import re
-from sympy import symbols, And, Or, Not, Implies, simplify
-from Assistant import ttbPrompt, ttbID, runAndGetResponse, getAssistantObj, show_json
+from sympy import symbols, And, Or, Not, Implies
+from Assistant import getResponse, ttbID, getAssistantObj, run, waitForRun
 class Trial:
-    def __init__(self, rawJSON, symPyJSON = None, symPyExpression= None, verbose = False):
+    def __init__(self, rawJSON, verbose = False, runAllAtOnce = False):
         self.rawJSON = rawJSON
         self.id = rawJSON["identificationModule"]["nctId"]
         self.title = rawJSON["identificationModule"]["officialTitle"]
-        if symPyJSON is None:
-            assert ttbID is not None
-            if verbose:
-                print(f"converting{self.title} to sympy json")
-            self.symPyJSON = runAndGetResponse(newMsg=rawJSON["eligibilityModule"], assistant=getAssistantObj(ttbID), verbose=True)
-            self.symPyJSON = self.symPyJSON[self.symPyJSON.find("{"):self.symPyJSON.rfind("}")+1]
-            if verbose:
-                print(f"converted {self.title} to sympy json")
-            
-        else:
-            self.symPyJSON = symPyJSON
-        if symPyExpression is None:
-            if verbose:
-                print(f"converting{self.title} to sympy expression")
-            self.symPyExpression = parse_json_to_sympy(json.loads(self.symPyJSON))
-            if verbose:
-                print(f"converted {self.title} to sympy expression")
-
-        else:
-            self.symPyExpression = symPyExpression
+        if verbose:
+            print(f"converting: {self.title} to sympy json")
+        # change later to verbose = verbose
+        self.symPyJSONRun = run(assistant=getAssistantObj(ttbID), newMsg=rawJSON["eligibilityModule"], verbose=False, wait=False)
+        if runAllAtOnce:
+            self.finishTranslation(verbose=verbose)
+    def finishTranslation(self, verbose = False):
+        self.symPyJSONRun = waitForRun(self.symPyJSONRun)
+        self.symPyJSON = getResponse(self.symPyJSONRun.thread_id)
+        self.symPyJSON = self.symPyJSON[self.symPyJSON.find("{"):self.symPyJSON.rfind("}")+1]
+        if verbose:
+            print(f"converted {self.title} to sympy json")
+        if verbose:
+            print(f"converting{self.title} to sympy expression")
+        self.symPyExpression = parse_json_to_sympy(json.loads(self.symPyJSON))
+        if verbose:
+            print(f"converted {self.title} to sympy expression")
             
     def __str__(self):
         return json.dumps(self.toJSON(), indent=4)
@@ -36,7 +33,7 @@ class Trial:
             "id": self.id,
             "title": self.title,
             "symPyJSON": self.symPyJSON,
-            "symPyExpression": self.symPyExpression
+            "symPyExpression": str(self.symPyExpression)
         }
         
             
