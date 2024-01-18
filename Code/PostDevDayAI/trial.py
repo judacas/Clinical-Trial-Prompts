@@ -1,5 +1,6 @@
 import json
 import re
+from typing import Any, Optional
 from sympy import symbols, And, Or, Not, Implies
 import sympy
 from Assistant import getResponse, ttbID, getAssistantObj, run, waitForRun
@@ -50,13 +51,49 @@ class Trial:
     def __str__(self):
         return json.dumps(self.toJSON(), indent=4)
     
-    def toJSON(self):
+    def toJSON(self) -> dict[str, Any]:
         return {
             "id": self.id,
             "title": self.title,
             "symPyJSON": self.symPyJSON,
             "symPyExpression": sympy.srepr(self.symPyExpression)
         }
+    def get_variables(self, json_obj: Optional[dict] = None):
+        if json_obj is None:
+            json_obj = self.symPyJSON # type: ignore
+        assert json_obj is not None
+            # json_obj = self.toJSON()["sympyJSON"]
+        # Initialize an empty list to store the variables
+        variables = []
+
+        # Check if the current object is a variable
+        if json_obj["type"] == "variable":
+            variables.append(json_obj["value"])
+        # If the current object is an operator, recurse on its children
+        else:
+            for child in json_obj["operands"]:
+                variables.extend(self.get_variables(child))
+        return variables
+    def getVariableValue(self, variableName):
+        assert self.symPyExpression is not None
+        variableName = re.sub(r'[\s,]', '_', variableName)
+        for symbol in self.symPyExpression.free_symbols:
+        # If the symbol's name matches the variable name, return the symbol
+            if str(symbol) == variableName:
+                return symbol
+            # If the variable doesn't exist, return None or raise an error
+        return None
+    def substituteMultipleVariables(self, variableValues: dict[str, bool]):
+        assert self.symPyExpression is not None
+        self.symPyExpressionSolved = self.symPyExpression
+        for variableName, variableValue in variableValues.items():
+            variable = self.getVariableValue(variableName)
+            if variable is None:
+                # raise ValueError(f"Variable {variableName} does not exist")
+                print(f"Variable {variableName} does not exist")
+            self.symPyExpressionSolved = self.symPyExpressionSolved.subs(variable, variableValue)
+        return self.symPyExpressionSolved
+
         
             
 
@@ -74,5 +111,3 @@ def parse_json_to_sympy(json_obj):
     elif json_obj['type'] == 'implies':
         assert len(json_obj['operands']) == 2  # Implies should have exactly two operands
         return Implies(parse_json_to_sympy(json_obj['operands'][0]), parse_json_to_sympy(json_obj['operands'][1]))
-        
-            

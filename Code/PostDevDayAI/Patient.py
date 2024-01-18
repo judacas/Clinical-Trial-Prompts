@@ -28,7 +28,7 @@ class Patient:
     def getName(self):
         return self.name
 
-    def acquireInformation(self, informationToAcquire: dict):
+    def acquireInformation(self, informationToAcquire: list):
         assistant = getAssistantObj(infoGatherID)
 
         currentRun = run(assistant=assistant, newMsg=json.dumps(informationToAcquire))
@@ -42,7 +42,8 @@ class Patient:
         # trunk-ignore(ruff/F841)
         toolCalls = getFunctionCall(currentRun.thread_id, currentRun.id)["tool_calls"]
         dataRecovered = json.loads(toolCalls[0]["function"]["arguments"])
-        print(dataRecovered)
+        # print(dataRecovered)
         self.addData(dataRecovered)
         self.saveJSON()
+        return dataRecovered
         

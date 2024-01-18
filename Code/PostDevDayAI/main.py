@@ -24,11 +24,17 @@ def main():
     # Write trials to a JSON file
     with open("serializedTrials.json", "w") as outfile:
         json.dump({"trials": trials_json}, outfile, indent=4)
-    patient = Patient("testPatient")
-    patient.acquireInformation(
-        {"are you over 18?": "", "do you have cancer?": "", "is your ecog score 0?": ""}
-    )
-    # patient.acquireInformation(trials[0].rawJSON["eligibilityModule"])
+    patient = Patient("testPatientWithTrial")
+    currentTrial = trials[0]
+    variableValues = patient.acquireInformation(currentTrial.get_variables())
+    # print(currentTrial.get_variables())
+    # with open('testPatientWithTrialData.json') as f:
+    #     data = json.load(f)
+
+    # # Get the "information" data
+    # variableValues = data['data']['tool_uses'][0]['parameters']['information']
+    qualifies = currentTrial.substituteMultipleVariables(variableValues)
+    print(qualifies)
 
 
 if __name__ == "__main__":
