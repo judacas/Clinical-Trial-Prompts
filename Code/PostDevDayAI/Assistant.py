@@ -15,6 +15,7 @@ organization = os.getenv("OPENAI_ORGANIZATION_ID")
 assert apiKey is not None
 client = OpenAI(api_key=apiKey, organization=organization)
 ttbID = os.getenv("CriteriaBooleanTranslatorID")
+infoGatherID = os.getenv("InformationGathererID")
 with open("Code\\PostDevDayAI\\TextToBoolPrompt.txt", "r") as file:
     ttbPrompt = file.read()
 
@@ -64,16 +65,31 @@ def run(assistant = None, thread=None, wait :bool=True, newMsg :str ="", verbose
         print(f"resulted in {getResponse(run.thread_id)}")
     return run
 
+def getFunctionCall(threadID:str, runID: str)->dict[str, Any]:
+    run = client.beta.threads.runs.retrieve(
+        thread_id=threadID,
+        run_id=runID,
+    )
+    assert run.required_action is not None
+    functionCall: dict[str, Any] = run.required_action.submit_tool_outputs.model_dump()
+    print(functionCall)
+    return functionCall
+
+def getRun(threadID:str, runID: str):
+    return client.beta.threads.runs.retrieve(
+        thread_id=threadID,
+        run_id=runID,
+    )
 
 def waitForRun(run, verbose :bool =False):
     while run.status == "queued" or run.status == "in_progress":
+        time.sleep(0.5)
         run = client.beta.threads.runs.retrieve(
             thread_id=run.thread_id,
             run_id=run.id,
         )
         if verbose:
             print(f"Run status: {run.status}")
-        time.sleep(0.5)
     if verbose:
         print(f"resulted in {getResponse(run.thread_id)}")
     return run

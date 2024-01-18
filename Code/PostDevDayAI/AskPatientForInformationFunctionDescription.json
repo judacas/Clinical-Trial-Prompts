@@ -1,18 +1,16 @@
 {
-    "name": "AskPatientForInformation",
-    "description": "Asks patient for a specific piece of information given in the parameters. Returns the updated list of all information on the patient.",
-    "parameters":{
+  "name": "InformationGathered",
+  "description": "This function updates the database with various types of user-provided information. The 'information' parameter should be a JSON object with key-value pairs, where each key is a string identifier for the type of information (like 'userName', 'emailAddress', etc.), and the corresponding value is a string containing the actual information. The specific schema of 'information' will vary based on the data being gathered and updated.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "information": {
         "type": "object",
-        "properties": {
-          "information": {
-            "type": "string",
-            "description": "The specific piece of information to ask the patient for."
-          },
-          "type validation": {
-            "type": "string",
-            "description": "Additional validation to be done on the information."
-          }
-        },
-        "required": ["information"]
+        "description": "JSON object with key-value pairs of information, where the key is directly taken from the input and is the information to be gathered and the value is the piece of information gathered. for example \"age\":18"
       }
+    },
+    "required": [
+      "information"
+    ]
   }
+}
