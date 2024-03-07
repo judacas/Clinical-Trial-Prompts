@@ -15,17 +15,17 @@ def main():
         with open("trials.json") as file:
             rawTrials = json.load(file)["studies"]
 
-            trials = [Trial(rawTrial, verbose=True) for rawTrial in rawTrials]
+            trials = [Trial(rawJSON=rawTrial, verbose=True) for rawTrial in rawTrials]
             for trial in trials:
                 trial.finishTranslation(verbose=True)
-    # Convert trials to JSON serializable format
+                # Convert trials to JSON serializable format
     trials_json = [trial.toJSON() for trial in trials]
 
     # Write trials to a JSON file
     with open("serializedTrials.json", "w") as outfile:
         json.dump({"trials": trials_json}, outfile, indent=4)
     patient = Patient("testPatientWithTrial")
-    currentTrial = trials[0]
+    currentTrial = trials[9]
     variableValues = patient.acquireInformation(currentTrial.get_variables())
     # print(currentTrial.get_variables())
     # with open('testPatientWithTrialData.json') as f:

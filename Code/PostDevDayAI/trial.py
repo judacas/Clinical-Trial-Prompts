@@ -93,6 +93,11 @@ class Trial:
                 print(f"Variable {variableName} does not exist")
             self.symPyExpressionSolved = self.symPyExpressionSolved.subs(variable, variableValue)
         return self.symPyExpressionSolved
+# def combineVariables(variables: list[list[str]]):
+#     combinedVariables = []
+#     for variable in variables:
+#         combinedVariables.append(" and ".join(variable))
+#     return " or ".join(combinedVariables)
 
         
             
