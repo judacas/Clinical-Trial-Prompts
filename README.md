@@ -1,17 +1,27 @@
-# NOTE: This is a work in progress and is not in a working state.
+## NOTE: This is a work in progress and is not in a working state.
 
-the code is currently getting revamped to be much more effective and accurate. To see the last working state with a database go to https://github.com/judacas/Clinical-Trial-Prompts/tree/d85faabad3c8168bf0336fd97ce6747af829abfa
+the code is currently getting revamped to be much more effective and accurate. To see the previous version which used MongoDB instead of boolean expressions go to https://github.com/judacas/Clinical-Trial-Prompts/tree/d85faabad3c8168bf0336fd97ce6747af829abfa
 
-# Chat GPT Prompts Workspace
+## Large Language Models for Translating Clinical Trial Eligibility Criteria into Structured Data
 
-This workspace aims to contribute to the matching of patients with their corresponding clinical trials . It uses ChatGPT to change clinical trial eligibility requirements, which comes in a free text format, into a formatted boolean algebra structure. ChatGPT then takes this structured data and converts it to Mongo query language. which can then be queried using MongoDB. It will then utilize a chatbot UI to gather information from the user untill it has all the information it needs to match a user with their corresponding clinical trials.
+This workspace aims to contribute to the matching of patients with their corresponding clinical trials . It uses ChatGPT to change clinical trial eligibility requirements, which comes in a free text format, into a formatted boolean algebra structure. It will then utilize a chatbot UI to gather information from the user untill it has all the information it needs to match a user with their corresponding clinical trials.
 
 ## Details
 
-The code uses OpenAI’s ChatGPT (gpt-3.5-turbo-0613) (gpt-3.5-turbo-16k-0613 for large descriptions) via the OpenAI API with Python (v3.11.4) bindings with a temperature of 0 for all prompts except for fixing JSONS; for which the temperature value increased each try. The code uses the ClinicalTrials.gov REST API 2.0.0-draft to fetch clinical trials. The code has been tested using ten interventional cancer clinical trials. Responses were evaluated for correctness and prompts were modified in an iterative development process. Prompts were decomposed into more specific subtasks and examples were manually derived. The prompts can be found in prompts.py
+OpenAI’s GPT (gpt-4-turbo) with Python (v3.11.4) bindings were used to convert ClinicalTrials.gov JSON criteria. Ten (10) interventional clinica trials were chosen for training. Responses were evaluated for correctness, and prompts were modified in an iterative development process. Prompts were decomposed into more specific subtasks. The output was MQL (Mongo Query Language) then updated to Boolean algebra expression serialized as a JSON. The first prompt takes in free form eligibility criteria and outputs a Boolean algebra expression serialized as a JSON. The second prompt then takes that JSON and asks the user until they acquire the information
+necessary to evaluate the Boolean expression
 
-### Pre-requisites
 
-Before you run the program, you must make your own .env file and add your openAI API key. The file that should be run is the main.py file.
+## pre requisites
+currently the code can not be run out of the box as it does not make an openai assistant from the prompts in this repo. It instead uses assistants already made on our personal openai account for which the id can not be shared.
 
-run `pip install -r requirements.txt` to install all the dependencies.
+### work around
+install all neccesary requirements by running pip install -r requirements.txt.
+you must then make assistants using the openai api and copy the prompts from the txt files into the system prompts. You must also copy the function call text into the Information Gathering tools. Then you must fill out the IDs of each assistant and api keys from your opernai account in a .env file stored in Code\.env
+The keys needed are:
+OPENAI_API_KEY=""
+OPENAI_ORGANIZATION_ID=""
+CriteriaBooleanTranslatorID=""
+InformationGathererID=""
+Fill in the strings with your IDs/Keys
+Warning, this will cost money as it is using your personal openaiAPI keys
