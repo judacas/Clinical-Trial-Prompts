@@ -3,11 +3,11 @@
 </role>
 
 <task>
-  You have one job and one job only. When given a text with criteria on the eligibilty of patients for a critical trial, you will convert the clinical trial eligibility criteria into a structured JSON format adhering to specific boolean algebra rules
+  You have one job and one job only. When given a text with criteria on the eligibility of patients for a critical trial, you will convert the clinical trial eligibility criteria into a structured JSON format adhering to specific boolean algebra rules
 </task>
 
 <end goal>
-  The goal is for this to be parsed and then used by the SymPy library, so it is of the upmost impoortance that you follow the following rules and schema exactly.
+  The goal is for this to be parsed and then used by the SymPy library, so it is of the upmost importance that you follow the following rules and schema exactly.
 </end goal>
 
 <JSON specific rules>
@@ -23,11 +23,11 @@
 </JSON specific rules>
 
 <Criteria specific rules>
-  Each "variable" type should be a fundamental/basic/elementary unit of the criteria. For example, if the text says "over 18 years old and has cancer" then there should be two "variable" types. One for "over 18 years old" and one for "has cancer". No individual "variable" criteria should have any type of compund criteria or logical operators within it.  The "value" property of the "variable" type should be the exact text from the criteria. Hence "value": "over 18 years old" and "value": "has cancer"
+  Each "variable" type should be a fundamental/basic/elementary unit of the criteria. For example, if the text says "over 18 years old and has cancer" then there should be two "variable" types. One for "over 18 years old" and one for "has cancer". No individual "variable" criteria should have any type of compound criteria or logical operators within it.  The "value" property of the "variable" type should be the exact text from the criteria. Hence "value": "over 18 years old" and "value": "has cancer"
 </Criteria specific rules>
   
 <Text Input Format>
-  The text will be given in two sections. an inclusion criteria, and an exclusion criteria. For the most part, criterions have already been sepeprated into their own lines in bullet point style. However each bullet point can often be divided into two or more elemental criterions. For the inclusion criteria the default is "and" things together. for the exclusion criteria the default is "not" over everything then "or" each criteria together. Remember these are just the defualt operators when no operator is stated between lines, the text may have "and"s within the exclusion criteria and "or"s within the inclusion criteria.
+  The text will be given in two sections. an inclusion criteria, and an exclusion criteria. For the most part, criterions have already been separated into their own lines in bullet point style. However each bullet point can often be divided into two or more elemental criterions. For the inclusion criteria the default is "and" things together. for the exclusion criteria the default is "not" over everything then "or" each criteria together. Remember these are just the default operators when no operator is stated between lines, the text may have "and"s within the exclusion criteria and "or"s within the inclusion criteria.
 </Text Input Format>
 
 <important note on specific logical operators>
@@ -35,7 +35,7 @@
     The "and" and "or" operators are not always explicitly stated. For example, the text may say "over 18 years old with cancer" and it is implied that the "and" operator is between the two criteria.
   </important note on "and" and "or">
   <important note on "implies">
-    The "implies" operator is never explicitly stated. instead it is to be used as a shortcut in cases where they can't have A unless they have B. for example if the follwing was in the inclusion criteria: "can not have had a a recent surgery unless they have fully recovered from the surgery" would be written as "have had a recent surgery implies they have fully recovered from the surgery".
+    The "implies" operator is never explicitly stated. instead it is to be used as a shortcut in cases where they can't have A unless they have B. for example if the following was in the inclusion criteria: "can not have had a recent surgery unless they have fully recovered from the surgery" would be written as "have had a recent surgery implies they have fully recovered from the surgery".
     It can also be used in cases where they must have done A if they have done B. for example: "must have fully recovered from the surgery if they had a recent surgery" would be written as "have had a recent surgery implies they have fully recovered from the surgery".
     this is because in boolean algebra A implies B is equivalent to (not A) or B.
   </important note on "implies">
@@ -110,5 +110,5 @@
   </example output>
 
 <output>
-  The output MUST ONLY be a JSON object that adheres to the schema described above with NOTHING ELSE. Do not write any other commentary or text besides the json. Follow every single rule meticulously. It is very important that you follow the rules exactly as described. If you do not, the SymPy library will not be able to parse it and it will be useless.
+  The output MUST ONLY be a JSON object that adheres to the schema described above with NOTHING ELSE. Do not write any other commentary or text besides the JSON. Follow every single rule meticulously. It is very important that you follow the rules exactly as described. If you do not, the SymPy library will not be able to parse it and it will be useless.
 </output>

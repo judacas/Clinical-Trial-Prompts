@@ -16,7 +16,7 @@ assert apiKey is not None
 client = OpenAI(api_key=apiKey, organization=organization)
 ttbID = os.getenv("CriteriaBooleanTranslatorID")
 infoGatherID = os.getenv("InformationGathererID")
-with open("Code\\PostDevDayAI\\TextToBoolPrompt.txt", "r") as file:
+with open("../Prompts/TextToBooleanExpression.txt", "r") as file:
     ttbPrompt = file.read()
 
 

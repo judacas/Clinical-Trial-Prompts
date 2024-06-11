@@ -43,8 +43,15 @@ class Trial:
 
         if verbose:
             print(f"converted {self.title} to sympy json")
+            print("\n\n")
+            print(self.symPyJSON)
+            print("\n\n")
             print(f"converting{self.title} to sympy expression")
-        self.symPyExpression = parse_json_to_sympy(self.symPyJSON)
+        try:
+            self.symPyExpression = parse_json_to_sympy(self.symPyJSON)
+        except Exception as e:
+            self.symPyExpression = "N/A"
+            print(f"Error converting {self.title} to sympy expression: {e}")
         if verbose:
             print(f"converted {self.title} to sympy expression")
             
@@ -81,7 +88,7 @@ class Trial:
         # If the symbol's name matches the variable name, return the symbol
             if str(symbol) == variableName:
                 return symbol
-            # If the variable doesn't exist, return None or raise an error
+            # If the variable doesn't exist, return None
         return None
     def substituteMultipleVariables(self, variableValues: dict[str, bool]):
         assert self.symPyExpression is not None
