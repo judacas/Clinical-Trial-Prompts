@@ -1,3 +1,4 @@
+
 import json
 import os
 import time
@@ -20,7 +21,8 @@ with open("../Prompts/TextToBooleanExpression.txt", "r") as file:
     ttbPrompt = file.read()
 
 
-
+# TODO: This code definitely needs to be refactored. It's a mess.
+# TODO: Update to v2 API for openAI
 def show_json(obj :Any) -> None:
     if isinstance(obj, str):
         obj = json.loads(obj)

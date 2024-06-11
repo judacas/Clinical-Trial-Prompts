@@ -15,7 +15,7 @@
                             },
                             {
                                 "type": "variable",
-                                "value": "With uni-dimensionally measurable disease"
+                                "value": "With uni-dimensionally measurable disease (at least longest diameter 2 cm on conventional CT scan, x-ray or physical examination, or 1cm on spiral CT scan)"
                             },
                             {
                                 "type": "variable",
@@ -30,20 +30,25 @@
                                 "value": "ECOG performance status of 2 or lower"
                             },
                             {
-                                "type": "variable",
-                                "value": "Adequate bone marrow function"
+                                "type": "and",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "Adequate bone marrow function(absolute neutrophil count [ANC] \u22651,500/\u00b5L, hemoglobin \u22659.0 g/dL,and platelets \u2265100,000/\u00b5L)"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Adequate kidney function (serum creatinine < 1.5 mg/dL)"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Adequate liver function (serum total bilirubin < 2 times the upper normal limit (UNL); serum transaminases levels <3 times [<5 times for patients with liver metastasis] UNL)"
+                                    }
+                                ]
                             },
                             {
                                 "type": "variable",
-                                "value": "Adequate kidney function"
-                            },
-                            {
-                                "type": "variable",
-                                "value": "Adequate liver function"
-                            },
-                            {
-                                "type": "variable",
-                                "value": "No prior chemotherapy but prior adjuvant chemotherapy finished at least 6 months before enrollment was allowed"
+                                "value": "No prior chemotherapy but prior adjuvant chemotherapy finished at least 6 months before enrollment was allowed. (but, prior adjuvant chemotherapy with capecitabine or S-1 or camptothecin analogues was excluded)"
                             },
                             {
                                 "type": "variable",
@@ -83,7 +88,7 @@
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "The patient has bony lesions as the sole evaluable disease"
+                                        "value": "The patient has bony lesions as the sole evaluable disease."
                                     },
                                     {
                                         "type": "variable",
@@ -98,28 +103,38 @@
                                         "value": "Other serious illness or medical conditions"
                                     },
                                     {
-                                        "type": "variable",
-                                        "value": "Unstable cardiac disease despite treatment, myocardial infarction within 6 months prior to study entry"
-                                    },
-                                    {
-                                        "type": "variable",
-                                        "value": "History of significant neurologic or psychiatric disorders including dementia or seizures"
-                                    },
-                                    {
-                                        "type": "variable",
-                                        "value": "Active uncontrolled infection"
-                                    },
-                                    {
-                                        "type": "variable",
-                                        "value": "Other serious underlying medical conditions which could impair the ability of the patient to participate in the study"
+                                        "type": "or",
+                                        "operands": [
+                                            {
+                                                "type": "variable",
+                                                "value": "Unstable cardiac disease despite treatment, myocardial infarction within 6 months prior to study entry"
+                                            },
+                                            {
+                                                "type": "variable",
+                                                "value": "History of significant neurologic or psychiatric disorders including dementia or seizures"
+                                            },
+                                            {
+                                                "type": "variable",
+                                                "value": "Active uncontrolled infection"
+                                            },
+                                            {
+                                                "type": "variable",
+                                                "value": "Other serious underlying medical conditions which could impair the ability of the patient to participate in the study"
+                                            }
+                                        ]
                                     },
                                     {
                                         "type": "variable",
                                         "value": "Concomitant administration of any other experimental drug under investigation, or concomitant chemotherapy, hormonal therapy, or immunotherapy"
                                     },
                                     {
-                                        "type": "variable",
-                                        "value": "Concomitant drug medication; The following drugs cause drug interaction with S-1: Warfarin or phenprocoumon - increase bleeding tendency; Phenytoin - increase blood concentration; Sorivudine - inhibit DPD -> increase toxicity according to fluoropyrimidine; Allopurinol - decrease activity of S-1"
+                                        "type": "or",
+                                        "operands": [
+                                            {
+                                                "type": "variable",
+                                                "value": "concomitant drug medication; The following drugs cause drug interaction with S-1. i. Warfarin, phenprocoumon: increase bleeding tendency ii. Increase blood concentration of phenytoin iii. sorivudine: inhibit DPD -> increase toxicity according to fluoropyrimidine iv. allopurinol : decrease activity of S-1"
+                                            }
+                                        ]
                                     }
                                 ]
                             }
@@ -127,7 +142,7 @@
                     }
                 ]
             },
-            "symPyExpression": "'N/A'"
+            "symPyExpression": "And(Symbol('Adequate bone marrow function(absolute neutrophil count [ANC] \u22651,500/\u00b5L, hemoglobin \u22659.0 g/dL,and platelets \u2265100,000/\u00b5L)'), Symbol('Adequate kidney function (serum creatinine < 1.5 mg/dL)'), Symbol('Adequate liver function (serum total bilirubin < 2 times the upper normal limit (UNL); serum transaminases levels <3 times [<5 times for patients with liver metastasis] UNL)'), Symbol('Age 18 to 70 years old'), Symbol('ECOG performance status of 2 or lower'), Symbol('Estimated life expectancy of more than 3 months'), Symbol('Must have maximum age of 70 Years'), Symbol('Must have minimum age of 18 Years'), Symbol('No prior chemotherapy but prior adjuvant chemotherapy finished at least 6 months before enrollment was allowed. (but, prior adjuvant chemotherapy with capecitabine or S-1 or camptothecin analogues was excluded)'), Symbol('No prior radiation therapy for at least 4 weeks before enrollment in the study'), Symbol('Pathologically proven unresectable adenocarcinoma of stomach'), Symbol('With uni-dimensionally measurable disease (at least longest diameter 2 cm on conventional CT scan, x-ray or physical examination, or 1cm on spiral CT scan)'), Not(Or(Symbol('Active uncontrolled infection'), Symbol('Central nervous system (CNS) metastases or prior radiation for CNS metastases'), Symbol('Concomitant administration of any other experimental drug under investigation, or concomitant chemotherapy, hormonal therapy, or immunotherapy'), Symbol('Evidence of gastrointestinal bleeding'), Symbol('Gastric outlet obstruction or intestinal obstruction'), Symbol('History of significant neurologic or psychiatric disorders including dementia or seizures'), Symbol('Other serious illness or medical conditions'), Symbol('Other serious underlying medical conditions which could impair the ability of the patient to participate in the study'), Symbol('Other tumor type than adenocarcinoma'), Symbol('Past or concurrent history of neoplasm other than stomach cancer, except for curatively treated non-melanoma skin cancer or in situ carcinoma of the cervix uteri'), Symbol('Pregnant or lactating women, women of childbearing potential not employing adequate contraception'), Symbol('The patient has bony lesions as the sole evaluable disease.'), Symbol('Unstable cardiac disease despite treatment, myocardial infarction within 6 months prior to study entry'), Symbol('concomitant drug medication; The following drugs cause drug interaction with S-1. i. Warfarin, phenprocoumon: increase bleeding tendency ii. Increase blood concentration of phenytoin iii. sorivudine: inhibit DPD -> increase toxicity according to fluoropyrimidine iv. allopurinol : decrease activity of S-1'))))"
         },
         {
             "id": "NCT00312429",
@@ -136,63 +151,58 @@
                 "type": "and",
                 "operands": [
                     {
-                        "type": "variable",
-                        "value": "Diagnosis reviewed at transplant center and confirmed to fit the criterion for high risk blood disease or cancer, as defined for the study"
-                    },
-                    {
-                        "type": "variable",
-                        "value": "Estimated life expectancy of at least 6 weeks following study entry"
-                    },
-                    {
-                        "type": "variable",
-                        "value": "Cancer and Leukemia Group B (CALGB) performance status less than or equal to 2"
-                    },
-                    {
-                        "type": "variable",
-                        "value": "White blood cell count, platelet, hematocrit, tuberculosis, aspartate aminotransferase (AST), alanine aminotransferase (ALT), alkaline phosphatase, creatinine, and HIV test results reviewed by transplant center"
-                    },
-                    {
-                        "type": "variable",
-                        "value": "Multiple gated acquisition (MUGA), echocardiogram, cardiac MRI, and/or pulmonary function tests (PFT) performed and reviewed by transplant center"
-                    },
-                    {
                         "type": "and",
                         "operands": [
                             {
-                                "type": "not",
+                                "type": "variable",
+                                "value": "Diagnosis reviewed at transplant center and confirmed to fit the criterion for high risk blood disease or cancer, as defined for the study"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Estimated life expectancy of at least 6 weeks following study entry"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Cancer and Leukemia Group B (CALGB) performance status less than or equal to 2"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "White blood cell count, platelet, hematocrit, tuberculosis, aspartate aminotransferase (AST), alanine aminotransferase (ALT), alkaline phosphatase, creatinine, and HIV test results reviewed by transplant center"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Multiple gated acquisition (MUGA), echocardiogram, cardiac MRI, and/or pulmonary function tests (PFT) performed and reviewed by transplant center"
+                            },
+                            {
+                                "type": "implies",
                                 "operands": [
                                     {
                                         "type": "variable",
-                                        "value": "individual has an ejection fraction and diffusing capacity [DLCO] of less than 40%"
+                                        "value": "individuals with an ejection fraction and diffusing capacity [DLCO] of 40-50%"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "the appropriate cardiology or pulmonary consultations should be considered if the individual has severe heart or lung disease at the initiation of therapy"
                                     }
                                 ]
                             },
                             {
-                                "type": "not",
-                                "operands": [
-                                    {
-                                        "type": "variable",
-                                        "value": "individual has severe heart or lung disease at the initiation of therapy without the appropriate cardiology or pulmonary consultations"
-                                    }
-                                ]
+                                "type": "variable",
+                                "value": "Sufficient number of umbilical cord blood units available for transplantation"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "If female, willing to use contraception throughout the study"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Must have minimum age of 18 Years"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Must have maximum age of 70 Years"
                             }
                         ]
-                    },
-                    {
-                        "type": "variable",
-                        "value": "Sufficient number of umbilical cord blood units available for transplantation"
-                    },
-                    {
-                        "type": "variable",
-                        "value": "If female, willing to use contraception throughout the study"
-                    },
-                    {
-                        "type": "variable",
-                        "value": "Must have minimum age of 18 Years"
-                    },
-                    {
-                        "type": "variable",
-                        "value": "Must have maximum age of 70 Years"
                     },
                     {
                         "type": "not",
@@ -218,7 +228,7 @@
                     }
                 ]
             },
-            "symPyExpression": "And(Symbol('Cancer_and_Leukemia_Group_B_(CALGB)_performance_status_less_than_or_equal_to_2'), Symbol('Diagnosis_reviewed_at_transplant_center_and_confirmed_to_fit_the_criterion_for_high_risk_blood_disease_or_cancer__as_defined_for_the_study'), Symbol('Estimated_life_expectancy_of_at_least_6_weeks_following_study_entry'), Symbol('If_female__willing_to_use_contraception_throughout_the_study'), Symbol('Multiple_gated_acquisition_(MUGA)__echocardiogram__cardiac_MRI__and/or_pulmonary_function_tests_(PFT)_performed_and_reviewed_by_transplant_center'), Symbol('Must_have_maximum_age_of_70_Years'), Symbol('Must_have_minimum_age_of_18_Years'), Symbol('Sufficient_number_of_umbilical_cord_blood_units_available_for_transplantation'), Symbol('White_blood_cell_count__platelet__hematocrit__tuberculosis__aspartate_aminotransferase_(AST)__alanine_aminotransferase_(ALT)__alkaline_phosphatase__creatinine__and_HIV_test_results_reviewed_by_transplant_center'), Not(Symbol('individual_has_an_ejection_fraction_and_diffusing_capacity_[DLCO]_of_less_than_40%')), Not(Symbol('individual_has_severe_heart_or_lung_disease_at_the_initiation_of_therapy_without_the_appropriate_cardiology_or_pulmonary_consultations')), Not(Or(Symbol('Diagnosed_with_a_medical_or_psychiatric_illness_that_may_interfere_with_study_participation'), Symbol('Pregnant'), Symbol('Undergoing_Interleukin-2_(IL-2)_therapy_within_8_weeks_of_study_entry'))))"
+            "symPyExpression": "And(Symbol('Cancer and Leukemia Group B (CALGB) performance status less than or equal to 2'), Symbol('Diagnosis reviewed at transplant center and confirmed to fit the criterion for high risk blood disease or cancer, as defined for the study'), Symbol('Estimated life expectancy of at least 6 weeks following study entry'), Symbol('If female, willing to use contraception throughout the study'), Symbol('Multiple gated acquisition (MUGA), echocardiogram, cardiac MRI, and/or pulmonary function tests (PFT) performed and reviewed by transplant center'), Symbol('Must have maximum age of 70 Years'), Symbol('Must have minimum age of 18 Years'), Symbol('Sufficient number of umbilical cord blood units available for transplantation'), Symbol('White blood cell count, platelet, hematocrit, tuberculosis, aspartate aminotransferase (AST), alanine aminotransferase (ALT), alkaline phosphatase, creatinine, and HIV test results reviewed by transplant center'), Implies(Symbol('individuals with an ejection fraction and diffusing capacity [DLCO] of 40-50%'), Symbol('the appropriate cardiology or pulmonary consultations should be considered if the individual has severe heart or lung disease at the initiation of therapy')), Not(Or(Symbol('Diagnosed with a medical or psychiatric illness that may interfere with study participation'), Symbol('Pregnant'), Symbol('Undergoing Interleukin-2 (IL-2) therapy within 8 weeks of study entry'))))"
         },
         {
             "id": "NCT00319748",
@@ -230,17 +240,12 @@
                         "type": "and",
                         "operands": [
                             {
-                                "type": "or",
-                                "operands": [
-                                    {
-                                        "type": "variable",
-                                        "value": "Breast - Karnofsky score > 50"
-                                    },
-                                    {
-                                        "type": "variable",
-                                        "value": "Ovarian, endometrial or cervical - Gynecologic Oncology Group (GOG) performance score \u22642"
-                                    }
-                                ]
+                                "type": "variable",
+                                "value": "Adequate performance status: Breast - Karnofsky score > 50"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Adequate performance status: Ovarian, endometrial or cervical - Gynecologic Oncology Group (GOG) performance score \u22642"
                             },
                             {
                                 "type": "variable",
@@ -276,15 +281,15 @@
                                 "operands": [
                                     {
                                         "type": "variable",
-                                        "value": "Measurable metastatic disease (>1cm) in at least one site other than bone-only"
+                                        "value": "Breast Cancer: Measurable metastatic disease (>1cm) in at least one site other than bone-only"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Progression on or failure to respond to at least one previous chemotherapy regimen for metastatic disease"
+                                        "value": "Breast Cancer: Progression on or failure to respond to at least one previous chemotherapy regimen for metastatic disease"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Progression on prior therapy with a hormonal agent if estrogen receptor or progesterone receptor positive, and/or with trastuzumab if HER2-neu positive"
+                                        "value": "Breast Cancer: Progression on prior therapy with a hormonal agent if estrogen receptor or progesterone receptor positive, and/or with trastuzumab if HER2-neu positive. If patient has progressed through hormone or trastuzumab therapy only, must have received one chemotherapy regimen"
                                     }
                                 ]
                             },
@@ -293,15 +298,15 @@
                                 "operands": [
                                     {
                                         "type": "variable",
-                                        "value": "Measurable metastatic disease as defined by Response Evaluation Criteria in Solid Tumors (RECIST)"
+                                        "value": "Ovarian Cancer: Measurable metastatic disease as defined by Response Evaluation Criteria in Solid Tumors (RECIST)"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Primary tumor must have been diagnosed histologically as either epithelial ovarian cancer, fallopian tube cancer, or primary peritoneal cancer"
+                                        "value": "Ovarian Cancer: Primary tumor must have been diagnosed histologically as either epithelial ovarian cancer, fallopian tube cancer, or primary peritoneal cancer (not borderline or low malignant potential epithelial carcinoma)"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Subjects must have failed at least two previous chemotherapy regimens"
+                                        "value": "Ovarian Cancer: Subjects must have failed at least two previous chemotherapy regimens. Paclitaxel must have been a component of one or both regimens and cisplatin or carboplatin must have been a component of one or both regimens"
                                     }
                                 ]
                             },
@@ -310,11 +315,11 @@
                                 "operands": [
                                     {
                                         "type": "variable",
-                                        "value": "Measurable metastatic disease"
+                                        "value": "Endometrial Cancer: Measurable metastatic disease"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Histologically proven recurrent or persistent endometrial cancer that is not amenable to curative treatment with surgery and/or radiation therapy AND has failed 2 previous treatment regimens"
+                                        "value": "Endometrial Cancer: Histologically proven recurrent or persistent endometrial cancer that is not amenable to curative treatment with surgery and/or radiation therapy AND has failed 2 previous treatment regimens"
                                     }
                                 ]
                             },
@@ -323,17 +328,17 @@
                                 "operands": [
                                     {
                                         "type": "variable",
-                                        "value": "Measurable metastatic disease"
+                                        "value": "Cervical Cancer: Measurable metastatic disease"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Histologically proven recurrent or persistent squamous cell carcinoma, adenosquamous carcinoma, or adenocarcinoma of the cervix that is not amenable to curative treatment with surgery and/or radiation therapy AND has failed 2 previous treatment regimens"
+                                        "value": "Cervical Cancer: Histologically proven recurrent or persistent squamous cell carcinoma, adenosquamous carcinoma, or adenocarcinoma of the cervix that is not amenable to curative treatment with surgery and/or radiation therapy AND has failed 2 previous treatment regimens"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Cervical Cancer: Must have minimum age of 18 Years"
                                     }
                                 ]
-                            },
-                            {
-                                "type": "variable",
-                                "value": "Must have minimum age of 18 Years"
                             }
                         ]
                     },
@@ -345,67 +350,67 @@
                                 "operands": [
                                     {
                                         "type": "variable",
-                                        "value": "Systemic corticosteroids (oral or injectable) within 7 days of first dose of 852A"
+                                        "value": "Had/have systemic corticosteroids (oral or injectable) within 7 days of first dose of 852A"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Investigational drugs/agents within 14 days of first dose of 852A"
+                                        "value": "Had/have investigational drugs/agents within 14 days of first dose of 852A"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Immunosuppressive therapy, including cytotoxic agents within 14 days of first dose of 852A"
+                                        "value": "Had/have immunosuppressive therapy, including cytotoxic agents within 14 days of first dose of 852A (nitrosoureas within 30 days of first dose)"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Drugs known to induce QT interval prolongation and/or induce Torsades de pointes unless best available drug required to treat life-threatening conditions"
+                                        "value": "Had/have drugs known to induce QT interval prolongation and/or induce Torsades de pointes unless best available drug required to treat life-threatening conditions"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Radiotherapy within 3 weeks of the first dose of 852A"
+                                        "value": "Had/have radiotherapy within 3 weeks of the first dose of 852A"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Hematopoietic cell transplantation within 4 weeks of first dose of 852A"
+                                        "value": "Had/have hematopoietic cell transplantation within 4 weeks of first dose of 852A"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Evidence of active infection within 3 days of first dose of 852A"
+                                        "value": "Had/have evidence of active infection within 3 days of first dose of 852A"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Active fungal infection or pulmonary infiltrates"
+                                        "value": "Had/have active fungal infection or pulmonary infiltrates (prior treated disease stable for 2 weeks is allowable)"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Cardiac ischemia, cardiac arrhythmias or congestive heart failure uncontrolled by medication"
+                                        "value": "Had/have cardiac ischemia, cardiac arrhythmias or congestive heart failure uncontrolled by medication"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "History of, or clinical evidence of, a condition which, in the opinion of the investigator, could confound the results of the study or put the subject at undue risk"
+                                        "value": "Had/have a history of, or clinical evidence of, a condition which, in the opinion of the investigator, could confound the results of the study or put the subject at undue risk"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Uncontrolled intercurrent or chronic illness"
+                                        "value": "Had/have uncontrolled intercurrent or chronic illness"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Active autoimmune disease requiring immunosuppressive therapy within 30 days"
+                                        "value": "Had/have active autoimmune disease requiring immunosuppressive therapy within 30 days"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Active coagulation disorder not controlled with medication"
+                                        "value": "Had/have active coagulation disorder not controlled with medication"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Pregnant or lactating"
+                                        "value": "Are pregnant or lactating"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Concurrent malignancy (if in remission, at least 5 years disease free) except for localized (in-situ) disease, basal carcinomas and cutaneous squamous cell carcinomas that have been adequately treated"
+                                        "value": "Had/have concurrent malignancy (if in remission, at least 5 years disease free) except for localized (in-situ) disease, basal carcinomas and cutaneous squamous cell carcinomas that have been adequately treated"
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Any history of brain metastases or any other active central nervous system (CNS) disease"
+                                        "value": "Had/have any history of brain metastases or any other active central nervous system (CNS) disease"
                                     }
                                 ]
                             }
@@ -413,7 +418,7 @@
                     }
                 ]
             },
-            "symPyExpression": "And(Symbol('Histologically_proven_recurrent_or_persistent_endometrial_cancer_that_is_not_amenable_to_curative_treatment_with_surgery_and/or_radiation_therapy_AND_has_failed_2_previous_treatment_regimens'), Symbol('Histologically_proven_recurrent_or_persistent_squamous_cell_carcinoma__adenosquamous_carcinoma__or_adenocarcinoma_of_the_cervix_that_is_not_amenable_to_curative_treatment_with_surgery_and/or_radiation_therapy_AND_has_failed_2_previous_treatment_regimens'), Symbol('If_female_and_of_childbearing_potential__are_willing_to_use_adequate_contraception_(hormonal__barrier_method__abstinence)_prior_to_study_entry_and_for_the_duration_of_study_participation'), Symbol('Measurable_metastatic_disease'), Symbol('Measurable_metastatic_disease_(>1cm)_in_at_least_one_site_other_than_bone-only'), Symbol('Measurable_metastatic_disease_as_defined_by_Response_Evaluation_Criteria_in_Solid_Tumors_(RECIST)'), Symbol('Must_have_minimum_age_of_18_Years'), Symbol('Normal_organ_function_within_14_days_of_study_entry'), Symbol('Primary_tumor_must_have_been_diagnosed_histologically_as_either_epithelial_ovarian_cancer__fallopian_tube_cancer__or_primary_peritoneal_cancer'), Symbol('Progression_on_or_failure_to_respond_to_at_least_one_previous_chemotherapy_regimen_for_metastatic_disease'), Symbol('Progression_on_prior_therapy_with_a_hormonal_agent_if_estrogen_receptor_or_progesterone_receptor_positive__and/or_with_trastuzumab_if_HER2-neu_positive'), Symbol('Subjects_must_have_failed_at_least_two_previous_chemotherapy_regimens'), Or(Symbol('Breast_-_Karnofsky_score_>_50'), Symbol('Ovarian__endometrial_or_cervical_-_Gynecologic_Oncology_Group_(GOG)_performance_score_\u22642')), Or(Symbol('Diagnosis_of_metastatic_breast_cancer_(BR)'), Symbol('Diagnosis_of_metastatic_cervical_cancer_(CX)'), Symbol('Diagnosis_of_metastatic_endometrial_cancer_(EM)'), Symbol('Diagnosis_of_metastatic_ovarian_cancer_(OV)')), Not(Or(Symbol('Active_autoimmune_disease_requiring_immunosuppressive_therapy_within_30_days'), Symbol('Active_coagulation_disorder_not_controlled_with_medication'), Symbol('Active_fungal_infection_or_pulmonary_infiltrates'), Symbol('Any_history_of_brain_metastases_or_any_other_active_central_nervous_system_(CNS)_disease'), Symbol('Cardiac_ischemia__cardiac_arrhythmias_or_congestive_heart_failure_uncontrolled_by_medication'), Symbol('Concurrent_malignancy_(if_in_remission__at_least_5_years_disease_free)_except_for_localized_(in-situ)_disease__basal_carcinomas_and_cutaneous_squamous_cell_carcinomas_that_have_been_adequately_treated'), Symbol('Drugs_known_to_induce_QT_interval_prolongation_and/or_induce_Torsades_de_pointes_unless_best_available_drug_required_to_treat_life-threatening_conditions'), Symbol('Evidence_of_active_infection_within_3_days_of_first_dose_of_852A'), Symbol('Hematopoietic_cell_transplantation_within_4_weeks_of_first_dose_of_852A'), Symbol('History_of__or_clinical_evidence_of__a_condition_which__in_the_opinion_of_the_investigator__could_confound_the_results_of_the_study_or_put_the_subject_at_undue_risk'), Symbol('Immunosuppressive_therapy__including_cytotoxic_agents_within_14_days_of_first_dose_of_852A'), Symbol('Investigational_drugs/agents_within_14_days_of_first_dose_of_852A'), Symbol('Pregnant_or_lactating'), Symbol('Radiotherapy_within_3_weeks_of_the_first_dose_of_852A'), Symbol('Systemic_corticosteroids_(oral_or_injectable)_within_7_days_of_first_dose_of_852A'), Symbol('Uncontrolled_intercurrent_or_chronic_illness'))))"
+            "symPyExpression": "And(Symbol('Adequate performance status: Breast - Karnofsky score > 50'), Symbol('Adequate performance status: Ovarian, endometrial or cervical - Gynecologic Oncology Group (GOG) performance score \u22642'), Symbol('Breast Cancer: Measurable metastatic disease (>1cm) in at least one site other than bone-only'), Symbol('Breast Cancer: Progression on or failure to respond to at least one previous chemotherapy regimen for metastatic disease'), Symbol('Breast Cancer: Progression on prior therapy with a hormonal agent if estrogen receptor or progesterone receptor positive, and/or with trastuzumab if HER2-neu positive. If patient has progressed through hormone or trastuzumab therapy only, must have received one chemotherapy regimen'), Symbol('Cervical Cancer: Histologically proven recurrent or persistent squamous cell carcinoma, adenosquamous carcinoma, or adenocarcinoma of the cervix that is not amenable to curative treatment with surgery and/or radiation therapy AND has failed 2 previous treatment regimens'), Symbol('Cervical Cancer: Measurable metastatic disease'), Symbol('Cervical Cancer: Must have minimum age of 18 Years'), Symbol('Endometrial Cancer: Histologically proven recurrent or persistent endometrial cancer that is not amenable to curative treatment with surgery and/or radiation therapy AND has failed 2 previous treatment regimens'), Symbol('Endometrial Cancer: Measurable metastatic disease'), Symbol('If female and of childbearing potential, are willing to use adequate contraception (hormonal, barrier method, abstinence) prior to study entry and for the duration of study participation'), Symbol('Normal organ function within 14 days of study entry'), Symbol('Ovarian Cancer: Measurable metastatic disease as defined by Response Evaluation Criteria in Solid Tumors (RECIST)'), Symbol('Ovarian Cancer: Primary tumor must have been diagnosed histologically as either epithelial ovarian cancer, fallopian tube cancer, or primary peritoneal cancer (not borderline or low malignant potential epithelial carcinoma)'), Symbol('Ovarian Cancer: Subjects must have failed at least two previous chemotherapy regimens. Paclitaxel must have been a component of one or both regimens and cisplatin or carboplatin must have been a component of one or both regimens'), Or(Symbol('Diagnosis of metastatic breast cancer (BR)'), Symbol('Diagnosis of metastatic cervical cancer (CX)'), Symbol('Diagnosis of metastatic endometrial cancer (EM)'), Symbol('Diagnosis of metastatic ovarian cancer (OV)')), Not(Or(Symbol('Are pregnant or lactating'), Symbol('Had/have a history of, or clinical evidence of, a condition which, in the opinion of the investigator, could confound the results of the study or put the subject at undue risk'), Symbol('Had/have active autoimmune disease requiring immunosuppressive therapy within 30 days'), Symbol('Had/have active coagulation disorder not controlled with medication'), Symbol('Had/have active fungal infection or pulmonary infiltrates (prior treated disease stable for 2 weeks is allowable)'), Symbol('Had/have any history of brain metastases or any other active central nervous system (CNS) disease'), Symbol('Had/have cardiac ischemia, cardiac arrhythmias or congestive heart failure uncontrolled by medication'), Symbol('Had/have concurrent malignancy (if in remission, at least 5 years disease free) except for localized (in-situ) disease, basal carcinomas and cutaneous squamous cell carcinomas that have been adequately treated'), Symbol('Had/have drugs known to induce QT interval prolongation and/or induce Torsades de pointes unless best available drug required to treat life-threatening conditions'), Symbol('Had/have evidence of active infection within 3 days of first dose of 852A'), Symbol('Had/have hematopoietic cell transplantation within 4 weeks of first dose of 852A'), Symbol('Had/have immunosuppressive therapy, including cytotoxic agents within 14 days of first dose of 852A (nitrosoureas within 30 days of first dose)'), Symbol('Had/have investigational drugs/agents within 14 days of first dose of 852A'), Symbol('Had/have radiotherapy within 3 weeks of the first dose of 852A'), Symbol('Had/have systemic corticosteroids (oral or injectable) within 7 days of first dose of 852A'), Symbol('Had/have uncontrolled intercurrent or chronic illness'))))"
         },
         {
             "id": "NCT00356148",
@@ -425,20 +430,25 @@
                         "type": "and",
                         "operands": [
                             {
-                                "type": "variable",
-                                "value": "Women at any age with early stage breast cancer (stage I-II)"
+                                "type": "and",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "Women at any age with early stage breast cancer (stage I-II)"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "American Society of Anesthesiologists (ASA) score of I-II"
+                                    }
+                                ]
                             },
                             {
                                 "type": "variable",
-                                "value": "American Society of Anesthesiologists (ASA) score of I-II"
+                                "value": "Must be FEMALE"
                             },
                             {
                                 "type": "variable",
-                                "value": "FEMALE"
-                            },
-                            {
-                                "type": "variable",
-                                "value": "minimum age of 18 Years"
+                                "value": "Must have minimum age of 18 Years"
                             }
                         ]
                     },
@@ -486,13 +496,121 @@
                     }
                 ]
             },
-            "symPyExpression": "And(Symbol('American_Society_of_Anesthesiologists_(ASA)_score_of_I-II'), Symbol('FEMALE'), Symbol('Women_at_any_age_with_early_stage_breast_cancer_(stage_I-II)'), Symbol('minimum_age_of_18_Years'), Not(Or(Symbol('Advanced_or_distant_metastatic_stage'), Symbol('Denial_of_signing_the_consent_form'), Symbol('Ductal_carcinoma_in_situ_(DCIS;_stage_0_cancer)'), Symbol('Having_a_remote_infection'), Symbol('History_of_immunodeficiency'), Symbol('History_of_reaction_to_study_antibiotics'), Symbol('History_of_receiving_any_antibiotics_within_prior_3_months'), Symbol('Receiving_any_neoadjuvant_therapy'))))"
+            "symPyExpression": "And(Symbol('American Society of Anesthesiologists (ASA) score of I-II'), Symbol('Must be FEMALE'), Symbol('Must have minimum age of 18 Years'), Symbol('Women at any age with early stage breast cancer (stage I-II)'), Not(Or(Symbol('Advanced or distant metastatic stage'), Symbol('Denial of signing the consent form'), Symbol('Ductal carcinoma in situ (DCIS; stage 0 cancer)'), Symbol('Having a remote infection'), Symbol('History of immunodeficiency'), Symbol('History of reaction to study antibiotics'), Symbol('History of receiving any antibiotics within prior 3 months'), Symbol('Receiving any neoadjuvant therapy'))))"
         },
         {
             "id": "NCT00344318",
             "title": "To Assess the Safety, Reactogenicity and Immunogenicity of GSK Biologicals' Pneumococcal Conjugate Vaccine Compared to Prevenar\u2122, Co-administered With DTPw-HBV/Hib & OPV or IPV Vaccines as a 3-dose Primary Immunization Course During the First 6 Months of Age",
-            "symPyJSON": "Invalid JSON",
-            "symPyExpression": "'N/A'"
+            "symPyJSON": {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Male"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "female"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "and",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "between 6-12 weeks (42 to 90 days) of age at the time of the first vaccination"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "investigator believes that their parents/guardians can and will comply with the requirements of the protocol"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Written informed consent obtained from the parent or guardian of the subject"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Free of obvious health problems as established by medical history and clinical examination before entering into the study"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Born after a gestation period between 36 and 42 weeks"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Must have minimum age of 6 Weeks"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Must have maximum age of 12 Weeks"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "not",
+                        "operands": [
+                            {
+                                "type": "or",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "Use of any investigational or non-registered product (drug or vaccine) other than the study vaccine(s) within 30 days preceding the first dose of study vaccine, or planned use during the study period"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Chronic administration (defined as more than 14 days) of immunosuppressants or other immune-modifying drugs within six months prior to the first vaccine dose"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Planned administration/ administration of a vaccine not foreseen by the study protocol during the period starting one month before each dose of vaccine(s) and ending 7 days after dose 1 and dose 2 or 1 month after dose 3"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Previous vaccination against diphtheria, tetanus, pertussis, polio, hepatitis B, Haemophilus influenzae type b, and/or S. pneumoniae with the exception of vaccines where the first dose can be given within the first two weeks of life according to the national recommendations"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "History of or intercurrent diphtheria, tetanus, pertussis, hepatitis B, polio, and Haemophilus influenzae type b diseases"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "History of allergic disease or reactions likely to be exacerbated by any component of the vaccines"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "History of seizures (this criterion does not apply to subjects who have had a single, uncomplicated febrile convulsion in the past) or neurological disease"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Acute disease at the time of enrolment"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Any confirmed or suspected immunosuppressive or immunodeficient condition based on medical history and physical"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "A family history of congenital or hereditary immunodeficiency"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Major congenital defects or serious chronic illness"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Administration of immunoglobulins and/or any blood products since birth or planned administration during the active phase of the study"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "symPyExpression": "And(Symbol('Born after a gestation period between 36 and 42 weeks'), Symbol('Free of obvious health problems as established by medical history and clinical examination before entering into the study'), Symbol('Must have maximum age of 12 Weeks'), Symbol('Must have minimum age of 6 Weeks'), Symbol('Written informed consent obtained from the parent or guardian of the subject'), Symbol('between 6-12 weeks (42 to 90 days) of age at the time of the first vaccination'), Symbol('investigator believes that their parents/guardians can and will comply with the requirements of the protocol'), Or(Symbol('Male'), Symbol('female')), Not(Or(Symbol('A family history of congenital or hereditary immunodeficiency'), Symbol('Acute disease at the time of enrolment'), Symbol('Administration of immunoglobulins and/or any blood products since birth or planned administration during the active phase of the study'), Symbol('Any confirmed or suspected immunosuppressive or immunodeficient condition based on medical history and physical'), Symbol('Chronic administration (defined as more than 14 days) of immunosuppressants or other immune-modifying drugs within six months prior to the first vaccine dose'), Symbol('History of allergic disease or reactions likely to be exacerbated by any component of the vaccines'), Symbol('History of or intercurrent diphtheria, tetanus, pertussis, hepatitis B, polio, and Haemophilus influenzae type b diseases'), Symbol('History of seizures (this criterion does not apply to subjects who have had a single, uncomplicated febrile convulsion in the past) or neurological disease'), Symbol('Major congenital defects or serious chronic illness'), Symbol('Planned administration/ administration of a vaccine not foreseen by the study protocol during the period starting one month before each dose of vaccine(s) and ending 7 days after dose 1 and dose 2 or 1 month after dose 3'), Symbol('Previous vaccination against diphtheria, tetanus, pertussis, polio, hepatitis B, Haemophilus influenzae type b, and/or S. pneumoniae with the exception of vaccines where the first dose can be given within the first two weeks of life according to the national recommendations'), Symbol('Use of any investigational or non-registered product (drug or vaccine) other than the study vaccine(s) within 30 days preceding the first dose of study vaccine, or planned use during the study period'))))"
         },
         {
             "id": "NCT00317148",
@@ -505,20 +623,11 @@
                         "operands": [
                             {
                                 "type": "variable",
-                                "value": "Healthy postmenopausal women"
+                                "value": "Healthy postmenopausal women with 50 or more moderate to severe hot flushes."
                             },
                             {
                                 "type": "variable",
-                                "value": "50 or more moderate to severe hot flushes"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "and",
-                        "operands": [
-                            {
-                                "type": "variable",
-                                "value": "Women between 40 to 70 years of age"
+                                "value": "Women between 40 to 70 years of age."
                             },
                             {
                                 "type": "variable",
@@ -542,31 +651,31 @@
                                 "operands": [
                                     {
                                         "type": "variable",
-                                        "value": "Body mass index (BMI) of 35 kg/m2 or more"
+                                        "value": "Body mass index (BMI) of 35 kg/m2 or more."
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Significant metabolic and endocrine diseases"
+                                        "value": "Significant metabolic and endocrine diseases."
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Diagnosis of cancer"
+                                        "value": "Diagnosis of cancer."
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Use of steroids or drugs that interfere with the metabolism of estrogen"
+                                        "value": "Use of steroids or drugs that interfere with the metabolism of estrogen."
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Use of any systemic estrogen, progestin, or DHEA in the eight weeks prior to randomization"
+                                        "value": "Use of any systemic estrogen, progestin, or DHEA in the eight weeks prior to randomization."
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Use of alternative therapies or natural products to treat postmenopausal symptoms in the four weeks prior to randomization"
+                                        "value": "Use of alternative therapies or natural products to treat postmenopausal symptoms in the four weeks prior to randomization."
                                     },
                                     {
                                         "type": "variable",
-                                        "value": "Palpable fibroids or uterine prolapse: Grade 2 or 3"
+                                        "value": "Palpable fibroids or uterine prolapse: Grade 2 or 3."
                                     },
                                     {
                                         "type": "variable",
@@ -578,31 +687,264 @@
                     }
                 ]
             },
-            "symPyExpression": "'N/A'"
+            "symPyExpression": "And(Symbol('Healthy postmenopausal women with 50 or more moderate to severe hot flushes.'), Symbol('Must be FEMALE'), Symbol('Must have maximum age of 70 Years'), Symbol('Must have minimum age of 40 Years'), Symbol('Women between 40 to 70 years of age.'), Not(Or(Symbol('Body mass index (BMI) of 35 kg/m2 or more.'), Symbol('Cigarette smoking'), Symbol('Diagnosis of cancer.'), Symbol('Palpable fibroids or uterine prolapse: Grade 2 or 3.'), Symbol('Significant metabolic and endocrine diseases.'), Symbol('Use of alternative therapies or natural products to treat postmenopausal symptoms in the four weeks prior to randomization.'), Symbol('Use of any systemic estrogen, progestin, or DHEA in the eight weeks prior to randomization.'), Symbol('Use of steroids or drugs that interfere with the metabolism of estrogen.'))))"
         },
         {
             "id": "NCT00305097",
             "title": "Effects of Caffeinated and Decaffeinated Coffee on Body Weight and Glucose Tolerance",
-            "symPyJSON": "Invalid JSON",
-            "symPyExpression": "'N/A'"
+            "symPyJSON": {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "and",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Aged at least 18 years"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "has the ability and willingness to give written informed consent"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Body mass index 25-35 kg/m2"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Uses at least 2 cups of caffeinated coffee per day"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "is willing to be randomized to any of the interventions"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Non-smoking"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Must have minimum age of 18 Years"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "not",
+                        "operands": [
+                            {
+                                "type": "or",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "Any condition/illness that may affect the study outcomes or would make participation potentially harmful such as pregnancy or breastfeeding, diabetes mellitus, heart disease, stroke, hypertension, malabsorption syndromes, GERD, a history of ulcer"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Abnormal hepatic function (liver function test > twice the normal range)"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "abnormal renal function (creatinine > 1.1 mg/dl)"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "fasting plasma glucose in the diabetic range (>= 126 mg/dl)"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "blood pressure > 140/90 mmHg"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Present alcoholism or drug abuse"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "use of medications that could interfere with the treatment including bronchodilators, quinolone antibiotics, monoamine oxidase inhibitors, anxiolytics, ranitidine, corticosteroids, growth hormone, antihypertensives"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "symPyExpression": "And(Symbol('Aged at least 18 years'), Symbol('Body mass index 25-35 kg/m2'), Symbol('Must have minimum age of 18 Years'), Symbol('Non-smoking'), Symbol('Uses at least 2 cups of caffeinated coffee per day'), Symbol('has the ability and willingness to give written informed consent'), Symbol('is willing to be randomized to any of the interventions'), Not(Or(Symbol('Abnormal hepatic function (liver function test > twice the normal range)'), Symbol('Any condition/illness that may affect the study outcomes or would make participation potentially harmful such as pregnancy or breastfeeding, diabetes mellitus, heart disease, stroke, hypertension, malabsorption syndromes, GERD, a history of ulcer'), Symbol('Present alcoholism or drug abuse'), Symbol('abnormal renal function (creatinine > 1.1 mg/dl)'), Symbol('blood pressure > 140/90 mmHg'), Symbol('fasting plasma glucose in the diabetic range (>= 126 mg/dl)'), Symbol('use of medications that could interfere with the treatment including bronchodilators, quinolone antibiotics, monoamine oxidase inhibitors, anxiolytics, ranitidine, corticosteroids, growth hormone, antihypertensives'))))"
         },
         {
             "id": "NCT00351611",
             "title": "PROSPECTIVE RANDOMIZED 12-WEEK CONTROLLED STUDY OF VISUAL FIELD CHANGE IN SUBJECTS WITH PARTIAL SEIZURES RECEIVING PREGABALIN OR PLACEBO",
-            "symPyJSON": "Invalid JSON",
-            "symPyExpression": "'N/A'"
+            "symPyJSON": {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "and",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Epilepsy partial seizure subjects"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Currently taking 1 to 3 antiepileptic drugs"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Must have minimum age of 18 Years"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Must have maximum age of 65 Years"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "not",
+                        "operands": [
+                            {
+                                "type": "or",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "Pre-existing eye diseases (glaucoma)"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Insufficient response to pregabalin in the treatment of partial seizure"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "patients currently receiving pregabalin treatment"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "symPyExpression": "And(Symbol('Currently taking 1 to 3 antiepileptic drugs'), Symbol('Epilepsy partial seizure subjects'), Symbol('Must have maximum age of 65 Years'), Symbol('Must have minimum age of 18 Years'), Not(Or(Symbol('Insufficient response to pregabalin in the treatment of partial seizure'), Symbol('Pre-existing eye diseases (glaucoma)'), Symbol('patients currently receiving pregabalin treatment'))))"
         },
         {
             "id": "NCT00279552",
             "title": "Can Recombinant Human Intrinsic Factor Be Used for Evaluation of the Vitamin B12 Absorption?",
-            "symPyJSON": "Invalid JSON",
-            "symPyExpression": "'N/A'"
+            "symPyJSON": {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "and",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Patients suspected to have vitamin B12 deficiency defined as a plasma vitamin B12 below the reference interval (<200 pmol/L)"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Must have minimum age of 18 Years"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "not",
+                        "operands": [
+                            {
+                                "type": "or",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "Patients who were pregnant"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Patients who were nursing"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Patients who were not able to give written informed consent"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "symPyExpression": "And(Symbol('Must have minimum age of 18 Years'), Symbol('Patients suspected to have vitamin B12 deficiency defined as a plasma vitamin B12 below the reference interval (<200 pmol/L)'), Not(Or(Symbol('Patients who were not able to give written informed consent'), Symbol('Patients who were nursing'), Symbol('Patients who were pregnant'))))"
         },
         {
             "id": "NCT00324363",
             "title": "Safety and Efficacy of Exenatide in Patients With Type 2 Diabetes Using Metformin or Sulfonylureas and Metformin",
-            "symPyJSON": "Invalid JSON",
-            "symPyExpression": "'N/A'"
+            "symPyJSON": {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "and",
+                        "operands": [
+                            {
+                                "type": "or",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "Treated with a stable dose of >=1000 mg/day immediate-release metformin for at least 3 months prior to screening"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Treated with a stable dose of metformin >=1000 mg/day and sulfonylurea for at least 3 months prior to screening"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Treated with a stable dose of sulfonylurea/metformin combination therapy for at least 3 months prior to screening"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "variable",
+                                "value": "HbA1c between 7.1% and 11.0%, inclusive"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Body Mass Index (BMI) >21 kg/m^2 and <35 kg/m^2"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Must have minimum age of 21 Years"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Must have maximum age of 75 Years"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "not",
+                        "operands": [
+                            {
+                                "type": "or",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "Have participated in this study previously, or any other study using exenatide or GLP-1 analogs"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Have participated in an interventional, medical, surgical, or pharmaceutical study within 30 days of screening"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Have characteristics contraindicating metformin or sulfonylurea use"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Have been treated with exogenous insulin for more than 1 week within the 3 months prior to screening"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "Have used drugs for weight loss within 1 month of screening"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "symPyExpression": "And(Symbol('Body Mass Index (BMI) >21 kg/m^2 and <35 kg/m^2'), Symbol('HbA1c between 7.1% and 11.0%, inclusive'), Symbol('Must have maximum age of 75 Years'), Symbol('Must have minimum age of 21 Years'), Or(Symbol('Treated with a stable dose of >=1000 mg/day immediate-release metformin for at least 3 months prior to screening'), Symbol('Treated with a stable dose of metformin >=1000 mg/day and sulfonylurea for at least 3 months prior to screening'), Symbol('Treated with a stable dose of sulfonylurea/metformin combination therapy for at least 3 months prior to screening')), Not(Or(Symbol('Have been treated with exogenous insulin for more than 1 week within the 3 months prior to screening'), Symbol('Have characteristics contraindicating metformin or sulfonylurea use'), Symbol('Have participated in an interventional, medical, surgical, or pharmaceutical study within 30 days of screening'), Symbol('Have participated in this study previously, or any other study using exenatide or GLP-1 analogs'), Symbol('Have used drugs for weight loss within 1 month of screening'))))"
         }
     ]
 }

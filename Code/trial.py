@@ -5,7 +5,10 @@ from sympy import symbols, And, Or, Not, Implies
 import sympy
 from Assistant import getResponse, ttbID, getAssistantObj, run, waitForRun
 class Trial:
-    def __init__(self, serializedJSON = None, rawJSON = None, verbose = False, runAllAtOnce = False):
+    # ! DO NOT USE RUNALLATONCE = FALSE
+    # I'm pretty sure it used to work in parallel but now it doesn't, so for now just use runAllAtOnce = True and keep it serial
+    # TODO: Fix runAllAtOnce so that it works in parallel
+    def __init__(self, serializedJSON = None, rawJSON = None, verbose = False, runAllAtOnce = True):
         if serializedJSON is not None:
             if rawJSON is not None:
                 raise ValueError("Cannot have both serializedJSON and rawJSON")
@@ -39,7 +42,7 @@ class Trial:
             self.symPyJSON = json.loads(self.symPyJSON)
         except json.JSONDecodeError:
             # If parsing fails, set symPyJSON to an error message
-            self.symPyJSON = "Invalid JSON"
+            self.symPyJSON = "Invalid JSON. Below is the attempt at a json \n\n" + self.symPyJSON
 
         if verbose:
             print(f"converted {self.title} to sympy json")
@@ -111,7 +114,9 @@ class Trial:
 
 def parse_json_to_sympy(json_obj):
     if json_obj['type'] == 'variable':
-        variableName = re.sub(r'[\s,]', '_', json_obj['value'])
+        variableName = re.sub(r'\s', r'\\ ', json_obj['value'])
+        variableName = re.sub(r',', r'\\,', variableName)
+        variableName = re.sub(r':', r'\\:', variableName)
         return symbols(variableName)
     elif json_obj['type'] == 'and':
         return And(*[parse_json_to_sympy(op) for op in json_obj['operands']])
