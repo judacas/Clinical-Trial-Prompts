@@ -55,6 +55,15 @@ def getTrialsByID(trialIDS: list):
     trials = curlWithStatusCheck(
         f"https://clinicaltrials.gov/api/v2/studies?format=json&fields=EligibilityModule%7CNCTId%7COfficialTitle&query.cond={trialsAsQuery}"
     )
+
+    nextPageToken = trials.get("nextPageToken", None)
+    while nextPageToken:
+        nextPageTrials = curlWithStatusCheck(
+            f"https://clinicaltrials.gov/api/v2/studies?format=json&fields=EligibilityModule%7CNCTId%7COfficialTitle&query.cond={trialsAsQuery}&pageToken={nextPageToken}"
+        )
+        trials["studies"].extend(nextPageTrials["studies"])
+        nextPageToken = nextPageTrials.get("nextPageToken", None)
+
     filteredTrials = [
         NoSplittingProcessCriteria(trial["protocolSection"])
         for trial in trials["studies"]
