@@ -57,10 +57,10 @@ def run(assistant = None, thread=None, wait :bool=True, newMsg :str ="", verbose
         client.beta.threads.messages.create(
             thread_id=thread.id, role="user", content=newMsg
         )
+        run = client.beta.threads.runs.create(
+            thread_id=thread.id, assistant_id=assistant.id
+        )
 
-    run = client.beta.threads.runs.create(
-        thread_id=thread.id, assistant_id=assistant.id
-    )
 
     if wait:
         return waitForRun(run, verbose=verbose)
@@ -79,10 +79,10 @@ def getFunctionCall(threadID:str, runID: str)->dict[str, Any]:
     return functionCall
 
 def getRun(threadID:str, runID: str):
-    return client.beta.threads.runs.retrieve(
-        thread_id=threadID,
-        run_id=runID,
-    )
+        return client.beta.threads.runs.retrieve(
+            thread_id=threadID,
+            run_id=runID,
+        )
 
 def waitForRun(run, verbose :bool =False):
     while run.status == "queued" or run.status == "in_progress":

@@ -16,10 +16,12 @@ import newRawDataController as trialGetter
 
 # trialGetter.saveTrialToFile(trialGetter.getTrialByNCTID(trialGetter.getChiaIDs(1)[0]), "testTrial.json")
 
-# trialGetter.saveCHIATrialsToFile(10,10, "CHIAtrials.json")
+trialGetter.saveCHIATrials(n=100, fileName="CHIAtrials.json")
+# for id in trialGetter.getChiaIDs(1000):
+#     print(id, end=", ")
+# print(len(trialGetter.getChiaIDs(1000)))
 
-
-with open("CHIAtrials.json") as file:
+with open("CHIATrials.json") as file:
             rawTrials = json.load(file)["studies"]
 
             trials = [Trial(rawJSON=rawTrial, verbose=True, runAllAtOnce=true) for rawTrial in rawTrials]
@@ -28,5 +30,5 @@ with open("CHIAtrials.json") as file:
                 # Convert trials to JSON serializable format
             trials_json = [trial.toJSON() for trial in trials]
             # Write trials to a JSON file
-            with open("serializedCHIATrials4O.json", "w") as outfile:
+            with open("first100SerializedCHIATrials4O.json", "w") as outfile:
                 json.dump({"trials": trials_json}, outfile, indent=4)

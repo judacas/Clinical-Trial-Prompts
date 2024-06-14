@@ -4,6 +4,7 @@ from typing import Any, Optional
 from sympy import symbols, And, Or, Not, Implies
 import sympy
 from Assistant import getResponse, ttbID, getAssistantObj, run, waitForRun
+from errorManager import logError
 class Trial:
     # ! DO NOT USE RUNALLATONCE = FALSE
     # I'm pretty sure it used to work in parallel but now it doesn't, so for now just use runAllAtOnce = True and keep it serial
@@ -12,25 +13,36 @@ class Trial:
         if serializedJSON is not None:
             if rawJSON is not None:
                 raise ValueError("Cannot have both serializedJSON and rawJSON")
-            self.id = serializedJSON["id"]
+            self.nctId = serializedJSON["nctId"]
             self.title = serializedJSON["title"]
             self.symPyJSON = serializedJSON["symPyJSON"]
             if isinstance(self.symPyJSON, str):
-                self.symPyJSON = json.loads(self.symPyJSON)
+                try:
+                    self.symPyJSON = json.loads(self.symPyJSON)
+                except json.JSONDecodeError:
+                    # If parsing fails, set symPyJSON to an error message
+                    self.symPyJSON = "Invalid JSON. Below is the attempt at a json \n\n" + self.symPyJSON
             # self.symPyExpression = parse_json_to_sympy(self.symPyJSON)
             self.symPyExpression = (serializedJSON)["symPyExpression"]
-            self.symPyExpression = sympy.sympify(self.symPyExpression)
+            try:
+                self.symPyExpression = sympy.sympify(self.symPyExpression)
+            except Exception as e:
+                self.symPyExpression = "N/A"
+                logError(e=e, during=f"converting {self.title} to sympy expression")
             return
         else:
             if rawJSON is None:
                 raise ValueError("Must have either serializedJSON or rawJSON")
             self.rawJSON = rawJSON
-            self.id = rawJSON["identificationModule"]["nctId"]
-            self.title = rawJSON["identificationModule"]["officialTitle"]
+            self.nctId = rawJSON["nctId"]
+            self.title = rawJSON["officialTitle"]
             if verbose:
                 print(f"converting: {self.title} to sympy json")
             # change later to verbose = verbose
-            self.symPyJSONRun = run(assistant=getAssistantObj(ttbID), newMsg=rawJSON["eligibilityModule"], verbose=False, wait=False)
+            # Assuming flattened_study is your preprocessed trial
+            criteria_keys = ["inclusionCriteria", "exclusionCriteria", "Criteria"]
+            criteria_dict = {key: rawJSON[key] for key in criteria_keys if key in rawJSON}
+            self.symPyJSONRun = run(assistant=getAssistantObj(ttbID), newMsg=json.dumps(criteria_dict,indent=2), verbose=False, wait=False)
             if runAllAtOnce:
                 self.finishTranslation(verbose=verbose)
     def finishTranslation(self, verbose = False):
@@ -54,7 +66,7 @@ class Trial:
             self.symPyExpression = parse_json_to_sympy(self.symPyJSON)
         except Exception as e:
             self.symPyExpression = "N/A"
-            print(f"Error converting {self.title} to sympy expression: {e}")
+            logError(e=e, during=f"converting {self.title} to sympy expression")
         if verbose:
             print(f"converted {self.title} to sympy expression")
             
@@ -63,7 +75,7 @@ class Trial:
     
     def toJSON(self) -> dict[str, Any]:
         return {
-            "id": self.id,
+            "nctId": self.nctId,
             "title": self.title,
             "symPyJSON": self.symPyJSON,
             "symPyExpression": sympy.srepr(self.symPyExpression)
@@ -84,8 +96,13 @@ class Trial:
             for child in json_obj["operands"]:
                 variables.extend(self.get_variables(child))
         return variables
+    
+    # ! This will probably crash eventually
+    # TODO fix for when talking with trials
+    # wait actually you can probably just make sure that symPyExpression is of type sympy.Expr
+    # ! test this change, it used to be assert its not none
     def getVariableValue(self, variableName):
-        assert self.symPyExpression is not None
+        assert  isinstance(self.symPyExpression, sympy.Expr)
         variableName = re.sub(r'[\s,]', '_', variableName)
         for symbol in self.symPyExpression.free_symbols:
         # If the symbol's name matches the variable name, return the symbol
@@ -93,8 +110,10 @@ class Trial:
                 return symbol
             # If the variable doesn't exist, return None
         return None
+    
+    # same issue as above getVariableValue
     def substituteMultipleVariables(self, variableValues: dict[str, bool]):
-        assert self.symPyExpression is not None
+        assert  isinstance(self.symPyExpression, sympy.Expr)
         self.symPyExpressionSolved = self.symPyExpression
         for variableName, variableValue in variableValues.items():
             variable = self.getVariableValue(variableName)

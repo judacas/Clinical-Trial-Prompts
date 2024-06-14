@@ -2,7 +2,7 @@ import json
 import os
 import re
 from typing import Any, Dict
-
+from errorManager import logError
 import requests
 
 
@@ -11,7 +11,9 @@ def curlWithStatusCheck(url: str) -> dict:
     if response.status_code != 200:
         print("Something Went Wrong")
         print(response.text)
+        logError(customText="Something Went Wrong with the ClinicalTrials API", e=response.text, during="curlWithStatusCheck")
         raise Exception("Something Went Wrong with the ClinicalTrials API")
+
     return response.json()
 
 
@@ -29,14 +31,17 @@ def saveRandomTrialsToFile(n):
         json.dump(getRandomCancerTrials(n), f, indent=4)
 
 
-def saveTrialToFile(trial: dict, fileName: str = "trial.json"):
+def saveTrialToFile(trial: dict, folder, suffix = ""):
+    print(json.dumps(trial, indent=4))
+    fileName = os.path.join(folder, trial['nctId']) 
+    fileName += suffix + ".json" if suffix != "" else ".json"
     with open(fileName, "w") as f:
-        json.dump(obj=trial, fp=f, indent=4)
+        json.dump(trial, f, indent=4)
 
 
 # ! WARNING: some IDs from chia are apparently invalid and will make it return an empty json but still 200 status code. there is definitely one wrong in the first ten
 def getChiaIDs(n, start_index=0):
-    directory = "../CHIA"
+    directory = os.path.join(os.path.dirname(os.getcwd()), "CHIA")
     pattern = re.compile(r"NCT\d{8}")
     files = os.listdir(directory)
 
@@ -65,31 +70,20 @@ def getTrialsByID(trialIDS: list):
         nextPageToken = nextPageTrials.get("nextPageToken", None)
 
     filteredTrials = [
-        NoSplittingProcessCriteria(trial["protocolSection"])
+        preProcessTrial(trial["protocolSection"])
         for trial in trials["studies"]
     ]
-    return {"studies": filteredTrials}
+    return filteredTrials
 
+def saveTrialsToFile(trialIDS: list, folder: str, suffix = ""):
+    trials = getTrialsByID(trialIDS)
+    for trial in trials:
+        saveTrialToFile(trial, folder, suffix=suffix)
 
-def saveCHIATrialsToFile(n, start_index=0, fileName="CHIATrials.json"):
+def saveCHIATrials(n, folder, start_index=0, suffix = ""):
     Trials = getTrialsByID(getChiaIDs(n, start_index))
-    with open(fileName, "w") as f:
-        json.dump(Trials, f, indent=4)
-
-
-def getTrialByNCTID(nctid: str) -> dict:
-    data = curlWithStatusCheck(
-        f"https://clinicaltrials.gov/api/v2/studies/{nctid}?format=json&fields=EligibilityModule%7CNCTId%7COfficialTitle"
-    )
-
-    if "nextPageToken" in data:
-        del data["nextPageToken"]
-
-    saveTrialToFile(data["protocolSection"], "isThisWorking.json")
-    data = NoSplittingProcessCriteria(data["protocolSection"])
-
-    return data
-
+    for trial in Trials:
+        saveTrialToFile(trial, folder, suffix=suffix)
 
 def getRandomCancerTrials(n: int) -> dict:
     if n < 1 or n > 1000:
@@ -103,14 +97,14 @@ def getRandomCancerTrials(n: int) -> dict:
         del data["nextPageToken"]
 
     for i in range(len(data["studies"])):
-        data["studies"][i] = NoSplittingProcessCriteria(
+        data["studies"][i] = preProcessTrial(
             data["studies"][i]["protocolSection"]
         )
 
     return data
 
 
-def NoSplittingProcessCriteria(study):
+def preProcessTrial(study):
     eligibilityModule: Dict[Any, Any] = study["eligibilityModule"]
     criteria: str = eligibilityModule["eligibilityCriteria"]
     inclusion_index = criteria.lower().find("inclusion criteria")
@@ -196,4 +190,5 @@ def NoSplittingProcessCriteria(study):
                     f"Must be {maxAge} or younger"
                 )
 
-    return study
+    simpleStudy = {**study["identificationModule"], **study["eligibilityModule"]}
+    return simpleStudy
