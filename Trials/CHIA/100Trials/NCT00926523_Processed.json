@@ -1,0 +1,57 @@
+{
+    "nctId": "NCT00926523",
+    "title": "Biomarkers in the Evaluation of Chronic Lung Disease",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "Subject is at least 18 years of age"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Subject has confirmed Pulmonary Hypertension"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Subject has confirmed Interstitial Lung Disease"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Subject is able to complete study procedures, such as spirometry"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Subject is able to complete Pulmonary Exercise test"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have a minimum age of 18 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Subject is pregnant"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Subject is unable to perform tasks associated with study"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Must have a minimum age of 18 Years'), Symbol('Subject has confirmed Interstitial Lung Disease'), Symbol('Subject has confirmed Pulmonary Hypertension'), Symbol('Subject is able to complete Pulmonary Exercise test'), Symbol('Subject is able to complete study procedures, such as spirometry'), Symbol('Subject is at least 18 years of age'), Not(Or(Symbol('Subject is pregnant'), Symbol('Subject is unable to perform tasks associated with study'))))"
+}

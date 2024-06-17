@@ -1,0 +1,49 @@
+{
+    "nctId": "NCT00250640",
+    "title": "Open-label, Uncontrolled, Prospective Long-term Observation of Ventavis Inhalation Therapy in the Treatment of Patients With Primary Pulmonary Hypertension up to 4 Years",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "The treating physician has chosen Ventavis as a suitable long-term treatment for the patient"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Patient with primary pulmonary hypertension (i.e. Idiopathic Pulmonary Arterial Hypertension or Familial Pulmonary Arterial Hypertension) and classified as NYHA functional class III (NYHA = New York Heart Association)"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "No prior treatment with Ventavis or other active treatments for primary pulmonary hypertension within 6 weeks of date of study inclusion (unless otherwise advised by Bayer Schering Pharma)"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 18 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Any condition that prevents participation in the study, including pregnancy"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Other contraindications for Ventavis treatment (as listed in the current Ventavis Summary of Product Characteristics and patient package insert)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Must have minimum age of 18 Years'), Symbol('No prior treatment with Ventavis or other active treatments for primary pulmonary hypertension within 6 weeks of date of study inclusion (unless otherwise advised by Bayer Schering Pharma)'), Symbol('Patient with primary pulmonary hypertension (i.e. Idiopathic Pulmonary Arterial Hypertension or Familial Pulmonary Arterial Hypertension) and classified as NYHA functional class III (NYHA = New York Heart Association)'), Symbol('The treating physician has chosen Ventavis as a suitable long-term treatment for the patient'), Not(Or(Symbol('Any condition that prevents participation in the study, including pregnancy'), Symbol('Other contraindications for Ventavis treatment (as listed in the current Ventavis Summary of Product Characteristics and patient package insert)'))))"
+}

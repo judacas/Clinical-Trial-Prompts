@@ -1,0 +1,93 @@
+{
+    "nctId": "NCT01116973",
+    "title": "Reliability of Central Venous Pressure Measurements From Peripherally Inserted Central Catheters vs. Centrally Inserted Central Catheters",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "Subject's ability to lay in a supine position with their hands at their sides during CVP measurements"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "A consent form signed by the patient or patient's representative"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Subjects that are age 18-90"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Subjects that have an indwelling CICC and are transitioning to a PICC for long-term IV access"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "CICC placed in the internal jugular vein or subclavian vein position"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 18 Years"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have maximum age of 90 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Inability to obtain consent"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Subjects under 18 years of age"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Non-English speaking subjects"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Subjects that are unable to lay flat due to pulmonary complications, increased intracranial pressure (ICP), or unstable spinal cord injuries"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Subjects with known cardiac abnormalities (atrial septal defects or ventricular septal defects, severe tricuspid valve disease, severe pulmonary hypertension, Ejection fraction < 15%)"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Prisoners"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Subjects with known upper extremity deep vein thromboses (subclavian or distal)"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Subjects with non-functional CICC or PICC distal ports"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Subjects with femoral CICCs"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Pregnant women"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol(\"A consent form signed by the patient or patient's representative\"), Symbol('CICC placed in the internal jugular vein or subclavian vein position'), Symbol('Must have maximum age of 90 Years'), Symbol('Must have minimum age of 18 Years'), Symbol(\"Subject's ability to lay in a supine position with their hands at their sides during CVP measurements\"), Symbol('Subjects that are age 18-90'), Symbol('Subjects that have an indwelling CICC and are transitioning to a PICC for long-term IV access'), Not(Or(Symbol('Inability to obtain consent'), Symbol('Non-English speaking subjects'), Symbol('Pregnant women'), Symbol('Prisoners'), Symbol('Subjects that are unable to lay flat due to pulmonary complications, increased intracranial pressure (ICP), or unstable spinal cord injuries'), Symbol('Subjects under 18 years of age'), Symbol('Subjects with femoral CICCs'), Symbol('Subjects with known cardiac abnormalities (atrial septal defects or ventricular septal defects, severe tricuspid valve disease, severe pulmonary hypertension, Ejection fraction < 15%)'), Symbol('Subjects with known upper extremity deep vein thromboses (subclavian or distal)'), Symbol('Subjects with non-functional CICC or PICC distal ports'))))"
+}

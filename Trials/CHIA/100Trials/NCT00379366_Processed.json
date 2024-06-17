@@ -1,0 +1,75 @@
+{
+    "nctId": "NCT00379366",
+    "title": "Efficacy and Tolerance of Transcutaneous Ionizing Radiations to Prevent Restenosis Caused by Intimal Hyperplasia on Prosthetic Haemodialysis Vascular Access",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "variable",
+                "value": "over 18 years"
+            },
+            {
+                "type": "or",
+                "operands": [
+                    {
+                        "type": "and",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "successful angioplasty (residual stenosis < 30%)"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "significant stenosis (maximal systolic speed 3 times > from basal maximal systolic speed, stenosis > 70% on angiography)"
+                            },
+                            {
+                                "type": "or",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "venous-prosthesis anastomosis"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "venous segment 5 cm after the anastomosis of a prosthetic haemodialysis vascular access (at least 1 month old)"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "variable",
+                "value": "social security affiliation"
+            },
+            {
+                "type": "variable",
+                "value": "signed informed consent"
+            },
+            {
+                "type": "variable",
+                "value": "Must have minimum age of 18 Years"
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "contra-indications of radiotherapy"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "angioplasty with stenting"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Must have minimum age of 18 Years'), Symbol('over 18 years'), Symbol('signed informed consent'), Symbol('significant stenosis (maximal systolic speed 3 times > from basal maximal systolic speed, stenosis > 70% on angiography)'), Symbol('social security affiliation'), Symbol('successful angioplasty (residual stenosis < 30%)'), Or(Symbol('venous segment 5 cm after the anastomosis of a prosthetic haemodialysis vascular access (at least 1 month old)'), Symbol('venous-prosthesis anastomosis')), Not(Or(Symbol('angioplasty with stenting'), Symbol('contra-indications of radiotherapy'))))"
+}

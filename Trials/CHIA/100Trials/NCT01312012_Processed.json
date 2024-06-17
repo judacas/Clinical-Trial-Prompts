@@ -1,0 +1,73 @@
+{
+    "nctId": "NCT01312012",
+    "title": "The Effectiveness and Feasibility of Using Antiviral Therapy in Pregnant Women to Reduce Mother-to-infant Transmission of Hepatitis B Virus-drug Test and Follow-up Study",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "pregnant women in 30 to 32 weeks of gestation"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "positive HBsAg"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "positive HBeAg"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "serum viral load above 8log10 copies per mL"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must be FEMALE"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 20 Years"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have maximum age of 40 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "major systemic disease"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Pregnant woman with infection of human immunodeficiency virus or hepatitis C virus"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Pregnant woman is receiving any drug with antiviral activity or any form of drug therapy for hepatitis B virus"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Pregnant woman whose ultrasonographic examination reveals congenital anomaly of the fetus"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Pregnant woman whose amniocentesis reveals any genetic abnormality"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Must be FEMALE'), Symbol('Must have maximum age of 40 Years'), Symbol('Must have minimum age of 20 Years'), Symbol('positive HBeAg'), Symbol('positive HBsAg'), Symbol('pregnant women in 30 to 32 weeks of gestation'), Symbol('serum viral load above 8log10 copies per mL'), Not(Or(Symbol('Pregnant woman is receiving any drug with antiviral activity or any form of drug therapy for hepatitis B virus'), Symbol('Pregnant woman whose amniocentesis reveals any genetic abnormality'), Symbol('Pregnant woman whose ultrasonographic examination reveals congenital anomaly of the fetus'), Symbol('Pregnant woman with infection of human immunodeficiency virus or hepatitis C virus'), Symbol('major systemic disease'))))"
+}

@@ -1,0 +1,69 @@
+{
+    "nctId": "NCT01084993",
+    "title": "EArly Discharge After Transradial Stenting of CoronarY Arteries in High-Risk Patients of Bleeding: Bivalirudin to Reduce Bleeding EASY-B2B Study",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "or",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "at least 70 yrs old"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "female gender"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "diabetes"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "creatinine clearance <60mL/min"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "history of gastro-intestinal or other organ bleeding"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "baseline anemia"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "current treatment with glycoproteins IIb-IIIa inhibitors"
+                    }
+                ]
+            },
+            {
+                "type": "variable",
+                "value": "must have minimum age of 18 Years"
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "intolerance or allergy to ASA, clopidogrel or ticlopidine precluding treatment for 12 months"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "concurrent participation in other investigational study"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "femoral sheath (artery)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('must have minimum age of 18 Years'), Not(Or(Symbol('concurrent participation in other investigational study'), Symbol('femoral sheath (artery)'), Symbol('intolerance or allergy to ASA, clopidogrel or ticlopidine precluding treatment for 12 months'))), Or(Symbol('at least 70 yrs old'), Symbol('baseline anemia'), Symbol('creatinine clearance <60mL/min'), Symbol('current treatment with glycoproteins IIb-IIIa inhibitors'), Symbol('diabetes'), Symbol('female gender'), Symbol('history of gastro-intestinal or other organ bleeding')))"
+}

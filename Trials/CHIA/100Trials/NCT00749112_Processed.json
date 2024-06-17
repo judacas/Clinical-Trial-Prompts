@@ -1,0 +1,61 @@
+{
+    "nctId": "NCT00749112",
+    "title": "Low Doses of Alemtuzumab and Rituximab in the Treatment of Refractory Autoimmune Cytopenias",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "Age: > or = 16 years"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Weight: more than 40 Kg"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Autoimmune Hemolytic anemia with clinical and biochemical evidence of hemolysis refractory to treatment, in relapse or steroids dependent"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Idiopathic thrombocytopenic purpura with platelet counts < 50,000, refractory to treatment, in relapse or steroids dependent"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 16 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Current viral or bacterial infection"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Positive serology for HIV"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Positive serology for HCV"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Positive serology for HBV"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Age: > or = 16 years'), Symbol('Autoimmune Hemolytic anemia with clinical and biochemical evidence of hemolysis refractory to treatment, in relapse or steroids dependent'), Symbol('Idiopathic thrombocytopenic purpura with platelet counts < 50,000, refractory to treatment, in relapse or steroids dependent'), Symbol('Must have minimum age of 16 Years'), Symbol('Weight: more than 40 Kg'), Not(Or(Symbol('Current viral or bacterial infection'), Symbol('Positive serology for HBV'), Symbol('Positive serology for HCV'), Symbol('Positive serology for HIV'))))"
+}

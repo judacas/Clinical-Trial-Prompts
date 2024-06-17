@@ -1,0 +1,65 @@
+{
+    "nctId": "NCT01175044",
+    "title": "Efficacy of a Dilute Betadine Lavage in the Prevention of Postoperative Infection in Revision Total Knee Arthroplasty",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "Scheduled to undergo revision total knee arthroplasty"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 18 Years"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have maximum age of 90 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Inability to provide informed consent or to comply with study assessments (e.g. due to cognitive impairment or geographic distance)."
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Age \u2264 17"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Allergy to povidone iodine"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Any condition requiring antibiotics 14 days prior to arriving for surgery."
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Patients with chronic immunosuppression (such as HIV/AIDS)."
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Unable to adhere to follow up schedule and treatment."
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Patients scheduled to undergo revision total knee arthroplasty for infectious reasons."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Must have maximum age of 90 Years'), Symbol('Must have minimum age of 18 Years'), Symbol('Scheduled to undergo revision total knee arthroplasty'), Not(Or(Symbol('Age \u2264 17'), Symbol('Allergy to povidone iodine'), Symbol('Any condition requiring antibiotics 14 days prior to arriving for surgery.'), Symbol('Inability to provide informed consent or to comply with study assessments (e.g. due to cognitive impairment or geographic distance).'), Symbol('Patients scheduled to undergo revision total knee arthroplasty for infectious reasons.'), Symbol('Patients with chronic immunosuppression (such as HIV/AIDS).'), Symbol('Unable to adhere to follow up schedule and treatment.'))))"
+}

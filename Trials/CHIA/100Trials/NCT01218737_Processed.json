@@ -1,0 +1,69 @@
+{
+    "nctId": "NCT01218737",
+    "title": "Double-Masked, Randomized, Parallel Group Study for Evaluation of Non-Inferiority of 0.3%Gatifloxacin/1.0% Prednisolone Association Compared With Their Isolated Administration in the Prevention of Ocular Infection/Inflammation After LASIK Surgery",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "Patient is indicated to have an ocular refractive surgery performed (myopia, astigmatism, hypermetropy) by the Lasik method."
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Patient presents a normal eye fundus."
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Patient has intraocular pressure (IOP) \u2264 20 mmHg."
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 18 Years"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have maximum age of 60 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Surgery or previous ocular pathology (presence of scar/change in the cornea, glaucoma, retinopathies, etc.)."
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Patient has diabetes or is immunodepressed."
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Any systemic infection during the study."
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Signs or symptoms of ocular inflammation/infection (bacterial, viral, fungal, caused by Chlamydia, by Mycobacterium, Acanthamoeba or of allergic etiology)."
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Have used any systemic or topical antibiotics for ocular infection in the previous 14 days."
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Patient has known hypersensitivity to any of the components of the formulations used in the study."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Must have maximum age of 60 Years'), Symbol('Must have minimum age of 18 Years'), Symbol('Patient has intraocular pressure (IOP) \u2264 20 mmHg.'), Symbol('Patient is indicated to have an ocular refractive surgery performed (myopia, astigmatism, hypermetropy) by the Lasik method.'), Symbol('Patient presents a normal eye fundus.'), Not(Or(Symbol('Any systemic infection during the study.'), Symbol('Have used any systemic or topical antibiotics for ocular infection in the previous 14 days.'), Symbol('Patient has diabetes or is immunodepressed.'), Symbol('Patient has known hypersensitivity to any of the components of the formulations used in the study.'), Symbol('Signs or symptoms of ocular inflammation/infection (bacterial, viral, fungal, caused by Chlamydia, by Mycobacterium, Acanthamoeba or of allergic etiology).'), Symbol('Surgery or previous ocular pathology (presence of scar/change in the cornea, glaucoma, retinopathies, etc.).'))))"
+}

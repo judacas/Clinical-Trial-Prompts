@@ -1,0 +1,65 @@
+{
+    "nctId": "NCT01009359",
+    "title": "Open-label, Non-randomized, Multicenter Positron Emission Tomography (PET) Imaging Study to Evaluate a Single Dose of 250 MBq BAY85-8102 F-18, DPA-714 for Its Diagnostic Potential in Discriminating Patients With Probable Alzheimers Disease From Healthy Volunteers and to Evaluate the Radiation Dosimetry of a Single Dose of 150 MBq BAY858102 F-18, DPA-714 in Healthy Volunteers.",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "Able to give fully informed consent in writing"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Males or females aged \\>/= 50 years"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "No significant disease or drug use"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Absence of any sign of dementia/cognitive impairment in neuropsychological examinations"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Patient and designee capable of giving fully informed consent in writing"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Patient fulfils DSM-IV and NINCDS-ADRA criteria for probable Alzheimers disease"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Patient has undergone physical and neurological examination, ECG and test of routine hematological and biochemical parameters prior to radiotracer administration"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 50 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Pregnancy or lactation"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Current unstable medical condition (e.g. unstable angina, myocardial infarction or coronary revascularization in the preceding 12 months, cardiac failure, chronic renal failure, chronic hepatic disease, severe pulmonary disease, blood disorders, poorly controlled diabetes, chronic infection)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Able to give fully informed consent in writing'), Symbol('Absence of any sign of dementia/cognitive impairment in neuropsychological examinations'), Symbol('Males or females aged \\\\>/= 50 years'), Symbol('Must have minimum age of 50 Years'), Symbol('No significant disease or drug use'), Symbol('Patient and designee capable of giving fully informed consent in writing'), Symbol('Patient fulfils DSM-IV and NINCDS-ADRA criteria for probable Alzheimers disease'), Symbol('Patient has undergone physical and neurological examination, ECG and test of routine hematological and biochemical parameters prior to radiotracer administration'), Not(Or(Symbol('Current unstable medical condition (e.g. unstable angina, myocardial infarction or coronary revascularization in the preceding 12 months, cardiac failure, chronic renal failure, chronic hepatic disease, severe pulmonary disease, blood disorders, poorly controlled diabetes, chronic infection)'), Symbol('Pregnancy or lactation'))))"
+}

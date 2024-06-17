@@ -1,0 +1,53 @@
+{
+    "nctId": "NCT00483106",
+    "title": "Clinical and Pharmacogenetic Study of Attention Deficit With Hyperactivity Disorder (ADHD)",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "ADHD"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 6 Years"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have maximum age of 12 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Psychosis"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Tourette syndrome"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Intelligence quotient (IQ) < 70"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Pervasive developmental disorder (PDD)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('ADHD'), Symbol('Must have maximum age of 12 Years'), Symbol('Must have minimum age of 6 Years'), Not(Or(Symbol('Intelligence quotient (IQ) < 70'), Symbol('Pervasive developmental disorder (PDD)'), Symbol('Psychosis'), Symbol('Tourette syndrome'))))"
+}

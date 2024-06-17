@@ -1,0 +1,44 @@
+{
+    "nctId": "NCT00198913",
+    "title": "Use of Modified Foods in the Dietary Treatment of Type II Diabetes Mellitus: Long Term Free Living Study",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "variable",
+                "value": "type 2 diabetic"
+            },
+            {
+                "type": "variable",
+                "value": "age 18 and over"
+            },
+            {
+                "type": "variable",
+                "value": "informed consent"
+            },
+            {
+                "type": "variable",
+                "value": "must have minimum age of 18 Years"
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "type 1 diabetic"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "non-diabetic"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('age 18 and over'), Symbol('informed consent'), Symbol('must have minimum age of 18 Years'), Symbol('type 2 diabetic'), Not(Or(Symbol('non-diabetic'), Symbol('type 1 diabetic'))))"
+}

@@ -1,0 +1,74 @@
+{
+    "nctId": "NCT01032109",
+    "title": "Verteporfin Photodynamic Therapy Alone Versus Combined With Intravitreal Bevacizumab for Neovascular Age-related Macular Degeneration",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "choroidal neovascularization caused by age-related macula degeneration"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "no previous treatment"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "a follow-up at least 12 months"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "a baseline visual acuity ranging from a letter score of 0 to 70 on the Early Treatment Diabetic Retinopathy Study chart"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 50 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "choroidal neovascularization caused by other eye diseases"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "ocular surgery within the past 3 months"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "history of uveitis"
+                            },
+                            {
+                                "type": "or",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "intraocular pressure higher than 25 mmHg"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "glaucoma"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "variable",
+                                "value": "history of systemic or ocular thromboembolic events"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Must have minimum age of 50 Years'), Symbol('a baseline visual acuity ranging from a letter score of 0 to 70 on the Early Treatment Diabetic Retinopathy Study chart'), Symbol('a follow-up at least 12 months'), Symbol('choroidal neovascularization caused by age-related macula degeneration'), Symbol('no previous treatment'), Not(Or(Symbol('choroidal neovascularization caused by other eye diseases'), Symbol('glaucoma'), Symbol('history of systemic or ocular thromboembolic events'), Symbol('history of uveitis'), Symbol('intraocular pressure higher than 25 mmHg'), Symbol('ocular surgery within the past 3 months'))))"
+}

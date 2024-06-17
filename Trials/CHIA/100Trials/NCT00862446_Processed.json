@@ -1,0 +1,48 @@
+{
+    "nctId": "NCT00862446",
+    "title": "Use of Omega-3 Fat Emulsion (Omegaven) in Infants With Parenteral Nutrition Associated Liver Disease",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "variable",
+                "value": "Infants in the newborn intensive care unit"
+            },
+            {
+                "type": "variable",
+                "value": "TPN cholestasis of at least 2.5 mg/dl"
+            },
+            {
+                "type": "variable",
+                "value": "Anticipated TPN treatment for at least one month"
+            },
+            {
+                "type": "variable",
+                "value": "signed informed consent"
+            },
+            {
+                "type": "variable",
+                "value": "Must have maximum age of 24 Months"
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Enrollment in another trial"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Lack of consent"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Anticipated TPN treatment for at least one month'), Symbol('Infants in the newborn intensive care unit'), Symbol('Must have maximum age of 24 Months'), Symbol('TPN cholestasis of at least 2.5 mg/dl'), Symbol('signed informed consent'), Not(Or(Symbol('Enrollment in another trial'), Symbol('Lack of consent'))))"
+}

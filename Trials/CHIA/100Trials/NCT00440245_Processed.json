@@ -1,0 +1,36 @@
+{
+    "nctId": "NCT00440245",
+    "title": "Bronchoprotection of Salbutamol in Asthma and COPD",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "or",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "asthma"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "COPD"
+                    }
+                ]
+            },
+            {
+                "type": "variable",
+                "value": "Minimum age of 18 Years"
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "asthma and COPD"
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Minimum age of 18 Years'), Not(Symbol('asthma and COPD')), Or(Symbol('COPD'), Symbol('asthma')))"
+}

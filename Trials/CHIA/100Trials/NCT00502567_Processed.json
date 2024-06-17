@@ -1,0 +1,45 @@
+{
+    "nctId": "NCT00502567",
+    "title": "A Phase 1, Open Label Study to Assess the Safety, Tolerability and Pharmacokinetics of AZD2171 and Selected Chemotherapy Regimens When Given in Combination to Patients With Advanced Solid Tumors",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "histologically confirmed metastatic cancer that is not amenable to surgery or radiation therapy with curative intent"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "measurable lesion by CT or other techniques according to RECIST"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "must have minimum age of 18 years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "inadequate bone marrow reserve"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "history of poorly controlled hypertension"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('histologically confirmed metastatic cancer that is not amenable to surgery or radiation therapy with curative intent'), Symbol('measurable lesion by CT or other techniques according to RECIST'), Symbol('must have minimum age of 18 years'), Not(Or(Symbol('history of poorly controlled hypertension'), Symbol('inadequate bone marrow reserve'))))"
+}

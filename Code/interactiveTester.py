@@ -8,8 +8,9 @@ from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
 from trial import Trial
 from errorManager import logError
-
+import analyzer
 TRIALS_FOLDER = os.path.join(os.path.dirname(os.getcwd()), "Trials")
+CHIA_FOLDER = os.path.join(os.path.dirname(os.getcwd()), "CHIA")
 
 
 def process_trials():
@@ -130,12 +131,26 @@ def getValidInput(question: str, valid_type: type = None, valid_answers: list = 
                 if not keepTrying:
                     return answer
 
+def compareToChia():
+    comparingCategory = getValidInput("Enter the category in which your trials are in", valid_answers=os.listdir(TRIALS_FOLDER), printOptions=True, keepTrying=True, verbose=True)
+    comparingCategory = os.path.join(TRIALS_FOLDER, comparingCategory)
+    comparingFolder = getValidInput("Enter the folder in which your trials are in", valid_answers=os.listdir(comparingCategory), printOptions=True, keepTrying=True, verbose=True)
+    comparingFolder = os.path.join(comparingCategory, comparingFolder)
+    analyzer.compareToChia(CHIA_FOLDER, comparingFolder)
+    
+    
+            
+        
+            
+    
+
 
 def main():
     menu_options = [
         {"label": "Get raw trials", "function": getRawTrials},
         {"label": "Process trials", "function": process_trials},
         {"label": "Talk to trial", "function": talk_to_trial},
+        {"label": "Compare to Chia", "function": compareToChia},
         {"label": "Exit", "function": exit_program},
     ]
 

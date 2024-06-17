@@ -1,0 +1,157 @@
+{
+    "nctId": "NCT01078051",
+    "title": "Drug-Eluting Stent Implantation Versus Optimal Medical Treatment in Patients",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "Patients with angina or silent ischemia and documented ischemia"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Patients who are eligible for intracoronary stenting"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Age > 18 years"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "De novo lesion CTO"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Reference vessel size 2.5 mm by visual estimation"
+                    },
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "At least one CTO lesion located in proximal or mid epicardial coronary artery"
+                            },
+                            {
+                                "type": "and",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "Two CTO lesions"
+                                    },
+                                    {
+                                        "type": "variable",
+                                        "value": "One CTO lesion located in proximal or mid epicardial coronary artery"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Angiographically defined total occlusion over 3 months"
+                    },
+                    {
+                        "type": "implies",
+                        "operands": [
+                            {
+                                "type": "not",
+                                "operands": [
+                                    {
+                                        "type": "variable",
+                                        "value": "definite symptom with total occlusion"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "variable",
+                                "value": "two experienced operators decide CTO in consideration of angiographical morphology (degree of calcification, bridging collaterals, non-tapered stump, angiographic filling from collaterals)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 18 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "History of bleeding diathesis or coagulopathy"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Pregnant state"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Three vessel CTO"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Known hypersensitivity or contra-indication to contrast agent and heparin"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "ST-elevation acute myocardial infarction requiring primary stenting"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Left main disease"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "In-stent restenosis"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Graft vessels"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Distal epicardial coronary artery CTO lesions"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Hematological disease"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Hepatic dysfunction, liver enzyme (ALT and AST) elevation 3 times normal"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Renal dysfunction, creatinine more than 2.0"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Contraindication to aspirin, clopidogrel or other commercial antiplatelet agent"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Left ventricular ejection fraction"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Patients who are actively participating in another drug or device investigational study, which have not completed the primary endpoint follow-up period"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Non-cardiac co-morbid conditions are present with limited life expectancy or that may result in protocol non-compliance (per site investigator's medical judgment)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Age > 18 years'), Symbol('Angiographically defined total occlusion over 3 months'), Symbol('De novo lesion CTO'), Symbol('Must have minimum age of 18 Years'), Symbol('Patients who are eligible for intracoronary stenting'), Symbol('Patients with angina or silent ischemia and documented ischemia'), Symbol('Reference vessel size 2.5 mm by visual estimation'), Implies(Not(Symbol('definite symptom with total occlusion')), Symbol('two experienced operators decide CTO in consideration of angiographical morphology (degree of calcification, bridging collaterals, non-tapered stump, angiographic filling from collaterals)')), Or(Symbol('At least one CTO lesion located in proximal or mid epicardial coronary artery'), And(Symbol('One CTO lesion located in proximal or mid epicardial coronary artery'), Symbol('Two CTO lesions'))), Not(Or(Symbol('Contraindication to aspirin, clopidogrel or other commercial antiplatelet agent'), Symbol('Distal epicardial coronary artery CTO lesions'), Symbol('Graft vessels'), Symbol('Hematological disease'), Symbol('Hepatic dysfunction, liver enzyme (ALT and AST) elevation 3 times normal'), Symbol('History of bleeding diathesis or coagulopathy'), Symbol('In-stent restenosis'), Symbol('Known hypersensitivity or contra-indication to contrast agent and heparin'), Symbol('Left main disease'), Symbol('Left ventricular ejection fraction'), Symbol(\"Non-cardiac co-morbid conditions are present with limited life expectancy or that may result in protocol non-compliance (per site investigator's medical judgment)\"), Symbol('Patients who are actively participating in another drug or device investigational study, which have not completed the primary endpoint follow-up period'), Symbol('Pregnant state'), Symbol('Renal dysfunction, creatinine more than 2.0'), Symbol('ST-elevation acute myocardial infarction requiring primary stenting'), Symbol('Three vessel CTO'))))"
+}

@@ -1,0 +1,69 @@
+{
+    "nctId": "NCT00356148",
+    "title": "Phase IV Study of Determining the Efficacy of Ampicillin/Sulbactam Combination as Antibiotic Prophylaxis During Breast Cancer Surgery in Patients With a Body Mass Index (BMI) Over 25.",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "Women at any age with early stage breast cancer (stage I-II) and American Society of Anesthesiologists (ASA) score of I-II"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must be FEMALE"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 18 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Ductal carcinoma in situ (DCIS; stage 0 cancer)"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Advanced or distant metastatic stage"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Receiving any neoadjuvant therapy"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "History of receiving any antibiotics within prior 3 months"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "History of immunodeficiency"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Having a remote infection"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "History of reaction to study antibiotics"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Denial of signing the consent form"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Must be FEMALE'), Symbol('Must have minimum age of 18 Years'), Symbol('Women at any age with early stage breast cancer (stage I-II) and American Society of Anesthesiologists (ASA) score of I-II'), Not(Or(Symbol('Advanced or distant metastatic stage'), Symbol('Denial of signing the consent form'), Symbol('Ductal carcinoma in situ (DCIS; stage 0 cancer)'), Symbol('Having a remote infection'), Symbol('History of immunodeficiency'), Symbol('History of reaction to study antibiotics'), Symbol('History of receiving any antibiotics within prior 3 months'), Symbol('Receiving any neoadjuvant therapy'))))"
+}

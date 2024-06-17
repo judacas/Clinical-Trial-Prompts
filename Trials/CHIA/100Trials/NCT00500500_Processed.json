@@ -1,0 +1,95 @@
+{
+    "nctId": "NCT00500500",
+    "title": "Effect of EGb 761\u00ae on the Ratio of the Isoforms of the Protein Precursor of Beta Amyloid Platelets on Patients With Mild to Moderate Alzheimer's Disease. A Phase II, Randomised, Double-blind Trial, on Parallel Groups Versus Placebo.",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "or",
+                "operands": [
+                    {
+                        "type": "and",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "female"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "aged 50 to 85 years"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "has a care giver"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "and",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "male"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "aged 50 to 85 years"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "has a care giver"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "variable",
+                "value": "Mini Mental Status (MMS) test between 16 to 26 inclusive"
+            },
+            {
+                "type": "variable",
+                "value": "Clinical Dementia Rating (CDR) test inferior or equal to 1"
+            },
+            {
+                "type": "variable",
+                "value": "National Institute of Neurological and Communicative Disorders and Stroke / Alzheimer's Disease and Related Disorders Association (NINCDS/ADRDA) test positive for an Alzheimer's disease"
+            },
+            {
+                "type": "variable",
+                "value": "Diagnostic and Statistical Manual of Mental Disorders, 4th Edition (DSM IV) test positive for dementia"
+            },
+            {
+                "type": "variable",
+                "value": "must have minimum age of 50 Years"
+            },
+            {
+                "type": "variable",
+                "value": "must have maximum age of 85 Years"
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "patient already treated by medicines which could interfere with the study"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "low level of vitamin B12 and folate which are considered as clinically relevant"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "clinically relevant pathologies (eg: pulmonary illness, cardiovascular illness; evolutive cancer, neurological illness, blood illness....)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Clinical Dementia Rating (CDR) test inferior or equal to 1'), Symbol('Diagnostic and Statistical Manual of Mental Disorders, 4th Edition (DSM IV) test positive for dementia'), Symbol('Mini Mental Status (MMS) test between 16 to 26 inclusive'), Symbol(\"National Institute of Neurological and Communicative Disorders and Stroke / Alzheimer's Disease and Related Disorders Association (NINCDS/ADRDA) test positive for an Alzheimer's disease\"), Symbol('must have maximum age of 85 Years'), Symbol('must have minimum age of 50 Years'), Not(Or(Symbol('clinically relevant pathologies (eg: pulmonary illness, cardiovascular illness; evolutive cancer, neurological illness, blood illness....)'), Symbol('low level of vitamin B12 and folate which are considered as clinically relevant'), Symbol('patient already treated by medicines which could interfere with the study'))), Or(And(Symbol('aged 50 to 85 years'), Symbol('female'), Symbol('has a care giver')), And(Symbol('aged 50 to 85 years'), Symbol('has a care giver'), Symbol('male'))))"
+}

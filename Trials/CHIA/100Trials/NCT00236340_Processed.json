@@ -1,0 +1,65 @@
+{
+    "nctId": "NCT00236340",
+    "title": "Syringe or Continuous Amnioreduction for Symptomatic Polyhydramnios. A Prospective Randomized Study.",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "Pregnant women with abdomen discomfort and ultrasound diagnosis of polyhydramnios (AFI>25cm)"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Single or twin pregnancies"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must be FEMALE"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 18 Years"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have maximum age of 40 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Multiple pregnancy (more than 3 fetuses)"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Maternal history of placental abruptio"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Fetus with IUGR"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Pregnancy complicated with pre-eclampsia"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Unability to give informed consent"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Must be FEMALE'), Symbol('Must have maximum age of 40 Years'), Symbol('Must have minimum age of 18 Years'), Symbol('Pregnant women with abdomen discomfort and ultrasound diagnosis of polyhydramnios (AFI>25cm)'), Symbol('Single or twin pregnancies'), Not(Or(Symbol('Fetus with IUGR'), Symbol('Maternal history of placental abruptio'), Symbol('Multiple pregnancy (more than 3 fetuses)'), Symbol('Pregnancy complicated with pre-eclampsia'), Symbol('Unability to give informed consent'))))"
+}

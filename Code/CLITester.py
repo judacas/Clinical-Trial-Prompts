@@ -47,14 +47,16 @@ def main_cli():
     get_raw_trials_parser.add_argument('--folder', type=str, required=True)
 
     process_trials_parser = subparsers.add_parser('process_trials')
+    process_trials_parser.add_argument('--category', type=str, required=True)
     process_trials_parser.add_argument('--folder', type=str, required=True)
-
+    
     args = parser.parse_args()
-
+    
     if args.command == 'get_raw_trials':
         get_raw_trials(num=args.num, start_index=args.start_index, category=args.category, folder=args.folder)
     elif args.command == 'process_trials':
-        process_trials(folder=args.folder)
+        folder_path = os.path.join(args.category, args.folder)
+        process_trials(folder=folder_path)
     else:
         logError(customText=f"Invalid command: {args.command}", during="parsing command line arguments")
 

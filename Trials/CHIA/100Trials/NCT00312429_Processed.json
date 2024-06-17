@@ -1,0 +1,73 @@
+{
+    "nctId": "NCT00312429",
+    "title": "Cord Blood Transplantation in Adult Recipients",
+    "symPyJSON": {
+        "type": "and",
+        "operands": [
+            {
+                "type": "and",
+                "operands": [
+                    {
+                        "type": "variable",
+                        "value": "Diagnosis reviewed at transplant center and confirmed to fit the criterion for high risk blood disease or cancer, as defined for the study"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Estimated life expectancy of at least 6 weeks following study entry"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Cancer and Leukemia Group B (CALGB) performance status less than or equal to 2"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "White blood cell count, platelet, hematocrit, tuberculosis, aspartate aminotransferase (AST), alanine aminotransferase (ALT), alkaline phosphatase, creatinine, and HIV test results reviewed by transplant center"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Multiple gated acquisition (MUGA), echocardiogram, cardiac MRI, and/or pulmonary function tests (PFT) performed and reviewed by transplant center"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Sufficient number of umbilical cord blood units available for transplantation"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "If female, willing to use contraception throughout the study"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have minimum age of 18 Years"
+                    },
+                    {
+                        "type": "variable",
+                        "value": "Must have maximum age of 70 Years"
+                    }
+                ]
+            },
+            {
+                "type": "not",
+                "operands": [
+                    {
+                        "type": "or",
+                        "operands": [
+                            {
+                                "type": "variable",
+                                "value": "Undergoing Interleukin-2 (IL-2) therapy within 8 weeks of study entry"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Diagnosed with a medical or psychiatric illness that may interfere with study participation"
+                            },
+                            {
+                                "type": "variable",
+                                "value": "Pregnant"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "symPyExpression": "And(Symbol('Cancer and Leukemia Group B (CALGB) performance status less than or equal to 2'), Symbol('Diagnosis reviewed at transplant center and confirmed to fit the criterion for high risk blood disease or cancer, as defined for the study'), Symbol('Estimated life expectancy of at least 6 weeks following study entry'), Symbol('If female, willing to use contraception throughout the study'), Symbol('Multiple gated acquisition (MUGA), echocardiogram, cardiac MRI, and/or pulmonary function tests (PFT) performed and reviewed by transplant center'), Symbol('Must have maximum age of 70 Years'), Symbol('Must have minimum age of 18 Years'), Symbol('Sufficient number of umbilical cord blood units available for transplantation'), Symbol('White blood cell count, platelet, hematocrit, tuberculosis, aspartate aminotransferase (AST), alanine aminotransferase (ALT), alkaline phosphatase, creatinine, and HIV test results reviewed by transplant center'), Not(Or(Symbol('Diagnosed with a medical or psychiatric illness that may interfere with study participation'), Symbol('Pregnant'), Symbol('Undergoing Interleukin-2 (IL-2) therapy within 8 weeks of study entry'))))"
+}
