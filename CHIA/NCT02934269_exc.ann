@@ -1,0 +1,44 @@
+*	OR T3 T5
+R1	Has_index Arg1:T7 Arg2:T8	
+R2	Has_temporal Arg1:T5 Arg2:T7	
+R3	Has_temporal Arg1:T3 Arg2:T7	
+*	OR T9 T10
+R6	AND Arg1:T10 Arg2:T12	
+R7	AND Arg1:T9 Arg2:T12	
+R8	Has_index Arg1:T13 Arg2:T14	
+*	OR T9 T15 T16
+R9	Has_value Arg1:T15 Arg2:T17	
+R10	Has_value Arg1:T16 Arg2:T17	
+R4	Has_temporal Arg1:T9 Arg2:T11	
+R5	Has_temporal Arg1:T9 Arg2:T13	
+R11	Has_index Arg1:T25 Arg2:T26	
+R12	Has_index Arg1:T20 Arg2:T21	
+R13	Has_temporal Arg1:T19 Arg2:T20	
+R14	Has_mood Arg1:T24 Arg2:T22	
+R15	Has_temporal Arg1:T24 Arg2:T25	
+*	OR T19 T24
+T1	Context_Error 0 240	Exposure/treatment to an investigational (new chemical entity) or marketed drug or biologic within 30 days preceding the first dose administration, or five half-lives of that investigational drug or biologic, if known (whichever is longer).
+T2	Non-query-able 0 240	Exposure/treatment to an investigational (new chemical entity) or marketed drug or biologic within 30 days preceding the first dose administration, or five half-lives of that investigational drug or biologic, if known (whichever is longer).
+T3	Procedure 242 256	Donation blood
+T4	Grammar_Error 242 256	Donation blood
+T5	Procedure 242 250;260 265	Donation serum
+T6	Grammar_Error 242 250;260 265	Donation serum
+T7	Temporal 266 287	within 8 weeks before
+T8	Reference_point 292 317	first dose administration
+T9	Condition 372 379;388 393	alcohol abuse
+T10	Condition 383 393	drug abuse
+T11	Temporal 361 368	History
+T12	Procedure 413 439	current version of the DSM
+T13	Temporal 441 462	within 2 years before
+T14	Reference_point 463 492	the first dose administration
+T15	Measurement 506 513;522 528	alcohol screen
+T16	Measurement 517 528	drug screen
+T17	Value 497 505	positive
+T19	Procedure 531 542	Vaccination
+T20	Temporal 543 563	within 30 days prior
+T21	Reference_point 567 596	the first dose administration
+T22	Mood 604 609	plans
+T23	Non-query-able 604 609	plans
+T24	Procedure 623 634	vaccination
+T25	Temporal 635 652	during the course
+T26	Reference_point 660 665	study

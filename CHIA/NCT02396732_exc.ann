@@ -1,0 +1,30 @@
+R1	Has_temporal Arg1:T1 Arg2:T2	
+R2	AND Arg1:T7 Arg2:T8	
+R3	AND Arg1:T9 Arg2:T10	
+*	OR T11 T12
+*	OR T14 T17 T13 T16
+R4	Has_temporal Arg1:T14 Arg2:T15	
+R5	Subsumes Arg1:T19 Arg2:T20	
+*	OR T22 T21
+R6	Has_temporal Arg1:T22 Arg2:T19	
+T1	Condition 12 15	VTE
+T2	Temporal 16 30	upon admission
+T3	Condition 32 40	Pregnant
+T4	Condition 44 51	nursing
+T5	Observation 53 87	Inability to give informed consent
+T6	Informed_consent 53 118	Inability to give informed consent by patient or healthcare proxy
+T7	Condition 120 136	Contraindication
+T8	Drug 140 150	enoxaparin
+T9	Condition 152 168	Contraindication
+T10	Drug 172 179	aspirin
+T11	Condition 181 189;202 210	Epidural hematoma
+T12	Condition 193 210	subdural hematoma
+T13	Procedure 225 232;259 273	removal of an epidural
+T14	Condition 212 220;259 273	Presence of an epidural
+T15	Temporal 233 257	within the last 12 hours
+T16	Condition 212 220;259 263;277 292	Presence of a spinal catheter
+T17	Procedure 225 232;259 263;277 292	removal of a spinal catheter
+T19	Temporal 297 303	recent
+T20	Temporal 305 329	within the last 12 hours
+T21	Procedure 343 360	spinal anesthesia
+T22	Procedure 331 339;350 360	epidural anesthesia

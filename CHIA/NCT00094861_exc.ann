@@ -1,0 +1,126 @@
+R1	Subsumes Arg1:T1 Arg2:T2	
+*	OR T3 T4
+R2	Subsumes Arg1:T6 Arg2:T8	
+R3	Subsumes Arg1:T7 Arg2:T9	
+*	OR T6 T7 T10
+R4	AND Arg1:T4 Arg2:T6	
+R5	Has_value Arg1:T6 Arg2:T5	
+R6	Has_temporal Arg1:T14 Arg2:T13	
+R7	Has_multiplier Arg1:T15 Arg2:T16	
+R8	Has_qualifier Arg1:T18 Arg2:T15	
+R9	Subsumes Arg1:T18 Arg2:T19	
+*	OR T20 T21 T22
+R10	AND Arg1:T23 Arg2:T20	
+R11	Has_temporal Arg1:T20 Arg2:T24	
+R12	Has_negation Arg1:T30 Arg2:T28	
+R13	Has_qualifier Arg1:T26 Arg2:T27	
+R14	Has_temporal Arg1:T26 Arg2:T29	
+R15	Has_negation Arg1:T32 Arg2:T31	
+R16	Has_qualifier Arg1:T36 Arg2:T37	
+*	OR T36 T39
+*	OR T34 T35
+R17	Subsumes Arg1:T36 Arg2:T38	
+R18	Subsumes Arg1:T34 Arg2:T36	
+R19	Has_temporal Arg1:T42 Arg2:T43	
+R20	AND Arg1:T45 Arg2:T46	
+R21	Has_index Arg1:T44 Arg2:T45	
+*	OR T47 T48
+R22	Has_qualifier Arg1:T50 Arg2:T49	
+R23	Has_temporal Arg1:T53 Arg2:T52	
+R24	AND Arg1:T50 Arg2:T53	
+R25	Has_temporal Arg1:T47 Arg2:T44	
+R26	AND Arg1:T47 Arg2:T51	
+*	OR T47 T50
+R27	Has_temporal Arg1:T34 Arg2:T55	
+R28	Has_temporal Arg1:T26 Arg2:T56	
+R29	Has_temporal Arg1:T58 Arg2:T57	
+R30	AND Arg1:T58 Arg2:T59	
+R31	Has_value Arg1:T61 Arg2:T60	
+R32	multi Arg1:T62 Arg2:T61	
+R33	Has_value Arg1:T65 Arg2:T60	
+R34	Has_value Arg1:T66 Arg2:T60	
+R35	multi Arg1:T63 Arg2:T65	
+R36	multi Arg1:T64 Arg2:T66	
+*	OR T62 T63 T64
+*	OR T67 T68
+R37	Has_qualifier Arg1:T72 Arg2:T71	
+R38	AND Arg1:T70 Arg2:T72	
+*	OR T74 T75
+R40	Has_context Arg1:T77 Arg2:T78	
+R41	Has_context Arg1:T81 Arg2:T78	
+*	OR T77 T81
+T1	Condition 0 18;32 37	Metastatic disease NSCLC
+T2	Condition 19 31	(M1)/stage 4
+T3	Condition 39 46;62 70	Pleural effusion
+T4	Condition 50 70	pericardial effusion
+T5	Value 71 100	greater than 100 ml in volume
+T6	Measurement 139 167	positron emission tomography
+T7	Measurement 175 194;200 204	computed tomography scan
+T8	Measurement 169 172	PET
+T9	Measurement 196 198	CT
+T10	Measurement 208 218	ultrasound
+T12	Non-query-able 39 744	Pleural or pericardial effusion greater than 100 ml in volume as documented by appropriate imaging (positron emission tomography [PET], computed tomography [CT] scan or ultrasound). If an effusion greater than 100 ml is documented by cytology to be free from malignancy and the investigator feels the patient is capable of receiving chemo/radiotherapy for their primary disease/ NSCLC, the investigator should discuss the patient with the study physician at Amgen. Effusions smaller than 100 ml would be acceptable, unless the investigator suspects that the effusion is malignant, in which case the effusions should be evaluated by cytology. Sponsor approval must be obtained before patient is randomized.
+T13	Temporal 782 838	before completing the protocol chemo/radiotherapy course
+T14	Mood 746 781	Plan to remove the tumor surgically
+T15	Qualifier 869 878	esophagus
+T16	Multiplier 853 864	any part of
+T17	Procedure 886 898	radiotherapy
+T18	Procedure 840 849	Shielding
+T19	Procedure 910 941	posterior spinal cord shielding
+T20	Drug 950 962	chemotherapy
+T21	Procedure 964 976	radiotherapy
+T22	Procedure 981 988	surgery
+T23	Condition 993 998	NSCLC
+T24	Temporal 944 949	Prior
+T26	Condition 1015 1025	malignancy
+T27	Qualifier 1006 1014	invasive
+T29	Temporal 1026 1049	during the past 3 years
+T28	Negation 1050 1060	other than
+T30	Condition 1061 1089	non-melanomatous skin cancer
+T31	Negation 1232 1239	are not
+T32	Condition 1117 1146	surgically-cured malignancies
+T33	Non-query-able 1259 1321	sponsor approval must be obtained before patient is randomized
+T34	Condition 1347 1356	dysphagia
+T35	Condition 1360 1396	conditions predisposing to dysphagia
+T36	Condition 1415 1446	gastroesophageal reflux disease
+T37	Qualifier 1402 1414	uncontrolled
+T38	Condition 1448 1452	GERD
+T39	Condition 1455 1464	dyspepsia
+T42	Condition 1483 1495	pancreatitis
+T43	Temporal 1472 1482	History of
+T44	Temporal 1497 1545	Four weeks or less since completion of treatment
+T45	Reference_point 1522 1545	completion of treatment
+T46	Procedure 1536 1545	treatment
+T47	Drug 1555 1578	investigational product
+T48	Device 1555 1570;1579 1585	investigational device
+T49	Qualifier 1631 1641	unresolved
+T50	Condition 1642 1650	toxicity
+T51	Competing_trial 1589 1611	another clinical study
+T52	Temporal 1656 1664	previous
+T53	Procedure 1665 1674	treatment
+T55	Temporal 1336 1346	history of
+T56	Temporal 1000 1005	Prior
+T57	Temporal 1676 1684	Previous
+T58	Procedure 1685 1694	treatment
+T59	Drug 1719 1743	fibroblast growth factor
+T60	Value 1757 1770	sero-positive
+T61	Measurement 1775 1809	human immunodeficiency virus (HIV)
+T62	Condition 1757 1809	sero-positive for human immunodeficiency virus (HIV)
+T63	Condition 1757 1774;1811 1834	sero-positive for hepatitis C virus (HCV)
+T64	Condition 1757 1774;1839 1862	sero-positive for hepatitis B virus (HBV)
+T65	Measurement 1811 1834	hepatitis C virus (HCV)
+T66	Measurement 1839 1862	hepatitis B virus (HBV)
+T67	Condition 1864 1872	Pregnant
+T68	Condition 1876 1889	breastfeeding
+T69	Person 1890 1895	women
+T70	Condition 1903 1914	sensitivity
+T71	Qualifier 1918 1933	E. coli derived
+T72	Drug 1934 1942	products
+T73	Condition 1944 1963	Compromised ability
+T74	Informed_consent 1982 2011	give written informed consent
+T75	Non-representable 2022 2050	comply with study procedures
+T77	Informed_consent 2063 2092	sign an informed consent form
+T78	Observation 2052 2062	Refusal to
+T79	Non-representable 2186 2267	Unwilling or unable to complete the patient reported outcome (PRO) questionnaires
+T80	Non-query-able 2269 2362	Psychological, social, familial, or geographical reasons that would prevent regular follow-up
+T81	Informed_consent 2127 2169	sign the hospital information release form

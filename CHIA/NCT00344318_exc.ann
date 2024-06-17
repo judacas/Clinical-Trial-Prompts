@@ -1,0 +1,124 @@
+*	OR T2 T1
+*	OR T3 T4
+R1	Subsumes Arg1:T2 Arg2:T3	
+R2	Has_temporal Arg1:T8 Arg2:T9	
+R3	Has_temporal Arg1:T2 Arg2:T7	
+*	OR T2 T8
+R4	AND Arg1:T8 Arg2:T3	
+*	OR T10 T11
+R5	Subsumes Arg1:T13 Arg2:T14	
+R6	Has_temporal Arg1:T10 Arg2:T13	
+R7	Has_temporal Arg1:T10 Arg2:T12	
+R8	Has_qualifier Arg1:T17 Arg2:T18	
+*	OR T22 T23
+R10	Has_temporal Arg1:T17 Arg2:T19	
+R11	AND Arg1:T16 Arg2:T17	
+R12	Has_temporal Arg1:T36 Arg2:T35	
+*	OR T28 T29 T30 T31 T32 T33 T34
+R13	AND Arg1:T27 Arg2:T28	
+R14	Has_qualifier Arg1:T39 Arg2:T36	
+*	OR T41 T46 T44 T43 T42 T45
+R16	AND Arg1:T40 Arg2:T41	
+*	OR T48 T50
+R17	AND Arg1:T49 Arg2:T48	
+R18	Has_qualifier Arg1:T48 Arg2:T52	
+R22	Has_temporal Arg1:T60 Arg2:T61	
+*	OR T62 T63
+R23	AND Arg1:T64 Arg2:T65	
+*	OR T68 T69
+*	OR T70 T71
+R25	Has_temporal Arg1:T74 Arg2:T75	
+*	OR T72 T74
+R24	Has_temporal Arg1:T70 Arg2:T72	
+R15	Has_negation Arg1:T39 Arg2:T77	
+R26	AND Arg1:T27 Arg2:T39	
+R27	Has_index Arg1:T35 Arg2:T78	
+R19	Has_qualifier Arg1:T55 Arg2:T56	
+R20	Has_multiplier Arg1:T55 Arg2:T57	
+R21	Has_negation Arg1:T55 Arg2:T58	
+R28	AND Arg1:T53 Arg2:T55	
+*	OR T53 T59
+R29	Has_temporal Arg1:T53 Arg2:T54	
+R30	Has_index Arg1:T61 Arg2:T80	
+R31	Has_index Arg1:T75 Arg2:T81	
+R32	Has_index Arg1:T72 Arg2:T82	
+R33	Has_index Arg1:T19 Arg2:T83	
+R34	Has_index Arg1:T21 Arg2:T84	
+R35	Has_index Arg1:T20 Arg2:T85	
+R9	multi Arg1:T85 Arg2:T24	
+R36	multi Arg1:T84 Arg2:T22	
+*	OR T21 T20
+R37	Has_temporal Arg1:T17 Arg2:T21	
+R38	AND Arg1:T64 Arg2:T66	
+T1	Drug 45 52;7 26;71 102	product any investigational other than the study vaccine(s)
+T2	Drug 30 52;7 10;71 102	non-registered product any other than the study vaccine(s)
+T3	Drug 54 58	drug
+T4	Drug 62 69	vaccine
+T7	Temporal 103 117	within 30 days
+T8	Mood 164 175	planned use
+T9	Temporal 176 199	during the study period
+T10	Drug 258 276	immunosuppressants
+T11	Drug 280 308	other immune-modifying drugs
+T12	Temporal 309 326	within six months
+T13	Temporal 201 208	Chronic
+T14	Temporal 236 253	more than 14 days
+T16	Mood 361 368	Planned
+T17	Drug 405 412	vaccine
+T18	Qualifier 413 447	not foreseen by the study protocol
+T19	Temporal 459 515	period starting one month before each dose of vaccine(s)
+T20	Temporal 561 581	1 month after dose 3
+T21	Temporal 520 557	ending 7 days after dose 1 and dose 2
+T22	Drug 540 546	dose 1
+T23	Drug 551 557	dose 2
+T24	Drug 575 581	dose 3
+T27	Drug 593 604	vaccination
+T28	Condition 613 623	diphtheria
+T29	Condition 625 632	tetanus
+T30	Condition 634 643	pertussis
+T31	Condition 645 650	polio
+T32	Condition 652 663	hepatitis B
+T33	Condition 665 694	Haemophilus influenzae type b
+T34	Condition 703 716	S. pneumoniae
+T35	Temporal 782 816	within the first two weeks of life
+T36	Qualifier 758 781	first dose can be given
+T39	Drug 739 747	vaccines
+T40	Temporal 860 867	History
+T41	Condition 887 897	diphtheria
+T42	Condition 899 906	tetanus
+T43	Condition 908 917	pertussis
+T44	Condition 919 930	hepatitis B
+T45	Condition 932 937	polio
+T46	Condition 943 972	Haemophilus influenzae type b
+T48	Condition 995 1011	allergic disease
+T49	Temporal 984 991	History
+T50	Condition 1015 1024;995 1003	reactions allergic
+T52	Qualifier 1038 1049	exacerbated
+T53	Condition 1096 1104	seizures
+T54	Temporal 1085 1092	History
+T55	Condition 1185 1203	febrile convulsion
+T56	Qualifier 1171 1184	uncomplicated
+T57	Multiplier 1163 1169	single
+T59	Condition 1220 1240	neurological disease
+T60	Condition 1243 1256	Acute disease
+T61	Temporal 1257 1281	at the time of enrolment
+T62	Condition 1310 1327;1347 1356	immunosuppressive condition
+T63	Condition 1331 1356	immunodeficient condition
+T64	Observation 1398 1412	family history
+T65	Condition 1416 1426;1441 1457	congenital immunodeficiency
+T66	Condition 1430 1457	hereditary immunodeficiency
+T68	Condition 1460 1484	Major congenital defects
+T69	Condition 1488 1511	serious chronic illness
+T70	Drug 1532 1547	immunoglobulins
+T71	Drug 1555 1573	any blood products
+T72	Temporal 1574 1585	since birth
+T74	Mood 1589 1596	planned
+T75	Temporal 1612 1648	during the active phase of the study
+T77	Negation 717 738	with the exception of
+T78	Reference_point 789 816	the first two weeks of life
+T58	Negation 1121 1135	does not apply
+T80	Reference_point 1272 1281	enrolment
+T81	Reference_point 1623 1648	active phase of the study
+T82	Reference_point 1580 1585	birth
+T83	Reference_point 492 515	each dose of vaccine(s)
+T84	Reference_point 540 557	dose 1 and dose 2
+T85	Reference_point 575 581	dose 3

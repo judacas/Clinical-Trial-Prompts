@@ -1,0 +1,103 @@
+R1	Has_context Arg1:T1 Arg2:T2	
+R2	Has_context Arg1:T1 Arg2:T3	
+R3	Has_context Arg1:T1 Arg2:T4	
+R4	Has_value Arg1:T5 Arg2:T6	
+R5	Has_value Arg1:T5 Arg2:T7	
+R6	Has_value Arg1:T5 Arg2:T8	
+R7	Has_index Arg1:T9 Arg2:T10	
+R8	Has_temporal Arg1:T5 Arg2:T9	
+R9	Has_temporal Arg1:T12 Arg2:T13	
+R10	Has_index Arg1:T15 Arg2:T16	
+R11	Has_value Arg1:T14 Arg2:T15	
+R12	Has_temporal Arg1:T17 Arg2:T18	
+R13	Has_temporal Arg1:T19 Arg2:T20	
+*	OR T17 T19
+*	OR T22 T23
+R14	Subsumes Arg1:T19 Arg2:T21	
+R15	Subsumes Arg1:T19 Arg2:T22	
+R16	Subsumes Arg1:T19 Arg2:T23	
+*	OR T24 T26 T25
+*	OR T27 T28
+R17	Has_index Arg1:T34 Arg2:T35	
+R19	Subsumes Arg1:T31 Arg2:T32	
+R18	Has_multiplier Arg1:T31 Arg2:T33	
+R20	Has_temporal Arg1:T31 Arg2:T34	
+R21	Has_qualifier Arg1:T36 Arg2:T38	
+R22	Has_multiplier Arg1:T38 Arg2:T37	
+R23	Subsumes Arg1:T40 Arg2:T41	
+*	OR T43 T44
+*	OR T47 T48
+*	OR T49 T50
+R26	AND Arg1:T49 Arg2:T51	
+R27	Has_value Arg1:T55 Arg2:T54	
+R28	Has_qualifier Arg1:T58 Arg2:T56	
+R29	multi Arg1:T56 Arg2:T57	
+R30	AND Arg1:T53 Arg2:T55	
+*	OR T53 T58
+*	OR T60 T61
+R31	Subsumes Arg1:T59 Arg2:T60	
+*	OR T64 T65
+R32	AND Arg1:T63 Arg2:T64	
+T1	Condition 61 68	colitis
+T2	Observation 39 60	antibiotic-associated
+T3	Observation 27 37	ulcerative
+T4	Observation 12 25	indeterminate
+T5	Measurement 83 88	stool
+T6	Value 89 105	positive for ova
+T7	Value 110 118;89 101	parasite positive for
+T8	Value 127 155;89 101	Clostridium difficule toxins positive for
+T9	Temporal 156 177	within 3 months prior
+T10	Reference_point 181 191	enrollment
+T11	Context_Error 207 257	other known infectious cause of abdominal symptoms
+T12	Condition 294 307	renal disease
+T13	Temporal 308 330	with the past 6 months
+T14	Measurement 343 385	estimated glomerular filtration rate (GFR)
+T15	Value 386 393	outside
+T16	Reference_point 398 420	normal reference range
+T17	Condition 453 475	intestinal obstruction
+T18	Temporal 442 449	history
+T19	Condition 487 507	obstructive symptoms
+T20	Temporal 479 486	current
+T21	Condition 517 538	severe abdominal pain
+T22	Condition 557 563	nausea
+T23	Condition 567 575	vomiting
+T24	Condition 638 651	gastroparesis
+T25	Condition 655 666	small bowel
+T26	Condition 670 693	large bowel dysmotility
+T27	Condition 723 734;746 755	small bowel resection
+T28	Condition 738 755	colonic resection
+T29	Temporal 712 719	history
+T30	Undefined_semantics 783 848	condition believed to have an increased risk of capsule retention
+T31	Drug 936 973	non-steroidal anti-inflammatory drugs
+T32	Drug 984 991	aspirin
+T33	Multiplier 993 1011	two times per week
+T34	Temporal 1013 1041	during the 4 weeks preceding
+T35	Reference_point 1042 1052	enrollment
+T36	Drug 1063 1070	aspirin
+T37	Multiplier 1081 1095	< 100 mg daily
+T38	Qualifier 1054 1062	Low dose
+T39	Grammar_Error 1116 1132	not exclusionary
+T40	Condition 1160 1169	condition
+T41	Condition 1179 1198	swallowing problems
+T42	Negation 1205 1214	precludes
+T43	Informed_consent 1215 1236	compliance with study
+T44	Informed_consent 1215 1230;1244 1263	compliance with device instructions
+T47	Device 1279 1296	cardiac pacemaker
+T48	Device 1306 1337	implanted electromedical device
+T49	Condition 1355 1362	allergy
+T50	Condition 1378 1394	contraindication
+T51	Drug 1402 1431	medications used in the study
+T53	Condition 1445 1453	pregnant
+T54	Value 1471 1479	positive
+T55	Measurement 1480 1494	pregnancy test
+T56	Qualifier 1502 1510	actively
+T57	Temporal 1502 1510	actively
+T58	Observation 1511 1525	breast-feeding
+T59	Person 1558 1589	part of a vulnerable population
+T60	Person 1595 1604	prisoners
+T61	Condition 1614 1648	without sufficient mental capacity
+T63	Condition 1672 1688	contraindication
+T64	Procedure 1692 1695	MRE
+T65	Procedure 1699 1701	IC
+T67	Competing_trial 1704 1877	Subject has participated in a drug or device research study within 30 days of enrollment that may interfere with the subject's safety or ability to participate in the study.
+T68	Non-representable 1879 1993	Subject has any medical condition that would make it unsafe for them to participate, per Investigator's descretion

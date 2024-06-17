@@ -1,0 +1,79 @@
+*	OR T2 T4 T3 T5
+R1	Has_qualifier Arg1:T1 Arg2:T2	
+R2	Has_value Arg1:T7 Arg2:T8	
+R3	Has_temporal Arg1:T7 Arg2:T9	
+R4	Has_index Arg1:T9 Arg2:T10	
+R5	Has_value Arg1:T11 Arg2:T12	
+R6	Has_index Arg1:T21 Arg2:T22	
+R7	Has_value Arg1:T19 Arg2:T20	
+R8	Has_temporal Arg1:T19 Arg2:T21	
+R9	Has_index Arg1:T17 Arg2:T18	
+R10	Has_temporal Arg1:T16 Arg2:T17	
+R11	Has_value Arg1:T14 Arg2:T15	
+R12	Has_temporal Arg1:T14 Arg2:T17	
+*	OR T14 T16
+*	OR T14 T19
+R13	Has_value Arg1:T24 Arg2:T25	
+R14	Has_value Arg1:T28 Arg2:T29	
+R15	Has_value Arg1:T30 Arg2:T31	
+R16	AND Arg1:T32 Arg2:T33	
+R17	Has_temporal Arg1:T32 Arg2:T34	
+*	OR T38 T39
+R18	Has_qualifier Arg1:T37 Arg2:T38	
+R19	Subsumes Arg1:T42 Arg2:T43	
+R20	Has_value Arg1:T42 Arg2:T44	
+*	OR T47 T48
+R21	Has_qualifier Arg1:T46 Arg2:T47	
+R22	Subsumes Arg1:T53 Arg2:T54	
+R23	Has_value Arg1:T53 Arg2:T55	
+T1	Condition 0 21	Chronic HCV Infection
+T2	Qualifier 25 33;34 35	Genotype 1
+T3	Qualifier 25 33;37 38	Genotype 4
+T4	Qualifier 25 33;40 41	Genotype 5
+T5	Qualifier 25 33;46 47	Genotype 6
+T7	Measurement 49 56	HCV RNA
+T8	Value 57 68	> 103 IU/mL
+T9	Temporal 69 81	at screening
+T10	Reference_point 72 81	screening
+T11	Person 95 98	age
+T12	Value 102 107;83 91	older 18 years
+T13	Condition 122 143	chronic HCV infection
+T14	Measurement 165 177	HCV antibody
+T15	Value 156 164	positive
+T16	Measurement 181 188	HCV RNA
+T17	Temporal 189 226	more than 6 months prior to screening
+T18	Reference_point 217 226	screening
+T19	Measurement 233 255	assessment of fibrosis
+T20	Value 256 269	F2 or greater
+T21	Temporal 270 288	prior to screening
+T22	Reference_point 279 288	screening
+T24	Measurement 291 295	NYHA
+T25	Value 296 305	Class III
+T26	Non-query-able 307 511	Subjects with cardiac disease resulting in marked limitation of physical activity. They are comfortable at rest. Less than ordinary physical activity causes fatigue, palpitation, dyspnea, or anginal pain.
+T27	Non-query-able 528 788	Patient with cardiac disease resulting in inability to carry on any physical activity without discomfort. Symptoms of cardiac insufficiency or of the anginal syndrome may be present even at rest. If any physical activity is undertaken, discomfort is increased.
+T28	Measurement 513 517	NYHA
+T29	Value 518 526	Class IV
+T30	Measurement 790 807	ejection fraction
+T31	Value 808 813	= 30%
+T32	Observation 815 827	hospitalized
+T33	Condition 832 845	heart failure
+T34	Temporal 846 863	in last 12 months
+T35	Measurement 865 877	ILD criteria
+T36	Condition 892 917	interstitial lung disease
+T37	Observation 923 962	chronic supplemental oxygen requirement
+T38	Qualifier 963 970	at rest
+T39	Qualifier 978 991	with exertion
+T40	Parsing_Error 971 977	and/or
+T42	Measurement 994 1018	Forced expiratory volume
+T43	Measurement 1020 1024	FEV1
+T44	Value 1025 1040	< 30% predicted
+T45	Non-query-able 1042 1053	OR any FEV1
+T46	Observation 1059 1098	chronic supplemental oxygen requirement
+T47	Qualifier 1099 1106	at rest
+T48	Qualifier 1114 1127	with exertion
+T49	Parsing_Error 1107 1113	and/or
+T51	Non-query-able 1129 1140	OR any FEV1
+T52	Condition 1146 1165	chronic hypercapnia
+T53	Measurement 1176 1219	partial pressure of arterial carbon dioxide
+T54	Measurement 1221 1226	PaCO2
+T55	Value 1228 1232	> 45

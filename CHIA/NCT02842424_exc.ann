@@ -1,0 +1,83 @@
+*	OR T5 T6
+R1	Has_value Arg1:T4 Arg2:T5	
+*	OR T1 T2
+R2	AND Arg1:T1 Arg2:T3	
+R3	AND Arg1:T1 Arg2:T4	
+R4	Has_qualifier Arg1:T11 Arg2:T10	
+R5	Has_qualifier Arg1:T11 Arg2:T9	
+R6	multi Arg1:T13 Arg2:T15	
+R7	multi Arg1:T12 Arg2:T14	
+*	OR T12 T13
+R8	Has_qualifier Arg1:T11 Arg2:T12	
+R9	Has_value Arg1:T17 Arg2:T18	
+R10	Has_negation Arg1:T19 Arg2:T20	
+*	OR T21 T22
+*	OR T23 T24 T25
+R11	Has_qualifier Arg1:T21 Arg2:T23	
+*	OR T27 T28
+R12	Subsumes Arg1:T22 Arg2:T27	
+R13	multi Arg1:T31 Arg2:T32	
+R14	multi Arg1:T32 Arg2:T19	
+R15	AND Arg1:T31 Arg2:T17	
+R16	AND Arg1:T31 Arg2:T21	
+*	OR T34 T35
+R17	Has_temporal Arg1:T34 Arg2:T33	
+R18	Has_value Arg1:T38 Arg2:T39	
+R19	AND Arg1:T37 Arg2:T38	
+R20	Has_qualifier Arg1:T43 Arg2:T42	
+R21	Has_qualifier Arg1:T43 Arg2:T41	
+R22	multi Arg1:T47 Arg2:T48	
+*	OR T51 T52
+R23	AND Arg1:T50 Arg2:T51	
+R24	Has_qualifier Arg1:T50 Arg2:T49	
+R25	Has_temporal Arg1:T47 Arg2:T46	
+*	OR T47 T50
+R26	AND Arg1:T45 Arg2:T47	
+R27	Has_temporal Arg1:T45 Arg2:T44	
+*	OR T43 T45
+R28	Has_temporal Arg1:T43 Arg2:T40	
+T1	Condition 0 9	Rest pain
+T2	Condition 13 24	tissue loss
+T3	Condition 32 35	PAD
+T4	Measurement 37 51	Fontaine stage
+T5	Value 52 55	III
+T6	Value 60 62	IV
+T9	Qualifier 66 71	acute
+T10	Qualifier 72 87	lower extremity
+T11	Condition 88 102	ischemic event
+T12	Qualifier 103 138	secondary to thromboembolic disease
+T13	Qualifier 103 115;142 154	secondary to acute trauma
+T14	Condition 116 138	thromboembolic disease
+T15	Condition 142 154	acute trauma
+T17	Measurement 157 173	Walking capacity
+T18	Value 174 195	significantly limited
+T19	Condition 221 233	claudication
+T20	Negation 210 220	other than
+T21	Condition 244 247;319 328	leg pathology
+T22	Condition 288 296;319 328	systemic pathology
+T23	Qualifier 249 254	joint
+T24	Qualifier 255 270	musculoskeletal
+T25	Qualifier 272 282	neurologic
+T27	Condition 298 303;310 317	heart disease
+T28	Condition 305 317	lung disease
+T31	Condition 199 233	conditions other than claudication
+T32	Qualifier 210 233	other than claudication
+T34	Drug 353 367	ACE inhibitors
+T33	Temporal 331 342	Current use
+T35	Drug 371 403	angiotensin II receptor blockers
+T37	Condition 406 428	Chronic kidney disease
+T38	Measurement 434 470	estimated Glomerular Filtration Rate
+T39	Value 471 490	< 30 ml/min/1.73 m2
+T40	Temporal 493 500	History
+T41	Qualifier 504 513	bilateral
+T42	Qualifier 514 520	severe
+T43	Condition 521 542	renal artery stenosis
+T44	Temporal 550 557	History
+T45	Condition 561 571	angioedema
+T46	Temporal 583 591	previous
+T47	Procedure 592 615	ACE-inhibitor treatment
+T48	Drug 592 605	ACE-inhibitor
+T49	Qualifier 619 624	known
+T50	Condition 625 641	hypersensitivity
+T51	Drug 645 653	ramipril
+T52	Drug 663 677	ACE inhibitors

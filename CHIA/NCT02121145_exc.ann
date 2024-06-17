@@ -1,0 +1,78 @@
+R1	multi Arg1:T2 Arg2:T3	
+R2	Has_index Arg1:T4 Arg2:T5	
+R3	Has_temporal Arg1:T2 Arg2:T4	
+R4	AND Arg1:T1 Arg2:T2	
+*	OR T7 T9 T8
+R5	Has_temporal Arg1:T7 Arg2:T6	
+R6	Has_qualifier Arg1:T12 Arg2:T13	
+*	OR T11 T14
+R7	Has_qualifier Arg1:T12 Arg2:T11	
+R8	Has_index Arg1:T16 Arg2:T17	
+R9	Has_temporal Arg1:T12 Arg2:T16	
+R10	Has_mood Arg1:T19 Arg2:T18	
+R11	Has_temporal Arg1:T19 Arg2:T20	
+R12	Has_index Arg1:T20 Arg2:T21	
+*	OR T12 T19
+R13	Has_index Arg1:T26 Arg2:T27	
+R14	Has_temporal Arg1:T25 Arg2:T26	
+R15	Has_multiplier Arg1:T25 Arg2:T24	
+R16	Has_temporal Arg1:T22 Arg2:T23	
+*	OR T22 T25
+R17	Subsumes Arg1:T28 Arg2:T29	
+R18	Has_qualifier Arg1:T31 Arg2:T32	
+*	OR T30 T31
+R19	Has_multiplier Arg1:T30 Arg2:T28	
+R20	multi Arg1:T35 Arg2:T36	
+R21	Has_index Arg1:T34 Arg2:T35	
+R22	Has_value Arg1:T38 Arg2:T39	
+R23	Has_qualifier Arg1:T39 Arg2:T41	
+R24	Has_multiplier Arg1:T37 Arg2:T38	
+R25	Has_negation Arg1:T37 Arg2:T40	
+R26	Has_temporal Arg1:T30 Arg2:T34	
+R27	AND Arg1:T30 Arg2:T37	
+*	OR T45 T46
+R28	Has_qualifier Arg1:T44 Arg2:T43	
+R29	Has_qualifier Arg1:T44 Arg2:T45	
+T1	Observation 0 14	Primary groups
+T2	Procedure 16 49	Vaccination against typhoid fever
+T3	Condition 36 49	typhoid fever
+T4	Temporal 50 78	within 5 years before dosing
+T5	Reference_point 72 78	dosing
+T6	Temporal 81 88	History
+T7	Condition 92 114	clinical typhoid fever
+T8	Condition 116 138;144 149	clinical paratyphoid A fever
+T9	Condition 116 136;142 149	clinical paratyphoid B fever
+T12	Procedure 152 169;180 187	Immunization with vaccine
+T13	Qualifier 170 179	any other
+T11	Qualifier 189 193	oral
+T14	Qualifier 197 207	parenteral
+T16	Temporal 209 244	within 4 weeks prior to study start
+T17	Reference_point 233 244	study start
+T18	Mood 248 255	planned
+T19	Procedure 256 267	vaccination
+T20	Temporal 268 284	during the study
+T21	Reference_point 275 284	the study
+T22	Drug 304 315	antibiotics
+T23	Temporal 286 293	Current
+T24	Multiplier 319 325	end of
+T25	Procedure 326 344	antibiotic therapy
+T26	Temporal 345 384	<8 days before first IMP administration
+T27	Reference_point 360 384	first IMP administration
+T28	Multiplier 386 393;416 430	Chronic administration
+T29	Multiplier 395 414	longer than 14 days
+T30	Drug 434 452	immunosuppressants
+T31	Drug 462 484	immune-modifying drugs
+T32	Qualifier 456 461	other
+T34	Temporal 485 549	within 6 months before the first dose of investigational vaccine
+T35	Reference_point 508 549	the first dose of investigational vaccine
+T36	Drug 526 549	investigational vaccine
+T37	Drug 551 571	oral corticosteroids
+T38	Multiplier 575 582	dosages
+T39	Value 586 598	=0.5 mg/kg/d
+T40	Negation 630 638	excluded
+T41	Qualifier 599 625	prednisolone or equivalent
+T42	Non-representable 640 679	inhaled or topical steroids are allowed
+T43	Qualifier 698 720	clinically significant
+T44	Condition 721 745	gastrointestinal disease
+T45	Qualifier 681 686	Acute
+T46	Qualifier 690 697	chronic

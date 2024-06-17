@@ -1,0 +1,91 @@
+*	OR T2 T3
+R1	Has_value Arg1:T1 Arg2:T2	
+R2	Has_temporal Arg1:T1 Arg2:T5	
+R3	Has_value Arg1:T6 Arg2:T7	
+R4	Has_value Arg1:T10 Arg2:T9	
+R5	Subsumes Arg1:T8 Arg2:T10	
+R6	Has_temporal Arg1:T12 Arg2:T13	
+R7	Has_temporal Arg1:T17 Arg2:T18	
+R8	Has_qualifier Arg1:T15 Arg2:T16	
+R9	AND Arg1:T16 Arg2:T17	
+R10	Has_temporal Arg1:T20 Arg2:T21	
+*	OR T14 T20 T15 T23 T22 T19
+R11	Subsumes Arg1:T12 Arg2:T14	
+R12	Has_temporal Arg1:T25 Arg2:T26	
+*	OR T27 T28
+R13	Has_temporal Arg1:T29 Arg2:T30	
+*	OR T33 T35
+R14	Has_temporal Arg1:T33 Arg2:T34	
+*	OR T33 T37
+R15	Has_temporal Arg1:T32 Arg2:T38	
+R16	Has_qualifier Arg1:T43 Arg2:T44	
+R17	AND Arg1:T43 Arg2:T40	
+R18	AND Arg1:T41 Arg2:T43	
+R19	Has_temporal Arg1:T43 Arg2:T42	
+R20	AND Arg1:T52 Arg2:T53	
+*	OR T52 T54
+R21	Has_temporal Arg1:T50 Arg2:T51	
+R22	AND Arg1:T52 Arg2:T50	
+R24	Has_negation Arg1:T48 Arg2:T56	
+R25	AND Arg1:T47 Arg2:T48	
+R23	Has_negation Arg1:T52 Arg2:T49	
+R26	AND Arg1:T47 Arg2:T52	
+R27	multi Arg1:T58 Arg2:T57	
+R28	Has_index Arg1:T5 Arg2:T58	
+R29	multi Arg1:T32 Arg2:T59	
+R30	Subsumes Arg1:T32 Arg2:T33	
+T1	Person 0 3	Age
+T2	Value 4 22	less than 10 years
+T3	Value 26 47	greater than 55 years
+T5	Temporal 49 67	at time of consent
+T6	Measurement 69 81	Estimated IQ
+T7	Value 82 86	< 70
+T8	Condition 88 109	Uncontrolled epilepsy
+T9	Value 119 151	within 6 months prior to consent
+T10	Condition 111 118	seizure
+T11	Context_Error 157 276	Presence of medical conditions that might interfere with participation, or where participation would be contraindicated
+T12	Condition 289 308	neurological injury
+T13	Temporal 278 285	History
+T14	Condition 310 321	head trauma
+T15	Condition 341 357	seizure disorder
+T16	Qualifier 323 340	poorly-controlled
+T17	Condition 359 366	seizure
+T18	Temporal 367 398	within the preceding six months
+T19	Condition 401 407	stroke
+T20	Condition 415 427	neurosurgery
+T21	Temporal 409 414	prior
+T22	Observation 432 463	under the care of a neurologist
+T23	Observation 432 451;467 479	under the care of a neurosurgeon
+T25	Condition 519 533	claustrophobia
+T26	Temporal 508 515	History
+T27	Device 535 544;560 577	Implanted metal in the body
+T28	Device 548 577	irremovable metal in the body
+T29	Condition 637 646	pregnancy
+T30	Temporal 629 636	Current
+T31	Not_a_criteria 647 884	(as verified by testing prior to both initial dose administration of citalopram or placebo and prior to magnetic resonance imaging) due to the risk that may be associated with SSRI treatment and magnetic resonance imaging on fetal health
+T32	Condition 894 927	contraindications to SSRI therapy
+T33	Condition 977 982	mania
+T34	Temporal 996 1015	during SSRI therapy
+T35	Condition 986 995	hypomania
+T37	Condition 1026 1038	drug allergy
+T38	Temporal 945 952	history
+T39	Context_Error 1041 1109	Concomitant medication that would interfere with study participation
+T40	Drug 1128 1138	citalopram
+T41	Temporal 1117 1124	history
+T42	Temporal 1111 1116	Prior
+T43	Procedure 1139 1148	treatment
+T44	Qualifier 1149 1156	failure
+T45	Context_Error 1111 1190	Prior history of citalopram treatment failure at appropriate doses and duration
+T46	Non-query-able 1192 1288	Prior history of treatment failure to two previous SSRI trials at appropriate doses and duration
+T47	Drug 1307 1330	psychoactive medication
+T48	Drug 1342 1358	study medication
+T50	Subjective_judgement 1370 1382	stable doses
+T51	Temporal 1384 1409	greater than three months
+T52	Drug 1423 1448	anticonvulsant medication
+T53	Condition 1453 1469	seizure disorder
+T54	Drug 1474 1489	diphenhydramine
+T56	Negation 1331 1341	other than
+T49	Negation 1360 1369	excepting
+T57	Observation 60 67	consent
+T58	Reference_point 60 67	consent
+T59	Procedure 915 927	SSRI therapy

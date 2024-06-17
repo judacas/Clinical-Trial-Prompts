@@ -1,0 +1,117 @@
+R1	AND Arg1:T1 Arg2:T2	
+R2	Has_value Arg1:T4 Arg2:T3	
+*	OR T5 T6
+R3	Has_negation Arg1:T8 Arg2:T9	
+R4	AND Arg1:T7 Arg2:T8	
+R5	Has_negation Arg1:T10 Arg2:T11	
+*	OR T14 T15
+*	OR T12 T17
+R6	Subsumes Arg1:T10 Arg2:T12	
+R7	Has_value Arg1:T24 Arg2:T23	
+R8	AND Arg1:T22 Arg2:T24	
+R9	Has_value Arg1:T25 Arg2:T26	
+R10	Has_temporal Arg1:T25 Arg2:T27	
+R11	Has_value Arg1:T29 Arg2:T30	
+R12	Has_temporal Arg1:T29 Arg2:T28	
+*	OR T33 T32
+R13	Has_qualifier Arg1:T34 Arg2:T33	
+R14	Has_multiplier Arg1:T34 Arg2:T31	
+R15	Has_qualifier Arg1:T37 Arg2:T38	
+*	OR T36 T40 T37 T39
+R16	AND Arg1:T34 Arg2:T36	
+R17	Has_temporal Arg1:T34 Arg2:T41	
+R18	Has_temporal Arg1:T43 Arg2:T44	
+R19	Has_qualifier Arg1:T43 Arg2:T45	
+R20	Has_value Arg1:T47 Arg2:T48	
+*	OR T52 T53
+R22	Has_temporal Arg1:T46 Arg2:T52	
+R23	AND Arg1:T57 Arg2:T56	
+R24	multi Arg1:T55 Arg2:T57	
+R25	multi Arg1:T58 Arg2:T59	
+R26	Subsumes Arg1:T55 Arg2:T58	
+R27	Has_temporal Arg1:T61 Arg2:T62	
+R28	multi Arg1:T63 Arg2:T64	
+R29	Has_temporal Arg1:T63 Arg2:T65	
+R30	Subsumes Arg1:T70 Arg2:T71	
+R31	AND Arg1:T76 Arg2:T78	
+R32	Subsumes Arg1:T77 Arg2:T76	
+R33	multi Arg1:T80 Arg2:T81	
+*	OR T66 T67 T68 T69 T70 T72 T73 T74 T75
+R34	Has_multiplier Arg1:T80 Arg2:T79	
+*	OR T77 T82 T80
+*	OR T13 T17
+*	OR T14 T17
+T1	Condition 33 37	COPD
+T2	Measurement 51 127	American Thoracic Society (ATS)/ European Respiratory Society (ERS) criteria
+T3	Value 160 170	>=40 years
+T4	Person 155 159	aged
+T5	Person 130 134	Male
+T6	Person 138 144	female
+T7	Person 172 179	Females
+T8	Condition 195 218	Child Bearing Potential
+T9	Negation 191 194	Non
+T10	Condition 242 265	Child Bearing Potential
+T11	Negation 238 241	Non
+T12	Person 283 290	Females
+T13	Condition 322 341	functioning ovaries
+T14	Condition 376 390	tubal ligation
+T15	Condition 394 406	hysterectomy
+T17	Condition 427 442	post-menopausal
+T16	Person 411 418	females
+T22	Condition 460 464	COPD
+T23	Value 465 480	stage III or IV
+T24	Measurement 494 507	GOLD criteria
+T25	Measurement 540 593	Forced Expiratory Volume, measured at 1 second (FEV1)
+T26	Value 594 618	<50% of predicted normal
+T27	Temporal 520 539	post-bronchodilator
+T28	Temporal 634 654	post- bronchodilator
+T29	Measurement 655 698	FEV1/Inspiratory Vital Capacity (IVC) ratio
+T30	Value 699 703	<70%
+T31	Multiplier 723 733	at least 2
+T32	Qualifier 746 752	severe
+T33	Qualifier 734 742	moderate
+T34	Condition 753 771	COPD exacerbations
+T36	Drug 815 835	oral corticosteroids
+T37	Drug 860 880	oral corticosteroids
+T38	Qualifier 839 856	increasing dosage
+T39	Drug 888 899	antibiotics
+T40	Visit 903 918	hospitalization
+T41	Temporal 920 958	within the 12 months preceding Visit 1
+T43	Drug 973 988	COPD medication
+T44	Temporal 989 1020	within 4 weeks prior to Visit 1
+T45	Qualifier 966 972	stable
+T46	Condition 1099 1106	smokers
+T47	Measurement 1114 1129	smoking history
+T48	Value 1142 1155	10 pack years
+T52	Temporal 1085 1092	Current
+T53	Negation 1096 1098	ex
+T55	Observation 1339 1354	managed at home
+T56	Visit 1347 1354	at home
+T57	Procedure 1339 1346	managed
+T58	Observation 1356 1367	outpatients
+T59	Visit 1356 1367	outpatients
+T51	Condition 1374 1384	ambulatory
+T60	Observation 1389 1417	able to travel to the clinic
+T61	Observation 1823 1847	written informed consent
+T62	Temporal 1860 1882	prior to participation
+T50	Observation 1885 1937	Able to comply with the requirements of the protocol
+T63	Observation 1945 1971	available for study visits
+T64	Visit 1959 1971	study visits
+T65	Temporal 1972 1985	over 52 weeks
+T66	Drug 1461 1476	COPD medication
+T67	Drug 1492 1500	vaccines
+T68	Drug 1502 1538	inhaled short-acting beta-2-agonists
+T69	Drug 1550 1562	short-acting
+T70	Drug 1566 1594	long-acting anticholinergics
+T71	Drug 1596 1606	tiotropium
+T72	Drug 1609 1633	systemic beta-2-agonists
+T73	Drug 1635 1647	theophylline
+T74	Drug 1649 1659	mucolytics
+T75	Drug 1661 1673	antioxidants
+T76	Drug 1675 1690	beta-1-agonists
+T78	Condition 1696 1721	cardiovascular indication
+T77	Condition 1724 1748	non-invasive ventilation
+T79	Multiplier 1750 1759	long term
+T80	Procedure 1760 1774	oxygen therapy
+T81	Drug 1760 1766	oxygen
+T82	Condition 1788 1801	Cor Pulmonale

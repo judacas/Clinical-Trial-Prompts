@@ -1,0 +1,114 @@
+R1	Has_qualifier Arg1:T2 Arg2:T3	
+*	OR T8 T9
+*	OR T4 T6 T11
+R2	AND Arg1:T11 Arg2:T8	
+R3	Has_multiplier Arg1:T14 Arg2:T13	
+R4	Has_negation Arg1:T18 Arg2:T20	
+R5	Has_temporal Arg1:T18 Arg2:T19	
+R6	Has_qualifier Arg1:T16 Arg2:T15	
+R7	Has_qualifier Arg1:T26 Arg2:T27	
+R8	Has_index Arg1:T34 Arg2:T35	
+R9	Has_temporal Arg1:T37 Arg2:T38	
+*	OR T22 T26
+*	OR T32 T33
+R10	Has_context Arg1:T32 Arg2:T41	
+R11	Has_temporal Arg1:T32 Arg2:T34	
+R12	Has_index Arg1:T47 Arg2:T48	
+*	OR T46 T45
+R13	Subsumes Arg1:T43 Arg2:T46	
+R14	Has_temporal Arg1:T43 Arg2:T44	
+R15	Has_temporal Arg1:T43 Arg2:T47	
+R16	Has_value Arg1:T52 Arg2:T53	
+R17	Has_value Arg1:T54 Arg2:T55	
+R18	Has_value Arg1:T58 Arg2:T59	
+R19	Has_value Arg1:T57 Arg2:T59	
+R20	Has_value Arg1:T56 Arg2:T59	
+R21	Has_value Arg1:T62 Arg2:T63	
+R22	Has_value Arg1:T60 Arg2:T61	
+*	OR T67 T69
+R23	Has_value Arg1:T69 Arg2:T68	
+R24	Has_value Arg1:T67 Arg2:T65	
+R25	Has_context Arg1:T64 Arg2:T67	
+R26	Has_value Arg1:T73 Arg2:T74	
+R27	Has_index Arg1:T75 Arg2:T76	
+R28	Has_negation Arg1:T77 Arg2:T78	
+R29	Has_temporal Arg1:T73 Arg2:T75	
+R30	AND Arg1:T71 Arg2:T73	
+*	OR T23 T26
+*	OR T24 T26
+*	OR T25 T26
+R34	AND Arg1:T72 Arg2:T73	
+T1	Parsing_Error 1 39	atients with a confirmed diagnosis of:
+T2	Condition 52 64	colon cancer
+T3	Qualifier 44 51	Stage 4
+T4	Condition 72 90	s/p metastasectomy
+T5	Procedure 76 90	metastasectomy
+T6	Condition 94 119	post-initial chemotherapy
+T7	Procedure 107 119	chemotherapy
+T8	Drug 172 207	5-fluorouracil/leucovorin (5-FU/LV)
+T9	Drug 227 238	bevacizumab
+T11	Procedure 123 153	maintenance "standard of care"
+T12	Undefined_semantics 123 153	maintenance "standard of care"
+T13	Multiplier 291 292	2
+T14	Procedure 305 313	CT scans
+T15	Qualifier 322 328	stable
+T16	Condition 329 336	disease
+T17	Undefined_semantics 329 336	disease
+T18	Condition 379 405	treatment-related toxicity
+T19	Temporal 373 378	prior
+T20	Negation 341 344	not
+T21	Condition 425 440	Pancreas cancer
+T22	Condition 449 462	s/p resection
+T23	Procedure 453 462	resection
+T24	Condition 449 452;467 488	s/p adjuvant chemotherapy
+T25	Procedure 467 488	adjuvant chemotherapy
+T26	Condition 509 524	pancreas cancer
+T27	Qualifier 492 508	locally advanced
+T28	Condition 525 541	s/p chemotherapy
+T29	Procedure 529 541	chemotherapy
+T30	Condition 525 528;546 555	s/p radiation
+T31	Procedure 546 555	radiation
+T32	Procedure 565 577	chemotherapy
+T33	Procedure 581 598	radiation therapy
+T34	Temporal 621 670	between 2 weeks and 2 months prior to study start
+T35	Reference_point 659 670	study start
+T36	Condition 695 725	recovered from prior treatment
+T37	Procedure 716 725	treatment
+T38	Temporal 710 715	prior
+T41	Observation 599 620	may have been stopped
+T43	Procedure 770 777	surgery
+T44	Temporal 764 769	Prior
+T45	Procedure 808 822	metastasectomy
+T46	Procedure 789 804	tumor resection
+T47	Temporal 848 890	at least 4 weeks prior to study enrollment
+T48	Reference_point 874 890	study enrollment
+T50	Context_Error 893 940	No concomitant anti-cancer treatment is allowed
+T51	Post-eligibility 893 940	No concomitant anti-cancer treatment is allowed
+T52	Person 942 945	Age
+T53	Value 946 958	>/= 18 years
+T54	Measurement 960 978	Performance status
+T55	Value 982 985	0-1
+T56	Measurement 1022 1036	renal function
+T57	Measurement 1005 1016;1028 1036	bone marrow function
+T58	Measurement 1028 1036;996 1003	function hepatic
+T59	Value 987 995	Adequate
+T60	Measurement 1038 1071	Partial thromboplastin time (PTT)
+T61	Value 1080 1108	</= 1.5 x upper normal limit
+T62	Measurement 1143 1179	INR (International Normalized Ratio)
+T63	Value 1180 1185	< 1.5
+T64	Observation 1188 1203	Life expectancy
+T65	Value 1204 1216	>/= 4 months
+T66	Context_Error 1221 1240	maintenance cohorts
+T67	Observation 1221 1240	maintenance cohorts
+T68	Value 1245 1257	>/= 6 months
+T69	Observation 1262 1278	adjuvant cohorts
+T71	Condition 1289 1311	childbearing potential
+T72	Person 1280 1285	Women
+T73	Measurement 1333 1353	serum pregnancy test
+T74	Value 1324 1332	negative
+T75	Temporal 1354 1401	within 14 days prior to initiation of treatment
+T76	Reference_point 1378 1401	initiation of treatment
+T77	Condition 1418 1427	lactating
+T78	Negation 1411 1414	not
+T80	Non-query-able 1430 1548	Subject is capable of understanding and complying with protocol demands and able to sign and date the informed consent
+T81	Post-eligibility 1430 1548	Subject is capable of understanding and complying with protocol demands and able to sign and date the informed consent

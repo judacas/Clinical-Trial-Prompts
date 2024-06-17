@@ -1,0 +1,146 @@
+*	OR T1 T2
+*	OR T5 T6
+R1	Has_qualifier Arg1:T7 Arg2:T5	
+R2	Has_temporal Arg1:T3 Arg2:T4	
+R3	AND Arg1:T3 Arg2:T7	
+R4	Has_value Arg1:T12 Arg2:T13	
+*	OR T14 T15 T16 T17 T18 T19 T20 T21 T22
+R5	AND Arg1:T23 Arg2:T14	
+*	OR T26 T27
+R6	Has_value Arg1:T28 Arg2:T29	
+R7	Has_value Arg1:T25 Arg2:T26	
+*	OR T25 T28
+*	OR T32 T31
+*	OR T34 T35
+R8	Has_value Arg1:T33 Arg2:T34	
+R9	Has_temporal Arg1:T42 Arg2:T43	
+R10	multi Arg1:T40 Arg2:T41	
+R11	Has_temporal Arg1:T42 Arg2:T40	
+R12	Has_negation Arg1:T45 Arg2:T47	
+*	OR T44 T46
+R13	Has_temporal Arg1:T44 Arg2:T48	
+*	OR T50 T52
+R14	Has_temporal Arg1:T50 Arg2:T51	
+R15	Has_temporal Arg1:T50 Arg2:T53	
+R16	Has_temporal Arg1:T55 Arg2:T56	
+R17	Has_qualifier Arg1:T57 Arg2:T58	
+R18	multi Arg1:T60 Arg2:T59	
+R19	Has_value Arg1:T59 Arg2:T61	
+R20	AND Arg1:T57 Arg2:T60	
+R21	multi Arg1:T64 Arg2:T63	
+R22	Has_value Arg1:T63 Arg2:T65	
+R23	multi Arg1:T69 Arg2:T70	
+R24	multi Arg1:T67 Arg2:T68	
+R25	Has_value Arg1:T68 Arg2:T69	
+R26	Has_value Arg1:T75 Arg2:T74	
+R27	Subsumes Arg1:T73 Arg2:T75	
+R28	Has_qualifier Arg1:T76 Arg2:T77	
+R29	causal Arg1:T73 Arg2:T76	
+R30	Has_qualifier Arg1:T79 Arg2:T80	
+R31	multi Arg1:T81 Arg2:T82	
+R32	Has_negation Arg1:T82 Arg2:T83	
+R33	multi Arg1:T85 Arg2:T86	
+R34	multi Arg1:T86 Arg2:T84	
+*	OR T87 T89 T88
+R35	Subsumes Arg1:T84 Arg2:T87	
+R36	AND Arg1:T92 Arg2:T81	
+R37	Has_temporal Arg1:T92 Arg2:T85	
+R38	Has_mood Arg1:T92 Arg2:T91	
+R39	AND Arg1:T93 Arg2:T92	
+R40	multi Arg1:T96 Arg2:T94	
+R41	Has_qualifier Arg1:T95 Arg2:T96	
+*	OR T97 T99
+*	OR T96 T97
+T1	Condition 18 26	pregnant
+T2	Observation 30 43	breastfeeding
+T3	Condition 61 66	STEMI
+T4	Temporal 67 82	within 72 hours
+T5	Qualifier 112 127;151 157	infarct related artery
+T6	Qualifier 131 157	non-infarct related artery
+T7	Procedure 99 108	treatment
+T9	Condition 163 180	Cardiogenic shock
+T10	Procedure 215 230	hospitalization
+T11	Temporal 207 214	current
+T12	Measurement 236 270	Left ventricular ejection fraction
+T13	Value 271 284	less than 20%
+T14	Drug 310 317	aspirin
+T15	Drug 319 330	clopidogrel
+T16	Drug 332 338	Plavix
+T17	Drug 344 355	ticlopidine
+T18	Drug 357 363	Ticlid
+T19	Drug 366 373	heparin
+T20	Drug 375 386	bivalirudin
+T21	Observation 388 403	stainless steel
+T22	Drug 408 422	contrast agent
+T23	Condition 296 305	allergies
+T25	Measurement 472 486	platelet count
+T26	Value 487 513	less than 75,000 cells/mm3
+T27	Value 517 547	greater than 700,000 cells/mm3
+T28	Measurement 553 556	WBC
+T29	Value 557 582	less than 3,000 cells/mm3
+T31	Condition 597 622	chronic renal dysfunction
+T32	Condition 588 593;605 622	Acute renal dysfunction
+T33	Measurement 624 634	creatinine
+T34	Value 635 657	greater than 2.5 mg/dl
+T35	Value 661 680	less than 150µmol/L
+T37	Context_Error 687 1045	Subject is currently participating in an investigational drug or device study that has not completed the primary endpoint or that clinically interferes with the current study endpoints. (Note: Trials requiring extended follow-up for products that were investigational, but have since become commercially available, are not considered investigational trials).
+T38	Post-eligibility 687 1045	Subject is currently participating in an investigational drug or device study that has not completed the primary endpoint or that clinically interferes with the current study endpoints. (Note: Trials requiring extended follow-up for products that were investigational, but have since become commercially available, are not considered investigational trials).
+T39	Context_Error 1050 1084	Prior participation in this study.
+T40	Temporal 1090 1139	Within 30 days prior to the index study procedure
+T41	Reference_point 1114 1139	the index study procedure
+T42	Procedure 1178 1211	coronary interventional procedure
+T43	Temporal 1169 1177	previous
+T45	Condition 1279 1284	STEMI
+T44	Condition 1300 1306	Stroke
+T46	Condition 1310 1335	transient ischemic attack
+T47	Negation 1261 1264	not
+T48	Temporal 1336 1361	within the prior 3 months
+T50	Condition 1375 1387	peptic ulcer
+T51	Temporal 1368 1374	Active
+T52	Condition 1391 1422	upper gastrointestinal bleeding
+T53	Temporal 1423 1448	within the prior 3 months
+T55	Condition 1474 1480	sepsis
+T56	Temporal 1467 1473	active
+T57	Condition 1499 1532	left main coronary artery disease
+T58	Qualifier 1487 1498	Unprotected
+T59	Measurement 1534 1542	stenosis
+T60	Condition 1534 1542	stenosis
+T61	Value 1543 1559	greater than 50%
+T62	Subjective_judgement 1567 1596	In the investigator's opinion
+T63	Measurement 1656 1671	life expectancy
+T64	Observation 1656 1671	life expectancy
+T65	Value 1675 1693	less than one year
+T66	Post-eligibility 1567 1840	In the investigator's opinion, subject has a co-morbid condition(s) that could limit the life expectancy to less than one year, or limit the subject's ability to participate in the study or comply with follow-up requirements or impact the scientific integrity of the study.
+T67	Condition 1899 1914	coronary lesion
+T68	Measurement 1899 1914	coronary lesion
+T69	Value 1918 1940	less than 50% stenosis
+T70	Condition 1932 1940	stenosis
+T71	Condition 1994 2002	thrombus
+T72	Procedure 2018 2044	target vessel thrombectomy
+T73	Condition 2047 2058	tortuousity
+T74	Value 2060 2082	greater than 60 degree
+T75	Measurement 2083 2088	angle
+T76	Procedure 2126 2155	stent delivery and deployment
+T77	Qualifier 2104 2125	unsuitable for proper
+T78	Subjective_judgement 2104 2125	unsuitable for proper
+T79	Condition 2164 2177	calcification
+T80	Qualifier 2158 2163	heavy
+T81	Device 2228 2299	device other than percutaneous transluminal coronary angioplasty (PTCA)
+T82	Procedure 2246 2299	percutaneous transluminal coronary angioplasty (PTCA)
+T83	Negation 2235 2245	other than
+T84	Procedure 2309 2324	stent placement
+T85	Temporal 2300 2324	prior to stent placement
+T86	Reference_point 2309 2324	stent placement
+T87	Procedure 2351 2383	directional coronary atherectomy
+T88	Procedure 2385 2398	excimer laser
+T89	Procedure 2400 2422	rotational atherectomy
+T91	Mood 2202 2210	requires
+T92	Procedure 2211 2220	treatment
+T93	Condition 2188 2201	target lesion
+T94	Device 2468 2488	saphenous vein graft
+T95	Condition 2440 2446	lesion
+T96	Qualifier 2455 2488	located in a saphenous vein graft
+T97	Qualifier 2515 2539	within the native vessel
+T98	Grammar_Error 2571 2583	are eligible
+T99	Qualifier 2544 2570	accessed through the graft
+T101	Non-representable 2590 2780	The target vessel is in a "last remaining" epicardial vessel (e.g. greater than 2 non-target epicardial vessels and the bypass grafts to these territories [if present] are totally occluded).

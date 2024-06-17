@@ -1,0 +1,76 @@
+*	OR T1 T2
+R1	Has_temporal Arg1:T1 Arg2:T3	
+R2	Has_temporal Arg1:T2 Arg2:T3	
+R3	AND Arg1:T4 Arg2:T6	
+R4	Has_value Arg1:T4 Arg2:T5	
+*	OR T7 T8
+R5	Has_value Arg1:T8 Arg2:T9	
+R6	Has_value Arg1:T7 Arg2:T9	
+R7	Has_value Arg1:T10 Arg2:T11	
+R8	Has_value Arg1:T12 Arg2:T13	
+R9	Has_qualifier Arg1:T15 Arg2:T16	
+R10	Has_value Arg1:T17 Arg2:T18	
+*	OR T14 T15 T17
+*	OR T20 T21
+R11	Has_value Arg1:T19 Arg2:T20	
+*	OR T23 T24 T25
+R12	Has_temporal Arg1:T23 Arg2:T26	
+R13	Has_temporal Arg1:T25 Arg2:T26	
+R14	Has_temporal Arg1:T24 Arg2:T26	
+R15	Has_temporal Arg1:T30 Arg2:T31	
+R16	Has_negation Arg1:T34 Arg2:T35	
+R17	AND Arg1:T33 Arg2:T34	
+*	OR T33 T36 T37
+R18	Has_value Arg1:T38 Arg2:T39	
+*	OR T40 T41
+*	OR T27 T28
+R19	Has_multiplier Arg1:T47 Arg2:T46	
+R20	multi Arg1:T44 Arg2:T47	
+R21	Has_index Arg1:T29 Arg2:T44	
+R22	Has_temporal Arg1:T27 Arg2:T29	
+T1	Drug 12 24	antiplatelet
+T2	Drug 28 41	anticoagulant
+T3	Temporal 0 11	Concomitant
+T4	Measurement 47 78	Calculated creatinine clearance
+T5	Value 79 90	< 30 mL/min
+T6	Measurement 94 117	Cockcroft-Gault formula
+T7	Measurement 119 149	Alanine aminotransferase (ALT)
+T8	Measurement 153 185	aspartate aminotransferase (AST)
+T9	Value 186 223	> 3 times upper limit of normal (ULN)
+T10	Measurement 225 240	Total bilirubin
+T11	Value 241 250	> 2 x ULN
+T12	Measurement 252 268	Thrombocytopenia
+T13	Value 269 294	< 50 x 10 gigalitres (Gl)
+T14	Condition 296 314	High bleeding risk
+T15	Condition 332 358	prolonged prothrombin time
+T16	Qualifier 318 331	spontaneously
+T17	Measurement 362 399	activated partial thromboplastin time
+T18	Value 400 411	> 1.5 x ULN
+T19	Condition 413 424	Body weight
+T20	Value 425 428;437 439	<50 kg
+T21	Value 432 439	>120 kg
+T23	Drug 460 466	CYP3A4
+T24	Drug 470 493	p-glycoprotein inducers
+T25	Drug 470 484;497 507	p-glycoprotein inhibitors
+T26	Temporal 441 452	Concomitant
+T27	Drug 516 529	Ginkgo biloba
+T30	Drug 597 610	Dexamethasone
+T31	Temporal 615 635	within last 3 months
+T32	Person 637 642	Women
+T33	Condition 646 668	Childbearing potential
+T34	Procedure 684 706	contraceptive measures
+T35	Negation 669 676	without
+T36	Condition 708 717	pregnancy
+T37	Observation 721 735	breast feeding
+T38	Observation 737 752	Life expectancy
+T39	Value 753 771	less than 3 months
+T40	Condition 773 793	Inability to swallow
+T41	Condition 797 822	issues with malabsorption
+T42	Undefined_semantics 797 822	issues with malabsorption
+T43	Subjective_judgement 824 1001	Any other medical, social, logistical, geographical or psychological factors, which in the opinion of the investigator, would prohibit follow-up, compliance and study completion
+T45	Context_Error 824 1001	Any other medical, social, logistical, geographical or psychological factors, which in the opinion of the investigator, would prohibit follow-up, compliance and study completion
+T28	Drug 533 548	St. John's Wort
+T29	Temporal 549 595	within 14 days before first dose of study drug
+T44	Reference_point 571 595	first dose of study drug
+T46	Multiplier 571 581	first dose
+T47	Drug 585 595	study drug

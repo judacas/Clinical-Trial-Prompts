@@ -1,0 +1,105 @@
+*	OR T2 T4 T3
+R1	AND Arg1:T1 Arg2:T2	
+R2	Has_negation Arg1:T7 Arg2:T8	
+R3	Has_negation Arg1:T6 Arg2:T8	
+R4	AND Arg1:T1 Arg2:T6	
+R5	Has_value Arg1:T10 Arg2:T11	
+R6	Has_value Arg1:T14 Arg2:T15	
+*	OR T19 T16
+*	OR T16 T17
+R7	Has_negation Arg1:T18 Arg2:T20	
+R8	AND Arg1:T12 Arg2:T10	
+R9	AND Arg1:T22 Arg2:T14	
+*	OR T12 T22
+R10	Has_qualifier Arg1:T22 Arg2:T16	
+R11	Has_qualifier Arg1:T22 Arg2:T18	
+R12	Has_value Arg1:T24 Arg2:T25	
+R13	Has_index Arg1:T26 Arg2:T27	
+R14	Has_temporal Arg1:T24 Arg2:T26	
+R15	Has_value Arg1:T28 Arg2:T29	
+R16	Has_value Arg1:T31 Arg2:T33	
+R17	AND Arg1:T32 Arg2:T31	
+R18	Has_multiplier Arg1:T32 Arg2:T30	
+R19	Has_value Arg1:T34 Arg2:T35	
+R20	Has_index Arg1:T36 Arg2:T37	
+R21	Has_temporal Arg1:T34 Arg2:T36	
+R22	Has_context Arg1:T38 Arg2:T39	
+R23	Has_qualifier Arg1:T45 Arg2:T44	
+R24	Has_qualifier Arg1:T50 Arg2:T49	
+R25	AND Arg1:T46 Arg2:T50	
+R26	Has_index Arg1:T40 Arg2:T41	
+R27	Has_temporal Arg1:T38 Arg2:T40	
+*	OR T38 T46
+*	OR T55 T54
+R28	Has_temporal Arg1:T55 Arg2:T56	
+R29	Has_value Arg1:T55 Arg2:T58	
+R30	AND Arg1:T51 Arg2:T55	
+R31	Has_index Arg1:T56 Arg2:T59	
+*	OR T62 T61
+R32	AND Arg1:T62 Arg2:T60	
+R33	AND Arg1:T1 Arg2:T7	
+R34	AND Arg1:T51 Arg2:T52	
+R35	AND Arg1:T63 Arg2:T60	
+R36	AND Arg1:T64 Arg2:T60	
+T1	Condition 6 9	HCC
+T2	Procedure 33 42	radiology
+T3	Procedure 44 53	histology
+T4	Procedure 58 66	cytology
+T6	Condition 127 134;68 81	subtype fibrolamellar
+T7	Condition 87 134	mixed hepatocellular/cholangiocarcinoma subtype
+T8	Negation 140 152	not eligible
+T10	Measurement 159 195	Barcelona Clinic Liver Cancer (BCLC)
+T11	Value 196 203	Stage C
+T12	Condition 204 211	disease
+T13	Context_Error 204 211	disease
+T14	Measurement 215 219	BCLC
+T15	Value 220 227	Stage B
+T16	Qualifier 240 272	amenable to locoregional therapy
+T17	Qualifier 276 310	refractory to locoregional therapy
+T18	Qualifier 319 360	amenable to a curative treatment approach
+T19	Negation 236 239	not
+T20	Negation 315 318	not
+T22	Condition 228 235	disease
+T23	Context_Error 228 235	disease
+T24	Measurement 368 378;381 392	Child-Pugh liver score
+T25	Value 379 380	A
+T26	Temporal 393 412	within 7 days prior
+T27	Reference_point 416 446	first dose of study medication
+T28	Observation 454 469	life expectancy
+T29	Value 473 482	>3 months
+T30	Multiplier 488 500	at least one
+T32	Condition 512 518	lesion
+T31	Measurement 528 546	RECIST version 1.1
+T33	Value 501 511	measurable
+T34	Measurement 582 642	Eastern Cooperative Oncology Group (ECOG) performance status
+T35	Value 646 652	0 or 1
+T36	Temporal 663 682	within 7 days prior
+T37	Reference_point 686 730	receiving the first dose of study medication
+T38	Procedure 757 769	radiographic
+T39	Observation 747 756;770 781	objective progression
+T40	Temporal 782 797	during or after
+T41	Reference_point 798 856	treatment with sorafenib or oxaliplatin-based chemotherapy
+T42	Drug 813 822	sorafenib
+T43	Drug 826 837	oxaliplatin
+T44	Qualifier 813 843	sorafenib or oxaliplatin-based
+T45	Procedure 844 856	chemotherapy
+T46	Condition 866 877	intolerance
+T47	Drug 881 890	sorafenib
+T48	Drug 894 905	oxaliplatin
+T49	Qualifier 881 911	sorafenib or oxaliplatin-based
+T50	Procedure 912 924	chemotherapy
+T51	Person 926 932	Female
+T52	Condition 949 971	childbearing potential
+T54	Measurement 1008 1022;993 998	pregnancy test urine
+T55	Measurement 1002 1022	serum pregnancy test
+T56	Temporal 1023 1044	within 72 hours prior
+T58	Value 984 992	negative
+T59	Reference_point 1048 1089	receiving the first dose of study therapy
+T60	Procedure 1164 1186	adequate contraception
+T61	Person 1102 1106	male
+T62	Person 1091 1097	Female
+T63	Grammar_Error 1098 1101	and
+T64	Condition 1123 1145	reproductive potential
+T66	Non-query-able 1091 1328	Female and male participants of reproductive potential must agree to use adequate contraception starting from the first dose of study medication, throughout the study period, and for up to 120 days after the last dose of study medication
+T67	Post-eligibility 926 1089	Female participants of childbearing potential must have a negative urine or serum pregnancy test within 72 hours prior to receiving the first dose of study therapy
+T68	Post-eligibility 1091 1328	Female and male participants of reproductive potential must agree to use adequate contraception starting from the first dose of study medication, throughout the study period, and for up to 120 days after the last dose of study medication

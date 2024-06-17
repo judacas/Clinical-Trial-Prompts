@@ -1,0 +1,143 @@
+R1	AND Arg1:T1 Arg2:T2	
+R2	Has_qualifier Arg1:T5 Arg2:T6	
+R3	Has_qualifier Arg1:T5 Arg2:T7	
+R4	Has_qualifier Arg1:T5 Arg2:T8	
+*	OR T9 T12 T11 T10
+R5	Subsumes Arg1:T5 Arg2:T9	
+R6	Has_value Arg1:T14 Arg2:T15	
+R7	Has_value Arg1:T16 Arg2:T17	
+R8	AND Arg1:T14 Arg2:T18	
+R9	Has_qualifier Arg1:T20 Arg2:T21	
+R10	Has_qualifier Arg1:T20 Arg2:T22	
+R11	Has_index Arg1:T24 Arg2:T25	
+R12	Subsumes Arg1:T23 Arg2:T26	
+R13	AND Arg1:T20 Arg2:T23	
+R14	Has_temporal Arg1:T20 Arg2:T24	
+R15	Has_negation Arg1:T27 Arg2:T28	
+R16	AND Arg1:T23 Arg2:T27	
+*	OR T29 T30
+R17	Has_temporal Arg1:T29 Arg2:T33	
+R18	Has_mood Arg1:T29 Arg2:T32	
+R19	AND Arg1:T29 Arg2:T31	
+R20	Has_value Arg1:T36 Arg2:T37	
+R21	Has_value Arg1:T39 Arg2:T40	
+R22	Subsumes Arg1:T38 Arg2:T39	
+R23	Subsumes Arg1:T35 Arg2:T36	
+R24	Has_value Arg1:T42 Arg2:T43	
+R25	Subsumes Arg1:T41 Arg2:T42	
+*	OR T35 T38 T41
+*	OR T46 T44
+*	OR T45 T47 T48
+R26	Has_index Arg1:T49 Arg2:T50	
+R27	Has_temporal Arg1:T45 Arg2:T49	
+R28	AND Arg1:T46 Arg2:T45	
+R29	Has_mood Arg1:T53 Arg2:T54	
+R30	Has_value Arg1:T55 Arg2:T56	
+*	OR T58 T59 T60
+R31	AND Arg1:T57 Arg2:T58	
+R32	Has_temporal Arg1:T63 Arg2:T62	
+R33	Has_index Arg1:T64 Arg2:T65	
+*	OR T66 T67
+R34	Has_index Arg1:T71 Arg2:T72	
+R35	AND Arg1:T69 Arg2:T70	
+R36	AND Arg1:T66 Arg2:T68	
+*	OR T66 T69
+R37	Has_temporal Arg1:T69 Arg2:T71	
+R38	Has_value Arg1:T75 Arg2:T76	
+*	OR T77 T78
+R39	AND Arg1:T77 Arg2:T75	
+R40	Has_qualifier Arg1:T74 Arg2:T80	
+*	OR T74 T77
+R41	Has_index Arg1:T81 Arg2:T82	
+R42	Has_value Arg1:T83 Arg2:T84	
+R43	Has_temporal Arg1:T87 Arg2:T88	
+R44	Has_temporal Arg1:T87 Arg2:T89	
+R45	Has_index Arg1:T89 Arg2:T90	
+R46	AND Arg1:T92 Arg2:T93	
+*	OR T91 T92
+R47	AND Arg1:T16 Arg2:T18	
+T1	Condition 42 106	heart team considers the patient to be a good surgical candidate
+T2	Procedure 0 36	Heart Team assessment of operability
+T3	Condition 125 152	acute myocardial infarction
+T4	Temporal 153 202	= 1 month (30 days) before the intended treatment
+T5	Condition 406 428	valvular heart disease
+T6	Qualifier 395 405	left sided
+T7	Qualifier 387 393	severe
+T8	Qualifier 376 385	Untreated
+T9	Condition 439 459	mitral regurgitation
+T10	Condition 439 445;463 471	mitral stenosis
+T11	Condition 477 497	aortic regurgitation
+T12	Condition 477 483;501 509	aortic stenosis
+T14	Measurement 512 543	Mean pulmonary artery pressures
+T15	Value 544 551	=40mmHG
+T16	Measurement 556 559	PVR
+T17	Value 560 574	>4 woods units
+T18	Condition 590 617	right heart catheterization
+T20	Procedure 645 662	cardiac procedure
+T21	Qualifier 636 644	invasive
+T22	Qualifier 624 635	therapeutic
+T23	Device 678 695	permanent implant
+T24	Temporal 714 751	within 30 days of the index procedure
+T25	Reference_point 732 751	the index procedure
+T26	Device 805 816	heart valve
+T27	Device 836 855	permanent pacemaker
+T28	Negation 859 867	excluded
+T29	Procedure 904 912;930 938	surgical ablation
+T30	Procedure 916 938	transcatheter ablation
+T31	Condition 943 962	Atrial Fibrillation
+T32	Mood 884 891	planned
+T33	Temporal 892 903	concomitant
+T35	Condition 965 975	Leukopenia
+T36	Measurement 977 980	WBC
+T37	Value 981 995	< 3000 cell/mL
+T38	Condition 998 1010	acute anemia
+T39	Measurement 1012 1015	Hgb
+T40	Value 1016 1024	< 9 g/dL
+T41	Condition 1027 1043	Thrombocytopenia
+T42	Measurement 1045 1048	Plt
+T43	Value 1049 1065	< 50,000 cell/mL
+T44	Condition 1084 1107	respiratory instability
+T45	Procedure 1118 1135	inotropic support
+T46	Condition 1069 1080;1096 1107	Hemodynamic instability
+T47	Procedure 1137 1159	mechanical ventilation
+T48	Procedure 1163 1190	mechanical heart assistance
+T49	Temporal 1191 1229	within 30 days of screening evaluation
+T50	Reference_point 1209 1229	screening evaluation
+T53	Procedure 1241 1258	emergency surgery
+T54	Mood 1232 1240	Need for
+T55	Measurement 1276 1310	Left ventricular ejection fraction
+T56	Value 1311 1315	<40%
+T57	Procedure 1318 1335	Echocardiographic
+T58	Condition 1348 1365	intracardiac mass
+T59	Condition 1348 1360;1367 1375	intracardiac thrombus
+T60	Condition 1348 1360;1379 1389	intracardiac vegetation
+T62	Temporal 1392 1398	Active
+T63	Condition 1399 1416	upper GI bleeding
+T64	Temporal 1417 1461	within 3 months (90 days) prior to procedure
+T65	Reference_point 1452 1461	procedure
+T66	Condition 1472 1488	contraindication
+T67	Condition 1492 1508	hypersensitivity
+T68	Procedure 1516 1540	anticoagulation regimens
+T69	Condition 1545 1554	inability
+T70	Procedure 1561 1575	anticoagulated
+T71	Temporal 1576 1599	for the study procedure
+T72	Reference_point 1584 1599	study procedure
+T74	Condition 1609 1612	CVA
+T75	Procedure 1654 1666	neuroimaging
+T76	Value 1667 1676	confirmed
+T77	Condition 1677 1683	stroke
+T78	Condition 1687 1718	transient ischemic attack (TIA)
+T80	Qualifier 1613 1650	clinically confirmed (by neurologist)
+T81	Temporal 1719 1762	within 6 months (180 days) of the procedure
+T82	Reference_point 1749 1762	the procedure
+T83	Observation 1765 1790	Estimated life expectancy
+T84	Value 1791 1799	< 1 year
+T85	Non-query-able 1832 1918	Expectation that patient will not improve despite treatment of tricuspid regurgitation
+T86	Non-query-able 1920 2221	Currently participating in another investigational cardiac device study or any other clinical trial, including drugs or biologics. Note: Trials requiring extended follow-up for products that were investigational, but have since become commercially available, are not considered investigational trials.
+T87	Condition 2230 2252	bacterial endocarditis
+T88	Temporal 2223 2229	Active
+T89	Temporal 2253 2292	within 6 months (180 days) of procedure
+T90	Reference_point 2280 2292	of procedure
+T91	Condition 2330 2342	SVC syndrome
+T92	Condition 2347 2364	hepatic cirrhosis
+T93	Condition 2381 2407	passive congestion from TR

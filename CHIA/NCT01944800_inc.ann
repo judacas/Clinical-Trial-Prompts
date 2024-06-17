@@ -1,0 +1,145 @@
+*	OR T1 T4
+*	OR T2 T3
+R1	AND Arg1:T2 Arg2:T1	
+*	OR T7 T8 T9
+*	OR T13 T15
+R2	Has_temporal Arg1:T13 Arg2:T14	
+R3	Has_qualifier Arg1:T17 Arg2:T18	
+R4	Has_qualifier Arg1:T20 Arg2:T21	
+R5	Has_temporal Arg1:T20 Arg2:T22	
+R6	Has_temporal Arg1:T17 Arg2:T19	
+*	OR T17 T20
+R7	Has_index Arg1:T19 Arg2:T26	
+R8	Has_index Arg1:T22 Arg2:T27	
+R9	Has_index Arg1:T25 Arg2:T28	
+R10	Has_value Arg1:T23 Arg2:T24	
+R11	Has_temporal Arg1:T23 Arg2:T25	
+R12	Has_value Arg1:T30 Arg2:T31	
+R13	Subsumes Arg1:T29 Arg2:T30	
+R14	Has_index Arg1:T32 Arg2:T33	
+R15	Has_index Arg1:T36 Arg2:T37	
+R16	Has_qualifier Arg1:T34 Arg2:T35	
+R17	Has_temporal Arg1:T29 Arg2:T32	
+R18	Has_temporal Arg1:T34 Arg2:T36	
+R19	Has_index Arg1:T40 Arg2:T41	
+R20	Has_value Arg1:T38 Arg2:T39	
+R21	Has_temporal Arg1:T38 Arg2:T40	
+R22	AND Arg1:T42 Arg2:T43	
+*	OR T46 T45
+R23	Has_qualifier Arg1:T44 Arg2:T46	
+R24	Has_value Arg1:T48 Arg2:T49	
+R25	Subsumes Arg1:T46 Arg2:T48	
+R26	Has_value Arg1:T54 Arg2:T55	
+R27	AND Arg1:T53 Arg2:T54	
+*	OR T52 T53 T56
+R28	Subsumes Arg1:T50 Arg2:T52	
+R29	Has_mood Arg1:T50 Arg2:T51	
+R30	Has_qualifier Arg1:T58 Arg2:T60	
+R31	Subsumes Arg1:T60 Arg2:T59	
+R32	Has_qualifier Arg1:T61 Arg2:T62	
+R33	Has_multiplier Arg1:T77 Arg2:T78	
+*	OR T66 T67 T68 T69 T70 T71 T72 T73 T74 T75 T76 T77
+R34	Subsumes Arg1:T65 Arg2:T66	
+*	OR T63 T64
+R35	AND Arg1:T63 Arg2:T65	
+R36	Has_index Arg1:T84 Arg2:T85	
+*	OR T82 T83
+R37	Has_multiplier Arg1:T82 Arg2:T81	
+*	OR T97 T99 T100 T101 T102 T98
+R38	Subsumes Arg1:T96 Arg2:T97	
+*	OR T94 T95
+R39	Subsumes Arg1:T93 Arg2:T94	
+T1	Drug 29 39	ticagrelor
+T2	Condition 0 11	intolerance
+T3	Condition 18 25	allergy
+T4	Drug 43 52	prasugrel
+T7	Condition 69 75	stroke
+T8	Condition 77 102	transient ischemic attack
+T9	Condition 106 127	intracranial bleeding
+T10	Condition 135 156	intracranial neoplasm
+T11	Condition 158 197	intracranial arteriovenous malformation
+T12	Condition 201 222	intracranial aneurysm
+T13	Condition 231 239	bleeding
+T14	Temporal 224 230	active
+T15	Condition 241 351	clinical findings, that in the judgement of the investigator are associated with an increased risk of bleeding
+T17	Procedure 369 389	fibrinolytic therapy
+T18	Qualifier 353 368	fibrin-specific
+T19	Temporal 390 425	less than 24 h before randomization
+T20	Procedure 447 467	fibrinolytic therapy
+T21	Qualifier 427 446	non-fibrin-specific
+T22	Temporal 468 503	less than 48 h before randomization
+T23	Measurement 511 525	platelet count
+T24	Value 526 538	< 100.000/µL
+T25	Temporal 539 563	at the time of screening
+T26	Reference_point 412 425	randomization
+T27	Reference_point 490 503	randomization
+T28	Reference_point 542 563	the time of screening
+T29	Condition 571 577	anemia
+T30	Measurement 579 589	hemoglobin
+T31	Value 590 598	<10 g/dL
+T32	Temporal 600 624	at the time of screening
+T33	Reference_point 603 624	the time of screening
+T34	Procedure 626 646	oral anticoagulation
+T35	Qualifier 652 681	cannot be safely discontinued
+T36	Temporal 682 711	for the duration of the study
+T37	Reference_point 702 711	the study
+T38	Measurement 713 716	INR
+T39	Value 729 745	greater than 1.5
+T40	Temporal 746 770	at the time of screening
+T41	Reference_point 749 770	the time of screening
+T42	Condition 772 799	chronic renal insufficiency
+T43	Procedure 810 818	dialysis
+T44	Condition 839 858	hepatic dysfunction
+T45	Qualifier 832 838	severe
+T46	Qualifier 820 828	moderate
+T48	Measurement 860 870	Child Pugh
+T49	Value 871 877	B or C
+T50	Condition 898 916	bradycardia events
+T51	Mood 880 894	increased risk
+T52	Condition 918 928	Sick Sinus
+T53	Condition 930 938	AV block
+T54	Measurement 939 944	grade
+T55	Value 945 954	II or III
+T56	Condition 956 983	bradycardia-induced syncope
+T58	Condition 1010 1022;1035 1041	complication of PCI
+T59	Value 1024 1033	< 30 days
+T60	Qualifier 1004 1009	acute
+T61	Condition 1043 1070	concomitant medical illness
+T62	Qualifier 1111 1156	is associated with a life expectancy < 1 year
+T63	Procedure 1170 1174;1183 1190	oral therapy
+T64	Procedure 1178 1190	i.v. therapy
+T65	Drug 1196 1219	strong CYP3A Inhibitors
+T66	Drug 1226 1238	ketoconazole
+T67	Drug 1240 1252	itraconazole
+T68	Drug 1254 1266	voriconazole
+T69	Drug 1268 1281	telithromycin
+T70	Drug 1283 1297	clarithromycin
+T71	Drug 1299 1309	nefazodone
+T72	Drug 1311 1320	ritonavir
+T73	Drug 1322 1332	saquinavir
+T74	Drug 1334 1344	nelfinavir
+T75	Drug 1346 1355	indinavir
+T76	Drug 1357 1367	atazanavir
+T77	Drug 1369 1385	grapefruit juice
+T78	Multiplier 1386 1393	> 1 L/d
+T81	Multiplier 1621 1629	=1 doses
+T82	Drug 1633 1643	ticagrelor
+T83	Drug 1647 1656	prasugrel
+T84	Temporal 1657 1691	within 5 days before randomisation
+T85	Reference_point 1678 1691	randomisation
+T87	Non-query-able 1693 1720	no written informed consent
+T88	Post-eligibility 1722 1773	participation in another investigational drug study
+T89	Non-query-able 1775 1807	previous enrolment in this study
+T90	Pregnancy_considerations 1809 1941	for women of childbearing potential no negative pregnancy test and no agree to use reliable method of birth control during the study
+T91	Pregnancy_considerations 1943 2004	Pregnancy, giving birth within the last 90 days, or lactation
+T92	Non-query-able 2006 2055	inability to cooperate with protocol requirements
+T93	Drug 1396 1444	CYP3A substrates with narrow therapeutic indices
+T94	Drug 1451 1463	cyclosporine
+T95	Drug 1465 1474	quinidine
+T96	Drug 1480 1501	strong CYP3A inducers
+T97	Drug 1508 1516	rifampin
+T98	Drug 1517 1527	rifampicin
+T99	Drug 1529 1538	phenytoin
+T100	Drug 1540 1553	carbamazepine
+T101	Drug 1555 1567	dexamethason
+T102	Drug 1569 1582	phenobarbital

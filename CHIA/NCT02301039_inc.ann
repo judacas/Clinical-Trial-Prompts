@@ -1,0 +1,172 @@
+R1	Has_value Arg1:T1 Arg2:T2	
+R2	Has_value Arg1:T3 Arg2:T4	
+R3	AND Arg1:T5 Arg2:T3	
+*	OR T1 T5
+R4	Has_value Arg1:T6 Arg2:T7	
+*	OR T12 T10 T11 T9
+*	OR T8 T13
+R5	Has_qualifier Arg1:T8 Arg2:T12	
+*	OR T19 T20
+R6	Has_qualifier Arg1:T18 Arg2:T19	
+*	OR T22 T26
+R7	Has_qualifier Arg1:T22 Arg2:T23	
+*	OR T34 T35
+R8	Has_qualifier Arg1:T33 Arg2:T34	
+*	OR T31 T32 T33
+R9	Subsumes Arg1:T30 Arg2:T31	
+R10	Subsumes Arg1:T16 Arg2:T17	
+*	OR T16 T30
+R11	Subsumes Arg1:T8 Arg2:T16	
+R12	AND Arg1:T8 Arg2:T6	
+R13	Has_value Arg1:T41 Arg2:T42	
+*	OR T44 T45
+R14	AND Arg1:T44 Arg2:T43	
+R15	Has_temporal Arg1:T47 Arg2:T48	
+R16	Has_index Arg1:T49 Arg2:T50	
+R17	Has_temporal Arg1:T47 Arg2:T49	
+R18	Has_qualifier Arg1:T54 Arg2:T55	
+R19	Has_temporal Arg1:T54 Arg2:T53	
+R20	Has_multiplier Arg1:T54 Arg2:T52	
+R21	Has_index Arg1:T57 Arg2:T58	
+R22	Has_temporal Arg1:T56 Arg2:T57	
+*	OR T63 T62
+R23	Has_index Arg1:T66 Arg2:T67	
+R24	Has_index Arg1:T68 Arg2:T69	
+R25	Has_temporal Arg1:T65 Arg2:T66	
+R26	Has_temporal Arg1:T65 Arg2:T68	
+R27	AND Arg1:T63 Arg2:T65	
+R28	Has_index Arg1:T78 Arg2:T79	
+R29	Has_value Arg1:T82 Arg2:T83	
+R30	Has_index Arg1:T84 Arg2:T85	
+R31	Has_temporal Arg1:T82 Arg2:T84	
+R32	AND Arg1:T80 Arg2:T82	
+*	OR T90 T91
+R33	AND Arg1:T89 Arg2:T90	
+*	OR T88 T89 T93 T94 T95
+R34	Subsumes Arg1:T87 Arg2:T88	
+R35	Has_value Arg1:T98 Arg2:T99	
+R36	AND Arg1:T102 Arg2:T103	
+R37	AND Arg1:T101 Arg2:T103	
+*	OR T101 T102
+R38	Has_negation Arg1:T104 Arg2:T105	
+R39	Has_index Arg1:T106 Arg2:T107	
+R40	Has_temporal Arg1:T104 Arg2:T106	
+*	OR T110 T109
+R41	Has_qualifier Arg1:T108 Arg2:T110	
+R42	Has_negation Arg1:T108 Arg2:T112	
+R43	Has_negation Arg1:T113 Arg2:T114	
+R44	AND Arg1:T116 Arg2:T117	
+R45	Has_index Arg1:T115 Arg2:T116	
+R46	Has_temporal Arg1:T113 Arg2:T115	
+R47	AND Arg1:T100 Arg2:T101	
+R48	AND Arg1:T23 Arg2:T24	
+R49	AND Arg1:T24 Arg2:T25	
+R50	Subsumes Arg1:T16 Arg2:T18	
+R51	AND Arg1:T64 Arg2:T65	
+R52	AND Arg1:T81 Arg2:T82	
+R53	Subsumes Arg1:T87 Arg2:T96	
+R54	AND Arg1:T100 Arg2:T104	
+R55	AND Arg1:T100 Arg2:T108	
+R56	AND Arg1:T100 Arg2:T113	
+T1	Person 0 3	Age
+T2	Value 4 14	≥ 18 years
+T3	Person 16 19	Age
+T4	Value 20 30	≥ 12 years
+T5	Condition 49 62	bone sarcomas
+T6	Procedure 66 80	Histologically
+T7	Value 81 90	confirmed
+T8	Condition 158 169;178 185	soft-tissue sarcoma
+T9	Qualifier 147 157	high grade
+T10	Qualifier 136 146	metastatic
+T11	Temporal 118 127	recurrent
+T12	Qualifier 104 116	unresectable
+T13	Condition 173 185	bone sarcoma
+T16	Condition 220 240	soft tissue sarcomas
+T17	Condition 242 256	leiomyosarcoma
+T18	Condition 298 309	liposarcoma
+T19	Qualifier 258 279	poorly differentiated
+T20	Qualifier 280 297	de-differentiated
+T22	Condition 351 358	sarcoma
+T23	Qualifier 334 350	undifferentiated
+T24	Qualifier 322 333	pleomorphic
+T25	Qualifier 311 321	high grade
+T26	Condition 359 362	MFH
+T27	Condition 367 383	synovial sarcoma
+T30	Condition 390 403	bone sarcomas
+T31	Condition 405 418	Ewing sarcoma
+T32	Condition 420 432	osteosarcoma
+T33	Condition 438 452	chondrosarcoma
+T34	Qualifier 454 471	de-differentiated
+T35	Qualifier 475 486	mesenchymal
+T39	Grammar_Error 386 389	and
+T41	Measurement 491 514	ECOG Performance Status
+T42	Value 518 524	0 or 1
+T43	Condition 548 566	measurable disease
+T44	Procedure 570 572;577 582	CT scans
+T45	Procedure 573 582	MRI scans
+T47	Procedure 618 625	imaging
+T48	Temporal 609 617	Baseline
+T49	Temporal 644 668	within 30 days of dosing
+T50	Reference_point 662 668	dosing
+T51	Non-query-able 671 811	At least one site of accessible disease for pre- and post-treatment core biopsies for at least 20 patients per arm on the expansion cohorts.
+T52	Multiplier 840 843	1-3
+T53	Temporal 844 849	prior
+T54	Procedure 850 868	systemic therapies
+T55	Qualifier 876 894	metastatic setting
+T56	Condition 897 920	Adequate organ function
+T57	Temporal 921 945	within 14 days of dosing
+T58	Reference_point 939 945	dosing
+T59	Non-query-able 947 1027	Must be willing to provide and have available archival tissue for PD-L1 testing.
+T60	Post-eligibility 1029 1065	Written, voluntary informed consent.
+T61	Non-query-able 1029 1065	Written, voluntary informed consent.
+T62	Person 1083 1088	women
+T63	Person 1075 1078	men
+T64	Condition 1092 1114	childbearing potential
+T65	Procedure 1156 1169	birth control
+T66	Temporal 1170 1199	from providing signed consent
+T67	Reference_point 1175 1199	providing signed consent
+T68	Temporal 1204 1253	for 120 days after last study drug administration
+T69	Reference_point 1223 1253	last study drug administration
+T71	Non-query-able 1067 1254	Fertile men and women of childbearing potential must agree to use an effective method of birth control from providing signed consent and for 120 days after last study drug administration.
+T72	Non-query-able 1255 1377	Women of childbearing potential include pre-menopausal women and women within the first 2 years of the onset of menopause.
+T73	Person 1255 1260	Women
+T74	Condition 1264 1286	childbearing potential
+T75	Condition 1295 1309	pre-menopausal
+T76	Person 1310 1315	women
+T77	Person 1320 1325	women
+T78	Temporal 1326 1376	within the first 2 years of the onset of menopause
+T79	Reference_point 1354 1376	the onset of menopause
+T80	Condition 1387 1409	childbearing potential
+T81	Person 1378 1383	Women
+T82	Measurement 1431 1445	pregnancy test
+T83	Value 1422 1430	negative
+T84	Temporal 1446 1471	≤ 72 hours prior to Day 1
+T85	Reference_point 1466 1471	Day 1
+T87	Procedure 1504 1517	birth control
+T88	Condition 1527 1545	surgically sterile
+T89	Device 1547 1561	barrier device
+T90	Device 1563 1569	condom
+T91	Device 1571 1580	diaphragm
+T93	Device 1583 1601	contraceptive coil
+T94	Device 1603 1628	intrauterine device (IUD)
+T95	Procedure 1634 1644	abstinence
+T96	Grammar_Error 1630 1633	and
+T98	Observation 1647 1662	Life expectancy
+T99	Value 1666 1675	>12 weeks
+T100	Condition 1692 1722	central nervous system disease
+T101	Procedure 1779 1791	radiotherapy
+T102	Procedure 1795 1802	surgery
+T103	Condition 1815 1837	CNS metastatic disease
+T104	Condition 1866 1886	clinical progression
+T105	Negation 1846 1853	without
+T106	Temporal 1887 1926	for at least 4 weeks prior to screening
+T107	Reference_point 1917 1926	screening
+T108	Condition 1965 1981	brain metastases
+T109	Qualifier 1955 1964	enlarging
+T110	Qualifier 1948 1951	new
+T112	Negation 1933 1935	no
+T113	Drug 1995 2003	steroids
+T114	Negation 1991 1994	off
+T115	Temporal 2004 2058	for at least 7 days before first dose of pembrolizumab
+T116	Reference_point 2031 2058	first dose of pembrolizumab
+T117	Drug 2045 2058	pembrolizumab

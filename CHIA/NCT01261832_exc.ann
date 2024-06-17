@@ -1,0 +1,53 @@
+*	OR T4 T3 T5 T6
+*	OR T1 T2
+R1	AND Arg1:T1 Arg2:T4	
+R2	Has_qualifier Arg1:T10 Arg2:T9	
+R3	Has_temporal Arg1:T11 Arg2:T12	
+*	OR T11 T13 T15
+R4	Subsumes Arg1:T13 Arg2:T14	
+R5	multi Arg1:T15 Arg2:T16	
+R6	Has_temporal Arg1:T17 Arg2:T18	
+R7	Has_value Arg1:T19 Arg2:T20	
+R8	Has_value Arg1:T21 Arg2:T22	
+*	OR T19 T21
+R9	AND Arg1:T17 Arg2:T19	
+*	OR T24 T25 T26
+*	OR T27 T28
+R10	Has_negation Arg1:T27 Arg2:T29	
+R11	AND Arg1:T26 Arg2:T27	
+*	OR T32 T31
+R12	Has_temporal Arg1:T32 Arg2:T33	
+R13	Has_temporal Arg1:T35 Arg2:T36	
+*	OR T32 T35
+T1	Condition 24 40	hypersensitivity
+T2	Condition 44 60	contraindication
+T4	Drug 98 105	Heparin
+T3	Drug 107 114	Aspirin
+T5	Drug 116 127	Clopidogrel
+T6	Drug 129 139	Cilostazol
+T9	Qualifier 141 153	Uncontrolled
+T10	Condition 154 166	hypertension
+T11	Condition 179 197	bleeding diathesis
+T12	Temporal 168 175	History
+T13	Condition 207 219	coagulopathy
+T14	Condition 231 263	heparin-induced thrombocytopenia
+T15	Observation 269 295	refuses blood transfusions
+T16	Procedure 277 295	blood transfusions
+T17	Procedure 307 315	hemogram
+T18	Temporal 298 306	Baseline
+T19	Measurement 321 323	Hb
+T20	Value 323 330	<10g/dL
+T21	Measurement 334 343	PLT count
+T22	Value 343 354	<100,000/μL
+T24	Drug 380 388	warfarin
+T25	Drug 390 400	cilostazol
+T26	Drug 422 442	anti-platelet agents
+T27	Drug 450 457	aspirin
+T28	Drug 462 473	clopidogrel
+T29	Negation 443 449	except
+T31	Condition 495 517	genitourinary bleeding
+T32	Condition 475 491;509 517	Gastrointestinal bleeding
+T33	Temporal 518 543	within the prior 3 months
+T35	Procedure 548 561	major surgery
+T36	Temporal 562 577	within 2 months
+T37	Condition 580 589	Pregnancy
