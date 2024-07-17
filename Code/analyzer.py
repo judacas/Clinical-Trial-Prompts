@@ -1,7 +1,8 @@
+from fuzzywuzzy import fuzz
 import glob
 import os
+import re
 from colorama import Fore, Style
-from pyparsing import C
 from tabulate import tabulate
 import sympy
 from errorManager import logError
@@ -127,6 +128,79 @@ def compareToChia (ChiaFolder, personalFolder):
     print("\n\nSummary:")
     print(tabulate(summary_data, headers=['Statistic', 'Value'], tablefmt='fancy_grid', maxcolwidths=50))
     
+    
+def cleanText(text):
+    text.strip()
+    # Remove numeric and bullet list indicators
+    text = re.sub(r'^\s*\d+[\.\)]\s*', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^\s*\*\s*', '', text, flags=re.MULTILINE)
+    # Remove punctuation at the end of each line
+    text = re.sub(r'\s*[.,;:!?]+\s*$', '', text, flags=re.MULTILINE)
+    # Remove extra whitespaces
+    text = re.sub(r'[ \t]+', ' ', text)
+    return text.strip()
+
+def tokenize_lines(text:str):
+    return [cleanText(line) for line in text.split('\n') if line.strip() != '']
+
+
+
+
+def compare_lines(chia_lines, personal_lines, verbose=False, almostExactThreshold=95, goodEnoughThreshold=80):
+    results, chiaFound = find_best_matches(personal_lines, chia_lines, goodEnoughThreshold)
+    chiaLeft = [line for line in chia_lines if line not in chiaFound]
+    chiaLeftoversFlipped, _ = find_best_matches(chiaLeft, personal_lines, goodEnoughThreshold)
+    chiaLeftovers = [[row[1], row[0], row[2]] for row in chiaLeftoversFlipped]
+    results += chiaLeftovers
+    if verbose and len(results) > 0:
+        print(tabulate(results, headers=['Personal', 'CHIA', 'Score'], tablefmt='fancy_grid', maxcolwidths=50))
+        print("If we were to test it all as one we would get a score of", fuzz.ratio(' '.join(personal_lines), ' '.join(chia_lines)))
+        print("the average score is", sum([int(row[2]) for row in results])/len(results))
+    
+    return results
+
+def find_best_matches(source, destination, threshold):
+    matches = []
+    destinationsFound = []
+    for item in source:
+        best_match = max(destination, key=lambda x: fuzz.ratio(item, x))
+        score = fuzz.ratio(item, best_match)
+        
+        if score >= threshold:
+            destinationsFound.append(best_match)
+            row = [color_text(str(cell), scoreToColor(score)) for cell in [item, best_match, score]]
+        else:
+            coloredSource = color_text(item, Fore.RED)
+            coloredMatch = color_text(best_match, Fore.CYAN)
+            coloredScore = color_text(str(score), Fore.RED)
+            row = [coloredSource, coloredMatch, coloredScore]
+        
+        matches.append(row)
+    return matches, destinationsFound
+
+
+def scoreToColor(score, ALmostExactThreshold=95, GoodEnoughThreshold=80):
+    if score > 100 or score < 0:
+        raise ValueError(f"Invalid score: {score}, must be between 0 and 100")
+    if score >= ALmostExactThreshold:
+        return Fore.GREEN
+    elif score >= GoodEnoughThreshold:
+        return Fore.YELLOW
+    else:
+        return Fore.RED
+
+def color_text(text:str, color:str, AlmostExactThreshold=95, GoodEnoughThreshold=80):
+    if not isinstance(text, str):
+        raise ValueError(f"Invalid text: {text}, must be a string")
+    color_end = Style.RESET_ALL
+    # For some reason coloring isn't working with tabulate so have to print something before the color or else it will interpret the color code as a number and then crash. 
+    # Solution was to simply print an invisible character at the beginning, can't be whitespace or else it will be removed by tabulate
+    coloredText: str = '\u200B' + color + text + color_end
+    return coloredText
+
+
+        
+
 def checkCHIADeprecation(CHIALocation, MyLocation):
     chiaIDs = {os.path.basename(file)[:11] for file in glob.glob(os.path.join(CHIALocation, "*.txt"))}
     myIDs = {os.path.basename(file)[:11] for file in glob.glob(os.path.join(MyLocation, "*.json"))}
@@ -154,31 +228,27 @@ def checkCHIADeprecation(CHIALocation, MyLocation):
     for trial in useful:
         ChiaIncFile = os.path.join(CHIALocation, trial + "_inc.txt")
         ChiaExcFile = os.path.join(CHIALocation, trial + "_exc.txt")
-        chiaLines = []
+        chiaString = ""
         if os.path.exists(ChiaIncFile):
             with open(ChiaIncFile, encoding='utf-8') as file:
-                chiaLines = file.readlines()
+                chiaString += file.read()
         if os.path.exists(ChiaExcFile):
             with open(ChiaExcFile, encoding='utf-8') as file:
-                chiaLines += file.readlines()
-        chiaString = "".join(chiaLines)
+                chiaString += file.read()
                 
         myFile = os.path.join(MyLocation, trial + ".json")
         with open(myFile, encoding='utf-8') as file:
             myJSON = json.load(file)
-            myString = myJSON.get("inclusionCriteria","") + myJSON.get("exclusionCriteria","") + myJSON.get("Criteria","")
-            myLines = myString.split("\n")
-            
+            myString = myJSON.get("inclusionCriteria","") + "\n" + myJSON.get("exclusionCriteria","") + myJSON.get("Criteria","")
+        
+        chiaLines = tokenize_lines(chiaString)
+        myLines = tokenize_lines(myString)
         
         print(f"\n\n{trial} comparison:")
         print(f"CHIA has {len(chiaLines)} lines while your personal folder has {len(myLines)} lines")
-        print("CHIA:" ,chiaString)
-        print("Personal:", myString)
-        if chiaString != myString:
-            print(f"\n\n{trial} is different in CHIA and your personal folder")
-            differentCounter += 1
-        else:
-            print(f"\n\n{trial} is the same in CHIA and your personal folder")
+        # print("CHIA:" ,chiaString)
+        # print("\n\n\nPersonal:", myString)
+        compare_lines(chiaLines, myLines, verbose=True)
     print(f"\n\n{differentCounter} trials are different in CHIA and your personal folder")
     
     
