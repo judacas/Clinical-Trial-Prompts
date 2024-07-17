@@ -59,8 +59,6 @@ class Trial:
             self.title = rawJSON["officialTitle"]
             if verbose:
                 print(f"converting: {self.title} to sympy json")
-            # change later to verbose = verbose
-            # Assuming flattened_study is your preprocessed trial
             criteria_keys = ["inclusionCriteria", "exclusionCriteria", "Criteria"]
             criteria_dict = {
                 key: rawJSON[key] for key in criteria_keys if key in rawJSON

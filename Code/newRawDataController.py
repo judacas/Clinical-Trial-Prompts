@@ -56,22 +56,28 @@ def getChiaIDs(n, start_index=0):
 
 
 def getTrialsByID(trialIDS: list):
-    trialsAsQuery = "%2C+".join(trialIDS)
-    trials = curlWithStatusCheck(
-        f"https://clinicaltrials.gov/api/v2/studies?format=json&fields=EligibilityModule%7CNCTId%7COfficialTitle&query.cond={trialsAsQuery}"
-    )
-
-    nextPageToken = trials.get("nextPageToken", None)
-    while nextPageToken:
-        nextPageTrials = curlWithStatusCheck(
-            f"https://clinicaltrials.gov/api/v2/studies?format=json&fields=EligibilityModule%7CNCTId%7COfficialTitle&query.cond={trialsAsQuery}&pageToken={nextPageToken}"
+    allTrials = {}
+    for i in range(0, len(trialIDS), 100):
+        trialsAsQuery = "%2C+".join(trialIDS[i : min(i + 100, len(trialIDS))])
+        currentTrials = curlWithStatusCheck(
+            f"https://clinicaltrials.gov/api/v2/studies?format=json&fields=EligibilityModule%7CNCTId%7COfficialTitle&query.cond={trialsAsQuery}"
         )
-        trials["studies"].extend(nextPageTrials["studies"])
-        nextPageToken = nextPageTrials.get("nextPageToken", None)
+
+        nextPageToken = currentTrials.get("nextPageToken", None)
+        while nextPageToken:
+            nextPageTrials = curlWithStatusCheck(
+                f"https://clinicaltrials.gov/api/v2/studies?format=json&fields=EligibilityModule%7CNCTId%7COfficialTitle&query.cond={trialsAsQuery}&pageToken={nextPageToken}"
+            )
+            currentTrials["studies"].extend(nextPageTrials["studies"])
+            nextPageToken = nextPageTrials.get("nextPageToken", None)
+        if allTrials:
+            allTrials["studies"].extend(currentTrials["studies"])
+        else:
+            allTrials = currentTrials
 
     filteredTrials = [
         preProcessTrial(trial["protocolSection"])
-        for trial in trials["studies"]
+        for trial in allTrials["studies"]
     ]
     return filteredTrials
 
@@ -140,19 +146,23 @@ def preProcessTrial(study):
 
     # Add the fields to inclusionCriteria or exclusionCriteria based on their truth values
     if healthy_volunteers is not None and healthy_volunteers == "false":
+        eligibilityModule.setdefault("exclusionCriteria", "")
         eligibilityModule["exclusionCriteria"] += "\n* " + (
             "No healthy volunteers allowed"
         )
 
     if sex is not None and sex != "ALL":
+        eligibilityModule.setdefault("inclusionCriteria", "")
         eligibilityModule["inclusionCriteria"] += "\n* " + (f"Must be {sex}")
 
     if minimum_age is not None:
+        eligibilityModule.setdefault("inclusionCriteria", "")
         eligibilityModule["inclusionCriteria"] += "\n* " + (
             f"Must have minimum age of {minimum_age}"
         )
 
     if maximum_age is not None:
+        eligibilityModule.setdefault("inclusionCriteria", "")
         eligibilityModule["inclusionCriteria"] += "\n* " + (
             f"Must have maximum age of {maximum_age}"
         )
@@ -177,15 +187,18 @@ def preProcessTrial(study):
             if "CHILD" not in std_ages:
                 minAge = 18
         if notAdultEdgeCase:
+            eligibilityModule.setdefault("inclusionCriteria", "")
             eligibilityModule["inclusionCriteria"].append(
                 "Must be between the age of 18 and 65"
             )
         else:
             if minAge != 0:
+                eligibilityModule.setdefault("inclusionCriteria", "")
                 eligibilityModule["inclusionCriteria"].append(
                     f"Must be {minAge} or older"
                 )
             if maxAge != 100:
+                eligibilityModule.setdefault("inclusionCriteria", "")
                 eligibilityModule["inclusionCriteria"].append(
                     f"Must be {maxAge} or younger"
                 )

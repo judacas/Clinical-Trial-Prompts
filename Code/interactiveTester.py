@@ -139,6 +139,13 @@ def compareToChia():
     analyzer.compareToChia(CHIA_FOLDER, comparingFolder)
     
     
+def checkCHIADeprecation():
+    comparingCategory = getValidInput("Enter the category in which your trials are in", valid_answers=os.listdir(TRIALS_FOLDER), printOptions=True, keepTrying=True, verbose=True)
+    comparingCategory = os.path.join(TRIALS_FOLDER, comparingCategory)
+    comparingFolder = getValidInput("Enter the folder in which your trials are in", valid_answers=os.listdir(comparingCategory), printOptions=True, keepTrying=True, verbose=True)
+    comparingFolder = os.path.join(comparingCategory, comparingFolder)
+    analyzer.checkCHIADeprecation(CHIA_FOLDER, comparingFolder)
+
             
         
             
@@ -151,8 +158,10 @@ def main():
         {"label": "Process trials", "function": process_trials},
         {"label": "Talk to trial", "function": talk_to_trial},
         {"label": "Compare to Chia", "function": compareToChia},
-        {"label": "Exit", "function": exit_program},
+        {"label": "Check CHIA's deprecation", "function": checkCHIADeprecation}
     ]
+    # done so that Exit is always the last option
+    menu_options.append({"label": "Exit", "function": exit_program})
 
     label_to_function = {
         option["label"].lower(): option["function"] for option in menu_options
@@ -164,6 +173,7 @@ def main():
     ]
 
     while True:
+        print("\n\nMain Menu\n")
         while True:
             for i, option in enumerate(menu_options, start=1):
                 print(f"{i}. {option['label']}")
@@ -171,6 +181,7 @@ def main():
             if choice in valid_answers:
                 break
         choice = str(choice)
+        print("\n")
         if choice.isdigit(): 
             menu_options[int(choice) - 1]["function"]()
         else:

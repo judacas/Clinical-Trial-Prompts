@@ -1,10 +1,12 @@
 import glob
 import os
 from colorama import Fore, Style
+from pyparsing import C
 from tabulate import tabulate
 import sympy
 from errorManager import logError
 from trial import Trial
+import json
 
 def read_chia_trial(nctId, ChiaFolder):
     chiaCriterias: list[str] = []
@@ -124,6 +126,64 @@ def compareToChia (ChiaFolder, personalFolder):
     
     print("\n\nSummary:")
     print(tabulate(summary_data, headers=['Statistic', 'Value'], tablefmt='fancy_grid', maxcolwidths=50))
+    
+def checkCHIADeprecation(CHIALocation, MyLocation):
+    chiaIDs = {os.path.basename(file)[:11] for file in glob.glob(os.path.join(CHIALocation, "*.txt"))}
+    myIDs = {os.path.basename(file)[:11] for file in glob.glob(os.path.join(MyLocation, "*.json"))}
+    deprecated = chiaIDs - myIDs
+    if deprecated:
+        print("\n\nThe following trials are in CHIA but not in your personal folder:")
+        for trial in deprecated:
+            print(trial)
+    else:
+        print("\n\nThere are no deprecated trials in CHIA")
+    inPersonalButNotInCHIA = myIDs - chiaIDs
+    if inPersonalButNotInCHIA:
+        print("\n\nThe following trials are in your personal folder but not in CHIA:")
+        for trial in inPersonalButNotInCHIA:
+            print(trial)
+    else:
+        print("\n\nThere are no trials in your personal folder that are not in CHIA")
+    print(len(deprecated), "trials are deprecated")
+    print(len(myIDs), "trials are in your personal folder")
+    print(len(chiaIDs), "trials are in CHIA")
+    
+    useful = myIDs & chiaIDs
+    print(len(useful), "trials are in both CHIA and your personal folder which we will use for the following comparison:")
+    differentCounter = 0
+    for trial in useful:
+        ChiaIncFile = os.path.join(CHIALocation, trial + "_inc.txt")
+        ChiaExcFile = os.path.join(CHIALocation, trial + "_exc.txt")
+        chiaLines = []
+        if os.path.exists(ChiaIncFile):
+            with open(ChiaIncFile, encoding='utf-8') as file:
+                chiaLines = file.readlines()
+        if os.path.exists(ChiaExcFile):
+            with open(ChiaExcFile, encoding='utf-8') as file:
+                chiaLines += file.readlines()
+        chiaString = "".join(chiaLines)
+                
+        myFile = os.path.join(MyLocation, trial + ".json")
+        with open(myFile, encoding='utf-8') as file:
+            myJSON = json.load(file)
+            myString = myJSON.get("inclusionCriteria","") + myJSON.get("exclusionCriteria","") + myJSON.get("Criteria","")
+            myLines = myString.split("\n")
+            
+        
+        print(f"\n\n{trial} comparison:")
+        print(f"CHIA has {len(chiaLines)} lines while your personal folder has {len(myLines)} lines")
+        print("CHIA:" ,chiaString)
+        print("Personal:", myString)
+        if chiaString != myString:
+            print(f"\n\n{trial} is different in CHIA and your personal folder")
+            differentCounter += 1
+        else:
+            print(f"\n\n{trial} is the same in CHIA and your personal folder")
+    print(f"\n\n{differentCounter} trials are different in CHIA and your personal folder")
+    
+    
+    
+    
 
     
     

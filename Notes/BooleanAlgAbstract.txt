@@ -1,0 +1,15 @@
+Large Language Models for Translating Clinical Trial Eligibility Criteria into Structured Data
+
+Introduction
+Low participation rates in clinical trials, particularly among racial and ethnic minority patients, hinder the development of inclusive cancer treatments. ClearMatch addresses these disparities by using large language models (LLMs) like GPT-4o to automate patient matching. By converting complex eligibility criteria into an accessible, structured format, ClearMatch aims to improve minority accrual rates, expedite the matching process, and enhance clinical trial inclusivity.
+
+Materials and Methods
+Clinical trial eligibility criteria were gathered using the ClinicalTrials.gov REST API. We utilized OpenAI's latest LLM models (gpt-4o-2024-05-13) to obtain a JSON containing the logical relationships between criteria. Initially, Mongo Query Language (MQL) was used but found too rigid. A boolean algebra expression in JSON form is now used and evaluated via Python's Sympy module. Ten trials were used to iteratively modify prompts, and 100 CHIA trials evaluated correctness. Prompts and code are available in our GitHub repository: https://github.com/judacas/Clinical-Trial-Prompts/
+
+Results
+In testing with 100 trials from the CHIA dataset, ClearMatch achieved a 72.86% matching rate, indicating that a significant portion of our identified criteria were present in CHIA's annotated form. This analysis, however, was complicated by the differing formalized structures data retrieval methods. Additionally, a lack of atomicity in our criteria was found and highlighted the need for precise and independent criteria to facilitate parallel processing for multiple trials. We then found that the logical forms derived were not always logically accurate. Due to the lack of a golden standard dataset for quantitative analysis, the primary limitation of this study is the inability to automatically and quantitatively evaluate its accuracy in both of these regards.
+
+Discussion
+We believe that the shortcomings are due to the LLM attempting to structurize the entire clinical trial at once. Research indicates that LLMs struggle with recalling data in long contexts. When considering that an incorrect operator results in a completely different expression, the lack of precision becomes unacceptable. In the future, we will recursively process one layer of logical operators/criteria at a time, allowing the LLM to focus on smaller, more manageable tasks. Additionally, we are planning on incorporating "Modifiers" which allow for context-dependent criteria without losing clarity, addressing complex conditional statements that require sequential questioning. 
+
+Despite the lack of extensive quantitative analysis, the promising results indicate that automated patient-to-clinical trial matching via LLMs is a possibility which would hopefully improve trial accrual rates and reduce minority disparities.
