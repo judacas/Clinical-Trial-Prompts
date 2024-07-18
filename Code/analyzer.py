@@ -144,31 +144,37 @@ def tokenize_lines(text:str):
     return [cleanText(line) for line in text.split('\n') if line.strip() != '']
 
 
-
+def stripColors(table: list[list[str]]):
+    #regex to remove both color codes and the reset sequence
+    return [[re.sub(r'\u200b\x1b\[\d+m|\x1b\[0m', '', cell) for cell in row] for row in table]
 
 def compare_lines(chia_lines, personal_lines, verbose=False, almostExactThreshold=95, goodEnoughThreshold=80):
-    results, chiaFound = find_best_matches(personal_lines, chia_lines, goodEnoughThreshold)
+    personalMatch, chiaFound = find_best_matches(personal_lines, chia_lines, almostExactThreshold, goodEnoughThreshold)
     chiaLeft = [line for line in chia_lines if line not in chiaFound]
-    chiaLeftoversFlipped, _ = find_best_matches(chiaLeft, personal_lines, goodEnoughThreshold)
+    chiaLeftoversFlipped, _ = find_best_matches(chiaLeft, personal_lines,almostExactThreshold, goodEnoughThreshold)
     chiaLeftovers = [[row[1], row[0], row[2]] for row in chiaLeftoversFlipped]
-    results += chiaLeftovers
+    results = personalMatch + chiaLeftovers
+    # Should I have just made it clear and found a way to add the colors when printed instead of removing them here?
+    # Probably, but too late now :)
+    # NOTE: need to remove colors in order to properly get score for stats later and also  to save to file since color only works for console/terminal
+    clearResults = stripColors(results)
     if verbose and len(results) > 0:
         print(tabulate(results, headers=['Personal', 'CHIA', 'Score'], tablefmt='fancy_grid', maxcolwidths=50))
         print("If we were to test it all as one we would get a score of", fuzz.ratio(' '.join(personal_lines), ' '.join(chia_lines)))
-        print("the average score is", sum([int(row[2]) for row in results])/len(results))
+        print("the average score is", sum([int(row[2]) for row in clearResults])/len(clearResults))
     
-    return results
+    return sorted(clearResults, key=lambda x: x[2]), sorted(stripColors(personalMatch), key=lambda x: x[2]), sorted(stripColors(chiaLeftovers), key=lambda x: x[2])
 
-def find_best_matches(source, destination, threshold):
+def find_best_matches(source, destination, almostExactThreshold, goodEnoughThreshold):
     matches = []
     destinationsFound = []
     for item in source:
         best_match = max(destination, key=lambda x: fuzz.ratio(item, x))
         score = fuzz.ratio(item, best_match)
         
-        if score >= threshold:
+        if score >= goodEnoughThreshold:
             destinationsFound.append(best_match)
-            row = [color_text(str(cell), scoreToColor(score)) for cell in [item, best_match, score]]
+            row = [color_text(str(cell), scoreToColor(score, almostExactThreshold, goodEnoughThreshold)) for cell in [item, best_match, score]]
         else:
             coloredSource = color_text(item, Fore.RED)
             coloredMatch = color_text(best_match, Fore.CYAN)
@@ -179,12 +185,12 @@ def find_best_matches(source, destination, threshold):
     return matches, destinationsFound
 
 
-def scoreToColor(score, ALmostExactThreshold=95, GoodEnoughThreshold=80):
+def scoreToColor(score, almostExactThreshold, goodEnoughThreshold):
     if score > 100 or score < 0:
         raise ValueError(f"Invalid score: {score}, must be between 0 and 100")
-    if score >= ALmostExactThreshold:
+    if score >= almostExactThreshold:
         return Fore.GREEN
-    elif score >= GoodEnoughThreshold:
+    elif score >= goodEnoughThreshold:
         return Fore.YELLOW
     else:
         return Fore.RED
@@ -202,6 +208,9 @@ def color_text(text:str, color:str, AlmostExactThreshold=95, GoodEnoughThreshold
         
 
 def checkCHIADeprecation(CHIALocation, MyLocation):
+    verbose = False
+    almostExactThreshold = 95
+    goodEnoughThreshold = 85
     chiaIDs = {os.path.basename(file)[:11] for file in glob.glob(os.path.join(CHIALocation, "*.txt"))}
     myIDs = {os.path.basename(file)[:11] for file in glob.glob(os.path.join(MyLocation, "*.json"))}
     deprecated = chiaIDs - myIDs
@@ -224,7 +233,8 @@ def checkCHIADeprecation(CHIALocation, MyLocation):
     
     useful = myIDs & chiaIDs
     print(len(useful), "trials are in both CHIA and your personal folder which we will use for the following comparison:")
-    differentCounter = 0
+    invalidTrials = []
+    validTrials = []
     for trial in useful:
         ChiaIncFile = os.path.join(CHIALocation, trial + "_inc.txt")
         ChiaExcFile = os.path.join(CHIALocation, trial + "_exc.txt")
@@ -244,12 +254,59 @@ def checkCHIADeprecation(CHIALocation, MyLocation):
         chiaLines = tokenize_lines(chiaString)
         myLines = tokenize_lines(myString)
         
-        print(f"\n\n{trial} comparison:")
-        print(f"CHIA has {len(chiaLines)} lines while your personal folder has {len(myLines)} lines")
+        if verbose:
+            print(f"\n\n{trial} comparison:")
+            print(f"CHIA has {len(chiaLines)} lines while your personal folder has {len(myLines)} lines")
         # print("CHIA:" ,chiaString)
         # print("\n\n\nPersonal:", myString)
-        compare_lines(chiaLines, myLines, verbose=True)
-    print(f"\n\n{differentCounter} trials are different in CHIA and your personal folder")
+        totalResults, personalResults, chiaResults = compare_lines(chiaLines, myLines, verbose, almostExactThreshold, goodEnoughThreshold)
+        totalLevenshteinRatio = fuzz.ratio(' '.join(myLines), ' '.join(chiaLines))
+        averageLevenshteinRatio = sum([int(row[2]) for row in totalResults])/len(totalResults)
+        overAllRatio = (totalLevenshteinRatio + averageLevenshteinRatio)/2
+        trialSummary = [trial, totalLevenshteinRatio, averageLevenshteinRatio, overAllRatio]
+        if overAllRatio >= goodEnoughThreshold:
+            validTrials.append(trialSummary)
+        else:
+            invalidTrials.append(trialSummary)
+        
+        with open(os.path.join(MyLocation, trial + "_comparison.txt"), 'w', encoding='utf-8') as f:
+            if overAllRatio >= goodEnoughThreshold:
+                f.write("VALID TRIAL\n")
+            else:
+                f.write("INVALID TRIAL\n")
+            
+            totalFound = [row for row in totalResults if int(row[2]) >= goodEnoughThreshold]
+            if len(totalFound) > 0:
+                f.write("Both CHIA and your personal trial have the following criteria:\n")
+                f.write(tabulate(totalFound, headers=['Personal Criteria', 'CHIA Criteria', 'Score'], tablefmt='fancy_grid', maxcolwidths=50,))
+                f.write("\n\n")
+            else:
+                f.write("CHIA and your personal trial have no criteria in common\n\n")
+            
+            onlyPersonal = [row for row in personalResults if int(row[2]) < goodEnoughThreshold]
+            if len(onlyPersonal) > 0:
+                f.write("Only your personal trial has the following criteria:\n")
+                f.write(tabulate(onlyPersonal, headers=['Personal Criteria', 'CHIA Criteria', 'Score'], tablefmt='fancy_grid', maxcolwidths=50,))
+                f.write("\n\n")
+            else:
+                f.write("Your personal trial has no unique criteria\n\n")
+            
+            if len(chiaResults) > 0:
+                f.write("Only CHIA has the following criteria:\n")
+                f.write(tabulate(chiaResults, headers=['Personal Criteria', 'CHIA Criteria', 'Score'], tablefmt='fancy_grid', maxcolwidths=50,))
+                f.write("\n\n")
+            else:
+                f.write("CHIA has no unique criteria\n\n")
+            
+            f.write(f"Levenshtein Ratio of Entire trial at once: {totalLevenshteinRatio}\n")
+            f.write(f"Average Levenshtein Ratio of individual lines: {averageLevenshteinRatio}\n")
+            f.write(f"OverAll Ratio: {overAllRatio}\n")
+    
+    print(f"\n\nThe {len(validTrials)} trials Below all have an overAllRatio of {goodEnoughThreshold} or higher and will be kept")
+    print(tabulate(sorted(validTrials, key=lambda x: x[3]), headers=['Trial', 'Total Ratio', 'Average Ratio', 'OverAll Ratio'], tablefmt='fancy_grid', maxcolwidths=50))
+    print(f"\n\nThe {len(invalidTrials)} trials below have an overAllRatio of less than {goodEnoughThreshold} and will be removed")
+    print(tabulate(sorted(invalidTrials, key=lambda x: x[3]), headers=['Trial', 'Total Ratio', 'Average Ratio', 'OverAll Ratio'], tablefmt='fancy_grid', maxcolwidths=50))
+
     
     
     
