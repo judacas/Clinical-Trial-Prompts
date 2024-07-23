@@ -130,22 +130,23 @@ def getValidInput(question: str, valid_type: type = None, valid_answers: list = 
                 )
                 if not keepTrying:
                     return answer
-
-def compareToChia():
-    comparingCategory = getValidInput("Enter the category in which your trials are in", valid_answers=os.listdir(TRIALS_FOLDER), printOptions=True, keepTrying=True, verbose=True)
-    comparingCategory = os.path.join(TRIALS_FOLDER, comparingCategory)
-    comparingFolder = getValidInput("Enter the folder in which your trials are in", valid_answers=os.listdir(comparingCategory), printOptions=True, keepTrying=True, verbose=True)
-    comparingFolder = os.path.join(comparingCategory, comparingFolder)
-    analyzer.compareToChia(CHIA_FOLDER, comparingFolder)
-    
     
 def checkCHIADeprecation():
+    comparingFolder = getTrialFolder()
+    analyzer.updatedCompareToChia(CHIA_FOLDER, comparingFolder, False)
+def compareAgainstCHIA():
+    comparingFolder = getTrialFolder()
+    analyzer.updatedCompareToChia(CHIA_FOLDER, comparingFolder, True)
+
+def getTrialFolder():
     comparingCategory = getValidInput("Enter the category in which your trials are in", valid_answers=os.listdir(TRIALS_FOLDER), printOptions=True, keepTrying=True, verbose=True)
     comparingCategory = os.path.join(TRIALS_FOLDER, comparingCategory)
     comparingFolder = getValidInput("Enter the folder in which your trials are in", valid_answers=os.listdir(comparingCategory), printOptions=True, keepTrying=True, verbose=True)
     comparingFolder = os.path.join(comparingCategory, comparingFolder)
-    analyzer.updatedCompareToChia(CHIA_FOLDER, comparingFolder, False)
+    return comparingFolder
 
+def notImplemented():
+    print("This feature is not implemented yet")
 def configure_logger():
     with open("loguru_config.json", "r") as f:
         config = json.load(f)
@@ -157,7 +158,7 @@ def configure_logger():
     for handler in config["handlers"]:
         sink = sys.stdout if handler["sink"] == "stdout" else handler["sink"]
         logger.add(sink, **{key: value for key, value in handler.items() if key != "sink"})
-def main():
+def main():  # sourcery skip: merge-list-append
     configure_logger()
     
     logger.trace("Starting program")
@@ -166,8 +167,8 @@ def main():
     menu_options = [
         {"label": "Get raw trials", "function": getRawTrials},
         {"label": "Process trials", "function": process_trials},
-        {"label": "Talk to trial", "function": talk_to_trial},
-        {"label": "Compare to Chia", "function": compareToChia},
+        {"label": "Talk to trial", "function": notImplemented},
+        {"label": "Compare to Chia", "function": compareAgainstCHIA},
         {"label": "Check CHIA's deprecation", "function": checkCHIADeprecation}
     ]
     # done so that Exit is always the last option
