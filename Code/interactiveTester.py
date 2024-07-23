@@ -2,12 +2,14 @@ import glob
 import json
 import os
 import shutil
+import sys
+
+from loguru import logger
 
 import newRawDataController as trialGetter
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
 from trial import Trial
-from errorManager import logError
 import analyzer
 TRIALS_FOLDER = os.path.join(os.path.dirname(os.getcwd()), "Trials")
 CHIA_FOLDER = os.path.join(os.path.dirname(os.getcwd()), "CHIA")
@@ -41,7 +43,7 @@ def process_trials():
                 trial_json = trial.toJSON()
                 trialGetter.saveTrialToFile(trial_json, folder, suffix="_Processed")
             except Exception as e:
-                logError(e=e, during=f"processing trial{trial.nctId}")
+                logger.error(f"Error processing trial {os.path.basename(json_file)}: {e}")
 
 
 # TODO: Re implement talking to a trial
@@ -102,7 +104,7 @@ def list_completer(text, state, valid_inputs):
 def getValidInput(question: str, valid_type: type = None, valid_answers: list = None, printOptions=False, keepTrying=True, verbose = True):  # type: ignore
     # this is just xoring them so that only one of them can be given
     if valid_type is None != valid_answers is None:
-        logError(customText="Come on now you can't be causing an error when trying to get valid input, include either the type or the valid answers please", during="validation of input", e = "Verschlimmbesserung")
+        logger.error("You must provide exactly one of valid_type or valid_answers")
         raise ValueError("You must provide exactly one of valid_type or valid_answers")
 
     while True:
@@ -121,9 +123,7 @@ def getValidInput(question: str, valid_type: type = None, valid_answers: list = 
                 continue
         else:
             try:
-                # Try to convert the input to the valid type
-                answer = valid_type(prompt(question))
-                return answer
+                return valid_type(prompt(question))
             except ValueError:
                 print(
                     f"Invalid input. Please enter a value of type {valid_type.__name__}."
@@ -144,15 +144,25 @@ def checkCHIADeprecation():
     comparingCategory = os.path.join(TRIALS_FOLDER, comparingCategory)
     comparingFolder = getValidInput("Enter the folder in which your trials are in", valid_answers=os.listdir(comparingCategory), printOptions=True, keepTrying=True, verbose=True)
     comparingFolder = os.path.join(comparingCategory, comparingFolder)
-    analyzer.checkCHIADeprecation(CHIA_FOLDER, comparingFolder)
+    analyzer.updatedCompareToChia(CHIA_FOLDER, comparingFolder, False)
 
-            
-        
-            
+def configure_logger():
+    with open("loguru_config.json", "r") as f:
+        config = json.load(f)
     
-
-
+    # Remove the default handler
+    logger.remove()
+    
+    # Add handlers based on the configuration
+    for handler in config["handlers"]:
+        sink = sys.stdout if handler["sink"] == "stdout" else handler["sink"]
+        logger.add(sink, **{key: value for key, value in handler.items() if key != "sink"})
 def main():
+    configure_logger()
+    
+    logger.trace("Starting program")
+    logger.info("Welcome to the interactive tester!")
+    logger.critical("This is a critical message")
     menu_options = [
         {"label": "Get raw trials", "function": getRawTrials},
         {"label": "Process trials", "function": process_trials},

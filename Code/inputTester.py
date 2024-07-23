@@ -18,9 +18,7 @@ def getValidInput(question: str, valid_type: type = None, valid_answers: list = 
             )
         else:
             try:
-                # Try to convert the input to the valid type
-                answer = valid_type(prompt(question))
-                return answer
+                return valid_type(prompt(question))
             except ValueError:
                 print(
                     f"Invalid input. Please enter a value of type {valid_type.__name__}."

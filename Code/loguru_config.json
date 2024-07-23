@@ -1,0 +1,19 @@
+{
+    "handlers": [
+        {
+            "sink": "stdout",
+            "level": "TRACE",
+            "format": "| <green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level:<8}</level> | <cyan>{name:<10}</cyan> | <magenta>{message}</magenta> : {exception}",
+            "backtrace": true,
+            "diagnose": true
+        },
+        {
+            "sink": "file.log",
+            "level": "WARNING",
+            "format": "{time:YYYY-MM-DD HH:mm:ss} | {level:<8} | {name:<10} | {message} : {exception}",
+            "rotation": "10 MB",
+            "backtrace": true,
+            "diagnose": true
+        }
+    ]
+}

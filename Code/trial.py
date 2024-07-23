@@ -4,7 +4,7 @@ from typing import Any, Optional
 
 import sympy
 from Assistant import getAssistantObj, getResponse, run, ttbID, waitForRun
-from errorManager import logError
+from loguru import logger
 from sympy import And, Implies, Not, Or, symbols
 
 
@@ -42,14 +42,14 @@ class Trial:
             # self.symPyExpression = parse_json_to_sympy(self.symPyJSON)
             try:
                 self.symPyExpression = (serializedJSON)["symPyExpression"]
-            except Exception as e:
+            except Exception:
                 self.symPyExpression = "N/A"
-                logError(e=e, during=f"converting {self.title} to sympy expression string")
+                logger.error(f"Error converting {self.title} to sympy expression string")
             try:
                 self.symPyExpression = sympy.sympify(self.symPyExpression)
-            except Exception as e:
+            except Exception:
                 self.symPyExpression = "N/A"
-                logError(e=e, during=f"converting {self.title} to sympy expression")
+                logger.error(f"Error converting {self.title} to sympy expression")
             return
         else:
             if rawJSON is None:
@@ -95,9 +95,9 @@ class Trial:
             print(f"converting{self.title} to sympy expression")
         try:
             self.symPyExpression = parse_json_to_sympy(self.symPyJSON)
-        except Exception as e:
+        except Exception:
             self.symPyExpression = "N/A"
-            logError(e=e, during=f"converting {self.title} to sympy expression")
+            logger.error(f"Error converting {self.title} to sympy expression")
         if verbose:
             print(f"converted {self.title} to sympy expression")
 

@@ -2,8 +2,8 @@ import json
 import os
 import re
 from typing import Any, Dict
-from errorManager import logError
 import requests
+from loguru import logger
 
 
 def curlWithStatusCheck(url: str) -> dict:
@@ -11,7 +11,7 @@ def curlWithStatusCheck(url: str) -> dict:
     if response.status_code != 200:
         print("Something Went Wrong")
         print(response.text)
-        logError(customText="Something Went Wrong with the ClinicalTrials API", e=response.text, during="curlWithStatusCheck")
+        logger.error("Something Went wrong with a curl")
         raise Exception("Something Went Wrong with the ClinicalTrials API")
 
     return response.json()
@@ -33,8 +33,8 @@ def saveRandomTrialsToFile(n):
 
 def saveTrialToFile(trial: dict, folder, suffix = ""):
     print(json.dumps(trial, indent=4))
-    fileName = os.path.join(folder, trial['nctId']) 
-    fileName += suffix + ".json" if suffix != "" else ".json"
+    fileName = os.path.join(folder, trial['nctId'])
+    fileName += f"{suffix}.json" if suffix != "" else ".json"
     with open(fileName, "w") as f:
         json.dump(trial, f, indent=4)
 
@@ -45,13 +45,9 @@ def getChiaIDs(n, start_index=0):
     pattern = re.compile(r"NCT\d{8}")
     files = os.listdir(directory)
 
-    # Filter files that match the pattern and remove duplicates
-    ids = list(
-        set([pattern.match(file).group() for file in files if pattern.match(file)])  # type: ignore .group wont get called if it doesn't match due to the if so not a problem
+    ids = sorted(
+        {pattern.match(file).group() for file in files if pattern.match(file)} # type: ignore
     )
-    # ? for some reason it doesn't return them in the same order as in the directory normally but the zip file is sorted so just sort here and it will match the zip file
-    ids.sort()
-
     return ids[start_index : start_index + n]
 
 
@@ -63,23 +59,22 @@ def getTrialsByID(trialIDS: list):
             f"https://clinicaltrials.gov/api/v2/studies?format=json&fields=EligibilityModule%7CNCTId%7COfficialTitle&query.cond={trialsAsQuery}"
         )
 
-        nextPageToken = currentTrials.get("nextPageToken", None)
+        nextPageToken = currentTrials.get("nextPageToken")
         while nextPageToken:
             nextPageTrials = curlWithStatusCheck(
                 f"https://clinicaltrials.gov/api/v2/studies?format=json&fields=EligibilityModule%7CNCTId%7COfficialTitle&query.cond={trialsAsQuery}&pageToken={nextPageToken}"
             )
             currentTrials["studies"].extend(nextPageTrials["studies"])
-            nextPageToken = nextPageTrials.get("nextPageToken", None)
+            nextPageToken = nextPageTrials.get("nextPageToken")
         if allTrials:
             allTrials["studies"].extend(currentTrials["studies"])
         else:
             allTrials = currentTrials
 
-    filteredTrials = [
+    return [
         preProcessTrial(trial["protocolSection"])
         for trial in allTrials["studies"]
     ]
-    return filteredTrials
 
 def saveTrialsToFile(trialIDS: list, folder: str, suffix = ""):
     trials = getTrialsByID(trialIDS)
@@ -203,5 +198,4 @@ def preProcessTrial(study):
                     f"Must be {maxAge} or younger"
                 )
 
-    simpleStudy = {**study["identificationModule"], **study["eligibilityModule"]}
-    return simpleStudy
+    return {**study["identificationModule"], **study["eligibilityModule"]}
