@@ -1,3 +1,4 @@
+import glob
 from typing import Any
 from fuzzywuzzy import fuzz
 import os
@@ -7,8 +8,25 @@ from tabulate import tabulate
 import sympy
 from trial import Trial
 import json
-
-
+import newRawDataController as trialGetter
+def processTrialsInFolder(folder):
+    logger.trace("Processing trials in folder: ", folder)
+    json_files = glob.glob(os.path.join(folder, "*.json"))
+    logger.trace("Found", len(json_files), "files")
+    processedTrials: dict = {"Trials": []}
+    for json_file in json_files:
+        logger.trace(os.path.basename(json_file))
+        with open(json_file) as file:
+            rawTrial = json.load(file)
+            trial = Trial(rawJSON=rawTrial,verbose=True,)
+            try:
+                trial.finishTranslation(verbose=True)
+                trial_json = trial.toJSON()
+                processedTrials["Trials"].append(trial_json)
+                trialGetter.saveTrialToFile(trial_json, folder, suffix="_Processed")
+            except Exception as e:
+                logger.error(f"Error processing trial {os.path.basename(json_file)}: {e}")
+    return processedTrials
 def updatedCompareToChia(ChiaFolder, personalFolder, isProcessed):
     trialIds = getNctIdsFromFolder(personalFolder)
     validTrials = []
@@ -47,8 +65,8 @@ def comparisonSummaryToJSON(totalTrialNum, unReadableTrials, extraCriteria, vali
         "Summary": {
             "Total Trials Analyzed": totalTrialNum,
             "Trials Unable to Test": unReadableTrials,
-            "Trials with Perfect Matches": len(validTrials),
-            "Trials without Perfect Matches": len(inValidTrials),
+            "Trials Where at least all CHIA criterions were present": len(validTrials),
+            "Trials That did NOT have All CHIA criterions": len(inValidTrials),
             "Total Extra Criteria (only from valid trials)": extraCriteria,
             "Average Extra Criteria per Trial": extraCriteria/len(validTrials) if validTrials else 0
         },
