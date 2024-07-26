@@ -1,6 +1,7 @@
 import json
 import re
 from typing import Any, Optional
+from Code.Criterion import Criterion
 
 import sympy
 from Assistant import getAssistantObj, getResponse, run, ttbID, waitForRun
@@ -157,7 +158,9 @@ class Trial:
             )
         return self.symPyExpressionSolved
 
-
+    def getCriterions(self):
+        return [Criterion(text=variable, answers=["True"], nctID=self.nctId) for variable in self.get_variables()]
+    
 # def combineVariables(variables: list[list[str]]):
 #     combinedVariables = []
 #     for variable in variables:
