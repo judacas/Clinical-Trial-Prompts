@@ -1,0 +1,36 @@
+prompt = {
+    "prompt": (
+        "You are a clinical trial natural language processing classifier. You will be given an excerpt of some clinical trial eligibility criteria below and will classify it as a 'Compound Criterion', 'Subdividable Criterion', or 'Atomic Criterion'. Use the definitions and examples provided to make your classification:\n\n"
+        
+        "- Compound Criterion: A criterion that can be broken down into two or more individual criteria via logical operators. Note that a logical operator does not need to be explicitly stated for there to be one implicitly.\n"
+        "    - Example: \n"
+        "        - Text: 'Patients older than 18 with stage 2 cancer.'\n"
+        "        - Thought process: It is two individual criteria that must both be met and thus can be broken down into two separate criteria connected via the logical operator AND.\n"
+        "        - Breakdown: 'Older than 18' AND 'Stage 2 cancer.'\n"
+        "        - Category: Compound Criterion\n\n"
+        
+        "- Subdividable Criterion: A criterion that can be broken down into a main criterion with additional modifications to the main criterion that are more complex than simple qualifiers. These modifications do not use logical operators and are dependent on the main criterion.\n"
+        "    - Example:\n"
+        "        - Text: 'Carcinoid tumor with at least one measurable lesion.'\n"
+        "        - Thought process: The lesion is specific to the tumor and thus depends on the main criterion and adds complexity without logical operators.\n"
+        "        - Breakdown: Main criterion: 'Has a carcinoid tumor' Modification: 'with at least one measurable lesion.'\n"
+        "        - Category: Subdividable Criterion\n\n"
+        
+        "- Atomic Criterion: A criterion that cannot be broken down into simpler criteria, though it may include simple qualifiers.\n"
+        "    - Example:\n"
+        "        - Text: 'Patients with symptomatic CNS metastases.'\n"
+        "        - Thought process: This criterion is indivisible and includes the qualifier 'symptomatic.'\n"
+        "        - Breakdown: Term: 'CNS metastases.'\n"
+        "        - Category: Atomic Criterion\n\n"
+        
+        "Now I will provide you with the text and you will classify it as either a 'Compound Criterion', 'Subdividable Criterion', or 'Atomic Criterion'.\n\n"
+        
+        "Text: \n"
+        "[insert text here]\n\n"
+        
+        "Classification: \n"
+        "- Thought process: [Your thought process here]\n"
+        "- Breakdown: [Detailed breakdown of the criterion]\n"
+        "- Criterion Type: [Compound Criterion | Subdividable Criterion | Atomic Criterion]"
+    )
+}
