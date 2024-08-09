@@ -1,7 +1,7 @@
 import json
 import re
 from typing import Any, Optional
-from Code.Criterion import Criterion
+from Criterion import Criterion
 
 import sympy
 from Assistant import getAssistantObj, getResponse, run, ttbID, waitForRun

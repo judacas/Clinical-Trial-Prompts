@@ -11,8 +11,7 @@ import json
 import newRawDataController as trialGetter
 def processTrialsInFolder(folder):
     logger.trace("Processing trials in folder: ", folder)
-    json_files = glob.glob(os.path.join(folder, "*.json"))
-    logger.trace("Found", len(json_files), "files")
+    json_files = getJSONSFromFolder(folder, suffix="Raw")
     processedTrials: dict = {"Trials": []}
     for json_file in json_files:
         logger.trace(os.path.basename(json_file))
@@ -27,6 +26,13 @@ def processTrialsInFolder(folder):
             except Exception as e:
                 logger.error(f"Error processing trial {os.path.basename(json_file)}: {e}")
     return processedTrials
+
+def getJSONSFromFolder(folder, suffix, IDs = None):
+    json_files = glob.glob(os.path.join(folder, f"*_{suffix}.json"))
+    json_files = [file for file in json_files if not IDs or os.path.basename(file)[:11] in IDs]
+    logger.trace("Found", len(json_files), "files")
+    return json_files
+
 def updatedCompareToChia(ChiaFolder, personalFolder, isProcessed):
     trialIds = getNctIdsFromFolder(personalFolder)
     validTrials = []
@@ -97,8 +103,6 @@ def printResults(nctID, source: list[str], matches: list[str], leftOvers: list[s
 
     print(output_str)
 
-    
-    
 def matchingResultsToTables(source, matchingResults, leftOvers):
     found = [[source[i], matchingResults[i]] for i in range(len(source)) if matchingResults[i] != ""]
     notFound = [[source[i]] for i in range(len(source)) if matchingResults[i] == ""]
@@ -205,7 +209,7 @@ def cleanLines(text: list[str] | str):
 
 def getNctIdsFromFolder(folder):
     try:
-        return {file[:11] for file in os.listdir(folder) if file.startswith("NCT")}
+        return {str(file[:11]) for file in os.listdir(folder) if file.startswith("NCT")}
     except Exception as e:
         logger.critical(f"Error accessing folder {folder}: {e}")
         return set() 

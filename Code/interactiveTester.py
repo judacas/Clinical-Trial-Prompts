@@ -1,8 +1,8 @@
-import glob
 import json
 import os
 import shutil
 import sys
+from typing import Iterable
 
 from loguru import logger
 
@@ -10,6 +10,7 @@ import newRawDataController as trialGetter
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
 import analyzer
+from ChatBot import ChatBot
 TRIALS_FOLDER = os.path.join(os.path.dirname(os.getcwd()), "Trials")
 CHIA_FOLDER = os.path.join(os.path.dirname(os.getcwd()), "CHIA")
 
@@ -21,6 +22,7 @@ def process_trials():
     analyzer.processTrialsInFolder(folder)
 
 # TODO: could use the getTrialFolder but it has some special cases that need to be handled
+# Definitely should be refactored in the future, its quite messy and in reality could be as simple as process_trials
 def getRawTrials():
     categories = os.listdir(TRIALS_FOLDER)
     while True:
@@ -46,7 +48,7 @@ def getRawTrials():
 
     if isChia == "Yes":
         startIndex = int(getValidInput("Enter the starting index: ", validType=int)) # type: ignore
-        trialGetter.saveCHIATrials(n=num, start_index=startIndex, folder=folder)
+        trialGetter.saveCHIATrials(n=num, start_index=startIndex, folder=folder, suffix="Raw")
     else:
         # ! NOT PROPER FOLDER STRUCTURE YET
         # TODO fix Random trials saver and getter to switch to one file per trial
@@ -64,13 +66,13 @@ def list_completer(text, state, valid_inputs):
     options = [str(x) for x in valid_inputs if str(x).startswith(text)]
     return options[state % len(options)]
 
-def getValidInput(question: str, validType: type = None, validAnswers: list = None, printOptions=False, keepTrying=True, verbose=True):  # type: ignore
+def getValidInput(question: str, validType: type = None, validAnswers: Iterable = None, printOptions=False, keepTrying=True, verbose=True):  # type: ignore
     if (validType is None) == (validAnswers is None):
         logger.error("You must provide exactly one of valid_type or valid_answers")
         raise ValueError("You must provide exactly one of valid_type or valid_answers")
 
     def handleValidAnswers() -> str:
-        completer = WordCompleter(validAnswers, ignore_case=True)
+        completer = WordCompleter(list(validAnswers), ignore_case=True)
         question_with_options = f"{question} {validAnswers} - " if printOptions else f"{question} - "
         while True:
             answer = prompt(question_with_options, completer=completer)
@@ -109,6 +111,25 @@ def getTrialFolder():
     comparingFolder = os.path.join(comparingCategory, comparingFolder)
     return comparingFolder
 
+# TODO Implement fully later once we need to talk with trials with updated structure. For now use the commit Clinical-Trial-Prompts-d5792dd78d94f8a2f0a9ae79159d9c8b14526303 to talk to the old structure
+def talkToTrial():
+    isReady = getValidInput("Hello, Do you have a trial already processed?", validAnswers=["Yes", "No"], printOptions=True, keepTrying=True, verbose=True)
+    if isReady == "No":
+        print("Please process the trial first, You can do that in the main menu")
+        return
+    print("In that case where are the trials you want to see if you're eligible for?")
+    folder = getTrialFolder()
+    isSingular = getValidInput("Are you looking at a specific trial or all of the ones in the folder?", validAnswers=["Specific", "Entire Folder"], printOptions=True, keepTrying=True, verbose=True)
+    if isSingular == "Specific":
+        trial = getValidInput("Enter the ID of the trial you want", validAnswers=analyzer.getNctIdsFromFolder(folder), printOptions=True, keepTrying=True, verbose=True)
+        trials = {trial}
+    else:
+        pass
+        # trials = analyzer.getNctIdsFromFolder(folder)
+    # myChatBot = ChatBot(folder=folder, trial_ids=trials)
+    # myChatBot.startChat()
+        
+        
 def notImplemented():
     print("This feature is not implemented yet")
 def configure_logger():
@@ -131,7 +152,7 @@ def main():  # sourcery skip: merge-list-append
     menu_options = [
         {"label": "Get raw trials", "function": getRawTrials},
         {"label": "Process trials", "function": process_trials},
-        {"label": "Talk to trial", "function": notImplemented},
+        {"label": "Talk to trial", "function": talkToTrial},
         {"label": "Compare to Chia", "function": compareAgainstCHIA},
         {"label": "Check CHIA's deprecation", "function": checkCHIADeprecation}
     ]

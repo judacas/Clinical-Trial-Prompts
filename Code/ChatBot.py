@@ -1,8 +1,8 @@
-from Code import analyzer
-from Code.trial import Trial
+import analyzer
+from trial import Trial
 from collections import defaultdict
 
-
+# TODO Implement fully later once we need to talk with trials with updated structure. For now use the commit Clinical-Trial-Prompts-d5792dd78d94f8a2f0a9ae79159d9c8b14526303 to talk to the old structure
 class ChatBot:
     def __init__(self, folder, trial_ids, patientData = None):
         self.folder = folder

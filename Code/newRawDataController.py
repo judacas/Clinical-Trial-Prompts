@@ -32,9 +32,8 @@ def saveRandomTrialsToFile(n):
 
 
 def saveTrialToFile(trial: dict, folder, suffix = ""):
-    print(json.dumps(trial, indent=4))
-    fileName = os.path.join(folder, trial['nctId'])
-    fileName += f"{suffix}.json" if suffix != "" else ".json"
+    logger.trace(json.dumps(trial, indent=4))
+    fileName = os.path.join(folder, f"{trial['nctId']}_{suffix}.json")
     with open(fileName, "w") as f:
         json.dump(trial, f, indent=4)
 
