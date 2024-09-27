@@ -7,7 +7,7 @@ from loguru import logger
 
 
 def curlWithStatusCheck(url: str) -> dict:
-    response = requests.get(url, timeout=10)
+    response: requests.Response = requests.get(url, timeout=10)
     if response.status_code != 200:
         print("Something Went Wrong")
         print(response.text)

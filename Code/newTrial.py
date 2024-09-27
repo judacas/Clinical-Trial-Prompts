@@ -1,3 +1,8 @@
+# Need to seperate structure from llm output, stuff like thoughts and categoryDecision are being output by the llm due to inheritance even though it was only supposed to be used as input.
+# need to give an option to say its not a criterion and shouldn't be treated as one to avoid endless loops
+# could also make another criterion type which says its a criterion but doesn't have enough context to structurize
+
+import json
 from dotenv import load_dotenv
 from openai import OpenAI
 from openai.types.chat.parsed_chat_completion import ParsedChatCompletionMessage
@@ -16,7 +21,7 @@ class InclusionExclusionExtractionResponse(BaseModel):
     exclusion: Optional[str]
     
 
-def getIncAndExc(raw_text: str):
+def getIncAndExc(raw_text: str):    
     completion = client.beta.chat.completions.parse(
             model="gpt-4o-2024-08-06",
             messages=[
@@ -74,9 +79,21 @@ def curlWithStatusCheck(url: str) -> dict:
 
     return response.json()
 
+class isCancerResponseFormat(BaseModel):
+    is_cancer: bool
+    keywords: list[str] = Field(..., description="exact keywords which signified if it was cancer, if is_cancer is false then this will be empty")
+    
+    @model_validator(mode='after')
+    def checkKeywordsAgreesWithIsCancer(self) -> Self:
+        if bool(self.is_cancer) != bool(self.keywords):
+            raise ValueError("is_cancer and keywords must either be true and have keywords or be false and have no keywords")
+        return self
+    
+    
+
 class RawTrialData(BaseModel):
     nct_id: NctIDValidated
-    officialTitle: str
+    official_title: str
     criteria: Criteria
     
     @classmethod
@@ -84,16 +101,40 @@ class RawTrialData(BaseModel):
         raw_data = curlWithStatusCheck(
         f"https://clinicaltrials.gov/api/v2/studies?format=json&fields=EligibilityModule%7CNCTId%7COfficialTitle&query.cond={nct_id}"
             )
-        officialTitle = raw_data["studies"][0]["protocolSection"]["identificationModule"]["officialTitle"]
-        eligibilityModule = raw_data["studies"][0]["protocolSection"]["eligibilityModule"]
-        criteriaText = eligibilityModule["eligibilityCriteria"]
+        try:
+            official_title = raw_data["studies"][0]["protocolSection"]["identificationModule"]["officialTitle"]
+            eligibilityModule = raw_data["studies"][0]["protocolSection"]["eligibilityModule"]
+            criteriaText = eligibilityModule["eligibilityCriteria"]
+        except KeyError as err:
+            raise ValueError(f"Couldn't find the trial with ID {nct_id}") from err
         
         for extraCriteria in ["healthyVolunteers", "sex", "minimumAge", "maximumAge", "stdAges"]:
             if criteriaValue := eligibilityModule.pop(extraCriteria, None):
                 criteriaText += f"\n\n{extraCriteria}: {criteriaValue}"
         
         criteria = Criteria(raw_text=criteriaText)
-        return cls(nct_id=nct_id, officialTitle=officialTitle, criteria=criteria)
+        return cls(nct_id=nct_id, official_title=official_title, criteria=criteria)
+    
+    
+    # uncomment once I switch over to instructor because we have conflicting names
+    # def checkForCancer(trial: RawTrialData) -> bool:
+        # if "Cancer" in trial.official_title:
+        #     return True
+        # return client.chat.completions.create(
+        #     model="gpt-4o-2024-08-06",
+        #     response_model=IsAboutCancer,
+        #     messages=[
+        #         {
+        #             "role": "system",
+        #             "content": "Does this trial involve cancer?",
+        #         },
+        #         {
+        #             "role": "user",
+        #             "content": trial.official_title,
+        #         },
+        #     ],
+        # ).is_about_cancer
+        
 
 
 class Trial(BaseModel):
@@ -112,8 +153,12 @@ class Trial(BaseModel):
     
     
 def main():
-    trial = Trial(raw_data=RawTrialData.fromOnlyNctID("NCT00050349"))
-    rich.print(trial)
+    trialIDs: list[str] = ["NCT00050349", "NCT00061308", "NCT00094861", "NCT00183885", "NCT00312429"]
+    for id in trialIDs:
+        trial = Trial(raw_data=RawTrialData.fromOnlyNctID(id))
+        with open(f"{id}_NewlyStructurized.json", "w") as f:
+            json.dump(trial.model_dump_json(serialize_as_any=True), f, indent=4)
+        rich.print(trial)
 
-
-main()
+if __name__ == "__main__":
+    main()

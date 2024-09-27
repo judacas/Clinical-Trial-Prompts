@@ -1,6 +1,6 @@
 {
     "Text": "Contains the full text to be analyzed",
-    "Criterion Type": "Atomic Criterion | Subdividable Criterion | Compound Criterion", // Atomic Criterion is the base case where it can no longer be split up, Subdividable Criterion means there is a non-boolean subdivision with additional modifications, Compound Criterion means it can be split up using boolean algebra
+    "Criterion Type": "Atomic Criterion | Parent Child Relationship | Compound Criterion", // Atomic Criterion is the base case where it can no longer be split up, Parent Child Relationship means there is a non-boolean subdivision with additional modifications, Compound Criterion means it can be split up using boolean algebra
     "Atomic Criterion": { // Use this structure when there is only one main term with non-complex qualifiers
         "Main Term": "The term that is being asked about",
         "Valid Answers": [ // Must have at least one
@@ -13,7 +13,7 @@
         "Collateral Variables": [ // May be empty. Include here any extra information that would need to be acquired to evaluate the Main Term
             {
                 "Term": "The related term",
-                "Relation": "What we are learning about the term"
+                "information": "What we are learning about the term"
             }
         ],
         "Extra Information": "Include definitions or other relevant parts of the text not essential to its truthiness; do not add anything not found in the text",
@@ -21,15 +21,15 @@
             "List all qualifiers that can be removed from the Main Term while retaining its meaning. Typically adjectives, these must be answerable in the format 'is your {Main Term} {Qualifier}'"
         ]
     },
-    "Subdividable Criterion": { // Use when the criterion has additional modifications more complex than simple qualifiers and the sub-criterion would not make sense on its own
-        "Main Criterion": {
+    "Parent Child Relationship": { // Use when the criterion has additional modifications more complex than simple qualifiers and the sub-criterion would not make sense on its own
+        "Parent Criterion": {
             "text": "This field contains the primary criterion being modified. It is recursive, meaning that it can include additional nested criteria as needed."
         },
         "Extra Information": "Include definitions or other relevant text not essential to its truthiness; do not add anything not found in the text",
         "Qualifiers": [ // May be empty
             "List all qualifiers that can be removed from the Main Criterion while retaining its meaning. Typically adjectives, these must be answerable in the format 'is your {Main Criterion} {Qualifier}'"
         ],
-        "Sub Criterion": { // Additional modifications to the Main Criterion
+        "Child Criterion": { // Additional modifications to the Main Criterion
             "text": "This field contains the additional modifications to the Main Criterion. It is recursive, meaning that it can include additional nested criteria as needed."
         }
     },

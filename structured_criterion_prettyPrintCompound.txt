@@ -1,0 +1,78 @@
+HierarchicalCriterion(
+    raw_text='Patients, ages 18-65, with biopsy-proven metastatic carcinoid tumors or other neuroendocrine tumors (Islet cell, Gastrinomas, and VIPomas) with at least 
+one measurable lesion (other than bone) that has either not been previously irradiated or if previously irradiated has demonstrated progression since the radiation 
+therapy.',
+    category=<Category.HIERARCHICAL_CRITERION: 'hierarchical_criterion'>,
+    parent_Criterion=HierarchicalCriterion(
+        raw_text='Patients, ages 18-65, with biopsy-proven metastatic carcinoid tumors or other neuroendocrine tumors (Islet cell, Gastrinomas, and VIPomas) with at 
+least one measurable lesion (other than bone)',
+        category=<Category.HIERARCHICAL_CRITERION: 'hierarchical_criterion'>,
+        parent_Criterion=CompoundCriterion(
+            raw_text='Patients, ages 18-65, with biopsy-proven metastatic carcinoid tumors or other neuroendocrine tumors (Islet cell, Gastrinomas, and VIPomas)',
+            category=<Category.COMPOUND_CRITERION: 'compound_Criterion'>,
+            logical_operator=<LogicalOperator.AND: 'AND'>,
+            criterions=[
+                AtomicCriterion(
+                    raw_text='Patients, ages 18-65',
+                    category=<Category.ATOMIC_CRITERION: 'atomic_Criterion'>,
+                    root_term='age',
+                    qualifiers=['18-65'],
+                    relation_type='range',
+                    target=[Target(answer='18-65', dependent_criterion=None)],
+                    additional_information=['Patients']
+                ),
+                AtomicCriterion(
+                    raw_text='biopsy-proven metastatic carcinoid tumors or other neuroendocrine tumors (Islet cell, Gastrinomas, and VIPomas)',
+                    category=<Category.COMPOUND_CRITERION: 'compound_Criterion'>,
+                    root_term='tumors',
+                    qualifiers=['biopsy-proven', 'metastatic'],
+                    relation_type='is',
+                    target=[
+                        Target(answer='carcinoid tumors', dependent_criterion=None),
+                        Target(answer='neuroendocrine tumors', dependent_criterion=Criterion(raw_text='Islet cell, Gastrinomas, and VIPomas'))
+                    ],
+                    additional_information=[]
+                )
+            ]
+        ),
+        child_Criterion=AtomicCriterion(
+            raw_text='with at least one measurable lesion (other than bone)',
+            category=<Category.ATOMIC_CRITERION: 'atomic_Criterion'>,
+            root_term='measurable lesion',
+            qualifiers=['at least one'],
+            relation_type='exists',
+            target=[Target(answer='true', dependent_criterion=None)],
+            additional_information=['other than bone']
+        ),
+        additional_information=[
+            'The criterion specifies the age range of 18-65.',
+            'The tumors must be biopsy-proven and metastatic.',
+            'The types of neuroendocrine tumors include Islet cell, Gastrinomas, and VIPomas.',
+            'The measurable lesion must not be in the bone.'
+        ]
+    ),
+    child_Criterion=HierarchicalCriterion(
+        raw_text='that has either not been previously irradiated or if previously irradiated has demonstrated progression since the radiation therapy.',
+        category=<Category.HIERARCHICAL_CRITERION: 'hierarchical_criterion'>,
+        parent_Criterion=AtomicCriterion(
+            raw_text='that has either not been previously irradiated',
+            category=<Category.ATOMIC_CRITERION: 'atomic_Criterion'>,
+            root_term='irradiated',
+            qualifiers=['previously'],
+            relation_type='not been',
+            target=[Target(answer='true', dependent_criterion=None)],
+            additional_information=['either']
+        ),
+        child_Criterion=AtomicCriterion(
+            raw_text='if previously irradiated has demonstrated progression since the radiation therapy.',
+            category=<Category.ATOMIC_CRITERION: 'atomic_Criterion'>,
+            root_term='previously irradiated',
+            qualifiers=[],
+            relation_type='has demonstrated',
+            target=[Target(answer='progression', dependent_criterion=None)],
+            additional_information=['since the radiation therapy']
+        ),
+        additional_information=[]
+    ),
+    additional_information=['The tumors include Islet cell, Gastrinomas, and VIPomas.', 'The measurable lesion must be other than bone.']
+)

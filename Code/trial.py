@@ -14,7 +14,7 @@ class Trial:
     # I'm pretty sure it used to work in parallel but now it doesn't, so for now just use runAllAtOnce = True and keep it serial
     # TODO: Fix runAllAtOnce so that it works in parallel
     def __init__(
-        self, serializedJSON=None, rawJSON=None, verbose=False, runAllAtOnce=True
+        self, serializedJSON=None, rawJSON=None, verbose=False, runAllAtOnce=True, use_new_version=False
     ):
         if serializedJSON is not None:
             if rawJSON is not None:

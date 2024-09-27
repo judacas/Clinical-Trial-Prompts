@@ -5,17 +5,18 @@ import sys
 from typing import Iterable
 
 from loguru import logger
+import rich
 
 import newRawDataController as trialGetter
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
 import analyzer
-from ChatBot import ChatBot
+from newTrial import Trial, RawTrialData
 TRIALS_FOLDER = os.path.join(os.path.dirname(os.getcwd()), "Trials")
 CHIA_FOLDER = os.path.join(os.path.dirname(os.getcwd()), "CHIA")
 
 
-def process_trials():
+def old_process_trials():
     hasFetched = getValidInput("Have you fetched the trials?", validAnswers=["Yes", "No"], printOptions=True, verbose=True, keepTrying=True)
     folder = getRawTrials() if hasFetched == "No" else getTrialFolder()
     # Get a list of all JSON files in the folder
@@ -87,12 +88,11 @@ def getValidInput(question: str, validType: type = None, validAnswers: Iterable 
     def handleValidType():
         while True:
             try:
-                
                 return validType(answer := prompt(question))
             except ValueError:
                 print(f"Invalid input. Please enter a value of type {validType.__name__}.")
                 if not keepTrying:
-                    return answer
+                    return answer # type: ignore
 
     return handleValidAnswers() if validAnswers is not None else handleValidType()
 
@@ -112,24 +112,32 @@ def getTrialFolder():
     return comparingFolder
 
 # TODO Implement fully later once we need to talk with trials with updated structure. For now use the commit Clinical-Trial-Prompts-d5792dd78d94f8a2f0a9ae79159d9c8b14526303 to talk to the old structure
-def talkToTrial():
-    isReady = getValidInput("Hello, Do you have a trial already processed?", validAnswers=["Yes", "No"], printOptions=True, keepTrying=True, verbose=True)
-    if isReady == "No":
-        print("Please process the trial first, You can do that in the main menu")
-        return
-    print("In that case where are the trials you want to see if you're eligible for?")
-    folder = getTrialFolder()
-    isSingular = getValidInput("Are you looking at a specific trial or all of the ones in the folder?", validAnswers=["Specific", "Entire Folder"], printOptions=True, keepTrying=True, verbose=True)
-    if isSingular == "Specific":
-        trial = getValidInput("Enter the ID of the trial you want", validAnswers=analyzer.getNctIdsFromFolder(folder), printOptions=True, keepTrying=True, verbose=True)
-        trials = {trial}
-    else:
-        pass
-        # trials = analyzer.getNctIdsFromFolder(folder)
-    # myChatBot = ChatBot(folder=folder, trial_ids=trials)
-    # myChatBot.startChat()
-        
-        
+# def talkToTrial():
+#     isReady = getValidInput("Hello, Do you have a trial already processed?", validAnswers=["Yes", "No"], printOptions=True, keepTrying=True, verbose=True)
+#     if isReady == "No":
+#         print("Please process the trial first, You can do that in the main menu")
+#         return
+#     print("In that case where are the trials you want to see if you're eligible for?")
+#     folder = getTrialFolder()
+#     isSingular = getValidInput("Are you looking at a specific trial or all of the ones in the folder?", validAnswers=["Specific", "Entire Folder"], printOptions=True, keepTrying=True, verbose=True)
+#     # if isSingular == "Specific":
+#     #     trial = getValidInput("Enter the ID of the trial you want", validAnswers=analyzer.getNctIdsFromFolder(folder), printOptions=True, keepTrying=True, verbose=True)
+#     #     trials = {trial} # type: ignore
+#     # else:
+#     #     pass
+#     #     # trials = analyzer.getNctIdsFromFolder(folder)
+#     # myChatBot = ChatBot(folder=folder, trial_ids=trials)
+#     # myChatBot.startChat()
+
+def newStructurize():
+    logger.trace("Starting structurize")
+    ids = analyzer.getNctIdsFromFolder(getRawTrials())
+    for id in ids:
+        print(id)
+        # trial = Trial(raw_data=RawTrialData.fromOnlyNctID(id))
+        # rich.print(trial)
+        # with open(f"{id}_NewlyStructurized.json", "w") as f:
+        #     json.dump(trial.model_dump_json(serialize_as_any=True), f, indent=4)
 def notImplemented():
     print("This feature is not implemented yet")
 def configure_logger():
@@ -151,8 +159,8 @@ def main():  # sourcery skip: merge-list-append
     logger.critical("This is a critical message")
     menu_options = [
         {"label": "Get raw trials", "function": getRawTrials},
-        {"label": "Process trials", "function": process_trials},
-        {"label": "Talk to trial", "function": talkToTrial},
+        {"label": "Deprecated Process trials", "function": old_process_trials},
+        {"label": "Test new Structure", "function": newStructurize},
         {"label": "Compare to Chia", "function": compareAgainstCHIA},
         {"label": "Check CHIA's deprecation", "function": checkCHIADeprecation}
     ]

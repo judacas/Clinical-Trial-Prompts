@@ -29,6 +29,10 @@ class CategorizedCriterion(Criterion):
     category: Category
     category_reasoning: str = Field(..., description="The reasoning behind why the criterion was classified as this category")
     overall_thoughts: str = Field(..., description="Categorizer's overall thoughts on the criterion")
+    
+    def getChildren(self) -> list[Criterion]:
+        return []
+    
 
 
 # Below identifies a criterion's category
@@ -88,6 +92,10 @@ class AtomicCriterion(CategorizedCriterion):
     target: List[Target] = Field(..., description="A list of targets for which [root_term] [relation_type] [target] would mark the criterion as true")
     additional_information: List[str] = Field(..., description="Additional information from the raw text that provides context for the criterion but is not necessary to determine if the criterion is true. Must be quotes from the raw text and can not be a criterion on its won")
     
+    # could technically return the dependent criterion but lets not worry about that part for now
+    def getChildren(self) -> List[Criterion]:
+        return []
+    
     # TODO: implement optimization
     # possible optimization to reduce patient fatigue
     # extra_information: List[CollateralVariable] = Field(..., description="Additional information that may be needed to determine if the criterion is true")
@@ -97,6 +105,13 @@ class HierarchicalCriterion(CategorizedCriterion):
     parent_Criterion: Criterion = Field(..., description="The parent criterion that the child criterion is dependent on")
     child_Criterion: Criterion = Field(..., description="The additional modifications that the child criterion adds to the parent criterion")
     additional_information: List[str] = Field(..., description="Additional information from the raw text that provides context for the criterion but is not necessary to determine if the criterion is true. Must be quotes from the raw text and can not be a criterion on its won")
+    
+    def getChildren(self) -> list[Criterion]:
+        return [self.parent_Criterion, self.child_Criterion]
+    
+# class HierArchicalApproval(BaseModel):
+#     criterion: HierarchicalCriterion
+#     CategoryApproval:
 
 class LogicalOperator(str, Enum):
     AND = "AND"
@@ -104,7 +119,11 @@ class LogicalOperator(str, Enum):
 
 class CompoundCriterion(CategorizedCriterion):
     logical_operator: LogicalOperator = Field(..., description="The logical operator that joins the two or more independent criterions")
+    # ! why is this sequence instead of just normal list??? look into this soon
     criterions: Sequence[Criterion] = Field(..., description="The criterions that are joined by the logical operator")
+    
+    def getChildren(self) -> list[Criterion]:
+        return list(self.criterions)
 
 def categorize_and_structurize(criterion: Criterion, verbose = False) -> AtomicCriterion | HierarchicalCriterion | CompoundCriterion | None:
     categorized_criterion = categorize_Criterion(criterion, verbose)
