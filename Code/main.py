@@ -53,23 +53,11 @@ def main():
             if save_trial(trial, output_folder, file_name):
                 logger.info("Trial saved successfully.")
                 # Check approval
-                check_accuracy(trial)
+                # check_accuracy(trial)
             else:
                 logger.error("Failed to save trial.")
         else:
             logger.error("Failed to process trial NCT ID: %s", nct_id)
-    if trial := process_trial(nct_id, verbose=True):
-        file_name = f"{nct_id}_structured.json"
-        output_folder = "output"
-
-        if save_trial(trial, output_folder, file_name):
-            logger.info("Trial saved successfully.")
-            # Check approval
-            check_accuracy(trial)
-        else:
-            logger.error("Failed to save trial.")
-    else:
-        logger.error("Failed to process trial NCT ID: %s", nct_id)
 
 if __name__ == "__main__":
     main()

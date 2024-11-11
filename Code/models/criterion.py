@@ -1,8 +1,8 @@
 # models/criterion.py
-
+from __future__ import annotations
 from enum import Enum
 from pydantic import BaseModel, Field
-from typing import List, Optional, Sequence
+from typing import List, Optional, Sequence, Union
 
 
 class Category(str, Enum):
@@ -65,7 +65,7 @@ class HierarchicalCriterion(CategorizedCriterion):
     """
     Represents a hierarchical criterion with parent and child criteria.
     """
-    parent_criterion: Criterion = Field(..., description="The parent criterion.")
+    parent_criterion: Union[Criterion, AtomicCriterion, HierarchicalCriterion, CompoundCriterion] = Field(..., description="The parent criterion.")
     child_criterion: Criterion = Field(..., description="The child criterion modifying the parent.")
     additional_information: List[str] = Field(
         ..., description="Additional context for the criterion."
@@ -99,7 +99,7 @@ class CompoundCriterion(CategorizedCriterion):
     logical_operator: LogicalOperator = Field(
         ..., description="Logical operator joining the criteria."
     )
-    criterions: Sequence[Criterion] = Field(
+    criterions: Sequence[Union[Criterion, AtomicCriterion, HierarchicalCriterion, CompoundCriterion]] = Field(
         ..., description="List of criteria in the compound criterion."
     )
 
