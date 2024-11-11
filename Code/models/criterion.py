@@ -7,11 +7,12 @@ from typing import List, Optional, Sequence
 
 class Category(str, Enum):
     """
-    Enum representing the category of a criterion.
+    Enum representing the category of a cancer clinical criterion. Note that for all of these it is the outermost category, should there be a Compound_Criterion composed of an atomic and a hierarchical criterion, then the resulting category would be Compound_Criterion as it is the outermost category.
     """
-    ATOMIC_CRITERION = "atomic_Criterion"
-    COMPOUND_CRITERION = "compound_Criterion"
-    HIERARCHICAL_CRITERION = "hierarchical_criterion"
+    ATOMIC_CRITERION = "atomic_Criterion- where there is only one criterion that can be answered with a simple question"
+    COMPOUND_CRITERION = "compound_Criterion- when there are two or more criterions which can be seperated into various questions"
+    HIERARCHICAL_CRITERION = "hierarchical_criterion- when there is a parent criterion and a child criterion which adds further criteria should the parent be true."
+    NONSENSE_CRITERION = "nonsense- when the criterion is not a valid criterion"
 
 
 class Criterion(BaseModel):
@@ -28,7 +29,7 @@ class CategorizedCriterion(Criterion):
     category: Category = Field(..., description="The category of the criterion.")
     category_reasoning: str = Field(..., description="Reasoning behind the categorization.")
     overall_thoughts: str = Field(..., description="Overall thoughts on the criterion.")
-
+    
     def get_children(self) -> List['Criterion']:
         """
         Returns a list of child criteria.
@@ -72,6 +73,15 @@ class HierarchicalCriterion(CategorizedCriterion):
 
     def get_children(self) -> List['Criterion']:
         return [self.parent_criterion, self.child_criterion]
+
+class NonsenseCriterion(CategorizedCriterion):
+    """
+    Represents a nonsense criterion that is not valid.
+    """
+    raw_text: str = Field(..., description="The raw text of the criterion.")
+    error_message: str = Field(..., description="Error message indicating why the criterion is invalid.")
+    def get_children(self) -> List['Criterion']:
+        return []
 
 
 class LogicalOperator(str, Enum):

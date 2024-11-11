@@ -33,15 +33,31 @@ def main():
     handler.setFormatter(formatter)
 
     logging.basicConfig(
-        level=logging.DEBUG,  # Set to DEBUG to capture debug messages
+        level=logging.INFO,  # Set to DEBUG to capture debug messages
         handlers=[handler]
     )
 
     logger = logging.getLogger(__name__)
 
-    # Prompt the user for an NCT ID
-    nct_id = input("Enter the NCT ID of the trial you want to process: ").strip()
-    logger.info("Processing trial NCT ID: %s", nct_id)
+    trials_to_process = []
+
+    while nct_id := input("Enter the NCT ID of the trial you want to process (or press Enter to finish): ").strip():
+        trials_to_process.append(nct_id)
+
+    for nct_id in trials_to_process:
+        logger.info("Processing trial NCT ID: %s", nct_id)
+        if trial := process_trial(nct_id, verbose=True):
+            file_name = f"{nct_id}_structured.json"
+            output_folder = "output"
+
+            if save_trial(trial, output_folder, file_name):
+                logger.info("Trial saved successfully.")
+                # Check approval
+                check_accuracy(trial)
+            else:
+                logger.error("Failed to save trial.")
+        else:
+            logger.error("Failed to process trial NCT ID: %s", nct_id)
     if trial := process_trial(nct_id, verbose=True):
         file_name = f"{nct_id}_structured.json"
         output_folder = "output"

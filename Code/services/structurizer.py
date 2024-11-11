@@ -8,6 +8,7 @@ from models.criterion import (
     AtomicCriterion,
     HierarchicalCriterion,
     CompoundCriterion,
+    NonsenseCriterion,
     Category,
 )
 from utils.openai_client import get_openai_client
@@ -31,7 +32,7 @@ class IndividualAnalysis(BaseModel):
 
 class CategorizingStructure(BaseModel):
     """
-    Represents the structure for categorizing a criterion.
+    Represents the structure for categorizing a criterion, only makes one analysis per category.
     """
     individual_analyses: list[IndividualAnalysis]
     overall_thoughts: str
@@ -89,7 +90,7 @@ def categorize_criterion(criterion: Criterion, verbose: bool = False) -> Optiona
 
 def structurize_once(
     criterion: CategorizedCriterion, verbose: bool = False
-) -> Optional[Union[AtomicCriterion, HierarchicalCriterion, CompoundCriterion]]:
+) -> Optional[Union[AtomicCriterion, HierarchicalCriterion, CompoundCriterion, NonsenseCriterion]]:
     """
     Structurizes a categorized criterion based on its category.
 
@@ -100,6 +101,16 @@ def structurize_once(
     Returns:
         Optional[Union[AtomicCriterion, HierarchicalCriterion, CompoundCriterion]]: The structurized criterion or None if failed.
     """
+    
+    if criterion.category == Category.NONSENSE_CRITERION:
+        logger.info("Criterion is nonsense.")
+        return NonsenseCriterion(
+            raw_text=criterion.raw_text,
+            error_message="The criterion is invalid and cannot be structurized.",
+            category=criterion.category,
+            category_reasoning=criterion.category_reasoning,
+            overall_thoughts=criterion.overall_thoughts,
+        )
     logger.info("Structurizing criterion: %s", criterion.raw_text)
     category_to_response_format = {
         Category.ATOMIC_CRITERION: AtomicCriterion,

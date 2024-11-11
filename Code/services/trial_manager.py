@@ -33,10 +33,10 @@ def get_trial_data(nct_id: str) -> Optional[RawTrialData]:
                 logger.error("No data found for NCT ID: %s", nct_id)
                 logger.debug("Response data: %s", data)
                 return None
-        official_title = study.get("protocolSection", {}).get(
+        official_title = study.get(
             "identificationModule", {}
         ).get("officialTitle", "")
-        eligibility = study.get("protocolSection", {}).get(
+        eligibility = study.get(
             "eligibilityModule", {}
         ).get("eligibilityCriteria", "")       
         
@@ -45,6 +45,8 @@ def get_trial_data(nct_id: str) -> Optional[RawTrialData]:
             nct_id=nct_id, official_title=official_title, criteria=criterion
         )
         logger.info("Successfully retrieved trial data.")
+        logger.debug("Fully raw input: %s", data)
+        logger.debug("Trial data: %s", raw_data)
         return raw_data
     except Exception as e:
         logger.error("Error fetching trial data: %s", e)
