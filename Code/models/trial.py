@@ -5,6 +5,7 @@ from typing import Optional, Union
 from .criterion import AtomicCriterion, CompoundCriterion, Criterion, CategorizedCriterion, HierarchicalCriterion, NonsenseCriterion
 
 
+<<<<<<< HEAD
 class RawTrialData(BaseModel):
     """
     Represents the raw data of a clinical trial.
@@ -12,6 +13,9 @@ class RawTrialData(BaseModel):
     nct_id: str = Field(..., alias='nct_id', description="Clinical trial NCT ID.")
     official_title: str = Field(..., description="Official title of the clinical trial.")
     criteria: Criterion = Field(..., description="Eligibility criteria of the trial.")
+=======
+
+>>>>>>> 0fc8b9f9 (attempting to fix lost git history)
 
 
 class Trial(BaseModel):

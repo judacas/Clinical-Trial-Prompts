@@ -9,8 +9,13 @@ class Category(str, Enum):
     """
     Enum representing the category of a cancer clinical criterion. Note that for all of these it is the outermost category, should there be a Compound_Criterion composed of an atomic and a hierarchical criterion, then the resulting category would be Compound_Criterion as it is the outermost category.
     """
+<<<<<<< HEAD
     ATOMIC_CRITERION = "atomic_Criterion- where there is only one criterion that can be answered with a simple question"
     COMPOUND_CRITERION = "compound_Criterion- when there are two or more criterions which can be seperated into various questions"
+=======
+    ATOMIC_CRITERION = "atomic_Criterion- where there is only one criterion that can be answered with a simple question (if there are multiple atomic then it is either compound or hierarchical)"
+    COMPOUND_CRITERION = "compound_Criterion- when there are two or more individual criterions which can be separated into various atomic or hierarchical criterions."
+>>>>>>> 0fc8b9f9 (attempting to fix lost git history)
     HIERARCHICAL_CRITERION = "hierarchical_criterion- when there is a parent criterion and a child criterion which adds further criteria should the parent be true."
     NONSENSE_CRITERION = "nonsense- when the criterion is not a valid criterion"
 
