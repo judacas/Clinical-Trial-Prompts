@@ -47,7 +47,11 @@ def main():
     for nct_id in trials_to_process:
         logger.info("Processing trial NCT ID: %s", nct_id)
         if trial := process_trial(nct_id, verbose=True):
+<<<<<<< HEAD
             file_name = f"{nct_id}_structured.json"
+=======
+            file_name = f"{nct_id}_newly_structured.json"
+>>>>>>> 0fc8b9f9 (attempting to fix lost git history)
             output_folder = "output"
 
             if save_trial(trial, output_folder, file_name):

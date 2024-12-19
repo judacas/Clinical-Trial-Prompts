@@ -1,190 +1,145 @@
 # services/structurizer.py
 
 import logging
-from typing import Optional, Union
-from models.criterion import (
-    Criterion,
-    CategorizedCriterion,
-    AtomicCriterion,
-    HierarchicalCriterion,
-    CompoundCriterion,
-    NonsenseCriterion,
-    Category,
-)
+import re
+from typing import List, Optional
+from models.LLM_responses import oneParsedLine
+from models.structured_criteria import RawTrialData
+from models.structured_criteria import SingleRawCriterion, ParsedTrial
 from utils.openai_client import get_openai_client
-from pydantic import BaseModel
 import rich
 
-# Configure logging
 logger = logging.getLogger(__name__)
 
 client = get_openai_client()
 
-
-class IndividualAnalysis(BaseModel):
+def structurize_bottom_up(trial: RawTrialData, verbose: bool = False) -> ParsedTrial:
     """
-    Represents the analysis of a criterion for a specific category.
-    """
-    category: Category
-    thoughts: str
-    decision: bool
-
-
-class CategorizingStructure(BaseModel):
-    """
-    Represents the structure for categorizing a criterion, only makes one analysis per category.
-    """
-    individual_analyses: list[IndividualAnalysis]
-    overall_thoughts: str
-    final_category: Category
-
-
-def categorize_criterion(criterion: Criterion, verbose: bool = False) -> Optional[CategorizedCriterion]:
-    """
-    Categorizes a given criterion using the OpenAI model.
+    Structurizes the trial's eligibility criteria using a bottom-up approach.
 
     Args:
-        criterion (Criterion): The criterion to categorize.
+        trial (Trial): The trial containing raw eligibility criteria.
         verbose (bool): Whether to print detailed output.
 
     Returns:
-        Optional[CategorizedCriterion]: The categorized criterion or None if failed.
+        Optional[StructuredCriteria]: The structured criteria or None if failed.
     """
-    logger.info("Categorizing criterion: %s", criterion.raw_text)
-    try:
-        completion = client.beta.chat.completions.parse(
-            model="gpt-4o-2024-08-06",
-            messages=[
-                {
-                    "role": "system",
-                    "content": "You are an expert in categorizing clinical trial eligibility criteria.",
-                },
-                {"role": "user", "content": criterion.raw_text},
-            ],
-            temperature=0.0,
-            response_format=CategorizingStructure,
-        )
-        message = completion.choices[0].message
-        if message.parsed:
-            if verbose:
-                rich.print(message.parsed)
-            for analysis in message.parsed.individual_analyses:
-                if analysis.category == message.parsed.final_category:
-                    categorized = CategorizedCriterion(
-                        raw_text=criterion.raw_text,
-                        category=message.parsed.final_category,
-                        category_reasoning=analysis.thoughts,
-                        overall_thoughts=message.parsed.overall_thoughts,
-                    )
-                    logger.info("Categorized criterion as %s", categorized.category)
-                    return categorized
+    logger.info("Starting bottom-up structurization for trial NCT ID: %s", trial.nct_id)
+
+    raw_text = trial.criteria
+    print(trial)
+    lines = [line.strip() for line in re.split(r'[\n\r]+', raw_text) if line.strip()]
+    logger.debug("Split raw text into %d lines.", len(lines))
+
+    atomic_criteria_list: List[SingleRawCriterion] = []
+    all_leftovers: List[str] = []
+
+    for index, line in enumerate(lines):
+        logger.info("Processing line %d: %s", index + 1, line)
+        if extracted_criteria := extract_atomic_criteria_from_line(
+            line, verbose
+        ).atomic_criteria:
+            try:
+                # Verify criteria and identify leftovers
+                leftovers = verify_and_extract_leftovers(line, extracted_criteria)
+                atomic_criteria_list.extend(extracted_criteria)
+                all_leftovers.extend(leftovers)
+            except ValueError as e:
+                logger.error("Error processing line %d: %s", index + 1, e)
+                continue
         else:
-            if verbose:
-                rich.print(message.refusal)
-            logger.warning("Failed to parse categorization response.")
-            return None
-    except Exception as e:
-        logger.error("Error during categorization: %s", e)
-        return None
+            logger.warning("Failed to extract criteria from line %d.", index + 1)
+            all_leftovers.append(line)  # Consider the entire line as leftover
+
+    if atomic_criteria_list:
+        structured_criteria = ParsedTrial(
+            atomic_criteria=atomic_criteria_list,
+            leftovers=all_leftovers,
+            info=trial
+        )
+        logger.info("Successfully structurized trial NCT ID: %s", trial.nct_id)
+        return structured_criteria
+    else:
+        logger.warning("No atomic criteria extracted for trial NCT ID: %s", trial.nct_id)
+        raise ValueError(f"No atomic criteria extracted for trial NCT ID: {trial.nct_id}")
 
 
-def structurize_once(
-    criterion: CategorizedCriterion, verbose: bool = False
-) -> Optional[Union[AtomicCriterion, HierarchicalCriterion, CompoundCriterion, NonsenseCriterion]]:
+
+def extract_atomic_criteria_from_line(line: str, verbose: bool = False) -> oneParsedLine:
     """
-    Structurizes a categorized criterion based on its category.
+    Sends a line to the LLM to extract atomic criteria.
 
     Args:
-        criterion (CategorizedCriterion): The categorized criterion to structurize.
+        line (str): The line of text to process.
         verbose (bool): Whether to print detailed output.
 
     Returns:
-        Optional[Union[AtomicCriterion, HierarchicalCriterion, CompoundCriterion]]: The structurized criterion or None if failed.
+        Optional[List[AtomicCriterion]]: A list of AtomicCriterion objects.
     """
-    
-    if criterion.category == Category.NONSENSE_CRITERION:
-        logger.info("Criterion is nonsense.")
-        return NonsenseCriterion(
-            raw_text=criterion.raw_text,
-            error_message="The criterion is invalid and cannot be structurized.",
-            category=criterion.category,
-            category_reasoning=criterion.category_reasoning,
-            overall_thoughts=criterion.overall_thoughts,
-        )
-    logger.info("Structurizing criterion: %s", criterion.raw_text)
-    category_to_response_format = {
-        Category.ATOMIC_CRITERION: AtomicCriterion,
-        Category.HIERARCHICAL_CRITERION: HierarchicalCriterion,
-        Category.COMPOUND_CRITERION: CompoundCriterion,
-    }
-
+    logger.info("Extracting atomic criteria from line.")
     prompt = (
-        "You are part of an NLP pipeline designed to structurize clinical trial eligibility criteria."
-        " Parse the criterion below into its components."
+        "You are an expert in clinical trial eligibility criteria. "
+        "Given the following line from an Oncological Clinical Trial Eligibility Criteria, extract all possible atomic criteria as specifically as possible. "
+        "For each criterion, provide the exact text from the line (must match exactly) and a paraphrased version that makes sense standalone. "
+        "An atomic criterion is a single, indivisible criterion that cannot be broken down further."
     )
 
     try:
         completion = client.beta.chat.completions.parse(
-            model="gpt-4o-2024-08-06",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": prompt},
-                {"role": "user", "content": criterion.raw_text},
+                {"role": "user", "content": line},
             ],
-            response_format=category_to_response_format[criterion.category],
             temperature=0.0,
+            response_format=oneParsedLine,
         )
         if response := completion.choices[0].message.parsed:
             if verbose:
                 rich.print(response)
-            logger.info("Successfully structurized criterion.")
+            logger.info("Successfully extracted atomic criteria from line.")
             return response
         else:
-            logger.warning("Failed to parse structurization response.")
-            return None
+            logger.warning("Failed to parse LLM response.")
+            raise ValueError(f"Failed to parse LLM response for line: '{line}'")
     except Exception as e:
-        logger.error("Error during structurization: %s", e)
-        return None
+        logger.error("Error during LLM extraction: %s", e)
+        raise ValueError(f"Error during LLM extraction: {e}")
 
-
-def structurize_fully(
-    criterion: Criterion, verbose: bool = False
-) -> Optional[Union[AtomicCriterion, HierarchicalCriterion, CompoundCriterion]]:
+def verify_and_extract_leftovers(line: str, criteria_list: List[SingleRawCriterion]) -> List[str]:
     """
-    Recursively structurizes a criterion fully into its components.
+    Verifies that each criterion's raw_text is an exact substring of the line and extracts leftovers.
 
     Args:
-        criterion (Criterion): The criterion to structurize.
-        verbose (bool): Whether to print detailed output.
+        line (str): The original line of text.
+        criteria_list (List[AtomicCriterion]): List of extracted criteria.
 
     Returns:
-        Optional[Union[AtomicCriterion, HierarchicalCriterion, CompoundCriterion]]: The fully structurized criterion or None if failed.
+        List[str]: List of leftover text segments between the criteria.
+
+    Raises:
+        ValueError: If any criterion's raw_text is not found in the line.
     """
-    logger.info("Starting full structurization for criterion.")
-    categorized = categorize_criterion(criterion, verbose)
-    if not categorized:
-        logger.warning("Categorization failed.")
-        return None
+    logger.info("Verifying criteria and extracting leftovers.")
+    leftovers = []
+    i = 0  # Current index in the line
 
-    structured = structurize_once(categorized, verbose)
-    if not structured:
-        logger.warning("Structurization failed.")
-        return None
+    for criterion in criteria_list:
+        raw_text = criterion.raw_text
+        # Find the raw_text in line starting from index i
+        index = line.find(raw_text, i)
+        if index == -1:
+            logger.error("Criterion raw_text not found in line. Line: '%s', Raw text: '%s'", line, raw_text)
+            raise ValueError(f"Criterion raw_text not found in line. Line: '{line}', Raw text: '{raw_text}'")
+        # Append any text between i and index as leftover
+        if index > i:
+            leftover_text = line[i:index]
+            leftovers.append(leftover_text)
+        # Move i to the end of the found raw_text
+        i = index + len(raw_text)
 
-    if isinstance(structured, AtomicCriterion):
-        return structured
-    elif isinstance(structured, HierarchicalCriterion):
-        structured.parent_criterion = structurize_fully(
-            structured.parent_criterion, verbose
-        )
-        structured.child_criterion = structurize_fully(
-            structured.child_criterion, verbose
-        )
-        return structured
-    elif isinstance(structured, CompoundCriterion):
-        structured.criterions = [
-            structurize_fully(crit, verbose) for crit in structured.criterions
-        ]
-        return structured
-    else:
-        logger.error("Unknown criterion type.")
-        return None
+    # Append any text remaining after the last criterion as leftover
+    if i < len(line):
+        leftovers.append(line[i:])
+
+    return leftovers
