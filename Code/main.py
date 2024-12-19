@@ -3,7 +3,6 @@
 import logging
 from services.trial_manager import process_trial
 from repositories.trial_repository import save_trial
-from services.analyzer import check_accuracy
 
 class ColoredFormatter(logging.Formatter):
     # ANSI escape codes for colors
