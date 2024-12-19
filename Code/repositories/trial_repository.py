@@ -3,21 +3,14 @@
 import os
 import logging
 from typing import Optional
-<<<<<<< HEAD
-=======
 from models.structured_criteria import ParsedTrial
->>>>>>> 0fc8b9f9 (attempting to fix lost git history)
 from models.trial import Trial
 
 # Configure logging
 logger = logging.getLogger(__name__)
 
 
-<<<<<<< HEAD
-def save_trial(trial: Trial, folder: str, file_name: str) -> bool:
-=======
 def save_trial(trial: ParsedTrial, folder: str, file_name: str) -> bool:
->>>>>>> 0fc8b9f9 (attempting to fix lost git history)
     """
     Saves the trial data to a JSON file.
 
@@ -29,11 +22,7 @@ def save_trial(trial: ParsedTrial, folder: str, file_name: str) -> bool:
     Returns:
         bool: True if saved successfully, False otherwise.
     """
-<<<<<<< HEAD
-    logger.info("Saving trial NCT ID: %s", trial.raw_data.nct_id)
-=======
     logger.info("Saving trial NCT ID: %s", trial.info.nct_id)
->>>>>>> 0fc8b9f9 (attempting to fix lost git history)
     try:
         os.makedirs(folder, exist_ok=True)
         file_path = os.path.join(folder, file_name)
