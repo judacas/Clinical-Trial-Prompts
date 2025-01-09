@@ -9,8 +9,7 @@ from models.trial import Trial
 # Configure logging
 logger = logging.getLogger(__name__)
 
-
-def save_trial(trial: ParsedTrial, folder: str, file_name: str) -> bool:
+def save_trial(trial: ParsedTrial, file_name: str, folder: str ) -> bool:
     """
     Saves the trial data to a JSON file.
 
@@ -23,6 +22,8 @@ def save_trial(trial: ParsedTrial, folder: str, file_name: str) -> bool:
         bool: True if saved successfully, False otherwise.
     """
     logger.info("Saving trial NCT ID: %s", trial.info.nct_id)
+    folder = os.path.join(os.path.dirname(os.path.relpath(__file__)),folder)
+    
     try:
         os.makedirs(folder, exist_ok=True)
         file_path = os.path.join(folder, file_name)
@@ -33,6 +34,7 @@ def save_trial(trial: ParsedTrial, folder: str, file_name: str) -> bool:
     except Exception as e:
         logger.error("Error saving trial: %s", e)
         return False
+    
 
 
 def load_trial(folder: str, file_name: str) -> Optional[Trial]:
