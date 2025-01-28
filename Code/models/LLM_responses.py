@@ -2,17 +2,9 @@
 
 from pydantic import BaseModel, Field
 from typing import List
+from models.structured_criteria import SingleRawCriterion
 
-class SingleRawCriterion(BaseModel):
-    """
-    Represents an atomic criterion extracted from the eligibility criteria.
-    """
-    raw_text: str = Field(
-        ..., description="Exact substring from the original text representing the criterion."
-    )
-    paraphrased_text: str = Field(
-        ..., description="Paraphrased version of the criterion for clarity. Must make sense standalone and be concise."
-    )
+
     
 class oneParsedLine(BaseModel):
     """

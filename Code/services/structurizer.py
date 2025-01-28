@@ -5,7 +5,7 @@ import re
 from typing import List, Optional
 from models.LLM_responses import oneParsedLine
 from models.structured_criteria import RawTrialData
-from models.structured_criteria import SingleRawCriterion, ParsedTrial
+from models.structured_criteria import SingleRawCriterion, ParsedTrial, structuredLine
 from utils.openai_client import get_openai_client
 import rich
 
@@ -31,30 +31,26 @@ def structurize_bottom_up(trial: RawTrialData) -> ParsedTrial:
     lines = [line.strip() for line in re.split(r'[\n\r]+', raw_text) if line.strip()]
     logger.debug("Split raw text into %d lines.", len(lines))
 
-    atomic_criteria_list: List[SingleRawCriterion] = []
-    all_leftovers: List[str] = []
+    structured_lines:List[structuredLine] = []
+    failed: List[structuredLine] = []
 
     for index, line in enumerate(lines):
         logger.debug("Processing line %d: %s", index + 1, line)
         if extracted_criteria := extract_atomic_criteria_from_line(line).atomic_criteria:
             try:
                 # Verify criteria and identify leftovers
-                leftovers = verify_and_extract_leftovers(line, extracted_criteria)
-                atomic_criteria_list.extend(extracted_criteria)
-                all_leftovers.extend(leftovers)
+                verify(line, extracted_criteria)
+                structured_lines.append(structuredLine(line=line, criterions=extracted_criteria))
             except ValueError as e:
                 logger.error("Error processing line %d: %s", index + 1, e)
+                failed.append(structuredLine(line=line, criterions=extracted_criteria))
                 continue
         else:
             logger.warning("Failed to extract criteria from line %d.", index + 1)
-            all_leftovers.append(line)  # Consider the entire line as leftover
+            failed.append(structuredLine(line=line, criterions=[]))
 
-    if atomic_criteria_list:
-        structured_criteria = ParsedTrial(
-            atomic_criteria=atomic_criteria_list,
-            leftovers=all_leftovers,
-            info=trial
-        )
+    if structured_lines:
+        structured_criteria = ParsedTrial(info=trial, lines=structured_lines, failed=failed)
         logger.info("Successfully structurized trial NCT ID: %s", trial.nct_id)
         return structured_criteria
     else:
@@ -75,11 +71,12 @@ def extract_atomic_criteria_from_line(line: str) -> oneParsedLine:
     """
     logger.debug("Extracting atomic criteria from line: %s", line)
     prompt = (
-        "You are an expert in clinical trial eligibility criteria. "
-        "Given the following line from an Oncological Clinical Trial Eligibility Criteria, extract all possible atomic criteria as specifically as possible. "
-        "For each criterion, provide the exact quotes from the line that you used and one paraphrased version that makes sense standalone."
+        "You are an expert in clinical trial eligibility criteria."
+        "Given the following line from an Oncological Clinical Trial Eligibility Criteria, extract every individual criterion they are testing the patient for."
+        "In other words, what are the specific properties/attributes/conditions that are being tested for in the patient?"
+        "For each criterion, provide the exact quotes from the line that you used to identify it."
         "Should your exact text be non-contiguous then provide multiple exact snippets"
-        "An atomic criterion is a single, indivisible criterion that cannot be broken down further. AKA it is asking for only one specific property/attribute/condition that a patient must have."
+        
     )
 
     try:
@@ -102,7 +99,7 @@ def extract_atomic_criteria_from_line(line: str) -> oneParsedLine:
         logger.error("Error during LLM extraction: %s", e)
         raise ValueError(f"Error during LLM extraction: {e}") from e
 
-def verify_and_extract_leftovers(line: str, criteria_list: List[SingleRawCriterion]) -> List[str]:
+def verify(line: str, criteria_list: List[SingleRawCriterion]) -> None:
     """
     Verifies that each criterion's raw_text is an exact substring of the line and extracts leftovers.
 
@@ -117,25 +114,12 @@ def verify_and_extract_leftovers(line: str, criteria_list: List[SingleRawCriteri
         ValueError: If any criterion's raw_text is not found in the line.
     """
     logger.info("Verifying criteria and extracting leftovers.")
-    leftovers = []
-    i = 0  # Current index in the line
 
     for criterion in criteria_list:
-        raw_text = criterion.raw_text
-        # Find the raw_text in line starting from index i
-        index = line.find(raw_text, i)
-        if index == -1:
-            logger.error("Criterion raw_text not found in line. Line: '%s', Raw text: '%s'", line, raw_text)
-            raise ValueError(f"Criterion raw_text not found in line. Line: '{line}', Raw text: '{raw_text}'")
-        # Append any text between i and index as leftover
-        if index > i:
-            leftover_text = line[i:index]
-            leftovers.append(leftover_text)
-        # Move i to the end of the found raw_text
-        i = index + len(raw_text)
+        for snippet in criterion.exact_snippets:
+            # Find the raw_text in line starting from index i
+            index = line.replace("\\", "").find(snippet.replace("\\", ""))
+            if index == -1:
+                logger.error("Criterion snippet not found in line. Line: '%s', Raw text: '%s'", line, snippet)
+                raise ValueError(f"Criterion raw_text not found in line. Line: '{line}', Raw text: '{snippet}'")
 
-    # Append any text remaining after the last criterion as leftover
-    if i < len(line):
-        leftovers.append(line[i:])
-
-    return leftovers
