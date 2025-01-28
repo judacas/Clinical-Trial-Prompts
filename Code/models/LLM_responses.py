@@ -11,7 +11,7 @@ class SingleRawCriterion(BaseModel):
         ..., description="Exact substring from the original text representing the criterion."
     )
     paraphrased_text: str = Field(
-        ..., description="Paraphrased version of the criterion for clarity."
+        ..., description="Paraphrased version of the criterion for clarity. Must make sense standalone and be concise."
     )
     
 class oneParsedLine(BaseModel):

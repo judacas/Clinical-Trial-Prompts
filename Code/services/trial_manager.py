@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 
 
 def get_trial_data(nct_id: str) -> RawTrialData:
+    #! MUST CLEAN UP AND PREPROCESS A BIT MORE. REMOVE THOSE ANNOYING \ THAT ARE MESSING UP STRING COMPARISONS SUCH AS \> OR \<
     # sourcery skip: extract-method, hoist-if-from-if
     """
     Retrieves trial data from ClinicalTrials.gov API.

@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 client = get_openai_client()
 
-def structurize_bottom_up(trial: RawTrialData, verbose: bool = False) -> ParsedTrial:
+def structurize_bottom_up(trial: RawTrialData) -> ParsedTrial:
     """
     Structurizes the trial's eligibility criteria using a bottom-up approach.
 
@@ -35,10 +35,8 @@ def structurize_bottom_up(trial: RawTrialData, verbose: bool = False) -> ParsedT
     all_leftovers: List[str] = []
 
     for index, line in enumerate(lines):
-        logger.info("Processing line %d: %s", index + 1, line)
-        if extracted_criteria := extract_atomic_criteria_from_line(
-            line, verbose
-        ).atomic_criteria:
+        logger.debug("Processing line %d: %s", index + 1, line)
+        if extracted_criteria := extract_atomic_criteria_from_line(line).atomic_criteria:
             try:
                 # Verify criteria and identify leftovers
                 leftovers = verify_and_extract_leftovers(line, extracted_criteria)
@@ -65,23 +63,23 @@ def structurize_bottom_up(trial: RawTrialData, verbose: bool = False) -> ParsedT
 
 
 
-def extract_atomic_criteria_from_line(line: str, verbose: bool = False) -> oneParsedLine:
+def extract_atomic_criteria_from_line(line: str) -> oneParsedLine:
     """
     Sends a line to the LLM to extract atomic criteria.
 
     Args:
         line (str): The line of text to process.
-        verbose (bool): Whether to print detailed output.
 
     Returns:
         Optional[List[AtomicCriterion]]: A list of AtomicCriterion objects.
     """
-    logger.info("Extracting atomic criteria from line.")
+    logger.debug("Extracting atomic criteria from line: %s", line)
     prompt = (
         "You are an expert in clinical trial eligibility criteria. "
         "Given the following line from an Oncological Clinical Trial Eligibility Criteria, extract all possible atomic criteria as specifically as possible. "
-        "For each criterion, provide the exact text from the line (must match exactly) and a paraphrased version that makes sense standalone. "
-        "An atomic criterion is a single, indivisible criterion that cannot be broken down further."
+        "For each criterion, provide the exact quotes from the line that you used and one paraphrased version that makes sense standalone."
+        "Should your exact text be non-contiguous then provide multiple exact snippets"
+        "An atomic criterion is a single, indivisible criterion that cannot be broken down further. AKA it is asking for only one specific property/attribute/condition that a patient must have."
     )
 
     try:
@@ -95,16 +93,14 @@ def extract_atomic_criteria_from_line(line: str, verbose: bool = False) -> onePa
             response_format=oneParsedLine,
         )
         if response := completion.choices[0].message.parsed:
-            if verbose:
-                rich.print(response)
-            logger.info("Successfully extracted atomic criteria from line.")
+            logger.debug("Successfully extracted atomic criteria from line: %s", line)
             return response
         else:
             logger.warning("Failed to parse LLM response.")
             raise ValueError(f"Failed to parse LLM response for line: '{line}'")
     except Exception as e:
         logger.error("Error during LLM extraction: %s", e)
-        raise ValueError(f"Error during LLM extraction: {e}")
+        raise ValueError(f"Error during LLM extraction: {e}") from e
 
 def verify_and_extract_leftovers(line: str, criteria_list: List[SingleRawCriterion]) -> List[str]:
     """
