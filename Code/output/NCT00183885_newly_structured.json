@@ -12,7 +12,7 @@
                     "exact_snippets": [
                         "Unresectable"
                     ],
-                    "criterion": "hepatocellular carcinoma",
+                    "criterion": "tumor",
                     "requirement_type": "resectability",
                     "expected_value": false
                 },
@@ -28,7 +28,7 @@
                     "exact_snippets": [
                         "evident disease"
                     ],
-                    "criterion": "hepatocellular carcinoma",
+                    "criterion": "disease",
                     "requirement_type": "presence",
                     "expected_value": true
                 },
@@ -75,10 +75,7 @@
                     ],
                     "criterion": "blood sample",
                     "requirement_type": "volume",
-                    "expected_value": {
-                        "operator": "=",
-                        "value": 20
-                    }
+                    "expected_value": 20
                 },
                 {
                     "exact_snippets": [
@@ -119,7 +116,7 @@
                 },
                 {
                     "exact_snippets": [
-                        "If prior radiation therapy was administered, measurable disease must be outside the radiation field"
+                        "measurable disease must be outside the radiation field"
                     ],
                     "criterion": "measurable disease",
                     "requirement_type": "location",
@@ -233,7 +230,7 @@
                         "calculated creatinine clearance ≥ 60"
                     ],
                     "criterion": "creatinine clearance",
-                    "requirement_type": "quantity",
+                    "requirement_type": "calculation",
                     "expected_value": {
                         "operator": ">=",
                         "value": 60
@@ -246,12 +243,11 @@
             "criterions": [
                 {
                     "exact_snippets": [
-                        "adequate hepatic function",
-                        "serum bilirubin less than or equal to 2x the institutional upper limit of normal"
+                        "adequate hepatic function"
                     ],
                     "criterion": "hepatic function",
                     "requirement_type": "adequacy",
-                    "expected_value": "adequate"
+                    "expected_value": true
                 },
                 {
                     "exact_snippets": [
@@ -312,11 +308,11 @@
             "criterions": [
                 {
                     "exact_snippets": [
-                        "Patients with any active or uncontrolled infection"
+                        "any active or uncontrolled infection"
                     ],
                     "criterion": "infection",
-                    "requirement_type": "status",
-                    "expected_value": "active or uncontrolled"
+                    "requirement_type": "presence",
+                    "expected_value": true
                 },
                 {
                     "exact_snippets": [
@@ -328,23 +324,23 @@
                 },
                 {
                     "exact_snippets": [
-                        "Patients with active hepatitis B"
+                        "active hepatitis B"
                     ],
                     "criterion": "hepatitis B",
-                    "requirement_type": "status",
-                    "expected_value": "active"
+                    "requirement_type": "activity",
+                    "expected_value": true
                 },
                 {
                     "exact_snippets": [
-                        "Patients with active hepatitis C"
+                        "active hepatitis C"
                     ],
                     "criterion": "hepatitis C",
-                    "requirement_type": "status",
-                    "expected_value": "active"
+                    "requirement_type": "activity",
+                    "expected_value": true
                 },
                 {
                     "exact_snippets": [
-                        "liver tests qualify (5.1.9)"
+                        "liver tests qualify"
                     ],
                     "criterion": "liver tests",
                     "requirement_type": "qualification",
@@ -365,38 +361,15 @@
                 },
                 {
                     "exact_snippets": [
-                        "psychiatric disorders that would interfere with consent or follow-up"
-                    ],
-                    "criterion": "psychiatric disorders",
-                    "requirement_type": "interference with consent or follow-up",
-                    "expected_value": true
-                },
-                {
-                    "exact_snippets": [
                         "Pregnant or lactating women"
                     ],
-                    "criterion": "pregnancy",
+                    "criterion": "pregnancy or lactation",
                     "requirement_type": "status",
-                    "expected_value": true
+                    "expected_value": false
                 },
                 {
                     "exact_snippets": [
-                        "Pregnant or lactating women"
-                    ],
-                    "criterion": "lactation",
-                    "requirement_type": "status",
-                    "expected_value": true
-                },
-                {
-                    "exact_snippets": [
-                        "Men and women of reproductive potential"
-                    ],
-                    "criterion": "reproductive potential",
-                    "requirement_type": "status",
-                    "expected_value": true
-                },
-                {
-                    "exact_snippets": [
+                        "Men and women of reproductive potential",
                         "agreed to use an effective contraceptive method"
                     ],
                     "criterion": "contraceptive method",
