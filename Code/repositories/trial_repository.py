@@ -22,7 +22,6 @@ def save_trial(trial: ParsedTrial, file_name: str, folder: str ) -> bool:
         bool: True if saved successfully, False otherwise.
     """
     logger.info("Saving trial NCT ID: %s", trial.info.nct_id)
-    folder = os.path.join(os.path.dirname(os.path.relpath(__file__)),folder)
     
     try:
         os.makedirs(folder, exist_ok=True)
