@@ -49,7 +49,7 @@ def main():
             file_name = f"{nct_id}_newly_structured.json"
             output_folder = "output"
 
-            if save_trial(trial, output_folder, file_name):
+            if save_trial(trial, file_name, output_folder):
                 logger.info("Trial saved successfully.")
                 # Check approval
                 # check_accuracy(trial)
