@@ -57,6 +57,8 @@ def structurize_bottom_up(trial: RawTrialData) -> ParsedTrial:
         logger.warning("No atomic criteria extracted for trial NCT ID: %s", trial.nct_id)
         raise ValueError(f"No atomic criteria extracted for trial NCT ID: {trial.nct_id}")
 
+    
+
 
 
 def extract_atomic_criteria_from_line(line: str) -> oneParsedLine:

@@ -1,7 +1,7 @@
 # services/trial_manager.py
 
 import logging
-from typing import Optional
+from repositories import trial_repository
 from models.structured_criteria import ParsedTrial
 from services.structurizer import structurize_bottom_up
 from models.structured_criteria import RawTrialData
@@ -78,11 +78,6 @@ def process_trial(nct_id: str, verbose: bool = False) -> ParsedTrial:
     logger.info("Processed trial: %s", processedTrial)
     
     # Write the Pydantic object out as a JSON file
-    output_dir = "output"
-    os.makedirs(output_dir, exist_ok=True)
-    output_path = os.path.join(output_dir, f"{nct_id}_new.json")
-    
-    with open(output_path, "w") as f:
-        json.dump(processedTrial.model_dump_json(), f, indent=4)
+    trial_repository.save_trial(processedTrial, f"{nct_id}_new.json", "output")
     
     return processedTrial
