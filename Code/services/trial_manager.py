@@ -77,7 +77,4 @@ def process_trial(nct_id: str, verbose: bool = False) -> ParsedTrial:
     logger.info("Trial processing complete for NCT ID: %s", nct_id)
     logger.info("Processed trial: %s", processedTrial)
     
-    # Write the Pydantic object out as a JSON file
-    trial_repository.save_trial(processedTrial, f"{nct_id}_new.json", "output")
-    
     return processedTrial
