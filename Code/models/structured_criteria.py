@@ -12,20 +12,6 @@ class RawTrialData(BaseModel):
     official_title: str = Field(..., description="Official title of the clinical trial.")
     criteria: str = Field(..., description="Eligibility criteria of the clinical trial.")
 
-# class CompoundCriterion(BaseModel):
-#     """
-#     Represents a combination of two criteria.
-#     """
-#     criteria: List[SingleRawCriterion] = Field(..., description="List of criteria to be combined.")
-#     combination_type: str = Field(..., description="Type of combination (AND/OR).")
-
-# class HierarchicalCriterion(BaseModel):
-#     """
-#     Represents a hierarchical relationship between two criteria.
-#     """
-#     if_criterion: SingleRawCriterion = Field(..., description="The 'if' criterion.")
-#     then_criterion: SingleRawCriterion = Field(..., description="The 'then' criterion.")
-
 
 class Operator(str, Enum):
     """
@@ -38,7 +24,7 @@ class Operator(str, Enum):
     GREATER_THAN_OR_EQUAL_TO = ">="
     LESS_THAN_OR_EQUAL_TO = "<="
 
-class Comparison(BaseModel):
+class NumericalComparison(BaseModel):
     """
     Represents a comparison operation for a value.
     """
@@ -49,12 +35,12 @@ class Range(BaseModel):
     """
     Represents a range for a value.
     """
-    comparisons: List[Comparison] = Field(..., description="List of comparison operations defining the range.")
+    comparisons: List[NumericalComparison] = Field(..., description="List of comparison operations defining the range.")
 
 class SingleRawCriterion(BaseModel):
     """
     Represents an atomic criterion extracted from the eligibility criteria.
-    This model captures the specific property/attribute being tested, what is asked about it (requirement_type), and the expected value.
+    This model captures the general property/attribute being tested, what is asked about it (requirement_type), and the expected value.
     
     example:
         input:
@@ -74,14 +60,14 @@ class SingleRawCriterion(BaseModel):
     )
     
     criterion: str = Field(
-        ..., description="The specific property, attribute, or condition that is being tested (e.g., 'age', 'lung cancer', 'BMI'). include the general version here and specify later in requirement_type (eg. white blood cell as criterion and count as attribute instead of white blood cell count as criterion) note that you can have the same criterion with different requirement types. (such as criterion tumor then different requirement types like presence, severity, quantity)"
+        ..., description="The specific property, attribute, or condition that is being tested (e.g., 'age', 'lung cancer', 'BMI'). include the general version here and specify later in requirement_type (eg. white blood cell as criterion and count as attribute instead of white blood cell count as criterion). Note that you can have the same criterion with different requirement types. (such as criterion tumor then different requirement types like presence, severity, quantity)"
     )
     
     requirement_type: str = Field(
         ..., description="what about the criterion is being tested (e.g presence, severity, quantity, N/A if it doesn't make sense for the criterion to have an attribute (eg. age))."
     )
     
-    expected_value: Union[bool, int, float, str, Comparison, Range] = Field(
+    expected_value: Union[bool, str, NumericalComparison, Range] = Field(
         ..., description="The expected value for the criterion. only use string if nothing else is applicable"
     )
 
@@ -104,3 +90,10 @@ class ParsedTrial(BaseModel):
         ...,description="List of lines that failed to be structurized."
     )
 
+class oneParsedLine(BaseModel):
+    """
+    Represents the collection of all structured atomic criteria and leftovers.
+    """
+    atomic_criteria: List[SingleRawCriterion] = Field(
+        ..., description="List of all atomic criteria extracted from the trial."
+    )

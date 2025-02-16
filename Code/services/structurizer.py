@@ -2,12 +2,10 @@
 
 import logging
 import re
-from typing import List, Optional
-from models.LLM_responses import oneParsedLine
+from typing import List
 from models.structured_criteria import RawTrialData
-from models.structured_criteria import SingleRawCriterion, ParsedTrial, structuredLine
+from models.structured_criteria import SingleRawCriterion, ParsedTrial, structuredLine, RawTrialData, oneParsedLine
 from utils.openai_client import get_openai_client
-import rich
 
 logger = logging.getLogger(__name__)
 
