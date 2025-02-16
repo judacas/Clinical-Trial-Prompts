@@ -37,15 +37,15 @@ def get_trial_data(nct_id: str) -> RawTrialData:
                 logger.error("No data found for NCT ID: %s", nct_id)
                 logger.debug("Response data: %s", data)
                 raise ValueError(f"No data found for NCT ID: {nct_id}")
-                
-                
+
+
         official_title = study.get(
             "identificationModule", {}
         ).get("officialTitle", "")
         eligibility = study.get(
             "eligibilityModule", {}
         ).get("eligibilityCriteria", "")       
-        
+
         raw_data = RawTrialData(
             nct_id=nct_id, official_title=official_title, criteria=eligibility
         )
@@ -55,7 +55,7 @@ def get_trial_data(nct_id: str) -> RawTrialData:
         return raw_data
     except Exception as e:
         logger.error("Error fetching trial data: %s", e)
-        raise ValueError(f"Error fetching trial data: {e}")
+        raise ValueError(f"Error fetching trial data: {e}") from e
 
 
 def process_trial(nct_id: str, verbose: bool = False) -> ParsedTrial:
