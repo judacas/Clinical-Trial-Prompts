@@ -1,5 +1,4 @@
 # main.py
-
 import logging
 from services.trial_manager import process_trial
 from repositories.trial_repository import save_trial

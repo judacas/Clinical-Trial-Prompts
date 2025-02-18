@@ -3,8 +3,8 @@
 import os
 import logging
 from typing import Optional
-from Code.models.identified_criteria import IdentifiedTrial
-from Code.models.trial import Trial
+from models.identified_criteria import IdentifiedTrial
+from models.trial import Trial
 
 # Configure logging
 logger = logging.getLogger(__name__)
