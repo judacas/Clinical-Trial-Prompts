@@ -3,15 +3,19 @@
 import logging
 import re
 from typing import List
+
+import rich
 from models.identified_criteria import RawTrialData
 from models.identified_criteria import SingleRawCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
 from utils.openai_client import get_openai_client
+from enum import Enum
 
 logger = logging.getLogger(__name__)
 
 client = get_openai_client()
 
-def identify_line_by_line(trial: RawTrialData) -> IdentifiedTrial:
+
+def identify_criterions_from_rawTrial(trial: RawTrialData) -> IdentifiedTrial:
     """
     Structurizes the trial's eligibility criteria using a bottom-up approach.
 
@@ -22,13 +26,34 @@ def identify_line_by_line(trial: RawTrialData) -> IdentifiedTrial:
     Returns:
         Optional[StructuredCriteria]: The structured criteria or None if failed.
     """
-    logger.info("Starting bottom-up structurization for trial NCT ID: %s", trial.nct_id)
+    logger.info("Starting identification of criteria for trial NCT ID: %s", trial.nct_id)
+    rich.print(trial)
+    
+    inclusion_criteria_lines, inclusion_failed = process_lines(trial.inclusion_criteria)
+    exclusion_criteria_lines, exclusion_failed = process_lines(trial.exclusion_criteria)
+    miscellaneous_criteria_lines, miscellaneous_failed = process_lines(trial.miscellaneous_criteria)
 
-    raw_text = trial.criteria
-    print(trial)
-    lines = [line.strip() for line in re.split(r'[\n\r]+', raw_text) if line.strip()]
-    logger.debug("Split raw text into %d lines.", len(lines))
+    # Combine the results into the IdentifiedTrial object
+    identified_trial = IdentifiedTrial(
+        info=trial,
+        inclusion_lines=inclusion_criteria_lines,
+        exclusion_lines=exclusion_criteria_lines,
+        miscellaneous_lines=miscellaneous_criteria_lines,
+        failed_inclusion=inclusion_failed,
+        failed_exclusion=exclusion_failed,
+        failed_miscellaneous=miscellaneous_failed
+    )
+    
 
+    if inclusion_criteria_lines or exclusion_criteria_lines or miscellaneous_criteria_lines:
+        logger.info("Successfully structurized trial NCT ID: %s", trial.nct_id)
+        return identified_trial
+    else:
+        logger.warning("No atomic criteria extracted for trial NCT ID: %s", trial.nct_id)
+        raise ValueError(f"No atomic criteria extracted for trial NCT ID: {trial.nct_id}\nThis was the failed result: {identified_trial}")
+
+def process_lines(section_text : str) -> tuple[list[IdentifiedLine], list[IdentifiedLine]]:
+    lines = [line.strip() for line in re.split(r'[\n\r]+', section_text) if line.strip()]
     identified_criteria_lines:List[IdentifiedLine] = []
     failed: List[IdentifiedLine] = []
 
@@ -46,18 +71,7 @@ def identify_line_by_line(trial: RawTrialData) -> IdentifiedTrial:
         else:
             logger.warning("Failed to extract criteria from line %d.", index + 1)
             failed.append(IdentifiedLine(line=line, criterions=[]))
-
-    if identified_criteria_lines:
-        identified_trial = IdentifiedTrial(info=trial, lines=identified_criteria_lines, failed=failed)
-        logger.info("Successfully structurized trial NCT ID: %s", trial.nct_id)
-        return identified_trial
-    else:
-        logger.warning("No atomic criteria extracted for trial NCT ID: %s", trial.nct_id)
-        raise ValueError(f"No atomic criteria extracted for trial NCT ID: {trial.nct_id}")
-
-    
-
-
+    return identified_criteria_lines, failed
 
 def extract_atomic_criteria_from_line(line: str) -> LLMIdentifiedLineResponse:
     """
@@ -74,10 +88,10 @@ def extract_atomic_criteria_from_line(line: str) -> LLMIdentifiedLineResponse:
         "You are an expert in clinical trial eligibility criteria."
         "Given the following line from an Oncological Clinical Trial Eligibility Criteria, extract every individual criterion they are testing the patient for."
         "In other words, what are the specific properties/attributes/conditions that are being tested for in the patient?"
-        "For each criterion, provide the exact quotes from the line that you used to identify it."
-        "Should your exact text be non-contiguous then provide multiple exact snippets"
-        
+        "For each criterion, provide the exact snippets from the line that you used to identify it."
+        "Should your exact snippets be non-contiguous then provide multiple short exact snippets"
     )
+    
 
     try:
         completion = client.beta.chat.completions.parse(

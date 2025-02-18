@@ -2,9 +2,11 @@
     "info": {
         "nct_id": "NCT00050349",
         "official_title": "EPO906 Therapy in Patients With Metastatic Carcinoid Tumors and Other Neuroendocrine Tumors",
-        "criteria": "Inclusion Criteria:\n\n* Patients with biopsy-proven metastatic carcinoid tumors or other neuroendocrine tumors (Islet cell, Gastrinomas and VIPomas) with at least one measurable lesion (other than bone) that has either not been previously irradiated or if previously irradiated has demonstrated progression since the radiation therapy\n* The patient has no major impairment of renal or hepatic function, as defined by the following laboratory parameters: total bilirubin <1.5 X ULN; AST, ALT<2.5X ULN (<5 X ULN if liver metastases are present)\n* Patients on Sandostatin Lar (long acting somatostatin analogue) must be on a stable dose for 30 days prior to study entry and short acting somatostatin analogues must be judged to be on a clinically stable dose by the investigator prior to study entry\n* Must have a life expectancy of greater than three (3) months\n* Karnofsky Performance Status > 60\n* Female patients must have a negative serum pregnancy test at screening. (Not applicable to patients with bilateral oophorectomy and/or hysterectomy or to those patients who are postmenopausal.)\n\nExclusion Criteria:\n\n* Patients with symptomatic CNS metastases or leptomeningeal involvement\n* Patients with known brain metastases, unless these metastases have been treated and/or have been stable for at least six months prior to study start. Subjects with a history of brain metastases must have a head CT with contrast to document either response or progression.\n* Patients with bone metastases as the only site(s) of measurable disease\n* Patients with hepatic artery chemoembolization within the last 6 months (one month if there are other sites of measurable disease)\n* Patients who have been previously treated with radioactive directed therapies\n* Patients who have been previously treated with epothilone\n* Patients with any peripheral neuropathy or unresolved diarrhea greater than Grade 1\n* Patients with severe cardiac insufficiency patients taking Coumadin or other warfarin-containing agents with the exception of low dose warfarin (1 mg or less) for the maintenance of in-dwelling lines or ports\n* Patients taking any experimental therapies history of another malignancy within 5 years prior to study entry except curatively treated non-melanoma skin cancer, prostate cancer, or cervical cancer in situ\n* Patients with active or suspected acute or chronic uncontrolled infection including abcesses or fistulae\n* Patients with a medical or psychiatric illness that would preclude study or informed consent and/or history of noncompliance to medical regimens or inability or unwillingness to return for all scheduled visits\n* HIV+ patients\n* Pregnant or lactating females.\nMust have minimum age of 18 Years"
+        "inclusion_criteria": "* Patients with biopsy-proven metastatic carcinoid tumors or other neuroendocrine tumors (Islet cell, Gastrinomas and VIPomas) with at least one measurable lesion (other than bone) that has either not been previously irradiated or if previously irradiated has demonstrated progression since the radiation therapy\n* The patient has no major impairment of renal or hepatic function, as defined by the following laboratory parameters: total bilirubin <1.5 X ULN; AST, ALT<2.5X ULN (<5 X ULN if liver metastases are present)\n* Patients on Sandostatin Lar (long acting somatostatin analogue) must be on a stable dose for 30 days prior to study entry and short acting somatostatin analogues must be judged to be on a clinically stable dose by the investigator prior to study entry\n* Must have a life expectancy of greater than three (3) months\n* Karnofsky Performance Status > 60\n* Female patients must have a negative serum pregnancy test at screening. (Not applicable to patients with bilateral oophorectomy and/or hysterectomy or to those patients who are postmenopausal.)\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients with symptomatic CNS metastases or leptomeningeal involvement\n* Patients with known brain metastases, unless these metastases have been treated and/or have been stable for at least six months prior to study start. Subjects with a history of brain metastases must have a head CT with contrast to document either response or progression.\n* Patients with bone metastases as the only site(s) of measurable disease\n* Patients with hepatic artery chemoembolization within the last 6 months (one month if there are other sites of measurable disease)\n* Patients who have been previously treated with radioactive directed therapies\n* Patients who have been previously treated with epothilone\n* Patients with any peripheral neuropathy or unresolved diarrhea greater than Grade 1\n* Patients with severe cardiac insufficiency patients taking Coumadin or other warfarin-containing agents with the exception of low dose warfarin (1 mg or less) for the maintenance of in-dwelling lines or ports\n* Patients taking any experimental therapies history of another malignancy within 5 years prior to study entry except curatively treated non-melanoma skin cancer, prostate cancer, or cervical cancer in situ\n* Patients with active or suspected acute or chronic uncontrolled infection including abcesses or fistulae\n* Patients with a medical or psychiatric illness that would preclude study or informed consent and/or history of noncompliance to medical regimens or inability or unwillingness to return for all scheduled visits\n* HIV+ patients\n* Pregnant or lactating females.",
+        "miscellaneous_criteria": ""
     },
-    "lines": [
+    "inclusion_lines": [
         {
             "line": "* Patients with biopsy-proven metastatic carcinoid tumors or other neuroendocrine tumors (Islet cell, Gastrinomas and VIPomas) with at least one measurable lesion (other than bone) that has either not been previously irradiated or if previously irradiated has demonstrated progression since the radiation therapy",
             "criterions": [
@@ -13,8 +15,8 @@
                         "biopsy-proven metastatic carcinoid tumors"
                     ],
                     "criterion": "metastatic carcinoid tumors",
-                    "requirement_type": "confirmation method",
-                    "expected_value": "biopsy-proven"
+                    "requirement_type": "confirmation",
+                    "expected_value": true
                 },
                 {
                     "exact_snippets": [
@@ -34,7 +36,10 @@
                     ],
                     "criterion": "measurable lesion",
                     "requirement_type": "quantity",
-                    "expected_value": ">= 1"
+                    "expected_value": {
+                        "operator": ">=",
+                        "value": 1
+                    }
                 },
                 {
                     "exact_snippets": [
@@ -88,30 +93,42 @@
                     "criterion": "total bilirubin",
                     "requirement_type": "level",
                     "expected_value": {
-                        "operator": "<",
-                        "value": 1.5
+                        "comparisons": [
+                            {
+                                "operator": "<",
+                                "value": 1.5
+                            }
+                        ]
                     }
                 },
                 {
                     "exact_snippets": [
-                        "AST, ALT<2.5X ULN"
+                        "AST, ALT<2.5X ULN (<5 X ULN if liver metastases are present)"
                     ],
                     "criterion": "AST",
                     "requirement_type": "level",
                     "expected_value": {
-                        "operator": "<",
-                        "value": 2.5
+                        "comparisons": [
+                            {
+                                "operator": "<",
+                                "value": 2.5
+                            }
+                        ]
                     }
                 },
                 {
                     "exact_snippets": [
-                        "AST, ALT<2.5X ULN"
+                        "AST, ALT<2.5X ULN (<5 X ULN if liver metastases are present)"
                     ],
                     "criterion": "ALT",
                     "requirement_type": "level",
                     "expected_value": {
-                        "operator": "<",
-                        "value": 2.5
+                        "comparisons": [
+                            {
+                                "operator": "<",
+                                "value": 2.5
+                            }
+                        ]
                     }
                 },
                 {
@@ -121,8 +138,12 @@
                     "criterion": "AST",
                     "requirement_type": "level with liver metastases",
                     "expected_value": {
-                        "operator": "<",
-                        "value": 5
+                        "comparisons": [
+                            {
+                                "operator": "<",
+                                "value": 5
+                            }
+                        ]
                     }
                 },
                 {
@@ -132,8 +153,12 @@
                     "criterion": "ALT",
                     "requirement_type": "level with liver metastases",
                     "expected_value": {
-                        "operator": "<",
-                        "value": 5
+                        "comparisons": [
+                            {
+                                "operator": "<",
+                                "value": 5
+                            }
+                        ]
                     }
                 }
             ]
@@ -156,12 +181,8 @@
                     "criterion": "Sandostatin Lar (long acting somatostatin analogue)",
                     "requirement_type": "dose stability duration",
                     "expected_value": {
-                        "comparisons": [
-                            {
-                                "operator": ">=",
-                                "value": 30
-                            }
-                        ]
+                        "operator": ">=",
+                        "value": 30
                     }
                 },
                 {
@@ -187,7 +208,7 @@
             "criterions": [
                 {
                     "exact_snippets": [
-                        "Must have a life expectancy of greater than three (3) months"
+                        "life expectancy of greater than three (3) months"
                     ],
                     "criterion": "life expectancy",
                     "requirement_type": "duration",
@@ -214,6 +235,37 @@
                 }
             ]
         },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": [
+                        "Healthy volunteers allowed"
+                    ],
+                    "criterion": "healthy volunteers",
+                    "requirement_type": "participation",
+                    "expected_value": true
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": [
+                        "minimum age of 18 Years"
+                    ],
+                    "criterion": "age",
+                    "requirement_type": "minimum",
+                    "expected_value": {
+                        "operator": ">=",
+                        "value": 18
+                    }
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
         {
             "line": "* Patients with symptomatic CNS metastases or leptomeningeal involvement",
             "criterions": [
@@ -256,8 +308,8 @@
                 },
                 {
                     "exact_snippets": [
-                        "metastases have been",
-                        "stable for at least six months"
+                        "metastases",
+                        "have been stable for at least six months"
                     ],
                     "criterion": "brain metastases",
                     "requirement_type": "stability duration",
@@ -291,8 +343,11 @@
                         "document either response or progression"
                     ],
                     "criterion": "brain metastases",
-                    "requirement_type": "documentation of response or progression",
-                    "expected_value": true
+                    "requirement_type": "documentation",
+                    "expected_value": [
+                        "response",
+                        "progression"
+                    ]
                 }
             ]
         },
@@ -373,7 +428,7 @@
             "criterions": [
                 {
                     "exact_snippets": [
-                        "Patients who have been previously treated with epothilone"
+                        "previously treated with epothilone"
                     ],
                     "criterion": "epothilone treatment",
                     "requirement_type": "history",
@@ -399,12 +454,8 @@
                     "criterion": "diarrhea",
                     "requirement_type": "severity",
                     "expected_value": {
-                        "comparisons": [
-                            {
-                                "operator": ">",
-                                "value": 1
-                            }
-                        ]
+                        "operator": ">",
+                        "value": 1
                     }
                 }
             ]
@@ -422,7 +473,7 @@
                 },
                 {
                     "exact_snippets": [
-                        "patients taking Coumadin or other warfarin-containing agents"
+                        "taking Coumadin or other warfarin-containing agents"
                     ],
                     "criterion": "warfarin-containing agents",
                     "requirement_type": "usage",
@@ -430,7 +481,7 @@
                 },
                 {
                     "exact_snippets": [
-                        "with the exception of low dose warfarin (1 mg or less)"
+                        "low dose warfarin (1 mg or less)"
                     ],
                     "criterion": "warfarin dose",
                     "requirement_type": "quantity",
@@ -460,8 +511,8 @@
                     "exact_snippets": [
                         "history of another malignancy within 5 years prior to study entry"
                     ],
-                    "criterion": "malignancy history",
-                    "requirement_type": "time frame",
+                    "criterion": "malignancy",
+                    "requirement_type": "history",
                     "expected_value": {
                         "comparisons": [
                             {
@@ -473,7 +524,7 @@
                 },
                 {
                     "exact_snippets": [
-                        "except curatively treated non-melanoma skin cancer"
+                        "curatively treated non-melanoma skin cancer"
                     ],
                     "criterion": "non-melanoma skin cancer",
                     "requirement_type": "treatment status",
@@ -481,7 +532,7 @@
                 },
                 {
                     "exact_snippets": [
-                        "except curatively treated",
+                        "curatively treated",
                         "prostate cancer"
                     ],
                     "criterion": "prostate cancer",
@@ -490,7 +541,7 @@
                 },
                 {
                     "exact_snippets": [
-                        "except curatively treated",
+                        "curatively treated",
                         "cervical cancer in situ"
                     ],
                     "criterion": "cervical cancer in situ",
@@ -536,7 +587,7 @@
                         "medical or psychiatric illness that would preclude study or informed consent"
                     ],
                     "criterion": "medical or psychiatric illness",
-                    "requirement_type": "impact on study participation",
+                    "requirement_type": "impact",
                     "expected_value": "preclude study or informed consent"
                 },
                 {
@@ -551,8 +602,8 @@
                     "exact_snippets": [
                         "inability or unwillingness to return for all scheduled visits"
                     ],
-                    "criterion": "return for scheduled visits",
-                    "requirement_type": "ability or willingness",
+                    "criterion": "ability or willingness to return for scheduled visits",
+                    "requirement_type": "presence",
                     "expected_value": true
                 }
             ]
@@ -566,7 +617,7 @@
                     ],
                     "criterion": "HIV status",
                     "requirement_type": "presence",
-                    "expected_value": "positive"
+                    "expected_value": true
                 }
             ]
         },
@@ -579,7 +630,7 @@
                     ],
                     "criterion": "pregnancy",
                     "requirement_type": "status",
-                    "expected_value": true
+                    "expected_value": false
                 },
                 {
                     "exact_snippets": [
@@ -587,32 +638,13 @@
                     ],
                     "criterion": "lactation",
                     "requirement_type": "status",
-                    "expected_value": true
-                }
-            ]
-        },
-        {
-            "line": "Must have minimum age of 18 Years",
-            "criterions": [
-                {
-                    "exact_snippets": [
-                        "minimum age of 18 Years"
-                    ],
-                    "criterion": "age",
-                    "requirement_type": "minimum",
-                    "expected_value": {
-                        "operator": ">=",
-                        "value": 18
-                    }
+                    "expected_value": false
                 }
             ]
         }
     ],
-    "failed": [
-        {
-            "line": "Inclusion Criteria:",
-            "criterions": []
-        },
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
         {
             "line": "* Female patients must have a negative serum pregnancy test at screening. (Not applicable to patients with bilateral oophorectomy and/or hysterectomy or to those patients who are postmenopausal.)",
             "criterions": [
@@ -628,7 +660,7 @@
                     "exact_snippets": [
                         "negative serum pregnancy test"
                     ],
-                    "criterion": "pregnancy test",
+                    "criterion": "serum pregnancy test",
                     "requirement_type": "result",
                     "expected_value": "negative"
                 },
@@ -636,9 +668,9 @@
                     "exact_snippets": [
                         "at screening"
                     ],
-                    "criterion": "screening",
+                    "criterion": "timing of serum pregnancy test",
                     "requirement_type": "timing",
-                    "expected_value": "at screening"
+                    "expected_value": "screening"
                 },
                 {
                     "exact_snippets": [
@@ -666,10 +698,8 @@
                     "expected_value": "postmenopausal"
                 }
             ]
-        },
-        {
-            "line": "Exclusion Criteria:",
-            "criterions": []
         }
-    ]
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
 }

@@ -1,7 +1,9 @@
 # services/trial_manager.py
 import logging
+
+import rich
 from models.identified_criteria import IdentifiedTrial, RawTrialData
-from services.identifier import identify_line_by_line
+from services.identifier import identify_criterions_from_rawTrial
 from utils.helpers import curl_with_status_check
 
 import re
@@ -105,13 +107,36 @@ def get_trial_data(nct_id: str) -> RawTrialData:
         ).get("officialTitle", "")
         eligibilityModule = study.get("eligibilityModule", {})
         eligibility = remove_pesky_slash(eligibilityModule.get("eligibilityCriteria", ""))
-        extra_criteria = get_extra_criteria(eligibilityModule)
-        eligibility += "\n" + "\n".join(extra_criteria)   
+        extra_criteria = "\n".join(get_extra_criteria(eligibilityModule))
+        
+        inclusion_pos = eligibility.find("Inclusion Criteria:")
+        exclusion_pos = eligibility.find("Exclusion Criteria:")
+
+        # Separate the text into inclusion, exclusion, and miscellaneous sections
+        if inclusion_pos != -1 and exclusion_pos != -1:
+            inclusion_text = eligibility[inclusion_pos + len("Inclusion Criteria:"):exclusion_pos].strip()
+            exclusion_text = eligibility[exclusion_pos + len("Exclusion Criteria:"):].strip()
+            miscellaneous_text = eligibility[:inclusion_pos].strip()
+            
+        elif inclusion_pos != -1:
+            inclusion_text = eligibility[inclusion_pos + len("Inclusion Criteria:"):].strip()
+            exclusion_text = ""
+            miscellaneous_text = eligibility[:inclusion_pos].strip()
+        elif exclusion_pos != -1:
+            inclusion_text = ""
+            exclusion_text = eligibility[exclusion_pos + len("Exclusion Criteria:"):].strip()
+            miscellaneous_text = eligibility[:exclusion_pos].strip()
+        else:
+            inclusion_text = ""
+            exclusion_text = ""
+            miscellaneous_text = eligibility.strip()
+            
+        inclusion_text = (inclusion_text + "\n" + extra_criteria).strip()
         
         
 
         raw_data = RawTrialData(
-            nct_id=nct_id, official_title=official_title, criteria=eligibility
+            nct_id=nct_id, official_title=official_title, inclusion_criteria=inclusion_text, exclusion_criteria=exclusion_text, miscellaneous_criteria=miscellaneous_text
         )
         logger.info("Successfully retrieved trial data.")
         logger.debug("Fully raw input: %s", data)
@@ -136,9 +161,9 @@ def process_trial(nct_id: str, verbose: bool = False) -> IdentifiedTrial:
     raw_data = get_trial_data(nct_id)
     if not raw_data:
         raise ValueError(f"Failed to fetch trial data for NCT ID: {nct_id}")
-    processedTrial: IdentifiedTrial = identify_line_by_line(raw_data)
+    processedTrial: IdentifiedTrial = identify_criterions_from_rawTrial(raw_data)
     
     logger.info("Trial processing complete for NCT ID: %s", nct_id)
-    logger.info("Processed trial: %s", processedTrial)
+    rich.print(processedTrial)
     
     return processedTrial
