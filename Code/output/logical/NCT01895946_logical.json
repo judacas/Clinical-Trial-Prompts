@@ -1,0 +1,750 @@
+{
+    "info": {
+        "nct_id": "NCT01895946",
+        "official_title": "A Phase I, Open-Label, Multicentre Study to Compare Two Dosage Formulations of AZD5363 and to Establish the Effect of Food on the Pharmacokinetic Exposure, Safety and Tolerability of AZD5363 in Patients With Advanced Solid Malignancies",
+        "inclusion_criteria": "-\n\n* Aged at least 18 years\n* The presence of a solid, malignant tumour, excluding lymphoma, that is resistance to standard therapies or for which no standard therapies exist\n* The presence of at least one lesion that can be accurately assessed at baseline by Computerised Tomography (CT), Magnetic Resonance Imaging (MRI) or plain X-ray and is suitable for repeated assessment\n* Estimated life expectancy of more than 12 weeks\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 100 Years",
+        "exclusion_criteria": "-\n\n* Clinically significant abnormalities of glucose metabolism\n* Spinal cord compression or brain metastases unless asymptomatic, treated and stable (not requiring steroids)\n* Evidence of severe or uncontrolled systemic diseases, including active bleeding diatheses or active infections including hepatitis B, C and Human Immunodeficiency Virus (HIV)\n* Evidence of clinically significant cardiac abnormalities, uncontrolled hypotension, left ventricular ejection fraction below the lower limit of normal for the site or experience of significant cardiac interventional procedures\n* A bad reaction to AZD5363 or any drugs similar to it in structure or class",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Aged at least 18 years",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Aged at least 18 years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Aged at least 18 years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The presence of a solid, malignant tumour, excluding lymphoma, that is resistance to standard therapies or for which no standard therapies exist",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "presence of a solid, malignant tumour"
+                        ],
+                        "criterion": "solid malignant tumour",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "excluding lymphoma"
+                        ],
+                        "criterion": "lymphoma",
+                        "requirement_type": "exclusion",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "resistance to standard therapies"
+                        ],
+                        "criterion": "tumour resistance",
+                        "requirement_type": "resistance",
+                        "expected_value": "standard therapies"
+                    },
+                    {
+                        "exact_snippets": [
+                            "for which no standard therapies exist"
+                        ],
+                        "criterion": "standard therapies",
+                        "requirement_type": "existence",
+                        "expected_value": false
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": [
+                                        "presence of a solid, malignant tumour"
+                                    ],
+                                    "criterion": "solid malignant tumour",
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                },
+                                {
+                                    "not_criteria": {
+                                        "exact_snippets": [
+                                            "excluding lymphoma"
+                                        ],
+                                        "criterion": "lymphoma",
+                                        "requirement_type": "exclusion",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "or_criteria": [
+                        {
+                            "exact_snippets": [
+                                "resistance to standard therapies"
+                            ],
+                            "criterion": "tumour resistance",
+                            "requirement_type": "resistance",
+                            "expected_value": "standard therapies"
+                        },
+                        {
+                            "exact_snippets": [
+                                "for which no standard therapies exist"
+                            ],
+                            "criterion": "standard therapies",
+                            "requirement_type": "existence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The presence of at least one lesion that can be accurately assessed at baseline by Computerised Tomography (CT), Magnetic Resonance Imaging (MRI) or plain X-ray and is suitable for repeated assessment",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "The presence of at least one lesion"
+                        ],
+                        "criterion": "lesion",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "can be accurately assessed at baseline by Computerised Tomography (CT), Magnetic Resonance Imaging (MRI) or plain X-ray"
+                        ],
+                        "criterion": "lesion",
+                        "requirement_type": "assessability",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "suitable for repeated assessment"
+                        ],
+                        "criterion": "lesion",
+                        "requirement_type": "suitability for repeated assessment",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "The presence of at least one lesion"
+                        ],
+                        "criterion": "lesion",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "can be accurately assessed at baseline by Computerised Tomography (CT), Magnetic Resonance Imaging (MRI) or plain X-ray"
+                        ],
+                        "criterion": "lesion",
+                        "requirement_type": "assessability",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "suitable for repeated assessment"
+                        ],
+                        "criterion": "lesion",
+                        "requirement_type": "suitability for repeated assessment",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Estimated life expectancy of more than 12 weeks",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Estimated life expectancy",
+                            "more than 12 weeks"
+                        ],
+                        "criterion": "life expectancy",
+                        "requirement_type": "duration",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 12
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Estimated life expectancy",
+                            "more than 12 weeks"
+                        ],
+                        "criterion": "life expectancy",
+                        "requirement_type": "duration",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 12
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "healthy volunteers",
+                        "requirement_type": "participation",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "healthy volunteers",
+                        "requirement_type": "participation",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 100 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "maximum age of 100 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "maximum",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 100
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "maximum age of 100 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "maximum",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 100
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "-",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Clinically significant abnormalities of glucose metabolism",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Clinically significant abnormalities of glucose metabolism"
+                        ],
+                        "criterion": "glucose metabolism",
+                        "requirement_type": "abnormalities",
+                        "expected_value": "clinically significant"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Clinically significant abnormalities of glucose metabolism"
+                    ],
+                    "criterion": "glucose metabolism",
+                    "requirement_type": "abnormalities",
+                    "expected_value": "clinically significant"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Spinal cord compression or brain metastases unless asymptomatic, treated and stable (not requiring steroids)",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Spinal cord compression"
+                        ],
+                        "criterion": "spinal cord compression",
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    },
+                    {
+                        "exact_snippets": [
+                            "brain metastases"
+                        ],
+                        "criterion": "brain metastases",
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    },
+                    {
+                        "exact_snippets": [
+                            "asymptomatic"
+                        ],
+                        "criterion": "symptoms",
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    },
+                    {
+                        "exact_snippets": [
+                            "treated"
+                        ],
+                        "criterion": "treatment",
+                        "requirement_type": "status",
+                        "expected_value": "completed"
+                    },
+                    {
+                        "exact_snippets": [
+                            "stable"
+                        ],
+                        "criterion": "condition stability",
+                        "requirement_type": "status",
+                        "expected_value": "stable"
+                    },
+                    {
+                        "exact_snippets": [
+                            "not requiring steroids"
+                        ],
+                        "criterion": "steroid requirement",
+                        "requirement_type": "necessity",
+                        "expected_value": false
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": [
+                                    "Spinal cord compression"
+                                ],
+                                "criterion": "spinal cord compression",
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": [
+                                    "brain metastases"
+                                ],
+                                "criterion": "brain metastases",
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            },
+                            {
+                                "not_criteria": {
+                                    "and_criteria": [
+                                        {
+                                            "exact_snippets": [
+                                                "asymptomatic"
+                                            ],
+                                            "criterion": "symptoms",
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        },
+                                        {
+                                            "exact_snippets": [
+                                                "treated"
+                                            ],
+                                            "criterion": "treatment",
+                                            "requirement_type": "status",
+                                            "expected_value": "completed"
+                                        },
+                                        {
+                                            "exact_snippets": [
+                                                "stable"
+                                            ],
+                                            "criterion": "condition stability",
+                                            "requirement_type": "status",
+                                            "expected_value": "stable"
+                                        },
+                                        {
+                                            "exact_snippets": [
+                                                "not requiring steroids"
+                                            ],
+                                            "criterion": "steroid requirement",
+                                            "requirement_type": "necessity",
+                                            "expected_value": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Evidence of clinically significant cardiac abnormalities, uncontrolled hypotension, left ventricular ejection fraction below the lower limit of normal for the site or experience of significant cardiac interventional procedures",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "clinically significant cardiac abnormalities"
+                        ],
+                        "criterion": "cardiac abnormalities",
+                        "requirement_type": "significance",
+                        "expected_value": "clinically significant"
+                    },
+                    {
+                        "exact_snippets": [
+                            "uncontrolled hypotension"
+                        ],
+                        "criterion": "hypotension",
+                        "requirement_type": "control",
+                        "expected_value": false
+                    },
+                    {
+                        "exact_snippets": [
+                            "left ventricular ejection fraction below the lower limit of normal for the site"
+                        ],
+                        "criterion": "left ventricular ejection fraction",
+                        "requirement_type": "range",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": "<",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": [
+                            "experience of significant cardiac interventional procedures"
+                        ],
+                        "criterion": "cardiac interventional procedures",
+                        "requirement_type": "experience",
+                        "expected_value": "significant"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": [
+                                    "clinically significant cardiac abnormalities"
+                                ],
+                                "criterion": "cardiac abnormalities",
+                                "requirement_type": "significance",
+                                "expected_value": "clinically significant"
+                            },
+                            {
+                                "exact_snippets": [
+                                    "uncontrolled hypotension"
+                                ],
+                                "criterion": "hypotension",
+                                "requirement_type": "control",
+                                "expected_value": false
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": [
+                            "left ventricular ejection fraction below the lower limit of normal for the site"
+                        ],
+                        "criterion": "left ventricular ejection fraction",
+                        "requirement_type": "range",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": "<",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": [
+                            "experience of significant cardiac interventional procedures"
+                        ],
+                        "criterion": "cardiac interventional procedures",
+                        "requirement_type": "experience",
+                        "expected_value": "significant"
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* A bad reaction to AZD5363 or any drugs similar to it in structure or class",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "bad reaction to AZD5363"
+                        ],
+                        "criterion": "AZD5363",
+                        "requirement_type": "reaction",
+                        "expected_value": false
+                    },
+                    {
+                        "exact_snippets": [
+                            "bad reaction to",
+                            "any drugs similar to it in structure or class"
+                        ],
+                        "criterion": "drugs similar to AZD5363",
+                        "requirement_type": "reaction",
+                        "expected_value": false
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "bad reaction to AZD5363"
+                        ],
+                        "criterion": "AZD5363",
+                        "requirement_type": "reaction",
+                        "expected_value": false
+                    },
+                    {
+                        "exact_snippets": [
+                            "bad reaction to",
+                            "any drugs similar to it in structure or class"
+                        ],
+                        "criterion": "drugs similar to AZD5363",
+                        "requirement_type": "reaction",
+                        "expected_value": false
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "-",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Evidence of severe or uncontrolled systemic diseases, including active bleeding diatheses or active infections including hepatitis B, C and Human Immunodeficiency Virus (HIV)",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "severe or uncontrolled systemic diseases"
+                        ],
+                        "criterion": "systemic diseases",
+                        "requirement_type": "severity",
+                        "expected_value": "severe or uncontrolled"
+                    },
+                    {
+                        "exact_snippets": [
+                            "active bleeding diatheses"
+                        ],
+                        "criterion": "bleeding diatheses",
+                        "requirement_type": "activity",
+                        "expected_value": "active"
+                    },
+                    {
+                        "exact_snippets": [
+                            "active infections"
+                        ],
+                        "criterion": "infections",
+                        "requirement_type": "activity",
+                        "expected_value": "active"
+                    },
+                    {
+                        "exact_snippets": [
+                            "hepatitis B"
+                        ],
+                        "criterion": "hepatitis B",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "hepatitis C"
+                        ],
+                        "criterion": "hepatitis C",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Human Immunodeficiency Virus (HIV)"
+                        ],
+                        "criterion": "HIV",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": [
+                                    "severe or uncontrolled systemic diseases"
+                                ],
+                                "criterion": "systemic diseases",
+                                "requirement_type": "severity",
+                                "expected_value": "severe or uncontrolled"
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": [
+                                    "active bleeding diatheses"
+                                ],
+                                "criterion": "bleeding diatheses",
+                                "requirement_type": "activity",
+                                "expected_value": "active"
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": [
+                                    "active infections"
+                                ],
+                                "criterion": "infections",
+                                "requirement_type": "activity",
+                                "expected_value": "active"
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": [
+                                            "hepatitis B"
+                                        ],
+                                        "criterion": "hepatitis B",
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    },
+                                    {
+                                        "exact_snippets": [
+                                            "hepatitis C"
+                                        ],
+                                        "criterion": "hepatitis C",
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    },
+                                    {
+                                        "exact_snippets": [
+                                            "Human Immunodeficiency Virus (HIV)"
+                                        ],
+                                        "criterion": "HIV",
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

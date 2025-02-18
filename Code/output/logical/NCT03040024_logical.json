@@ -1,0 +1,561 @@
+{
+    "info": {
+        "nct_id": "NCT03040024",
+        "official_title": "A Randomized Placebo-controlled Pilot Study of Single-dose Intraoperative Ketamine for the Prevention of Delirium in Otolaryngeal Cancer Surgery Patients",
+        "inclusion_criteria": "* Current diagnosis of otolaryngeal cancer and undergoing surgery with general anesthesia\n* Competent to provide informed consent\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Emergency surgery\n* Monitored Anesthesia Care (i.e., regional anesthesia alone without plans for general anesthesia)\n* Surgery involving the eye, eyebrow, forehead, or frontal scalp near the sensor placement\n* Poor health literacy\n* Allergy, or have experienced any drug reaction to ketamine\n* Pregnant or lactating\n* Currently in active alcohol withdrawal\n* Taking buprenorphine for chronic pain",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Current diagnosis of otolaryngeal cancer and undergoing surgery with general anesthesia",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Current diagnosis of otolaryngeal cancer"
+                        ],
+                        "criterion": "otolaryngeal cancer",
+                        "requirement_type": "diagnosis",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "undergoing surgery"
+                        ],
+                        "criterion": "surgery",
+                        "requirement_type": "undergoing",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "general anesthesia"
+                        ],
+                        "criterion": "anesthesia",
+                        "requirement_type": "type",
+                        "expected_value": "general"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Current diagnosis of otolaryngeal cancer"
+                        ],
+                        "criterion": "otolaryngeal cancer",
+                        "requirement_type": "diagnosis",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "undergoing surgery"
+                        ],
+                        "criterion": "surgery",
+                        "requirement_type": "undergoing",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "general anesthesia"
+                        ],
+                        "criterion": "anesthesia",
+                        "requirement_type": "type",
+                        "expected_value": "general"
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Competent to provide informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Competent to provide informed consent"
+                        ],
+                        "criterion": "competence",
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Competent to provide informed consent"
+                        ],
+                        "criterion": "competence",
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "healthy volunteers",
+                        "requirement_type": "participation",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "healthy volunteers",
+                        "requirement_type": "participation",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Emergency surgery",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Emergency surgery"
+                        ],
+                        "criterion": "emergency surgery",
+                        "requirement_type": "necessity",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Emergency surgery"
+                    ],
+                    "criterion": "emergency surgery",
+                    "requirement_type": "necessity",
+                    "expected_value": true
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Monitored Anesthesia Care (i.e., regional anesthesia alone without plans for general anesthesia)",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Monitored Anesthesia Care"
+                        ],
+                        "criterion": "anesthesia care",
+                        "requirement_type": "type",
+                        "expected_value": "Monitored"
+                    },
+                    {
+                        "exact_snippets": [
+                            "regional anesthesia alone"
+                        ],
+                        "criterion": "anesthesia",
+                        "requirement_type": "type",
+                        "expected_value": "regional"
+                    },
+                    {
+                        "exact_snippets": [
+                            "without plans for general anesthesia"
+                        ],
+                        "criterion": "general anesthesia",
+                        "requirement_type": "plans",
+                        "expected_value": false
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Monitored Anesthesia Care"
+                        ],
+                        "criterion": "anesthesia care",
+                        "requirement_type": "type",
+                        "expected_value": "Monitored"
+                    },
+                    {
+                        "exact_snippets": [
+                            "regional anesthesia alone"
+                        ],
+                        "criterion": "anesthesia",
+                        "requirement_type": "type",
+                        "expected_value": "regional"
+                    },
+                    {
+                        "exact_snippets": [
+                            "without plans for general anesthesia"
+                        ],
+                        "criterion": "general anesthesia",
+                        "requirement_type": "plans",
+                        "expected_value": false
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Poor health literacy",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Poor health literacy"
+                        ],
+                        "criterion": "health literacy",
+                        "requirement_type": "quality",
+                        "expected_value": "poor"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Poor health literacy"
+                    ],
+                    "criterion": "health literacy",
+                    "requirement_type": "quality",
+                    "expected_value": "poor"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Allergy, or have experienced any drug reaction to ketamine",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Allergy"
+                        ],
+                        "criterion": "allergy",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "experienced any drug reaction to ketamine"
+                        ],
+                        "criterion": "drug reaction to ketamine",
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Allergy"
+                        ],
+                        "criterion": "allergy",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "experienced any drug reaction to ketamine"
+                        ],
+                        "criterion": "drug reaction to ketamine",
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pregnant or lactating",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Pregnant"
+                        ],
+                        "criterion": "pregnancy",
+                        "requirement_type": "status",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "lactating"
+                        ],
+                        "criterion": "lactation",
+                        "requirement_type": "status",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Pregnant"
+                        ],
+                        "criterion": "pregnancy",
+                        "requirement_type": "status",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "lactating"
+                        ],
+                        "criterion": "lactation",
+                        "requirement_type": "status",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Currently in active alcohol withdrawal",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Currently in active alcohol withdrawal"
+                        ],
+                        "criterion": "alcohol withdrawal",
+                        "requirement_type": "status",
+                        "expected_value": "active"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Currently in active alcohol withdrawal"
+                    ],
+                    "criterion": "alcohol withdrawal",
+                    "requirement_type": "status",
+                    "expected_value": "active"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Taking buprenorphine for chronic pain",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Taking buprenorphine"
+                        ],
+                        "criterion": "buprenorphine",
+                        "requirement_type": "usage",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "chronic pain"
+                        ],
+                        "criterion": "chronic pain",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Taking buprenorphine"
+                        ],
+                        "criterion": "buprenorphine",
+                        "requirement_type": "usage",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "chronic pain"
+                        ],
+                        "criterion": "chronic pain",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Surgery involving the eye, eyebrow, forehead, or frontal scalp near the sensor placement",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Surgery involving the eye"
+                        ],
+                        "criterion": "eye",
+                        "requirement_type": "surgery involvement",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Surgery involving the eyebrow"
+                        ],
+                        "criterion": "eyebrow",
+                        "requirement_type": "surgery involvement",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Surgery involving the forehead"
+                        ],
+                        "criterion": "forehead",
+                        "requirement_type": "surgery involvement",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Surgery involving the frontal scalp"
+                        ],
+                        "criterion": "frontal scalp",
+                        "requirement_type": "surgery involvement",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "near the sensor placement"
+                        ],
+                        "criterion": "sensor placement",
+                        "requirement_type": "proximity",
+                        "expected_value": "near"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": [
+                                            "Surgery involving the eye"
+                                        ],
+                                        "criterion": "eye",
+                                        "requirement_type": "surgery involvement",
+                                        "expected_value": true
+                                    },
+                                    {
+                                        "exact_snippets": [
+                                            "near the sensor placement"
+                                        ],
+                                        "criterion": "sensor placement",
+                                        "requirement_type": "proximity",
+                                        "expected_value": "near"
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": [
+                                            "Surgery involving the eyebrow"
+                                        ],
+                                        "criterion": "eyebrow",
+                                        "requirement_type": "surgery involvement",
+                                        "expected_value": true
+                                    },
+                                    {
+                                        "exact_snippets": [
+                                            "near the sensor placement"
+                                        ],
+                                        "criterion": "sensor placement",
+                                        "requirement_type": "proximity",
+                                        "expected_value": "near"
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": [
+                                            "Surgery involving the forehead"
+                                        ],
+                                        "criterion": "forehead",
+                                        "requirement_type": "surgery involvement",
+                                        "expected_value": true
+                                    },
+                                    {
+                                        "exact_snippets": [
+                                            "near the sensor placement"
+                                        ],
+                                        "criterion": "sensor placement",
+                                        "requirement_type": "proximity",
+                                        "expected_value": "near"
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": [
+                                            "Surgery involving the frontal scalp"
+                                        ],
+                                        "criterion": "frontal scalp",
+                                        "requirement_type": "surgery involvement",
+                                        "expected_value": true
+                                    },
+                                    {
+                                        "exact_snippets": [
+                                            "near the sensor placement"
+                                        ],
+                                        "criterion": "sensor placement",
+                                        "requirement_type": "proximity",
+                                        "expected_value": "near"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

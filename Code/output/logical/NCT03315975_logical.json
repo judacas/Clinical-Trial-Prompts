@@ -1,0 +1,466 @@
+{
+    "info": {
+        "nct_id": "NCT03315975",
+        "official_title": "Influenza Vaccine Responses in the Setting of Melanoma Treatment",
+        "inclusion_criteria": "* adults capable of providing consent\n* have a diagnosis of locally advanced or metastatic melanoma\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* are allergic to influenza vaccination\n* have received influenza vaccination within the past 6 months\n* require prednisone, methotrexate, or other immunosuppressing medications\n* have HIV infection\n* have a history of solid organ or bone marrow transplant\n* require combination immunotherapy\n* are on other studies requiring blood draws that might exceed 450 mL total during the period of the influenza vaccine study",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* adults capable of providing consent",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "adults"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "category",
+                        "expected_value": "adult"
+                    },
+                    {
+                        "exact_snippets": [
+                            "capable of providing consent"
+                        ],
+                        "criterion": "consent capability",
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "adults"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "category",
+                        "expected_value": "adult"
+                    },
+                    {
+                        "exact_snippets": [
+                            "capable of providing consent"
+                        ],
+                        "criterion": "consent capability",
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* have a diagnosis of locally advanced or metastatic melanoma",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "diagnosis of locally advanced or metastatic melanoma"
+                        ],
+                        "criterion": "melanoma",
+                        "requirement_type": "diagnosis",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "locally advanced or metastatic melanoma"
+                        ],
+                        "criterion": "melanoma",
+                        "requirement_type": "stage",
+                        "expected_value": [
+                            "locally advanced",
+                            "metastatic"
+                        ]
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "diagnosis of locally advanced or metastatic melanoma"
+                        ],
+                        "criterion": "melanoma",
+                        "requirement_type": "diagnosis",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "locally advanced or metastatic melanoma"
+                        ],
+                        "criterion": "melanoma",
+                        "requirement_type": "stage",
+                        "expected_value": [
+                            "locally advanced",
+                            "metastatic"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "healthy volunteers",
+                        "requirement_type": "participation",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "healthy volunteers",
+                        "requirement_type": "participation",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* are allergic to influenza vaccination",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "allergic to influenza vaccination"
+                        ],
+                        "criterion": "influenza vaccination allergy",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "allergic to influenza vaccination"
+                    ],
+                    "criterion": "influenza vaccination allergy",
+                    "requirement_type": "presence",
+                    "expected_value": true
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* have received influenza vaccination within the past 6 months",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "received influenza vaccination"
+                        ],
+                        "criterion": "influenza vaccination",
+                        "requirement_type": "receipt",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "within the past 6 months"
+                        ],
+                        "criterion": "influenza vaccination",
+                        "requirement_type": "timeframe",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": "<=",
+                                    "value": 6
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "received influenza vaccination"
+                        ],
+                        "criterion": "influenza vaccination",
+                        "requirement_type": "receipt",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "within the past 6 months"
+                        ],
+                        "criterion": "influenza vaccination",
+                        "requirement_type": "timeframe",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": "<=",
+                                    "value": 6
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* have HIV infection",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "have HIV infection"
+                        ],
+                        "criterion": "HIV infection",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "have HIV infection"
+                    ],
+                    "criterion": "HIV infection",
+                    "requirement_type": "presence",
+                    "expected_value": true
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* have a history of solid organ or bone marrow transplant",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "history of solid organ or bone marrow transplant"
+                        ],
+                        "criterion": "solid organ transplant",
+                        "requirement_type": "history",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "history of solid organ or bone marrow transplant"
+                        ],
+                        "criterion": "bone marrow transplant",
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "history of solid organ or bone marrow transplant"
+                        ],
+                        "criterion": "solid organ transplant",
+                        "requirement_type": "history",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "history of solid organ or bone marrow transplant"
+                        ],
+                        "criterion": "bone marrow transplant",
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* require combination immunotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "require combination immunotherapy"
+                        ],
+                        "criterion": "combination immunotherapy",
+                        "requirement_type": "requirement",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "require combination immunotherapy"
+                    ],
+                    "criterion": "combination immunotherapy",
+                    "requirement_type": "requirement",
+                    "expected_value": true
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* are on other studies requiring blood draws that might exceed 450 mL total during the period of the influenza vaccine study",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "are on other studies requiring blood draws"
+                        ],
+                        "criterion": "participation in other studies",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "blood draws that might exceed 450 mL total"
+                        ],
+                        "criterion": "blood draw volume",
+                        "requirement_type": "quantity",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": ">",
+                                    "value": 450
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": [
+                                "are on other studies requiring blood draws"
+                            ],
+                            "criterion": "participation in other studies",
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "exact_snippets": [
+                                "blood draws that might exceed 450 mL total"
+                            ],
+                            "criterion": "blood draw volume",
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 450
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": null,
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* require prednisone, methotrexate, or other immunosuppressing medications",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "require prednisone"
+                        ],
+                        "criterion": "prednisone",
+                        "requirement_type": "requirement",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "require methotrexate"
+                        ],
+                        "criterion": "methotrexate",
+                        "requirement_type": "requirement",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "require",
+                            "other immunosuppressing medications"
+                        ],
+                        "criterion": "immunosuppressing medications",
+                        "requirement_type": "requirement",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "require prednisone"
+                        ],
+                        "criterion": "prednisone",
+                        "requirement_type": "requirement",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "require methotrexate"
+                        ],
+                        "criterion": "methotrexate",
+                        "requirement_type": "requirement",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "require",
+                            "other immunosuppressing medications"
+                        ],
+                        "criterion": "immunosuppressing medications",
+                        "requirement_type": "requirement",
+                        "expected_value": true
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

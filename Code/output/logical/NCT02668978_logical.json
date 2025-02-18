@@ -1,0 +1,552 @@
+{
+    "info": {
+        "nct_id": "NCT02668978",
+        "official_title": "Prospective Randomized Clinical Trial to Prevent Air Leaks After Lung Resection With Hemopatch™ Sealing Hemostat: SEALLS (Sealing Evaluation of Air Leaks After Lung Surgery) Trial",
+        "inclusion_criteria": "* Patients over the age of 18 years who are able to give their informed consent\n* Patients undergoing lung resection surgery for either malignant or benign conditions including:\n\n  * Lobar and sublobar resections\n  * Open, video-assisted thoracoscopic or robotic surgeries\n  * Diagnostic or therapeutic procedures\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Traumatic pulmonary contusion or laceration\n* Lung reduction surgery\n* Planned removal of more than 10 lung lesions\n* Pneumonectomy\n* Known hypersensitivity to bovine protein\n* Known hypersensitivity to Brilliant Blue FCF (E133)\n* Presence of active infection",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients over the age of 18 years who are able to give their informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "over the age of 18 years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 18
+                        }
+                    },
+                    {
+                        "exact_snippets": [
+                            "able to give their informed consent"
+                        ],
+                        "criterion": "informed consent",
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "over the age of 18 years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 18
+                        }
+                    },
+                    {
+                        "exact_snippets": [
+                            "able to give their informed consent"
+                        ],
+                        "criterion": "informed consent",
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients undergoing lung resection surgery for either malignant or benign conditions including:",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "lung resection surgery"
+                        ],
+                        "criterion": "lung resection surgery",
+                        "requirement_type": "undergoing",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "malignant or benign conditions"
+                        ],
+                        "criterion": "condition type",
+                        "requirement_type": "type",
+                        "expected_value": [
+                            "malignant",
+                            "benign"
+                        ]
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": [
+                                    "lung resection surgery"
+                                ],
+                                "criterion": "lung resection surgery",
+                                "requirement_type": "undergoing",
+                                "expected_value": true
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": [
+                                            "malignant or benign conditions"
+                                        ],
+                                        "criterion": "condition type",
+                                        "requirement_type": "type",
+                                        "expected_value": "malignant"
+                                    },
+                                    {
+                                        "exact_snippets": [
+                                            "malignant or benign conditions"
+                                        ],
+                                        "criterion": "condition type",
+                                        "requirement_type": "type",
+                                        "expected_value": "benign"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lobar and sublobar resections",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Lobar"
+                        ],
+                        "criterion": "lobar resection",
+                        "requirement_type": "procedure",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "sublobar"
+                        ],
+                        "criterion": "sublobar resection",
+                        "requirement_type": "procedure",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Lobar"
+                        ],
+                        "criterion": "lobar resection",
+                        "requirement_type": "procedure",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "sublobar"
+                        ],
+                        "criterion": "sublobar resection",
+                        "requirement_type": "procedure",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Open, video-assisted thoracoscopic or robotic surgeries",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Open"
+                        ],
+                        "criterion": "surgery type",
+                        "requirement_type": "type",
+                        "expected_value": "open"
+                    },
+                    {
+                        "exact_snippets": [
+                            "video-assisted thoracoscopic"
+                        ],
+                        "criterion": "surgery type",
+                        "requirement_type": "type",
+                        "expected_value": "video-assisted thoracoscopic"
+                    },
+                    {
+                        "exact_snippets": [
+                            "robotic"
+                        ],
+                        "criterion": "surgery type",
+                        "requirement_type": "type",
+                        "expected_value": "robotic"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Open"
+                        ],
+                        "criterion": "surgery type",
+                        "requirement_type": "type",
+                        "expected_value": "open"
+                    },
+                    {
+                        "exact_snippets": [
+                            "video-assisted thoracoscopic"
+                        ],
+                        "criterion": "surgery type",
+                        "requirement_type": "type",
+                        "expected_value": "video-assisted thoracoscopic"
+                    },
+                    {
+                        "exact_snippets": [
+                            "robotic"
+                        ],
+                        "criterion": "surgery type",
+                        "requirement_type": "type",
+                        "expected_value": "robotic"
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Diagnostic or therapeutic procedures",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Diagnostic or therapeutic procedures"
+                        ],
+                        "criterion": "diagnostic procedures",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Diagnostic or therapeutic procedures"
+                        ],
+                        "criterion": "therapeutic procedures",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Diagnostic or therapeutic procedures"
+                        ],
+                        "criterion": "diagnostic procedures",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Diagnostic or therapeutic procedures"
+                        ],
+                        "criterion": "therapeutic procedures",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "healthy volunteers",
+                        "requirement_type": "participation",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "healthy volunteers",
+                        "requirement_type": "participation",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Traumatic pulmonary contusion or laceration",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Traumatic pulmonary contusion"
+                        ],
+                        "criterion": "pulmonary contusion",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Traumatic pulmonary",
+                            "laceration"
+                        ],
+                        "criterion": "pulmonary laceration",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Traumatic pulmonary contusion"
+                        ],
+                        "criterion": "pulmonary contusion",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Traumatic pulmonary",
+                            "laceration"
+                        ],
+                        "criterion": "pulmonary laceration",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lung reduction surgery",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Lung reduction surgery"
+                        ],
+                        "criterion": "lung reduction surgery",
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Lung reduction surgery"
+                    ],
+                    "criterion": "lung reduction surgery",
+                    "requirement_type": "history",
+                    "expected_value": true
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Planned removal of more than 10 lung lesions",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "removal of more than 10 lung lesions"
+                        ],
+                        "criterion": "lung lesions",
+                        "requirement_type": "planned removal",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 10
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "removal of more than 10 lung lesions"
+                    ],
+                    "criterion": "lung lesions",
+                    "requirement_type": "planned removal",
+                    "expected_value": {
+                        "operator": ">",
+                        "value": 10
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pneumonectomy",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Pneumonectomy"
+                        ],
+                        "criterion": "pneumonectomy",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Pneumonectomy"
+                    ],
+                    "criterion": "pneumonectomy",
+                    "requirement_type": "presence",
+                    "expected_value": true
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known hypersensitivity to bovine protein",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Known hypersensitivity to bovine protein"
+                        ],
+                        "criterion": "hypersensitivity",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "bovine protein"
+                        ],
+                        "criterion": "bovine protein",
+                        "requirement_type": "sensitivity",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Known hypersensitivity to bovine protein"
+                        ],
+                        "criterion": "hypersensitivity",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "bovine protein"
+                        ],
+                        "criterion": "bovine protein",
+                        "requirement_type": "sensitivity",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known hypersensitivity to Brilliant Blue FCF (E133)",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Known hypersensitivity to Brilliant Blue FCF (E133)"
+                        ],
+                        "criterion": "hypersensitivity",
+                        "requirement_type": "presence",
+                        "expected_value": "Brilliant Blue FCF (E133)"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Known hypersensitivity to Brilliant Blue FCF (E133)"
+                    ],
+                    "criterion": "hypersensitivity",
+                    "requirement_type": "presence",
+                    "expected_value": "Brilliant Blue FCF (E133)"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Presence of active infection",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Presence of active infection"
+                        ],
+                        "criterion": "active infection",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Presence of active infection"
+                    ],
+                    "criterion": "active infection",
+                    "requirement_type": "presence",
+                    "expected_value": true
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}
