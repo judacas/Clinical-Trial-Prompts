@@ -1,5 +1,6 @@
 import json
 import os
+from random import sample
 
 import rich
 from models.logical_criteria import LogicalWrapperResponse
@@ -23,17 +24,26 @@ sample_line = IdentifiedLine(
 )
 
 
-# Example usage
-rich.print(load_pydantic_model("output", "NCT00050349_newly_structured.json", IdentifiedTrial))
-exit()
+if sample_trial := load_pydantic_model(
+    "output", "NCT00050349_newly_structured.json", IdentifiedTrial
+):
+    logger.info("Successfully loaded trial.")
+    sample_line = sample_trial.inclusion_lines[0]
+    rich.print(sample_trial)
+    rich.print(sample_line)
 
 
+class LineType(Enum):
+    INCLUSION = "inclusion"
+    EXCLUSION = "exclusion"
+    MISCELLANEOUS = "miscellaneous"
 
 prompt = (
     "You are an expert in clinical trial eligibility criteria."
-    "Given the following line from an Oncological Clinical Trial Eligibility Criteria and its individual criteria, structure the criteria into logical relationships."
-    
+    "Given the following line from an Oncological Clinical Trial Eligibility Criteria and its individual criteria, structurize the criteria into logical relationships."
 )
+
+
 
 try:
     completion = client.beta.chat.completions.parse(
@@ -47,7 +57,7 @@ try:
     )
     if response := completion.choices[0].message.parsed:
         logger.debug("Successfully extracted atomic criteria from line: %s", sample_line)
-        print(json.dumps(response.model_dump(), indent=4))
+        rich.print(response)
     else:
         logger.warning("Failed to parse LLM response.")
         print(completion.choices[0])
@@ -55,9 +65,3 @@ try:
 except Exception as e:
     logger.error("Error during LLM extraction: %s", e)
     raise ValueError(f"Error during LLM extraction: {e}") from e
-
-
-class LineType(Enum):
-    INCLUSION = "inclusion"
-    EXCLUSION = "exclusion"
-    MISCELLANEOUS = "miscellaneous"
