@@ -1,14 +1,23 @@
-import json
-import os
-from random import sample
-
 import rich
-from models.logical_criteria import LogicalWrapperResponse
+from main import ColoredFormatter
+from services.logical_structurizer import CriteriaType, logically_structurize_line, logically_structurize_trial
+from models.logical_criteria import LLMLogicalAnd, LogicalWrapperResponse
 from models.identified_criteria import *
 from utils.openai_client import get_openai_client
 import logging
-from repositories.trial_repository import load_pydantic_model
+from repositories.trial_repository import load_pydantic_model, save_pydantic_model
 
+
+formatter = ColoredFormatter(
+    "%(asctime)s - %(name)s - %(levelname)s - %(message)s", datefmt=None, style="%"
+)
+
+handler = logging.StreamHandler()
+handler.setFormatter(formatter)
+
+logging.basicConfig(
+    level=logging.INFO, handlers=[handler]  # Set to DEBUG to capture debug messages
+)
 logger = logging.getLogger()
 
 client = get_openai_client()
@@ -24,44 +33,15 @@ sample_line = IdentifiedLine(
 )
 
 
-if sample_trial := load_pydantic_model(
-    "output", "NCT00050349_newly_structured.json", IdentifiedTrial
-):
-    logger.info("Successfully loaded trial.")
-    sample_line = sample_trial.inclusion_lines[0]
-    rich.print(sample_trial)
-    rich.print(sample_line)
+# structured_line = logically_structurize_line(sample_line, CriteriaType.MISCELLANEOUS)
+# rich.print(structured_line)
+sample_and = LLMLogicalAnd(and_criteria=[SingleRawCriterion(exact_snippets=["Tissue from tumor must be available"], criterion="tumor tissue", requirement_type="availability", expected_value=True), SingleRawCriterion(exact_snippets=["patient must be over 18 years old"], criterion="age", requirement_type="N/A", expected_value=NumericalComparison(operator = Operator.GREATER_THAN, value = 18)), LLMLogicalAnd(and_criteria=[SingleRawCriterion(exact_snippets=["performance status of 0-1"], criterion="performance status", requirement_type="range", expected_value=Range(comparisons=[NumericalComparison(operator = Operator.GREATER_THAN_OR_EQUAL_TO, value = 0), NumericalComparison(operator = Operator.LESS_THAN_OR_EQUAL_TO, value = 1)])), SingleRawCriterion(exact_snippets=["no prior chemotherapy"], criterion="prior treatment", requirement_type="presence", expected_value=False)])])
+save_pydantic_model(sample_and, "test.json", "testing")
 
-
-class LineType(Enum):
-    INCLUSION = "inclusion"
-    EXCLUSION = "exclusion"
-    MISCELLANEOUS = "miscellaneous"
-
-prompt = (
-    "You are an expert in clinical trial eligibility criteria."
-    "Given the following line from an Oncological Clinical Trial Eligibility Criteria and its individual criteria, structurize the criteria into logical relationships."
-)
-
-
-
-try:
-    completion = client.beta.chat.completions.parse(
-        model="gpt-4o",
-        messages=[
-            {"role": "system", "content": prompt},
-            {"role": "user", "content": str(sample_line)},
-        ],
-        temperature=0.0,
-        response_format=LogicalWrapperResponse,
-    )
-    if response := completion.choices[0].message.parsed:
-        logger.debug("Successfully extracted atomic criteria from line: %s", sample_line)
-        rich.print(response)
-    else:
-        logger.warning("Failed to parse LLM response.")
-        print(completion.choices[0])
-        raise ValueError(f"Failed to parse LLM response for line: '{sample_line}'")
-except Exception as e:
-    logger.error("Error during LLM extraction: %s", e)
-    raise ValueError(f"Error during LLM extraction: {e}") from e
+# if sample_trial := load_pydantic_model(
+#     "output", "NCT00050349_newly_structured.json", IdentifiedTrial):
+#     logger.info("Successfully loaded trial.")
+#     logical_trial = logically_structurize_trial(sample_trial)
+#     logger.info("Successfully structurized trial.")
+#     rich.print(logical_trial)
+#     save_pydantic_model(logical_trial, "structured_test_trial.json", "testing")

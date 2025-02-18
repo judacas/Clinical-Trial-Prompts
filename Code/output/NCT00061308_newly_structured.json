@@ -2,9 +2,11 @@
     "info": {
         "nct_id": "NCT00061308",
         "official_title": "An Open-label, Multicenter, Non-Comparative Phase II Study of the Combination of Intravenous Topotecan and Gemcitabine Administered Once Weekly for Three Weeks Every 28 Days as Second-line Treatment in Patients With Recurrent Platinum Sensitive Ovarian Cancer",
-        "criteria": "Inclusion Criteria:\n\n* Have had one prior platinum-based chemotherapy regimen for the treatment of primary disease.\n* At least 4 weeks since last surgery or radiation therapy.\n* Must have had a treatment-free interval of greater than 6 months following response to platinum.\n* ECOG performance status of 0,1, or 2.\n\nExclusion Criteria:\n\n* Women of child-bearing potential that do not practice adequate contraception.\n* Pregnant or lactating.\n* Received more than one primary chemotherapy regimen.\n* Concomitant or previous malignancies with the exception of adequately treated basal cell or squamous cell skin cancer, in situ cervical cancer, incidental carcinoid, or other cancer from which the patient has been disease free for 5 years.\n* Active uncontrolled infection requiring antibiotics.\n* Concurrent severe medical problems unrelated to the malignancy which would limit full compliance with the study.\n* Received radiation to more than 10% of bone.\n* Prior treatment with topotecan or gemcitabine.\n* Hypersensitivity to camptothecin or nucleoside analogues.\n* Use of an investigational agent within 30 days."
+        "inclusion_criteria": "* Have had one prior platinum-based chemotherapy regimen for the treatment of primary disease.\n* At least 4 weeks since last surgery or radiation therapy.\n* Must have had a treatment-free interval of greater than 6 months following response to platinum.\n* ECOG performance status of 0,1, or 2.\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Women of child-bearing potential that do not practice adequate contraception.\n* Pregnant or lactating.\n* Received more than one primary chemotherapy regimen.\n* Concomitant or previous malignancies with the exception of adequately treated basal cell or squamous cell skin cancer, in situ cervical cancer, incidental carcinoid, or other cancer from which the patient has been disease free for 5 years.\n* Active uncontrolled infection requiring antibiotics.\n* Concurrent severe medical problems unrelated to the malignancy which would limit full compliance with the study.\n* Received radiation to more than 10% of bone.\n* Prior treatment with topotecan or gemcitabine.\n* Hypersensitivity to camptothecin or nucleoside analogues.\n* Use of an investigational agent within 30 days.",
+        "miscellaneous_criteria": ""
     },
-    "lines": [
+    "inclusion_lines": [
         {
             "line": "* Have had one prior platinum-based chemotherapy regimen for the treatment of primary disease.",
             "criterions": [
@@ -14,7 +16,7 @@
                     ],
                     "criterion": "platinum-based chemotherapy regimen",
                     "requirement_type": "quantity",
-                    "expected_value": 1
+                    "expected_value": ">= 1"
                 },
                 {
                     "exact_snippets": [
@@ -36,8 +38,12 @@
                     "criterion": "time since last surgery",
                     "requirement_type": "duration",
                     "expected_value": {
-                        "operator": ">=",
-                        "value": 4
+                        "comparisons": [
+                            {
+                                "operator": ">=",
+                                "value": 4
+                            }
+                        ]
                     }
                 },
                 {
@@ -48,8 +54,12 @@
                     "criterion": "time since last radiation therapy",
                     "requirement_type": "duration",
                     "expected_value": {
-                        "operator": ">=",
-                        "value": 4
+                        "comparisons": [
+                            {
+                                "operator": ">=",
+                                "value": 4
+                            }
+                        ]
                     }
                 }
             ]
@@ -64,8 +74,12 @@
                     "criterion": "treatment-free interval",
                     "requirement_type": "duration",
                     "expected_value": {
-                        "operator": ">",
-                        "value": 6
+                        "comparisons": [
+                            {
+                                "operator": ">",
+                                "value": 6
+                            }
+                        ]
                     }
                 },
                 {
@@ -83,29 +97,62 @@
             "criterions": [
                 {
                     "exact_snippets": [
-                        "ECOG performance status"
+                        "ECOG performance status of 0,1, or 2"
                     ],
                     "criterion": "ECOG performance status",
                     "requirement_type": "value",
-                    "expected_value": {
-                        "comparisons": [
-                            {
-                                "operator": "=",
-                                "value": 0
-                            },
-                            {
-                                "operator": "=",
-                                "value": 1
-                            },
-                            {
-                                "operator": "=",
-                                "value": 2
-                            }
-                        ]
-                    }
+                    "expected_value": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
                 }
             ]
         },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": [
+                        "Healthy volunteers allowed"
+                    ],
+                    "criterion": "healthy volunteers",
+                    "requirement_type": "participation",
+                    "expected_value": true
+                }
+            ]
+        },
+        {
+            "line": "Must be FEMALE",
+            "criterions": [
+                {
+                    "exact_snippets": [
+                        "Must be FEMALE"
+                    ],
+                    "criterion": "gender",
+                    "requirement_type": "specific value",
+                    "expected_value": "female"
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": [
+                        "minimum age of 18 Years"
+                    ],
+                    "criterion": "age",
+                    "requirement_type": "minimum",
+                    "expected_value": {
+                        "operator": ">=",
+                        "value": 18
+                    }
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
         {
             "line": "* Women of child-bearing potential that do not practice adequate contraception.",
             "criterions": [
@@ -136,7 +183,7 @@
                     ],
                     "criterion": "pregnancy",
                     "requirement_type": "status",
-                    "expected_value": true
+                    "expected_value": false
                 },
                 {
                     "exact_snippets": [
@@ -144,7 +191,7 @@
                     ],
                     "criterion": "lactation",
                     "requirement_type": "status",
-                    "expected_value": true
+                    "expected_value": false
                 }
             ]
         },
@@ -180,23 +227,23 @@
                         "adequately treated basal cell or squamous cell skin cancer"
                     ],
                     "criterion": "basal cell or squamous cell skin cancer",
-                    "requirement_type": "treatment adequacy",
-                    "expected_value": true
+                    "requirement_type": "treatment status",
+                    "expected_value": "adequately treated"
                 },
                 {
                     "exact_snippets": [
                         "in situ cervical cancer"
                     ],
-                    "criterion": "in situ cervical cancer",
-                    "requirement_type": "presence",
-                    "expected_value": true
+                    "criterion": "cervical cancer",
+                    "requirement_type": "stage",
+                    "expected_value": "in situ"
                 },
                 {
                     "exact_snippets": [
                         "incidental carcinoid"
                     ],
-                    "criterion": "incidental carcinoid",
-                    "requirement_type": "presence",
+                    "criterion": "carcinoid",
+                    "requirement_type": "incidental",
                     "expected_value": true
                 },
                 {
@@ -206,8 +253,12 @@
                     "criterion": "other cancer",
                     "requirement_type": "disease-free duration",
                     "expected_value": {
-                        "operator": ">=",
-                        "value": 5
+                        "comparisons": [
+                            {
+                                "operator": ">=",
+                                "value": 5
+                            }
+                        ]
                     }
                 }
             ]
@@ -240,17 +291,9 @@
                     "exact_snippets": [
                         "Concurrent severe medical problems unrelated to the malignancy"
                     ],
-                    "criterion": "severe medical problems unrelated to the malignancy",
-                    "requirement_type": "presence",
-                    "expected_value": true
-                },
-                {
-                    "exact_snippets": [
-                        "which would limit full compliance with the study"
-                    ],
-                    "criterion": "full compliance with the study",
-                    "requirement_type": "limitation",
-                    "expected_value": true
+                    "criterion": "severe medical problems",
+                    "requirement_type": "relation to malignancy",
+                    "expected_value": false
                 }
             ]
         },
@@ -259,36 +302,19 @@
             "criterions": [
                 {
                     "exact_snippets": [
-                        "Received radiation to more than 10% of bone"
+                        "Received radiation",
+                        "more than 10% of bone"
                     ],
                     "criterion": "bone",
                     "requirement_type": "radiation exposure",
                     "expected_value": {
-                        "operator": ">",
-                        "value": 10
+                        "comparisons": [
+                            {
+                                "operator": ">",
+                                "value": 10
+                            }
+                        ]
                     }
-                }
-            ]
-        },
-        {
-            "line": "* Prior treatment with topotecan or gemcitabine.",
-            "criterions": [
-                {
-                    "exact_snippets": [
-                        "Prior treatment with topotecan"
-                    ],
-                    "criterion": "topotecan",
-                    "requirement_type": "prior treatment",
-                    "expected_value": true
-                },
-                {
-                    "exact_snippets": [
-                        "Prior treatment with",
-                        "gemcitabine"
-                    ],
-                    "criterion": "gemcitabine",
-                    "requirement_type": "prior treatment",
-                    "expected_value": true
                 }
             ]
         },
@@ -343,14 +369,30 @@
             ]
         }
     ],
-    "failed": [
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
         {
-            "line": "Inclusion Criteria:",
-            "criterions": []
-        },
-        {
-            "line": "Exclusion Criteria:",
-            "criterions": []
+            "line": "* Prior treatment with topotecan or gemcitabine.",
+            "criterions": [
+                {
+                    "exact_snippets": [
+                        "Prior treatment with topotecan"
+                    ],
+                    "criterion": "topotecan",
+                    "requirement_type": "prior treatment",
+                    "expected_value": true
+                },
+                {
+                    "exact_snippets": [
+                        "Prior treatment with gemcitabine"
+                    ],
+                    "criterion": "gemcitabine",
+                    "requirement_type": "prior treatment",
+                    "expected_value": true
+                }
+            ]
         }
-    ]
+    ],
+    "failed_miscellaneous": []
 }

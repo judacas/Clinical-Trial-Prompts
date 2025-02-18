@@ -86,22 +86,22 @@ class IdentifiedTrial(BaseModel):
     """
     info: RawTrialData = Field(..., description="Raw data of the clinical trial.")
     inclusion_lines: List[IdentifiedLine] = Field(
-        ..., description="List of inclusion lines successfully structurized."
+        ..., description="List of inclusion lines successfully identified."
     )
     exclusion_lines: List[IdentifiedLine] = Field(
-        ..., description="List of exclusion lines successfully structurized."
+        ..., description="List of exclusion lines successfully identified."
     )
     miscellaneous_lines: List[IdentifiedLine] = Field(
-        ..., description="List of miscellaneous lines successfully structurized."
+        ..., description="List of miscellaneous lines successfully identified."
     )
     failed_inclusion: List[IdentifiedLine] = Field(
-        ...,description="List of inclusion lines that failed to be structurized."
+        ...,description="List of inclusion lines that failed to be identified."
     )
     failed_exclusion: List[IdentifiedLine] = Field(
-        ...,description="List of exclusion lines that failed to be structurized."
+        ...,description="List of exclusion lines that failed to be identified."
     )
     failed_miscellaneous: List[IdentifiedLine] = Field(
-        ...,description="List of miscellaneous lines that failed to be structurized."
+        ...,description="List of miscellaneous lines that failed to be identified."
     )
 
 class LLMIdentifiedLineResponse(BaseModel):

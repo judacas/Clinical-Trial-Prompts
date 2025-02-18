@@ -2,6 +2,9 @@
 import logging
 
 import rich
+from models.logical_criteria import LogicalTrial
+from repositories.trial_repository import save_pydantic_model
+from services.logical_structurizer import logically_structurize_trial
 from models.identified_criteria import IdentifiedTrial, RawTrialData
 from services.identifier import identify_criterions_from_rawTrial
 from utils.helpers import curl_with_status_check
@@ -147,23 +150,19 @@ def get_trial_data(nct_id: str) -> RawTrialData:
         raise ValueError(f"Error fetching trial data: {e}") from e
 
 
-def process_trial(nct_id: str, verbose: bool = False) -> IdentifiedTrial:
-    """
-    Processes a trial by fetching data and structurizing criteria.
-
-    Args:
-        nct_id (str): The NCT ID of the clinical trial.
-        verbose (bool): Whether to print detailed output.
-
-    Returns:
-        Optional[Trial]: The processed trial or None if failed.
-    """
+def process_trial(nct_id: str, folder: str = "output") -> LogicalTrial:
     raw_data = get_trial_data(nct_id)
     if not raw_data:
         raise ValueError(f"Failed to fetch trial data for NCT ID: {nct_id}")
-    processedTrial: IdentifiedTrial = identify_criterions_from_rawTrial(raw_data)
+    
+    identified_trial: IdentifiedTrial = identify_criterions_from_rawTrial(raw_data)
+    rich.print(identified_trial)
+    save_pydantic_model(identified_trial, f"{nct_id}_identified.json", folder)
+    
+    logical_trial = logically_structurize_trial(identified_trial)
+    rich.print(logical_trial)
+    save_pydantic_model(logical_trial, f"{nct_id}_logical.json", folder)
     
     logger.info("Trial processing complete for NCT ID: %s", nct_id)
-    rich.print(processedTrial)
     
-    return processedTrial
+    return logical_trial

@@ -2,40 +2,43 @@
 
 import os
 import logging
+import traceback
 from typing import Optional, Type, TypeVar
-
+from unittest.mock import Base
 from pydantic import BaseModel
-from models.identified_criteria import IdentifiedTrial
+
+from models.logical_criteria import LogicalLine
 
 # Configure logging
 logger = logging.getLogger(__name__)
 
-def save_trial(trial: IdentifiedTrial, file_name: str, folder: str ) -> bool:
+T = TypeVar('T', bound=BaseModel)
+
+def save_pydantic_model(model: BaseModel, file_name: str, folder: str) -> bool:
     """
-    Saves the trial data to a JSON file.
+    Saves a Pydantic model to a JSON file.
 
     Args:
-        trial (Trial): The trial to save.
+        model (T): The Pydantic model to save.
         folder (str): The folder to save the file in.
         file_name (str): The name of the file.
 
     Returns:
         bool: True if saved successfully, False otherwise.
     """
-    logger.info("Saving trial NCT ID: %s", trial.info.nct_id)
     
     try:
         os.makedirs(folder, exist_ok=True)
         file_path = os.path.join(folder, file_name)
+        
         with open(file_path, 'w', encoding="utf-8") as f:
-            f.write(trial.model_dump_json(indent=4, serialize_as_any=True))
-        logger.info("Trial saved successfully at %s", file_path)
+            f.write(model.model_dump_json(indent=4, serialize_as_any=False, warnings=False))
+        logger.info("Model saved successfully at %s", file_path)
         return True
     except Exception as e:
-        logger.error("Error saving trial: %s", e)
+        logger.error("Error saving model: %s", e)
+        logger.error("Stack trace: %s", traceback.format_exc())
         return False
-    
-T = TypeVar('T', bound=BaseModel)
 
 def load_pydantic_model(folder: str, file_name: str, model_class: Type[T]) -> Optional[T]:
     """
