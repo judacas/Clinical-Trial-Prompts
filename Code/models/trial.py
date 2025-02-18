@@ -3,7 +3,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional, Union
 from .criterion import AtomicCriterion, CompoundCriterion, CategorizedCriterion, HierarchicalCriterion, NonsenseCriterion
-from models.structured_criteria import RawTrialData
+from Code.models.identified_criteria import RawTrialData
 
 
 

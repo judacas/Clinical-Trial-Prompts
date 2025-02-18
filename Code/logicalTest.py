@@ -1,6 +1,6 @@
 import json
 from models.logical_criteria import LogicalWrapperResponse
-from models.structured_criteria import *
+from Code.models.identified_criteria import *
 from utils.openai_client import get_openai_client
 import logging
 from typing import Union
@@ -9,8 +9,8 @@ logger = logging.getLogger()
 
 client = get_openai_client()
 
-sample_line = structuredLine(
-    line="Tissue from tumor must be available and patient must be over 18 years old, have a performance status of 0-1, and no prior chemotherapy",
+sample_line = IdentifiedLine(
+    line="Tissue from tumor must be available or if patient is over 18 years old, must have either a performance status of 0-1 or no prior chemotherapy but not both",
     criterions=[
         SingleRawCriterion(exact_snippets=["Tissue from tumor must be available"], criterion="tumor tissue", requirement_type="availability", expected_value=True),
         SingleRawCriterion(exact_snippets=["patient must be over 18 years old"], criterion="age", requirement_type="N/A", expected_value=NumericalComparison(operator = Operator.GREATER_THAN, value = 18)),

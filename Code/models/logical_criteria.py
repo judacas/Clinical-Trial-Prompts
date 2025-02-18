@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List, Union
-from .structured_criteria import SingleRawCriterion
+from .identified_criteria import SingleRawCriterion
 
 class LLMLogicalAnd(BaseModel):
     """
@@ -16,7 +16,7 @@ class LLMLogicalOr(BaseModel):
 
 class LLMLogicalNot(BaseModel):
     """
-    Represents a logical NOT relationship between criteria.
+    Represents a logical NOT operation on a criterion or logical expression. Ensure that negation isn't already implicit in the criterion's value (e.g., 'must not be older than 18' is already represented by 'age ≤ 18').
     """
     not_criteria: Union[SingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLmLogicalConditional" ] = Field(..., description="The criteria involved in the relationship.")
 

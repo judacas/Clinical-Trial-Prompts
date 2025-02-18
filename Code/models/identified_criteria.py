@@ -67,30 +67,30 @@ class SingleRawCriterion(BaseModel):
         ..., description="what about the criterion is being tested (e.g presence, severity, quantity, N/A if it doesn't make sense for the criterion to have an attribute (eg. age))."
     )
     
-    expected_value: Union[bool, str, NumericalComparison, Range] = Field(
+    expected_value: Union[bool, str, List[str], NumericalComparison, Range] = Field(
         ..., description="The expected value for the criterion. only use string if nothing else is applicable"
     )
 
-class structuredLine(BaseModel):
+class IdentifiedLine(BaseModel):
     """
     Represents a structured line of eligibility criteria.
     """
     line: str = Field(..., description="The original line of eligibility criteria.")
     criterions: List[SingleRawCriterion] = Field(..., description="List of structured criteria.")
     
-class ParsedTrial(BaseModel):
+class IdentifiedTrial(BaseModel):
     """
     Represents the collection of all structured atomic criteria and leftovers.
     """
     info: RawTrialData = Field(..., description="Raw data of the clinical trial.")
-    lines: List[structuredLine] = Field(
+    lines: List[IdentifiedLine] = Field(
         ..., description="List of lines successfully structurized."
     )
-    failed: List[structuredLine] = Field(
+    failed: List[IdentifiedLine] = Field(
         ...,description="List of lines that failed to be structurized."
     )
 
-class oneParsedLine(BaseModel):
+class LLMIdentifiedLineResponse(BaseModel):
     """
     Represents the collection of all structured atomic criteria and leftovers.
     """

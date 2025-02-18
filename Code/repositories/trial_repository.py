@@ -3,13 +3,13 @@
 import os
 import logging
 from typing import Optional
-from models.structured_criteria import ParsedTrial
-from models.trial import Trial
+from Code.models.identified_criteria import IdentifiedTrial
+from Code.models.trial import Trial
 
 # Configure logging
 logger = logging.getLogger(__name__)
 
-def save_trial(trial: ParsedTrial, file_name: str, folder: str ) -> bool:
+def save_trial(trial: IdentifiedTrial, file_name: str, folder: str ) -> bool:
     """
     Saves the trial data to a JSON file.
 

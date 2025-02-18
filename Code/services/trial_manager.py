@@ -1,21 +1,23 @@
 # services/trial_manager.py
 
 import logging
-from repositories import trial_repository
-from models.structured_criteria import ParsedTrial
-from services.structurizer import structurize_bottom_up
-from models.structured_criteria import RawTrialData
-from models.criterion import Criterion
-from utils.helpers import curl_with_status_check
-import json
-import os
+from Code.repositories import trial_repository
+from Code.models.identified_criteria import IdentifiedTrial
+from Code.services.identifier import identify_line_by_line
+from Code.models.identified_criteria import RawTrialData
+from Code.models.criterion import Criterion
+from Code.utils.helpers import curl_with_status_check
+
+import re
+
+def remove_pesky_slash(text: str) -> str:
+    return re.sub(r'\\', '', text)
 
 # Configure logging
 logger = logging.getLogger(__name__)
 
 
 def get_trial_data(nct_id: str) -> RawTrialData:
-    #! MUST CLEAN UP AND PREPROCESS A BIT MORE. REMOVE THOSE ANNOYING \ THAT ARE MESSING UP STRING COMPARISONS SUCH AS \> OR \<
     # sourcery skip: extract-method, hoist-if-from-if
     """
     Retrieves trial data from ClinicalTrials.gov API.
@@ -42,9 +44,9 @@ def get_trial_data(nct_id: str) -> RawTrialData:
         official_title = study.get(
             "identificationModule", {}
         ).get("officialTitle", "")
-        eligibility = study.get(
+        eligibility = remove_pesky_slash(study.get(
             "eligibilityModule", {}
-        ).get("eligibilityCriteria", "")       
+        ).get("eligibilityCriteria", ""))    
 
         raw_data = RawTrialData(
             nct_id=nct_id, official_title=official_title, criteria=eligibility
@@ -58,7 +60,7 @@ def get_trial_data(nct_id: str) -> RawTrialData:
         raise ValueError(f"Error fetching trial data: {e}") from e
 
 
-def process_trial(nct_id: str, verbose: bool = False) -> ParsedTrial:
+def process_trial(nct_id: str, verbose: bool = False) -> IdentifiedTrial:
     """
     Processes a trial by fetching data and structurizing criteria.
 
@@ -72,7 +74,7 @@ def process_trial(nct_id: str, verbose: bool = False) -> ParsedTrial:
     raw_data = get_trial_data(nct_id)
     if not raw_data:
         raise ValueError(f"Failed to fetch trial data for NCT ID: {nct_id}")
-    processedTrial: ParsedTrial = structurize_bottom_up(raw_data)
+    processedTrial: IdentifiedTrial = identify_line_by_line(raw_data)
     
     logger.info("Trial processing complete for NCT ID: %s", nct_id)
     logger.info("Processed trial: %s", processedTrial)
