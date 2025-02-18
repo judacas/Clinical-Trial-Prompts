@@ -1,0 +1,541 @@
+{
+    "info": {
+        "nct_id": "NCT01959061",
+        "official_title": "Raltitrexed and Oxaliplatin and Lipiodol Transcatheter Arterial Chemoembolization for Advanced Colorectal Cancer",
+        "inclusion_criteria": "1. Histologically confirmed colorectal adenocarcinoma\n2. Disease limited to the liver Unresectable disease by surgery or other local therapies\n3. Age >18 years\n4. ECOG performance status 0-2,Child pugh A or B\n5. Expected survival ≥ 3 months\n6. Adequate hematological, hepatic, and renal function\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 75 Years",
+        "exclusion_criteria": "1. Pregnant or lactating women\n2. Patients with severe organ dysfunction or failure\n3. With severe cardiovascular disease, or mental\n4. Extraliver metastases",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Histologically confirmed colorectal adenocarcinoma",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Histologically confirmed colorectal adenocarcinoma"
+                        ],
+                        "criterion": "colorectal adenocarcinoma",
+                        "requirement_type": "confirmation method",
+                        "expected_value": "histologically"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Histologically confirmed colorectal adenocarcinoma"
+                        ],
+                        "criterion": "colorectal adenocarcinoma",
+                        "requirement_type": "confirmation method",
+                        "expected_value": "histologically"
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Disease limited to the liver Unresectable disease by surgery or other local therapies",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Disease limited to the liver"
+                        ],
+                        "criterion": "disease location",
+                        "requirement_type": "location",
+                        "expected_value": "liver"
+                    },
+                    {
+                        "exact_snippets": [
+                            "Unresectable disease by surgery or other local therapies"
+                        ],
+                        "criterion": "disease resectability",
+                        "requirement_type": "resectability",
+                        "expected_value": false
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Disease limited to the liver"
+                        ],
+                        "criterion": "disease location",
+                        "requirement_type": "location",
+                        "expected_value": "liver"
+                    },
+                    {
+                        "exact_snippets": [
+                            "Unresectable disease by surgery or other local therapies"
+                        ],
+                        "criterion": "disease resectability",
+                        "requirement_type": "resectability",
+                        "expected_value": false
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Age >18 years",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Age >18 years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "N/A",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 18
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Age >18 years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "N/A",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 18
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. ECOG performance status 0-2,Child pugh A or B",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "ECOG performance status 0-2"
+                        ],
+                        "criterion": "ECOG performance status",
+                        "requirement_type": "range",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": ">=",
+                                    "value": 0
+                                },
+                                {
+                                    "operator": "<=",
+                                    "value": 2
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": [
+                            "Child pugh A or B"
+                        ],
+                        "criterion": "Child Pugh score",
+                        "requirement_type": "category",
+                        "expected_value": [
+                            "A",
+                            "B"
+                        ]
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": [
+                                    "ECOG performance status 0-2"
+                                ],
+                                "criterion": "ECOG performance status",
+                                "requirement_type": "range",
+                                "expected_value": {
+                                    "comparisons": [
+                                        {
+                                            "operator": ">=",
+                                            "value": 0
+                                        },
+                                        {
+                                            "operator": "<=",
+                                            "value": 2
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": [
+                                            "Child pugh A or B"
+                                        ],
+                                        "criterion": "Child Pugh score",
+                                        "requirement_type": "category",
+                                        "expected_value": "A"
+                                    },
+                                    {
+                                        "exact_snippets": [
+                                            "Child pugh A or B"
+                                        ],
+                                        "criterion": "Child Pugh score",
+                                        "requirement_type": "category",
+                                        "expected_value": "B"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Expected survival ≥ 3 months",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Expected survival ≥ 3 months"
+                        ],
+                        "criterion": "expected survival",
+                        "requirement_type": "duration",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": ">=",
+                                    "value": 3
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Expected survival ≥ 3 months"
+                        ],
+                        "criterion": "expected survival",
+                        "requirement_type": "duration",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": ">=",
+                                    "value": 3
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Adequate hematological, hepatic, and renal function",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Adequate hematological"
+                        ],
+                        "criterion": "hematological function",
+                        "requirement_type": "adequacy",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Adequate",
+                            "hepatic"
+                        ],
+                        "criterion": "hepatic function",
+                        "requirement_type": "adequacy",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Adequate",
+                            "renal function"
+                        ],
+                        "criterion": "renal function",
+                        "requirement_type": "adequacy",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Adequate hematological"
+                        ],
+                        "criterion": "hematological function",
+                        "requirement_type": "adequacy",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Adequate",
+                            "hepatic"
+                        ],
+                        "criterion": "hepatic function",
+                        "requirement_type": "adequacy",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "Adequate",
+                            "renal function"
+                        ],
+                        "criterion": "renal function",
+                        "requirement_type": "adequacy",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "volunteer health status",
+                        "requirement_type": "allowance",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "volunteer health status",
+                        "requirement_type": "allowance",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 75 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "maximum age of 75 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "maximum",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 75
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "maximum age of 75 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "maximum",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 75
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Pregnant or lactating women",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Pregnant"
+                        ],
+                        "criterion": "pregnancy",
+                        "requirement_type": "status",
+                        "expected_value": false
+                    },
+                    {
+                        "exact_snippets": [
+                            "lactating"
+                        ],
+                        "criterion": "lactation",
+                        "requirement_type": "status",
+                        "expected_value": false
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Pregnant"
+                        ],
+                        "criterion": "pregnancy",
+                        "requirement_type": "status",
+                        "expected_value": false
+                    },
+                    {
+                        "exact_snippets": [
+                            "lactating"
+                        ],
+                        "criterion": "lactation",
+                        "requirement_type": "status",
+                        "expected_value": false
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. With severe cardiovascular disease, or mental",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "severe cardiovascular disease"
+                        ],
+                        "criterion": "cardiovascular disease",
+                        "requirement_type": "severity",
+                        "expected_value": "severe"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": [
+                                "severe cardiovascular disease"
+                            ],
+                            "criterion": "cardiovascular disease",
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Extraliver metastases",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Extraliver metastases"
+                        ],
+                        "criterion": "extraliver metastases",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Extraliver metastases"
+                    ],
+                    "criterion": "extraliver metastases",
+                    "requirement_type": "presence",
+                    "expected_value": true
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Patients with severe organ dysfunction or failure",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "severe organ dysfunction"
+                        ],
+                        "criterion": "organ dysfunction",
+                        "requirement_type": "severity",
+                        "expected_value": "severe"
+                    },
+                    {
+                        "exact_snippets": [
+                            "organ failure"
+                        ],
+                        "criterion": "organ failure",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "severe organ dysfunction"
+                        ],
+                        "criterion": "organ dysfunction",
+                        "requirement_type": "severity",
+                        "expected_value": "severe"
+                    },
+                    {
+                        "exact_snippets": [
+                            "organ failure"
+                        ],
+                        "criterion": "organ failure",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

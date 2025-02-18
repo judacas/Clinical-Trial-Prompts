@@ -1,0 +1,356 @@
+{
+    "info": {
+        "nct_id": "NCT03297125",
+        "official_title": "Assessment of Optune Therapy for Patients With Newly Diagnosed Glioblastoma Using Advanced MRI",
+        "inclusion_criteria": "* Newly diagnosed glioblastoma (GBM), World Health Organization (WHO) grade IV.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Optune compliance < 75%; they would be excluded from the final analyses.\n* History of craniectomy or significant skull defect (contraindication to Optune).\n* Active implantable medical device (e.g., deep brain stimulator (DBS), spinal cord stimulator, pacemaker, defibrillator, vagus nerve stimulator, programmable shunt).\n* Karnofsky Performance Status (KPS) < 60.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Newly diagnosed glioblastoma (GBM), World Health Organization (WHO) grade IV.",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Newly diagnosed glioblastoma (GBM)"
+                        ],
+                        "criterion": "glioblastoma",
+                        "requirement_type": "diagnosis status",
+                        "expected_value": "newly diagnosed"
+                    },
+                    {
+                        "exact_snippets": [
+                            "World Health Organization (WHO) grade IV"
+                        ],
+                        "criterion": "glioblastoma",
+                        "requirement_type": "grade",
+                        "expected_value": "World Health Organization (WHO) grade IV"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Newly diagnosed glioblastoma (GBM)"
+                        ],
+                        "criterion": "glioblastoma",
+                        "requirement_type": "diagnosis status",
+                        "expected_value": "newly diagnosed"
+                    },
+                    {
+                        "exact_snippets": [
+                            "World Health Organization (WHO) grade IV"
+                        ],
+                        "criterion": "glioblastoma",
+                        "requirement_type": "grade",
+                        "expected_value": "World Health Organization (WHO) grade IV"
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "healthy volunteers",
+                        "requirement_type": "participation",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Healthy volunteers allowed"
+                        ],
+                        "criterion": "healthy volunteers",
+                        "requirement_type": "participation",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": [
+                            "minimum age of 18 Years"
+                        ],
+                        "criterion": "age",
+                        "requirement_type": "minimum",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 18
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Optune compliance < 75%; they would be excluded from the final analyses.",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Optune compliance < 75%"
+                        ],
+                        "criterion": "Optune compliance",
+                        "requirement_type": "quantity",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": "<",
+                                    "value": 75
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Optune compliance < 75%"
+                    ],
+                    "criterion": "Optune compliance",
+                    "requirement_type": "quantity",
+                    "expected_value": {
+                        "comparisons": [
+                            {
+                                "operator": "<",
+                                "value": 75
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of craniectomy or significant skull defect (contraindication to Optune).",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "History of craniectomy"
+                        ],
+                        "criterion": "craniectomy",
+                        "requirement_type": "history",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "significant skull defect"
+                        ],
+                        "criterion": "skull defect",
+                        "requirement_type": "severity",
+                        "expected_value": "significant"
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "History of craniectomy"
+                        ],
+                        "criterion": "craniectomy",
+                        "requirement_type": "history",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "significant skull defect"
+                        ],
+                        "criterion": "skull defect",
+                        "requirement_type": "severity",
+                        "expected_value": "significant"
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active implantable medical device (e.g., deep brain stimulator (DBS), spinal cord stimulator, pacemaker, defibrillator, vagus nerve stimulator, programmable shunt).",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Active implantable medical device"
+                        ],
+                        "criterion": "implantable medical device",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "deep brain stimulator (DBS)"
+                        ],
+                        "criterion": "deep brain stimulator",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "spinal cord stimulator"
+                        ],
+                        "criterion": "spinal cord stimulator",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "pacemaker"
+                        ],
+                        "criterion": "pacemaker",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "defibrillator"
+                        ],
+                        "criterion": "defibrillator",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "vagus nerve stimulator"
+                        ],
+                        "criterion": "vagus nerve stimulator",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "programmable shunt"
+                        ],
+                        "criterion": "programmable shunt",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": [
+                            "Active implantable medical device"
+                        ],
+                        "criterion": "implantable medical device",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "deep brain stimulator (DBS)"
+                        ],
+                        "criterion": "deep brain stimulator",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "spinal cord stimulator"
+                        ],
+                        "criterion": "spinal cord stimulator",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "pacemaker"
+                        ],
+                        "criterion": "pacemaker",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "defibrillator"
+                        ],
+                        "criterion": "defibrillator",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "vagus nerve stimulator"
+                        ],
+                        "criterion": "vagus nerve stimulator",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    },
+                    {
+                        "exact_snippets": [
+                            "programmable shunt"
+                        ],
+                        "criterion": "programmable shunt",
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Karnofsky Performance Status (KPS) < 60.",
+                "criterions": [
+                    {
+                        "exact_snippets": [
+                            "Karnofsky Performance Status (KPS) < 60"
+                        ],
+                        "criterion": "Karnofsky Performance Status",
+                        "requirement_type": "value",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 60
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": [
+                        "Karnofsky Performance Status (KPS) < 60"
+                    ],
+                    "criterion": "Karnofsky Performance Status",
+                    "requirement_type": "value",
+                    "expected_value": {
+                        "operator": "<",
+                        "value": 60
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}
