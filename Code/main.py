@@ -1,7 +1,6 @@
 # main.py
 import logging
 from services.trial_manager import process_trial
-from repositories.trial_repository import save_trial
 
 class ColoredFormatter(logging.Formatter):
     # ANSI escape codes for colors
@@ -44,18 +43,7 @@ def main():
 
     for nct_id in trials_to_process:
         logger.info("Processing trial NCT ID: %s", nct_id)
-        if trial := process_trial(nct_id, verbose=True):
-            file_name = f"{nct_id}_newly_structured.json"
-            output_folder = "output"
-
-            if save_trial(trial, file_name, output_folder):
-                logger.info("Trial saved successfully.")
-                # Check approval
-                # check_accuracy(trial)
-            else:
-                logger.error("Failed to save trial.")
-        else:
-            logger.error("Failed to process trial NCT ID: %s", nct_id)
+        process_trial(nct_id)
 
 if __name__ == "__main__":
     main()
