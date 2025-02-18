@@ -1,6 +1,6 @@
 import json
 from models.logical_criteria import LogicalWrapperResponse
-from Code.models.identified_criteria import *
+from models.identified_criteria import *
 from utils.openai_client import get_openai_client
 import logging
 from typing import Union

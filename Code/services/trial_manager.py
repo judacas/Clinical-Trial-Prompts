@@ -1,12 +1,8 @@
 # services/trial_manager.py
-
 import logging
-from Code.repositories import trial_repository
-from Code.models.identified_criteria import IdentifiedTrial
-from Code.services.identifier import identify_line_by_line
-from Code.models.identified_criteria import RawTrialData
-from Code.models.criterion import Criterion
-from Code.utils.helpers import curl_with_status_check
+from models.identified_criteria import IdentifiedTrial, RawTrialData
+from services.identifier import identify_line_by_line
+from utils.helpers import curl_with_status_check
 
 import re
 
@@ -15,6 +11,69 @@ def remove_pesky_slash(text: str) -> str:
 
 # Configure logging
 logger = logging.getLogger(__name__)
+
+def get_extra_criteria(eligibilityModule: dict) -> list[str]:
+    """
+    Processes the eligibility module to extract additional criteria and returns them as a string.
+
+    Args:
+        eligibilityModule (dict): The eligibility module dictionary.
+
+    Returns:
+        str: A string with all of the new criteria, one per line.
+    """
+    criteria: list[str] = []
+
+    # Get the values of the fields
+    healthy_volunteers = eligibilityModule.get("healthyVolunteers")
+    sex = eligibilityModule.get("sex")
+    minimum_age = eligibilityModule.get("minimumAge")
+    maximum_age = eligibilityModule.get("maximumAge")
+    std_ages = eligibilityModule.get("stdAges")
+
+    if healthy_volunteers is not None:
+        if healthy_volunteers == "false":
+            criteria.append("No healthy volunteers allowed")
+        else:
+            criteria.append("Healthy volunteers allowed")
+
+    if sex is not None and sex != "ALL":
+        criteria.append(f"Must be {sex}")
+
+    if minimum_age is not None:
+        criteria.append(f"Must have minimum age of {minimum_age}")
+
+    if maximum_age is not None:
+        criteria.append(f"Must have maximum age of {maximum_age}")
+
+    if std_ages and not minimum_age and not maximum_age:
+        convertStdAgesToNumericalAges(std_ages, criteria)
+    return criteria
+
+def convertStdAgesToNumericalAges(std_ages, criteria: list[str]):
+    minAge = 100
+    maxAge = 0
+
+    # Define age group mappings
+    age_groups = {
+        "CHILD": (0, 17),
+        "ADULT": (18, 64),
+        "OLDER_ADULT": (65, 100)
+    }
+
+    # Determine the minimum and maximum ages based on std_ages
+    for age_group in std_ages:
+        if age_group in age_groups:
+            minAge = min(minAge, age_groups[age_group][0])
+            maxAge = max(maxAge, age_groups[age_group][1])
+
+    if minAge != 0:
+        criteria.append(f"Must be {minAge} or older")
+    if maxAge != 100:
+        criteria.append(f"Must be {maxAge} or younger")
+
+    inclusion_index = None
+    exclusion_index = None
 
 
 def get_trial_data(nct_id: str) -> RawTrialData:
@@ -44,9 +103,12 @@ def get_trial_data(nct_id: str) -> RawTrialData:
         official_title = study.get(
             "identificationModule", {}
         ).get("officialTitle", "")
-        eligibility = remove_pesky_slash(study.get(
-            "eligibilityModule", {}
-        ).get("eligibilityCriteria", ""))    
+        eligibilityModule = study.get("eligibilityModule", {})
+        eligibility = remove_pesky_slash(eligibilityModule.get("eligibilityCriteria", ""))
+        extra_criteria = get_extra_criteria(eligibilityModule)
+        eligibility += "\n" + "\n".join(extra_criteria)   
+        
+        
 
         raw_data = RawTrialData(
             nct_id=nct_id, official_title=official_title, criteria=eligibility

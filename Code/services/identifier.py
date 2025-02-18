@@ -3,9 +3,9 @@
 import logging
 import re
 from typing import List
-from Code.models.identified_criteria import RawTrialData
-from Code.models.identified_criteria import SingleRawCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
-from Code.utils.openai_client import get_openai_client
+from models.identified_criteria import RawTrialData
+from models.identified_criteria import SingleRawCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
+from utils.openai_client import get_openai_client
 
 logger = logging.getLogger(__name__)
 
@@ -40,7 +40,7 @@ def identify_line_by_line(trial: RawTrialData) -> IdentifiedTrial:
                 verify(line, extracted_criteria)
                 identified_criteria_lines.append(IdentifiedLine(line=line, criterions=extracted_criteria))
             except ValueError as e:
-                logger.error("Error processing line %d: %s", index + 1, e)
+                logger.error("Error validating line %d: %s", index + 1, e)
                 failed.append(IdentifiedLine(line=line, criterions=extracted_criteria))
                 continue
         else:
