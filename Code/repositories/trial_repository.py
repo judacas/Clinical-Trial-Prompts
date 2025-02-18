@@ -2,9 +2,10 @@
 
 import os
 import logging
-from typing import Optional
+from typing import Optional, Type, TypeVar
+
+from pydantic import BaseModel
 from models.identified_criteria import IdentifiedTrial
-from models.trial import Trial
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -34,27 +35,28 @@ def save_trial(trial: IdentifiedTrial, file_name: str, folder: str ) -> bool:
         logger.error("Error saving trial: %s", e)
         return False
     
+T = TypeVar('T', bound=BaseModel)
 
-
-def load_trial(folder: str, file_name: str) -> Optional[Trial]:
+def load_pydantic_model(folder: str, file_name: str, model_class: Type[T]) -> Optional[T]:
     """
-    Loads the trial data from a JSON file.
+    Loads a Pydantic model from a JSON file.
 
     Args:
         folder (str): The folder where the file is located.
         file_name (str): The name of the file.
+        model_class (Type[T]): The Pydantic model class.
 
     Returns:
-        Optional[Trial]: The loaded trial or None if failed.
+        Optional[T]: The loaded model or None if failed.
     """
-    logger.info("Loading trial from %s", os.path.join(folder, file_name))
+    logger.info("Loading model from %s", os.path.join(folder, file_name))
     try:
         file_path = os.path.join(folder, file_name)
         with open(file_path, 'r', encoding="utf-8") as f:
             data = f.read()
-            trial = Trial.model_validate_json(data)
-        logger.info("Trial loaded successfully.")
-        return trial
+            model = model_class.model_validate_json(data)
+        logger.info("Model loaded successfully.")
+        return model
     except Exception as e:
-        logger.error("Error loading trial: %s", e)
+        logger.error("Error loading model: %s", e)
         return None

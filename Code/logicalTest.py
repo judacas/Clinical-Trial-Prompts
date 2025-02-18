@@ -1,9 +1,12 @@
 import json
+import os
+
+import rich
 from models.logical_criteria import LogicalWrapperResponse
 from models.identified_criteria import *
 from utils.openai_client import get_openai_client
 import logging
-from typing import Union
+from repositories.trial_repository import load_pydantic_model
 
 logger = logging.getLogger()
 
@@ -19,8 +22,10 @@ sample_line = IdentifiedLine(
     ]
 )
 
-print(json.dumps(sample_line.model_dump(), indent=4))
 
+# Example usage
+rich.print(load_pydantic_model("output", "NCT00050349_newly_structured.json", IdentifiedTrial))
+exit()
 
 
 
