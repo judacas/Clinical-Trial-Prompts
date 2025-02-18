@@ -3,15 +3,15 @@
 import logging
 import re
 from typing import List
-from models.structured_criteria import RawTrialData
-from models.structured_criteria import SingleRawCriterion, ParsedTrial, structuredLine, RawTrialData, oneParsedLine
-from utils.openai_client import get_openai_client
+from Code.models.identified_criteria import RawTrialData
+from Code.models.identified_criteria import SingleRawCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
+from Code.utils.openai_client import get_openai_client
 
 logger = logging.getLogger(__name__)
 
 client = get_openai_client()
 
-def structurize_bottom_up(trial: RawTrialData) -> ParsedTrial:
+def identify_line_by_line(trial: RawTrialData) -> IdentifiedTrial:
     """
     Structurizes the trial's eligibility criteria using a bottom-up approach.
 
@@ -29,8 +29,8 @@ def structurize_bottom_up(trial: RawTrialData) -> ParsedTrial:
     lines = [line.strip() for line in re.split(r'[\n\r]+', raw_text) if line.strip()]
     logger.debug("Split raw text into %d lines.", len(lines))
 
-    structured_lines:List[structuredLine] = []
-    failed: List[structuredLine] = []
+    identified_criteria_lines:List[IdentifiedLine] = []
+    failed: List[IdentifiedLine] = []
 
     for index, line in enumerate(lines):
         logger.debug("Processing line %d: %s", index + 1, line)
@@ -38,19 +38,19 @@ def structurize_bottom_up(trial: RawTrialData) -> ParsedTrial:
             try:
                 # Verify criteria and identify leftovers
                 verify(line, extracted_criteria)
-                structured_lines.append(structuredLine(line=line, criterions=extracted_criteria))
+                identified_criteria_lines.append(IdentifiedLine(line=line, criterions=extracted_criteria))
             except ValueError as e:
                 logger.error("Error processing line %d: %s", index + 1, e)
-                failed.append(structuredLine(line=line, criterions=extracted_criteria))
+                failed.append(IdentifiedLine(line=line, criterions=extracted_criteria))
                 continue
         else:
             logger.warning("Failed to extract criteria from line %d.", index + 1)
-            failed.append(structuredLine(line=line, criterions=[]))
+            failed.append(IdentifiedLine(line=line, criterions=[]))
 
-    if structured_lines:
-        structured_criteria = ParsedTrial(info=trial, lines=structured_lines, failed=failed)
+    if identified_criteria_lines:
+        identified_trial = IdentifiedTrial(info=trial, lines=identified_criteria_lines, failed=failed)
         logger.info("Successfully structurized trial NCT ID: %s", trial.nct_id)
-        return structured_criteria
+        return identified_trial
     else:
         logger.warning("No atomic criteria extracted for trial NCT ID: %s", trial.nct_id)
         raise ValueError(f"No atomic criteria extracted for trial NCT ID: {trial.nct_id}")
@@ -59,7 +59,7 @@ def structurize_bottom_up(trial: RawTrialData) -> ParsedTrial:
 
 
 
-def extract_atomic_criteria_from_line(line: str) -> oneParsedLine:
+def extract_atomic_criteria_from_line(line: str) -> LLMIdentifiedLineResponse:
     """
     Sends a line to the LLM to extract atomic criteria.
 
@@ -87,7 +87,7 @@ def extract_atomic_criteria_from_line(line: str) -> oneParsedLine:
                 {"role": "user", "content": line},
             ],
             temperature=0.0,
-            response_format=oneParsedLine,
+            response_format=LLMIdentifiedLineResponse,
         )
         if response := completion.choices[0].message.parsed:
             logger.debug("Successfully extracted atomic criteria from line: %s", line)
