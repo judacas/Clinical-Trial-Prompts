@@ -1,5 +1,6 @@
 # services/trial_manager.py
 import logging
+import os
 
 import rich
 from models.logical_criteria import LogicalTrial
@@ -157,11 +158,11 @@ def process_trial(nct_id: str, folder: str = "output") -> LogicalTrial:
     
     identified_trial: IdentifiedTrial = identify_criterions_from_rawTrial(raw_data)
     rich.print(identified_trial)
-    save_pydantic_model(identified_trial, f"{nct_id}_identified.json", folder)
+    save_pydantic_model(identified_trial, f"{nct_id}_identified.json", os.path.join(folder, "identified"))
     
     logical_trial = logically_structurize_trial(identified_trial)
     rich.print(logical_trial)
-    save_pydantic_model(logical_trial, f"{nct_id}_logical.json", folder)
+    save_pydantic_model(logical_trial, f"{nct_id}_logical.json", os.path.join(folder, "logical"))
     
     logger.info("Trial processing complete for NCT ID: %s", nct_id)
     
