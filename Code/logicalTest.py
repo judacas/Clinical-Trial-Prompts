@@ -50,3 +50,9 @@ try:
 except Exception as e:
     logger.error("Error during LLM extraction: %s", e)
     raise ValueError(f"Error during LLM extraction: {e}") from e
+
+
+class LineType(Enum):
+    INCLUSION = "inclusion"
+    EXCLUSION = "exclusion"
+    MISCELLANEOUS = "miscellaneous"

@@ -10,7 +10,9 @@ class RawTrialData(BaseModel):
     """
     nct_id: str = Field(..., alias='nct_id', description="Clinical trial NCT ID.")
     official_title: str = Field(..., description="Official title of the clinical trial.")
-    criteria: str = Field(..., description="Eligibility criteria of the clinical trial.")
+    inclusion_criteria: str = Field(..., description="inclusion criteria of the clinical trial.")
+    exclusion_criteria: str = Field(..., description="exclusion criteria of the clinical trial.")
+    miscellaneous_criteria: str = Field(..., description="miscellaneous criteria of the clinical trial.")
 
 
 class Operator(str, Enum):
@@ -83,11 +85,23 @@ class IdentifiedTrial(BaseModel):
     Represents the collection of all structured atomic criteria and leftovers.
     """
     info: RawTrialData = Field(..., description="Raw data of the clinical trial.")
-    lines: List[IdentifiedLine] = Field(
-        ..., description="List of lines successfully structurized."
+    inclusion_lines: List[IdentifiedLine] = Field(
+        ..., description="List of inclusion lines successfully structurized."
     )
-    failed: List[IdentifiedLine] = Field(
-        ...,description="List of lines that failed to be structurized."
+    exclusion_lines: List[IdentifiedLine] = Field(
+        ..., description="List of exclusion lines successfully structurized."
+    )
+    miscellaneous_lines: List[IdentifiedLine] = Field(
+        ..., description="List of miscellaneous lines successfully structurized."
+    )
+    failed_inclusion: List[IdentifiedLine] = Field(
+        ...,description="List of inclusion lines that failed to be structurized."
+    )
+    failed_exclusion: List[IdentifiedLine] = Field(
+        ...,description="List of exclusion lines that failed to be structurized."
+    )
+    failed_miscellaneous: List[IdentifiedLine] = Field(
+        ...,description="List of miscellaneous lines that failed to be structurized."
     )
 
 class LLMIdentifiedLineResponse(BaseModel):
