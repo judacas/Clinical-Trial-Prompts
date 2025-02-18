@@ -32,6 +32,8 @@ def save_pydantic_model(model: BaseModel, file_name: str, folder: str) -> bool:
         file_path = os.path.join(folder, file_name)
         
         with open(file_path, 'w', encoding="utf-8") as f:
+            #!IMPORTANT serialize_as_any=False is used to avoid the recursive/cyclic serialization error of the logical models
+            # all of the relational operators can hold themselves as children, and pydantic doesn't like that
             f.write(model.model_dump_json(indent=4, serialize_as_any=False, warnings=False))
         logger.info("Model saved successfully at %s", file_path)
         return True
