@@ -20,8 +20,8 @@ def save_pydantic_model(model: BaseModel, file_name: str, folder: str) -> bool:
 
     Args:
         model (T): The Pydantic model to save.
-        folder (str): The folder to save the file in.
         file_name (str): The name of the file.
+        folder (str): The folder to save the file in.
 
     Returns:
         bool: True if saved successfully, False otherwise.

@@ -78,9 +78,6 @@ def convertStdAgesToNumericalAges(std_ages, criteria: list[str]):
     if maxAge != 100:
         criteria.append(f"Must be {maxAge} or younger")
 
-    inclusion_index = None
-    exclusion_index = None
-
 
 def get_trial_data(nct_id: str) -> RawTrialData:
     # sourcery skip: extract-method, hoist-if-from-if
