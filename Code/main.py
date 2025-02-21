@@ -1,5 +1,7 @@
 # main.py
 import logging
+import os
+from typing import Callable
 from services.trial_manager import process_trial
 
 class ColoredFormatter(logging.Formatter):
@@ -17,6 +19,33 @@ class ColoredFormatter(logging.Formatter):
         log_color = self.COLORS.get(record.levelname, self.RESET)
         formatted_message = super().format(record)
         return f"{log_color}{formatted_message}{self.RESET}"
+    
+def getCancerTrials() -> list[str]:
+    onlyCancerFolder = os.path.join("..","Trials", "CHIA", "OnlyCancerTrials")
+    return [
+        file.split(".")[0]
+        for file in os.listdir(onlyCancerFolder)
+        if file.endswith(".json")
+    ]
+    
+def getTrialsFromUser() -> list[str]:
+    trials = []
+    while nct_id := input("Enter the NCT ID of the trial you want to process (or press Enter to finish): ").strip():
+        trials.append(nct_id)
+    return trials
+
+def get_trials()-> list[str] | None:
+    while True:
+        user_choice = input("Please choose one of the following\n'm' for manual input\n'a' to process all cancer trials\n'q' to quit: ").strip().lower()
+
+        if user_choice == 'm':
+            return getTrialsFromUser()
+        elif user_choice == 'a':
+            return getCancerTrials()
+        elif user_choice == 'q':
+            return None
+        else:
+            print("Invalid choice. Please try again.")
 
 def main():
     # Configure logging here
@@ -35,13 +64,14 @@ def main():
     )
 
     logger = logging.getLogger(__name__)
-
-    trials_to_process = []
-
-    while nct_id := input("Enter the NCT ID of the trial you want to process (or press Enter to finish): ").strip():
-        trials_to_process.append(nct_id)
-
-    for nct_id in trials_to_process:
+    
+    
+    trials = get_trials()
+    if not trials:
+        print("Exiting...")
+        return
+    
+    for nct_id in trials:
         logger.info("Processing trial NCT ID: %s", nct_id)
         process_trial(nct_id)
 

@@ -1,11 +1,7 @@
 # utils/helpers.py
 
 import requests
-import os
 import logging
-from typing import Any, List
-from prompt_toolkit import prompt
-from prompt_toolkit.completion import WordCompleter
 
 # Configure logging
 logger = logging.getLogger(__name__)
