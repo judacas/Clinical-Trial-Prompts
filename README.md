@@ -25,23 +25,28 @@ This project processes clinical trial data from ClinicalTrials.gov, extracting s
 
 ## Installation
 
-1. Clone this repository
+1. cd into wherever you want to clone the repo
+    ```
+    cd path/to/future/repo/clone
+    ```
+
+2. Clone this repository
     ```
     gh repo clone judacas/Clinical-Trial-Prompts
     ```
     note: above uses [github cli](https://cli.github.com/)
 
-2. cd into wherever you cloned the repo to
+3. cd into project root
     ```
-    cd path/to/repo/root
+    cd Clinical-Trial-Prompts
     ```
 
-2. Install dependencies:
+4. Install dependencies:
    ```
    pip install -r requirements.txt
    ```
 
-3. Set up environment variables:
+5. Set up environment variables:
     Edit `sample.env` to add your OpenAI API key.
     rename `sample.env` to `.env`
 
@@ -60,6 +65,7 @@ now follow the command line instructions to structurize whichever clinical trial
 - `services/`: Business logic components
 - `repositories/`: Data persistence layer
 - `utils/`: Helper functions and utilities
+- `scripts/`: entry points 
 
 ## Data Flow
 
@@ -67,3 +73,6 @@ now follow the command line instructions to structurize whichever clinical trial
 2. Text is processed to extract atomic criteria
 3. Criteria are organized into logical structures
 4. Results are stored as JSON files
+
+## Notes
+the notes directory is more so personal notes and not really intended to be easily understood by others
