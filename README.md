@@ -1,27 +1,69 @@
-## NOTE: This is a work in progress and is not in a working state.
+# ClearMatch
 
-the code is currently getting revamped to be much more effective and accurate. To see the previous version which used MongoDB instead of boolean expressions go to https://github.com/judacas/Clinical-Trial-Prompts/tree/d85faabad3c8168bf0336fd97ce6747af829abfa
+A Python tool for structured analysis of clinical trial eligibility criteria by extracting and organizing atomic criteria into logical structures.
 
-## Large Language Models for Translating Clinical Trial Eligibility Criteria into Structured Data
+## Overview
 
-This workspace aims to contribute to the matching of patients with their corresponding clinical trials . It uses ChatGPT to change clinical trial eligibility requirements, which comes in a free text format, into a formatted boolean algebra structure. It will then utilize a chatbot UI to gather information from the user untill it has all the information it needs to match a user with their corresponding clinical trials.
+This project processes clinical trial data from ClinicalTrials.gov, extracting structured information about eligibility criteria. It performs two key steps:
 
-## Details
+1. **Identification**: Extracts atomic criteria from raw text
+2. **Logical Structurization**: Organizes these criteria into logical relationships
 
-OpenAI’s GPT (gpt-4-turbo) with Python (v3.11.4) bindings were used to convert ClinicalTrials.gov JSON criteria. Ten (10) interventional clinica trials were chosen for training. Responses were evaluated for correctness, and prompts were modified in an iterative development process. Prompts were decomposed into more specific subtasks. The output was MQL (Mongo Query Language) then updated to Boolean algebra expression serialized as a JSON. The first prompt takes in free form eligibility criteria and outputs a Boolean algebra expression serialized as a JSON. The second prompt then takes that JSON and asks the user until they acquire the information
-necessary to evaluate the Boolean expression
+3. **Matching of patients to Oncological Clinical Trials**: Not implemented yet
 
+## Features
 
-## pre requisites
-currently the code can not be run out of the box as it does not make an openai assistant from the prompts in this repo. It instead uses assistants already made on our personal openai account for which the id can not be shared.
+- Fetches clinical trial data from ClinicalTrials.gov API
+- Breaks down complex eligibility criteria into atomic components
+- Structures criteria using logical operators (AND, OR, NOT, XOR, Conditional)
+- Persists processed data as JSON files
 
-### work around
-install all neccesary requirements by running pip install -r requirements.txt.
-you must then make assistants using the openai api and copy the prompts from the txt files into the system prompts. You must also copy the function call text into the Information Gathering tools. Then you must fill out the IDs of each assistant and api keys from your opernai account in a .env file stored in Code\.env
-The keys needed are:
-OPENAI_API_KEY=""
-OPENAI_ORGANIZATION_ID=""
-CriteriaBooleanTranslatorID=""
-InformationGathererID=""
-Fill in the strings with your IDs/Keys
-Warning, this will cost money as it is using your personal openaiAPI keys
+## Requirements
+
+- Python 3.8+
+- OpenAI API key (for GPT-4o access)
+
+## Installation
+
+1. Clone this repository
+    ```
+    gh repo clone judacas/Clinical-Trial-Prompts
+    ```
+    note: above uses [github cli](https://cli.github.com/)
+
+2. cd into wherever you cloned the repo to
+    ```
+    cd path/to/repo/root
+    ```
+
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Set up environment variables:
+    Edit `sample.env` to add your OpenAI API key.
+    rename `sample.env` to `.env`
+
+## Usage
+simply run the main file
+
+```python
+python -m scripts.main
+```
+
+now follow the command line instructions to structurize whichever clinical trials you wish
+
+## Project Structure
+
+- `models/`: Pydantic data models
+- `services/`: Business logic components
+- `repositories/`: Data persistence layer
+- `utils/`: Helper functions and utilities
+
+## Data Flow
+
+1. Raw trial data is fetched from ClinicalTrials.gov
+2. Text is processed to extract atomic criteria
+3. Criteria are organized into logical structures
+4. Results are stored as JSON files
