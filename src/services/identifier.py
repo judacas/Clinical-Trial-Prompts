@@ -5,9 +5,9 @@ import re
 from typing import List
 
 import rich
-from models.identified_criteria import RawTrialData
-from models.identified_criteria import LLMSingleRawCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
-from utils.openai_client import get_openai_client
+from src.models.identified_criteria import RawTrialData
+from src.models.identified_criteria import LLMSingleRawCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
+from src.utils.openai_client import get_openai_client
 from enum import Enum
 
 logger = logging.getLogger(__name__)

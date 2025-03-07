@@ -3,13 +3,13 @@ import logging
 import os
 
 import rich
-from utils.config import DEFAULT_OUTPUT_DIR
-from models.logical_criteria import LogicalTrial
-from repositories.trial_repository import export_pydantic_to_json
-from services.logical_structurizer import logically_structurize_trial
-from models.identified_criteria import IdentifiedTrial, RawTrialData
-from services.identifier import identify_criterions_from_rawTrial
-from utils.helpers import curl_with_status_check
+from src.utils.config import DEFAULT_OUTPUT_DIR
+from src.models.logical_criteria import LogicalTrial
+from src.repositories.trial_repository import export_pydantic_to_json
+from src.services.logical_structurizer import logically_structurize_trial
+from src.models.identified_criteria import IdentifiedTrial, RawTrialData
+from src.services.identifier import identify_criterions_from_rawTrial
+from src.utils.helpers import curl_with_status_check
 
 import re
 

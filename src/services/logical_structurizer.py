@@ -1,10 +1,9 @@
 from enum import Enum
-import rich
-from models.logical_criteria import LLMLogicalAnd, LLMLogicalNot, LLMLogicalOr, LLMLogicalXor, LLmLogicalConditional, LogicalLine, LogicalTrial, LLMLogicalWrapperResponse
-from models.identified_criteria import *
-from utils.openai_client import get_openai_client
+from src.models.logical_criteria import LLMLogicalAnd, LLMLogicalNot, LLMLogicalOr, LLMLogicalXor, LLmLogicalConditional, LogicalLine, LogicalTrial, LLMLogicalWrapperResponse
+from src.models.identified_criteria import *
+from src.utils.openai_client import get_openai_client
 import logging
-from repositories.trial_repository import load_pydantic_from_json
+from src.repositories.trial_repository import load_pydantic_from_json
 
 logger = logging.getLogger()
 

@@ -21,7 +21,7 @@ Notes:
 
 from pydantic import BaseModel, Field
 from typing import List, Union
-from .identified_criteria import IdentifiedLine, RawTrialData, LLMSingleRawCriterion
+from src.models.identified_criteria import IdentifiedLine, RawTrialData, LLMSingleRawCriterion
 
 class LLMLogicalAnd(BaseModel):
     """

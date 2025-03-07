@@ -1,7 +1,11 @@
 # main.py
 import logging
 import os
-from services.trial_manager import process_trial
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+from src.services.trial_manager import process_trial
 
 class ColoredFormatter(logging.Formatter):
     # ANSI escape codes for colors
