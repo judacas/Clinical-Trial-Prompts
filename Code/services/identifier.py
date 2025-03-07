@@ -6,7 +6,7 @@ from typing import List
 
 import rich
 from models.identified_criteria import RawTrialData
-from models.identified_criteria import SingleRawCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
+from models.identified_criteria import LLMSingleRawCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
 from utils.openai_client import get_openai_client
 from enum import Enum
 
@@ -113,7 +113,7 @@ def extract_atomic_criteria_from_line(line: str) -> LLMIdentifiedLineResponse:
         logger.error("Error during LLM extraction: %s", e)
         raise ValueError(f"Error during LLM extraction: {e}") from e
 
-def verify(line: str, criteria_list: List[SingleRawCriterion]) -> None:
+def verify(line: str, criteria_list: List[LLMSingleRawCriterion]) -> None:
     """
     Verifies that each criterion's raw_text is an exact substring of the line and extracts leftovers.
 

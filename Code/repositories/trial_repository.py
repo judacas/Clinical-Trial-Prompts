@@ -1,25 +1,33 @@
 # repositories/trial_repository.py
 
+"""
+This module provides functions to save and load Pydantic models to and from JSON files.
+Made this way so that in the future we can modify save and load to use a database instead of files without having to change any other code.
+
+Functions:
+    export_pydantic_to_json(model: BaseModel, file_name: str, folder: str) -> bool:
+        Saves a Pydantic model to a JSON file.
+    
+    load_pydantic_from_json(folder: str, file_name: str, model_class: Type[T]) -> Optional[T]:
+        Loads a Pydantic model from a JSON file.
+"""
+
 import os
 import logging
 import traceback
 from typing import Optional, Type, TypeVar
-from unittest.mock import Base
 from pydantic import BaseModel
-
-from models.logical_criteria import LogicalLine
 
 # Configure logging
 logger = logging.getLogger(__name__)
 
-T = TypeVar('T', bound=BaseModel)
 
-def save_pydantic_model(model: BaseModel, file_name: str, folder: str) -> bool:
+def export_pydantic_to_json(model: BaseModel, file_name: str, folder: str) -> bool:
     """
-    Saves a Pydantic model to a JSON file.
+    Saves any Pydantic model to a JSON file.
 
     Args:
-        model (T): The Pydantic model to save.
+        model (BaseModel): The Pydantic model to save.
         file_name (str): The name of the file.
         folder (str): The folder to save the file in.
 
@@ -42,7 +50,10 @@ def save_pydantic_model(model: BaseModel, file_name: str, folder: str) -> bool:
         logger.error("Stack trace: %s", traceback.format_exc())
         return False
 
-def load_pydantic_model(folder: str, file_name: str, model_class: Type[T]) -> Optional[T]:
+# necessary to make the loading generic and type agnostic
+T = TypeVar('T', bound=BaseModel)
+
+def load_pydantic_from_json(folder: str, file_name: str, model_class: Type[T]) -> Optional[T]:
     """
     Loads a Pydantic model from a JSON file.
 
@@ -52,7 +63,7 @@ def load_pydantic_model(folder: str, file_name: str, model_class: Type[T]) -> Op
         model_class (Type[T]): The Pydantic model class.
 
     Returns:
-        Optional[T]: The loaded model or None if failed.
+        Optional[T]: The loaded model as a pydantic object or None if failed.
     """
     logger.info("Loading model from %s", os.path.join(folder, file_name))
     try:
