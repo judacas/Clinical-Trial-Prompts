@@ -1,7 +1,6 @@
 # main.py
 import logging
 import os
-from typing import Callable
 from services.trial_manager import process_trial
 
 class ColoredFormatter(logging.Formatter):

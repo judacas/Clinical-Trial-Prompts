@@ -3,6 +3,7 @@ import logging
 import os
 
 import rich
+from utils.config import DEFAULT_OUTPUT_DIR
 from models.logical_criteria import LogicalTrial
 from repositories.trial_repository import export_pydantic_to_json
 from services.logical_structurizer import logically_structurize_trial
@@ -148,7 +149,7 @@ def get_trial_data(nct_id: str) -> RawTrialData:
         raise ValueError(f"Error fetching trial data: {e}") from e
 
 
-def process_trial(nct_id: str, folder: str = "output") -> LogicalTrial:
+def process_trial(nct_id: str, folder: str = DEFAULT_OUTPUT_DIR) -> LogicalTrial:
     raw_data = get_trial_data(nct_id)
     if not raw_data:
         raise ValueError(f"Failed to fetch trial data for NCT ID: {nct_id}")
