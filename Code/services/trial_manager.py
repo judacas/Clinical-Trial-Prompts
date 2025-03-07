@@ -4,7 +4,7 @@ import os
 
 import rich
 from models.logical_criteria import LogicalTrial
-from repositories.trial_repository import save_pydantic_model
+from repositories.trial_repository import export_pydantic_to_json
 from services.logical_structurizer import logically_structurize_trial
 from models.identified_criteria import IdentifiedTrial, RawTrialData
 from services.identifier import identify_criterions_from_rawTrial
@@ -155,11 +155,11 @@ def process_trial(nct_id: str, folder: str = "output") -> LogicalTrial:
     
     identified_trial: IdentifiedTrial = identify_criterions_from_rawTrial(raw_data)
     rich.print(identified_trial)
-    save_pydantic_model(identified_trial, f"{nct_id}_identified.json", os.path.join(folder, "identified"))
+    export_pydantic_to_json(identified_trial, f"{nct_id}_identified.json", os.path.join(folder, "identified"))
     
     logical_trial = logically_structurize_trial(identified_trial)
     rich.print(logical_trial)
-    save_pydantic_model(logical_trial, f"{nct_id}_logical.json", os.path.join(folder, "logical"))
+    export_pydantic_to_json(logical_trial, f"{nct_id}_logical.json", os.path.join(folder, "logical"))
     
     logger.info("Trial processing complete for NCT ID: %s", nct_id)
     

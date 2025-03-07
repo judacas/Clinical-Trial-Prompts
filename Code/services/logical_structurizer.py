@@ -1,10 +1,10 @@
 from enum import Enum
 import rich
-from models.logical_criteria import LLMLogicalAnd, LLMLogicalNot, LLMLogicalOr, LLMLogicalXor, LLmLogicalConditional, LogicalLine, LogicalTrial, LogicalWrapperResponse
+from models.logical_criteria import LLMLogicalAnd, LLMLogicalNot, LLMLogicalOr, LLMLogicalXor, LLmLogicalConditional, LogicalLine, LogicalTrial, LLMLogicalWrapperResponse
 from models.identified_criteria import *
 from utils.openai_client import get_openai_client
 import logging
-from repositories.trial_repository import load_pydantic_model
+from repositories.trial_repository import load_pydantic_from_json
 
 logger = logging.getLogger()
 
@@ -45,7 +45,7 @@ def logically_structurize_line(
                 {"role": "user", "content": str(line)},
             ],
             temperature=0.0,
-            response_format=LogicalWrapperResponse,
+            response_format=LLMLogicalWrapperResponse,
         )
         response = completion.choices[0].message.parsed
         if response is None:
@@ -93,7 +93,7 @@ def extract_criteria_from_logical_structure(logical_structure) -> set:
     """
     criteria = set()
 
-    if isinstance(logical_structure, SingleRawCriterion):
+    if isinstance(logical_structure, LLMSingleRawCriterion):
         criteria.add(logical_structure.criterion)
     elif isinstance(logical_structure, LLMLogicalAnd):
         for sub_criteria in logical_structure.and_criteria:
@@ -146,7 +146,7 @@ def logically_structurize_trial(trial: IdentifiedTrial) -> LogicalTrial:
                 failed_inclusion.append(logical_line)
         except Exception as e:
             logger.error("Failed to structurize inclusion line: %s", inclusion_line)
-            failed_inclusion.append(LogicalLine(identified_line=inclusion_line, logical_structure=SingleRawCriterion(criterion="failed", requirement_type="failed", expected_value="failed", exact_snippets=["failed"])))
+            failed_inclusion.append(LogicalLine(identified_line=inclusion_line, logical_structure=LLMSingleRawCriterion(criterion="failed", requirement_type="failed", expected_value="failed", exact_snippets=["failed"])))
 
     for exclusion_line in (trial.exclusion_lines + trial.failed_exclusion):
         try:
@@ -159,7 +159,7 @@ def logically_structurize_trial(trial: IdentifiedTrial) -> LogicalTrial:
                 failed_exclusion.append(logical_line)
         except Exception as e:
             logger.error("Failed to structurize exclusion line: %s", exclusion_line)
-            failed_exclusion.append(LogicalLine(identified_line=exclusion_line, logical_structure=SingleRawCriterion(criterion="failed", requirement_type="failed", expected_value="failed", exact_snippets=["failed"])))
+            failed_exclusion.append(LogicalLine(identified_line=exclusion_line, logical_structure=LLMSingleRawCriterion(criterion="failed", requirement_type="failed", expected_value="failed", exact_snippets=["failed"])))
 
     for miscellaneous_line in (trial.miscellaneous_lines + trial.failed_miscellaneous):
         try:
@@ -172,7 +172,7 @@ def logically_structurize_trial(trial: IdentifiedTrial) -> LogicalTrial:
                 failed_miscellaneous.append(logical_line)
         except Exception as e:
             logger.error("Failed to structurize miscellaneous line: %s", miscellaneous_line)
-            failed_miscellaneous.append(LogicalLine(identified_line=miscellaneous_line, logical_structure=SingleRawCriterion(criterion="failed", requirement_type="failed", expected_value="failed", exact_snippets=["failed"])))
+            failed_miscellaneous.append(LogicalLine(identified_line=miscellaneous_line, logical_structure=LLMSingleRawCriterion(criterion="failed", requirement_type="failed", expected_value="failed", exact_snippets=["failed"])))
 
 
     return LogicalTrial(
