@@ -1,22 +1,28 @@
+# models/logical_criteria.py
 """
-This file defines the pydantic models used in the logical structurization process to represent the logical structure between the atomic criteria extracted from the identification process.
+Data Models for Logical Structured Clinical Trial Criteria
 
-All of the classes below which start with LLM are used as the output format for the LLM, the rest are how we end up storing the data internally.
+This module defines the Pydantic models used to represent the logical relationships
+between atomic criteria extracted from clinical trial eligibility criteria.
+
+Classes prefixed with 'LLM' are used as output formats for LLM processing, while
+other classes are used for internal data storage.
 
 Classes:
-    LLMLogicalAnd: Represents a logical AND relationship between criteria.
-    LLMLogicalOr: Represents a logical OR relationship between criteria.
-    LLMLogicalNot: Represents a logical NOT operation on a criterion or logical expression.
-    LLMLogicalXor: Represents a logical XOR relationship between criteria.
-    LLmLogicalConditional: Represents a conditional (if then else) relationship between criteria.
-    LLMLogicalWrapperResponse: Represents the response from the LLM with the logical structure.
-    LogicalLine: Represents a line of eligibility criteria that has been logically structured.
-    LogicalTrial: Represents a trial with logically structured criteria.
+    LLMLogicalAnd: Logical AND relationship between criteria.
+    LLMLogicalOr: Logical OR relationship between criteria.
+    LLMLogicalNot: Logical NOT operation on criteria.
+    LLMLogicalXor: Logical XOR relationship between criteria.
+    LLMLogicalConditional: Conditional (if-then-else) relationship.
+    LLMLogicalWrapperResponse: Container for LLM logical structure response.
+    LogicalLine: Line with identified criteria and logical structure.
+    LogicalTrial: Complete trial with logically structured criteria.
 
-Notes:
-    - If you change the docstring of the Pydantic models below, you will be changing the "prompt" to the LLMs since the descriptions are used when the LLM reads the output format. Add comments instead if needed.
-    - The LogicalLine model includes both the identified line and its logical structure and is the core of our logical structurization process.
-    - The LogicalTrial model includes lists of successfully structurized lines and lines that failed to be structurized and is the end result of our logical structurization process.
+Important:
+    The docstrings of Pydantic models are used as prompts for LLM processing.
+    Changing these docstrings will alter how the LLM interprets the output format.
+    Use code comments rather than docstring modifications if documentation changes
+    are needed without affecting LLM behavior.
 """
 
 from pydantic import BaseModel, Field
@@ -27,57 +33,64 @@ class LLMLogicalAnd(BaseModel):
     """
     Represents a logical AND relationship between criteria.
     """
-    and_criteria: List[Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLmLogicalConditional" ]] = Field(..., description="The criteria involved in the relationship.")
+    and_criteria: List[Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLMLogicalConditional" ]] = Field(..., description="The criteria involved in the relationship.")
 
 class LLMLogicalOr(BaseModel):
     """
     Represents a logical OR relationship between criteria.
     """
-    or_criteria: List[Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLmLogicalConditional" ]] = Field(..., description="The criteria involved in the relationship.")
+    or_criteria: List[Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLMLogicalConditional" ]] = Field(..., description="The criteria involved in the relationship.")
 
 class LLMLogicalNot(BaseModel):
     """
     Represents a logical NOT operation on a criterion or logical expression. Ensure that negation isn't already implicit in the criterion's value (e.g., 'must not be older than 18' is already represented by 'age ≤ 18 and no need for additional LLMLogicalNot').
     """
-    not_criteria: Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLmLogicalConditional" ] = Field(..., description="The criteria involved in the relationship.")
+    not_criteria: Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLMLogicalConditional" ] = Field(..., description="The criteria involved in the relationship.")
 
 class LLMLogicalXor(BaseModel):
     """
     Represents a logical XOR relationship between criteria.
     """
-    xor_criteria: List[Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLmLogicalConditional" ]] = Field(..., description="The criteria involved in the relationship.")
+    xor_criteria: List[Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLMLogicalConditional" ]] = Field(..., description="The criteria involved in the relationship.")
 
 
-class LLmLogicalConditional(BaseModel):
+class LLMLogicalConditional(BaseModel):
     """
     Represents a conditional relationship between criteria.
     """
-    condition: Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLmLogicalConditional" ] = Field(..., description="The condition criterion (antecedent)")
-    then_criteria: Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLmLogicalConditional" , None] = Field(..., description="The criteria that apply if the condition (antecedent) is met. (consequent)")
-    else_criteria: Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLmLogicalConditional" , None] = Field(..., description="The criteria that apply if the condition (antecedent) is not met (optional consequent).")
+    condition: Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLMLogicalConditional" ] = Field(..., description="The condition criterion (antecedent)")
+    then_criteria: Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLMLogicalConditional" , None] = Field(..., description="The criteria that apply if the condition (antecedent) is met. (consequent)")
+    else_criteria: Union[LLMSingleRawCriterion, "LLMLogicalAnd", "LLMLogicalOr", "LLMLogicalNot","LLMLogicalXor", "LLMLogicalConditional" , None] = Field(..., description="The criteria that apply if the condition (antecedent) is not met (optional consequent).")
 
+# Rebuild model schemas to resolve forward references in the Union types
 LLMLogicalAnd.model_rebuild()
 LLMLogicalOr.model_rebuild()
 LLMLogicalNot.model_rebuild()
 LLMLogicalXor.model_rebuild()
-LLmLogicalConditional.model_rebuild()
+LLMLogicalConditional.model_rebuild()
 
-#This is necessary because we can't tell the LLM to respond in one of the following types, instead we have to give it one type to respond in so this handles that constraint
+# This wrapper is necessary because the LLM needs a single type to generate,
+# not a Union of possible logical relation types
 class LLMLogicalWrapperResponse(BaseModel):
     """
     Represents the response from the LLM.
     """
-    logicalRepresentation: Union[LLMLogicalAnd, LLMLogicalOr, LLMLogicalNot, LLMLogicalXor, LLmLogicalConditional] = Field(..., description="The logical representation of the criteria.")
+    logicalRepresentation: Union[LLMLogicalAnd, LLMLogicalOr, LLMLogicalNot, LLMLogicalXor, LLMLogicalConditional] = Field(..., description="The logical representation of the criteria.")
 
 class LogicalLine(BaseModel):
     """
     Represents a line of eligibility criteria that has been logically structured.
     """
     identified_line: IdentifiedLine = Field(..., description="The identified line this was made from.")
-    logical_structure: Union[LLMSingleRawCriterion, LLMLogicalAnd, LLMLogicalOr, LLMLogicalNot, LLMLogicalXor, LLmLogicalConditional] = Field(..., description="The logically structured Criteria.")
-    # Note that we won't add a validator here because we still want to be able to store the failed lines. as in we won't make use of a pydantic validator to check if the logical_structure actually includes all of the identified_line's criteria. Instead we will do that in our procedure which "logifies" the lines to save the failed lines.
+    logical_structure: Union[LLMSingleRawCriterion, LLMLogicalAnd, LLMLogicalOr, LLMLogicalNot, LLMLogicalXor, LLMLogicalConditional] = Field(..., description="The logically structured Criteria.")
+    # Note: We don't use a Pydantic validator here to check if the logical_structure 
+    # includes all of the identified_line's criteria because we want to be able to 
+    # store failed lines. This validation happens in the "logify" procedure instead.
 
 class LogicalTrial(BaseModel):
+    """
+    Represents a complete trial with logically structured eligibility criteria.
+    """
     info: RawTrialData = Field(..., description="Raw data of the clinical trial.")
     inclusion_lines: List[LogicalLine] = Field(
         ..., description="List of inclusion lines successfully logically structurized."
