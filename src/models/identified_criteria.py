@@ -1,24 +1,29 @@
-# models/structured_criteria.py
+# models/identified_criteria.py
 """
-This file defines the pydantic models used to represent the structured atomic criteria extracted from the eligibility criteria of a clinical trial.
-This is only the criteria, not the logical structure of the criteria.
+Data Models for Structured Clinical Trial Criteria
 
-All of the classes below which start with LLM are used as the output format for the LLM, the rest are how we end up storing the data internally.
+This module defines the Pydantic models used to represent structured atomic criteria
+extracted from clinical trial eligibility criteria. These models represent the individual
+criteria, not the logical relationships between them.
+
+Classes prefixed with 'LLM' are used as output formats for LLM processing, while
+other classes are used for internal data storage.
 
 Classes:
-    RawTrialData: Represents the raw data of a clinical trial.
-    LLMOperator: Enum representing comparison operators for numerical comparisons.
-    LLMNumericalComparison: Represents a numerical comparison operation for an expected value.
-    LLMRange: Represents a range via multiple LLMNumericalComparison objects.
-    LLMSingleRawCriterion: Represents an atomic criterion extracted from the eligibility criteria.
-    IdentifiedLine: Represents a structured line of eligibility criteria.
-    IdentifiedTrial: Represents the collection of all structured atomic criteria and leftovers.
-    LLMIdentifiedLineResponse: Represents the response from an LLM with extracted atomic criteria.
+    RawTrialData: Raw clinical trial data including eligibility criteria.
+    LLMOperator: Enumeration of comparison operators.
+    LLMNumericalComparison: Numerical comparison with operator and value.
+    LLMRange: Range defined by multiple numerical comparisons.
+    LLMSingleRawCriterion: Atomic criterion extracted from eligibility criteria.
+    IdentifiedLine: Line of eligibility criteria with structured criteria.
+    IdentifiedTrial: Collection of all structured atomic criteria for a trial.
+    LLMIdentifiedLineResponse: LLM response format for identified criteria.
 
-Notes:
-    - If you change the docstring of the Pydantic models below, you will be changing the "prompt" to the LLMs since the descriptions are used when the LLM reads the output format. Add comments instead if needed.
-    - The LLMSingleRawCriterion model captures the general property/attribute being tested, what is asked about it (requirement_type), and the expected value and is the core of our identification process.
-    - The IdentifiedTrial model includes lists of successfully identified lines and lines that failed to be identified and is the end result of our identification process.
+Important:
+    The docstrings of Pydantic models are used as prompts for LLM processing.
+    Changing these docstrings will alter how the LLM interprets the output format.
+    Use code comments rather than docstring modifications if documentation changes
+    are needed without affecting LLM behavior.
 """
 
 
@@ -26,8 +31,6 @@ from pydantic import BaseModel, Field
 from typing import List, Union
 from enum import Enum
 
-
-#! if you change the docstring of the pydantic models below, you will be changing the "prompt" to the llms since the descriptions are used when the llm reads the output format. Add comments instead if needed
 
 class RawTrialData(BaseModel):
     """
@@ -65,11 +68,17 @@ class LLMRange(BaseModel):
     comparisons: List[LLMNumericalComparison] = Field(..., description="List of comparison operations defining the range.")
 
 
-#TODO we should test out having this be a criterion and then list of requirement type and expected value pairs. this would better represent the data and enforce the idea that a criterion can have multiple requirement types and expected values associated with it to the llm better than putting that as text in the prompt. would still have to unwrap it when locally saving it in order to use it in the logical structurization process.
+# TODO: Consider restructuring to use a criterion with a list of requirement type 
+# and expected value pairs. This would better represent the data structure and 
+# reinforce to the LLM that a criterion can have multiple requirement types and
+# expected values. Would need to unwrap this for logical structurization.
 
-#TODO test out different examples, or at least an example which covers more edge cases
+# TODO: Test different example sets, particularly examples covering edge cases.
 
-#TODO in far future test out not having the sample one shot in description, having few-shot, or if possible doing reinforcement fine tuning instead.
+# TODO: Consider alternatives to one-shot examples in the description:
+# - Few-shot examples
+# - Reinforcement fine-tuning for this specific task
+
 class LLMSingleRawCriterion(BaseModel):
     """
     Represents an atomic criterion extracted from the eligibility criteria.
