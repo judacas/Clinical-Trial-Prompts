@@ -1,0 +1,489 @@
+{
+    "info": {
+        "nct_id": "NCT01262820",
+        "official_title": "A Multi-Center Open Label Phase II Study of Pazopanib in Stage IIIB/IV Non-Squamous Non-Small Cell Lung Cancer After Progression on First Line Therapy Containing Bevacizumab",
+        "inclusion_criteria": "* Age 18 or older\n* Stage IIIB (with malignant pleural or pericardial effusion or supraclavicular lymph node involvement) or stage IV NSCLC\n* Evidence of progression while on bevacizumab\n* Patients treated for CNS metastases who are asymptomatic with no requirement for steroids for 2 weeks prior to first dose of study drug\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Prior malignancy\n* Clinically significant gastrointestinal abnormalities\n* Presence of uncontrolled infection or nonhealing wound, fracture, or ulcer\n* History of cardiovascular conditions within the past 6 months",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Age 18 or older",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age 18 or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age 18 or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Stage IIIB (with malignant pleural or pericardial effusion or supraclavicular lymph node involvement) or stage IV NSCLC",
+                "criterions": [
+                    {
+                        "exact_snippets": "Stage IIIB (with malignant pleural or pericardial effusion or supraclavicular lymph node involvement)",
+                        "criterion": "NSCLC stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "IIIB"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Stage IIIB (with malignant pleural or pericardial effusion or supraclavicular lymph node involvement)",
+                        "criterion": "NSCLC stage",
+                        "requirement": {
+                            "requirement_type": "complications",
+                            "expected_value": [
+                                "malignant pleural effusion",
+                                "malignant pericardial effusion",
+                                "supraclavicular lymph node involvement"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "stage IV NSCLC",
+                        "criterion": "NSCLC stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "IV"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Stage IIIB (with malignant pleural or pericardial effusion or supraclavicular lymph node involvement)",
+                                "criterion": "NSCLC stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": "IIIB"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Stage IIIB (with malignant pleural or pericardial effusion or supraclavicular lymph node involvement)",
+                                "criterion": "NSCLC stage",
+                                "requirement": {
+                                    "requirement_type": "complications",
+                                    "expected_value": [
+                                        "malignant pleural effusion",
+                                        "malignant pericardial effusion",
+                                        "supraclavicular lymph node involvement"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "stage IV NSCLC",
+                        "criterion": "NSCLC stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "IV"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Evidence of progression while on bevacizumab",
+                "criterions": [
+                    {
+                        "exact_snippets": "Evidence of progression while on bevacizumab",
+                        "criterion": "progression on bevacizumab",
+                        "requirement": {
+                            "requirement_type": "evidence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Evidence of progression while on bevacizumab",
+                        "criterion": "progression on bevacizumab",
+                        "requirement": {
+                            "requirement_type": "evidence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients treated for CNS metastases who are asymptomatic with no requirement for steroids for 2 weeks prior to first dose of study drug",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients treated for CNS metastases",
+                        "criterion": "CNS metastases treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "asymptomatic",
+                        "criterion": "symptoms",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "no requirement for steroids",
+                        "criterion": "steroid requirement",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "2 weeks prior to first dose of study drug",
+                        "criterion": "steroid-free duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients treated for CNS metastases",
+                                "criterion": "CNS metastases treatment",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "asymptomatic",
+                                "criterion": "symptoms",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "no requirement for steroids",
+                                "criterion": "steroid requirement",
+                                "requirement": {
+                                    "requirement_type": "requirement",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "2 weeks prior to first dose of study drug",
+                                "criterion": "steroid-free duration",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "weeks"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Prior malignancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior malignancy",
+                        "criterion": "prior malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prior malignancy",
+                    "criterion": "prior malignancy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Clinically significant gastrointestinal abnormalities",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinically significant gastrointestinal abnormalities",
+                        "criterion": "gastrointestinal abnormalities",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "clinically significant"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Clinically significant gastrointestinal abnormalities",
+                        "criterion": "gastrointestinal abnormalities",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "clinically significant"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Presence of uncontrolled infection or nonhealing wound, fracture, or ulcer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Presence of uncontrolled infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Presence of ... nonhealing wound",
+                        "criterion": "wound",
+                        "requirement": {
+                            "requirement_type": "healing",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Presence of ... fracture",
+                        "criterion": "fracture",
+                        "requirement": {
+                            "requirement_type": "healing",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Presence of ... ulcer",
+                        "criterion": "ulcer",
+                        "requirement": {
+                            "requirement_type": "healing",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Presence of uncontrolled infection",
+                                "criterion": "infection",
+                                "requirement": {
+                                    "requirement_type": "control",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Presence of ... nonhealing wound",
+                                "criterion": "wound",
+                                "requirement": {
+                                    "requirement_type": "healing",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Presence of ... fracture",
+                                "criterion": "fracture",
+                                "requirement": {
+                                    "requirement_type": "healing",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Presence of ... ulcer",
+                                "criterion": "ulcer",
+                                "requirement": {
+                                    "requirement_type": "healing",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of cardiovascular conditions within the past 6 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of cardiovascular conditions within the past 6 months",
+                        "criterion": "cardiovascular conditions",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "History of cardiovascular conditions within the past 6 months",
+                        "criterion": "cardiovascular conditions",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -26,6 +26,7 @@ from typing import List, Tuple
 import rich
 from src.models.identified_criteria import RawTrialData
 from src.models.identified_criteria import LLMMultiRequirementCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
+from src.utils.config import TEMPERATURE, TIMEOUT
 from src.utils.openai_client import get_openai_client
 
 logger = logging.getLogger(__name__)
@@ -147,9 +148,9 @@ def extract_atomic_criteria_from_line(line: str) -> LLMIdentifiedLineResponse:
                 {"role": "system", "content": prompt},
                 {"role": "user", "content": line},
             ],
-            temperature=0.0,
+            temperature=TEMPERATURE,
             response_format=LLMIdentifiedLineResponse,
-            timeout=45,
+            timeout=TIMEOUT,
         )
         
         if response := completion.choices[0].message.parsed:

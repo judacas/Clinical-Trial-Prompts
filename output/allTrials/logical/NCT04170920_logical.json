@@ -1,0 +1,787 @@
+{
+    "info": {
+        "nct_id": "NCT04170920",
+        "official_title": "Pilot Study of a Mobile Health Strategy to Improve Medication Adherence in Breast Cancer Survivors Receiving Aromatase Inhibitors",
+        "inclusion_criteria": "1. ≥ 18 years old at the time of informed consent\n2. Regular access to a smartphone capable of downloading the application\n\n   1. iOS 11 or later (iPhone5, iPhone SE or newer)\n   2. Android 6 or later (Android 9 is current version)\n3. History of DCIS, stage I, II, or III invasive breast cancer\n4. Currently prescribed an aromatase inhibitor (letrozole, anastrozole, exemestane) or planned to be initiated on one by the time of signing informed consent. Patient already on an AI must have been prescribed this medication for a total of 36 months or less.\n\n   1. Ovarian suppression with AI is allowed in premenopausal patients.\n   2. Prior SERM and now switching to an AI for the first time is allowed.\n   3. Concurrent trastuzumab, pertuzumab, or TDM1 is allowed.\n   4. Concurrent neratinib or other oral cancer directed medication is not allowed.\n5. ECOG performance status of 0-2\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "1. Metastatic breast cancer or other active malignancy\n\n   1. Locally recurrent breast cancer is allowed if treated with surgical excision and AI is prescribed with curative intent.\n   2. History of prior treated malignancies, other than breast cancer, that are now stable, are in remission, and do not require active therapy, are acceptable\n2. Unable to read the English language or otherwise participate in the study procedures in the opinion of the treating investigator.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "3. History of DCIS, stage I, II, or III invasive breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of DCIS",
+                        "criterion": "DCIS",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stage I, II, or III invasive breast cancer",
+                        "criterion": "invasive breast cancer",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "I",
+                                "II",
+                                "III"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "History of DCIS",
+                        "criterion": "DCIS",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stage I, II, or III invasive breast cancer",
+                        "criterion": "invasive breast cancer",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "I",
+                                "II",
+                                "III"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Currently prescribed an aromatase inhibitor (letrozole, anastrozole, exemestane) or planned to be initiated on one by the time of signing informed consent. Patient already on an AI must have been prescribed this medication for a total of 36 months or less.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Currently prescribed an aromatase inhibitor (letrozole, anastrozole, exemestane)",
+                        "criterion": "aromatase inhibitor prescription",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "planned to be initiated on one by the time of signing informed consent",
+                        "criterion": "planned aromatase inhibitor initiation",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "by the time of signing informed consent"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patient already on an AI must have been prescribed this medication for a total of 36 months or less",
+                        "criterion": "duration of aromatase inhibitor prescription",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 36,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Currently prescribed an aromatase inhibitor (letrozole, anastrozole, exemestane)",
+                                "criterion": "aromatase inhibitor prescription",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Patient already on an AI must have been prescribed this medication for a total of 36 months or less",
+                                "criterion": "duration of aromatase inhibitor prescription",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 36,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "planned to be initiated on one by the time of signing informed consent",
+                        "criterion": "planned aromatase inhibitor initiation",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "by the time of signing informed consent"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Ovarian suppression with AI is allowed in premenopausal patients.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ovarian suppression with AI is allowed",
+                        "criterion": "ovarian suppression with AI",
+                        "requirement": {
+                            "requirement_type": "allowance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "premenopausal patients",
+                        "criterion": "menopausal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "premenopausal"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ovarian suppression with AI is allowed",
+                        "criterion": "ovarian suppression with AI",
+                        "requirement": {
+                            "requirement_type": "allowance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "premenopausal patients",
+                        "criterion": "menopausal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "premenopausal"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Prior SERM and now switching to an AI for the first time is allowed.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior SERM",
+                        "criterion": "prior SERM use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "switching to an AI for the first time is allowed",
+                        "criterion": "switching to AI",
+                        "requirement": {
+                            "requirement_type": "first time",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prior SERM",
+                        "criterion": "prior SERM use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "switching to an AI for the first time is allowed",
+                        "criterion": "switching to AI",
+                        "requirement": {
+                            "requirement_type": "first time",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Concurrent trastuzumab, pertuzumab, or TDM1 is allowed.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Concurrent trastuzumab, pertuzumab, or TDM1 is allowed.",
+                        "criterion": "concurrent treatment",
+                        "requirement": {
+                            "requirement_type": "allowed treatments",
+                            "expected_value": [
+                                "trastuzumab",
+                                "pertuzumab",
+                                "TDM1"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Concurrent trastuzumab, pertuzumab, or TDM1 is allowed.",
+                        "criterion": "concurrent treatment",
+                        "requirement": {
+                            "requirement_type": "allowed treatments",
+                            "expected_value": [
+                                "trastuzumab",
+                                "pertuzumab",
+                                "TDM1"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Concurrent neratinib or other oral cancer directed medication is not allowed.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Concurrent neratinib or other oral cancer directed medication is not allowed.",
+                        "criterion": "concurrent oral cancer directed medication",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Concurrent neratinib ... is not allowed.",
+                        "criterion": "concurrent neratinib",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Concurrent neratinib ... is not allowed.",
+                                "criterion": "concurrent neratinib",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "Concurrent neratinib or other oral cancer directed medication is not allowed.",
+                                "criterion": "concurrent oral cancer directed medication",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. ECOG performance status of 0-2",
+                "criterions": [
+                    {
+                        "exact_snippets": "ECOG performance status of 0-2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "ECOG performance status of 0-2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Metastatic breast cancer or other active malignancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Metastatic breast cancer",
+                        "criterion": "metastatic breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "other active malignancy",
+                        "criterion": "active malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Metastatic breast cancer",
+                        "criterion": "metastatic breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "other active malignancy",
+                        "criterion": "active malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Locally recurrent breast cancer is allowed if treated with surgical excision and AI is prescribed with curative intent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Locally recurrent breast cancer is allowed",
+                        "criterion": "locally recurrent breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "treated with surgical excision",
+                        "criterion": "treatment with surgical excision",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "AI is prescribed with curative intent",
+                        "criterion": "AI prescription with curative intent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Locally recurrent breast cancer is allowed",
+                                    "criterion": "locally recurrent breast cancer",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "treated with surgical excision",
+                                    "criterion": "treatment with surgical excision",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "AI is prescribed with curative intent",
+                                    "criterion": "AI prescription with curative intent",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. History of prior treated malignancies, other than breast cancer, that are now stable, are in remission, and do not require active therapy, are acceptable",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of prior treated malignancies, other than breast cancer, that are now stable, are in remission, and do not require active therapy",
+                        "criterion": "prior treated malignancies",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "other than breast cancer"
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of prior treated malignancies, other than breast cancer, that are now stable, are in remission, and do not require active therapy",
+                        "criterion": "prior treated malignancies",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "stable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of prior treated malignancies, other than breast cancer, that are now stable, are in remission, and do not require active therapy",
+                        "criterion": "prior treated malignancies",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "in remission"
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of prior treated malignancies, other than breast cancer, that are now stable, are in remission, and do not require active therapy",
+                        "criterion": "prior treated malignancies",
+                        "requirement": {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "History of prior treated malignancies, other than breast cancer, that are now stable, are in remission, and do not require active therapy",
+                                    "criterion": "prior treated malignancies",
+                                    "requirement": {
+                                        "requirement_type": "type",
+                                        "expected_value": "other than breast cancer"
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "History of prior treated malignancies, other than breast cancer, that are now stable, are in remission, and do not require active therapy",
+                                    "criterion": "prior treated malignancies",
+                                    "requirement": {
+                                        "requirement_type": "status",
+                                        "expected_value": "stable"
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "History of prior treated malignancies, other than breast cancer, that are now stable, are in remission, and do not require active therapy",
+                                    "criterion": "prior treated malignancies",
+                                    "requirement": {
+                                        "requirement_type": "status",
+                                        "expected_value": "in remission"
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "History of prior treated malignancies, other than breast cancer, that are now stable, are in remission, and do not require active therapy",
+                                    "criterion": "prior treated malignancies",
+                                    "requirement": {
+                                        "requirement_type": "treatment requirement",
+                                        "expected_value": false
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Unable to read the English language or otherwise participate in the study procedures in the opinion of the treating investigator.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unable to read the English language",
+                        "criterion": "English language proficiency",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "otherwise participate in the study procedures",
+                        "criterion": "ability to participate in study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Unable to read the English language",
+                            "criterion": "English language proficiency",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "otherwise participate in the study procedures",
+                            "criterion": "ability to participate in study procedures",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "1. ≥ 18 years old at the time of informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "≥ 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Regular access to a smartphone capable of downloading the application",
+                "criterions": [
+                    {
+                        "exact_snippets": "Regular access to a smartphone",
+                        "criterion": "smartphone access",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "smartphone capable of downloading the application",
+                        "criterion": "smartphone capability",
+                        "requirement": {
+                            "requirement_type": "functionality",
+                            "expected_value": "capable of downloading the application"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. iOS 11 or later (iPhone5, iPhone SE or newer)",
+                "criterions": [
+                    {
+                        "exact_snippets": "iOS 11 or later",
+                        "criterion": "iOS version",
+                        "requirement": {
+                            "requirement_type": "version",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 11,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "iPhone5, iPhone SE or newer",
+                        "criterion": "iPhone model",
+                        "requirement": {
+                            "requirement_type": "model",
+                            "expected_value": [
+                                "iPhone5",
+                                "iPhone SE",
+                                "newer"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Android 6 or later (Android 9 is current version)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Android 6 or later",
+                        "criterion": "Android version",
+                        "requirement": {
+                            "requirement_type": "version",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 6,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

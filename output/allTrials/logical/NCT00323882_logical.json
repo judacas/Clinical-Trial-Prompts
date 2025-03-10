@@ -1,0 +1,1050 @@
+{
+    "info": {
+        "nct_id": "NCT00323882",
+        "official_title": "A Phase I/II, Open-label, Dose-escalation Study of MDX-010 Administered Every 3 Weeks for 4 Doses in Patients With Metastatic Hormone-Refractory Prostate Cancer",
+        "inclusion_criteria": "* Histologic diagnosis of adenocarcinoma of the prostate\n* Metastatic prostate cancer (positive bone scan or measurable disease)\n* Total testosterone of less than 50 ng/dL, except for patients with prior orchiectomy, where testosterone does not need to be measured.\n* Patients who are receiving an antiandrogen as part of primary androgen ablation must demonstrate disease progression following discontinuation of antiandrogen and completion of a washout period and then observe disease progression.\n* Patients must stop using any herbal product known to decrease PSA levels (eg., saw palmetto and PC-SPES) or any systemic or topical corticosteroid at least 4 weeks prior to screening. Progressive disease must be documented after discontinuation of these products.\n* Progressive disease after androgen deprivation (or hormone therapy). For patients with measurable disease, progression will be defined by Response Evaluation Criteria in Solid Tumors (RECIST) criteria. For patients with progression in, or without any measurable disease, a positive bone scan and elevated PSA will be required.\n* Patients receiving bisphosphate therapy must have been on stable doses for at least 4 weeks with stable symptoms prior to enrollment.\n* No prior chemotherapy or immunotherapy (tumor vaccine, cytokine, or growth factor given to control prostate cancer).\n* Prior radiation therapy completed at least 4 weeks prior to enrollment. No prior radiopharmaceuticals (strontium, samarium) within 8 weeks prior to enrollment.\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Bone pain due to metastatic bone disease severe enough to require routine narcotic analgesic use.\n* History of severe hypersensitivity reactions to drugs formulated with polysorbate 80.\n* Patients with active autoimmune disease or a history of autoimmune disease that required systemic steroids or immunosuppressive medications, except for patients with vitiligo.\n* Prior therapy with any anti-cytotoxic T-lymphocyte antigen 4 (anti-CTLA-4) antibody.\n* Active infection requiring therapy.\n* Concurrent medical condition requiring the use of systemic or topical corticosteroids; systemic or topical corticosteroids must be discontinued at least 4 weeks prior to enrollment. The use of inhaled corticosteroids is acceptable.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Histologic diagnosis of adenocarcinoma of the prostate",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologic diagnosis of adenocarcinoma of the prostate",
+                        "criterion": "adenocarcinoma of the prostate",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Histologic diagnosis of adenocarcinoma of the prostate",
+                        "criterion": "adenocarcinoma of the prostate",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Metastatic prostate cancer (positive bone scan or measurable disease)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Metastatic prostate cancer",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "metastasis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "positive bone scan",
+                        "criterion": "bone scan",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "measurable disease",
+                        "criterion": "disease",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Metastatic prostate cancer",
+                                "criterion": "prostate cancer",
+                                "requirement": {
+                                    "requirement_type": "metastasis",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "positive bone scan",
+                                "criterion": "bone scan",
+                                "requirement": {
+                                    "requirement_type": "result",
+                                    "expected_value": "positive"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Metastatic prostate cancer",
+                                "criterion": "prostate cancer",
+                                "requirement": {
+                                    "requirement_type": "metastasis",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "measurable disease",
+                                "criterion": "disease",
+                                "requirement": {
+                                    "requirement_type": "measurability",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Total testosterone of less than 50 ng/dL, except for patients with prior orchiectomy, where testosterone does not need to be measured.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Total testosterone of less than 50 ng/dL",
+                        "criterion": "total testosterone",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 50,
+                                "unit": "ng/dL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior orchiectomy",
+                        "criterion": "prior orchiectomy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "not_criteria": {
+                        "exact_snippets": "prior orchiectomy",
+                        "criterion": "prior orchiectomy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "Total testosterone of less than 50 ng/dL",
+                    "criterion": "total testosterone",
+                    "requirement": {
+                        "requirement_type": "quantity",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 50,
+                            "unit": "ng/dL"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who are receiving an antiandrogen as part of primary androgen ablation must demonstrate disease progression following discontinuation of antiandrogen and completion of a washout period and then observe disease progression.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who are receiving an antiandrogen as part of primary androgen ablation",
+                        "criterion": "antiandrogen therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "must demonstrate disease progression following discontinuation of antiandrogen",
+                        "criterion": "disease progression after antiandrogen discontinuation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "completion of a washout period",
+                        "criterion": "washout period",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "observe disease progression",
+                        "criterion": "disease progression after washout",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "condition": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Patients who are receiving an antiandrogen as part of primary androgen ablation",
+                                    "criterion": "antiandrogen therapy",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "completion of a washout period",
+                                    "criterion": "washout period",
+                                    "requirement": {
+                                        "requirement_type": "completion",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
+                        },
+                        "then_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "must demonstrate disease progression following discontinuation of antiandrogen",
+                                    "criterion": "disease progression after antiandrogen discontinuation",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "observe disease progression",
+                                    "criterion": "disease progression after washout",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
+                        },
+                        "else_criteria": null
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must stop using any herbal product known to decrease PSA levels (eg., saw palmetto and PC-SPES) or any systemic or topical corticosteroid at least 4 weeks prior to screening. Progressive disease must be documented after discontinuation of these products.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must stop using any herbal product known to decrease PSA levels (eg., saw palmetto and PC-SPES)",
+                        "criterion": "herbal product use",
+                        "requirement": {
+                            "requirement_type": "discontinuation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any systemic or topical corticosteroid",
+                        "criterion": "corticosteroid use",
+                        "requirement": {
+                            "requirement_type": "discontinuation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Progressive disease must be documented after discontinuation of these products",
+                        "criterion": "progressive disease",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Patients must stop using any herbal product known to decrease PSA levels (eg., saw palmetto and PC-SPES)",
+                                        "criterion": "herbal product use",
+                                        "requirement": {
+                                            "requirement_type": "discontinuation",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "any systemic or topical corticosteroid",
+                                        "criterion": "corticosteroid use",
+                                        "requirement": {
+                                            "requirement_type": "discontinuation",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "Progressive disease must be documented after discontinuation of these products",
+                                "criterion": "progressive disease",
+                                "requirement": {
+                                    "requirement_type": "documentation",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Progressive disease after androgen deprivation (or hormone therapy). For patients with measurable disease, progression will be defined by Response Evaluation Criteria in Solid Tumors (RECIST) criteria. For patients with progression in, or without any measurable disease, a positive bone scan and elevated PSA will be required.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Progressive disease after androgen deprivation (or hormone therapy)",
+                        "criterion": "progressive disease",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "androgen deprivation or hormone therapy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "measurable disease",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "progression ... defined by Response Evaluation Criteria in Solid Tumors (RECIST) criteria",
+                        "criterion": "disease progression",
+                        "requirement": {
+                            "requirement_type": "definition",
+                            "expected_value": "RECIST criteria"
+                        }
+                    },
+                    {
+                        "exact_snippets": "progression in, or without any measurable disease",
+                        "criterion": "disease progression",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "positive bone scan",
+                        "criterion": "bone scan",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "elevated PSA",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": "elevated"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Progressive disease after androgen deprivation (or hormone therapy)",
+                                "criterion": "progressive disease",
+                                "requirement": {
+                                    "requirement_type": "treatment",
+                                    "expected_value": "androgen deprivation or hormone therapy"
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "measurable disease",
+                                                "criterion": "measurable disease",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "progression ... defined by Response Evaluation Criteria in Solid Tumors (RECIST) criteria",
+                                                "criterion": "disease progression",
+                                                "requirement": {
+                                                    "requirement_type": "definition",
+                                                    "expected_value": "RECIST criteria"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "progression in, or without any measurable disease",
+                                                "criterion": "disease progression",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "positive bone scan",
+                                                "criterion": "bone scan",
+                                                "requirement": {
+                                                    "requirement_type": "result",
+                                                    "expected_value": "positive"
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "elevated PSA",
+                                                "criterion": "PSA level",
+                                                "requirement": {
+                                                    "requirement_type": "level",
+                                                    "expected_value": "elevated"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients receiving bisphosphate therapy must have been on stable doses for at least 4 weeks with stable symptoms prior to enrollment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients receiving bisphosphate therapy",
+                        "criterion": "bisphosphate therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "must have been on stable doses for at least 4 weeks",
+                        "criterion": "bisphosphate therapy dose stability",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "with stable symptoms prior to enrollment",
+                        "criterion": "symptom stability",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Patients receiving bisphosphate therapy",
+                    "criterion": "bisphosphate therapy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "must have been on stable doses for at least 4 weeks",
+                            "criterion": "bisphosphate therapy dose stability",
+                            "requirement": {
+                                "requirement_type": "duration",
+                                "expected_value": {
+                                    "operator": ">=",
+                                    "value": 4,
+                                    "unit": "weeks"
+                                }
+                            }
+                        },
+                        {
+                            "exact_snippets": "with stable symptoms prior to enrollment",
+                            "criterion": "symptom stability",
+                            "requirement": {
+                                "requirement_type": "stability",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No prior chemotherapy or immunotherapy (tumor vaccine, cytokine, or growth factor given to control prostate cancer).",
+                "criterions": [
+                    {
+                        "exact_snippets": "No prior chemotherapy",
+                        "criterion": "prior chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No prior ... immunotherapy (tumor vaccine, cytokine, or growth factor given to control prostate cancer)",
+                        "criterion": "prior immunotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No prior chemotherapy",
+                        "criterion": "prior chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No prior ... immunotherapy (tumor vaccine, cytokine, or growth factor given to control prostate cancer)",
+                        "criterion": "prior immunotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior radiation therapy completed at least 4 weeks prior to enrollment. No prior radiopharmaceuticals (strontium, samarium) within 8 weeks prior to enrollment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior radiation therapy completed at least 4 weeks prior to enrollment.",
+                        "criterion": "prior radiation therapy",
+                        "requirement": {
+                            "requirement_type": "completion time",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "No prior radiopharmaceuticals (strontium, samarium) within 8 weeks prior to enrollment.",
+                        "criterion": "prior radiopharmaceuticals",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No prior radiopharmaceuticals (strontium, samarium) within 8 weeks prior to enrollment.",
+                        "criterion": "prior radiopharmaceuticals",
+                        "requirement": {
+                            "requirement_type": "time since last use",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 8,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Prior radiation therapy completed at least 4 weeks prior to enrollment.",
+                                "criterion": "prior radiation therapy",
+                                "requirement": {
+                                    "requirement_type": "completion time",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 4,
+                                        "unit": "weeks"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "No prior radiopharmaceuticals (strontium, samarium) within 8 weeks prior to enrollment.",
+                                "criterion": "prior radiopharmaceuticals",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "No prior radiopharmaceuticals (strontium, samarium) within 8 weeks prior to enrollment.",
+                        "criterion": "prior radiopharmaceuticals",
+                        "requirement": {
+                            "requirement_type": "time since last use",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 8,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Bone pain due to metastatic bone disease severe enough to require routine narcotic analgesic use.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Bone pain due to metastatic bone disease",
+                        "criterion": "bone pain",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": "metastatic bone disease"
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe enough to require routine narcotic analgesic use",
+                        "criterion": "bone pain severity",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "requires routine narcotic analgesic use"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Bone pain due to metastatic bone disease",
+                                "criterion": "bone pain",
+                                "requirement": {
+                                    "requirement_type": "cause",
+                                    "expected_value": "metastatic bone disease"
+                                }
+                            },
+                            {
+                                "exact_snippets": "severe enough to require routine narcotic analgesic use",
+                                "criterion": "bone pain severity",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "requires routine narcotic analgesic use"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of severe hypersensitivity reactions to drugs formulated with polysorbate 80.",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of severe hypersensitivity reactions to drugs formulated with polysorbate 80.",
+                        "criterion": "hypersensitivity reactions",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of severe hypersensitivity reactions to drugs formulated with polysorbate 80.",
+                        "criterion": "hypersensitivity reactions",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of severe hypersensitivity reactions to drugs formulated with polysorbate 80.",
+                        "criterion": "hypersensitivity reactions",
+                        "requirement": {
+                            "requirement_type": "formulation",
+                            "expected_value": "polysorbate 80"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "History of severe hypersensitivity reactions to drugs formulated with polysorbate 80.",
+                                "criterion": "hypersensitivity reactions",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "severe"
+                                }
+                            },
+                            {
+                                "exact_snippets": "History of severe hypersensitivity reactions to drugs formulated with polysorbate 80.",
+                                "criterion": "hypersensitivity reactions",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "History of severe hypersensitivity reactions to drugs formulated with polysorbate 80.",
+                        "criterion": "hypersensitivity reactions",
+                        "requirement": {
+                            "requirement_type": "formulation",
+                            "expected_value": "polysorbate 80"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior therapy with any anti-cytotoxic T-lymphocyte antigen 4 (anti-CTLA-4) antibody.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior therapy with any anti-cytotoxic T-lymphocyte antigen 4 (anti-CTLA-4) antibody.",
+                        "criterion": "prior anti-CTLA-4 therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prior therapy with any anti-cytotoxic T-lymphocyte antigen 4 (anti-CTLA-4) antibody.",
+                        "criterion": "prior anti-CTLA-4 therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active infection requiring therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active infection requiring therapy.",
+                        "criterion": "active infection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Active infection requiring therapy.",
+                        "criterion": "active infection",
+                        "requirement": {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Active infection requiring therapy.",
+                        "criterion": "active infection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Active infection requiring therapy.",
+                        "criterion": "active infection",
+                        "requirement": {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Concurrent medical condition requiring the use of systemic or topical corticosteroids; systemic or topical corticosteroids must be discontinued at least 4 weeks prior to enrollment. The use of inhaled corticosteroids is acceptable.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Concurrent medical condition requiring the use of systemic or topical corticosteroids",
+                        "criterion": "concurrent medical condition",
+                        "requirement": {
+                            "requirement_type": "necessity of corticosteroids",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "systemic or topical corticosteroids must be discontinued at least 4 weeks prior to enrollment",
+                        "criterion": "systemic or topical corticosteroids",
+                        "requirement": {
+                            "requirement_type": "discontinuation period",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "The use of inhaled corticosteroids is acceptable",
+                        "criterion": "inhaled corticosteroids",
+                        "requirement": {
+                            "requirement_type": "acceptability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Concurrent medical condition requiring the use of systemic or topical corticosteroids",
+                                    "criterion": "concurrent medical condition",
+                                    "requirement": {
+                                        "requirement_type": "necessity of corticosteroids",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "systemic or topical corticosteroids must be discontinued at least 4 weeks prior to enrollment",
+                                    "criterion": "systemic or topical corticosteroids",
+                                    "requirement": {
+                                        "requirement_type": "discontinuation period",
+                                        "expected_value": {
+                                            "operator": ">=",
+                                            "value": 4,
+                                            "unit": "weeks"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "not_criteria": {
+                        "exact_snippets": "The use of inhaled corticosteroids is acceptable",
+                        "criterion": "inhaled corticosteroids",
+                        "requirement": {
+                            "requirement_type": "acceptability",
+                            "expected_value": true
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients with active autoimmune disease or a history of autoimmune disease that required systemic steroids or immunosuppressive medications, except for patients with vitiligo.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with active autoimmune disease",
+                        "criterion": "active autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of autoimmune disease that required systemic steroids or immunosuppressive medications",
+                        "criterion": "history of autoimmune disease requiring systemic treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "except for patients with vitiligo",
+                        "criterion": "vitiligo",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Patients with active autoimmune disease",
+                                "criterion": "active autoimmune disease",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "history of autoimmune disease that required systemic steroids or immunosuppressive medications",
+                                "criterion": "history of autoimmune disease requiring systemic treatment",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "except for patients with vitiligo",
+                            "criterion": "vitiligo",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

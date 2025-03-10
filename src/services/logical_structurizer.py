@@ -39,6 +39,7 @@ from src.models.identified_criteria import (
     IdentifiedTrial,
     Requirement,
 )
+from src.utils.config import TEMPERATURE, TIMEOUT
 from src.utils.openai_client import get_openai_client
 
 logger = logging.getLogger(__name__)
@@ -125,9 +126,9 @@ def logically_structurize_line(
                 {"role": "system", "content": prompt},
                 {"role": "user", "content": str(line)},
             ],
-            temperature=0.0,
+            temperature=TEMPERATURE,
             response_format=LLMLogicalWrapperResponse,
-            timeout=45,
+            timeout=TIMEOUT,
         )
 
         if response := completion.choices[0].message.parsed:

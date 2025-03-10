@@ -1,0 +1,487 @@
+{
+    "info": {
+        "nct_id": "NCT03499782",
+        "official_title": "A Multi-center Study：Surgical Optimization and Prognosis Auxiliary System of Biliary Malignancies Based on Special Disease Database",
+        "inclusion_criteria": "Healthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 80 Years",
+        "exclusion_criteria": "* Non-primary gallbladder or cholangiocarcinoma\n* With distant metastasis (M1 phase)\n* Incomplete follow-up data\n* Died within 30 days after surgery.",
+        "miscellaneous_criteria": "Inclusion Criteria：\n\n* Clinical diagnosis of biliary malignancy including gallbladder carcinoma or cholangiocarcinoma verified by pathological results\n* Must be able to undergo surgery\n* Undergoing radical surgery for biliary malignancy (R0 or R1 resection)\n* Not complicated with other malignancy\n* No other treatments before and during surgery, such as radiotherapy and chemotherapy."
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 80 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 80 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 80,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 80 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 80,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Non-primary gallbladder or cholangiocarcinoma",
+                "criterions": [
+                    {
+                        "exact_snippets": "Non-primary gallbladder",
+                        "criterion": "gallbladder cancer",
+                        "requirement": {
+                            "requirement_type": "primary status",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Non-primary ... cholangiocarcinoma",
+                        "criterion": "cholangiocarcinoma",
+                        "requirement": {
+                            "requirement_type": "primary status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Non-primary gallbladder",
+                        "criterion": "gallbladder cancer",
+                        "requirement": {
+                            "requirement_type": "primary status",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Non-primary ... cholangiocarcinoma",
+                        "criterion": "cholangiocarcinoma",
+                        "requirement": {
+                            "requirement_type": "primary status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* With distant metastasis (M1 phase)",
+                "criterions": [
+                    {
+                        "exact_snippets": "distant metastasis (M1 phase)",
+                        "criterion": "distant metastasis",
+                        "requirement": {
+                            "requirement_type": "phase",
+                            "expected_value": "M1"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "distant metastasis (M1 phase)",
+                        "criterion": "distant metastasis",
+                        "requirement": {
+                            "requirement_type": "phase",
+                            "expected_value": "M1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Incomplete follow-up data",
+                "criterions": [
+                    {
+                        "exact_snippets": "Incomplete follow-up data",
+                        "criterion": "follow-up data",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Incomplete follow-up data",
+                    "criterion": "follow-up data",
+                    "requirement": {
+                        "requirement_type": "completeness",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Died within 30 days after surgery.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Died within 30 days after surgery.",
+                        "criterion": "death after surgery",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 30,
+                                        "unit": "days"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Died within 30 days after surgery.",
+                    "criterion": "death after surgery",
+                    "requirement": {
+                        "requirement_type": "time frame",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": "<=",
+                                    "value": 30,
+                                    "unit": "days"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [
+        {
+            "identified_line": {
+                "line": "* Clinical diagnosis of biliary malignancy including gallbladder carcinoma or cholangiocarcinoma verified by pathological results",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinical diagnosis of biliary malignancy",
+                        "criterion": "biliary malignancy",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "gallbladder carcinoma",
+                        "criterion": "gallbladder carcinoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cholangiocarcinoma",
+                        "criterion": "cholangiocarcinoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "verified by pathological results",
+                        "criterion": "pathological verification",
+                        "requirement": {
+                            "requirement_type": "verification",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "gallbladder carcinoma",
+                                        "criterion": "gallbladder carcinoma",
+                                        "requirement": {
+                                            "requirement_type": "diagnosis",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "cholangiocarcinoma",
+                                        "criterion": "cholangiocarcinoma",
+                                        "requirement": {
+                                            "requirement_type": "diagnosis",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "Clinical diagnosis of biliary malignancy",
+                                "criterion": "biliary malignancy",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "verified by pathological results",
+                        "criterion": "pathological verification",
+                        "requirement": {
+                            "requirement_type": "verification",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Must be able to undergo surgery",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be able to undergo surgery",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be able to undergo surgery",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Undergoing radical surgery for biliary malignancy (R0 or R1 resection)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Undergoing radical surgery for biliary malignancy",
+                        "criterion": "surgery for biliary malignancy",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "radical"
+                        }
+                    },
+                    {
+                        "exact_snippets": "R0 or R1 resection",
+                        "criterion": "resection margin status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "R0",
+                                "R1"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Undergoing radical surgery for biliary malignancy",
+                        "criterion": "surgery for biliary malignancy",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "radical"
+                        }
+                    },
+                    {
+                        "exact_snippets": "R0 or R1 resection",
+                        "criterion": "resection margin status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "R0",
+                                "R1"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Not complicated with other malignancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Not complicated with other malignancy",
+                        "criterion": "other malignancy",
+                        "requirement": {
+                            "requirement_type": "complication",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Not complicated with other malignancy",
+                    "criterion": "other malignancy",
+                    "requirement": {
+                        "requirement_type": "complication",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No other treatments before and during surgery, such as radiotherapy and chemotherapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "No other treatments before and during surgery, such as radiotherapy",
+                        "criterion": "radiotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No other treatments before and during surgery, such as ... chemotherapy",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No other treatments before and during surgery, such as radiotherapy",
+                        "criterion": "radiotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No other treatments before and during surgery, such as ... chemotherapy",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion Criteria：",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -31,6 +31,9 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..
 # This ensures consistent output paths regardless of execution directory
 DEFAULT_OUTPUT_DIR = os.path.join(PROJECT_ROOT, 'output')
 
+TIMEOUT = 30
+TEMPERATURE = 0.0
+
 
 class ColoredFormatter(logging.Formatter):
     """
