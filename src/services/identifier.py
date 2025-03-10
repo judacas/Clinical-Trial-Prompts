@@ -25,7 +25,7 @@ from typing import List, Tuple
 
 import rich
 from src.models.identified_criteria import RawTrialData
-from src.models.identified_criteria import LLMSingleRawCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
+from src.models.identified_criteria import LLMMultiRequirementCriterion, IdentifiedTrial, IdentifiedLine, RawTrialData, LLMIdentifiedLineResponse
 from src.utils.openai_client import get_openai_client
 
 logger = logging.getLogger(__name__)
@@ -163,7 +163,7 @@ def extract_atomic_criteria_from_line(line: str) -> LLMIdentifiedLineResponse:
         raise ValueError(f"Error during LLM extraction: {e}") from e
 
 
-def verify(line: str, criteria_list: List[LLMSingleRawCriterion]) -> None:
+def verify(line: str, criteria_list: List[LLMMultiRequirementCriterion]) -> None:
     """
     Verify that each criterion's exact snippets are found in the line.
     
@@ -177,7 +177,9 @@ def verify(line: str, criteria_list: List[LLMSingleRawCriterion]) -> None:
     logger.info("Verifying criteria snippets.")
 
     for criterion in criteria_list:
-        for snippet in criterion.exact_snippets:
+        # Split the exact_snippets string by ellipses and verify each part
+        snippets = [snippet.strip() for snippet in criterion.exact_snippets.split("...")]
+        for snippet in snippets:
             # Find the snippet in the line (removing backslashes for comparison)
             index = line.replace("\\", "").find(snippet.replace("\\", ""))
             if index == -1:

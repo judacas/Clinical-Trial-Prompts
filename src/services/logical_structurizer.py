@@ -21,17 +21,24 @@ Functions:
 
 from enum import Enum
 import logging
+from typing import List, Union
 from src.models.logical_criteria import (
-    LLMLogicalAnd, 
-    LLMLogicalNot, 
-    LLMLogicalOr, 
-    LLMLogicalXor, 
-    LLMLogicalConditional, 
-    LogicalLine, 
-    LogicalTrial, 
-    LLMLogicalWrapperResponse
+    IdentifiedUnrolledLine,
+    LLMLogicalAnd,
+    LLMLogicalNot,
+    LLMLogicalOr,
+    LLMLogicalXor,
+    LLMLogicalConditional,
+    LogicalLine,
+    LogicalTrial,
+    LLMLogicalWrapperResponse,
+    SingleRequirementCriterion,
 )
-from src.models.identified_criteria import IdentifiedLine, IdentifiedTrial, LLMSingleRawCriterion
+from src.models.identified_criteria import (
+    IdentifiedLine,
+    IdentifiedTrial,
+    Requirement,
+)
 from src.utils.openai_client import get_openai_client
 
 logger = logging.getLogger(__name__)
@@ -42,6 +49,7 @@ client = get_openai_client()
 
 class CriteriaType(Enum):
     """Enum for different types of clinical trial criteria."""
+
     INCLUSION = "inclusion"
     EXCLUSION = "exclusion"
     MISCELLANEOUS = "miscellaneous"
@@ -55,23 +63,51 @@ type_to_note = {
 }
 
 
-def logically_structurize_line(
-    line: IdentifiedLine, criteria_type: CriteriaType) -> LogicalLine:
+def UnrollLine(line: IdentifiedLine) -> IdentifiedUnrolledLine:
     """
-    Transform an identified line's criteria into logical relationships.
-    
+    Split each LLMMultiRequirementCriterion with multiple requirements into multiple criteria, each with one requirement.
+
     Args:
         line (IdentifiedLine): The line containing identified atomic criteria.
+
+    Returns:
+        IdentifiedUnrolledLine: The line with criteria, each with a single requirement.
+    """
+    split_criteria: list[SingleRequirementCriterion] = []
+    for criterion in line.criterions:
+        split_criteria.extend(
+            SingleRequirementCriterion(
+                exact_snippets=criterion.exact_snippets,
+                criterion=criterion.criterion,
+                requirement=requirement,
+            )
+            for requirement in criterion.requirements
+        )
+    return IdentifiedUnrolledLine(line=line.line, criterions=split_criteria)
+
+
+
+
+
+def logically_structurize_line(
+    line: IdentifiedUnrolledLine, criteria_type: CriteriaType
+) -> LogicalLine:
+    """
+    Transform an identified line's criteria into logical relationships.
+
+    Args:
+        line (IdentifiedUnrolledLine): The line containing identified atomic criteria.
         criteria_type (CriteriaType): The type of criteria (inclusion, exclusion, miscellaneous).
-    
+
     Returns:
         LogicalLine: The line with structured logical relationships between criteria.
-        
+
     Raises:
         ValueError: If the LLM structurizing process fails.
     """
     logger.debug("Structurizing line: %s", line)
     
+
     # Define the system prompt for the LLM
     prompt = (
         "You are an expert in clinical trial eligibility criteria.\n"
@@ -92,48 +128,57 @@ def logically_structurize_line(
             temperature=0.0,
             response_format=LLMLogicalWrapperResponse,
         )
-        
+
         if response := completion.choices[0].message.parsed:
             logger.debug("Successfully structured line logically: %s", line)
             logger.debug("LLM response: %s", response)
         else:
             logger.warning("Failed to parse LLM response.\n%s", completion.choices[0])
             raise ValueError(f"Failed to parse LLM response for line: '{line}'")
-        
+
     except Exception as e:
         logger.error("Error during LLM structurizing: %s", e)
         raise ValueError(f"Error during LLM structurizing: {e}") from e
-    
+
     return LogicalLine(
         identified_line=line, logical_structure=response.logicalRepresentation
     )
-    
-    
+
+
 def confirm_criteria_presence(logical_line: LogicalLine) -> None:
     """
     Verifies that all SingleRawCriterion instances in the IdentifiedLine are present in the logical structure.
 
     Args:
         logical_line (LogicalLine): The logical line to verify.
-        
+
     Raises:
         ValueError: If any identified criteria are missing from the logical structure.
     """
-    # Extract all criteria from the identified line
-    identified_criteria = {criterion.criterion for criterion in logical_line.identified_line.criterions}
     
+    logger.info("Verifying criteria presence for line: %s", logical_line)
+    # Extract all criteria from the identified line
+    identified_criteria: List[SingleRequirementCriterion] = logical_line.identified_line.criterions
+
     # Extract all criteria from the logical structure
-    logical_criteria = extract_criteria_from_logical_structure(logical_line.logical_structure)
+    logical_criteria: list[SingleRequirementCriterion] = extract_criteria_from_logical_structure(logical_line.logical_structure)
+    
+    logger.info("Identified criteria: %s", identified_criteria)
+    logger.info("Logical criteria: %s", logical_criteria)
+    logger.info("Checking for missing criteria...")
+    
 
     # Check if any criteria are missing
-    if missing_criteria := identified_criteria - logical_criteria:
+    
+    
+    if missing_criteria := any(identified_criterion not in logical_criteria for identified_criterion in identified_criteria):
         logger.error("Missing criteria in logical structure: %s", missing_criteria)
         raise ValueError(f"Missing criteria in logical structure: {missing_criteria}")
     else:
         logger.info("All criteria present in logical structure.")
 
-    
-def extract_criteria_from_logical_structure(logical_structure) -> set:
+
+def extract_criteria_from_logical_structure(logical_structure: Union[SingleRequirementCriterion, LLMLogicalAnd, LLMLogicalOr, LLMLogicalNot, LLMLogicalXor, LLMLogicalConditional]) -> List[SingleRequirementCriterion]:
     """
     Recursively extracts criteria from the logical structure to make a set of all criteria involved.
 
@@ -143,30 +188,91 @@ def extract_criteria_from_logical_structure(logical_structure) -> set:
     Returns:
         set: A set of criteria found in the logical structure.
     """
-    criteria = set()
+    criteria: list[SingleRequirementCriterion] = []
 
     # Handle different types of logical structures recursively
-    if isinstance(logical_structure, LLMSingleRawCriterion):
-        criteria.add(logical_structure.criterion)
+    if isinstance(logical_structure, SingleRequirementCriterion):
+        criteria.append(logical_structure)
     elif isinstance(logical_structure, LLMLogicalAnd):
         for sub_criteria in logical_structure.and_criteria:
-            criteria.update(extract_criteria_from_logical_structure(sub_criteria))
+            criteria.extend(extract_criteria_from_logical_structure(sub_criteria))
     elif isinstance(logical_structure, LLMLogicalOr):
         for sub_criteria in logical_structure.or_criteria:
-            criteria.update(extract_criteria_from_logical_structure(sub_criteria))
+            criteria.extend(extract_criteria_from_logical_structure(sub_criteria))
     elif isinstance(logical_structure, LLMLogicalNot):
-        criteria.update(extract_criteria_from_logical_structure(logical_structure.not_criteria))
+
+
+        criteria.extend(
+            extract_criteria_from_logical_structure(logical_structure.not_criteria)
+        )
     elif isinstance(logical_structure, LLMLogicalXor):
         for sub_criteria in logical_structure.xor_criteria:
-            criteria.update(extract_criteria_from_logical_structure(sub_criteria))
+            criteria.extend(extract_criteria_from_logical_structure(sub_criteria))
     elif isinstance(logical_structure, LLMLogicalConditional):
-        criteria.update(extract_criteria_from_logical_structure(logical_structure.condition))
+        criteria.extend(
+            extract_criteria_from_logical_structure(logical_structure.condition)
+        )
         if logical_structure.then_criteria:
-            criteria.update(extract_criteria_from_logical_structure(logical_structure.then_criteria))
+            criteria.extend(
+                extract_criteria_from_logical_structure(logical_structure.then_criteria)
+            )
         if logical_structure.else_criteria:
-            criteria.update(extract_criteria_from_logical_structure(logical_structure.else_criteria))
+            criteria.extend(
+                extract_criteria_from_logical_structure(logical_structure.else_criteria)
+            )
 
     return criteria
+
+
+def process_criteria_lines(
+    lines: list[IdentifiedLine], criteria_type: CriteriaType
+) -> tuple[list[LogicalLine], list[LogicalLine]]:
+    """
+    Process a list of criteria lines into logical structures.
+
+    Args:
+        lines (list[IdentifiedLine]): The list of identified lines to process.
+        criteria_type (CriteriaType): The type of criteria (inclusion, exclusion, miscellaneous).
+
+    Returns:
+        tuple: A tuple containing:
+            - List of successfully structured logical lines
+            - List of lines that failed to be structured
+    """
+    successful_lines = []
+    failed_lines = []
+
+    for line in lines:
+        unrolled_line = UnrollLine(line)
+        try:
+            # Attempt to structurize the line
+            logical_line = logically_structurize_line(unrolled_line, criteria_type)
+            try:
+                # Verify criteria completeness
+                confirm_criteria_presence(logical_line)
+                successful_lines.append(logical_line)
+            except ValueError as validation_error:
+                logger.error("Validation failed for %s line: %s", criteria_type.value, line)
+                logger.error("Validation error: %s", validation_error)
+                failed_lines.append(logical_line)
+        except Exception as e:
+            logger.error("Failed to structurize %s line: %s", criteria_type.value, line)
+            logger.error("Error: %s", e)
+            # Create a placeholder for failed lines
+            failed_lines.append(
+                LogicalLine(
+                    identified_line=unrolled_line,
+                    logical_structure=SingleRequirementCriterion(
+                        exact_snippets="failed",
+                        criterion="failed",
+                        requirement=Requirement(
+                            requirement_type="failed", expected_value="failed"
+                        ),
+                    ),
+                )
+            )
+
+    return successful_lines, failed_lines
 
 
 def logically_structurize_trial(trial: IdentifiedTrial) -> LogicalTrial:
@@ -180,86 +286,24 @@ def logically_structurize_trial(trial: IdentifiedTrial) -> LogicalTrial:
         LogicalTrial: The trial with logically structured criteria.
     """
     logger.info("Starting logical structurizing for trial NCT ID: %s", trial.info.nct_id)
-    
-    # Initialize result containers
-    inclusion_lines = []
-    exclusion_lines = []
-    miscellaneous_lines = []
-    failed_inclusion = []
-    failed_exclusion = []
-    failed_miscellaneous = []
 
-    # Process inclusion criteria (both successful and failed identifications)
+    # Process inclusion criteria
     logger.debug("Processing %d inclusion criteria lines", len(trial.inclusion_lines) + len(trial.failed_inclusion))
-    for inclusion_line in (trial.inclusion_lines + trial.failed_inclusion):
-        try:
-            # Attempt to structurize the line
-            logical_line = logically_structurize_line(inclusion_line, CriteriaType.INCLUSION)
-            try:
-                # Verify criteria completeness
-                confirm_criteria_presence(logical_line)
-                inclusion_lines.append(logical_line)
-            except ValueError as validation_error:
-                logger.error("Validation failed for inclusion line: %s", inclusion_line)
-                failed_inclusion.append(logical_line)
-        except Exception as e:
-            logger.error("Failed to structurize inclusion line: %s", inclusion_line)
-            # Create a placeholder for failed lines
-            failed_inclusion.append(LogicalLine(
-                identified_line=inclusion_line, 
-                logical_structure=LLMSingleRawCriterion(
-                    criterion="failed", 
-                    requirement_type="failed", 
-                    expected_value="failed", 
-                    exact_snippets=["failed"]
-                )
-            ))
+    inclusion_lines, failed_inclusion = process_criteria_lines(
+        trial.inclusion_lines + trial.failed_inclusion, CriteriaType.INCLUSION
+    )
 
     # Process exclusion criteria
     logger.debug("Processing %d exclusion criteria lines", len(trial.exclusion_lines) + len(trial.failed_exclusion))
-    for exclusion_line in (trial.exclusion_lines + trial.failed_exclusion):
-        try:
-            logical_line = logically_structurize_line(exclusion_line, CriteriaType.EXCLUSION)
-            try:
-                confirm_criteria_presence(logical_line)
-                exclusion_lines.append(logical_line)
-            except ValueError as validation_error:
-                logger.error("Validation failed for exclusion line: %s", exclusion_line)
-                failed_exclusion.append(logical_line)
-        except Exception as e:
-            logger.error("Failed to structurize exclusion line: %s", exclusion_line)
-            failed_exclusion.append(LogicalLine(
-                identified_line=exclusion_line, 
-                logical_structure=LLMSingleRawCriterion(
-                    criterion="failed", 
-                    requirement_type="failed", 
-                    expected_value="failed", 
-                    exact_snippets=["failed"]
-                )
-            ))
+    exclusion_lines, failed_exclusion = process_criteria_lines(
+        trial.exclusion_lines + trial.failed_exclusion, CriteriaType.EXCLUSION
+    )
 
     # Process miscellaneous criteria
     logger.debug("Processing %d miscellaneous criteria lines", len(trial.miscellaneous_lines) + len(trial.failed_miscellaneous))
-    for miscellaneous_line in (trial.miscellaneous_lines + trial.failed_miscellaneous):
-        try:
-            logical_line = logically_structurize_line(miscellaneous_line, CriteriaType.MISCELLANEOUS)
-            try:
-                confirm_criteria_presence(logical_line)
-                miscellaneous_lines.append(logical_line)
-            except ValueError as validation_error:
-                logger.error("Validation failed for miscellaneous line: %s", miscellaneous_line)
-                failed_miscellaneous.append(logical_line)
-        except Exception as e:
-            logger.error("Failed to structurize miscellaneous line: %s", miscellaneous_line)
-            failed_miscellaneous.append(LogicalLine(
-                identified_line=miscellaneous_line, 
-                logical_structure=LLMSingleRawCriterion(
-                    criterion="failed", 
-                    requirement_type="failed", 
-                    expected_value="failed", 
-                    exact_snippets=["failed"]
-                )
-            ))
+    miscellaneous_lines, failed_miscellaneous = process_criteria_lines(
+        trial.miscellaneous_lines + trial.failed_miscellaneous, CriteriaType.MISCELLANEOUS
+    )
 
     logger.info("Completed logical structurizing for trial NCT ID: %s", trial.info.nct_id)
     return LogicalTrial(
@@ -269,5 +313,5 @@ def logically_structurize_trial(trial: IdentifiedTrial) -> LogicalTrial:
         miscellaneous_lines=miscellaneous_lines,
         failed_inclusion=failed_inclusion,
         failed_exclusion=failed_exclusion,
-        failed_miscellaneous=failed_miscellaneous
+        failed_miscellaneous=failed_miscellaneous,
     )
