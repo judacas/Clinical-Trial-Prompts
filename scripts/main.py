@@ -27,7 +27,7 @@ from src.utils.config import DEFAULT_OUTPUT_DIR, setup_logging
 from src.services.trial_manager import process_trial
 
 # Configure application logging
-setup_logging(log_to_file=True)
+setup_logging(log_to_file=True, log_level=logging.DEBUG)
 
     
 def getChiaCancerTrials() -> list[str]:
