@@ -1,0 +1,311 @@
+{
+    "info": {
+        "nct_id": "NCT05842031",
+        "official_title": "Assessment of Patient Experience and Needs for Patients Undergoing Invasive Inguinal Lymph Node Procedures for Penile Cancer",
+        "inclusion_criteria": "--Patients diagnosed with penile cancer who have undergone invasive inguinal node procedures (ILND and/or DSNB) and are at least 6 months post-procedure\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patient's ≤18 years of age\n* Patients who have not undergone invasive surgical procedures involving the inguinal lymph nodes\n* Non-English-speaking patients For interviews: people who are physically and/or cognitively incapable of participating in a 60minute telephone interview as determined by a clinical provider or the patient.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "--Patients diagnosed with penile cancer who have undergone invasive inguinal node procedures (ILND and/or DSNB) and are at least 6 months post-procedure",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients diagnosed with penile cancer",
+                        "criterion": "penile cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "undergone invasive inguinal node procedures (ILND and/or DSNB)",
+                        "criterion": "invasive inguinal node procedures",
+                        "requirement": {
+                            "requirement_type": "procedures",
+                            "expected_value": [
+                                "ILND",
+                                "DSNB"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 6 months post-procedure",
+                        "criterion": "time since procedure",
+                        "requirement": {
+                            "requirement_type": "time elapsed",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients diagnosed with penile cancer",
+                                "criterion": "penile cancer diagnosis",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "undergone invasive inguinal node procedures (ILND and/or DSNB)",
+                                "criterion": "invasive inguinal node procedures",
+                                "requirement": {
+                                    "requirement_type": "procedures",
+                                    "expected_value": [
+                                        "ILND",
+                                        "DSNB"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "at least 6 months post-procedure",
+                        "criterion": "time since procedure",
+                        "requirement": {
+                            "requirement_type": "time elapsed",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients who have not undergone invasive surgical procedures involving the inguinal lymph nodes",
+                "criterions": [
+                    {
+                        "exact_snippets": "not undergone invasive surgical procedures involving the inguinal lymph nodes",
+                        "criterion": "inguinal lymph nodes",
+                        "requirement": {
+                            "requirement_type": "surgical procedure",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "not undergone invasive surgical procedures involving the inguinal lymph nodes",
+                    "criterion": "inguinal lymph nodes",
+                    "requirement": {
+                        "requirement_type": "surgical procedure",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Non-English-speaking patients For interviews: people who are physically and/or cognitively incapable of participating in a 60minute telephone interview as determined by a clinical provider or the patient.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Non-English-speaking patients",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "non-English"
+                        }
+                    },
+                    {
+                        "exact_snippets": "physically and/or cognitively incapable of participating in a 60minute telephone interview",
+                        "criterion": "interview capability",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "as determined by a clinical provider or the patient",
+                        "criterion": "determination of capability",
+                        "requirement": {
+                            "requirement_type": "determination",
+                            "expected_value": [
+                                "clinical provider",
+                                "patient"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "physically and/or cognitively incapable of participating in a 60minute telephone interview",
+                                "criterion": "interview capability",
+                                "requirement": {
+                                    "requirement_type": "capability",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "as determined by a clinical provider or the patient",
+                                "criterion": "determination of capability",
+                                "requirement": {
+                                    "requirement_type": "determination",
+                                    "expected_value": [
+                                        "clinical provider",
+                                        "patient"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Non-English-speaking patients",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "non-English"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Patient's ≤18 years of age",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient's ≤18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patient's \u0018 years of age",
+                    "criterion": "age",
+                    "requirement": {
+                        "requirement_type": "maximum",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 18,
+                            "unit": "years"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

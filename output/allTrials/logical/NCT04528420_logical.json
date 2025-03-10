@@ -1,0 +1,595 @@
+{
+    "info": {
+        "nct_id": "NCT04528420",
+        "official_title": "Evaluation of Optimised Early Management in the Context of Radiochemotherapy for Curatively Treated Squamous Cell Carcinoma of the Head and Neck",
+        "inclusion_criteria": "* Male or female, over 18 and under 75 years of age,\n* Worl Health Organisation score < 2,\n* Treatment for a localized squamous cell carcinoma of the head and neck for which a curative treatment by concomitant post-operative radiochemotherapy based on cisplatin is retained,\n* Having signed the informed consent,\n* Affiliate or beneficiary of a social protection scheme.\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 75 Years",
+        "exclusion_criteria": "* History of other neoplastic disease less than 2 years old or progressive,\n* History of radiotherapy for head and neck cancer,\n* Contraindications to cisplatin,\n* Pregnant or breastfeeding woman,\n* Protected major (under guardianship or curatorship),\n* Patient participating in a therapeutic study\n* Patient unable to understand the study for any reason or to comply with the constraints of the trial",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Male or female, over 18 and under 75 years of age,",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male or female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "over 18 and under 75 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 75,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Male or female",
+                                "criterion": "gender",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "over 18 and under 75 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 75,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Worl Health Organisation score < 2,",
+                "criterions": [
+                    {
+                        "exact_snippets": "Worl Health Organisation score < 2",
+                        "criterion": "World Health Organisation score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Worl Health Organisation score < 2",
+                        "criterion": "World Health Organisation score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Treatment for a localized squamous cell carcinoma of the head and neck for which a curative treatment by concomitant post-operative radiochemotherapy based on cisplatin is retained,",
+                "criterions": [
+                    {
+                        "exact_snippets": "localized squamous cell carcinoma of the head and neck",
+                        "criterion": "squamous cell carcinoma of the head and neck",
+                        "requirement": {
+                            "requirement_type": "localization",
+                            "expected_value": "localized"
+                        }
+                    },
+                    {
+                        "exact_snippets": "curative treatment by concomitant post-operative radiochemotherapy based on cisplatin is retained",
+                        "criterion": "treatment plan",
+                        "requirement": {
+                            "requirement_type": "treatment type",
+                            "expected_value": "curative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "curative treatment by concomitant post-operative radiochemotherapy based on cisplatin is retained",
+                        "criterion": "treatment plan",
+                        "requirement": {
+                            "requirement_type": "treatment method",
+                            "expected_value": [
+                                "concomitant",
+                                "post-operative",
+                                "radiochemotherapy",
+                                "cisplatin"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "localized squamous cell carcinoma of the head and neck",
+                        "criterion": "squamous cell carcinoma of the head and neck",
+                        "requirement": {
+                            "requirement_type": "localization",
+                            "expected_value": "localized"
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "curative treatment by concomitant post-operative radiochemotherapy based on cisplatin is retained",
+                                "criterion": "treatment plan",
+                                "requirement": {
+                                    "requirement_type": "treatment type",
+                                    "expected_value": "curative"
+                                }
+                            },
+                            {
+                                "exact_snippets": "curative treatment by concomitant post-operative radiochemotherapy based on cisplatin is retained",
+                                "criterion": "treatment plan",
+                                "requirement": {
+                                    "requirement_type": "treatment method",
+                                    "expected_value": [
+                                        "concomitant",
+                                        "post-operative",
+                                        "radiochemotherapy",
+                                        "cisplatin"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Having signed the informed consent,",
+                "criterions": [
+                    {
+                        "exact_snippets": "Having signed the informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Having signed the informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Affiliate or beneficiary of a social protection scheme.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Affiliate or beneficiary of a social protection scheme.",
+                        "criterion": "social protection scheme",
+                        "requirement": {
+                            "requirement_type": "affiliation or beneficiary status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Affiliate or beneficiary of a social protection scheme.",
+                        "criterion": "social protection scheme",
+                        "requirement": {
+                            "requirement_type": "affiliation or beneficiary status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 75 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* History of other neoplastic disease less than 2 years old or progressive,",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of other neoplastic disease less than 2 years old",
+                        "criterion": "history of other neoplastic disease",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "progressive",
+                        "criterion": "progressive neoplastic disease",
+                        "requirement": {
+                            "requirement_type": "progression",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "History of other neoplastic disease less than 2 years old",
+                                "criterion": "history of other neoplastic disease",
+                                "requirement": {
+                                    "requirement_type": "age",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 2,
+                                        "unit": "years"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "progressive",
+                        "criterion": "progressive neoplastic disease",
+                        "requirement": {
+                            "requirement_type": "progression",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of radiotherapy for head and neck cancer,",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of radiotherapy for head and neck cancer",
+                        "criterion": "radiotherapy history",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "head and neck cancer"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "History of radiotherapy for head and neck cancer",
+                    "criterion": "radiotherapy history",
+                    "requirement": {
+                        "requirement_type": "condition",
+                        "expected_value": "head and neck cancer"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Contraindications to cisplatin,",
+                "criterions": [
+                    {
+                        "exact_snippets": "Contraindications to cisplatin",
+                        "criterion": "cisplatin",
+                        "requirement": {
+                            "requirement_type": "contraindications",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Contraindications to cisplatin",
+                    "criterion": "cisplatin",
+                    "requirement": {
+                        "requirement_type": "contraindications",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Protected major (under guardianship or curatorship),",
+                "criterions": [
+                    {
+                        "exact_snippets": "Protected major (under guardianship or curatorship)",
+                        "criterion": "legal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "protected major"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Protected major (under guardianship or curatorship)",
+                    "criterion": "legal status",
+                    "requirement": {
+                        "requirement_type": "status",
+                        "expected_value": "protected major"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient participating in a therapeutic study",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient participating in a therapeutic study",
+                        "criterion": "participation in a therapeutic study",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patient participating in a therapeutic study",
+                    "criterion": "participation in a therapeutic study",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient unable to understand the study for any reason or to comply with the constraints of the trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient unable to understand the study",
+                        "criterion": "understanding of the study",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unable ... to comply with the constraints of the trial",
+                        "criterion": "compliance with trial constraints",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Patient unable to understand the study",
+                            "criterion": "understanding of the study",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "unable ... to comply with the constraints of the trial",
+                            "criterion": "compliance with trial constraints",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Pregnant or breastfeeding woman,",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "breastfeeding",
+                        "criterion": "breastfeeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Pregnant",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "breastfeeding",
+                        "criterion": "breastfeeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}
