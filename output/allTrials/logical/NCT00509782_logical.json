@@ -1,0 +1,1143 @@
+{
+    "info": {
+        "nct_id": "NCT00509782",
+        "official_title": "Phase I Trial of ZIO-101 in Patients With Solid Tumors",
+        "inclusion_criteria": "1. Patients with histological confirmation solid malignancy refractory to conventional standard therapies for their condition.\n2. Eligible subjects MUST have at least one measurable lesion as defined by RECIST guidelines. If the measurable disease is restricted to a solitary lesion, its neoplastic nature should be confirmed by cytology/histology. Measurable lesions MUST not have been in a previously irradiated field or injected with biological agents.\n3. Pediatric patients will be eligible at the discretion of the primary investigator.\n4. ECOG performance status score </= 2.\n5. Women of child-bearing potential (i.e., women who are pre-menopausal or not surgically sterile) must use acceptable contraceptive methods (abstinence, intrauterine device [IUD], oral contraceptive or double barrier device), and must have a negative blood or urine pregnancy test within 1 week before beginning treatment. Sexually active men must also use acceptable contraceptive methods.\n6. Patients must provide written informed consent prior to treatment.\n7. At least four weeks from completion of prior therapy to day 1 of study drug.\n8. Baseline toxicity assessment less than or equal to grade 1 except treatment induced alopecia (NCI Common Terminology Criteria for Adverse Events [CTCAE] version 3.0).\n9. Evidence of adequate multi-organ functional status as reflected by the following clinical laboratory values: - Serum creatinine </= 2 times the upper normal limit OR a calculated creatinine clearance </= 50 cc/min. - Total bilirubin </= 2 times the upper normal limit. - Alanine aminotransferase (ALT), OR aspartate aminotransferase (AST) </= 3 times the upper limit of normal.\n10. Granulocytes in peripheral blood greater than or equal to 1 x 10(9) per liter, hemoglobin greater than or equal to 8.5 g/dL, and platelets greater than or equal to 50,000 cells/microL.\nHealthy volunteers allowed",
+        "exclusion_criteria": "1. Uncontrolled systemic infection (documented with microbiological studies).\n2. Active heart disease as defined by an acute myocardial infarction within the previous 6 months before starting therapy, stable or unstable angina, clinically significant arrhythmia requiring medical management, OR New York Heart Association Classification of Functional Activities. Class 3: Patient has marked limitation in activities due to symptoms, even during less-than-ordinary activity and is comfortable only at rest OR Class 4: Severe limitations. Patient experiences symptoms even while at rest.\n3. Concomitant therapy for solid cancer.\n4. Pregnant subjects and those who are breast-feeding.\n5. History of an invasive second primary malignancy diagnosed within the previous 3 years except for Stage I Endometrial/Cervical Carcinoma or Prostate Carcinoma treated surgically, and non-melanoma skin cancer.\n6. Documented personal or family history of prolonged QT syndrome.\n7. 12 lead electrocardiogram with a corrected QT interval >/= 460 milliseconds.\n8. History of confusion or dementia.\n9. History of seizure disorder.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Patients with histological confirmation solid malignancy refractory to conventional standard therapies for their condition.",
+                "criterions": [
+                    {
+                        "exact_snippets": "histological confirmation solid malignancy",
+                        "criterion": "solid malignancy",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "refractory to conventional standard therapies",
+                        "criterion": "response to conventional standard therapies",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": "refractory"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "histological confirmation solid malignancy",
+                        "criterion": "solid malignancy",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "refractory to conventional standard therapies",
+                        "criterion": "response to conventional standard therapies",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": "refractory"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Eligible subjects MUST have at least one measurable lesion as defined by RECIST guidelines. If the measurable disease is restricted to a solitary lesion, its neoplastic nature should be confirmed by cytology/histology. Measurable lesions MUST not have been in a previously irradiated field or injected with biological agents.",
+                "criterions": [
+                    {
+                        "exact_snippets": "at least one measurable lesion",
+                        "criterion": "measurable lesion",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "lesion"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "measurable disease is restricted to a solitary lesion, its neoplastic nature should be confirmed by cytology/histology",
+                        "criterion": "solitary lesion neoplastic nature",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": "cytology/histology"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Measurable lesions MUST not have been in a previously irradiated field",
+                        "criterion": "measurable lesion irradiation",
+                        "requirement": {
+                            "requirement_type": "previous irradiation",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Measurable lesions MUST not have been ... injected with biological agents",
+                        "criterion": "measurable lesion biological agent injection",
+                        "requirement": {
+                            "requirement_type": "previous injection",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "at least one measurable lesion",
+                                    "criterion": "measurable lesion",
+                                    "requirement": {
+                                        "requirement_type": "quantity",
+                                        "expected_value": {
+                                            "operator": ">=",
+                                            "value": 1,
+                                            "unit": "lesion"
+                                        }
+                                    }
+                                },
+                                {
+                                    "not_criteria": {
+                                        "exact_snippets": "Measurable lesions MUST not have been in a previously irradiated field",
+                                        "criterion": "measurable lesion irradiation",
+                                        "requirement": {
+                                            "requirement_type": "previous irradiation",
+                                            "expected_value": false
+                                        }
+                                    }
+                                },
+                                {
+                                    "not_criteria": {
+                                        "exact_snippets": "Measurable lesions MUST not have been ... injected with biological agents",
+                                        "criterion": "measurable lesion biological agent injection",
+                                        "requirement": {
+                                            "requirement_type": "previous injection",
+                                            "expected_value": false
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "or_criteria": [
+                        {
+                            "not_criteria": {
+                                "exact_snippets": "measurable disease is restricted to a solitary lesion, its neoplastic nature should be confirmed by cytology/histology",
+                                "criterion": "solitary lesion neoplastic nature",
+                                "requirement": {
+                                    "requirement_type": "confirmation",
+                                    "expected_value": "cytology/histology"
+                                }
+                            }
+                        },
+                        {
+                            "exact_snippets": "measurable disease is restricted to a solitary lesion, its neoplastic nature should be confirmed by cytology/histology",
+                            "criterion": "solitary lesion neoplastic nature",
+                            "requirement": {
+                                "requirement_type": "confirmation",
+                                "expected_value": "cytology/histology"
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Pediatric patients will be eligible at the discretion of the primary investigator.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pediatric patients",
+                        "criterion": "age group",
+                        "requirement": {
+                            "requirement_type": "category",
+                            "expected_value": "pediatric"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at the discretion of the primary investigator",
+                        "criterion": "investigator discretion",
+                        "requirement": {
+                            "requirement_type": "approval",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Pediatric patients",
+                        "criterion": "age group",
+                        "requirement": {
+                            "requirement_type": "category",
+                            "expected_value": "pediatric"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at the discretion of the primary investigator",
+                        "criterion": "investigator discretion",
+                        "requirement": {
+                            "requirement_type": "approval",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. ECOG performance status score </= 2.",
+                "criterions": [
+                    {
+                        "exact_snippets": "ECOG performance status score </= 2",
+                        "criterion": "ECOG performance status score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "ECOG performance status score </= 2",
+                        "criterion": "ECOG performance status score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Patients must provide written informed consent prior to treatment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must provide written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "provision",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients must provide written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "provision",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. At least four weeks from completion of prior therapy to day 1 of study drug.",
+                "criterions": [
+                    {
+                        "exact_snippets": "At least four weeks from completion of prior therapy",
+                        "criterion": "time since prior therapy completion",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "At least four weeks from completion of prior therapy",
+                        "criterion": "time since prior therapy completion",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "8. Baseline toxicity assessment less than or equal to grade 1 except treatment induced alopecia (NCI Common Terminology Criteria for Adverse Events [CTCAE] version 3.0).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Baseline toxicity assessment less than or equal to grade 1",
+                        "criterion": "baseline toxicity",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "grade"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "except treatment induced alopecia",
+                        "criterion": "treatment induced alopecia",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "N/A"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "except treatment induced alopecia",
+                    "criterion": "treatment induced alopecia",
+                    "requirement": {
+                        "requirement_type": "severity",
+                        "expected_value": "N/A"
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Baseline toxicity assessment less than or equal to grade 1",
+                            "criterion": "baseline toxicity",
+                            "requirement": {
+                                "requirement_type": "severity",
+                                "expected_value": {
+                                    "operator": "<=",
+                                    "value": 1,
+                                    "unit": "grade"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "9. Evidence of adequate multi-organ functional status as reflected by the following clinical laboratory values: - Serum creatinine </= 2 times the upper normal limit OR a calculated creatinine clearance </= 50 cc/min. - Total bilirubin </= 2 times the upper normal limit. - Alanine aminotransferase (ALT), OR aspartate aminotransferase (AST) </= 3 times the upper limit of normal.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Serum creatinine </= 2 times the upper normal limit",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "times the upper normal limit"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "calculated creatinine clearance </= 50 cc/min",
+                        "criterion": "creatinine clearance",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 50,
+                                "unit": "cc/min"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Total bilirubin </= 2 times the upper normal limit",
+                        "criterion": "total bilirubin",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "times the upper normal limit"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Alanine aminotransferase (ALT), OR aspartate aminotransferase (AST) </= 3 times the upper limit of normal",
+                        "criterion": "alanine aminotransferase (ALT) or aspartate aminotransferase (AST)",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "times the upper limit of normal"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Serum creatinine </= 2 times the upper normal limit",
+                                "criterion": "serum creatinine",
+                                "requirement": {
+                                    "requirement_type": "level",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "times the upper normal limit"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "calculated creatinine clearance </= 50 cc/min",
+                                "criterion": "creatinine clearance",
+                                "requirement": {
+                                    "requirement_type": "level",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 50,
+                                        "unit": "cc/min"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Total bilirubin </= 2 times the upper normal limit",
+                        "criterion": "total bilirubin",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "times the upper normal limit"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Alanine aminotransferase (ALT), OR aspartate aminotransferase (AST) </= 3 times the upper limit of normal",
+                        "criterion": "alanine aminotransferase (ALT) or aspartate aminotransferase (AST)",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "times the upper limit of normal"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "10. Granulocytes in peripheral blood greater than or equal to 1 x 10(9) per liter, hemoglobin greater than or equal to 8.5 g/dL, and platelets greater than or equal to 50,000 cells/microL.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Granulocytes in peripheral blood greater than or equal to 1 x 10(9) per liter",
+                        "criterion": "granulocytes in peripheral blood",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "x 10(9) per liter"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "hemoglobin greater than or equal to 8.5 g/dL",
+                        "criterion": "hemoglobin",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 8.5,
+                                "unit": "g/dL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "platelets greater than or equal to 50,000 cells/microL",
+                        "criterion": "platelets",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50000,
+                                "unit": "cells/microL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Granulocytes in peripheral blood greater than or equal to 1 x 10(9) per liter",
+                        "criterion": "granulocytes in peripheral blood",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "x 10(9) per liter"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "hemoglobin greater than or equal to 8.5 g/dL",
+                        "criterion": "hemoglobin",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 8.5,
+                                "unit": "g/dL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "platelets greater than or equal to 50,000 cells/microL",
+                        "criterion": "platelets",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50000,
+                                "unit": "cells/microL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Uncontrolled systemic infection (documented with microbiological studies).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Uncontrolled systemic infection (documented with microbiological studies)",
+                        "criterion": "systemic infection",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Uncontrolled systemic infection (documented with microbiological studies)",
+                        "criterion": "systemic infection",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "microbiological studies"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Uncontrolled systemic infection (documented with microbiological studies)",
+                        "criterion": "systemic infection",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Uncontrolled systemic infection (documented with microbiological studies)",
+                        "criterion": "systemic infection",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "microbiological studies"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Active heart disease as defined by an acute myocardial infarction within the previous 6 months before starting therapy, stable or unstable angina, clinically significant arrhythmia requiring medical management, OR New York Heart Association Classification of Functional Activities. Class 3: Patient has marked limitation in activities due to symptoms, even during less-than-ordinary activity and is comfortable only at rest OR Class 4: Severe limitations. Patient experiences symptoms even while at rest.",
+                "criterions": [
+                    {
+                        "exact_snippets": "acute myocardial infarction within the previous 6 months before starting therapy",
+                        "criterion": "acute myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "stable or unstable angina",
+                        "criterion": "angina",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": [
+                                "stable",
+                                "unstable"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "clinically significant arrhythmia requiring medical management",
+                        "criterion": "arrhythmia",
+                        "requirement": {
+                            "requirement_type": "clinical significance",
+                            "expected_value": "significant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "clinically significant arrhythmia requiring medical management",
+                        "criterion": "arrhythmia",
+                        "requirement": {
+                            "requirement_type": "medical management",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "New York Heart Association Classification of Functional Activities. Class 3",
+                        "criterion": "New York Heart Association Classification",
+                        "requirement": {
+                            "requirement_type": "class",
+                            "expected_value": "3"
+                        }
+                    },
+                    {
+                        "exact_snippets": "New York Heart Association Classification of Functional Activities. ... Class 4",
+                        "criterion": "New York Heart Association Classification",
+                        "requirement": {
+                            "requirement_type": "class",
+                            "expected_value": "4"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "acute myocardial infarction within the previous 6 months before starting therapy",
+                                        "criterion": "acute myocardial infarction",
+                                        "requirement": {
+                                            "requirement_type": "time frame",
+                                            "expected_value": {
+                                                "operator": "<=",
+                                                "value": 6,
+                                                "unit": "months"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "stable or unstable angina",
+                                        "criterion": "angina",
+                                        "requirement": {
+                                            "requirement_type": "stability",
+                                            "expected_value": [
+                                                "stable",
+                                                "unstable"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "clinically significant arrhythmia requiring medical management",
+                                        "criterion": "arrhythmia",
+                                        "requirement": {
+                                            "requirement_type": "clinical significance",
+                                            "expected_value": "significant"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "clinically significant arrhythmia requiring medical management",
+                                        "criterion": "arrhythmia",
+                                        "requirement": {
+                                            "requirement_type": "medical management",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "New York Heart Association Classification of Functional Activities. Class 3",
+                                "criterion": "New York Heart Association Classification",
+                                "requirement": {
+                                    "requirement_type": "class",
+                                    "expected_value": "3"
+                                }
+                            },
+                            {
+                                "exact_snippets": "New York Heart Association Classification of Functional Activities. ... Class 4",
+                                "criterion": "New York Heart Association Classification",
+                                "requirement": {
+                                    "requirement_type": "class",
+                                    "expected_value": "4"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Concomitant therapy for solid cancer.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Concomitant therapy for solid cancer.",
+                        "criterion": "concomitant therapy",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "solid cancer"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Concomitant therapy for solid cancer.",
+                        "criterion": "concomitant therapy",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "solid cancer"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. History of an invasive second primary malignancy diagnosed within the previous 3 years except for Stage I Endometrial/Cervical Carcinoma or Prostate Carcinoma treated surgically, and non-melanoma skin cancer.",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of an invasive second primary malignancy diagnosed within the previous 3 years",
+                        "criterion": "invasive second primary malignancy",
+                        "requirement": {
+                            "requirement_type": "diagnosis time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "except for Stage I Endometrial/Cervical Carcinoma",
+                        "criterion": "Stage I Endometrial/Cervical Carcinoma",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "except for ... Prostate Carcinoma treated surgically",
+                        "criterion": "Prostate Carcinoma treated surgically",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "except for ... non-melanoma skin cancer",
+                        "criterion": "non-melanoma skin cancer",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "History of an invasive second primary malignancy diagnosed within the previous 3 years",
+                            "criterion": "invasive second primary malignancy",
+                            "requirement": {
+                                "requirement_type": "diagnosis time frame",
+                                "expected_value": {
+                                    "operator": "<=",
+                                    "value": 3,
+                                    "unit": "years"
+                                }
+                            }
+                        },
+                        {
+                            "not_criteria": {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "except for Stage I Endometrial/Cervical Carcinoma",
+                                        "criterion": "Stage I Endometrial/Cervical Carcinoma",
+                                        "requirement": {
+                                            "requirement_type": "exclusion",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "except for ... Prostate Carcinoma treated surgically",
+                                        "criterion": "Prostate Carcinoma treated surgically",
+                                        "requirement": {
+                                            "requirement_type": "exclusion",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "except for ... non-melanoma skin cancer",
+                                        "criterion": "non-melanoma skin cancer",
+                                        "requirement": {
+                                            "requirement_type": "exclusion",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": null,
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Documented personal or family history of prolonged QT syndrome.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Documented personal ... history of prolonged QT syndrome.",
+                        "criterion": "personal history of prolonged QT syndrome",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Documented ... family history of prolonged QT syndrome.",
+                        "criterion": "family history of prolonged QT syndrome",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Documented personal ... history of prolonged QT syndrome.",
+                        "criterion": "personal history of prolonged QT syndrome",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Documented ... family history of prolonged QT syndrome.",
+                        "criterion": "family history of prolonged QT syndrome",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. 12 lead electrocardiogram with a corrected QT interval >/= 460 milliseconds.",
+                "criterions": [
+                    {
+                        "exact_snippets": "12 lead electrocardiogram with a corrected QT interval >/= 460 milliseconds.",
+                        "criterion": "corrected QT interval",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 460,
+                                "unit": "milliseconds"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "12 lead electrocardiogram with a corrected QT interval >/= 460 milliseconds.",
+                        "criterion": "corrected QT interval",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 460,
+                                "unit": "milliseconds"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "8. History of confusion or dementia.",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of confusion",
+                        "criterion": "confusion",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of ... dementia",
+                        "criterion": "dementia",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "History of confusion",
+                        "criterion": "confusion",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of ... dementia",
+                        "criterion": "dementia",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "9. History of seizure disorder.",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of seizure disorder",
+                        "criterion": "seizure disorder",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "History of seizure disorder",
+                        "criterion": "seizure disorder",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "5. Women of child-bearing potential (i.e., women who are pre-menopausal or not surgically sterile) must use acceptable contraceptive methods (abstinence, intrauterine device [IUD], oral contraceptive or double barrier device), and must have a negative blood or urine pregnancy test within 1 week before beginning treatment. Sexually active men must also use acceptable contraceptive methods.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women of child-bearing potential (i.e., women who are pre-menopausal or not surgically sterile)",
+                        "criterion": "women of child-bearing potential",
+                        "requirement": {
+                            "requirement_type": "definition",
+                            "expected_value": [
+                                "pre-menopausal",
+                                "not surgically sterile"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "must use acceptable contraceptive methods (abstinence, intrauterine device [IUD], oral contraceptive or double barrier device)",
+                        "criterion": "contraceptive methods for women",
+                        "requirement": {
+                            "requirement_type": "usage",
+                            "expected_value": [
+                                "abstinence",
+                                "intrauterine device [IUD]",
+                                "oral contraceptive",
+                                "double barrier device"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "must have a negative blood or urine pregnancy test within 1 week before beginning treatment",
+                        "criterion": "pregnancy test",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "must have a negative blood or urine pregnancy test within 1 week before beginning treatment",
+                        "criterion": "pregnancy test",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "within 1 week before beginning treatment"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Sexually active men must also use acceptable contraceptive methods",
+                        "criterion": "contraceptive methods for men",
+                        "requirement": {
+                            "requirement_type": "usage",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "4. Pregnant subjects and those who are breast-feeding.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant subjects",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast-feeding",
+                        "criterion": "breast-feeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Pregnant subjects",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast-feeding",
+                        "criterion": "breast-feeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,782 @@
+{
+    "info": {
+        "nct_id": "NCT03724331",
+        "official_title": "Understanding the Post-Surgical Non-Small Cell Lung Cancer Patient's Symptom Experience",
+        "inclusion_criteria": "* Women and men\n* At least 18 years of age (Michigan) and 19 years of age in (Nebraska)\n* With suspected non-small cell lung cancer to be confirmed after surgery\n* Karnofsky Performance Status score of at least 70%\n* Thoracic surgeon approval pre- and post-surgery\n* Medically stable comorbid conditions allowing for non-small cell lung cancer surgery clearance\n* Has phone access capability\n* Able to speak and write English\n* Able to hear and speak for phone interviews\n* Owns a television\n* Lives within 2 hours driving distance of recruitment site\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Severe impairment of sight, hearing, speaking\n* Active treatment for malignancy within past 3 months (other than non-melanoma skin cancer or long-term hormonal treatment for common cancers such as breast and prostate if disease is stable\n* Weight greater than 330 pounds\n* History of photosensitive seizures\n* Any condition or disorder that would impede safe participation as directed\n* Plans to relocate outside the area during the study period or unable to fully participate",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Women and men",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "men",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "men",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* At least 18 years of age (Michigan) and 19 years of age in (Nebraska)",
+                "criterions": [
+                    {
+                        "exact_snippets": "At least 18 years of age (Michigan)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "19 years of age in (Nebraska)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 19,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "condition": {
+                            "exact_snippets": "Location is Michigan",
+                            "criterion": "location",
+                            "requirement": {
+                                "requirement_type": "state",
+                                "expected_value": "Michigan"
+                            }
+                        },
+                        "then_criteria": {
+                            "exact_snippets": "At least 18 years of age (Michigan)",
+                            "criterion": "age",
+                            "requirement": {
+                                "requirement_type": "minimum age",
+                                "expected_value": {
+                                    "operator": ">=",
+                                    "value": 18,
+                                    "unit": "years"
+                                }
+                            }
+                        },
+                        "else_criteria": {
+                            "condition": {
+                                "exact_snippets": "Location is Nebraska",
+                                "criterion": "location",
+                                "requirement": {
+                                    "requirement_type": "state",
+                                    "expected_value": "Nebraska"
+                                }
+                            },
+                            "then_criteria": {
+                                "exact_snippets": "19 years of age in (Nebraska)",
+                                "criterion": "age",
+                                "requirement": {
+                                    "requirement_type": "minimum age",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 19,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            "else_criteria": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* With suspected non-small cell lung cancer to be confirmed after surgery",
+                "criterions": [
+                    {
+                        "exact_snippets": "suspected non-small cell lung cancer",
+                        "criterion": "non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "to be confirmed after surgery",
+                        "criterion": "confirmation of non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "after surgery"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "suspected non-small cell lung cancer",
+                        "criterion": "non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "to be confirmed after surgery",
+                        "criterion": "confirmation of non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "after surgery"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Karnofsky Performance Status score of at least 70%",
+                "criterions": [
+                    {
+                        "exact_snippets": "Karnofsky Performance Status score of at least 70%",
+                        "criterion": "Karnofsky Performance Status score",
+                        "requirement": {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 70,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Karnofsky Performance Status score of at least 70%",
+                        "criterion": "Karnofsky Performance Status score",
+                        "requirement": {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 70,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Thoracic surgeon approval pre- and post-surgery",
+                "criterions": [
+                    {
+                        "exact_snippets": "Thoracic surgeon approval pre- and post-surgery",
+                        "criterion": "thoracic surgeon approval",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": [
+                                "pre-surgery",
+                                "post-surgery"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Thoracic surgeon approval pre- and post-surgery",
+                        "criterion": "thoracic surgeon approval",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": [
+                                "pre-surgery",
+                                "post-surgery"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Medically stable comorbid conditions allowing for non-small cell lung cancer surgery clearance",
+                "criterions": [
+                    {
+                        "exact_snippets": "Medically stable comorbid conditions",
+                        "criterion": "comorbid conditions",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "medically stable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-small cell lung cancer surgery clearance",
+                        "criterion": "surgery clearance",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "non-small cell lung cancer"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Medically stable comorbid conditions",
+                        "criterion": "comorbid conditions",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "medically stable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-small cell lung cancer surgery clearance",
+                        "criterion": "surgery clearance",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "non-small cell lung cancer"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has phone access capability",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has phone access capability",
+                        "criterion": "phone access",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Has phone access capability",
+                        "criterion": "phone access",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able to speak and write English",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to speak ... English",
+                        "criterion": "English language proficiency",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": "speak"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Able to ... write English",
+                        "criterion": "English language proficiency",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": "write"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able to speak ... English",
+                        "criterion": "English language proficiency",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": "speak"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Able to ... write English",
+                        "criterion": "English language proficiency",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": "write"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able to hear and speak for phone interviews",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to hear",
+                        "criterion": "hearing ability",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Able to ... speak",
+                        "criterion": "speaking ability",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able to hear",
+                        "criterion": "hearing ability",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Able to ... speak",
+                        "criterion": "speaking ability",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Owns a television",
+                "criterions": [
+                    {
+                        "exact_snippets": "Owns a television",
+                        "criterion": "television ownership",
+                        "requirement": {
+                            "requirement_type": "ownership",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Owns a television",
+                        "criterion": "television ownership",
+                        "requirement": {
+                            "requirement_type": "ownership",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lives within 2 hours driving distance of recruitment site",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lives within 2 hours driving distance of recruitment site",
+                        "criterion": "driving distance to recruitment site",
+                        "requirement": {
+                            "requirement_type": "distance",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "hours"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Lives within 2 hours driving distance of recruitment site",
+                        "criterion": "driving distance to recruitment site",
+                        "requirement": {
+                            "requirement_type": "distance",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "hours"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Weight greater than 330 pounds",
+                "criterions": [
+                    {
+                        "exact_snippets": "Weight greater than 330 pounds",
+                        "criterion": "weight",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 330,
+                                "unit": "pounds"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Weight greater than 330 pounds",
+                    "criterion": "weight",
+                    "requirement": {
+                        "requirement_type": "quantity",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 330,
+                            "unit": "pounds"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of photosensitive seizures",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of photosensitive seizures",
+                        "criterion": "photosensitive seizures",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "History of photosensitive seizures",
+                    "criterion": "photosensitive seizures",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Any condition or disorder that would impede safe participation as directed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Any condition or disorder that would impede safe participation",
+                        "criterion": "condition or disorder",
+                        "requirement": {
+                            "requirement_type": "impact on participation",
+                            "expected_value": "impede safe participation"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Any condition or disorder that would impede safe participation",
+                    "criterion": "condition or disorder",
+                    "requirement": {
+                        "requirement_type": "impact on participation",
+                        "expected_value": "impede safe participation"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Plans to relocate outside the area during the study period or unable to fully participate",
+                "criterions": [
+                    {
+                        "exact_snippets": "Plans to relocate outside the area during the study period",
+                        "criterion": "relocation plans",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "unable to fully participate",
+                        "criterion": "ability to fully participate",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Plans to relocate outside the area during the study period",
+                        "criterion": "relocation plans",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "unable to fully participate",
+                            "criterion": "ability to fully participate",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Severe impairment of sight, hearing, speaking",
+                "criterions": [
+                    {
+                        "exact_snippets": "Severe impairment of sight",
+                        "criterion": "sight impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Severe impairment of hearing",
+                        "criterion": "hearing impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Severe impairment of ... speaking",
+                        "criterion": "speaking impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Severe impairment of sight",
+                        "criterion": "sight impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Severe impairment of hearing",
+                        "criterion": "hearing impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Severe impairment of ... speaking",
+                        "criterion": "speaking impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Active treatment for malignancy within past 3 months (other than non-melanoma skin cancer or long-term hormonal treatment for common cancers such as breast and prostate if disease is stable",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active treatment for malignancy within past 3 months",
+                        "criterion": "active treatment for malignancy",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-melanoma skin cancer",
+                        "criterion": "non-melanoma skin cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "long-term hormonal treatment for common cancers such as breast and prostate if disease is stable",
+                        "criterion": "long-term hormonal treatment for common cancers",
+                        "requirement": {
+                            "requirement_type": "disease stability",
+                            "expected_value": "stable"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "non-melanoma skin cancer",
+                                    "criterion": "non-melanoma skin cancer",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": false
+                                    }
+                                }
+                            },
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "long-term hormonal treatment for common cancers such as breast and prostate if disease is stable",
+                                    "criterion": "long-term hormonal treatment for common cancers",
+                                    "requirement": {
+                                        "requirement_type": "disease stability",
+                                        "expected_value": "stable"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

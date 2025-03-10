@@ -1,0 +1,220 @@
+{
+    "info": {
+        "nct_id": "NCT05452382",
+        "official_title": "Surgical Outcome and Predictors of Overall Survival of Stage I-III Appendiceal Adenocarcinoma; a National Cancer Database Analysis",
+        "inclusion_criteria": "* patients with non-metastatic appendiceal adenocarcinoma who underwent surgical resection\nHealthy volunteers allowed",
+        "exclusion_criteria": "* Patients with other pathologic types of appendiceal cancer\n* Patients with clinical stage IV or unknown stage\n* Patients who did not undergo surgery, underwent local excision, or had unknown/non-specified surgery",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* patients with non-metastatic appendiceal adenocarcinoma who underwent surgical resection",
+                "criterions": [
+                    {
+                        "exact_snippets": "non-metastatic appendiceal adenocarcinoma",
+                        "criterion": "appendiceal adenocarcinoma",
+                        "requirement": {
+                            "requirement_type": "metastasis",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "underwent surgical resection",
+                        "criterion": "surgical resection",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "non-metastatic appendiceal adenocarcinoma",
+                        "criterion": "appendiceal adenocarcinoma",
+                        "requirement": {
+                            "requirement_type": "metastasis",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "underwent surgical resection",
+                        "criterion": "surgical resection",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with other pathologic types of appendiceal cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "other pathologic types of appendiceal cancer",
+                        "criterion": "appendiceal cancer type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "other pathologic types"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "other pathologic types of appendiceal cancer",
+                    "criterion": "appendiceal cancer type",
+                    "requirement": {
+                        "requirement_type": "type",
+                        "expected_value": "other pathologic types"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with clinical stage IV or unknown stage",
+                "criterions": [
+                    {
+                        "exact_snippets": "clinical stage IV",
+                        "criterion": "clinical stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "IV"
+                        }
+                    },
+                    {
+                        "exact_snippets": "unknown stage",
+                        "criterion": "clinical stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "unknown"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "clinical stage IV",
+                        "criterion": "clinical stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "IV"
+                        }
+                    },
+                    {
+                        "exact_snippets": "unknown stage",
+                        "criterion": "clinical stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "unknown"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who did not undergo surgery, underwent local excision, or had unknown/non-specified surgery",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who did not undergo surgery",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "underwent",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "underwent local excision",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "local excision"
+                        }
+                    },
+                    {
+                        "exact_snippets": "unknown/non-specified surgery",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "unknown",
+                                "non-specified"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Patients who did not undergo surgery",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "underwent",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "underwent local excision",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "local excision"
+                        }
+                    },
+                    {
+                        "exact_snippets": "unknown/non-specified surgery",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "unknown",
+                                "non-specified"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}
