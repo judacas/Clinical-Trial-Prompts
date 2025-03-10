@@ -1,0 +1,762 @@
+{
+    "info": {
+        "nct_id": "NCT00127920",
+        "official_title": "A Phase II, Open-Label, Non-Randomized, Multi-Center Pilot Study of Intravenous Taxol, Carboplatin, Bevacizumab Given Every 21 Days in Patients With Newly Diagnosed Stage III/IV Epithelial Ovarian, Fallopian Tube or Peritoneal Cancer",
+        "inclusion_criteria": "* Subjects with a histologic or cytologic diagnosis of stage III/IV ovarian cancer, fallopian tube epithelial cancer, or peritoneal cancer who have not received prior chemotherapy or radiotherapy.\n* Subjects must have the appropriate surgery for their gynecologic cancer. However, subjects may be treated in a neoadjuvant manner, with surgery being performed after chemotherapy cycles 1, 2, or 3.\n* If neoadjuvant therapy is not administered, subjects must receive their first dose no more than six weeks postoperatively.\n* Subjects must have adequate bone marrow, renal and hepatic function as defined by WBC > 3,000 cells/cu ml., platelets > 100,000/cu.ml., calculated creatinine clearance > 50 ccs/min., bilirubin < 1.5 mg/dl, and SGOT < three times normal.\n* Karnofsky performance status > 50%.\n* Subjects who have signed an institutional review board (IRB) approved informed consent form.\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Subjects with epithelial ovarian cancer of low malignancy potential.\n* Subjects with septicemia, severe infection, or acute hepatitis.\n* Subjects with severe gastrointestinal bleeding.\n* Subjects with a history of congestive heart failure, angina, or a history of myocardial infarction within the past six months.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Subjects must have the appropriate surgery for their gynecologic cancer. However, subjects may be treated in a neoadjuvant manner, with surgery being performed after chemotherapy cycles 1, 2, or 3.",
+                "criterions": [
+                    {
+                        "exact_snippets": "appropriate surgery for their gynecologic cancer",
+                        "criterion": "surgery for gynecologic cancer",
+                        "requirement": {
+                            "requirement_type": "appropriateness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "treated in a neoadjuvant manner",
+                        "criterion": "neoadjuvant treatment",
+                        "requirement": {
+                            "requirement_type": "treatment type",
+                            "expected_value": "neoadjuvant"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "treated in a neoadjuvant manner",
+                    "criterion": "neoadjuvant treatment",
+                    "requirement": {
+                        "requirement_type": "treatment type",
+                        "expected_value": "neoadjuvant"
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "appropriate surgery for their gynecologic cancer",
+                    "criterion": "surgery for gynecologic cancer",
+                    "requirement": {
+                        "requirement_type": "appropriateness",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": {
+                    "exact_snippets": "appropriate surgery for their gynecologic cancer",
+                    "criterion": "surgery for gynecologic cancer",
+                    "requirement": {
+                        "requirement_type": "appropriateness",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* If neoadjuvant therapy is not administered, subjects must receive their first dose no more than six weeks postoperatively.",
+                "criterions": [
+                    {
+                        "exact_snippets": "neoadjuvant therapy is not administered",
+                        "criterion": "neoadjuvant therapy",
+                        "requirement": {
+                            "requirement_type": "administration",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "receive their first dose no more than six weeks postoperatively",
+                        "criterion": "first dose timing",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "weeks postoperatively"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "neoadjuvant therapy is not administered",
+                    "criterion": "neoadjuvant therapy",
+                    "requirement": {
+                        "requirement_type": "administration",
+                        "expected_value": false
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "receive their first dose no more than six weeks postoperatively",
+                    "criterion": "first dose timing",
+                    "requirement": {
+                        "requirement_type": "timing",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 6,
+                            "unit": "weeks postoperatively"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Karnofsky performance status > 50%.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Karnofsky performance status > 50%",
+                        "criterion": "Karnofsky performance status",
+                        "requirement": {
+                            "requirement_type": "performance status",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 50,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Karnofsky performance status > 50%",
+                        "criterion": "Karnofsky performance status",
+                        "requirement": {
+                            "requirement_type": "performance status",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 50,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects who have signed an institutional review board (IRB) approved informed consent form.",
+                "criterions": [
+                    {
+                        "exact_snippets": "signed an institutional review board (IRB) approved informed consent form",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "approval",
+                            "expected_value": "IRB approved"
+                        }
+                    },
+                    {
+                        "exact_snippets": "signed an institutional review board (IRB) approved informed consent form",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "signed"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "signed an institutional review board (IRB) approved informed consent form",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "approval",
+                            "expected_value": "IRB approved"
+                        }
+                    },
+                    {
+                        "exact_snippets": "signed an institutional review board (IRB) approved informed consent form",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "signed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects must have adequate bone marrow, renal and hepatic function as defined by WBC > 3,000 cells/cu ml., platelets > 100,000/cu.ml., calculated creatinine clearance > 50 ccs/min., bilirubin < 1.5 mg/dl, and SGOT < three times normal.",
+                "criterions": [
+                    {
+                        "exact_snippets": "adequate bone marrow ... WBC > 3,000 cells/cu ml.",
+                        "criterion": "bone marrow function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate bone marrow ... WBC > 3,000 cells/cu ml.",
+                        "criterion": "bone marrow function",
+                        "requirement": {
+                            "requirement_type": "WBC count",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3000,
+                                "unit": "cells/cu ml"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... renal function ... calculated creatinine clearance > 50 ccs/min.",
+                        "criterion": "renal function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... renal function ... calculated creatinine clearance > 50 ccs/min.",
+                        "criterion": "renal function",
+                        "requirement": {
+                            "requirement_type": "creatinine clearance",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 50,
+                                "unit": "ccs/min"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... hepatic function ... bilirubin < 1.5 mg/dl, and SGOT < three times normal.",
+                        "criterion": "hepatic function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... hepatic function ... bilirubin < 1.5 mg/dl, and SGOT < three times normal.",
+                        "criterion": "hepatic function",
+                        "requirement": {
+                            "requirement_type": "bilirubin level",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1.5,
+                                "unit": "mg/dl"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... hepatic function ... bilirubin < 1.5 mg/dl, and SGOT < three times normal.",
+                        "criterion": "hepatic function",
+                        "requirement": {
+                            "requirement_type": "SGOT level",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "times normal"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "platelets > 100,000/cu.ml.",
+                        "criterion": "platelet count",
+                        "requirement": {
+                            "requirement_type": "count",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 100000,
+                                "unit": "cu.ml"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "and_criteria": [
+                                                    {
+                                                        "and_criteria": [
+                                                            {
+                                                                "and_criteria": [
+                                                                    {
+                                                                        "exact_snippets": "adequate bone marrow ... WBC > 3,000 cells/cu ml.",
+                                                                        "criterion": "bone marrow function",
+                                                                        "requirement": {
+                                                                            "requirement_type": "adequacy",
+                                                                            "expected_value": true
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "exact_snippets": "adequate bone marrow ... WBC > 3,000 cells/cu ml.",
+                                                                        "criterion": "bone marrow function",
+                                                                        "requirement": {
+                                                                            "requirement_type": "WBC count",
+                                                                            "expected_value": {
+                                                                                "operator": ">",
+                                                                                "value": 3000,
+                                                                                "unit": "cells/cu ml"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "exact_snippets": "platelets > 100,000/cu.ml.",
+                                                                "criterion": "platelet count",
+                                                                "requirement": {
+                                                                    "requirement_type": "count",
+                                                                    "expected_value": {
+                                                                        "operator": ">",
+                                                                        "value": 100000,
+                                                                        "unit": "cu.ml"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "exact_snippets": "adequate ... renal function ... calculated creatinine clearance > 50 ccs/min.",
+                                                        "criterion": "renal function",
+                                                        "requirement": {
+                                                            "requirement_type": "adequacy",
+                                                            "expected_value": true
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "exact_snippets": "adequate ... renal function ... calculated creatinine clearance > 50 ccs/min.",
+                                                "criterion": "renal function",
+                                                "requirement": {
+                                                    "requirement_type": "creatinine clearance",
+                                                    "expected_value": {
+                                                        "operator": ">",
+                                                        "value": 50,
+                                                        "unit": "ccs/min"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "adequate ... hepatic function ... bilirubin < 1.5 mg/dl, and SGOT < three times normal.",
+                                        "criterion": "hepatic function",
+                                        "requirement": {
+                                            "requirement_type": "adequacy",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "adequate ... hepatic function ... bilirubin < 1.5 mg/dl, and SGOT < three times normal.",
+                                "criterion": "hepatic function",
+                                "requirement": {
+                                    "requirement_type": "bilirubin level",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 1.5,
+                                        "unit": "mg/dl"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "adequate ... hepatic function ... bilirubin < 1.5 mg/dl, and SGOT < three times normal.",
+                        "criterion": "hepatic function",
+                        "requirement": {
+                            "requirement_type": "SGOT level",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "times normal"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Subjects with epithelial ovarian cancer of low malignancy potential.",
+                "criterions": [
+                    {
+                        "exact_snippets": "epithelial ovarian cancer",
+                        "criterion": "epithelial ovarian cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "low malignancy potential",
+                        "criterion": "malignancy potential",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "low"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "epithelial ovarian cancer",
+                        "criterion": "epithelial ovarian cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "low malignancy potential",
+                        "criterion": "malignancy potential",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "low"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects with septicemia, severe infection, or acute hepatitis.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subjects with septicemia",
+                        "criterion": "septicemia",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe infection",
+                        "criterion": "severe infection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "acute hepatitis",
+                        "criterion": "acute hepatitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Subjects with septicemia",
+                        "criterion": "septicemia",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe infection",
+                        "criterion": "severe infection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "acute hepatitis",
+                        "criterion": "acute hepatitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects with severe gastrointestinal bleeding.",
+                "criterions": [
+                    {
+                        "exact_snippets": "severe gastrointestinal bleeding",
+                        "criterion": "gastrointestinal bleeding",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "severe gastrointestinal bleeding",
+                    "criterion": "gastrointestinal bleeding",
+                    "requirement": {
+                        "requirement_type": "severity",
+                        "expected_value": "severe"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects with a history of congestive heart failure, angina, or a history of myocardial infarction within the past six months.",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of congestive heart failure",
+                        "criterion": "congestive heart failure",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "angina",
+                        "criterion": "angina",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of myocardial infarction within the past six months",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of myocardial infarction within the past six months",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": "within the past six months"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "history of congestive heart failure",
+                                "criterion": "congestive heart failure",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "angina",
+                                "criterion": "angina",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "history of myocardial infarction within the past six months",
+                                "criterion": "myocardial infarction",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "history of myocardial infarction within the past six months",
+                                "criterion": "myocardial infarction",
+                                "requirement": {
+                                    "requirement_type": "time frame",
+                                    "expected_value": "within the past six months"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Subjects with a histologic or cytologic diagnosis of stage III/IV ovarian cancer, fallopian tube epithelial cancer, or peritoneal cancer who have not received prior chemotherapy or radiotherapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "histologic or cytologic diagnosis",
+                        "criterion": "diagnosis method",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": [
+                                "histologic",
+                                "cytologic"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "stage III/IV ovarian cancer",
+                        "criterion": "ovarian cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "III",
+                                "IV"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "fallopian tube epithelial cancer",
+                        "criterion": "fallopian tube epithelial cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "peritoneal cancer",
+                        "criterion": "peritoneal cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "have not received prior chemotherapy or radiotherapy",
+                        "criterion": "prior treatment",
+                        "requirement": {
+                            "requirement_type": "treatment history",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}
