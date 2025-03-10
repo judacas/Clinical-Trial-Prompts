@@ -127,6 +127,7 @@ def logically_structurize_line(
             ],
             temperature=0.0,
             response_format=LLMLogicalWrapperResponse,
+            timeout=45,
         )
 
         if response := completion.choices[0].message.parsed:

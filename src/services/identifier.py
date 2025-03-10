@@ -149,6 +149,7 @@ def extract_atomic_criteria_from_line(line: str) -> LLMIdentifiedLineResponse:
             ],
             temperature=0.0,
             response_format=LLMIdentifiedLineResponse,
+            timeout=45,
         )
         
         if response := completion.choices[0].message.parsed:
