@@ -53,6 +53,12 @@ class LLMOperator(str, Enum):
     NOT_EQUAL_TO = "!="
     GREATER_THAN_OR_EQUAL_TO = ">="
     LESS_THAN_OR_EQUAL_TO = "<="
+    
+    def __eq__(self, value: object) -> bool:
+        return str(self) == str(value)
+    
+    def __hash__(self) -> int:
+        return hash(self.value)
 
 class LLMNumericalComparison(BaseModel):
     """
@@ -60,12 +66,29 @@ class LLMNumericalComparison(BaseModel):
     """
     operator: LLMOperator = Field(..., description="The comparison operator.")
     value: Union[int, float] = Field(..., description="The value to compare against.")
+    unit: str = Field(..., description="The unit of the value being compared, if applicable, N/A otherwise.")
+    
+    def __eq__(self, value: object) -> bool:
+        if isinstance(value, LLMNumericalComparison):
+            return str(self) == str(value)
+        return False
+    
+    def __hash__(self) -> int:
+        return hash((self.operator, self.value, self.unit))
 
 class LLMRange(BaseModel):
     """
     Represents a range via multiple NumericalComparison objects to be used in expected value.
     """
-    comparisons: List[LLMNumericalComparison] = Field(..., description="List of comparison operations defining the range.")
+    comparisons: list[LLMNumericalComparison] = Field(..., description="List of comparison operations defining the range.")
+    
+    def __eq__(self, value: object) -> bool:
+        if isinstance(value, LLMRange):
+            return str(self) == str(value)
+        return False
+    
+    def __hash__(self) -> int:
+        return hash(tuple(self.comparisons))
 
 
 # TODO: Consider restructuring to use a criterion with a list of requirement type 
@@ -79,38 +102,63 @@ class LLMRange(BaseModel):
 # - Few-shot examples
 # - Reinforcement fine-tuning for this specific task
 
-class LLMSingleRawCriterion(BaseModel):
+class Requirement(BaseModel):
+    """
+    Represents a requirement type and its expected value for a criterion.
+    """
+    requirement_type: str = Field(
+        ..., description="What about the criterion is being tested (e.g presence, severity, quantity, N/A if it doesn't make sense for the criterion to have an attribute (eg. age))."
+    )
+    expected_value: Union[bool, str, List[str], LLMNumericalComparison, LLMRange] = Field(
+        ..., description="The expected value for the requirement. Only use string if nothing else is applicable."
+    )
+    
+    def __eq__(self, other):
+        if isinstance(other, Requirement):
+            return str(self) == str(other)
+        return False
+
+    def __hash__(self):
+        return hash((self.requirement_type, self.expected_value))
+
+class LLMMultiRequirementCriterion(BaseModel):
     """
     Represents an atomic criterion extracted from the eligibility criteria.
-    This model captures the general property/attribute being tested, what is asked about it (requirement_type), and the expected value.
+    This model captures the general property/attribute being tested and a list of requirements with their expected values.
     
     example:
         input:
-        "Tissue from tumor must be available",
+        "Tissue from tumor must be available and > 2 cm in diameter.",
                 
         output:
-        "exact_snippets": [
-            "Tissue from tumor must be available"
-        ],
+        "exact_snippets": "Tissue from tumor must be available ... > 2 cm in diameter.",
         "criterion": "tumor tissue",
-        "requirement_type": "availability",
-        "value": true
+        "requirements": [
+            {
+                "requirement_type": "availability",
+                "expected_value": true
+            },
+            {
+                "requirement_type": "size",
+                "expected_value": {
+                    "operator": ">",
+                    "value": 2,
+                    "unit": "cm"
+                }
+            }
+        ]
     """
     
-    exact_snippets: List[str] = Field(
-        ..., description="List of exact text snippets from the eligibility criteria that were used to extract this criterion."
+    exact_snippets: str = Field(
+        ..., description="Exact text snippets from the eligibility criteria that were used to extract this criterion, using ellipses (...) for non-consecutive text."
     )
     
     criterion: str = Field(
-        ..., description="The specific property, attribute, or condition that is being tested (e.g., 'age', 'lung cancer', 'BMI'). include the general version here and specify later in requirement_type (eg. white blood cell as criterion and count as attribute instead of white blood cell count as criterion). Note that you can have the same criterion with different requirement types. (such as criterion tumor then different requirement types like presence, severity, quantity)"
+        ..., description="The specific property, attribute, or condition that is being tested (e.g., 'age', 'lung cancer', 'BMI')."
     )
     
-    requirement_type: str = Field(
-        ..., description="what about the criterion is being tested (e.g presence, severity, quantity, N/A if it doesn't make sense for the criterion to have an attribute (eg. age))."
-    )
-    
-    expected_value: Union[bool, str, List[str], LLMNumericalComparison, LLMRange] = Field(
-        ..., description="The expected value for the criterion. only use string if nothing else is applicable"
+    requirements: List[Requirement] = Field(
+        ..., description="List of requirements and their expected values for the criterion."
     )
 
 class IdentifiedLine(BaseModel):
@@ -118,7 +166,7 @@ class IdentifiedLine(BaseModel):
     Represents a structured line of eligibility criteria.
     """
     line: str = Field(..., description="The original line of eligibility criteria.")
-    criterions: List[LLMSingleRawCriterion] = Field(..., description="List of structured criteria.")
+    criterions: List[LLMMultiRequirementCriterion] = Field(..., description="List of structured criteria.")
     
 class IdentifiedTrial(BaseModel):
     """
@@ -148,6 +196,6 @@ class LLMIdentifiedLineResponse(BaseModel):
     """
     Represents the collection of all structured atomic criteria and leftovers.
     """
-    atomic_criteria: List[LLMSingleRawCriterion] = Field(
+    atomic_criteria: List[LLMMultiRequirementCriterion] = Field(
         ..., description="List of all atomic criteria extracted from the trial."
     )
