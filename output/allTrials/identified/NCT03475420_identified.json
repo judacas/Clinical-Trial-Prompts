@@ -1,0 +1,120 @@
+{
+    "info": {
+        "nct_id": "NCT03475420",
+        "official_title": "Compare Patient-centered Outcomes for Lung Cancer Resection Patients Followed With Alternative Intervals of Surveillance Imaging",
+        "inclusion_criteria": "* Men or Women\n* Diagnosis of surgically resected lung cancer\n* American Joint Committee On Cancer (AJCC) stages I-III\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "-",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Men or Women",
+            "criterions": [
+                {
+                    "exact_snippets": "Men or Women",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "allowed_values",
+                            "expected_value": [
+                                "Men",
+                                "Women"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Diagnosis of surgically resected lung cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "Diagnosis of surgically resected lung cancer",
+                    "criterion": "lung cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "surgical resection",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* American Joint Committee On Cancer (AJCC) stages I-III",
+            "criterions": [
+                {
+                    "exact_snippets": "American Joint Committee On Cancer (AJCC) stages I-III",
+                    "criterion": "cancer stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "AJCC stage"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "AJCC stage"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "line": "-",
+            "criterions": []
+        }
+    ],
+    "failed_miscellaneous": []
+}

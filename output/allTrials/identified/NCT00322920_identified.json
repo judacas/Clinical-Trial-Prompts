@@ -117,7 +117,7 @@
                     "criterion": "ECOG Performance Status",
                     "requirements": [
                         {
-                            "requirement_type": "status",
+                            "requirement_type": "value",
                             "expected_value": [
                                 "0",
                                 "1"
@@ -189,7 +189,7 @@
             "line": "* Patients must be age 19 or greater and have signed informed consent.",
             "criterions": [
                 {
-                    "exact_snippets": "Patients must be age 19 or greater",
+                    "exact_snippets": "age 19 or greater",
                     "criterion": "age",
                     "requirements": [
                         {
@@ -203,7 +203,7 @@
                     ]
                 },
                 {
-                    "exact_snippets": "have signed informed consent",
+                    "exact_snippets": "signed informed consent",
                     "criterion": "informed consent",
                     "requirements": [
                         {
@@ -219,11 +219,11 @@
             "criterions": [
                 {
                     "exact_snippets": "Healthy volunteers allowed",
-                    "criterion": "volunteer health status",
+                    "criterion": "healthy volunteers",
                     "requirements": [
                         {
-                            "requirement_type": "status",
-                            "expected_value": "healthy"
+                            "requirement_type": "participation",
+                            "expected_value": true
                         }
                     ]
                 }
@@ -341,7 +341,7 @@
                     ]
                 },
                 {
-                    "exact_snippets": "adenocarcinoma histology",
+                    "exact_snippets": "adenocarcinoma",
                     "criterion": "histology",
                     "requirements": [
                         {
@@ -391,26 +391,12 @@
             "line": "* Patients currently receiving any or having received other investigational agents within the last 30 days are ineligible.",
             "criterions": [
                 {
-                    "exact_snippets": "Patients currently receiving any ... investigational agents",
-                    "criterion": "current investigational agent use",
+                    "exact_snippets": "Patients currently receiving any or having received other investigational agents within the last 30 days",
+                    "criterion": "investigational agents",
                     "requirements": [
                         {
-                            "requirement_type": "presence",
+                            "requirement_type": "receipt",
                             "expected_value": false
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "having received other investigational agents within the last 30 days",
-                    "criterion": "recent investigational agent use",
-                    "requirements": [
-                        {
-                            "requirement_type": "time since last use",
-                            "expected_value": {
-                                "operator": ">=",
-                                "value": 30,
-                                "unit": "days"
-                            }
                         }
                     ]
                 }

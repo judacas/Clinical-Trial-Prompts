@@ -1,0 +1,607 @@
+{
+    "info": {
+        "nct_id": "NCT00816582",
+        "official_title": "A Phase II Clinical Trial to Evaluate 18F-Fluoroestradiol Positron Emission Tomography / Computerized Tomography (PET/CT) Guided Fulvestrant Therapy for Patients With Recurrent or Metastatic Breast Cancer",
+        "inclusion_criteria": "* post-menopausal (≥ 60 years old, or age ≥ 45 years with amenorrhea for > 12 months or follicle stimulating hormone and estrogen levels within post-menopausal range, or prior bilateral oophorectomy)\n* hormone receptor positive (ER and/or PgR) disease as determined locally\n* WHO performance status 0-2\n* life expectancy of ≥ 3 months\n* the presence of at least one measurable or evaluable (non-measurable) lesion\n* informed consent prior to any study procedures\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 45 Years",
+        "exclusion_criteria": "* life threatening metastatic visceral disease\n* brain or leptomeningeal metastases\n* prior exposure to fulvestrant\n* history of bleeding diathesis or need for long term anti-coagulation",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* hormone receptor positive (ER and/or PgR) disease as determined locally",
+                "criterions": [
+                    {
+                        "exact_snippets": "hormone receptor positive (ER and/or PgR) disease",
+                        "criterion": "hormone receptor status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "positive"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "hormone receptor positive (ER and/or PgR) disease",
+                                "criterion": "hormone receptor status",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "positive"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* WHO performance status 0-2",
+                "criterions": [
+                    {
+                        "exact_snippets": "WHO performance status 0-2",
+                        "criterion": "WHO performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "WHO performance status 0-2",
+                        "criterion": "WHO performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* life expectancy of ≥ 3 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "life expectancy of ≥ 3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "life expectancy of ≥ 3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* the presence of at least one measurable or evaluable (non-measurable) lesion",
+                "criterions": [
+                    {
+                        "exact_snippets": "the presence of at least one measurable or evaluable (non-measurable) lesion",
+                        "criterion": "lesion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "the presence of at least one measurable or evaluable (non-measurable) lesion",
+                        "criterion": "lesion",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "the presence of at least one measurable or evaluable (non-measurable) lesion",
+                        "criterion": "lesion",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": [
+                                "measurable",
+                                "evaluable (non-measurable)"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "the presence of at least one measurable or evaluable (non-measurable) lesion",
+                                "criterion": "lesion",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "the presence of at least one measurable or evaluable (non-measurable) lesion",
+                                "criterion": "lesion",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "the presence of at least one measurable or evaluable (non-measurable) lesion",
+                        "criterion": "lesion",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": [
+                                "measurable",
+                                "evaluable (non-measurable)"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* informed consent prior to any study procedures",
+                "criterions": [
+                    {
+                        "exact_snippets": "informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 45 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 45 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 45,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 45 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 45,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* life threatening metastatic visceral disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "life threatening metastatic visceral disease",
+                        "criterion": "metastatic visceral disease",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "life threatening"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "life threatening metastatic visceral disease",
+                        "criterion": "metastatic visceral disease",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "life threatening"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* brain or leptomeningeal metastases",
+                "criterions": [
+                    {
+                        "exact_snippets": "brain ... metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "leptomeningeal metastases",
+                        "criterion": "leptomeningeal metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "brain ... metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "leptomeningeal metastases",
+                        "criterion": "leptomeningeal metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* prior exposure to fulvestrant",
+                "criterions": [
+                    {
+                        "exact_snippets": "prior exposure to fulvestrant",
+                        "criterion": "fulvestrant exposure",
+                        "requirement": {
+                            "requirement_type": "prior exposure",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "prior exposure to fulvestrant",
+                    "criterion": "fulvestrant exposure",
+                    "requirement": {
+                        "requirement_type": "prior exposure",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* history of bleeding diathesis or need for long term anti-coagulation",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of bleeding diathesis",
+                        "criterion": "bleeding diathesis",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "need for long term anti-coagulation",
+                        "criterion": "anti-coagulation",
+                        "requirement": {
+                            "requirement_type": "need",
+                            "expected_value": "long term"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "history of bleeding diathesis",
+                        "criterion": "bleeding diathesis",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "need for long term anti-coagulation",
+                        "criterion": "anti-coagulation",
+                        "requirement": {
+                            "requirement_type": "need",
+                            "expected_value": "long term"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* post-menopausal (≥ 60 years old, or age ≥ 45 years with amenorrhea for > 12 months or follicle stimulating hormone and estrogen levels within post-menopausal range, or prior bilateral oophorectomy)",
+                "criterions": [
+                    {
+                        "exact_snippets": "post-menopausal",
+                        "criterion": "menopausal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "post-menopausal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "≥ 60 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 60,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "age ≥ 45 years with amenorrhea for > 12 months",
+                        "criterion": "age with amenorrhea",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 45,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "age ≥ 45 years with amenorrhea for > 12 months",
+                        "criterion": "age with amenorrhea",
+                        "requirement": {
+                            "requirement_type": "amenorrhea duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 12,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "follicle stimulating hormone and estrogen levels within post-menopausal range",
+                        "criterion": "hormone levels",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": "post-menopausal range"
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior bilateral oophorectomy",
+                        "criterion": "surgical history",
+                        "requirement": {
+                            "requirement_type": "procedure",
+                            "expected_value": "bilateral oophorectomy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "≥ 60 years old",
+                                "criterion": "age",
+                                "requirement": {
+                                    "requirement_type": "comparison",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 60,
+                                        "unit": "years"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "age ≥ 45 years with amenorrhea for > 12 months",
+                                "criterion": "age with amenorrhea",
+                                "requirement": {
+                                    "requirement_type": "age",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 45,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "age ≥ 45 years with amenorrhea for > 12 months",
+                                "criterion": "age with amenorrhea",
+                                "requirement": {
+                                    "requirement_type": "amenorrhea duration",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "follicle stimulating hormone and estrogen levels within post-menopausal range",
+                                "criterion": "hormone levels",
+                                "requirement": {
+                                    "requirement_type": "range",
+                                    "expected_value": "post-menopausal range"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "prior bilateral oophorectomy",
+                                "criterion": "surgical history",
+                                "requirement": {
+                                    "requirement_type": "procedure",
+                                    "expected_value": "bilateral oophorectomy"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

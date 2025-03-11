@@ -1,0 +1,713 @@
+{
+    "info": {
+        "nct_id": "NCT05513820",
+        "official_title": "Automatic Detection in MRI of Prostate Cancer: DAICAP",
+        "inclusion_criteria": "* Patients with clinical suspicion of prostate cancer (increased PSA and/or abnormality on digital rectal examination) who underwent a diagnostic workup including mpMRI and prostate biopsies according to national recommendations: in case of normal mpMRI (PI-RADS < 3) 12 systematic samples; in case of pathological mpMRI (PI-RADS ≥3) 12 systematic samples associated with targeted samples (n= 2 to 4) by cognitive fusion, or image fusion software.\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients with histologically proven prostate cancer and/or treatment for prostate cancer prior to the diagnostic workup\n\nProspective substudy\n\nInclusion Criteria:\n\n* Patients with clinical suspicion of prostate cancer (increased PSA level and/or abnormality on digital rectal examination) who should receive a diagnostic workup including mpMRI and prostate biopsies according to national recommendations: in case of normal mpMRI (PI-RADS < 3) 12 systematic samples; in case of pathological mpMRI (PI-RADS ≥3) 12 systematic samples associated with targeted samples (n= 2 to 4) by cognitive fusion, or image fusion software.\n\nExclusion Criteria:\n\n* Patients with already histologically proven cancer, patients who have received treatment for prostate cancer, patients who cannot benefit from prostate biopsies, or patients with a contraindication to performing mpMRI.",
+        "miscellaneous_criteria": "Retrospective substudy"
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with clinical suspicion of prostate cancer (increased PSA and/or abnormality on digital rectal examination) who underwent a diagnostic workup including mpMRI and prostate biopsies according to national recommendations: in case of normal mpMRI (PI-RADS < 3) 12 systematic samples; in case of pathological mpMRI (PI-RADS ≥3) 12 systematic samples associated with targeted samples (n= 2 to 4) by cognitive fusion, or image fusion software.",
+                "criterions": [
+                    {
+                        "exact_snippets": "clinical suspicion of prostate cancer",
+                        "criterion": "clinical suspicion of prostate cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "increased PSA",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "increase",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "abnormality on digital rectal examination",
+                        "criterion": "digital rectal examination",
+                        "requirement": {
+                            "requirement_type": "abnormality",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "mpMRI",
+                        "criterion": "mpMRI",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prostate biopsies",
+                        "criterion": "prostate biopsies",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "PI-RADS < 3",
+                        "criterion": "PI-RADS score",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "PI-RADS ≥3",
+                        "criterion": "PI-RADS score",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "or_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "clinical suspicion of prostate cancer",
+                                                "criterion": "clinical suspicion of prostate cancer",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "increased PSA",
+                                                "criterion": "PSA level",
+                                                "requirement": {
+                                                    "requirement_type": "increase",
+                                                    "expected_value": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "abnormality on digital rectal examination",
+                                        "criterion": "digital rectal examination",
+                                        "requirement": {
+                                            "requirement_type": "abnormality",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "mpMRI",
+                                        "criterion": "mpMRI",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "prostate biopsies",
+                                        "criterion": "prostate biopsies",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "PI-RADS < 3",
+                                                "criterion": "PI-RADS score",
+                                                "requirement": {
+                                                    "requirement_type": "comparison",
+                                                    "expected_value": {
+                                                        "operator": "<",
+                                                        "value": 3,
+                                                        "unit": "N/A"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "prostate biopsies",
+                                                "criterion": "prostate biopsies",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "PI-RADS ≥3",
+                                                "criterion": "PI-RADS score",
+                                                "requirement": {
+                                                    "requirement_type": "comparison",
+                                                    "expected_value": {
+                                                        "operator": ">=",
+                                                        "value": 3,
+                                                        "unit": "N/A"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "prostate biopsies",
+                                                "criterion": "prostate biopsies",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "PI-RADS < 3",
+                                        "criterion": "PI-RADS score",
+                                        "requirement": {
+                                            "requirement_type": "comparison",
+                                            "expected_value": {
+                                                "operator": "<",
+                                                "value": 3,
+                                                "unit": "N/A"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "prostate biopsies",
+                                        "criterion": "prostate biopsies",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "PI-RADS ≥3",
+                                        "criterion": "PI-RADS score",
+                                        "requirement": {
+                                            "requirement_type": "comparison",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 3,
+                                                "unit": "N/A"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "prostate biopsies",
+                                        "criterion": "prostate biopsies",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with histologically proven prostate cancer and/or treatment for prostate cancer prior to the diagnostic workup",
+                "criterions": [
+                    {
+                        "exact_snippets": "histologically proven prostate cancer",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "histologically proven"
+                        }
+                    },
+                    {
+                        "exact_snippets": "treatment for prostate cancer prior to the diagnostic workup",
+                        "criterion": "prostate cancer treatment",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "prior to the diagnostic workup"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "histologically proven prostate cancer",
+                                "criterion": "prostate cancer",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": "histologically proven"
+                                }
+                            },
+                            {
+                                "exact_snippets": "treatment for prostate cancer prior to the diagnostic workup",
+                                "criterion": "prostate cancer treatment",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": "prior to the diagnostic workup"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "treatment for prostate cancer prior to the diagnostic workup",
+                        "criterion": "prostate cancer treatment",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "prior to the diagnostic workup"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Prospective substudy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prospective substudy",
+                        "criterion": "study type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "prospective"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prospective substudy",
+                    "criterion": "study type",
+                    "requirement": {
+                        "requirement_type": "type",
+                        "expected_value": "prospective"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with clinical suspicion of prostate cancer (increased PSA level and/or abnormality on digital rectal examination) who should receive a diagnostic workup including mpMRI and prostate biopsies according to national recommendations: in case of normal mpMRI (PI-RADS < 3) 12 systematic samples; in case of pathological mpMRI (PI-RADS ≥3) 12 systematic samples associated with targeted samples (n= 2 to 4) by cognitive fusion, or image fusion software.",
+                "criterions": [
+                    {
+                        "exact_snippets": "clinical suspicion of prostate cancer",
+                        "criterion": "clinical suspicion of prostate cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "increased PSA level",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 0,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "abnormality on digital rectal examination",
+                        "criterion": "abnormality on digital rectal examination",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "normal mpMRI (PI-RADS < 3)",
+                        "criterion": "mpMRI PI-RADS score",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "pathological mpMRI (PI-RADS ≥3)",
+                        "criterion": "mpMRI PI-RADS score",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "clinical suspicion of prostate cancer",
+                                                "criterion": "clinical suspicion of prostate cancer",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "or_criteria": [
+                                                    {
+                                                        "exact_snippets": "increased PSA level",
+                                                        "criterion": "PSA level",
+                                                        "requirement": {
+                                                            "requirement_type": "comparison",
+                                                            "expected_value": {
+                                                                "operator": ">",
+                                                                "value": 0,
+                                                                "unit": "N/A"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "exact_snippets": "abnormality on digital rectal examination",
+                                                        "criterion": "abnormality on digital rectal examination",
+                                                        "requirement": {
+                                                            "requirement_type": "presence",
+                                                            "expected_value": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "normal mpMRI (PI-RADS < 3)",
+                                        "criterion": "mpMRI PI-RADS score",
+                                        "requirement": {
+                                            "requirement_type": "comparison",
+                                            "expected_value": {
+                                                "operator": "<",
+                                                "value": 3,
+                                                "unit": "N/A"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "clinical suspicion of prostate cancer",
+                                                "criterion": "clinical suspicion of prostate cancer",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "or_criteria": [
+                                                    {
+                                                        "exact_snippets": "increased PSA level",
+                                                        "criterion": "PSA level",
+                                                        "requirement": {
+                                                            "requirement_type": "comparison",
+                                                            "expected_value": {
+                                                                "operator": ">",
+                                                                "value": 0,
+                                                                "unit": "N/A"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "exact_snippets": "abnormality on digital rectal examination",
+                                                        "criterion": "abnormality on digital rectal examination",
+                                                        "requirement": {
+                                                            "requirement_type": "presence",
+                                                            "expected_value": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "pathological mpMRI (PI-RADS ≥3)",
+                                        "criterion": "mpMRI PI-RADS score",
+                                        "requirement": {
+                                            "requirement_type": "comparison",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 3,
+                                                "unit": "N/A"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with already histologically proven cancer, patients who have received treatment for prostate cancer, patients who cannot benefit from prostate biopsies, or patients with a contraindication to performing mpMRI.",
+                "criterions": [
+                    {
+                        "exact_snippets": "histologically proven cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": "histologically proven"
+                        }
+                    },
+                    {
+                        "exact_snippets": "received treatment for prostate cancer",
+                        "criterion": "prostate cancer treatment",
+                        "requirement": {
+                            "requirement_type": "treatment history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cannot benefit from prostate biopsies",
+                        "criterion": "benefit from prostate biopsies",
+                        "requirement": {
+                            "requirement_type": "benefit",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "contraindication to performing mpMRI",
+                        "criterion": "mpMRI contraindication",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "histologically proven cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": "histologically proven"
+                        }
+                    },
+                    {
+                        "exact_snippets": "received treatment for prostate cancer",
+                        "criterion": "prostate cancer treatment",
+                        "requirement": {
+                            "requirement_type": "treatment history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cannot benefit from prostate biopsies",
+                        "criterion": "benefit from prostate biopsies",
+                        "requirement": {
+                            "requirement_type": "benefit",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "contraindication to performing mpMRI",
+                        "criterion": "mpMRI contraindication",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion Criteria:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion Criteria:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "miscellaneous_lines": [
+        {
+            "identified_line": {
+                "line": "Retrospective substudy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Retrospective substudy",
+                        "criterion": "study type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "retrospective"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Retrospective substudy",
+                        "criterion": "study type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "retrospective"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

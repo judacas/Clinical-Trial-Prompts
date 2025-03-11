@@ -1,0 +1,366 @@
+{
+    "info": {
+        "nct_id": "NCT00127127",
+        "official_title": "A Phase I Clinical Study of L-001079038 in Patients With Solid Tumors",
+        "inclusion_criteria": "* Participants with histologically or cytologically diagnosed solid tumor; no standard therapy available or participant has failed to respond to standard therapy\nHealthy volunteers allowed\nMust have minimum age of 20 Years\nMust have maximum age of 75 Years",
+        "exclusion_criteria": "* Participants with history of immunotherapy, radiotherapy, surgery, or chemotherapy during the previous 4 weeks; previous treatment is 5 or more chemotherapeutic regimens.\n* Any uncontrolled concomitant illness\n* Are pregnant or breast-feeding\n* Serious drug or food allergy",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Participants with histologically or cytologically diagnosed solid tumor; no standard therapy available or participant has failed to respond to standard therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "histologically or cytologically diagnosed solid tumor",
+                        "criterion": "solid tumor diagnosis",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "no standard therapy available",
+                        "criterion": "standard therapy availability",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "participant has failed to respond to standard therapy",
+                        "criterion": "response to standard therapy",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": "failed"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "histologically or cytologically diagnosed solid tumor",
+                                "criterion": "solid tumor diagnosis",
+                                "requirement": {
+                                    "requirement_type": "method",
+                                    "expected_value": [
+                                        "histologically",
+                                        "cytologically"
+                                    ]
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "no standard therapy available",
+                                        "criterion": "standard therapy availability",
+                                        "requirement": {
+                                            "requirement_type": "availability",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "participant has failed to respond to standard therapy",
+                                        "criterion": "response to standard therapy",
+                                        "requirement": {
+                                            "requirement_type": "response",
+                                            "expected_value": "failed"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 20 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 20 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 20 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 75 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Any uncontrolled concomitant illness",
+                "criterions": [
+                    {
+                        "exact_snippets": "uncontrolled concomitant illness",
+                        "criterion": "concomitant illness",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "uncontrolled concomitant illness",
+                    "criterion": "concomitant illness",
+                    "requirement": {
+                        "requirement_type": "control status",
+                        "expected_value": "uncontrolled"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Serious drug or food allergy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Serious drug or food allergy",
+                        "criterion": "drug allergy",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Serious drug or food allergy",
+                        "criterion": "food allergy",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Serious drug or food allergy",
+                        "criterion": "drug allergy",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Serious drug or food allergy",
+                        "criterion": "food allergy",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Are pregnant or breast-feeding",
+                "criterions": [
+                    {
+                        "exact_snippets": "Are pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast-feeding",
+                        "criterion": "breastfeeding status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Are pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast-feeding",
+                        "criterion": "breastfeeding status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants with history of immunotherapy, radiotherapy, surgery, or chemotherapy during the previous 4 weeks; previous treatment is 5 or more chemotherapeutic regimens.",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of immunotherapy",
+                        "criterion": "immunotherapy history",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of radiotherapy",
+                        "criterion": "radiotherapy history",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of surgery",
+                        "criterion": "surgery history",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of chemotherapy",
+                        "criterion": "chemotherapy history",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "during the previous 4 weeks",
+                        "criterion": "recent treatment",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": "previous 4 weeks"
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous treatment is 5 or more chemotherapeutic regimens",
+                        "criterion": "previous chemotherapeutic regimens",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "regimens"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

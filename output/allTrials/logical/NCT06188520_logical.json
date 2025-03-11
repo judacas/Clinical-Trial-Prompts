@@ -91,18 +91,15 @@
                         "criterion": "Investigator's opinion on clinical study as best option",
                         "requirement": {
                             "requirement_type": "opinion",
-                            "expected_value": "best option for next treatment"
+                            "expected_value": "clinical study is best option"
                         }
                     },
                     {
                         "exact_snippets": "based on response to and/or tolerability of prior therapy",
                         "criterion": "response to and/or tolerability of prior therapy",
                         "requirement": {
-                            "requirement_type": "basis for decision",
-                            "expected_value": [
-                                "response",
-                                "tolerability"
-                            ]
+                            "requirement_type": "evaluation",
+                            "expected_value": "response and/or tolerability"
                         }
                     }
                 ]
@@ -143,11 +140,8 @@
                                 "exact_snippets": "based on response to and/or tolerability of prior therapy",
                                 "criterion": "response to and/or tolerability of prior therapy",
                                 "requirement": {
-                                    "requirement_type": "basis for decision",
-                                    "expected_value": [
-                                        "response",
-                                        "tolerability"
-                                    ]
+                                    "requirement_type": "evaluation",
+                                    "expected_value": "response and/or tolerability"
                                 }
                             }
                         ]
@@ -167,7 +161,7 @@
                                 "criterion": "Investigator's opinion on clinical study as best option",
                                 "requirement": {
                                     "requirement_type": "opinion",
-                                    "expected_value": "best option for next treatment"
+                                    "expected_value": "clinical study is best option"
                                 }
                             }
                         ]
@@ -384,7 +378,7 @@
                             "expected_value": {
                                 "comparisons": [
                                     {
-                                        "operator": ">=",
+                                        "operator": "<=",
                                         "value": 14,
                                         "unit": "days"
                                     }
@@ -400,7 +394,7 @@
                             "expected_value": {
                                 "comparisons": [
                                     {
-                                        "operator": ">=",
+                                        "operator": "<=",
                                         "value": 14,
                                         "unit": "days"
                                     }
@@ -416,7 +410,7 @@
                             "expected_value": {
                                 "comparisons": [
                                     {
-                                        "operator": ">=",
+                                        "operator": "<=",
                                         "value": 14,
                                         "unit": "days"
                                     }
@@ -425,27 +419,19 @@
                         }
                     },
                     {
-                        "exact_snippets": "21 days for myelosuppressive therapies",
+                        "exact_snippets": "myelosuppressive therapies ... within ... 21 days ... of the first dose of IMP",
                         "criterion": "myelosuppressive therapies",
                         "requirement": {
                             "requirement_type": "time since last administration",
                             "expected_value": {
                                 "comparisons": [
                                     {
-                                        "operator": ">=",
+                                        "operator": "<=",
                                         "value": 21,
                                         "unit": "days"
                                     }
                                 ]
                             }
-                        }
-                    },
-                    {
-                        "exact_snippets": "other than GnRHa (eg, goserelin) and bone-stabilizing agents (eg, zoledronic acid, denosumab)",
-                        "criterion": "GnRHa and bone-stabilizing agents",
-                        "requirement": {
-                            "requirement_type": "exclusion",
-                            "expected_value": true
                         }
                     }
                 ]
@@ -464,7 +450,7 @@
                                             "expected_value": {
                                                 "comparisons": [
                                                     {
-                                                        "operator": ">=",
+                                                        "operator": "<=",
                                                         "value": 14,
                                                         "unit": "days"
                                                     }
@@ -480,7 +466,7 @@
                                             "expected_value": {
                                                 "comparisons": [
                                                     {
-                                                        "operator": ">=",
+                                                        "operator": "<=",
                                                         "value": 14,
                                                         "unit": "days"
                                                     }
@@ -496,7 +482,7 @@
                                             "expected_value": {
                                                 "comparisons": [
                                                     {
-                                                        "operator": ">=",
+                                                        "operator": "<=",
                                                         "value": 14,
                                                         "unit": "days"
                                                     }
@@ -507,14 +493,14 @@
                                 ]
                             },
                             {
-                                "exact_snippets": "21 days for myelosuppressive therapies",
+                                "exact_snippets": "myelosuppressive therapies ... within ... 21 days ... of the first dose of IMP",
                                 "criterion": "myelosuppressive therapies",
                                 "requirement": {
                                     "requirement_type": "time since last administration",
                                     "expected_value": {
                                         "comparisons": [
                                             {
-                                                "operator": ">=",
+                                                "operator": "<=",
                                                 "value": 21,
                                                 "unit": "days"
                                             }
@@ -526,12 +512,24 @@
                     },
                     {
                         "not_criteria": {
-                            "exact_snippets": "other than GnRHa (eg, goserelin) and bone-stabilizing agents (eg, zoledronic acid, denosumab)",
-                            "criterion": "GnRHa and bone-stabilizing agents",
-                            "requirement": {
-                                "requirement_type": "exclusion",
-                                "expected_value": true
-                            }
+                            "or_criteria": [
+                                {
+                                    "exact_snippets": "GnRHa (eg, goserelin)",
+                                    "criterion": "GnRHa",
+                                    "requirement": {
+                                        "requirement_type": "exclusion",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "bone-stabilizing agents (eg, zoledronic acid, denosumab)",
+                                    "criterion": "bone-stabilizing agents",
+                                    "requirement": {
+                                        "requirement_type": "exclusion",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
                         }
                     }
                 ]
@@ -543,7 +541,7 @@
                 "criterions": [
                     {
                         "exact_snippets": "Drugs that have a known risk of Torsades de Pointes",
-                        "criterion": "drug",
+                        "criterion": "drugs",
                         "requirement": {
                             "requirement_type": "risk",
                             "expected_value": "Torsades de Pointes"
@@ -554,7 +552,7 @@
             "logical_structure": {
                 "not_criteria": {
                     "exact_snippets": "Drugs that have a known risk of Torsades de Pointes",
-                    "criterion": "drug",
+                    "criterion": "drugs",
                     "requirement": {
                         "requirement_type": "risk",
                         "expected_value": "Torsades de Pointes"
@@ -633,7 +631,7 @@
                         "exact_snippets": "Major surgical procedure or significant traumatic injury, within 4 weeks of the first dose of IMP",
                         "criterion": "recent major surgery or significant traumatic injury",
                         "requirement": {
-                            "requirement_type": "time since event",
+                            "requirement_type": "time since occurrence",
                             "expected_value": {
                                 "comparisons": [
                                     {
@@ -646,14 +644,19 @@
                         }
                     },
                     {
-                        "exact_snippets": "anticipated need for major surgery and/or any surgery requiring general anesthesia during the study",
-                        "criterion": "anticipated need for surgery",
+                        "exact_snippets": "anticipated need for major surgery",
+                        "criterion": "anticipated need for major surgery",
                         "requirement": {
-                            "requirement_type": "type of surgery",
-                            "expected_value": [
-                                "major surgery",
-                                "surgery requiring general anesthesia"
-                            ]
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any surgery requiring general anesthesia during the study",
+                        "criterion": "surgery requiring general anesthesia during the study",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
                         }
                     }
                 ]
@@ -666,7 +669,7 @@
                                 "exact_snippets": "Major surgical procedure or significant traumatic injury, within 4 weeks of the first dose of IMP",
                                 "criterion": "recent major surgery or significant traumatic injury",
                                 "requirement": {
-                                    "requirement_type": "time since event",
+                                    "requirement_type": "time since occurrence",
                                     "expected_value": {
                                         "comparisons": [
                                             {
@@ -677,28 +680,137 @@
                                         ]
                                     }
                                 }
-                            },
-                            {
-                                "exact_snippets": "anticipated need for major surgery and/or any surgery requiring general anesthesia during the study",
-                                "criterion": "anticipated need for surgery",
-                                "requirement": {
-                                    "requirement_type": "type of surgery",
-                                    "expected_value": [
-                                        "major surgery",
-                                        "surgery requiring general anesthesia"
-                                    ]
-                                }
                             }
                         ]
                     },
                     {
-                        "exact_snippets": "anticipated need for major surgery and/or any surgery requiring general anesthesia during the study",
-                        "criterion": "anticipated need for surgery",
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "anticipated need for major surgery",
+                                "criterion": "anticipated need for major surgery",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "any surgery requiring general anesthesia during the study",
+                                "criterion": "surgery requiring general anesthesia during the study",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Any unresolved toxicities of Grade ≥ 2 from prior anti-cancer therapy (with the exception of alopecia). Participants with stable ≤ Grade 2 neuropathy are eligible.",
+                "criterions": [
+                    {
+                        "exact_snippets": "unresolved toxicities of Grade ≥ 2 from prior anti-cancer therapy",
+                        "criterion": "unresolved toxicities from prior anti-cancer therapy",
                         "requirement": {
-                            "requirement_type": "type of surgery",
-                            "expected_value": [
-                                "major surgery",
-                                "surgery requiring general anesthesia"
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "Grade"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "alopecia",
+                        "criterion": "alopecia",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stable ≤ Grade 2 neuropathy",
+                        "criterion": "neuropathy",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "stable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "stable ≤ Grade 2 neuropathy",
+                        "criterion": "neuropathy",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "Grade"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "and_criteria": [
+                                        {
+                                            "exact_snippets": "unresolved toxicities of Grade ≥ 2 from prior anti-cancer therapy",
+                                            "criterion": "unresolved toxicities from prior anti-cancer therapy",
+                                            "requirement": {
+                                                "requirement_type": "severity",
+                                                "expected_value": {
+                                                    "operator": ">=",
+                                                    "value": 2,
+                                                    "unit": "Grade"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "not_criteria": {
+                                                "exact_snippets": "alopecia",
+                                                "criterion": "alopecia",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "or_criteria": [
+                                        {
+                                            "not_criteria": {
+                                                "exact_snippets": "stable ≤ Grade 2 neuropathy",
+                                                "criterion": "neuropathy",
+                                                "requirement": {
+                                                    "requirement_type": "stability",
+                                                    "expected_value": "stable"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "not_criteria": {
+                                                "exact_snippets": "stable ≤ Grade 2 neuropathy",
+                                                "criterion": "neuropathy",
+                                                "requirement": {
+                                                    "requirement_type": "severity",
+                                                    "expected_value": {
+                                                        "operator": "<=",
+                                                        "value": 2,
+                                                        "unit": "Grade"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     }
@@ -770,17 +882,17 @@
                         ]
                     },
                     {
-                        "and_criteria": [
-                            {
-                                "exact_snippets": "Participants with spinal cord compression and/or brain metastases may be enrolled if definitively treated (eg, surgery or radiotherapy)",
-                                "criterion": "spinal cord compression and/or brain metastases",
-                                "requirement": {
-                                    "requirement_type": "treatment",
-                                    "expected_value": "definitively treated (eg, surgery or radiotherapy)"
-                                }
-                            },
-                            {
-                                "not_criteria": {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Participants with spinal cord compression and/or brain metastases may be enrolled if definitively treated (eg, surgery or radiotherapy)",
+                                    "criterion": "spinal cord compression and/or brain metastases",
+                                    "requirement": {
+                                        "requirement_type": "treatment",
+                                        "expected_value": "definitively treated (eg, surgery or radiotherapy)"
+                                    }
+                                },
+                                {
                                     "exact_snippets": "stable off steroids for at least 4 weeks prior to start of IMP",
                                     "criterion": "stability off steroids",
                                     "requirement": {
@@ -792,6 +904,189 @@
                                         }
                                     }
                                 }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Any evidence of severe or uncontrolled systemic diseases, including uncontrolled hypertension and active bleeding diatheses, or eg, infection requiring IV antibiotic therapy, or active infection including hepatitis B, hepatitis C, and HIV (active viral infection is defined as requiring antiviral therapy; screening for chronic conditions is not required).",
+                "criterions": [
+                    {
+                        "exact_snippets": "severe or uncontrolled systemic diseases",
+                        "criterion": "systemic diseases",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe or uncontrolled systemic diseases",
+                        "criterion": "systemic diseases",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "uncontrolled hypertension",
+                        "criterion": "hypertension",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "active bleeding diatheses",
+                        "criterion": "bleeding diatheses",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "infection requiring IV antibiotic therapy",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "IV antibiotic therapy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "active infection including hepatitis B, hepatitis C, and HIV",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "active infection including hepatitis B, hepatitis C, and HIV",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "types",
+                            "expected_value": [
+                                "hepatitis B",
+                                "hepatitis C",
+                                "HIV"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "active viral infection is defined as requiring antiviral therapy",
+                        "criterion": "viral infection",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "active viral infection is defined as requiring antiviral therapy",
+                        "criterion": "viral infection",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "antiviral therapy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "severe or uncontrolled systemic diseases",
+                                        "criterion": "systemic diseases",
+                                        "requirement": {
+                                            "requirement_type": "severity",
+                                            "expected_value": "severe"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "severe or uncontrolled systemic diseases",
+                                        "criterion": "systemic diseases",
+                                        "requirement": {
+                                            "requirement_type": "control",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "uncontrolled hypertension",
+                                "criterion": "hypertension",
+                                "requirement": {
+                                    "requirement_type": "control",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "active bleeding diatheses",
+                                "criterion": "bleeding diatheses",
+                                "requirement": {
+                                    "requirement_type": "activity",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "infection requiring IV antibiotic therapy",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "IV antibiotic therapy"
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "active infection including hepatitis B, hepatitis C, and HIV",
+                                        "criterion": "infection",
+                                        "requirement": {
+                                            "requirement_type": "activity",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "active infection including hepatitis B, hepatitis C, and HIV",
+                                        "criterion": "infection",
+                                        "requirement": {
+                                            "requirement_type": "types",
+                                            "expected_value": [
+                                                "hepatitis B",
+                                                "hepatitis C",
+                                                "HIV"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "active viral infection is defined as requiring antiviral therapy",
+                                        "criterion": "viral infection",
+                                        "requirement": {
+                                            "requirement_type": "activity",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "active viral infection is defined as requiring antiviral therapy",
+                                        "criterion": "viral infection",
+                                        "requirement": {
+                                            "requirement_type": "treatment",
+                                            "expected_value": "antiviral therapy"
+                                        }
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -890,15 +1185,15 @@
                         "exact_snippets": "clinically significant sinus pause",
                         "criterion": "sinus pause",
                         "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
+                            "requirement_type": "severity",
+                            "expected_value": "not clinically significant"
                         }
                     },
                     {
                         "exact_snippets": "Participants with controlled atrial fibrillation can be enrolled",
-                        "criterion": "controlled atrial fibrillation",
+                        "criterion": "atrial fibrillation",
                         "requirement": {
-                            "requirement_type": "presence",
+                            "requirement_type": "control",
                             "expected_value": true
                         }
                     }
@@ -940,8 +1235,8 @@
                                 "exact_snippets": "clinically significant sinus pause",
                                 "criterion": "sinus pause",
                                 "requirement": {
-                                    "requirement_type": "presence",
-                                    "expected_value": false
+                                    "requirement_type": "severity",
+                                    "expected_value": "not clinically significant"
                                 }
                             }
                         ]
@@ -949,9 +1244,9 @@
                     {
                         "not_criteria": {
                             "exact_snippets": "Participants with controlled atrial fibrillation can be enrolled",
-                            "criterion": "controlled atrial fibrillation",
+                            "criterion": "atrial fibrillation",
                             "requirement": {
-                                "requirement_type": "presence",
+                                "requirement_type": "control",
                                 "expected_value": true
                             }
                         }
@@ -1134,40 +1429,40 @@
                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: coronary artery bypass graft",
                         "criterion": "coronary artery bypass graft",
                         "requirement": {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     },
                     {
                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... angioplasty",
                         "criterion": "angioplasty",
                         "requirement": {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     },
                     {
                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... vascular stent",
                         "criterion": "vascular stent",
                         "requirement": {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     },
                     {
                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... myocardial infarction",
                         "criterion": "myocardial infarction",
                         "requirement": {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     },
                     {
                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... unstable angina pectoris",
                         "criterion": "unstable angina pectoris",
                         "requirement": {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     },
                     {
@@ -1183,27 +1478,19 @@
                         }
                     },
                     {
-                        "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... congestive heart failure NYHA Grade ≥ 2",
-                        "criterion": "congestive heart failure",
-                        "requirement": {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
-                        }
-                    },
-                    {
                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... cerebrovascular accident",
                         "criterion": "cerebrovascular accident",
                         "requirement": {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     },
                     {
                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... transient ischemic attack",
                         "criterion": "transient ischemic attack",
                         "requirement": {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     }
                 ]
@@ -1234,80 +1521,68 @@
                                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: coronary artery bypass graft",
                                         "criterion": "coronary artery bypass graft",
                                         "requirement": {
-                                            "requirement_type": "time frame",
-                                            "expected_value": "preceding 6 months"
+                                            "requirement_type": "experience",
+                                            "expected_value": true
                                         }
                                     },
                                     {
                                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... angioplasty",
                                         "criterion": "angioplasty",
                                         "requirement": {
-                                            "requirement_type": "time frame",
-                                            "expected_value": "preceding 6 months"
+                                            "requirement_type": "experience",
+                                            "expected_value": true
                                         }
                                     },
                                     {
                                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... vascular stent",
                                         "criterion": "vascular stent",
                                         "requirement": {
-                                            "requirement_type": "time frame",
-                                            "expected_value": "preceding 6 months"
+                                            "requirement_type": "experience",
+                                            "expected_value": true
                                         }
                                     },
                                     {
                                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... myocardial infarction",
                                         "criterion": "myocardial infarction",
                                         "requirement": {
-                                            "requirement_type": "time frame",
-                                            "expected_value": "preceding 6 months"
+                                            "requirement_type": "experience",
+                                            "expected_value": true
                                         }
                                     },
                                     {
                                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... unstable angina pectoris",
                                         "criterion": "unstable angina pectoris",
                                         "requirement": {
-                                            "requirement_type": "time frame",
-                                            "expected_value": "preceding 6 months"
+                                            "requirement_type": "experience",
+                                            "expected_value": true
                                         }
                                     },
                                     {
-                                        "and_criteria": [
-                                            {
-                                                "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... congestive heart failure NYHA Grade ≥ 2",
-                                                "criterion": "congestive heart failure",
-                                                "requirement": {
-                                                    "requirement_type": "NYHA Grade",
-                                                    "expected_value": {
-                                                        "operator": ">=",
-                                                        "value": 2,
-                                                        "unit": "N/A"
-                                                    }
-                                                }
-                                            },
-                                            {
-                                                "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... congestive heart failure NYHA Grade ≥ 2",
-                                                "criterion": "congestive heart failure",
-                                                "requirement": {
-                                                    "requirement_type": "time frame",
-                                                    "expected_value": "preceding 6 months"
-                                                }
+                                        "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... congestive heart failure NYHA Grade ≥ 2",
+                                        "criterion": "congestive heart failure",
+                                        "requirement": {
+                                            "requirement_type": "NYHA Grade",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 2,
+                                                "unit": "N/A"
                                             }
-                                        ]
+                                        }
                                     },
                                     {
                                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... cerebrovascular accident",
                                         "criterion": "cerebrovascular accident",
                                         "requirement": {
-                                            "requirement_type": "time frame",
-                                            "expected_value": "preceding 6 months"
+                                            "requirement_type": "experience",
+                                            "expected_value": true
                                         }
                                     },
                                     {
                                         "exact_snippets": "experience of any of the following procedures or conditions in the preceding 6 months: ... transient ischemic attack",
                                         "criterion": "transient ischemic attack",
                                         "requirement": {
-                                            "requirement_type": "time frame",
-                                            "expected_value": "preceding 6 months"
+                                            "requirement_type": "experience",
+                                            "expected_value": true
                                         }
                                     }
                                 ]
@@ -1325,7 +1600,7 @@
                         "exact_snippets": "Uncontrolled hypertension",
                         "criterion": "hypertension",
                         "requirement": {
-                            "requirement_type": "control status",
+                            "requirement_type": "control",
                             "expected_value": "uncontrolled"
                         }
                     }
@@ -1336,7 +1611,7 @@
                     "exact_snippets": "Uncontrolled hypertension",
                     "criterion": "hypertension",
                     "requirement": {
-                        "requirement_type": "control status",
+                        "requirement_type": "control",
                         "expected_value": "uncontrolled"
                     }
                 }
@@ -1367,15 +1642,7 @@
                         "criterion": "bowel resection",
                         "requirement": {
                             "requirement_type": "significance",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "that would preclude adequate absorption of IMP(s)",
-                        "criterion": "absorption of IMP(s)",
-                        "requirement": {
-                            "requirement_type": "adequacy",
-                            "expected_value": false
+                            "expected_value": "significant"
                         }
                     }
                 ]
@@ -1383,44 +1650,28 @@
             "logical_structure": {
                 "or_criteria": [
                     {
-                        "and_criteria": [
-                            {
-                                "exact_snippets": "Refractory nausea and vomiting",
-                                "criterion": "nausea and vomiting",
-                                "requirement": {
-                                    "requirement_type": "severity",
-                                    "expected_value": "refractory"
-                                }
-                            },
-                            {
-                                "exact_snippets": "uncontrolled chronic gastrointestinal diseases",
-                                "criterion": "chronic gastrointestinal diseases",
-                                "requirement": {
-                                    "requirement_type": "control",
-                                    "expected_value": false
-                                }
-                            }
-                        ]
+                        "exact_snippets": "Refractory nausea and vomiting",
+                        "criterion": "nausea and vomiting",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "refractory"
+                        }
                     },
                     {
-                        "and_criteria": [
-                            {
-                                "exact_snippets": "previous significant bowel resection",
-                                "criterion": "bowel resection",
-                                "requirement": {
-                                    "requirement_type": "significance",
-                                    "expected_value": true
-                                }
-                            },
-                            {
-                                "exact_snippets": "that would preclude adequate absorption of IMP(s)",
-                                "criterion": "absorption of IMP(s)",
-                                "requirement": {
-                                    "requirement_type": "adequacy",
-                                    "expected_value": false
-                                }
-                            }
-                        ]
+                        "exact_snippets": "uncontrolled chronic gastrointestinal diseases",
+                        "criterion": "chronic gastrointestinal diseases",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous significant bowel resection",
+                        "criterion": "bowel resection",
+                        "requirement": {
+                            "requirement_type": "significance",
+                            "expected_value": "significant"
+                        }
                     }
                 ]
             }
@@ -1470,184 +1721,6 @@
         },
         {
             "identified_line": {
-                "line": "* Previous treatment with AZD8421 or with any CDK2-selective inhibitor, or protein kinase membrane-associated tyrosine- and threonine-specific cdc2-inhibitory kinase 1 (PKMYT1) inhibitor, or WEE1 inhibitor.",
-                "criterions": [
-                    {
-                        "exact_snippets": "Previous treatment with AZD8421",
-                        "criterion": "previous treatment with AZD8421",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "Previous treatment with ... any CDK2-selective inhibitor",
-                        "criterion": "previous treatment with CDK2-selective inhibitor",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "Previous treatment with ... protein kinase membrane-associated tyrosine- and threonine-specific cdc2-inhibitory kinase 1 (PKMYT1) inhibitor",
-                        "criterion": "previous treatment with PKMYT1 inhibitor",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "Previous treatment with ... WEE1 inhibitor",
-                        "criterion": "previous treatment with WEE1 inhibitor",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "or_criteria": [
-                    {
-                        "exact_snippets": "Previous treatment with AZD8421",
-                        "criterion": "previous treatment with AZD8421",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "Previous treatment with ... any CDK2-selective inhibitor",
-                        "criterion": "previous treatment with CDK2-selective inhibitor",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "Previous treatment with ... protein kinase membrane-associated tyrosine- and threonine-specific cdc2-inhibitory kinase 1 (PKMYT1) inhibitor",
-                        "criterion": "previous treatment with PKMYT1 inhibitor",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "Previous treatment with ... WEE1 inhibitor",
-                        "criterion": "previous treatment with WEE1 inhibitor",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "* Currently pregnant (confirmed with positive pregnancy test), breast feeding, or planning to become pregnant. Participants of childbearing potential must agree to use one highly effective contraceptive measure.",
-                "criterions": [
-                    {
-                        "exact_snippets": "Currently pregnant (confirmed with positive pregnancy test)",
-                        "criterion": "pregnancy",
-                        "requirement": {
-                            "requirement_type": "status",
-                            "expected_value": "positive"
-                        }
-                    },
-                    {
-                        "exact_snippets": "breast feeding",
-                        "criterion": "breastfeeding",
-                        "requirement": {
-                            "requirement_type": "status",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "planning to become pregnant",
-                        "criterion": "pregnancy planning",
-                        "requirement": {
-                            "requirement_type": "intention",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "Participants of childbearing potential must agree to use one highly effective contraceptive measure",
-                        "criterion": "contraceptive use",
-                        "requirement": {
-                            "requirement_type": "agreement",
-                            "expected_value": true
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "or_criteria": [
-                    {
-                        "and_criteria": [
-                            {
-                                "exact_snippets": "Currently pregnant (confirmed with positive pregnancy test)",
-                                "criterion": "pregnancy",
-                                "requirement": {
-                                    "requirement_type": "status",
-                                    "expected_value": "positive"
-                                }
-                            },
-                            {
-                                "exact_snippets": "Participants of childbearing potential must agree to use one highly effective contraceptive measure",
-                                "criterion": "contraceptive use",
-                                "requirement": {
-                                    "requirement_type": "agreement",
-                                    "expected_value": true
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "and_criteria": [
-                            {
-                                "exact_snippets": "breast feeding",
-                                "criterion": "breastfeeding",
-                                "requirement": {
-                                    "requirement_type": "status",
-                                    "expected_value": true
-                                }
-                            },
-                            {
-                                "exact_snippets": "Participants of childbearing potential must agree to use one highly effective contraceptive measure",
-                                "criterion": "contraceptive use",
-                                "requirement": {
-                                    "requirement_type": "agreement",
-                                    "expected_value": true
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "and_criteria": [
-                            {
-                                "exact_snippets": "planning to become pregnant",
-                                "criterion": "pregnancy planning",
-                                "requirement": {
-                                    "requirement_type": "intention",
-                                    "expected_value": true
-                                }
-                            },
-                            {
-                                "exact_snippets": "Participants of childbearing potential must agree to use one highly effective contraceptive measure",
-                                "criterion": "contraceptive use",
-                                "requirement": {
-                                    "requirement_type": "agreement",
-                                    "expected_value": true
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
                 "line": "* Inadequate bone marrow reserve or organ function as demonstrated by relevant laboratory values:",
                 "criterions": [
                     {
@@ -1683,6 +1756,81 @@
                         "criterion": "organ function",
                         "requirement": {
                             "requirement_type": "adequacy",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Previous treatment with AZD8421 or with any CDK2-selective inhibitor, or protein kinase membrane-associated tyrosine- and threonine-specific cdc2-inhibitory kinase 1 (PKMYT1) inhibitor, or WEE1 inhibitor.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous treatment with AZD8421",
+                        "criterion": "previous treatment with AZD8421",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous treatment with ... any CDK2-selective inhibitor",
+                        "criterion": "previous treatment with CDK2-selective inhibitor",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous treatment with ... protein kinase membrane-associated tyrosine- and threonine-specific cdc2-inhibitory kinase 1 (PKMYT1) inhibitor",
+                        "criterion": "previous treatment with PKMYT1 inhibitor",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous treatment with ... WEE1 inhibitor",
+                        "criterion": "previous treatment with WEE1 inhibitor",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Previous treatment with AZD8421",
+                        "criterion": "previous treatment with AZD8421",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous treatment with ... any CDK2-selective inhibitor",
+                        "criterion": "previous treatment with CDK2-selective inhibitor",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous treatment with ... protein kinase membrane-associated tyrosine- and threonine-specific cdc2-inhibitory kinase 1 (PKMYT1) inhibitor",
+                        "criterion": "previous treatment with PKMYT1 inhibitor",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous treatment with ... WEE1 inhibitor",
+                        "criterion": "previous treatment with WEE1 inhibitor",
+                        "requirement": {
+                            "requirement_type": "presence",
                             "expected_value": false
                         }
                     }
@@ -1870,7 +2018,7 @@
                                 "exact_snippets": "which cannot be discontinued prior to first dose of IMP and withheld throughout the study until 2 weeks after the last dose of study drug.",
                                 "criterion": "discontinuation of CYP3A4/5 inhibitors/inducers",
                                 "requirement": {
-                                    "requirement_type": "ability to discontinue",
+                                    "requirement_type": "possibility",
                                     "expected_value": false
                                 }
                             }
@@ -1881,148 +2029,81 @@
         },
         {
             "identified_line": {
-                "line": "* Any unresolved toxicities of Grade ≥ 2 from prior anti-cancer therapy (with the exception of alopecia). Participants with stable ≤ Grade 2 neuropathy are eligible.",
+                "line": "* Currently pregnant (confirmed with positive pregnancy test), breast feeding, or planning to become pregnant. Participants of childbearing potential must agree to use one highly effective contraceptive measure.",
                 "criterions": [
                     {
-                        "exact_snippets": "unresolved toxicities of Grade ≥ 2 from prior anti-cancer therapy",
-                        "criterion": "unresolved toxicities from prior anti-cancer therapy",
+                        "exact_snippets": "Currently pregnant (confirmed with positive pregnancy test)",
+                        "criterion": "pregnancy status",
                         "requirement": {
-                            "requirement_type": "severity",
-                            "expected_value": {
-                                "operator": ">=",
-                                "value": 2,
-                                "unit": "Grade"
-                            }
+                            "requirement_type": "presence",
+                            "expected_value": false
                         }
                     },
                     {
-                        "exact_snippets": "alopecia",
-                        "criterion": "alopecia",
+                        "exact_snippets": "breast feeding",
+                        "criterion": "breastfeeding status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "planning to become pregnant",
+                        "criterion": "pregnancy intention",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participants of childbearing potential must agree to use one highly effective contraceptive measure",
+                        "criterion": "contraceptive use",
+                        "requirement": {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Currently pregnant (confirmed with positive pregnancy test)",
+                                "criterion": "pregnancy status",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Participants of childbearing potential must agree to use one highly effective contraceptive measure",
+                                "criterion": "contraceptive use",
+                                "requirement": {
+                                    "requirement_type": "agreement",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "breast feeding",
+                        "criterion": "breastfeeding status",
                         "requirement": {
                             "requirement_type": "presence",
                             "expected_value": true
                         }
                     },
                     {
-                        "exact_snippets": "stable ≤ Grade 2 neuropathy",
-                        "criterion": "neuropathy",
+                        "exact_snippets": "planning to become pregnant",
+                        "criterion": "pregnancy intention",
                         "requirement": {
-                            "requirement_type": "stability",
-                            "expected_value": "stable"
-                        }
-                    },
-                    {
-                        "exact_snippets": "stable ≤ Grade 2 neuropathy",
-                        "criterion": "neuropathy",
-                        "requirement": {
-                            "requirement_type": "severity",
-                            "expected_value": {
-                                "operator": "<=",
-                                "value": 2,
-                                "unit": "Grade"
-                            }
+                            "requirement_type": "intention",
+                            "expected_value": true
                         }
                     }
                 ]
-            },
-            "logical_structure": {
-                "exact_snippets": "failed",
-                "criterion": "failed",
-                "requirement": {
-                    "requirement_type": "failed",
-                    "expected_value": "failed"
-                }
-            }
-        },
-        {
-            "identified_line": {
-                "line": "* Any evidence of severe or uncontrolled systemic diseases, including uncontrolled hypertension and active bleeding diatheses, or eg, infection requiring IV antibiotic therapy, or active infection including hepatitis B, hepatitis C, and HIV (active viral infection is defined as requiring antiviral therapy; screening for chronic conditions is not required).",
-                "criterions": [
-                    {
-                        "exact_snippets": "severe or uncontrolled systemic diseases",
-                        "criterion": "systemic diseases",
-                        "requirement": {
-                            "requirement_type": "severity",
-                            "expected_value": "severe"
-                        }
-                    },
-                    {
-                        "exact_snippets": "severe or uncontrolled systemic diseases",
-                        "criterion": "systemic diseases",
-                        "requirement": {
-                            "requirement_type": "control",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "uncontrolled hypertension",
-                        "criterion": "hypertension",
-                        "requirement": {
-                            "requirement_type": "control",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "active bleeding diatheses",
-                        "criterion": "bleeding diatheses",
-                        "requirement": {
-                            "requirement_type": "activity",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "infection requiring IV antibiotic therapy",
-                        "criterion": "infection",
-                        "requirement": {
-                            "requirement_type": "treatment",
-                            "expected_value": "IV antibiotic therapy"
-                        }
-                    },
-                    {
-                        "exact_snippets": "active infection including hepatitis B, hepatitis C, and HIV",
-                        "criterion": "infection",
-                        "requirement": {
-                            "requirement_type": "activity",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "active infection including hepatitis B, hepatitis C, and HIV",
-                        "criterion": "infection",
-                        "requirement": {
-                            "requirement_type": "types",
-                            "expected_value": [
-                                "hepatitis B",
-                                "hepatitis C",
-                                "HIV"
-                            ]
-                        }
-                    },
-                    {
-                        "exact_snippets": "active viral infection is defined as requiring antiviral therapy",
-                        "criterion": "viral infection",
-                        "requirement": {
-                            "requirement_type": "activity",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "active viral infection is defined as requiring antiviral therapy",
-                        "criterion": "viral infection",
-                        "requirement": {
-                            "requirement_type": "treatment",
-                            "expected_value": "antiviral therapy"
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "exact_snippets": "failed",
-                "criterion": "failed",
-                "requirement": {
-                    "requirement_type": "failed",
-                    "expected_value": "failed"
-                }
             }
         }
     ],

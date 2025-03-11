@@ -1,0 +1,998 @@
+{
+    "info": {
+        "nct_id": "NCT03844620",
+        "official_title": "A Randomized Study Evaluating Tailoring of Advanced/Metastatic Colorectal Cancer (CRC) Therapy Using Circulating Cell-Free Tumor DNA (ctDNA) (TACT-D)",
+        "inclusion_criteria": "* Patients must have histologically or cytologically confirmed colorectal cancer.\n* Patients must have advanced or metastatic disease with no curative options.\n* Patients must have radiographically evaluable disease.\n* Patients must have had at least 2 prior therapies for mCRC (including fluorouracil [5-FU], oxaliplatin, irinotecan, bevacizumab; cetuximab/panitumumab [for RAS wild type (WT) patients]) and have either progressed on or intolerant to these agents or use of these agents is contraindicated.\n* Patients must be clinically eligible for either regorafenib or TAS-102 as per their treating physician.\n* Patients must have a negative serum pregnancy test done less than are equal to 14 days prior to randomization for women of childbearing potential only. Women of child bearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control; abstinence) prior to study entry for the duration of study participation.\n* Patients must have ability to complete questionnaire(s) by themselves or with assistance.\n* Patients must have ability to provide informed written consent.\n* Patients must be willing to return to enrolling institution for follow-up as per study schedule.\n* Patients must be willing to provide blood samples for correlative studies.\n* Any of the following: Pregnant or nursing women, men or women of childbearing potential who are unwilling to employ adequate contraception.\n* Co-morbid systemic illnesses or other severe concurrent disease which, in the judgment of the investigator, would make the patient inappropriate for entry into this study or interfere significantly with the proper assessment of safety and toxicity of the prescribed regimens.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patient who have received prior TAS-102 are eligible to enroll on the study if they can receive regorafenib and vice-versa. Otherwise these patients will be excluded from the study.\n* Congestive heart failure > New York Heart Association (NYHA) class 2, unstable angina (angina symptoms at rest), new-onset angina (begun within the last 3 months) or myocardial infarction less than 3 months prior to randomization.\n* Ongoing infection > grade 2 CTCAE version 4.0.\n* Symptomatic metastatic brain or meningeal tumors unless the patient is > 3 months from definitive therapy, has a negative imaging study within 4 weeks of randomization and is clinically stable with respect to brain lesions at the time of randomization (Note: patient must not be undergoing acute steroid therapy or taper [chronic steroid therapy is acceptable provided that the dose is stable for one month prior to and following screening radiographic studies]).\n* Renal failure requiring hematological or peritoneal dialysis.\n* Patients unable to swallow oral medications.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients must have histologically or cytologically confirmed colorectal cancer.",
+                "criterions": [
+                    {
+                        "exact_snippets": "histologically or cytologically confirmed colorectal cancer",
+                        "criterion": "colorectal cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "histologically or cytologically confirmed colorectal cancer",
+                        "criterion": "colorectal cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must have advanced or metastatic disease with no curative options.",
+                "criterions": [
+                    {
+                        "exact_snippets": "advanced or metastatic disease",
+                        "criterion": "disease stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "advanced",
+                                "metastatic"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "no curative options",
+                        "criterion": "curative options",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "advanced or metastatic disease",
+                                "criterion": "disease stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": [
+                                        "advanced",
+                                        "metastatic"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "no curative options",
+                        "criterion": "curative options",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must have radiographically evaluable disease.",
+                "criterions": [
+                    {
+                        "exact_snippets": "radiographically evaluable disease",
+                        "criterion": "disease",
+                        "requirement": {
+                            "requirement_type": "evaluation method",
+                            "expected_value": "radiographically evaluable"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "radiographically evaluable disease",
+                        "criterion": "disease",
+                        "requirement": {
+                            "requirement_type": "evaluation method",
+                            "expected_value": "radiographically evaluable"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must have had at least 2 prior therapies for mCRC (including fluorouracil [5-FU], oxaliplatin, irinotecan, bevacizumab; cetuximab/panitumumab [for RAS wild type (WT) patients]) and have either progressed on or intolerant to these agents or use of these agents is contraindicated.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must have had at least 2 prior therapies for mCRC",
+                        "criterion": "prior therapies for mCRC",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "therapies"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "including fluorouracil [5-FU], oxaliplatin, irinotecan, bevacizumab; cetuximab/panitumumab [for RAS wild type (WT) patients]",
+                        "criterion": "specific prior therapies",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "fluorouracil [5-FU]",
+                                "oxaliplatin",
+                                "irinotecan",
+                                "bevacizumab",
+                                "cetuximab/panitumumab [for RAS wild type (WT) patients]"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "have either progressed on or intolerant to these agents or use of these agents is contraindicated",
+                        "criterion": "response to prior therapies",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": [
+                                "progressed",
+                                "intolerant",
+                                "contraindicated"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients must have had at least 2 prior therapies for mCRC",
+                                "criterion": "prior therapies for mCRC",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "therapies"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "including fluorouracil [5-FU], oxaliplatin, irinotecan, bevacizumab; cetuximab/panitumumab [for RAS wild type (WT) patients]",
+                                "criterion": "specific prior therapies",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": [
+                                        "fluorouracil [5-FU]",
+                                        "oxaliplatin",
+                                        "irinotecan",
+                                        "bevacizumab",
+                                        "cetuximab/panitumumab [for RAS wild type (WT) patients]"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "have either progressed on or intolerant to these agents or use of these agents is contraindicated",
+                        "criterion": "response to prior therapies",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": [
+                                "progressed",
+                                "intolerant",
+                                "contraindicated"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must be clinically eligible for either regorafenib or TAS-102 as per their treating physician.",
+                "criterions": [
+                    {
+                        "exact_snippets": "clinically eligible for either regorafenib or TAS-102",
+                        "criterion": "clinical eligibility for regorafenib or TAS-102",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "clinically eligible for either regorafenib or TAS-102",
+                        "criterion": "clinical eligibility for regorafenib or TAS-102",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must have ability to complete questionnaire(s) by themselves or with assistance.",
+                "criterions": [
+                    {
+                        "exact_snippets": "ability to complete questionnaire(s) by themselves or with assistance",
+                        "criterion": "ability to complete questionnaire(s)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "ability to complete questionnaire(s) by themselves or with assistance",
+                        "criterion": "ability to complete questionnaire(s)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must have ability to provide informed written consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "ability to provide informed written consent",
+                        "criterion": "ability to provide informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "ability to provide informed written consent",
+                        "criterion": "ability to provide informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must be willing to return to enrolling institution for follow-up as per study schedule.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must be willing to return to enrolling institution for follow-up",
+                        "criterion": "willingness to return for follow-up",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients must be willing to return to enrolling institution for follow-up",
+                        "criterion": "willingness to return for follow-up",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must be willing to provide blood samples for correlative studies.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must be willing to provide blood samples",
+                        "criterion": "blood samples",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients must be willing to provide blood samples",
+                        "criterion": "blood samples",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Any of the following: Pregnant or nursing women, men or women of childbearing potential who are unwilling to employ adequate contraception.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "nursing women",
+                        "criterion": "nursing",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "men or women of childbearing potential",
+                        "criterion": "childbearing potential",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unwilling to employ adequate contraception",
+                        "criterion": "contraception use",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Pregnant",
+                                "criterion": "pregnancy",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "nursing women",
+                                "criterion": "nursing",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "men or women of childbearing potential",
+                                "criterion": "childbearing potential",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "unwilling to employ adequate contraception",
+                                "criterion": "contraception use",
+                                "requirement": {
+                                    "requirement_type": "willingness",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Co-morbid systemic illnesses or other severe concurrent disease which, in the judgment of the investigator, would make the patient inappropriate for entry into this study or interfere significantly with the proper assessment of safety and toxicity of the prescribed regimens.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Co-morbid systemic illnesses or other severe concurrent disease",
+                        "criterion": "co-morbid systemic illnesses or other severe concurrent disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Co-morbid systemic illnesses or other severe concurrent disease",
+                        "criterion": "co-morbid systemic illnesses or other severe concurrent disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patient who have received prior TAS-102 are eligible to enroll on the study if they can receive regorafenib and vice-versa. Otherwise these patients will be excluded from the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient who have received prior TAS-102",
+                        "criterion": "prior TAS-102 treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "if they can receive regorafenib",
+                        "criterion": "ability to receive regorafenib",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Patient who have received prior TAS-102",
+                            "criterion": "prior TAS-102 treatment",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "if they can receive regorafenib",
+                            "criterion": "ability to receive regorafenib",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "exact_snippets": "Patient who have received prior TAS-102",
+                    "criterion": "prior TAS-102 treatment",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Congestive heart failure > New York Heart Association (NYHA) class 2, unstable angina (angina symptoms at rest), new-onset angina (begun within the last 3 months) or myocardial infarction less than 3 months prior to randomization.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Congestive heart failure > New York Heart Association (NYHA) class 2",
+                        "criterion": "congestive heart failure",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "NYHA class"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "unstable angina (angina symptoms at rest)",
+                        "criterion": "unstable angina",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "new-onset angina (begun within the last 3 months)",
+                        "criterion": "new-onset angina",
+                        "requirement": {
+                            "requirement_type": "onset",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "myocardial infarction less than 3 months prior to randomization",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "time since event",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Congestive heart failure > New York Heart Association (NYHA) class 2",
+                                "criterion": "congestive heart failure",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 2,
+                                        "unit": "NYHA class"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "unstable angina (angina symptoms at rest)",
+                                "criterion": "unstable angina",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "new-onset angina (begun within the last 3 months)",
+                                "criterion": "new-onset angina",
+                                "requirement": {
+                                    "requirement_type": "onset",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "myocardial infarction less than 3 months prior to randomization",
+                                "criterion": "myocardial infarction",
+                                "requirement": {
+                                    "requirement_type": "time since event",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Ongoing infection > grade 2 CTCAE version 4.0.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ongoing infection > grade 2 CTCAE version 4.0.",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "grade (CTCAE version 4.0)"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ongoing infection > grade 2 CTCAE version 4.0.",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "grade (CTCAE version 4.0)"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Symptomatic metastatic brain or meningeal tumors unless the patient is > 3 months from definitive therapy, has a negative imaging study within 4 weeks of randomization and is clinically stable with respect to brain lesions at the time of randomization (Note: patient must not be undergoing acute steroid therapy or taper [chronic steroid therapy is acceptable provided that the dose is stable for one month prior to and following screening radiographic studies]).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Symptomatic metastatic brain or meningeal tumors",
+                        "criterion": "symptomatic metastatic brain or meningeal tumors",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "patient is > 3 months from definitive therapy",
+                        "criterion": "time from definitive therapy",
+                        "requirement": {
+                            "requirement_type": "time since therapy",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "negative imaging study within 4 weeks of randomization",
+                        "criterion": "imaging study result",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "clinically stable with respect to brain lesions at the time of randomization",
+                        "criterion": "clinical stability with respect to brain lesions",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "patient must not be undergoing acute steroid therapy or taper",
+                        "criterion": "acute steroid therapy or taper",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "chronic steroid therapy is acceptable provided that the dose is stable for one month prior to and following screening radiographic studies",
+                        "criterion": "chronic steroid therapy",
+                        "requirement": {
+                            "requirement_type": "dose stability",
+                            "expected_value": "stable for one month prior to and following screening radiographic studies"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Symptomatic metastatic brain or meningeal tumors",
+                            "criterion": "symptomatic metastatic brain or meningeal tumors",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "patient is > 3 months from definitive therapy",
+                            "criterion": "time from definitive therapy",
+                            "requirement": {
+                                "requirement_type": "time since therapy",
+                                "expected_value": {
+                                    "operator": ">",
+                                    "value": 3,
+                                    "unit": "months"
+                                }
+                            }
+                        },
+                        {
+                            "exact_snippets": "negative imaging study within 4 weeks of randomization",
+                            "criterion": "imaging study result",
+                            "requirement": {
+                                "requirement_type": "result",
+                                "expected_value": "negative"
+                            }
+                        },
+                        {
+                            "exact_snippets": "clinically stable with respect to brain lesions at the time of randomization",
+                            "criterion": "clinical stability with respect to brain lesions",
+                            "requirement": {
+                                "requirement_type": "stability",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "patient must not be undergoing acute steroid therapy or taper",
+                            "criterion": "acute steroid therapy or taper",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": false
+                            }
+                        },
+                        {
+                            "exact_snippets": "chronic steroid therapy is acceptable provided that the dose is stable for one month prior to and following screening radiographic studies",
+                            "criterion": "chronic steroid therapy",
+                            "requirement": {
+                                "requirement_type": "dose stability",
+                                "expected_value": "stable for one month prior to and following screening radiographic studies"
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": {
+                    "exact_snippets": "Symptomatic metastatic brain or meningeal tumors",
+                    "criterion": "symptomatic metastatic brain or meningeal tumors",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Renal failure requiring hematological or peritoneal dialysis.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Renal failure requiring hematological or peritoneal dialysis.",
+                        "criterion": "renal failure",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": [
+                                "hematological dialysis",
+                                "peritoneal dialysis"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Renal failure requiring hematological or peritoneal dialysis.",
+                        "criterion": "renal failure",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": [
+                                "hematological dialysis",
+                                "peritoneal dialysis"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients unable to swallow oral medications.",
+                "criterions": [
+                    {
+                        "exact_snippets": "unable to swallow oral medications",
+                        "criterion": "ability to swallow oral medications",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "unable to swallow oral medications",
+                    "criterion": "ability to swallow oral medications",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients must have a negative serum pregnancy test done less than are equal to 14 days prior to randomization for women of childbearing potential only. Women of child bearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control; abstinence) prior to study entry for the duration of study participation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "negative serum pregnancy test",
+                        "criterion": "serum pregnancy test",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "done less than are equal to 14 days prior to randomization",
+                        "criterion": "serum pregnancy test timing",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 14,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "women of childbearing potential",
+                        "criterion": "gender and reproductive potential",
+                        "requirement": {
+                            "requirement_type": "gender",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "women of childbearing potential",
+                        "criterion": "gender and reproductive potential",
+                        "requirement": {
+                            "requirement_type": "reproductive potential",
+                            "expected_value": "childbearing potential"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Women of child bearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control; abstinence)",
+                        "criterion": "contraception agreement",
+                        "requirement": {
+                            "requirement_type": "gender",
+                            "expected_value": [
+                                "female",
+                                "male"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Women of child bearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control; abstinence)",
+                        "criterion": "contraception agreement",
+                        "requirement": {
+                            "requirement_type": "contraception method",
+                            "expected_value": [
+                                "hormonal",
+                                "barrier",
+                                "abstinence"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

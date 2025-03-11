@@ -1,0 +1,972 @@
+{
+    "info": {
+        "nct_id": "NCT01693731",
+        "official_title": "Oral Health in Breast Cancer Survivors on Aromatase Inhibitors",
+        "inclusion_criteria": "Postmenopausal as defined by NCCN (any of the following)\n\n* Prior bilateral oophorectomy\n* Age equal to or greater then 60 years of age\n* Age less then 60 and amenorrheic for 12 or more months in the absence of chemotherapy, tamoxifen, toremifen or ovarian suppression and FSH and estradiol in the postmenopausal range\n* If taking tamoxifen or toremifen and age less then 60y, then FSH and plasma estradiol level in postmenopausal ranges\n\nInformed consent- Individuals capable of consenting and self administering the survey instrument Dentate- At least 15 teeth present.\n\nAI users:\n\n* Diagnosis of BCa- Histologic confirmed diagnosis of BCa: Stage 0, I, II, or III with no evidence of metastatic disease.\n* Treatment- AI as clinically indicated (AI may be anastrozole, exemestane or letrozole) > 1 month. Subjects may have had prior tamoxifen or raloxifene. Subjects may have had chemotherapy and/or radiation therapy. Must be within the first year of consecutive AI therapy. If a subject started AI, discontinued, then restarted, they will be accepted into the study.\n\nControls:\n\n* No Diagnosis of cancer.- Patients must not have a diagnosis of any cancer (Not including a history of localized thyroid or skin cancer).\nHealthy volunteers allowed\nMust be FEMALE",
+        "exclusion_criteria": "Medical history\n\n* Metastatic BCa (AI treated group: fully resected locally recurrent disease is permitted if the patient has been rendered without evidence of disease).\n* Significant psychiatric illness/social situations that would preclude completion of questionnaire.\n\nMedications\n\n* Chronic medications known to affect the periodontal status (calcium antagonist, anti-convulsives, immunosuppressives (> prednisone 7.5mg daily). NSAIDS and bisphosphonates are permitted.\n* Premedication- Conditions that require antibiotic therapy will be evaluated on a case-by-case basis. (Patients taking prophylaxis for joint replacements will not be excluded.)",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Postmenopausal as defined by NCCN (any of the following)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Postmenopausal",
+                        "criterion": "menopausal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "postmenopausal"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Postmenopausal",
+                        "criterion": "menopausal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "postmenopausal"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior bilateral oophorectomy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior bilateral oophorectomy",
+                        "criterion": "bilateral oophorectomy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prior bilateral oophorectomy",
+                        "criterion": "bilateral oophorectomy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age equal to or greater then 60 years of age",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age equal to or greater then 60 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 60,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age equal to or greater then 60 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 60,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age less then 60 and amenorrheic for 12 or more months in the absence of chemotherapy, tamoxifen, toremifen or ovarian suppression and FSH and estradiol in the postmenopausal range",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age less then 60",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 60,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "amenorrheic for 12 or more months",
+                        "criterion": "amenorrhea",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 12,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "absence of chemotherapy, tamoxifen, toremifen or ovarian suppression",
+                        "criterion": "absence of specific treatments",
+                        "requirement": {
+                            "requirement_type": "treatments",
+                            "expected_value": [
+                                "chemotherapy",
+                                "tamoxifen",
+                                "toremifen",
+                                "ovarian suppression"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "FSH and estradiol in the postmenopausal range",
+                        "criterion": "FSH and estradiol levels",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": "postmenopausal"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Age less then 60",
+                                        "criterion": "age",
+                                        "requirement": {
+                                            "requirement_type": "value",
+                                            "expected_value": {
+                                                "operator": "<",
+                                                "value": 60,
+                                                "unit": "years"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "amenorrheic for 12 or more months",
+                                        "criterion": "amenorrhea",
+                                        "requirement": {
+                                            "requirement_type": "duration",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 12,
+                                                "unit": "months"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "absence of chemotherapy, tamoxifen, toremifen or ovarian suppression",
+                                    "criterion": "absence of specific treatments",
+                                    "requirement": {
+                                        "requirement_type": "treatments",
+                                        "expected_value": [
+                                            "chemotherapy",
+                                            "tamoxifen",
+                                            "toremifen",
+                                            "ovarian suppression"
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "FSH and estradiol in the postmenopausal range",
+                        "criterion": "FSH and estradiol levels",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": "postmenopausal"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* If taking tamoxifen or toremifen and age less then 60y, then FSH and plasma estradiol level in postmenopausal ranges",
+                "criterions": [
+                    {
+                        "exact_snippets": "taking tamoxifen or toremifen",
+                        "criterion": "medication",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "tamoxifen",
+                                "toremifen"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "age less then 60y",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 60,
+                                "unit": "y"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "FSH ... in postmenopausal ranges",
+                        "criterion": "FSH level",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": "postmenopausal ranges"
+                        }
+                    },
+                    {
+                        "exact_snippets": "plasma estradiol level in postmenopausal ranges",
+                        "criterion": "plasma estradiol level",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": "postmenopausal ranges"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "or_criteria": [
+                                {
+                                    "exact_snippets": "taking tamoxifen or toremifen",
+                                    "criterion": "medication",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": [
+                                            "tamoxifen",
+                                            "toremifen"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "age less then 60y",
+                                    "criterion": "age",
+                                    "requirement": {
+                                        "requirement_type": "comparison",
+                                        "expected_value": {
+                                            "operator": "<",
+                                            "value": 60,
+                                            "unit": "y"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "FSH ... in postmenopausal ranges",
+                            "criterion": "FSH level",
+                            "requirement": {
+                                "requirement_type": "range",
+                                "expected_value": "postmenopausal ranges"
+                            }
+                        },
+                        {
+                            "exact_snippets": "plasma estradiol level in postmenopausal ranges",
+                            "criterion": "plasma estradiol level",
+                            "requirement": {
+                                "requirement_type": "range",
+                                "expected_value": "postmenopausal ranges"
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Informed consent- Individuals capable of consenting and self administering the survey instrument Dentate- At least 15 teeth present.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Informed consent- Individuals capable of consenting",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": "capable of consenting"
+                        }
+                    },
+                    {
+                        "exact_snippets": "self administering the survey instrument",
+                        "criterion": "survey instrument administration",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": "self administering"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Dentate- At least 15 teeth present.",
+                        "criterion": "dentition",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "teeth"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Informed consent- Individuals capable of consenting",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": "capable of consenting"
+                        }
+                    },
+                    {
+                        "exact_snippets": "self administering the survey instrument",
+                        "criterion": "survey instrument administration",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": "self administering"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Dentate- At least 15 teeth present.",
+                        "criterion": "dentition",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "teeth"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "AI users:",
+                "criterions": [
+                    {
+                        "exact_snippets": "AI users",
+                        "criterion": "AI users",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "AI users",
+                        "criterion": "AI users",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Diagnosis of BCa- Histologic confirmed diagnosis of BCa: Stage 0, I, II, or III with no evidence of metastatic disease.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of BCa",
+                        "criterion": "BCa diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histologic confirmed diagnosis of BCa",
+                        "criterion": "histologic confirmation",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Stage 0, I, II, or III",
+                        "criterion": "BCa stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "0",
+                                "I",
+                                "II",
+                                "III"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "no evidence of metastatic disease",
+                        "criterion": "metastatic disease",
+                        "requirement": {
+                            "requirement_type": "evidence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Diagnosis of BCa",
+                        "criterion": "BCa diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histologic confirmed diagnosis of BCa",
+                        "criterion": "histologic confirmation",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Stage 0, I, II, or III",
+                        "criterion": "BCa stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "0",
+                                "I",
+                                "II",
+                                "III"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "no evidence of metastatic disease",
+                        "criterion": "metastatic disease",
+                        "requirement": {
+                            "requirement_type": "evidence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Treatment- AI as clinically indicated (AI may be anastrozole, exemestane or letrozole) > 1 month. Subjects may have had prior tamoxifen or raloxifene. Subjects may have had chemotherapy and/or radiation therapy. Must be within the first year of consecutive AI therapy. If a subject started AI, discontinued, then restarted, they will be accepted into the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Treatment- AI as clinically indicated (AI may be anastrozole, exemestane or letrozole) > 1 month.",
+                        "criterion": "AI treatment duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "month"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Subjects may have had prior tamoxifen or raloxifene.",
+                        "criterion": "prior tamoxifen or raloxifene treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Subjects may have had chemotherapy and/or radiation therapy.",
+                        "criterion": "prior chemotherapy or radiation therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Must be within the first year of consecutive AI therapy.",
+                        "criterion": "consecutive AI therapy duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "If a subject started AI, discontinued, then restarted, they will be accepted into the study.",
+                        "criterion": "AI treatment discontinuation and restart",
+                        "requirement": {
+                            "requirement_type": "acceptance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "or_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "Treatment- AI as clinically indicated (AI may be anastrozole, exemestane or letrozole) > 1 month.",
+                                                "criterion": "AI treatment duration",
+                                                "requirement": {
+                                                    "requirement_type": "duration",
+                                                    "expected_value": {
+                                                        "operator": ">",
+                                                        "value": 1,
+                                                        "unit": "month"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "Must be within the first year of consecutive AI therapy.",
+                                                "criterion": "consecutive AI therapy duration",
+                                                "requirement": {
+                                                    "requirement_type": "duration",
+                                                    "expected_value": {
+                                                        "operator": "<=",
+                                                        "value": 1,
+                                                        "unit": "year"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "If a subject started AI, discontinued, then restarted, they will be accepted into the study.",
+                                        "criterion": "AI treatment discontinuation and restart",
+                                        "requirement": {
+                                            "requirement_type": "acceptance",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Subjects may have had prior tamoxifen or raloxifene.",
+                                "criterion": "prior tamoxifen or raloxifene treatment",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Subjects may have had chemotherapy and/or radiation therapy.",
+                                "criterion": "prior chemotherapy or radiation therapy",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No Diagnosis of cancer.- Patients must not have a diagnosis of any cancer (Not including a history of localized thyroid or skin cancer).",
+                "criterions": [
+                    {
+                        "exact_snippets": "No Diagnosis of cancer.- Patients must not have a diagnosis of any cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Not including a history of localized thyroid or skin cancer",
+                        "criterion": "history of localized thyroid or skin cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "No Diagnosis of cancer.- Patients must not have a diagnosis of any cancer",
+                    "criterion": "cancer diagnosis",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "Not including a history of localized thyroid or skin cancer",
+                    "criterion": "history of localized thyroid or skin cancer",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Controls:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Medical history",
+                "criterions": [
+                    {
+                        "exact_snippets": "Medical history",
+                        "criterion": "medical history",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Medical history",
+                    "criterion": "medical history",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Metastatic BCa (AI treated group: fully resected locally recurrent disease is permitted if the patient has been rendered without evidence of disease).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Metastatic BCa",
+                        "criterion": "metastatic bladder cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "AI treated group: fully resected locally recurrent disease is permitted",
+                        "criterion": "locally recurrent disease",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "fully resected"
+                        }
+                    },
+                    {
+                        "exact_snippets": "if the patient has been rendered without evidence of disease",
+                        "criterion": "evidence of disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Metastatic BCa",
+                            "criterion": "metastatic bladder cancer",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "AI treated group: fully resected locally recurrent disease is permitted",
+                            "criterion": "locally recurrent disease",
+                            "requirement": {
+                                "requirement_type": "treatment",
+                                "expected_value": "fully resected"
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "exact_snippets": "if the patient has been rendered without evidence of disease",
+                    "criterion": "evidence of disease",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Significant psychiatric illness/social situations that would preclude completion of questionnaire.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Significant psychiatric illness",
+                        "criterion": "psychiatric illness",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "significant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "social situations that would preclude completion of questionnaire",
+                        "criterion": "social situations",
+                        "requirement": {
+                            "requirement_type": "impact on questionnaire completion",
+                            "expected_value": "preclude"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Significant psychiatric illness",
+                        "criterion": "psychiatric illness",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "significant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "social situations that would preclude completion of questionnaire",
+                        "criterion": "social situations",
+                        "requirement": {
+                            "requirement_type": "impact on questionnaire completion",
+                            "expected_value": "preclude"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Medications",
+                "criterions": [
+                    {
+                        "exact_snippets": "Medications",
+                        "criterion": "medications",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Medications",
+                    "criterion": "medications",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Chronic medications known to affect the periodontal status (calcium antagonist, anti-convulsives, immunosuppressives (> prednisone 7.5mg daily). NSAIDS and bisphosphonates are permitted.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Chronic medications known to affect the periodontal status (calcium antagonist, anti-convulsives, immunosuppressives (> prednisone 7.5mg daily)",
+                        "criterion": "chronic medications affecting periodontal status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "NSAIDS and bisphosphonates are permitted",
+                        "criterion": "NSAIDS and bisphosphonates",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Chronic medications known to affect the periodontal status (calcium antagonist, anti-convulsives, immunosuppressives (> prednisone 7.5mg daily)",
+                                    "criterion": "chronic medications affecting periodontal status",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": false
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "NSAIDS and bisphosphonates are permitted",
+                        "criterion": "NSAIDS and bisphosphonates",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Premedication- Conditions that require antibiotic therapy will be evaluated on a case-by-case basis. (Patients taking prophylaxis for joint replacements will not be excluded.)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Conditions that require antibiotic therapy",
+                        "criterion": "conditions requiring antibiotic therapy",
+                        "requirement": {
+                            "requirement_type": "evaluation",
+                            "expected_value": "case-by-case basis"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients taking prophylaxis for joint replacements will not be excluded",
+                        "criterion": "prophylaxis for joint replacements",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Conditions that require antibiotic therapy",
+                    "criterion": "conditions requiring antibiotic therapy",
+                    "requirement": {
+                        "requirement_type": "evaluation",
+                        "expected_value": "case-by-case basis"
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "not_criteria": {
+                        "exact_snippets": "Patients taking prophylaxis for joint replacements will not be excluded",
+                        "criterion": "prophylaxis for joint replacements",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": false
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

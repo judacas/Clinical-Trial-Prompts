@@ -21,25 +21,45 @@
                     ]
                 },
                 {
+                    "exact_snippets": "received hospitalization in our center",
+                    "criterion": "hospitalization in our center",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
                     "exact_snippets": "patients with stage II-III colorectal cancer",
                     "criterion": "stage II-III colorectal cancer",
                     "requirements": [
                         {
                             "requirement_type": "stage",
-                            "expected_value": [
-                                "II",
-                                "III"
-                            ]
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "stage"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "stage"
+                                    }
+                                ]
+                            }
                         }
                     ]
                 },
                 {
-                    "exact_snippets": "patients ... whose primary surgery was radical surgery",
-                    "criterion": "primary surgery",
+                    "exact_snippets": "primary surgery was radical surgery",
+                    "criterion": "radical surgery",
                     "requirements": [
                         {
                             "requirement_type": "type",
-                            "expected_value": "radical surgery"
+                            "expected_value": "radical"
                         }
                     ]
                 }
@@ -49,8 +69,8 @@
             "line": "2. The pathological type of primary tumor is adenocarcinoma",
             "criterions": [
                 {
-                    "exact_snippets": "pathological type of primary tumor is adenocarcinoma",
-                    "criterion": "primary tumor pathological type",
+                    "exact_snippets": "The pathological type of primary tumor is adenocarcinoma",
+                    "criterion": "pathological type of primary tumor",
                     "requirements": [
                         {
                             "requirement_type": "type",
@@ -178,10 +198,10 @@
             "criterions": [
                 {
                     "exact_snippets": "Past history of other malignant tumors",
-                    "criterion": "history of malignant tumors",
+                    "criterion": "other malignant tumors",
                     "requirements": [
                         {
-                            "requirement_type": "presence",
+                            "requirement_type": "history",
                             "expected_value": true
                         }
                     ]
@@ -196,8 +216,8 @@
                     "criterion": "recurrence",
                     "requirements": [
                         {
-                            "requirement_type": "timing",
-                            "expected_value": "within 1 month after surgery"
+                            "requirement_type": "presence",
+                            "expected_value": true
                         }
                     ]
                 },
@@ -206,8 +226,22 @@
                     "criterion": "diffuse peritoneal recurrence",
                     "requirements": [
                         {
-                            "requirement_type": "timing",
-                            "expected_value": "within 1 month after surgery"
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "occurring within 1 month after surgery",
+                    "criterion": "time since surgery",
+                    "requirements": [
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "month"
+                            }
                         }
                     ]
                 }

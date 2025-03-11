@@ -75,7 +75,7 @@
                     "requirements": [
                         {
                             "requirement_type": "opinion",
-                            "expected_value": "best option for next treatment"
+                            "expected_value": "clinical study is best option"
                         }
                     ]
                 },
@@ -84,11 +84,8 @@
                     "criterion": "response to and/or tolerability of prior therapy",
                     "requirements": [
                         {
-                            "requirement_type": "basis for decision",
-                            "expected_value": [
-                                "response",
-                                "tolerability"
-                            ]
+                            "requirement_type": "evaluation",
+                            "expected_value": "response and/or tolerability"
                         }
                     ]
                 }
@@ -305,7 +302,7 @@
                             "expected_value": {
                                 "comparisons": [
                                     {
-                                        "operator": ">=",
+                                        "operator": "<=",
                                         "value": 14,
                                         "unit": "days"
                                     }
@@ -323,7 +320,7 @@
                             "expected_value": {
                                 "comparisons": [
                                     {
-                                        "operator": ">=",
+                                        "operator": "<=",
                                         "value": 14,
                                         "unit": "days"
                                     }
@@ -341,7 +338,7 @@
                             "expected_value": {
                                 "comparisons": [
                                     {
-                                        "operator": ">=",
+                                        "operator": "<=",
                                         "value": 14,
                                         "unit": "days"
                                     }
@@ -351,7 +348,7 @@
                     ]
                 },
                 {
-                    "exact_snippets": "21 days for myelosuppressive therapies",
+                    "exact_snippets": "myelosuppressive therapies ... within ... 21 days ... of the first dose of IMP",
                     "criterion": "myelosuppressive therapies",
                     "requirements": [
                         {
@@ -359,22 +356,12 @@
                             "expected_value": {
                                 "comparisons": [
                                     {
-                                        "operator": ">=",
+                                        "operator": "<=",
                                         "value": 21,
                                         "unit": "days"
                                     }
                                 ]
                             }
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "other than GnRHa (eg, goserelin) and bone-stabilizing agents (eg, zoledronic acid, denosumab)",
-                    "criterion": "GnRHa and bone-stabilizing agents",
-                    "requirements": [
-                        {
-                            "requirement_type": "exclusion",
-                            "expected_value": true
                         }
                     ]
                 }
@@ -400,7 +387,7 @@
             "criterions": [
                 {
                     "exact_snippets": "Drugs that have a known risk of Torsades de Pointes",
-                    "criterion": "drug",
+                    "criterion": "drugs",
                     "requirements": [
                         {
                             "requirement_type": "risk",
@@ -441,7 +428,7 @@
                     "criterion": "recent major surgery or significant traumatic injury",
                     "requirements": [
                         {
-                            "requirement_type": "time since event",
+                            "requirement_type": "time since occurrence",
                             "expected_value": {
                                 "comparisons": [
                                     {
@@ -455,15 +442,22 @@
                     ]
                 },
                 {
-                    "exact_snippets": "anticipated need for major surgery and/or any surgery requiring general anesthesia during the study",
-                    "criterion": "anticipated need for surgery",
+                    "exact_snippets": "anticipated need for major surgery",
+                    "criterion": "anticipated need for major surgery",
                     "requirements": [
                         {
-                            "requirement_type": "type of surgery",
-                            "expected_value": [
-                                "major surgery",
-                                "surgery requiring general anesthesia"
-                            ]
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "any surgery requiring general anesthesia during the study",
+                    "criterion": "surgery requiring general anesthesia during the study",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
                         }
                     ]
                 }
@@ -718,17 +712,17 @@
                     "criterion": "sinus pause",
                     "requirements": [
                         {
-                            "requirement_type": "presence",
-                            "expected_value": false
+                            "requirement_type": "severity",
+                            "expected_value": "not clinically significant"
                         }
                     ]
                 },
                 {
                     "exact_snippets": "Participants with controlled atrial fibrillation can be enrolled",
-                    "criterion": "controlled atrial fibrillation",
+                    "criterion": "atrial fibrillation",
                     "requirements": [
                         {
-                            "requirement_type": "presence",
+                            "requirement_type": "control",
                             "expected_value": true
                         }
                     ]
@@ -846,8 +840,8 @@
                     "criterion": "coronary artery bypass graft",
                     "requirements": [
                         {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     ]
                 },
@@ -856,8 +850,8 @@
                     "criterion": "angioplasty",
                     "requirements": [
                         {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     ]
                 },
@@ -866,8 +860,8 @@
                     "criterion": "vascular stent",
                     "requirements": [
                         {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     ]
                 },
@@ -876,8 +870,8 @@
                     "criterion": "myocardial infarction",
                     "requirements": [
                         {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     ]
                 },
@@ -886,8 +880,8 @@
                     "criterion": "unstable angina pectoris",
                     "requirements": [
                         {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     ]
                 },
@@ -902,10 +896,6 @@
                                 "value": 2,
                                 "unit": "N/A"
                             }
-                        },
-                        {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
                         }
                     ]
                 },
@@ -914,8 +904,8 @@
                     "criterion": "cerebrovascular accident",
                     "requirements": [
                         {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     ]
                 },
@@ -924,8 +914,8 @@
                     "criterion": "transient ischemic attack",
                     "requirements": [
                         {
-                            "requirement_type": "time frame",
-                            "expected_value": "preceding 6 months"
+                            "requirement_type": "experience",
+                            "expected_value": true
                         }
                     ]
                 }
@@ -939,7 +929,7 @@
                     "criterion": "hypertension",
                     "requirements": [
                         {
-                            "requirement_type": "control status",
+                            "requirement_type": "control",
                             "expected_value": "uncontrolled"
                         }
                     ]
@@ -975,17 +965,7 @@
                     "requirements": [
                         {
                             "requirement_type": "significance",
-                            "expected_value": true
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "that would preclude adequate absorption of IMP(s)",
-                    "criterion": "absorption of IMP(s)",
-                    "requirements": [
-                        {
-                            "requirement_type": "adequacy",
-                            "expected_value": false
+                            "expected_value": "significant"
                         }
                     ]
                 }
@@ -1017,80 +997,35 @@
             ]
         },
         {
-            "line": "* Previous treatment with AZD8421 or with any CDK2-selective inhibitor, or protein kinase membrane-associated tyrosine- and threonine-specific cdc2-inhibitory kinase 1 (PKMYT1) inhibitor, or WEE1 inhibitor.",
-            "criterions": [
-                {
-                    "exact_snippets": "Previous treatment with AZD8421",
-                    "criterion": "previous treatment with AZD8421",
-                    "requirements": [
-                        {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "Previous treatment with ... any CDK2-selective inhibitor",
-                    "criterion": "previous treatment with CDK2-selective inhibitor",
-                    "requirements": [
-                        {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "Previous treatment with ... protein kinase membrane-associated tyrosine- and threonine-specific cdc2-inhibitory kinase 1 (PKMYT1) inhibitor",
-                    "criterion": "previous treatment with PKMYT1 inhibitor",
-                    "requirements": [
-                        {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "Previous treatment with ... WEE1 inhibitor",
-                    "criterion": "previous treatment with WEE1 inhibitor",
-                    "requirements": [
-                        {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "line": "* Currently pregnant (confirmed with positive pregnancy test), breast feeding, or planning to become pregnant. Participants of childbearing potential must agree to use one highly effective contraceptive measure.",
             "criterions": [
                 {
                     "exact_snippets": "Currently pregnant (confirmed with positive pregnancy test)",
-                    "criterion": "pregnancy",
+                    "criterion": "pregnancy status",
                     "requirements": [
                         {
-                            "requirement_type": "status",
-                            "expected_value": "positive"
+                            "requirement_type": "presence",
+                            "expected_value": false
                         }
                     ]
                 },
                 {
                     "exact_snippets": "breast feeding",
-                    "criterion": "breastfeeding",
+                    "criterion": "breastfeeding status",
                     "requirements": [
                         {
-                            "requirement_type": "status",
-                            "expected_value": true
+                            "requirement_type": "presence",
+                            "expected_value": false
                         }
                     ]
                 },
                 {
                     "exact_snippets": "planning to become pregnant",
-                    "criterion": "pregnancy planning",
+                    "criterion": "pregnancy intention",
                     "requirements": [
                         {
                             "requirement_type": "intention",
-                            "expected_value": true
+                            "expected_value": false
                         }
                     ]
                 },
@@ -1129,6 +1064,51 @@
                     "requirements": [
                         {
                             "requirement_type": "adequacy",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Previous treatment with AZD8421 or with any CDK2-selective inhibitor, or protein kinase membrane-associated tyrosine- and threonine-specific cdc2-inhibitory kinase 1 (PKMYT1) inhibitor, or WEE1 inhibitor.",
+            "criterions": [
+                {
+                    "exact_snippets": "Previous treatment with AZD8421",
+                    "criterion": "previous treatment with AZD8421",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "previous treatment with ... any CDK2-selective inhibitor",
+                    "criterion": "previous treatment with CDK2-selective inhibitor",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "previous treatment with ... protein kinase membrane-associated tyrosine- and threonine-specific cdc2-inhibitory kinase 1 (PKMYT1) inhibitor",
+                    "criterion": "previous treatment with PKMYT1 inhibitor",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "previous treatment with ... WEE1 inhibitor",
+                    "criterion": "previous treatment with WEE1 inhibitor",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
                             "expected_value": false
                         }
                     ]

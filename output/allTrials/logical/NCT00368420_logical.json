@@ -25,7 +25,7 @@
                     },
                     {
                         "exact_snippets": "any initial stage",
-                        "criterion": "initial cancer stage",
+                        "criterion": "initial stage",
                         "requirement": {
                             "requirement_type": "stage",
                             "expected_value": "any"
@@ -44,7 +44,7 @@
                         }
                     },
                     {
-                        "exact_snippets": "second relapse ... after completed platinum-containing re-induction therapy",
+                        "exact_snippets": "second relapse who are enrolled after completed platinum-containing re-induction therapy",
                         "criterion": "second relapse after platinum-containing re-induction therapy",
                         "requirement": {
                             "requirement_type": "completion",
@@ -75,7 +75,7 @@
                                             },
                                             {
                                                 "exact_snippets": "any initial stage",
-                                                "criterion": "initial cancer stage",
+                                                "criterion": "initial stage",
                                                 "requirement": {
                                                     "requirement_type": "stage",
                                                     "expected_value": "any"
@@ -98,12 +98,28 @@
                                 ]
                             },
                             {
-                                "exact_snippets": "second relapse ... after completed platinum-containing re-induction therapy",
-                                "criterion": "second relapse after platinum-containing re-induction therapy",
-                                "requirement": {
-                                    "requirement_type": "completion",
-                                    "expected_value": true
-                                }
+                                "xor_criteria": [
+                                    {
+                                        "exact_snippets": "relapsed after a tumor-free interval of at least 6 months after completion of first-line therapy",
+                                        "criterion": "tumor-free interval after first-line therapy",
+                                        "requirement": {
+                                            "requirement_type": "duration",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 6,
+                                                "unit": "months"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "second relapse who are enrolled after completed platinum-containing re-induction therapy",
+                                        "criterion": "second relapse after platinum-containing re-induction therapy",
+                                        "requirement": {
+                                            "requirement_type": "completion",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -346,7 +362,7 @@
                         "exact_snippets": "Patients who undergo second-look surgery",
                         "criterion": "second-look surgery",
                         "requirement": {
-                            "requirement_type": "undergoing",
+                            "requirement_type": "undergo",
                             "expected_value": true
                         }
                     },
@@ -354,7 +370,7 @@
                         "exact_snippets": "completion surgery after end of chemotherapy",
                         "criterion": "completion surgery",
                         "requirement": {
-                            "requirement_type": "undergoing",
+                            "requirement_type": "undergo",
                             "expected_value": true
                         }
                     },
@@ -362,7 +378,7 @@
                         "exact_snippets": "completion surgery ... during the interval",
                         "criterion": "completion surgery",
                         "requirement": {
-                            "requirement_type": "undergoing",
+                            "requirement_type": "undergo",
                             "expected_value": true
                         }
                     }
@@ -376,19 +392,15 @@
                                 "exact_snippets": "Patients who undergo second-look surgery",
                                 "criterion": "second-look surgery",
                                 "requirement": {
-                                    "requirement_type": "undergoing",
+                                    "requirement_type": "undergo",
                                     "expected_value": true
                                 }
-                            }
-                        ]
-                    },
-                    {
-                        "and_criteria": [
+                            },
                             {
                                 "exact_snippets": "completion surgery after end of chemotherapy",
                                 "criterion": "completion surgery",
                                 "requirement": {
-                                    "requirement_type": "undergoing",
+                                    "requirement_type": "undergo",
                                     "expected_value": true
                                 }
                             }
@@ -396,100 +408,21 @@
                     },
                     {
                         "and_criteria": [
+                            {
+                                "exact_snippets": "Patients who undergo second-look surgery",
+                                "criterion": "second-look surgery",
+                                "requirement": {
+                                    "requirement_type": "undergo",
+                                    "expected_value": true
+                                }
+                            },
                             {
                                 "exact_snippets": "completion surgery ... during the interval",
                                 "criterion": "completion surgery",
                                 "requirement": {
-                                    "requirement_type": "undergoing",
+                                    "requirement_type": "undergo",
                                     "expected_value": true
                                 }
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "* Only for the study collective: patients with second malignancies who have been treated by laparotomy, as well as other neoplasias, if the treatment could interfere with the treatment of relapsed ovarian cancer",
-                "criterions": [
-                    {
-                        "exact_snippets": "patients with second malignancies",
-                        "criterion": "second malignancies",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "treated by laparotomy",
-                        "criterion": "treatment by laparotomy",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "other neoplasias",
-                        "criterion": "other neoplasias",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "treatment could interfere with the treatment of relapsed ovarian cancer",
-                        "criterion": "treatment interference with relapsed ovarian cancer",
-                        "requirement": {
-                            "requirement_type": "potential interference",
-                            "expected_value": true
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "and_criteria": [
-                            {
-                                "and_criteria": [
-                                    {
-                                        "exact_snippets": "patients with second malignancies",
-                                        "criterion": "second malignancies",
-                                        "requirement": {
-                                            "requirement_type": "presence",
-                                            "expected_value": true
-                                        }
-                                    },
-                                    {
-                                        "exact_snippets": "treated by laparotomy",
-                                        "criterion": "treatment by laparotomy",
-                                        "requirement": {
-                                            "requirement_type": "presence",
-                                            "expected_value": true
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "and_criteria": [
-                                    {
-                                        "exact_snippets": "other neoplasias",
-                                        "criterion": "other neoplasias",
-                                        "requirement": {
-                                            "requirement_type": "presence",
-                                            "expected_value": true
-                                        }
-                                    },
-                                    {
-                                        "exact_snippets": "treatment could interfere with the treatment of relapsed ovarian cancer",
-                                        "criterion": "treatment interference with relapsed ovarian cancer",
-                                        "requirement": {
-                                            "requirement_type": "potential interference",
-                                            "expected_value": true
-                                        }
-                                    }
-                                ]
                             }
                         ]
                     }
@@ -504,7 +437,7 @@
                         "exact_snippets": "third recurrence",
                         "criterion": "recurrence",
                         "requirement": {
-                            "requirement_type": "count",
+                            "requirement_type": "quantity",
                             "expected_value": {
                                 "operator": "=",
                                 "value": 3,
@@ -519,7 +452,7 @@
                     "exact_snippets": "third recurrence",
                     "criterion": "recurrence",
                     "requirement": {
-                        "requirement_type": "count",
+                        "requirement_type": "quantity",
                         "expected_value": {
                             "operator": "=",
                             "value": 3,
@@ -623,6 +556,54 @@
     ],
     "miscellaneous_lines": [],
     "failed_inclusion": [],
-    "failed_exclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Only for the study collective: patients with second malignancies who have been treated by laparotomy, as well as other neoplasias, if the treatment could interfere with the treatment of relapsed ovarian cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients with second malignancies",
+                        "criterion": "second malignancies",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "treated by laparotomy",
+                        "criterion": "treatment by laparotomy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "other neoplasias",
+                        "criterion": "other neoplasias",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "treatment could interfere with the treatment of relapsed ovarian cancer",
+                        "criterion": "treatment interference with relapsed ovarian cancer",
+                        "requirement": {
+                            "requirement_type": "potential interference",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
     "failed_miscellaneous": []
 }

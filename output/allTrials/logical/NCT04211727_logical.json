@@ -1,0 +1,461 @@
+{
+    "info": {
+        "nct_id": "NCT04211727",
+        "official_title": "Affinity: Hospital Trial. Early Prototype Testing for a Home Oncology Monitoring System",
+        "inclusion_criteria": "* Age >18 years old at the time of study entry Currently receiving standard of care systemic anti-cancer therapy for solid organ malignancy and has received at least one cycle\n* Scheduled to be undergoing routine venous laboratory blood tests as part of standard of care\n* Can provide written informed consent\n* Cohort 2 only- Able to independently complete participant questionnaires\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Receiving systemic anti-cancer therapy for a haematological malignancy\n* Known parasitic infection\n* Known inherited or acquired bleeding disorder\n* History of haematological malignancy\n* Known poorly controlled anti-coagulation\n* Cohort 2 only- Participant or carer unable or unlikely to be able to perform fine manipulation required to use lancet or cartridge to obtain capillary blood sample and result",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Age >18 years old at the time of study entry Currently receiving standard of care systemic anti-cancer therapy for solid organ malignancy and has received at least one cycle",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age >18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Currently receiving standard of care systemic anti-cancer therapy",
+                        "criterion": "systemic anti-cancer therapy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "currently receiving"
+                        }
+                    },
+                    {
+                        "exact_snippets": "solid organ malignancy",
+                        "criterion": "solid organ malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "has received at least one cycle",
+                        "criterion": "anti-cancer therapy cycle",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "cycle"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age >18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Currently receiving standard of care systemic anti-cancer therapy",
+                        "criterion": "systemic anti-cancer therapy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "currently receiving"
+                        }
+                    },
+                    {
+                        "exact_snippets": "solid organ malignancy",
+                        "criterion": "solid organ malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "has received at least one cycle",
+                        "criterion": "anti-cancer therapy cycle",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "cycle"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Scheduled to be undergoing routine venous laboratory blood tests as part of standard of care",
+                "criterions": [
+                    {
+                        "exact_snippets": "Scheduled to be undergoing routine venous laboratory blood tests",
+                        "criterion": "venous laboratory blood tests",
+                        "requirement": {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Scheduled to be undergoing routine venous laboratory blood tests",
+                        "criterion": "venous laboratory blood tests",
+                        "requirement": {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Can provide written informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Can provide written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Can provide written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Cohort 2 only- Able to independently complete participant questionnaires",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to independently complete participant questionnaires",
+                        "criterion": "ability to complete participant questionnaires",
+                        "requirement": {
+                            "requirement_type": "independence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Cohort 2 only",
+                    "criterion": "cohort",
+                    "requirement": {
+                        "requirement_type": "membership",
+                        "expected_value": "Cohort 2"
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "Able to independently complete participant questionnaires",
+                    "criterion": "ability to complete participant questionnaires",
+                    "requirement": {
+                        "requirement_type": "independence",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Receiving systemic anti-cancer therapy for a haematological malignancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Receiving systemic anti-cancer therapy",
+                        "criterion": "systemic anti-cancer therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "haematological malignancy",
+                        "criterion": "haematological malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Receiving systemic anti-cancer therapy",
+                        "criterion": "systemic anti-cancer therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "haematological malignancy",
+                        "criterion": "haematological malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known parasitic infection",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known parasitic infection",
+                        "criterion": "parasitic infection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Known parasitic infection",
+                    "criterion": "parasitic infection",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known inherited or acquired bleeding disorder",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known inherited or acquired bleeding disorder",
+                        "criterion": "bleeding disorder",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known inherited or acquired bleeding disorder",
+                        "criterion": "bleeding disorder",
+                        "requirement": {
+                            "requirement_type": "inheritance",
+                            "expected_value": [
+                                "inherited",
+                                "acquired"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Known inherited or acquired bleeding disorder",
+                        "criterion": "bleeding disorder",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known inherited or acquired bleeding disorder",
+                        "criterion": "bleeding disorder",
+                        "requirement": {
+                            "requirement_type": "inheritance",
+                            "expected_value": [
+                                "inherited",
+                                "acquired"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of haematological malignancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of haematological malignancy",
+                        "criterion": "haematological malignancy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "History of haematological malignancy",
+                    "criterion": "haematological malignancy",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known poorly controlled anti-coagulation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known poorly controlled anti-coagulation",
+                        "criterion": "anti-coagulation",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": "poorly controlled"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Known poorly controlled anti-coagulation",
+                    "criterion": "anti-coagulation",
+                    "requirement": {
+                        "requirement_type": "control",
+                        "expected_value": "poorly controlled"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Cohort 2 only- Participant or carer unable or unlikely to be able to perform fine manipulation required to use lancet or cartridge to obtain capillary blood sample and result",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant or carer unable or unlikely to be able to perform fine manipulation required to use lancet or cartridge to obtain capillary blood sample and result",
+                        "criterion": "ability to perform fine manipulation",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Cohort 2 only",
+                    "criterion": "cohort",
+                    "requirement": {
+                        "requirement_type": "group",
+                        "expected_value": "2"
+                    }
+                },
+                "then_criteria": {
+                    "not_criteria": {
+                        "exact_snippets": "Participant or carer unable or unlikely to be able to perform fine manipulation required to use lancet or cartridge to obtain capillary blood sample and result",
+                        "criterion": "ability to perform fine manipulation",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

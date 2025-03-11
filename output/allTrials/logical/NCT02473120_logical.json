@@ -1,0 +1,621 @@
+{
+    "info": {
+        "nct_id": "NCT02473120",
+        "official_title": "Determination of ESR1 Mutations by Digital PCR During Aromatase Inhibitor Treatment in Metastatic Breast Cancer",
+        "inclusion_criteria": "* Woman aged superior to 18 years old\n* Inform consent signed\n* Metastatic breast cancer or loco-regionnaly advanced breast cancer\n* Inoperable\n* With an indication to treat with aromatase inhibitor\n* Treatment with aromatase inhibitors innitiated at the inclusion or at least 6 months before inclusion with a stable disease\n* Without precedent treatment or with treatment by chemotherapy/tamoxifen/faslodex or aromatase inhibitors in a adjuvant treatment and with a time frame of 2 years between last treatment with aromatase inhibitors and metastatic evolution\n* Treatment by aromatase inhibitors alone or in combination with a targeted therapy (trastuzumab +/- pertuzumab, bevacizumab, everolimus)\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* No inform consent signed\n* Patient under guardianship, curatorship\n* Psychosocial disorder\n* No affiliated or beneficiary of a social benefit system",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Woman aged superior to 18 years old",
+                "criterions": [
+                    {
+                        "exact_snippets": "Woman",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "aged superior to 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Woman",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "aged superior to 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Inform consent signed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inform consent signed",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Inform consent signed",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Metastatic breast cancer or loco-regionnaly advanced breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Metastatic breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "metastatic"
+                        }
+                    },
+                    {
+                        "exact_snippets": "loco-regionnaly advanced breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "loco-regionally advanced"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Metastatic breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "metastatic"
+                        }
+                    },
+                    {
+                        "exact_snippets": "loco-regionnaly advanced breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "loco-regionally advanced"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Inoperable",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inoperable",
+                        "criterion": "operability",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "inoperable"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Inoperable",
+                        "criterion": "operability",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "inoperable"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* With an indication to treat with aromatase inhibitor",
+                "criterions": [
+                    {
+                        "exact_snippets": "indication to treat with aromatase inhibitor",
+                        "criterion": "indication for aromatase inhibitor treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "indication to treat with aromatase inhibitor",
+                        "criterion": "indication for aromatase inhibitor treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Without precedent treatment or with treatment by chemotherapy/tamoxifen/faslodex or aromatase inhibitors in a adjuvant treatment and with a time frame of 2 years between last treatment with aromatase inhibitors and metastatic evolution",
+                "criterions": [
+                    {
+                        "exact_snippets": "Without precedent treatment",
+                        "criterion": "precedent treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "treatment by chemotherapy/tamoxifen/faslodex or aromatase inhibitors in a adjuvant treatment",
+                        "criterion": "adjuvant treatment",
+                        "requirement": {
+                            "requirement_type": "treatment type",
+                            "expected_value": [
+                                "chemotherapy",
+                                "tamoxifen",
+                                "faslodex",
+                                "aromatase inhibitors"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "time frame of 2 years between last treatment with aromatase inhibitors and metastatic evolution",
+                        "criterion": "time frame between last treatment with aromatase inhibitors and metastatic evolution",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Without precedent treatment",
+                                "criterion": "precedent treatment",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "time frame of 2 years between last treatment with aromatase inhibitors and metastatic evolution",
+                                "criterion": "time frame between last treatment with aromatase inhibitors and metastatic evolution",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": "=",
+                                        "value": 2,
+                                        "unit": "years"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "treatment by chemotherapy/tamoxifen/faslodex or aromatase inhibitors in a adjuvant treatment",
+                        "criterion": "adjuvant treatment",
+                        "requirement": {
+                            "requirement_type": "treatment type",
+                            "expected_value": [
+                                "chemotherapy",
+                                "tamoxifen",
+                                "faslodex",
+                                "aromatase inhibitors"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Treatment by aromatase inhibitors alone or in combination with a targeted therapy (trastuzumab +/- pertuzumab, bevacizumab, everolimus)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Treatment by aromatase inhibitors",
+                        "criterion": "treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "aromatase inhibitors"
+                        }
+                    },
+                    {
+                        "exact_snippets": "in combination with a targeted therapy (trastuzumab +/- pertuzumab, bevacizumab, everolimus)",
+                        "criterion": "combination treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "trastuzumab",
+                                "pertuzumab",
+                                "bevacizumab",
+                                "everolimus"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Treatment by aromatase inhibitors",
+                                "criterion": "treatment",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "aromatase inhibitors"
+                                }
+                            },
+                            {
+                                "exact_snippets": "in combination with a targeted therapy (trastuzumab +/- pertuzumab, bevacizumab, everolimus)",
+                                "criterion": "combination treatment",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": [
+                                        "trastuzumab",
+                                        "pertuzumab",
+                                        "bevacizumab",
+                                        "everolimus"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Treatment by aromatase inhibitors",
+                        "criterion": "treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "aromatase inhibitors"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* No inform consent signed",
+                "criterions": [
+                    {
+                        "exact_snippets": "No inform consent signed",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No inform consent signed",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient under guardianship, curatorship",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient under guardianship",
+                        "criterion": "guardianship",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patient ... curatorship",
+                        "criterion": "curatorship",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Patient under guardianship",
+                        "criterion": "guardianship",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patient ... curatorship",
+                        "criterion": "curatorship",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Psychosocial disorder",
+                "criterions": [
+                    {
+                        "exact_snippets": "Psychosocial disorder",
+                        "criterion": "psychosocial disorder",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Psychosocial disorder",
+                    "criterion": "psychosocial disorder",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No affiliated or beneficiary of a social benefit system",
+                "criterions": [
+                    {
+                        "exact_snippets": "No affiliated or beneficiary of a social benefit system",
+                        "criterion": "affiliation with social benefit system",
+                        "requirement": {
+                            "requirement_type": "affiliation",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No affiliated or beneficiary of a social benefit system",
+                        "criterion": "beneficiary of a social benefit system",
+                        "requirement": {
+                            "requirement_type": "beneficiary status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "No affiliated or beneficiary of a social benefit system",
+                        "criterion": "affiliation with social benefit system",
+                        "requirement": {
+                            "requirement_type": "affiliation",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No affiliated or beneficiary of a social benefit system",
+                        "criterion": "beneficiary of a social benefit system",
+                        "requirement": {
+                            "requirement_type": "beneficiary status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Treatment with aromatase inhibitors innitiated at the inclusion or at least 6 months before inclusion with a stable disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Treatment with aromatase inhibitors",
+                        "criterion": "aromatase inhibitor treatment",
+                        "requirement": {
+                            "requirement_type": "initiation",
+                            "expected_value": "at inclusion or at least 6 months before inclusion"
+                        }
+                    },
+                    {
+                        "exact_snippets": "stable disease",
+                        "criterion": "disease stability",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "stable"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Treatment with aromatase inhibitors",
+                                "criterion": "aromatase inhibitor treatment",
+                                "requirement": {
+                                    "requirement_type": "initiation",
+                                    "expected_value": "at inclusion"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Treatment with aromatase inhibitors",
+                                "criterion": "aromatase inhibitor treatment",
+                                "requirement": {
+                                    "requirement_type": "initiation",
+                                    "expected_value": "at least 6 months before inclusion"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "stable disease",
+                        "criterion": "disease stability",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "stable"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

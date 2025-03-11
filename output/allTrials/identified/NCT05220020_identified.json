@@ -68,21 +68,11 @@
             "criterions": [
                 {
                     "exact_snippets": "BCLC stage C hepatocellular carcinoma",
-                    "criterion": "BCLC stage",
-                    "requirements": [
-                        {
-                            "requirement_type": "stage",
-                            "expected_value": "C"
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "hepatocellular carcinoma",
                     "criterion": "hepatocellular carcinoma",
                     "requirements": [
                         {
-                            "requirement_type": "presence",
-                            "expected_value": true
+                            "requirement_type": "stage",
+                            "expected_value": "BCLC stage C"
                         }
                     ]
                 },
@@ -158,7 +148,7 @@
                     "criterion": "ECOG Performance Status",
                     "requirements": [
                         {
-                            "requirement_type": "status",
+                            "requirement_type": "performance status",
                             "expected_value": {
                                 "comparisons": [
                                     {
@@ -192,7 +182,7 @@
                     ]
                 },
                 {
-                    "exact_snippets": "No prior systemic therapy ... especially immunotherapy",
+                    "exact_snippets": "No prior ... especially immunotherapy",
                     "criterion": "prior immunotherapy for HCC",
                     "requirements": [
                         {
@@ -261,9 +251,13 @@
                         {
                             "requirement_type": "quantity",
                             "expected_value": {
-                                "operator": "<=",
-                                "value": 2,
-                                "unit": "N/A"
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
                             }
                         }
                     ]
@@ -275,9 +269,13 @@
                         {
                             "requirement_type": "quantity",
                             "expected_value": {
-                                "operator": "<=",
-                                "value": 3,
-                                "unit": "N/A"
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "N/A"
+                                    }
+                                ]
                             }
                         }
                     ]
@@ -299,14 +297,11 @@
                 },
                 {
                     "exact_snippets": "patients with Vp1 and Vp2 are included",
-                    "criterion": "Vp status",
+                    "criterion": "Vp1 and Vp2",
                     "requirements": [
                         {
-                            "requirement_type": "Vp status",
-                            "expected_value": [
-                                "Vp1",
-                                "Vp2"
-                            ]
+                            "requirement_type": "presence",
+                            "expected_value": true
                         }
                     ]
                 }
@@ -316,8 +311,8 @@
             "line": "* Patients who have previously undergone surgical resection, thermal ablation and other radical therapies for liver cancer may be enrolled. Prior TACE therapy must be used as part of the radical therapy (e.g. in combination with thermal ablation or surgery), but not as the sole form of previous treatment. These treatments need to be completed one month before enrollment.",
             "criterions": [
                 {
-                    "exact_snippets": "Patients who have previously undergone surgical resection",
-                    "criterion": "surgical resection",
+                    "exact_snippets": "Patients who have previously undergone surgical resection, thermal ablation and other radical therapies for liver cancer",
+                    "criterion": "previous radical therapies for liver cancer",
                     "requirements": [
                         {
                             "requirement_type": "presence",
@@ -326,42 +321,12 @@
                     ]
                 },
                 {
-                    "exact_snippets": "thermal ablation",
-                    "criterion": "thermal ablation",
+                    "exact_snippets": "Prior TACE therapy must be used as part of the radical therapy ... but not as the sole form of previous treatment",
+                    "criterion": "prior TACE therapy",
                     "requirements": [
                         {
-                            "requirement_type": "presence",
+                            "requirement_type": "combination with other therapies",
                             "expected_value": true
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "other radical therapies for liver cancer",
-                    "criterion": "other radical therapies for liver cancer",
-                    "requirements": [
-                        {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "Prior TACE therapy must be used as part of the radical therapy",
-                    "criterion": "TACE therapy",
-                    "requirements": [
-                        {
-                            "requirement_type": "usage",
-                            "expected_value": "part of radical therapy"
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "not as the sole form of previous treatment",
-                    "criterion": "TACE therapy",
-                    "requirements": [
-                        {
-                            "requirement_type": "usage",
-                            "expected_value": "not sole treatment"
                         }
                     ]
                 },
@@ -587,11 +552,11 @@
                 },
                 {
                     "exact_snippets": "patients must remain on antiviral therapy for the study duration and for 6 months after the last dose of study medication",
-                    "criterion": "HBV antiviral therapy",
+                    "criterion": "antiviral therapy duration",
                     "requirements": [
                         {
                             "requirement_type": "duration",
-                            "expected_value": "for the study duration and for 6 months after the last dose of study medication"
+                            "expected_value": "study duration and for 6 months after the last dose of study medication"
                         }
                     ]
                 },
@@ -610,8 +575,8 @@
                     "criterion": "anti-hepatitis B core (HBc)",
                     "requirements": [
                         {
-                            "requirement_type": "positivity",
-                            "expected_value": true
+                            "requirement_type": "test result",
+                            "expected_value": "positive"
                         }
                     ]
                 },
@@ -649,7 +614,7 @@
                     "requirements": [
                         {
                             "requirement_type": "condition",
-                            "expected_value": "if HBV DNA is detected (≥10 IU/ml or above the limit of detection per local lab standard)"
+                            "expected_value": "HBV DNA detected (≥10 IU/ml or above the limit of detection per local lab standard)"
                         }
                     ]
                 }
@@ -689,7 +654,7 @@
                     ]
                 },
                 {
-                    "exact_snippets": "HCV diagnosis is characterized by the presence of ... anti-HCV antibody",
+                    "exact_snippets": "HCV diagnosis is characterized by the presence of ... anti-HCV antibody upon enrollment",
                     "criterion": "anti-HCV antibody",
                     "requirements": [
                         {
@@ -712,18 +677,8 @@
                             "expected_value": {
                                 "operator": ">=",
                                 "value": 1,
-                                "unit": "N/A"
+                                "unit": "lesion"
                             }
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "suitable for repeat assessments",
-                    "criterion": "intrahepatic lesion",
-                    "requirements": [
-                        {
-                            "requirement_type": "suitability for repeat assessments",
-                            "expected_value": true
                         }
                     ]
                 },
@@ -732,8 +687,11 @@
                     "criterion": "liver lesions",
                     "requirements": [
                         {
-                            "requirement_type": "typical features of HCC",
-                            "expected_value": true
+                            "requirement_type": "features",
+                            "expected_value": [
+                                "hypervascularity in the arterial phase",
+                                "washout in the portal or the late venous phase"
+                            ]
                         }
                     ]
                 },
@@ -767,16 +725,16 @@
                     ]
                 },
                 {
-                    "exact_snippets": "Criteria \"a,\" \"b,\" \"c,\" and \"f\" may not be met with transfusions, infusions, or growth factor support administered within 14 days of starting the first dose",
-                    "criterion": "transfusions, infusions, or growth factor support",
+                    "exact_snippets": "Criteria \"a,\" \"b,\" \"c,\" and \"f\" may not be met with transfusions, infusions, or growth factor support administered within 14 days of starting the first dose.",
+                    "criterion": "support methods",
                     "requirements": [
                         {
-                            "requirement_type": "administration time",
-                            "expected_value": {
-                                "operator": "<",
-                                "value": 14,
-                                "unit": "days"
-                            }
+                            "requirement_type": "prohibition",
+                            "expected_value": [
+                                "transfusions",
+                                "infusions",
+                                "growth factor support"
+                            ]
                         }
                     ]
                 }
@@ -843,21 +801,7 @@
                 },
                 {
                     "exact_snippets": "alanine aminotransferase (ALT) and aspartate aminotransferase (AST) ≤5 × ULN",
-                    "criterion": "alanine aminotransferase (ALT) level",
-                    "requirements": [
-                        {
-                            "requirement_type": "level",
-                            "expected_value": {
-                                "operator": "<=",
-                                "value": 5,
-                                "unit": "× ULN"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "alanine aminotransferase (ALT) and aspartate aminotransferase (AST) ≤5 × ULN",
-                    "criterion": "aspartate aminotransferase (AST) level",
+                    "criterion": "alanine aminotransferase (ALT) and aspartate aminotransferase (AST) levels",
                     "requirements": [
                         {
                             "requirement_type": "level",
@@ -909,7 +853,7 @@
                 },
                 {
                     "exact_snippets": "Calculated creatinine clearance (CL) ≥30 mL/min as determined by Cockcroft-Gault (using actual body weight) or 24hour urine creatinine CL",
-                    "criterion": "calculated creatinine clearance (CL)",
+                    "criterion": "creatinine clearance",
                     "requirements": [
                         {
                             "requirement_type": "clearance",
@@ -927,7 +871,7 @@
             "line": "Males:",
             "criterions": [
                 {
-                    "exact_snippets": "Males",
+                    "exact_snippets": "Males:",
                     "criterion": "gender",
                     "requirements": [
                         {
@@ -957,11 +901,11 @@
             "line": "Females:",
             "criterions": [
                 {
-                    "exact_snippets": "Females",
+                    "exact_snippets": "Females:",
                     "criterion": "gender",
                     "requirements": [
                         {
-                            "requirement_type": "expected gender",
+                            "requirement_type": "expected_value",
                             "expected_value": "female"
                         }
                     ]
@@ -1081,7 +1025,7 @@
             "criterions": [
                 {
                     "exact_snippets": "Evidence of macrovascular invasion (MVI)",
-                    "criterion": "macrovascular invasion (MVI)",
+                    "criterion": "macrovascular invasion",
                     "requirements": [
                         {
                             "requirement_type": "presence",
@@ -1140,7 +1084,7 @@
                     "requirements": [
                         {
                             "requirement_type": "presence",
-                            "expected_value": true
+                            "expected_value": false
                         }
                     ]
                 }
@@ -1230,7 +1174,7 @@
                     ]
                 },
                 {
-                    "exact_snippets": "portal vein fistula in the liver",
+                    "exact_snippets": "obvious ... portal vein fistula in the liver",
                     "criterion": "portal vein fistula in the liver",
                     "requirements": [
                         {
@@ -1297,19 +1241,6 @@
                             "expected_value": true
                         }
                     ]
-                },
-                {
-                    "exact_snippets": "such as sorafenib, apatinib",
-                    "criterion": "specific molecular targeted therapies",
-                    "requirements": [
-                        {
-                            "requirement_type": "history",
-                            "expected_value": [
-                                "sorafenib",
-                                "apatinib"
-                            ]
-                        }
-                    ]
                 }
             ]
         },
@@ -1317,7 +1248,7 @@
             "line": "* Patients who had previously used systemic therapy (e.g., immunotherapy, targeted therapy) were excluded from the study",
             "criterions": [
                 {
-                    "exact_snippets": "Patients who had previously used systemic therapy (e.g., immunotherapy, targeted therapy)",
+                    "exact_snippets": "previously used systemic therapy (e.g., immunotherapy, targeted therapy)",
                     "criterion": "previous use of systemic therapy",
                     "requirements": [
                         {
@@ -1333,18 +1264,15 @@
             "criterions": [
                 {
                     "exact_snippets": "Severe heart conditions, such as congestive heart failure & GT; New York Heart Association (NYHA) Class II",
-                    "criterion": "heart condition",
+                    "criterion": "congestive heart failure",
                     "requirements": [
                         {
                             "requirement_type": "severity",
-                            "expected_value": "severe"
-                        },
-                        {
-                            "requirement_type": "type",
-                            "expected_value": [
-                                "congestive heart failure",
-                                "NYHA Class > II"
-                            ]
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "NYHA Class"
+                            }
                         }
                     ]
                 },
@@ -1452,8 +1380,18 @@
             "line": "* Known tumors of the central nervous system, including brain metastases;",
             "criterions": [
                 {
-                    "exact_snippets": "Known tumors of the central nervous system, including brain metastases",
+                    "exact_snippets": "Known tumors of the central nervous system",
                     "criterion": "tumors of the central nervous system",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "brain metastases",
+                    "criterion": "brain metastases",
                     "requirements": [
                         {
                             "requirement_type": "presence",
@@ -1467,26 +1405,16 @@
             "line": "* Clinically significant gastrointestinal bleeding within 30 days prior to enrollment;",
             "criterions": [
                 {
-                    "exact_snippets": "Clinically significant gastrointestinal bleeding",
+                    "exact_snippets": "Clinically significant gastrointestinal bleeding within 30 days prior to enrollment",
                     "criterion": "gastrointestinal bleeding",
                     "requirements": [
                         {
                             "requirement_type": "severity",
                             "expected_value": "clinically significant"
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "within 30 days prior to enrollment",
-                    "criterion": "time since last gastrointestinal bleeding",
-                    "requirements": [
+                        },
                         {
-                            "requirement_type": "time since last occurrence",
-                            "expected_value": {
-                                "operator": "<=",
-                                "value": 30,
-                                "unit": "days"
-                            }
+                            "requirement_type": "time frame",
+                            "expected_value": "within 30 days prior to enrollment"
                         }
                     ]
                 }

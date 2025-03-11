@@ -1,0 +1,434 @@
+{
+    "info": {
+        "nct_id": "NCT04987931",
+        "official_title": "Real-World Patient Characteristics, Treatment Patterns, and Clinical Outcomes Among Talazoparib-Treated Patients With HER2-Negative, Locally Advanced or Metastatic Breast Cancer and Germline BRCA1/2 Mutations: US Chart Review",
+        "inclusion_criteria": "* Diagnosed with HER2-negative ABC\n* gBRCA1/2 mutation(s)\n* Treatment with talazoparib monotherapy initiated on or after October 16, 2018\n\n  -≥18 years of age at initiation of talazoparib\n* A minimum of 6 months follow-up time after initiation of talazoparib unless the patient died within this follow-up period\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Participation in any BC clinical trial after initiation of talazoparib\n* Treatment with a PARP inhibitor as neoadjuvant/adjuvant therapy\n* gBRCA1/2 or HER2 status unknown\n* Diagnosis of any other malignancy, except carcinoma in situ or nonmelanoma skin cancer, within the 5 years prior to data collection",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Diagnosed with HER2-negative ABC",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosed with HER2-negative ABC",
+                        "criterion": "HER2 status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosed with HER2-negative ABC",
+                        "criterion": "ABC (Advanced Breast Cancer)",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Diagnosed with HER2-negative ABC",
+                        "criterion": "HER2 status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosed with HER2-negative ABC",
+                        "criterion": "ABC (Advanced Breast Cancer)",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* gBRCA1/2 mutation(s)",
+                "criterions": [
+                    {
+                        "exact_snippets": "gBRCA1/2 mutation(s)",
+                        "criterion": "gBRCA1/2 mutation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "gBRCA1/2 mutation(s)",
+                        "criterion": "gBRCA1/2 mutation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Treatment with talazoparib monotherapy initiated on or after October 16, 2018",
+                "criterions": [
+                    {
+                        "exact_snippets": "Treatment with talazoparib monotherapy initiated on or after October 16, 2018",
+                        "criterion": "treatment with talazoparib monotherapy",
+                        "requirement": {
+                            "requirement_type": "initiation date",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2018,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Treatment with talazoparib monotherapy initiated on or after October 16, 2018",
+                        "criterion": "treatment with talazoparib monotherapy",
+                        "requirement": {
+                            "requirement_type": "initiation date",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2018,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "-≥18 years of age at initiation of talazoparib",
+                "criterions": [
+                    {
+                        "exact_snippets": "≥18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "≥18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* A minimum of 6 months follow-up time after initiation of talazoparib unless the patient died within this follow-up period",
+                "criterions": [
+                    {
+                        "exact_snippets": "A minimum of 6 months follow-up time after initiation of talazoparib",
+                        "criterion": "follow-up time",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "unless the patient died within this follow-up period",
+                        "criterion": "patient survival",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "alive"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "unless the patient died within this follow-up period",
+                    "criterion": "patient survival",
+                    "requirement": {
+                        "requirement_type": "status",
+                        "expected_value": "alive"
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "A minimum of 6 months follow-up time after initiation of talazoparib",
+                    "criterion": "follow-up time",
+                    "requirement": {
+                        "requirement_type": "duration",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 6,
+                            "unit": "months"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Participation in any BC clinical trial after initiation of talazoparib",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participation in any BC clinical trial after initiation of talazoparib",
+                        "criterion": "participation in BC clinical trial",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "after initiation of talazoparib"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participation in any BC clinical trial after initiation of talazoparib",
+                    "criterion": "participation in BC clinical trial",
+                    "requirement": {
+                        "requirement_type": "timing",
+                        "expected_value": "after initiation of talazoparib"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Treatment with a PARP inhibitor as neoadjuvant/adjuvant therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Treatment with a PARP inhibitor",
+                        "criterion": "PARP inhibitor treatment",
+                        "requirement": {
+                            "requirement_type": "treatment phase",
+                            "expected_value": [
+                                "neoadjuvant",
+                                "adjuvant"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Treatment with a PARP inhibitor",
+                        "criterion": "PARP inhibitor treatment",
+                        "requirement": {
+                            "requirement_type": "treatment phase",
+                            "expected_value": [
+                                "neoadjuvant",
+                                "adjuvant"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* gBRCA1/2 or HER2 status unknown",
+                "criterions": [
+                    {
+                        "exact_snippets": "gBRCA1/2 ... status unknown",
+                        "criterion": "gBRCA1/2 status",
+                        "requirement": {
+                            "requirement_type": "knowledge",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "HER2 status unknown",
+                        "criterion": "HER2 status",
+                        "requirement": {
+                            "requirement_type": "knowledge",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "gBRCA1/2 ... status unknown",
+                        "criterion": "gBRCA1/2 status",
+                        "requirement": {
+                            "requirement_type": "knowledge",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "HER2 status unknown",
+                        "criterion": "HER2 status",
+                        "requirement": {
+                            "requirement_type": "knowledge",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Diagnosis of any other malignancy, except carcinoma in situ or nonmelanoma skin cancer, within the 5 years prior to data collection",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of any other malignancy, except carcinoma in situ or nonmelanoma skin cancer",
+                        "criterion": "other malignancy diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "within the 5 years prior to data collection",
+                        "criterion": "time since other malignancy diagnosis",
+                        "requirement": {
+                            "requirement_type": "time since diagnosis",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<",
+                                        "value": 5,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Diagnosis of any other malignancy, except carcinoma in situ or nonmelanoma skin cancer",
+                                "criterion": "other malignancy diagnosis",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "within the 5 years prior to data collection",
+                                "criterion": "time since other malignancy diagnosis",
+                                "requirement": {
+                                    "requirement_type": "time since diagnosis",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": "<",
+                                                "value": 5,
+                                                "unit": "years"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

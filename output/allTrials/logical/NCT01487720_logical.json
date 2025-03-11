@@ -118,22 +118,22 @@
         },
         {
             "identified_line": {
-                "line": "* Docetaxel-refractory disease defined as disease progression documented either during treatment of within 60 days after the cessation of treatment with docetaxel",
+                "line": "* Prior exposure to estramustine or mitoxantrone is allowed",
                 "criterions": [
                     {
-                        "exact_snippets": "Docetaxel-refractory disease defined as disease progression documented either during treatment",
-                        "criterion": "docetaxel-refractory disease",
+                        "exact_snippets": "Prior exposure to estramustine",
+                        "criterion": "prior exposure to estramustine",
                         "requirement": {
-                            "requirement_type": "progression",
-                            "expected_value": "documented during treatment"
+                            "requirement_type": "presence",
+                            "expected_value": true
                         }
                     },
                     {
-                        "exact_snippets": "Docetaxel-refractory disease defined as disease progression documented ... within 60 days after the cessation of treatment with docetaxel",
-                        "criterion": "docetaxel-refractory disease",
+                        "exact_snippets": "Prior exposure to ... mitoxantrone",
+                        "criterion": "prior exposure to mitoxantrone",
                         "requirement": {
-                            "requirement_type": "progression",
-                            "expected_value": "documented within 60 days after cessation of treatment"
+                            "requirement_type": "presence",
+                            "expected_value": true
                         }
                     }
                 ]
@@ -141,33 +141,10 @@
             "logical_structure": {
                 "or_criteria": [
                     {
-                        "exact_snippets": "Docetaxel-refractory disease defined as disease progression documented either during treatment",
-                        "criterion": "docetaxel-refractory disease",
-                        "requirement": {
-                            "requirement_type": "progression",
-                            "expected_value": "documented during treatment"
-                        }
-                    },
-                    {
-                        "exact_snippets": "Docetaxel-refractory disease defined as disease progression documented ... within 60 days after the cessation of treatment with docetaxel",
-                        "criterion": "docetaxel-refractory disease",
-                        "requirement": {
-                            "requirement_type": "progression",
-                            "expected_value": "documented within 60 days after cessation of treatment"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "* Prior exposure to estramustine or mitoxantrone is allowed",
-                "criterions": [
-                    {
                         "exact_snippets": "Prior exposure to estramustine",
                         "criterion": "prior exposure to estramustine",
                         "requirement": {
-                            "requirement_type": "allowance",
+                            "requirement_type": "presence",
                             "expected_value": true
                         }
                     },
@@ -175,27 +152,7 @@
                         "exact_snippets": "Prior exposure to ... mitoxantrone",
                         "criterion": "prior exposure to mitoxantrone",
                         "requirement": {
-                            "requirement_type": "allowance",
-                            "expected_value": true
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "exact_snippets": "Prior exposure to estramustine",
-                        "criterion": "prior exposure to estramustine",
-                        "requirement": {
-                            "requirement_type": "allowance",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "Prior exposure to ... mitoxantrone",
-                        "criterion": "prior exposure to mitoxantrone",
-                        "requirement": {
-                            "requirement_type": "allowance",
+                            "requirement_type": "presence",
                             "expected_value": true
                         }
                     }
@@ -243,9 +200,9 @@
                 "criterions": [
                     {
                         "exact_snippets": "No prior radioisotope therapy",
-                        "criterion": "radioisotope therapy",
+                        "criterion": "prior radioisotope therapy",
                         "requirement": {
-                            "requirement_type": "prior treatment",
+                            "requirement_type": "presence",
                             "expected_value": false
                         }
                     }
@@ -255,9 +212,9 @@
                 "and_criteria": [
                     {
                         "exact_snippets": "No prior radioisotope therapy",
-                        "criterion": "radioisotope therapy",
+                        "criterion": "prior radioisotope therapy",
                         "requirement": {
-                            "requirement_type": "prior treatment",
+                            "requirement_type": "presence",
                             "expected_value": false
                         }
                     }
@@ -272,7 +229,7 @@
                         "exact_snippets": "No prior radiotherapy 25% or more of the bone marrow",
                         "criterion": "prior radiotherapy to bone marrow",
                         "requirement": {
-                            "requirement_type": "extent",
+                            "requirement_type": "quantity",
                             "expected_value": {
                                 "operator": "<",
                                 "value": 25,
@@ -288,7 +245,7 @@
                         "exact_snippets": "No prior radiotherapy 25% or more of the bone marrow",
                         "criterion": "prior radiotherapy to bone marrow",
                         "requirement": {
-                            "requirement_type": "extent",
+                            "requirement_type": "quantity",
                             "expected_value": {
                                 "operator": "<",
                                 "value": 25,
@@ -297,39 +254,6 @@
                         }
                     }
                 ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "* No peripheral neuropathy grade 2 or worse",
-                "criterions": [
-                    {
-                        "exact_snippets": "No peripheral neuropathy grade 2 or worse",
-                        "criterion": "peripheral neuropathy",
-                        "requirement": {
-                            "requirement_type": "severity",
-                            "expected_value": {
-                                "operator": "<",
-                                "value": 2,
-                                "unit": "grade"
-                            }
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "not_criteria": {
-                    "exact_snippets": "No peripheral neuropathy grade 2 or worse",
-                    "criterion": "peripheral neuropathy",
-                    "requirement": {
-                        "requirement_type": "severity",
-                        "expected_value": {
-                            "operator": "<",
-                            "value": 2,
-                            "unit": "grade"
-                        }
-                    }
-                }
             }
         },
         {
@@ -579,7 +503,80 @@
         }
     ],
     "miscellaneous_lines": [],
-    "failed_inclusion": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Docetaxel-refractory disease defined as disease progression documented either during treatment of within 60 days after the cessation of treatment with docetaxel",
+                "criterions": [
+                    {
+                        "exact_snippets": "Docetaxel-refractory disease defined as disease progression documented either during treatment ... with docetaxel",
+                        "criterion": "docetaxel-refractory disease",
+                        "requirement": {
+                            "requirement_type": "progression",
+                            "expected_value": "documented either during treatment or within 60 days after cessation of treatment with docetaxel"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Docetaxel-refractory disease defined as disease progression documented either during treatment ... with docetaxel",
+                                "criterion": "docetaxel-refractory disease",
+                                "requirement": {
+                                    "requirement_type": "progression",
+                                    "expected_value": "documented during treatment with docetaxel"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Docetaxel-refractory disease defined as disease progression documented either during treatment ... with docetaxel",
+                                "criterion": "docetaxel-refractory disease",
+                                "requirement": {
+                                    "requirement_type": "progression",
+                                    "expected_value": "documented within 60 days after cessation of treatment with docetaxel"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No peripheral neuropathy grade 2 or worse",
+                "criterions": [
+                    {
+                        "exact_snippets": "No peripheral neuropathy grade 2 or worse",
+                        "criterion": "peripheral neuropathy",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "grade"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "No peripheral neuropathy grade 2 or worse",
+                    "criterion": "peripheral neuropathy",
+                    "requirement": {
+                        "requirement_type": "severity",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 2,
+                            "unit": "grade"
+                        }
+                    }
+                }
+            }
+        }
+    ],
     "failed_exclusion": [],
     "failed_miscellaneous": []
 }

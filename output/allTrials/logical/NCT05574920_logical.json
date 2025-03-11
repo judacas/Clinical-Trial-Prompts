@@ -1,0 +1,481 @@
+{
+    "info": {
+        "nct_id": "NCT05574920",
+        "official_title": "Accuracy and Safety of Al18F-NOTA-FAPI-04 PET/CT in the Diagnosis of Axillary Lymph Node Metastasis in Early Breast Cancer Patients: A Prospective Cohort Study",
+        "inclusion_criteria": "* age 18-80 years old;\n* newly diagnosed BC confirmed by biopsy or with BI-RADS category 4C or 5 lesions by US or MG;\n* BC clinical stagecT1-3 cN0-3 M0;\n* no prior treatment for BC.\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 80 Years",
+        "exclusion_criteria": "* pregnancy;\n* breastfeeding;\n* patients who were unwilling to undergo PET/CT scans.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* age 18-80 years old;",
+                "criterions": [
+                    {
+                        "exact_snippets": "age 18-80 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 80,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "age 18-80 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 80,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* newly diagnosed BC confirmed by biopsy or with BI-RADS category 4C or 5 lesions by US or MG;",
+                "criterions": [
+                    {
+                        "exact_snippets": "newly diagnosed BC confirmed by biopsy",
+                        "criterion": "breast cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "biopsy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "BI-RADS category 4C or 5 lesions by US or MG",
+                        "criterion": "BI-RADS category",
+                        "requirement": {
+                            "requirement_type": "category",
+                            "expected_value": [
+                                "4C",
+                                "5"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "BI-RADS category 4C or 5 lesions by US",
+                        "criterion": "imaging method",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": "ultrasound"
+                        }
+                    },
+                    {
+                        "exact_snippets": "BI-RADS category 4C or 5 lesions by ... MG",
+                        "criterion": "imaging method",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": "mammography"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "newly diagnosed BC confirmed by biopsy",
+                                "criterion": "breast cancer diagnosis",
+                                "requirement": {
+                                    "requirement_type": "confirmation method",
+                                    "expected_value": "biopsy"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "BI-RADS category 4C or 5 lesions by US or MG",
+                                "criterion": "BI-RADS category",
+                                "requirement": {
+                                    "requirement_type": "category",
+                                    "expected_value": [
+                                        "4C",
+                                        "5"
+                                    ]
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "BI-RADS category 4C or 5 lesions by US",
+                                        "criterion": "imaging method",
+                                        "requirement": {
+                                            "requirement_type": "method",
+                                            "expected_value": "ultrasound"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "BI-RADS category 4C or 5 lesions by ... MG",
+                                        "criterion": "imaging method",
+                                        "requirement": {
+                                            "requirement_type": "method",
+                                            "expected_value": "mammography"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* no prior treatment for BC.",
+                "criterions": [
+                    {
+                        "exact_snippets": "no prior treatment for BC",
+                        "criterion": "prior treatment for BC",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "no prior treatment for BC",
+                        "criterion": "prior treatment for BC",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 80 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 80 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 80,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 80 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 80,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* BC clinical stagecT1-3 cN0-3 M0;",
+                "criterions": [
+                    {
+                        "exact_snippets": "BC clinical stage cT1-3",
+                        "criterion": "breast cancer clinical stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "T"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "T"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "cN0-3",
+                        "criterion": "regional lymph node involvement",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "N"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "M0",
+                        "criterion": "distant metastasis",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 0,
+                                "unit": "M"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "BC clinical stage cT1-3",
+                        "criterion": "breast cancer clinical stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "T"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "T"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "cN0-3",
+                        "criterion": "regional lymph node involvement",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "N"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "M0",
+                        "criterion": "distant metastasis",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 0,
+                                "unit": "M"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* pregnancy;",
+                "criterions": [
+                    {
+                        "exact_snippets": "pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "pregnancy",
+                    "criterion": "pregnancy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* breastfeeding;",
+                "criterions": [
+                    {
+                        "exact_snippets": "breastfeeding",
+                        "criterion": "breastfeeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "breastfeeding",
+                    "criterion": "breastfeeding",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients who were unwilling to undergo PET/CT scans.",
+                "criterions": [
+                    {
+                        "exact_snippets": "unwilling to undergo PET/CT scans",
+                        "criterion": "willingness to undergo PET/CT scans",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "unwilling to undergo PET/CT scans",
+                    "criterion": "willingness to undergo PET/CT scans",
+                    "requirement": {
+                        "requirement_type": "willingness",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

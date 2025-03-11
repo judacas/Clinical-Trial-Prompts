@@ -1,0 +1,273 @@
+{
+    "info": {
+        "nct_id": "NCT03364582",
+        "official_title": "Dietary Patterns, Metabolomics and Colorectal Cancer Risk and Mortality in the Nurses' Health Study and Health Professionals Follow-Up Study",
+        "inclusion_criteria": "-Adult health professionals\nHealthy volunteers allowed\nMust have minimum age of 30 Years",
+        "exclusion_criteria": "* Any cancer except nonmelanoma skin cancer\n* Did not complete a food frequency questionnaire during follow-up\n* Had implausible values for total energy intake (<600 or >3500 kcal/d for women and <800 or >4,200 kcal/d for men) at study entry",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "-Adult health professionals",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adult health professionals",
+                        "criterion": "profession",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "health professional"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Adult health professionals",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "category",
+                            "expected_value": "adult"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adult health professionals",
+                        "criterion": "profession",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "health professional"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Adult health professionals",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "category",
+                            "expected_value": "adult"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 30 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 30 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 30,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 30 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 30,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Any cancer except nonmelanoma skin cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Any cancer except nonmelanoma skin cancer",
+                        "criterion": "cancer type",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": "nonmelanoma skin cancer"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Any cancer except nonmelanoma skin cancer",
+                    "criterion": "cancer type",
+                    "requirement": {
+                        "requirement_type": "exclusion",
+                        "expected_value": "nonmelanoma skin cancer"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Did not complete a food frequency questionnaire during follow-up",
+                "criterions": [
+                    {
+                        "exact_snippets": "Did not complete a food frequency questionnaire",
+                        "criterion": "food frequency questionnaire completion",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Did not complete a food frequency questionnaire",
+                        "criterion": "food frequency questionnaire completion",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Had implausible values for total energy intake (<600 or >3500 kcal/d for women and <800 or >4,200 kcal/d for men) at study entry",
+                "criterions": [
+                    {
+                        "exact_snippets": "implausible values for total energy intake (<600 or >3500 kcal/d for women)",
+                        "criterion": "total energy intake for women",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<",
+                                        "value": 600,
+                                        "unit": "kcal/d"
+                                    },
+                                    {
+                                        "operator": ">",
+                                        "value": 3500,
+                                        "unit": "kcal/d"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "implausible values for total energy intake ... (<800 or >4,200 kcal/d for men)",
+                        "criterion": "total energy intake for men",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<",
+                                        "value": 800,
+                                        "unit": "kcal/d"
+                                    },
+                                    {
+                                        "operator": ">",
+                                        "value": 4200,
+                                        "unit": "kcal/d"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "implausible values for total energy intake (<600 or >3500 kcal/d for women)",
+                                "criterion": "total energy intake for women",
+                                "requirement": {
+                                    "requirement_type": "range",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": "<",
+                                                "value": 600,
+                                                "unit": "kcal/d"
+                                            },
+                                            {
+                                                "operator": ">",
+                                                "value": 3500,
+                                                "unit": "kcal/d"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "implausible values for total energy intake ... (<800 or >4,200 kcal/d for men)",
+                                "criterion": "total energy intake for men",
+                                "requirement": {
+                                    "requirement_type": "range",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": "<",
+                                                "value": 800,
+                                                "unit": "kcal/d"
+                                            },
+                                            {
+                                                "operator": ">",
+                                                "value": 4200,
+                                                "unit": "kcal/d"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

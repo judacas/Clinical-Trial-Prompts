@@ -72,22 +72,12 @@
             "line": "* Docetaxel-refractory disease defined as disease progression documented either during treatment of within 60 days after the cessation of treatment with docetaxel",
             "criterions": [
                 {
-                    "exact_snippets": "Docetaxel-refractory disease defined as disease progression documented either during treatment",
+                    "exact_snippets": "Docetaxel-refractory disease defined as disease progression documented either during treatment ... with docetaxel",
                     "criterion": "docetaxel-refractory disease",
                     "requirements": [
                         {
                             "requirement_type": "progression",
-                            "expected_value": "documented during treatment"
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "Docetaxel-refractory disease defined as disease progression documented ... within 60 days after the cessation of treatment with docetaxel",
-                    "criterion": "docetaxel-refractory disease",
-                    "requirements": [
-                        {
-                            "requirement_type": "progression",
-                            "expected_value": "documented within 60 days after cessation of treatment"
+                            "expected_value": "documented either during treatment or within 60 days after cessation of treatment with docetaxel"
                         }
                     ]
                 }
@@ -101,7 +91,7 @@
                     "criterion": "prior exposure to estramustine",
                     "requirements": [
                         {
-                            "requirement_type": "allowance",
+                            "requirement_type": "presence",
                             "expected_value": true
                         }
                     ]
@@ -111,7 +101,7 @@
                     "criterion": "prior exposure to mitoxantrone",
                     "requirements": [
                         {
-                            "requirement_type": "allowance",
+                            "requirement_type": "presence",
                             "expected_value": true
                         }
                     ]
@@ -142,10 +132,10 @@
             "criterions": [
                 {
                     "exact_snippets": "No prior radioisotope therapy",
-                    "criterion": "radioisotope therapy",
+                    "criterion": "prior radioisotope therapy",
                     "requirements": [
                         {
-                            "requirement_type": "prior treatment",
+                            "requirement_type": "presence",
                             "expected_value": false
                         }
                     ]
@@ -160,7 +150,7 @@
                     "criterion": "prior radiotherapy to bone marrow",
                     "requirements": [
                         {
-                            "requirement_type": "extent",
+                            "requirement_type": "quantity",
                             "expected_value": {
                                 "operator": "<",
                                 "value": 25,

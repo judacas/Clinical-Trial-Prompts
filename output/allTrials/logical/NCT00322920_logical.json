@@ -245,39 +245,6 @@
         },
         {
             "identified_line": {
-                "line": "* Patients must have an Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1.",
-                "criterions": [
-                    {
-                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1",
-                        "criterion": "ECOG Performance Status",
-                        "requirement": {
-                            "requirement_type": "status",
-                            "expected_value": [
-                                "0",
-                                "1"
-                            ]
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1",
-                        "criterion": "ECOG Performance Status",
-                        "requirement": {
-                            "requirement_type": "status",
-                            "expected_value": [
-                                "0",
-                                "1"
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
                 "line": "* Patients must have recovered from any effects attributable to surgery, radiation, or chemoradiotherapy. A minimum of six weeks shall have passed since the last administration of chemoradiotherapy or three weeks for radiation therapy alone.",
                 "criterions": [
                     {
@@ -387,7 +354,7 @@
                 "line": "* Patients must be age 19 or greater and have signed informed consent.",
                 "criterions": [
                     {
-                        "exact_snippets": "Patients must be age 19 or greater",
+                        "exact_snippets": "age 19 or greater",
                         "criterion": "age",
                         "requirement": {
                             "requirement_type": "minimum age",
@@ -399,7 +366,7 @@
                         }
                     },
                     {
-                        "exact_snippets": "have signed informed consent",
+                        "exact_snippets": "signed informed consent",
                         "criterion": "informed consent",
                         "requirement": {
                             "requirement_type": "signed",
@@ -411,7 +378,7 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "exact_snippets": "Patients must be age 19 or greater",
+                        "exact_snippets": "age 19 or greater",
                         "criterion": "age",
                         "requirement": {
                             "requirement_type": "minimum age",
@@ -423,7 +390,7 @@
                         }
                     },
                     {
-                        "exact_snippets": "have signed informed consent",
+                        "exact_snippets": "signed informed consent",
                         "criterion": "informed consent",
                         "requirement": {
                             "requirement_type": "signed",
@@ -439,10 +406,10 @@
                 "criterions": [
                     {
                         "exact_snippets": "Healthy volunteers allowed",
-                        "criterion": "volunteer health status",
+                        "criterion": "healthy volunteers",
                         "requirement": {
-                            "requirement_type": "status",
-                            "expected_value": "healthy"
+                            "requirement_type": "participation",
+                            "expected_value": true
                         }
                     }
                 ]
@@ -451,10 +418,10 @@
                 "and_criteria": [
                     {
                         "exact_snippets": "Healthy volunteers allowed",
-                        "criterion": "volunteer health status",
+                        "criterion": "healthy volunteers",
                         "requirement": {
-                            "requirement_type": "status",
-                            "expected_value": "healthy"
+                            "requirement_type": "participation",
+                            "expected_value": true
                         }
                     }
                 ]
@@ -569,71 +536,6 @@
         },
         {
             "identified_line": {
-                "line": "* Patients with history of other malignancies (except non-melanoma skin cancer) within the last 5 years are ineligible.",
-                "criterions": [
-                    {
-                        "exact_snippets": "history of other malignancies (except non-melanoma skin cancer) within the last 5 years",
-                        "criterion": "history of other malignancies",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "history of other malignancies (except non-melanoma skin cancer) within the last 5 years",
-                        "criterion": "history of other malignancies",
-                        "requirement": {
-                            "requirement_type": "time frame",
-                            "expected_value": {
-                                "comparisons": [
-                                    {
-                                        "operator": "<=",
-                                        "value": 5,
-                                        "unit": "years"
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "and_criteria": [
-                            {
-                                "not_criteria": {
-                                    "exact_snippets": "history of other malignancies (except non-melanoma skin cancer) within the last 5 years",
-                                    "criterion": "history of other malignancies",
-                                    "requirement": {
-                                        "requirement_type": "presence",
-                                        "expected_value": false
-                                    }
-                                }
-                            },
-                            {
-                                "exact_snippets": "history of other malignancies (except non-melanoma skin cancer) within the last 5 years",
-                                "criterion": "history of other malignancies",
-                                "requirement": {
-                                    "requirement_type": "time frame",
-                                    "expected_value": {
-                                        "comparisons": [
-                                            {
-                                                "operator": "<=",
-                                                "value": 5,
-                                                "unit": "years"
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
                 "line": "* Patients with non-squamous, adenosquamous, or adenocarcinoma histology.",
                 "criterions": [
                     {
@@ -653,7 +555,7 @@
                         }
                     },
                     {
-                        "exact_snippets": "adenocarcinoma histology",
+                        "exact_snippets": "adenocarcinoma",
                         "criterion": "histology",
                         "requirement": {
                             "requirement_type": "type",
@@ -681,7 +583,7 @@
                         }
                     },
                     {
-                        "exact_snippets": "adenocarcinoma histology",
+                        "exact_snippets": "adenocarcinoma",
                         "criterion": "histology",
                         "requirement": {
                             "requirement_type": "type",
@@ -724,15 +626,15 @@
             "logical_structure": {
                 "and_criteria": [
                     {
+                        "exact_snippets": "bilateral hydronephrosis",
+                        "criterion": "bilateral hydronephrosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
                         "and_criteria": [
-                            {
-                                "exact_snippets": "bilateral hydronephrosis",
-                                "criterion": "bilateral hydronephrosis",
-                                "requirement": {
-                                    "requirement_type": "presence",
-                                    "expected_value": true
-                                }
-                            },
                             {
                                 "exact_snippets": "cannot be alleviated by ureteral stents",
                                 "criterion": "alleviation by ureteral stents",
@@ -740,18 +642,43 @@
                                     "requirement_type": "effectiveness",
                                     "expected_value": false
                                 }
+                            },
+                            {
+                                "exact_snippets": "cannot be alleviated by ... percutaneous drainage",
+                                "criterion": "alleviation by percutaneous drainage",
+                                "requirement": {
+                                    "requirement_type": "effectiveness",
+                                    "expected_value": false
+                                }
                             }
                         ]
-                    },
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients currently receiving any or having received other investigational agents within the last 30 days are ineligible.",
+                "criterions": [
                     {
-                        "exact_snippets": "cannot be alleviated by ... percutaneous drainage",
-                        "criterion": "alleviation by percutaneous drainage",
+                        "exact_snippets": "Patients currently receiving any or having received other investigational agents within the last 30 days",
+                        "criterion": "investigational agents",
                         "requirement": {
-                            "requirement_type": "effectiveness",
+                            "requirement_type": "receipt",
                             "expected_value": false
                         }
                     }
                 ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patients currently receiving any or having received other investigational agents within the last 30 days",
+                    "criterion": "investigational agents",
+                    "requirement": {
+                        "requirement_type": "receipt",
+                        "expected_value": false
+                    }
+                }
             }
         },
         {
@@ -871,40 +798,32 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "and_criteria": [
+                        "or_criteria": [
                             {
                                 "and_criteria": [
                                     {
-                                        "and_criteria": [
-                                            {
-                                                "and_criteria": [
-                                                    {
-                                                        "exact_snippets": "uncontrolled current illness ... ongoing or active infection",
-                                                        "criterion": "ongoing or active infection",
-                                                        "requirement": {
-                                                            "requirement_type": "presence",
-                                                            "expected_value": false
-                                                        }
-                                                    },
-                                                    {
-                                                        "exact_snippets": "uncontrolled current illness ... unstable angina pectoris",
-                                                        "criterion": "unstable angina pectoris",
-                                                        "requirement": {
-                                                            "requirement_type": "presence",
-                                                            "expected_value": false
-                                                        }
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "exact_snippets": "uncontrolled current illness ... cardiac arrhythmia",
-                                                "criterion": "cardiac arrhythmia",
-                                                "requirement": {
-                                                    "requirement_type": "presence",
-                                                    "expected_value": false
-                                                }
-                                            }
-                                        ]
+                                        "exact_snippets": "uncontrolled current illness ... ongoing or active infection",
+                                        "criterion": "ongoing or active infection",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "uncontrolled current illness ... unstable angina pectoris",
+                                        "criterion": "unstable angina pectoris",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "uncontrolled current illness ... cardiac arrhythmia",
+                                        "criterion": "cardiac arrhythmia",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
                                     },
                                     {
                                         "exact_snippets": "uncontrolled current illness ... serious peripheral neuropathy",
@@ -931,30 +850,20 @@
         }
     ],
     "miscellaneous_lines": [],
-    "failed_inclusion": [],
-    "failed_exclusion": [
+    "failed_inclusion": [
         {
             "identified_line": {
-                "line": "* Patients currently receiving any or having received other investigational agents within the last 30 days are ineligible.",
+                "line": "* Patients must have an Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1.",
                 "criterions": [
                     {
-                        "exact_snippets": "Patients currently receiving any ... investigational agents",
-                        "criterion": "current investigational agent use",
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1",
+                        "criterion": "ECOG Performance Status",
                         "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "having received other investigational agents within the last 30 days",
-                        "criterion": "recent investigational agent use",
-                        "requirement": {
-                            "requirement_type": "time since last use",
-                            "expected_value": {
-                                "operator": ">=",
-                                "value": 30,
-                                "unit": "days"
-                            }
+                            "requirement_type": "value",
+                            "expected_value": [
+                                "0",
+                                "1"
+                            ]
                         }
                     }
                 ]
@@ -962,22 +871,93 @@
             "logical_structure": {
                 "or_criteria": [
                     {
-                        "exact_snippets": "Patients currently receiving any ... investigational agents",
-                        "criterion": "current investigational agent use",
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1",
+                        "criterion": "ECOG Performance Status",
                         "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
+                            "requirement_type": "value",
+                            "expected_value": "0"
                         }
                     },
                     {
-                        "exact_snippets": "having received other investigational agents within the last 30 days",
-                        "criterion": "recent investigational agent use",
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0 or 1",
+                        "criterion": "ECOG Performance Status",
                         "requirement": {
-                            "requirement_type": "time since last use",
+                            "requirement_type": "value",
+                            "expected_value": "1"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients with history of other malignancies (except non-melanoma skin cancer) within the last 5 years are ineligible.",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of other malignancies (except non-melanoma skin cancer) within the last 5 years",
+                        "criterion": "history of other malignancies",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of other malignancies (except non-melanoma skin cancer) within the last 5 years",
+                        "criterion": "history of other malignancies",
+                        "requirement": {
+                            "requirement_type": "time frame",
                             "expected_value": {
-                                "operator": "<",
-                                "value": 30,
-                                "unit": "days"
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "history of other malignancies (except non-melanoma skin cancer) within the last 5 years",
+                                "criterion": "history of other malignancies",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "history of other malignancies (except non-melanoma skin cancer) within the last 5 years",
+                                "criterion": "history of other malignancies",
+                                "requirement": {
+                                    "requirement_type": "time frame",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": "<=",
+                                                "value": 5,
+                                                "unit": "years"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "history of other malignancies (except non-melanoma skin cancer) within the last 5 years",
+                            "criterion": "history of other malignancies",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
                             }
                         }
                     }
