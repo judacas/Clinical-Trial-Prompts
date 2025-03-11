@@ -1,0 +1,539 @@
+{
+    "info": {
+        "nct_id": "NCT04928820",
+        "official_title": "Head-to-Head Comparison of 68Ga-PSMA-11 PET/CT With 99mTc-MDP Bone Scan and CT for Detection of M1b Disease in Prostate Cancer Patients With Biochemical Progression During ADT",
+        "inclusion_criteria": "* Patient with biochemical progression during ADT or combination therapies including ADT who are referred for imaging evaluation (prostate specific antigen [PSA] level >= 1 ng/ml that has increased on at least 2 successive occasions at least 1 weak apart)\n* Patients with bone scan scheduled or performed\n\n  * Within 30 days of the PSMA PET, without any new prostate cancer (PCa) therapy in between\n  * Bone scans performed at University of California, Los Angeles (UCLA) and external institutions are eligible if Digital Imaging and Communications in Medicine (DICOM) images can be obtained, imported, and anonymized\n* Patients enrolled in other clinical trials are eligible if they satisfy all other criteria of eligibility\n* Patients or their legal representatives must have the ability to read, understand and provide written informed consent\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Initiation of a new therapy between the PSMA PET/CT and the bone scans\n* Inability to provide written informed consent\n* Known inability to remain still and lie flat for duration of each imaging procedure (about 30 minutes)",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with bone scan scheduled or performed",
+                "criterions": [
+                    {
+                        "exact_snippets": "bone scan scheduled or performed",
+                        "criterion": "bone scan",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "scheduled",
+                                "performed"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "bone scan scheduled or performed",
+                        "criterion": "bone scan",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "scheduled",
+                                "performed"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Within 30 days of the PSMA PET, without any new prostate cancer (PCa) therapy in between",
+                "criterions": [
+                    {
+                        "exact_snippets": "Within 30 days of the PSMA PET",
+                        "criterion": "time since PSMA PET",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 30,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "without any new prostate cancer (PCa) therapy in between",
+                        "criterion": "new prostate cancer therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Within 30 days of the PSMA PET",
+                        "criterion": "time since PSMA PET",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 30,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "without any new prostate cancer (PCa) therapy in between",
+                        "criterion": "new prostate cancer therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients enrolled in other clinical trials are eligible if they satisfy all other criteria of eligibility",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients enrolled in other clinical trials",
+                        "criterion": "enrollment in other clinical trials",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Patients enrolled in other clinical trials",
+                    "criterion": "enrollment in other clinical trials",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients or their legal representatives must have the ability to read, understand and provide written informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients or their legal representatives must have the ability to read, understand and provide written informed consent",
+                        "criterion": "ability to provide informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients or their legal representatives must have the ability to read, understand and provide written informed consent",
+                        "criterion": "ability to provide informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient with biochemical progression during ADT or combination therapies including ADT who are referred for imaging evaluation (prostate specific antigen [PSA] level >= 1 ng/ml that has increased on at least 2 successive occasions at least 1 weak apart)",
+                "criterions": [
+                    {
+                        "exact_snippets": "biochemical progression during ADT or combination therapies including ADT",
+                        "criterion": "biochemical progression",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "referred for imaging evaluation",
+                        "criterion": "referral for imaging evaluation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prostate specific antigen [PSA] level >= 1 ng/ml",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "ng/ml"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "increased on at least 2 successive occasions at least 1 week apart",
+                        "criterion": "PSA level increase",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": "at least 2 successive occasions"
+                        }
+                    },
+                    {
+                        "exact_snippets": "increased on at least 2 successive occasions at least 1 week apart",
+                        "criterion": "PSA level increase",
+                        "requirement": {
+                            "requirement_type": "time interval",
+                            "expected_value": "at least 1 week apart"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "biochemical progression during ADT or combination therapies including ADT",
+                                        "criterion": "biochemical progression",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "biochemical progression during ADT or combination therapies including ADT",
+                                        "criterion": "combination therapies including ADT",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "referred for imaging evaluation",
+                                "criterion": "referral for imaging evaluation",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "prostate specific antigen [PSA] level >= 1 ng/ml",
+                                "criterion": "PSA level",
+                                "requirement": {
+                                    "requirement_type": "level",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "ng/ml"
+                                    }
+                                }
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "increased on at least 2 successive occasions at least 1 week apart",
+                                        "criterion": "PSA level increase",
+                                        "requirement": {
+                                            "requirement_type": "frequency",
+                                            "expected_value": "at least 2 successive occasions"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "increased on at least 2 successive occasions at least 1 week apart",
+                                        "criterion": "PSA level increase",
+                                        "requirement": {
+                                            "requirement_type": "time interval",
+                                            "expected_value": "at least 1 week apart"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Bone scans performed at University of California, Los Angeles (UCLA) and external institutions are eligible if Digital Imaging and Communications in Medicine (DICOM) images can be obtained, imported, and anonymized",
+                "criterions": [
+                    {
+                        "exact_snippets": "Bone scans performed at University of California, Los Angeles (UCLA)",
+                        "criterion": "bone scan location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "University of California, Los Angeles (UCLA)"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Bone scans performed at ... external institutions",
+                        "criterion": "bone scan location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "external institutions"
+                        }
+                    },
+                    {
+                        "exact_snippets": "DICOM images can be obtained",
+                        "criterion": "DICOM image availability",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "DICOM images can be ... imported",
+                        "criterion": "DICOM image importability",
+                        "requirement": {
+                            "requirement_type": "importability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "DICOM images can be ... anonymized",
+                        "criterion": "DICOM image anonymization",
+                        "requirement": {
+                            "requirement_type": "anonymization",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Bone scans performed at University of California, Los Angeles (UCLA)",
+                                "criterion": "bone scan location",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": "University of California, Los Angeles (UCLA)"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Bone scans performed at ... external institutions",
+                                "criterion": "bone scan location",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": "external institutions"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "DICOM images can be obtained",
+                        "criterion": "DICOM image availability",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "DICOM images can be ... imported",
+                        "criterion": "DICOM image importability",
+                        "requirement": {
+                            "requirement_type": "importability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "DICOM images can be ... anonymized",
+                        "criterion": "DICOM image anonymization",
+                        "requirement": {
+                            "requirement_type": "anonymization",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Initiation of a new therapy between the PSMA PET/CT and the bone scans",
+                "criterions": [
+                    {
+                        "exact_snippets": "Initiation of a new therapy between the PSMA PET/CT and the bone scans",
+                        "criterion": "new therapy initiation",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "between the PSMA PET/CT and the bone scans"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Initiation of a new therapy between the PSMA PET/CT and the bone scans",
+                    "criterion": "new therapy initiation",
+                    "requirement": {
+                        "requirement_type": "timing",
+                        "expected_value": "between the PSMA PET/CT and the bone scans"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Inability to provide written informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inability to provide written informed consent",
+                        "criterion": "written informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Inability to provide written informed consent",
+                        "criterion": "written informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known inability to remain still and lie flat for duration of each imaging procedure (about 30 minutes)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known inability to remain still and lie flat for duration of each imaging procedure (about 30 minutes)",
+                        "criterion": "ability to remain still and lie flat",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Known inability to remain still and lie flat for duration of each imaging procedure (about 30 minutes)",
+                    "criterion": "ability to remain still and lie flat",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}
