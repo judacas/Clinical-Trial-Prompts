@@ -1,0 +1,329 @@
+{
+    "info": {
+        "nct_id": "NCT03969082",
+        "official_title": "Bibliotherapy, Students in Medicine and Health Sciences Read to Patients With Cancer During Treatment, an Evaluation by Patients and Students.",
+        "inclusion_criteria": "* Clinical diagnosis of acute leukemia or advanced cancer of a solid tumor\n* Treated at an inpatient ward (for patients with leukemia)\n* Treated at inpatient ward ( for patients with solid tumor)\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients under 18 years;\n* Patients who are not able to read or understand Dutch.\n\nStudents:\n\n- Student of the Faculty of Medicine and Health Sciences of Ghent University",
+        "miscellaneous_criteria": "Patients"
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Clinical diagnosis of acute leukemia or advanced cancer of a solid tumor",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinical diagnosis of acute leukemia",
+                        "criterion": "acute leukemia",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "advanced cancer of a solid tumor",
+                        "criterion": "advanced cancer of a solid tumor",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Clinical diagnosis of acute leukemia",
+                        "criterion": "acute leukemia",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "advanced cancer of a solid tumor",
+                        "criterion": "advanced cancer of a solid tumor",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Treated at an inpatient ward (for patients with leukemia)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Treated at an inpatient ward",
+                        "criterion": "treatment location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "inpatient ward"
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with leukemia",
+                        "criterion": "diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "leukemia"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "patients with leukemia",
+                    "criterion": "diagnosis",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": "leukemia"
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "Treated at an inpatient ward",
+                    "criterion": "treatment location",
+                    "requirement": {
+                        "requirement_type": "location",
+                        "expected_value": "inpatient ward"
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Treated at inpatient ward ( for patients with solid tumor)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Treated at inpatient ward",
+                        "criterion": "treatment location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "inpatient ward"
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with solid tumor",
+                        "criterion": "tumor type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "solid"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Treated at inpatient ward",
+                        "criterion": "treatment location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "inpatient ward"
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with solid tumor",
+                        "criterion": "tumor type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "solid"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients under 18 years;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients under 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients under 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who are not able to read or understand Dutch.",
+                "criterions": [
+                    {
+                        "exact_snippets": "not able to read ... Dutch",
+                        "criterion": "ability to read Dutch",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "not able to ... understand Dutch",
+                        "criterion": "ability to understand Dutch",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "not able to read ... Dutch",
+                        "criterion": "ability to read Dutch",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "not able to ... understand Dutch",
+                        "criterion": "ability to understand Dutch",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "- Student of the Faculty of Medicine and Health Sciences of Ghent University",
+                "criterions": [
+                    {
+                        "exact_snippets": "Student of the Faculty of Medicine and Health Sciences of Ghent University",
+                        "criterion": "student status",
+                        "requirement": {
+                            "requirement_type": "institution",
+                            "expected_value": "Faculty of Medicine and Health Sciences of Ghent University"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Student of the Faculty of Medicine and Health Sciences of Ghent University",
+                    "criterion": "student status",
+                    "requirement": {
+                        "requirement_type": "institution",
+                        "expected_value": "Faculty of Medicine and Health Sciences of Ghent University"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Students:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "miscellaneous_lines": [
+        {
+            "identified_line": {
+                "line": "Patients",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

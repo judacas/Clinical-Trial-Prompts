@@ -1,0 +1,487 @@
+{
+    "info": {
+        "nct_id": "NCT02251782",
+        "official_title": "Adherence to Minimally Invasive CRC Screening In Non-Adherent Patients Who Have Not Completed Colorectal Cancer Screening",
+        "inclusion_criteria": "* 50 years of age or greater, but less than 76 years old\n* Has not completed recommended screening for colonoscopy or FIT\n\n  * No colonoscopy in previous 10 years\n  * No fecal occult blood test (FOBT) or FIT in previous year and/or > 13 months late FIT\n* No flexible sigmoidoscopy in previous 5 years\n* Verifiable offer of screening recommendation according to health system standard in at least two independent interactions and a verifiable lack of adherence for two most recent\n* Verifiable lack of adherence for >3 months following last screening recommendation\n* Primary Care Provider (PCP) has agreed to refer patients for consideration of enrollment in the study\n* Subject able to understand and sign written informed consent (IC)\nHealthy volunteers allowed\nMust have minimum age of 50 Years\nMust have maximum age of 76 Years",
+        "exclusion_criteria": "* Family history of CRC in a first-degree relative\n* Personal history of colonic adenomatous polyps, CRC or inflammatory bowel disease\n* Symptoms for which colonoscopy or sigmoidoscopy would otherwise be performed (hematochezia, new onset diarrhea or constipation, abdominal pain)\n* Comorbid illness precluding endoscopic evaluation (coronary artery disease with myocardial infarction within 6 months, unstable angina or congestive heart failure, chronic obstructive pulmonary disease requiring home oxygen, other diseases that limit life expectancy to less than 10 years)\n* Chronic gastritis, pregnancy, cancer(s) other than colorectal",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* 50 years of age or greater, but less than 76 years old",
+            "criterions": [
+                {
+                    "exact_snippets": "50 years of age or greater, but less than 76 years old",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 50,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 76,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Has not completed recommended screening for colonoscopy or FIT",
+            "criterions": [
+                {
+                    "exact_snippets": "Has not completed recommended screening for colonoscopy",
+                    "criterion": "colonoscopy screening",
+                    "requirements": [
+                        {
+                            "requirement_type": "completion",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Has not completed recommended screening for ... FIT",
+                    "criterion": "FIT screening",
+                    "requirements": [
+                        {
+                            "requirement_type": "completion",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* No colonoscopy in previous 10 years",
+            "criterions": [
+                {
+                    "exact_snippets": "No colonoscopy in previous 10 years",
+                    "criterion": "colonoscopy",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last procedure",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* No fecal occult blood test (FOBT) or FIT in previous year and/or > 13 months late FIT",
+            "criterions": [
+                {
+                    "exact_snippets": "No fecal occult blood test (FOBT) or FIT in previous year",
+                    "criterion": "fecal occult blood test (FOBT) or FIT",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "> 13 months late FIT",
+                    "criterion": "FIT",
+                    "requirements": [
+                        {
+                            "requirement_type": "timeliness",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 13,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* No flexible sigmoidoscopy in previous 5 years",
+            "criterions": [
+                {
+                    "exact_snippets": "No flexible sigmoidoscopy in previous 5 years",
+                    "criterion": "flexible sigmoidoscopy",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last procedure",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Verifiable offer of screening recommendation according to health system standard in at least two independent interactions and a verifiable lack of adherence for two most recent",
+            "criterions": [
+                {
+                    "exact_snippets": "Verifiable offer of screening recommendation according to health system standard",
+                    "criterion": "screening recommendation offer",
+                    "requirements": [
+                        {
+                            "requirement_type": "verifiability",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "standard",
+                            "expected_value": "health system standard"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "at least two independent interactions",
+                    "criterion": "independent interactions",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "interactions"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "verifiable lack of adherence for two most recent",
+                    "criterion": "adherence",
+                    "requirements": [
+                        {
+                            "requirement_type": "verifiability",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "adherence",
+                            "expected_value": "lack of adherence"
+                        },
+                        {
+                            "requirement_type": "recency",
+                            "expected_value": "two most recent"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Verifiable lack of adherence for >3 months following last screening recommendation",
+            "criterions": [
+                {
+                    "exact_snippets": "lack of adherence for >3 months following last screening recommendation",
+                    "criterion": "adherence to screening recommendation",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        },
+                        {
+                            "requirement_type": "verification",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Primary Care Provider (PCP) has agreed to refer patients for consideration of enrollment in the study",
+            "criterions": [
+                {
+                    "exact_snippets": "Primary Care Provider (PCP) has agreed to refer patients",
+                    "criterion": "PCP referral agreement",
+                    "requirements": [
+                        {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Subject able to understand and sign written informed consent (IC)",
+            "criterions": [
+                {
+                    "exact_snippets": "Subject able to understand and sign written informed consent (IC)",
+                    "criterion": "ability to understand and sign informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 50 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 50 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 76 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 76 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 76,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Family history of CRC in a first-degree relative",
+            "criterions": [
+                {
+                    "exact_snippets": "Family history of CRC in a first-degree relative",
+                    "criterion": "family history of CRC",
+                    "requirements": [
+                        {
+                            "requirement_type": "relation",
+                            "expected_value": "first-degree relative"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Personal history of colonic adenomatous polyps, CRC or inflammatory bowel disease",
+            "criterions": [
+                {
+                    "exact_snippets": "Personal history of colonic adenomatous polyps",
+                    "criterion": "colonic adenomatous polyps",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Personal history of ... CRC",
+                    "criterion": "colorectal cancer (CRC)",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Personal history of ... inflammatory bowel disease",
+                    "criterion": "inflammatory bowel disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Symptoms for which colonoscopy or sigmoidoscopy would otherwise be performed (hematochezia, new onset diarrhea or constipation, abdominal pain)",
+            "criterions": [
+                {
+                    "exact_snippets": "hematochezia",
+                    "criterion": "hematochezia",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "new onset diarrhea",
+                    "criterion": "new onset diarrhea",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "constipation",
+                    "criterion": "constipation",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "abdominal pain",
+                    "criterion": "abdominal pain",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Comorbid illness precluding endoscopic evaluation (coronary artery disease with myocardial infarction within 6 months, unstable angina or congestive heart failure, chronic obstructive pulmonary disease requiring home oxygen, other diseases that limit life expectancy to less than 10 years)",
+            "criterions": [
+                {
+                    "exact_snippets": "Comorbid illness precluding endoscopic evaluation (coronary artery disease with myocardial infarction within 6 months",
+                    "criterion": "coronary artery disease with myocardial infarction",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since event",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Comorbid illness precluding endoscopic evaluation ... unstable angina",
+                    "criterion": "unstable angina",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Comorbid illness precluding endoscopic evaluation ... congestive heart failure",
+                    "criterion": "congestive heart failure",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Comorbid illness precluding endoscopic evaluation ... chronic obstructive pulmonary disease requiring home oxygen",
+                    "criterion": "chronic obstructive pulmonary disease requiring home oxygen",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Comorbid illness precluding endoscopic evaluation ... other diseases that limit life expectancy to less than 10 years",
+                    "criterion": "other diseases that limit life expectancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "life expectancy",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Chronic gastritis, pregnancy, cancer(s) other than colorectal",
+            "criterions": [
+                {
+                    "exact_snippets": "Chronic gastritis",
+                    "criterion": "chronic gastritis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "pregnancy",
+                    "criterion": "pregnancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "cancer(s) other than colorectal",
+                    "criterion": "cancer other than colorectal",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}
