@@ -1,0 +1,260 @@
+{
+    "info": {
+        "nct_id": "NCT00959582",
+        "official_title": "A Multicenter Trial to Measure Early Patterns of Change in [18F]-Fluorodeoxyglucose Uptake by PET/CT in Relapsed Ovarian Cancer Patients",
+        "inclusion_criteria": "* Patient has ovarian, primary peritoneal, or fallopian tube cancer\n* Patient has first or subsequent relapse\n* Patient has had at least on prior platinum-based treatment for ovarian cancer\n* Patient is scheduled to receive treatment with carboplatin or cisplatin monotherapy or combination where one of the drugs is a platinum\n* Patient is not pregnant\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 35 Years",
+        "exclusion_criteria": "* Patient has had abdominal surgery within the last 6 weeks\n* Patient has life expectancy < 6 months\n* Patient has had radiotherapy to the abdomen or pelvis within the last 6 months\n* Patient has poorly controlled diabetes",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Patient has ovarian, primary peritoneal, or fallopian tube cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "ovarian",
+                    "criterion": "ovarian cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "primary peritoneal",
+                    "criterion": "primary peritoneal cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "fallopian tube cancer",
+                    "criterion": "fallopian tube cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has first or subsequent relapse",
+            "criterions": [
+                {
+                    "exact_snippets": "first or subsequent relapse",
+                    "criterion": "relapse",
+                    "requirements": [
+                        {
+                            "requirement_type": "occurrence",
+                            "expected_value": [
+                                "first",
+                                "subsequent"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has had at least on prior platinum-based treatment for ovarian cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient has had at least on prior platinum-based treatment for ovarian cancer",
+                    "criterion": "prior platinum-based treatment for ovarian cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "treatment"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient is scheduled to receive treatment with carboplatin or cisplatin monotherapy or combination where one of the drugs is a platinum",
+            "criterions": [
+                {
+                    "exact_snippets": "scheduled to receive treatment with carboplatin",
+                    "criterion": "treatment with carboplatin",
+                    "requirements": [
+                        {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "scheduled to receive treatment with ... cisplatin",
+                    "criterion": "treatment with cisplatin",
+                    "requirements": [
+                        {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "scheduled to receive treatment with ... combination where one of the drugs is a platinum",
+                    "criterion": "treatment with platinum-based combination",
+                    "requirements": [
+                        {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient is not pregnant",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient is not pregnant",
+                    "criterion": "pregnancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be FEMALE",
+            "criterions": [
+                {
+                    "exact_snippets": "Must be FEMALE",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 35 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 35 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 35,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Patient has had abdominal surgery within the last 6 weeks",
+            "criterions": [
+                {
+                    "exact_snippets": "abdominal surgery within the last 6 weeks",
+                    "criterion": "abdominal surgery",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since surgery",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "weeks"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has life expectancy < 6 months",
+            "criterions": [
+                {
+                    "exact_snippets": "life expectancy < 6 months",
+                    "criterion": "life expectancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has had radiotherapy to the abdomen or pelvis within the last 6 months",
+            "criterions": [
+                {
+                    "exact_snippets": "radiotherapy to the abdomen or pelvis within the last 6 months",
+                    "criterion": "radiotherapy to the abdomen or pelvis",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has poorly controlled diabetes",
+            "criterions": [
+                {
+                    "exact_snippets": "poorly controlled diabetes",
+                    "criterion": "diabetes",
+                    "requirements": [
+                        {
+                            "requirement_type": "control",
+                            "expected_value": "poorly controlled"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

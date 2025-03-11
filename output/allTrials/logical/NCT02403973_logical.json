@@ -1,0 +1,418 @@
+{
+    "info": {
+        "nct_id": "NCT02403973",
+        "official_title": "Randomized Clinical Trial Comparing Perioperative Care for Breast Cancer Patients at a Patient Hotel Versus a General Surgical Ward",
+        "inclusion_criteria": "Women with a breast tumour, who were to undergo surgical treatment in order to remove a known cancer or to exclude cancerous changes in a diagnosed tumour\nHealthy volunteers allowed\nMust be FEMALE\nMust have maximum age of 80 Years",
+        "exclusion_criteria": "* Insulin dependent diabetes\n* Severe impairment of mobility\n* A known coagulopathy\n* Cancer surgery with a coherent primary reconstruction\n* Severe cardiac illness\n* An inability to understand Swedish\n* Mental incapacity.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Women with a breast tumour, who were to undergo surgical treatment in order to remove a known cancer or to exclude cancerous changes in a diagnosed tumour",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast tumour",
+                        "criterion": "breast tumour",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "undergo surgical treatment",
+                        "criterion": "surgical treatment",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": "planned"
+                        }
+                    },
+                    {
+                        "exact_snippets": "remove a known cancer",
+                        "criterion": "known cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "exclude cancerous changes in a diagnosed tumour",
+                        "criterion": "cancerous changes in a diagnosed tumour",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Women",
+                                "criterion": "gender",
+                                "requirement": {
+                                    "requirement_type": "expected_value",
+                                    "expected_value": "female"
+                                }
+                            },
+                            {
+                                "exact_snippets": "breast tumour",
+                                "criterion": "breast tumour",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "undergo surgical treatment",
+                                "criterion": "surgical treatment",
+                                "requirement": {
+                                    "requirement_type": "intention",
+                                    "expected_value": "planned"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "remove a known cancer",
+                                "criterion": "known cancer",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "exclude cancerous changes in a diagnosed tumour",
+                                "criterion": "cancerous changes in a diagnosed tumour",
+                                "requirement": {
+                                    "requirement_type": "exclusion",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 80 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 80 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 80,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 80 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 80,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Insulin dependent diabetes",
+                "criterions": [
+                    {
+                        "exact_snippets": "Insulin dependent diabetes",
+                        "criterion": "diabetes",
+                        "requirement": {
+                            "requirement_type": "dependency",
+                            "expected_value": "insulin"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Insulin dependent diabetes",
+                    "criterion": "diabetes",
+                    "requirement": {
+                        "requirement_type": "dependency",
+                        "expected_value": "insulin"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Severe impairment of mobility",
+                "criterions": [
+                    {
+                        "exact_snippets": "Severe impairment of mobility",
+                        "criterion": "mobility",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Severe impairment of mobility",
+                        "criterion": "mobility",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* A known coagulopathy",
+                "criterions": [
+                    {
+                        "exact_snippets": "A known coagulopathy",
+                        "criterion": "coagulopathy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "A known coagulopathy",
+                    "criterion": "coagulopathy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Cancer surgery with a coherent primary reconstruction",
+                "criterions": [
+                    {
+                        "exact_snippets": "Cancer surgery",
+                        "criterion": "cancer surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "coherent primary reconstruction",
+                        "criterion": "primary reconstruction",
+                        "requirement": {
+                            "requirement_type": "coherence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Cancer surgery",
+                        "criterion": "cancer surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "coherent primary reconstruction",
+                        "criterion": "primary reconstruction",
+                        "requirement": {
+                            "requirement_type": "coherence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Severe cardiac illness",
+                "criterions": [
+                    {
+                        "exact_snippets": "Severe cardiac illness",
+                        "criterion": "cardiac illness",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Severe cardiac illness",
+                    "criterion": "cardiac illness",
+                    "requirement": {
+                        "requirement_type": "severity",
+                        "expected_value": "severe"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* An inability to understand Swedish",
+                "criterions": [
+                    {
+                        "exact_snippets": "An inability to understand Swedish",
+                        "criterion": "language comprehension",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "Swedish"
+                        }
+                    },
+                    {
+                        "exact_snippets": "An inability to understand Swedish",
+                        "criterion": "language comprehension",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "An inability to understand Swedish",
+                        "criterion": "language comprehension",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "Swedish"
+                        }
+                    },
+                    {
+                        "exact_snippets": "An inability to understand Swedish",
+                        "criterion": "language comprehension",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Mental incapacity.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Mental incapacity.",
+                        "criterion": "mental capacity",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Mental incapacity.",
+                    "criterion": "mental capacity",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

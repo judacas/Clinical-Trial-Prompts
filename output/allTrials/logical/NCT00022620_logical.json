@@ -213,7 +213,7 @@
                 "criterions": [
                     {
                         "exact_snippets": "Stable disease for at least 4 courses of platinum-based chemotherapy",
-                        "criterion": "stable disease",
+                        "criterion": "disease stability",
                         "requirement": {
                             "requirement_type": "duration",
                             "expected_value": {
@@ -229,7 +229,7 @@
                 "and_criteria": [
                     {
                         "exact_snippets": "Stable disease for at least 4 courses of platinum-based chemotherapy",
-                        "criterion": "stable disease",
+                        "criterion": "disease stability",
                         "requirement": {
                             "requirement_type": "duration",
                             "expected_value": {
@@ -250,7 +250,7 @@
                         "exact_snippets": "Recurrence within 4 months of platinum-based chemotherapy",
                         "criterion": "recurrence",
                         "requirement": {
-                            "requirement_type": "time since chemotherapy",
+                            "requirement_type": "time since last treatment",
                             "expected_value": {
                                 "comparisons": [
                                     {
@@ -266,8 +266,8 @@
                         "exact_snippets": "Recurrence within 4 months of platinum-based chemotherapy",
                         "criterion": "recurrence",
                         "requirement": {
-                            "requirement_type": "chemotherapy type",
-                            "expected_value": "platinum-based"
+                            "requirement_type": "treatment type",
+                            "expected_value": "platinum-based chemotherapy"
                         }
                     }
                 ]
@@ -278,7 +278,7 @@
                         "exact_snippets": "Recurrence within 4 months of platinum-based chemotherapy",
                         "criterion": "recurrence",
                         "requirement": {
-                            "requirement_type": "time since chemotherapy",
+                            "requirement_type": "time since last treatment",
                             "expected_value": {
                                 "comparisons": [
                                     {
@@ -294,8 +294,51 @@
                         "exact_snippets": "Recurrence within 4 months of platinum-based chemotherapy",
                         "criterion": "recurrence",
                         "requirement": {
-                            "requirement_type": "chemotherapy type",
-                            "expected_value": "platinum-based"
+                            "requirement_type": "treatment type",
+                            "expected_value": "platinum-based chemotherapy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No brain involvement or leptomeningeal disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "No brain involvement",
+                        "criterion": "brain involvement",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No ... leptomeningeal disease",
+                        "criterion": "leptomeningeal disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No brain involvement",
+                        "criterion": "brain involvement",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No ... leptomeningeal disease",
+                        "criterion": "leptomeningeal disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
                         }
                     }
                 ]
@@ -610,7 +653,7 @@
                         "exact_snippets": "Bilirubin no greater than 50 umol/L",
                         "criterion": "bilirubin level",
                         "requirement": {
-                            "requirement_type": "quantity",
+                            "requirement_type": "level",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 50,
@@ -626,7 +669,7 @@
                         "exact_snippets": "Bilirubin no greater than 50 umol/L",
                         "criterion": "bilirubin level",
                         "requirement": {
-                            "requirement_type": "quantity",
+                            "requirement_type": "level",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 50,
@@ -707,7 +750,7 @@
                         "exact_snippets": "Creatinine no greater than 120 umol/L",
                         "criterion": "creatinine level",
                         "requirement": {
-                            "requirement_type": "quantity",
+                            "requirement_type": "level",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 120,
@@ -723,7 +766,7 @@
                         "exact_snippets": "Creatinine no greater than 120 umol/L",
                         "criterion": "creatinine level",
                         "requirement": {
-                            "requirement_type": "quantity",
+                            "requirement_type": "level",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 120,
@@ -862,20 +905,20 @@
             },
             "logical_structure": {
                 "condition": {
-                    "exact_snippets": "except basal cell carcinoma of the skin",
-                    "criterion": "basal cell carcinoma of the skin",
-                    "requirement": {
-                        "requirement_type": "presence",
-                        "expected_value": true
-                    }
-                },
-                "then_criteria": null,
-                "else_criteria": {
                     "exact_snippets": "No other prior or concurrent malignancy",
                     "criterion": "prior or concurrent malignancy",
                     "requirement": {
                         "requirement_type": "presence",
                         "expected_value": false
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "exact_snippets": "except basal cell carcinoma of the skin",
+                    "criterion": "basal cell carcinoma of the skin",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
                     }
                 }
             }
@@ -1131,7 +1174,7 @@
                         "criterion": "disease characteristics",
                         "requirement": {
                             "requirement_type": "N/A",
-                            "expected_value": "see disease characteristics"
+                            "expected_value": "see details"
                         }
                     }
                 ]
@@ -1143,7 +1186,7 @@
                         "criterion": "disease characteristics",
                         "requirement": {
                             "requirement_type": "N/A",
-                            "expected_value": "see disease characteristics"
+                            "expected_value": "see details"
                         }
                     }
                 ]
@@ -1227,19 +1270,19 @@
                         "exact_snippets": "At least 50 mg/m2 per course ... for cisplatin",
                         "criterion": "cisplatin dosage",
                         "requirement": {
-                            "requirement_type": "dosage",
+                            "requirement_type": "minimum dosage",
                             "expected_value": {
                                 "operator": ">=",
                                 "value": 50,
-                                "unit": "mg/m2 per course"
+                                "unit": "mg/m2"
                             }
                         }
                     },
                     {
-                        "exact_snippets": "maximum of 28 days for cisplatin",
-                        "criterion": "cisplatin treatment duration",
+                        "exact_snippets": "maximum of 28 days",
+                        "criterion": "treatment duration",
                         "requirement": {
-                            "requirement_type": "duration",
+                            "requirement_type": "maximum duration",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 28,
@@ -1255,19 +1298,19 @@
                         "exact_snippets": "At least 50 mg/m2 per course ... for cisplatin",
                         "criterion": "cisplatin dosage",
                         "requirement": {
-                            "requirement_type": "dosage",
+                            "requirement_type": "minimum dosage",
                             "expected_value": {
                                 "operator": ">=",
                                 "value": 50,
-                                "unit": "mg/m2 per course"
+                                "unit": "mg/m2"
                             }
                         }
                     },
                     {
-                        "exact_snippets": "maximum of 28 days for cisplatin",
-                        "criterion": "cisplatin treatment duration",
+                        "exact_snippets": "maximum of 28 days",
+                        "criterion": "treatment duration",
                         "requirement": {
-                            "requirement_type": "duration",
+                            "requirement_type": "maximum duration",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 28,
@@ -1319,28 +1362,32 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "exact_snippets": "At least 5 times AUC",
-                        "criterion": "AUC",
-                        "requirement": {
-                            "requirement_type": "quantity",
-                            "expected_value": {
-                                "operator": ">=",
-                                "value": 5,
-                                "unit": "times"
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "At least 5 times AUC",
+                                "criterion": "AUC",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 5,
+                                        "unit": "times"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "maximum of 4 weeks per course",
+                                "criterion": "course duration",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "weeks"
+                                    }
+                                }
                             }
-                        }
-                    },
-                    {
-                        "exact_snippets": "maximum of 4 weeks per course",
-                        "criterion": "course duration",
-                        "requirement": {
-                            "requirement_type": "duration",
-                            "expected_value": {
-                                "operator": "<=",
-                                "value": 4,
-                                "unit": "weeks"
-                            }
-                        }
+                        ]
                     },
                     {
                         "exact_snippets": "carboplatin",
@@ -1526,7 +1573,7 @@
                 "criterions": [
                     {
                         "exact_snippets": "At least 3 months since prior radiotherapy to target lesion",
-                        "criterion": "time since prior radiotherapy to target lesion",
+                        "criterion": "prior radiotherapy to target lesion",
                         "requirement": {
                             "requirement_type": "time since treatment",
                             "expected_value": {
@@ -1542,7 +1589,7 @@
                 "and_criteria": [
                     {
                         "exact_snippets": "At least 3 months since prior radiotherapy to target lesion",
-                        "criterion": "time since prior radiotherapy to target lesion",
+                        "criterion": "prior radiotherapy to target lesion",
                         "requirement": {
                             "requirement_type": "time since treatment",
                             "expected_value": {
@@ -1579,19 +1626,19 @@
             },
             "logical_structure": {
                 "condition": {
-                    "exact_snippets": "evaluable lesions are outside of irradiation field",
-                    "criterion": "evaluable lesions location",
-                    "requirement": {
-                        "requirement_type": "location",
-                        "expected_value": "outside of irradiation field"
-                    }
-                },
-                "then_criteria": {
                     "exact_snippets": "Concurrent radiotherapy allowed",
                     "criterion": "concurrent radiotherapy",
                     "requirement": {
                         "requirement_type": "allowance",
                         "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "evaluable lesions are outside of irradiation field",
+                    "criterion": "evaluable lesions location",
+                    "requirement": {
+                        "requirement_type": "location",
+                        "expected_value": "outside of irradiation field"
                     }
                 },
                 "else_criteria": null
@@ -1602,7 +1649,7 @@
                 "line": "Surgery:",
                 "criterions": [
                     {
-                        "exact_snippets": "Surgery",
+                        "exact_snippets": "Surgery:",
                         "criterion": "surgery",
                         "requirement": {
                             "requirement_type": "presence",
@@ -1614,7 +1661,7 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "exact_snippets": "Surgery",
+                        "exact_snippets": "Surgery:",
                         "criterion": "surgery",
                         "requirement": {
                             "requirement_type": "presence",
@@ -1733,53 +1780,6 @@
                         "requirement": {
                             "requirement_type": "status",
                             "expected_value": "recurrent"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "* No brain involvement or leptomeningeal disease",
-                "criterions": [
-                    {
-                        "exact_snippets": "No brain involvement",
-                        "criterion": "brain involvement",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "No ... leptomeningeal disease",
-                        "criterion": "leptomeningeal disease",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "not_criteria": {
-                            "exact_snippets": "No brain involvement",
-                            "criterion": "brain involvement",
-                            "requirement": {
-                                "requirement_type": "presence",
-                                "expected_value": true
-                            }
-                        }
-                    },
-                    {
-                        "not_criteria": {
-                            "exact_snippets": "No ... leptomeningeal disease",
-                            "criterion": "leptomeningeal disease",
-                            "requirement": {
-                                "requirement_type": "presence",
-                                "expected_value": true
-                            }
                         }
                     }
                 ]

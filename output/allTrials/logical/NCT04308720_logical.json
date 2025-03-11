@@ -1,0 +1,827 @@
+{
+    "info": {
+        "nct_id": "NCT04308720",
+        "official_title": "Circulating Tumor DNA (ctDNA) and Immunophenotyping As Potential Biomarkers in Patients Undergoing Regional Nodal Irradiation for Breast Cancer",
+        "inclusion_criteria": "* 18 years of age or older\n* Histologically confirmed primary or recurrent non-metastatic invasive breast cancer with plans for adjuvant post-lumpectomy or post-mastectomy radiation therapy at the Mayo Clinic and indications for regional nodal irradiation.\n* Or patients undergoing curative intent irradiation for oligometastatic breast cancer (=< 3 sites of metastases) is permitted\n* Willingness to provide informed consent and expresses understanding of this protocol and its requirements, risks, and discomforts\n* Patients with non-metastatic breast cancer must have completed their final breast surgery including re-excision of margins for invasive cancer and ductal carcinoma in situ (DCIS) or chemotherapy within 90 days prior to registration but no sooner than 21 days prior to the initiation of radiation therapy (RT).\n* Bilateral breast cancer is permitted\n* Positive or close margins is allowed\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years\nMust have maximum age of 100 Years",
+        "exclusion_criteria": "* Other active malignancy =< 2 years prior to registration (exceptions: non-melanotic skin cancer or carcinoma-in-situ of the cervix)\n* Pregnancy or lactation\n* Inability on the part of the patient to understand the informed consent to be compliant with the protocol",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* 18 years of age or older",
+                "criterions": [
+                    {
+                        "exact_snippets": "18 years of age or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "18 years of age or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Or patients undergoing curative intent irradiation for oligometastatic breast cancer (=< 3 sites of metastases) is permitted",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients undergoing curative intent irradiation",
+                        "criterion": "curative intent irradiation",
+                        "requirement": {
+                            "requirement_type": "undergoing",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "oligometastatic breast cancer",
+                        "criterion": "oligometastatic breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "=< 3 sites of metastases",
+                        "criterion": "sites of metastases",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "sites"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "patients undergoing curative intent irradiation",
+                                "criterion": "curative intent irradiation",
+                                "requirement": {
+                                    "requirement_type": "undergoing",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "oligometastatic breast cancer",
+                                "criterion": "oligometastatic breast cancer",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "=< 3 sites of metastases",
+                        "criterion": "sites of metastases",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "sites"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Willingness to provide informed consent and expresses understanding of this protocol and its requirements, risks, and discomforts",
+                "criterions": [
+                    {
+                        "exact_snippets": "Willingness to provide informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "expresses understanding of this protocol and its requirements, risks, and discomforts",
+                        "criterion": "understanding of protocol",
+                        "requirement": {
+                            "requirement_type": "understanding",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Willingness to provide informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "expresses understanding of this protocol and its requirements, risks, and discomforts",
+                        "criterion": "understanding of protocol",
+                        "requirement": {
+                            "requirement_type": "understanding",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with non-metastatic breast cancer must have completed their final breast surgery including re-excision of margins for invasive cancer and ductal carcinoma in situ (DCIS) or chemotherapy within 90 days prior to registration but no sooner than 21 days prior to the initiation of radiation therapy (RT).",
+                "criterions": [
+                    {
+                        "exact_snippets": "non-metastatic breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "metastasis",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "completed their final breast surgery",
+                        "criterion": "breast surgery",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "re-excision of margins for invasive cancer and ductal carcinoma in situ (DCIS)",
+                        "criterion": "re-excision of margins",
+                        "requirement": {
+                            "requirement_type": "conditions",
+                            "expected_value": [
+                                "invasive cancer",
+                                "ductal carcinoma in situ (DCIS)"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "chemotherapy within 90 days prior to registration",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "completion time",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 90,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "no sooner than 21 days prior to the initiation of radiation therapy (RT)",
+                        "criterion": "initiation of radiation therapy (RT)",
+                        "requirement": {
+                            "requirement_type": "time since chemotherapy",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 21,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "non-metastatic breast cancer",
+                                "criterion": "breast cancer",
+                                "requirement": {
+                                    "requirement_type": "metastasis",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "completed their final breast surgery",
+                                "criterion": "breast surgery",
+                                "requirement": {
+                                    "requirement_type": "completion",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "re-excision of margins for invasive cancer and ductal carcinoma in situ (DCIS)",
+                                "criterion": "re-excision of margins",
+                                "requirement": {
+                                    "requirement_type": "conditions",
+                                    "expected_value": [
+                                        "invasive cancer",
+                                        "ductal carcinoma in situ (DCIS)"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "chemotherapy within 90 days prior to registration",
+                                "criterion": "chemotherapy",
+                                "requirement": {
+                                    "requirement_type": "completion time",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 90,
+                                        "unit": "days"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "no sooner than 21 days prior to the initiation of radiation therapy (RT)",
+                                "criterion": "initiation of radiation therapy (RT)",
+                                "requirement": {
+                                    "requirement_type": "time since chemotherapy",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 21,
+                                        "unit": "days"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Bilateral breast cancer is permitted",
+                "criterions": [
+                    {
+                        "exact_snippets": "Bilateral breast cancer is permitted",
+                        "criterion": "bilateral breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Bilateral breast cancer is permitted",
+                        "criterion": "bilateral breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Positive or close margins is allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Positive or close margins is allowed",
+                        "criterion": "surgical margins",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "positive",
+                                "close"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Positive or close margins is allowed",
+                        "criterion": "surgical margins",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "positive",
+                                "close"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 100 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 100 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 100,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 100 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 100,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Other active malignancy =< 2 years prior to registration (exceptions: non-melanotic skin cancer or carcinoma-in-situ of the cervix)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Other active malignancy =< 2 years prior to registration",
+                        "criterion": "active malignancy",
+                        "requirement": {
+                            "requirement_type": "time since diagnosis",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "exceptions: non-melanotic skin cancer or carcinoma-in-situ of the cervix",
+                        "criterion": "exceptions to active malignancy",
+                        "requirement": {
+                            "requirement_type": "exceptions",
+                            "expected_value": [
+                                "non-melanotic skin cancer",
+                                "carcinoma-in-situ of the cervix"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Other active malignancy =< 2 years prior to registration",
+                            "criterion": "active malignancy",
+                            "requirement": {
+                                "requirement_type": "time since diagnosis",
+                                "expected_value": {
+                                    "comparisons": [
+                                        {
+                                            "operator": "<=",
+                                            "value": 2,
+                                            "unit": "years"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "exact_snippets": "exceptions: non-melanotic skin cancer or carcinoma-in-situ of the cervix",
+                            "criterion": "exceptions to active malignancy",
+                            "requirement": {
+                                "requirement_type": "exceptions",
+                                "expected_value": [
+                                    "non-melanotic skin cancer",
+                                    "carcinoma-in-situ of the cervix"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "not_criteria": {
+                        "exact_snippets": "exceptions: non-melanotic skin cancer or carcinoma-in-situ of the cervix",
+                        "criterion": "exceptions to active malignancy",
+                        "requirement": {
+                            "requirement_type": "exceptions",
+                            "expected_value": [
+                                "non-melanotic skin cancer",
+                                "carcinoma-in-situ of the cervix"
+                            ]
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pregnancy or lactation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "lactation",
+                        "criterion": "lactation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "lactation",
+                        "criterion": "lactation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Inability on the part of the patient to understand the informed consent to be compliant with the protocol",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inability on the part of the patient to understand the informed consent",
+                        "criterion": "understanding of informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Inability on the part of the patient ... to be compliant with the protocol",
+                        "criterion": "compliance with the protocol",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Inability on the part of the patient to understand the informed consent",
+                            "criterion": "understanding of informed consent",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Inability on the part of the patient ... to be compliant with the protocol",
+                            "criterion": "compliance with the protocol",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Histologically confirmed primary or recurrent non-metastatic invasive breast cancer with plans for adjuvant post-lumpectomy or post-mastectomy radiation therapy at the Mayo Clinic and indications for regional nodal irradiation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologically confirmed primary or recurrent non-metastatic invasive breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": "histologically confirmed"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histologically confirmed primary or recurrent non-metastatic invasive breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "primary",
+                                "recurrent"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histologically confirmed primary or recurrent non-metastatic invasive breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "metastasis",
+                            "expected_value": "non-metastatic"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histologically confirmed primary or recurrent non-metastatic invasive breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "invasiveness",
+                            "expected_value": "invasive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "plans for adjuvant post-lumpectomy or post-mastectomy radiation therapy",
+                        "criterion": "radiation therapy",
+                        "requirement": {
+                            "requirement_type": "plan",
+                            "expected_value": "adjuvant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "plans for adjuvant post-lumpectomy or post-mastectomy radiation therapy",
+                        "criterion": "radiation therapy",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": [
+                                "post-lumpectomy",
+                                "post-mastectomy"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at the Mayo Clinic",
+                        "criterion": "treatment location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "Mayo Clinic"
+                        }
+                    },
+                    {
+                        "exact_snippets": "indications for regional nodal irradiation",
+                        "criterion": "regional nodal irradiation",
+                        "requirement": {
+                            "requirement_type": "indication",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "and_criteria": [
+                                                    {
+                                                        "and_criteria": [
+                                                            {
+                                                                "and_criteria": [
+                                                                    {
+                                                                        "exact_snippets": "Histologically confirmed primary or recurrent non-metastatic invasive breast cancer",
+                                                                        "criterion": "breast cancer",
+                                                                        "requirement": {
+                                                                            "requirement_type": "confirmation",
+                                                                            "expected_value": "histologically confirmed"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "exact_snippets": "Histologically confirmed primary or recurrent non-metastatic invasive breast cancer",
+                                                                        "criterion": "breast cancer",
+                                                                        "requirement": {
+                                                                            "requirement_type": "type",
+                                                                            "expected_value": [
+                                                                                "primary",
+                                                                                "recurrent"
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "exact_snippets": "Histologically confirmed primary or recurrent non-metastatic invasive breast cancer",
+                                                                "criterion": "breast cancer",
+                                                                "requirement": {
+                                                                    "requirement_type": "metastasis",
+                                                                    "expected_value": "non-metastatic"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "exact_snippets": "Histologically confirmed primary or recurrent non-metastatic invasive breast cancer",
+                                                        "criterion": "breast cancer",
+                                                        "requirement": {
+                                                            "requirement_type": "invasiveness",
+                                                            "expected_value": "invasive"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "or_criteria": [
+                                                    {
+                                                        "exact_snippets": "plans for adjuvant post-lumpectomy or post-mastectomy radiation therapy",
+                                                        "criterion": "radiation therapy",
+                                                        "requirement": {
+                                                            "requirement_type": "timing",
+                                                            "expected_value": "post-lumpectomy"
+                                                        }
+                                                    },
+                                                    {
+                                                        "exact_snippets": "plans for adjuvant post-lumpectomy or post-mastectomy radiation therapy",
+                                                        "criterion": "radiation therapy",
+                                                        "requirement": {
+                                                            "requirement_type": "timing",
+                                                            "expected_value": "post-mastectomy"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "plans for adjuvant post-lumpectomy or post-mastectomy radiation therapy",
+                                        "criterion": "radiation therapy",
+                                        "requirement": {
+                                            "requirement_type": "plan",
+                                            "expected_value": "adjuvant"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "at the Mayo Clinic",
+                                "criterion": "treatment location",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": "Mayo Clinic"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "indications for regional nodal irradiation",
+                        "criterion": "regional nodal irradiation",
+                        "requirement": {
+                            "requirement_type": "indication",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

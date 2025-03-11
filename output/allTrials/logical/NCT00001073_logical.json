@@ -1,0 +1,530 @@
+{
+    "info": {
+        "nct_id": "NCT00001073",
+        "official_title": "A Randomized Phase III Trial of Oral Isotretinoin Versus Observation for Low-Grade Squamous Intraepithelial Lesions in HIV-Infected Women",
+        "inclusion_criteria": "Healthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 13 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": "Inclusion Criteria\n\nYou may be eligible for this study if you:\n\n* Are an HIV-positive female.\n* Are at least 13 years old. (Need consent of parent or guardian if under 18.)\n* Have cervical tumors, as determined by a biopsy performed by a doctor.\n* Agree to use both condoms and the pill during the study.\n\nExclusion Criteria\n\nYou will not be eligible for this study if you:\n\n* Have received certain cancer therapies (such as chemotherapy) within the past 3 or 4 months.\n* Have had a hysterectomy (uterus removed) within the past 4 months.\n* Are taking tetracycline or Vitamin A.\n* Have taken certain medications. (Approved anti-HIV drugs and medications to prevent AIDS-related opportunistic infections are okay.)\n* Are pregnant."
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 13 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 13 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 13,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 13 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 13,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [
+        {
+            "identified_line": {
+                "line": "* Are an HIV-positive female.",
+                "criterions": [
+                    {
+                        "exact_snippets": "HIV-positive",
+                        "criterion": "HIV status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "gender",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "HIV-positive",
+                        "criterion": "HIV status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "gender",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Are at least 13 years old. (Need consent of parent or guardian if under 18.)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Are at least 13 years old.",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 13,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Need consent of parent or guardian if under 18.",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "parental consent",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Are at least 13 years old.",
+                    "criterion": "age",
+                    "requirement": {
+                        "requirement_type": "minimum age",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 13,
+                            "unit": "years"
+                        }
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Need consent of parent or guardian if under 18.",
+                            "criterion": "age",
+                            "requirement": {
+                                "requirement_type": "parental consent",
+                                "expected_value": {
+                                    "operator": "<",
+                                    "value": 18,
+                                    "unit": "years"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have cervical tumors, as determined by a biopsy performed by a doctor.",
+                "criterions": [
+                    {
+                        "exact_snippets": "cervical tumors, as determined by a biopsy",
+                        "criterion": "cervical tumors",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cervical tumors, as determined by a biopsy",
+                        "criterion": "cervical tumors",
+                        "requirement": {
+                            "requirement_type": "determination method",
+                            "expected_value": "biopsy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "cervical tumors, as determined by a biopsy",
+                        "criterion": "cervical tumors",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cervical tumors, as determined by a biopsy",
+                        "criterion": "cervical tumors",
+                        "requirement": {
+                            "requirement_type": "determination method",
+                            "expected_value": "biopsy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Agree to use both condoms and the pill during the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "use both condoms and the pill during the study",
+                        "criterion": "contraceptive use",
+                        "requirement": {
+                            "requirement_type": "methods",
+                            "expected_value": [
+                                "condoms",
+                                "the pill"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "use both condoms and the pill during the study",
+                        "criterion": "contraceptive use",
+                        "requirement": {
+                            "requirement_type": "methods",
+                            "expected_value": [
+                                "condoms",
+                                "the pill"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have received certain cancer therapies (such as chemotherapy) within the past 3 or 4 months.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Have received certain cancer therapies (such as chemotherapy) within the past 3 or 4 months.",
+                        "criterion": "cancer therapies",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Have received certain cancer therapies (such as chemotherapy) within the past 3 or 4 months.",
+                        "criterion": "cancer therapies",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have had a hysterectomy (uterus removed) within the past 4 months.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Have had a hysterectomy (uterus removed) within the past 4 months.",
+                        "criterion": "hysterectomy",
+                        "requirement": {
+                            "requirement_type": "time since procedure",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Have had a hysterectomy (uterus removed) within the past 4 months.",
+                        "criterion": "hysterectomy",
+                        "requirement": {
+                            "requirement_type": "time since procedure",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Are taking tetracycline or Vitamin A.",
+                "criterions": [
+                    {
+                        "exact_snippets": "taking tetracycline",
+                        "criterion": "tetracycline usage",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "taking ... Vitamin A",
+                        "criterion": "Vitamin A usage",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "taking tetracycline",
+                        "criterion": "tetracycline usage",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "taking ... Vitamin A",
+                        "criterion": "Vitamin A usage",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have taken certain medications. (Approved anti-HIV drugs and medications to prevent AIDS-related opportunistic infections are okay.)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Have taken certain medications.",
+                        "criterion": "medication history",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Approved anti-HIV drugs and medications to prevent AIDS-related opportunistic infections are okay.",
+                        "criterion": "anti-HIV drugs and medications to prevent AIDS-related opportunistic infections",
+                        "requirement": {
+                            "requirement_type": "approval",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Have taken certain medications.",
+                            "criterion": "medication history",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Approved anti-HIV drugs and medications to prevent AIDS-related opportunistic infections are okay.",
+                                "criterion": "anti-HIV drugs and medications to prevent AIDS-related opportunistic infections",
+                                "requirement": {
+                                    "requirement_type": "approval",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Are pregnant.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Are pregnant.",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Are pregnant.",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion Criteria",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "You may be eligible for this study if you:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion Criteria",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "You will not be eligible for this study if you:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "and_criteria": []
+                }
+            }
+        }
+    ],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

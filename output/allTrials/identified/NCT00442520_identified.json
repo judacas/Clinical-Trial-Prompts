@@ -1,0 +1,174 @@
+{
+    "info": {
+        "nct_id": "NCT00442520",
+        "official_title": "Pharmacogenomic Study in Patients of Lung, Colorectal and Head/Neck Cancers Receiving Chemotherapy",
+        "inclusion_criteria": "* Lung, Colorectal and Head and Neck Cancer Patients that have received or plan to receive chemotherapy as part of their treatment\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Colorectal cancer patients that have never received or will not receive chemotherapy as part of their therapy\n* Head and Neck cancer patients that have never received or will not receive chemotherapy as part of their treatment\n* Patients with cancer types other than colorectal or head and neck\n* Unable to give informed consent",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Lung, Colorectal and Head and Neck Cancer Patients that have received or plan to receive chemotherapy as part of their treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Lung, Colorectal and Head and Neck Cancer Patients",
+                    "criterion": "cancer type",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "Lung",
+                                "Colorectal",
+                                "Head and Neck"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "have received or plan to receive chemotherapy",
+                    "criterion": "chemotherapy treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "received",
+                                "plan to receive"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Colorectal cancer patients that have never received or will not receive chemotherapy as part of their therapy",
+            "criterions": [
+                {
+                    "exact_snippets": "Colorectal cancer patients",
+                    "criterion": "colorectal cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "never received or will not receive chemotherapy",
+                    "criterion": "chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "future",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Head and Neck cancer patients that have never received or will not receive chemotherapy as part of their treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Head and Neck cancer patients",
+                    "criterion": "cancer type",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": "Head and Neck"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "never received or will not receive chemotherapy",
+                    "criterion": "chemotherapy treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "future",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients with cancer types other than colorectal or head and neck",
+            "criterions": [
+                {
+                    "exact_snippets": "cancer types other than colorectal or head and neck",
+                    "criterion": "cancer type",
+                    "requirements": [
+                        {
+                            "requirement_type": "exclusion",
+                            "expected_value": [
+                                "colorectal",
+                                "head and neck"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Unable to give informed consent",
+            "criterions": [
+                {
+                    "exact_snippets": "Unable to give informed consent",
+                    "criterion": "informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

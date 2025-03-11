@@ -1,0 +1,240 @@
+{
+    "info": {
+        "nct_id": "NCT04476082",
+        "official_title": "Analysis of Nutritional Status in Patients With Malignant Tumor Diseases of the Gastrointestinal Tract",
+        "inclusion_criteria": "* Patients with initial diagnosis of a malignant condition of the gastrointestinal tract planned to receive cytostatic treatment.\n* ongoing cytostatic treatment of a known malignant condition of the gastrointestinal tract\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* pregnancy\n* history of any other malignant tumor disease\n* inability to provide consent",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with initial diagnosis of a malignant condition of the gastrointestinal tract planned to receive cytostatic treatment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "initial diagnosis of a malignant condition of the gastrointestinal tract",
+                        "criterion": "malignant condition of the gastrointestinal tract",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "initial"
+                        }
+                    },
+                    {
+                        "exact_snippets": "planned to receive cytostatic treatment",
+                        "criterion": "cytostatic treatment",
+                        "requirement": {
+                            "requirement_type": "treatment plan",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "initial diagnosis of a malignant condition of the gastrointestinal tract",
+                        "criterion": "malignant condition of the gastrointestinal tract",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "initial"
+                        }
+                    },
+                    {
+                        "exact_snippets": "planned to receive cytostatic treatment",
+                        "criterion": "cytostatic treatment",
+                        "requirement": {
+                            "requirement_type": "treatment plan",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* ongoing cytostatic treatment of a known malignant condition of the gastrointestinal tract",
+                "criterions": [
+                    {
+                        "exact_snippets": "ongoing cytostatic treatment",
+                        "criterion": "cytostatic treatment",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "ongoing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "known malignant condition of the gastrointestinal tract",
+                        "criterion": "malignant condition of the gastrointestinal tract",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "ongoing cytostatic treatment",
+                        "criterion": "cytostatic treatment",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "ongoing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "known malignant condition of the gastrointestinal tract",
+                        "criterion": "malignant condition of the gastrointestinal tract",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* pregnancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "pregnancy",
+                    "criterion": "pregnancy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* history of any other malignant tumor disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of any other malignant tumor disease",
+                        "criterion": "malignant tumor disease",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "history of any other malignant tumor disease",
+                    "criterion": "malignant tumor disease",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* inability to provide consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "inability to provide consent",
+                        "criterion": "consent provision ability",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "inability to provide consent",
+                    "criterion": "consent provision ability",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": false
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

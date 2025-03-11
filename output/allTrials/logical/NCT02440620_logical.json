@@ -1,0 +1,284 @@
+{
+    "info": {
+        "nct_id": "NCT02440620",
+        "official_title": "Cardiac Toxicity in Medical Treatment of Breast Cancer",
+        "inclusion_criteria": "* Diagnosis of HER2 positive breast cancer\n* Adjuvant treatment with trastuzumab\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Left ventricle ejection fraction (LVEF) <50%\n* Chronic or persistent atrial fibrillation\n* History of moderate or severe valvular heart disease.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Diagnosis of HER2 positive breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of HER2 positive breast cancer",
+                        "criterion": "HER2 status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosis of HER2 positive breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Diagnosis of HER2 positive breast cancer",
+                        "criterion": "HER2 status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosis of HER2 positive breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adjuvant treatment with trastuzumab",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adjuvant treatment with trastuzumab",
+                        "criterion": "adjuvant treatment",
+                        "requirement": {
+                            "requirement_type": "medication",
+                            "expected_value": "trastuzumab"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adjuvant treatment with trastuzumab",
+                        "criterion": "adjuvant treatment",
+                        "requirement": {
+                            "requirement_type": "medication",
+                            "expected_value": "trastuzumab"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Left ventricle ejection fraction (LVEF) <50%",
+                "criterions": [
+                    {
+                        "exact_snippets": "Left ventricle ejection fraction (LVEF) <50%",
+                        "criterion": "left ventricle ejection fraction (LVEF)",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 50,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Left ventricle ejection fraction (LVEF) <50%",
+                    "criterion": "left ventricle ejection fraction (LVEF)",
+                    "requirement": {
+                        "requirement_type": "value",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 50,
+                            "unit": "%"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Chronic or persistent atrial fibrillation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Chronic or persistent atrial fibrillation",
+                        "criterion": "atrial fibrillation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "chronic",
+                                "persistent"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Chronic or persistent atrial fibrillation",
+                    "criterion": "atrial fibrillation",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": [
+                            "chronic",
+                            "persistent"
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* History of moderate or severe valvular heart disease.",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of moderate or severe valvular heart disease.",
+                        "criterion": "valvular heart disease",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": [
+                                "moderate",
+                                "severe"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of moderate or severe valvular heart disease.",
+                        "criterion": "valvular heart disease",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "History of moderate or severe valvular heart disease.",
+                                "criterion": "valvular heart disease",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "moderate"
+                                }
+                            },
+                            {
+                                "exact_snippets": "History of moderate or severe valvular heart disease.",
+                                "criterion": "valvular heart disease",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "History of moderate or severe valvular heart disease.",
+                                "criterion": "valvular heart disease",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "severe"
+                                }
+                            },
+                            {
+                                "exact_snippets": "History of moderate or severe valvular heart disease.",
+                                "criterion": "valvular heart disease",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

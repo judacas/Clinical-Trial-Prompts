@@ -1,0 +1,710 @@
+{
+    "info": {
+        "nct_id": "NCT02475382",
+        "official_title": "Expanded Access Program With Nivolumab Monotherapy in Subjects With Advanced or Metastatic Squamous (Sq) or Non-Squamous (Non-Sq) Non-Small Cell Lung Cancer (NSCLC) Who Have Received at Least One Prior Systemic Regimens for the Treatment of Stage IIIb/IV SqNSCLC",
+        "inclusion_criteria": "* Sq or Non-Sq NSCLC, Stage IIIb/IV (histologically or cytologically confirmed)\n* Relapsed after 1 prior platinum-based systemic treatment\n* Eastern Cooperative Oncology Group (ECOG) Performance Status < 2\n* CNS metastasis must be treated and returned to baseline at least 2 weeks before first dose of nivolumab and off steroids or using stable or decreasing dose of < 10 mg prednisone or equivalent\n* Prior chemotherapy, Tyrosine Kinase Inhibitor (TKI) therapy or Immunotherapy (tumor vaccine, cytokine or growth factor to control cancer) must be completed at least 2 weeks before first nivolumab dose\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* CNS metastases (untreated and/or symptomatic)\n* Carcinomatous meningitis\n* ECOG Performance status > 3\n* Corticosteroids > 10 mg prednisolone/day (or equivalent)\n* Prior treatment with anti-PD-1, anti-PD-L-1, anti-PDL2, anti-CT137 or anti-CTLA antibody, including ipilimumab or any other drugs specifically targeting T cell costimulation or checkpoint pathways",
+        "miscellaneous_criteria": "For more information regarding BMS clinical trial participation, please visit www.BMSStudyConnect.com"
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Relapsed after 1 prior platinum-based systemic treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Relapsed after 1 prior platinum-based systemic treatment",
+                        "criterion": "relapse",
+                        "requirement": {
+                            "requirement_type": "treatment history",
+                            "expected_value": "1 prior platinum-based systemic treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Relapsed after 1 prior platinum-based systemic treatment",
+                        "criterion": "relapse",
+                        "requirement": {
+                            "requirement_type": "treatment history",
+                            "expected_value": "1 prior platinum-based systemic treatment"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) Performance Status < 2",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) Performance Status < 2",
+                        "criterion": "ECOG Performance Status",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) Performance Status < 2",
+                        "criterion": "ECOG Performance Status",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* CNS metastasis must be treated and returned to baseline at least 2 weeks before first dose of nivolumab and off steroids or using stable or decreasing dose of < 10 mg prednisone or equivalent",
+                "criterions": [
+                    {
+                        "exact_snippets": "CNS metastasis must be treated",
+                        "criterion": "CNS metastasis",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "CNS metastasis ... returned to baseline at least 2 weeks before first dose of nivolumab",
+                        "criterion": "CNS metastasis",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "returned to baseline"
+                        }
+                    },
+                    {
+                        "exact_snippets": "CNS metastasis ... returned to baseline at least 2 weeks before first dose of nivolumab",
+                        "criterion": "CNS metastasis",
+                        "requirement": {
+                            "requirement_type": "time since baseline",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "off steroids or using stable or decreasing dose of < 10 mg prednisone or equivalent",
+                        "criterion": "steroid use",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "off steroids"
+                        }
+                    },
+                    {
+                        "exact_snippets": "off steroids or using stable or decreasing dose of < 10 mg prednisone or equivalent",
+                        "criterion": "steroid use",
+                        "requirement": {
+                            "requirement_type": "dose",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 10,
+                                "unit": "mg prednisone or equivalent"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "CNS metastasis must be treated",
+                                "criterion": "CNS metastasis",
+                                "requirement": {
+                                    "requirement_type": "treatment",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "CNS metastasis ... returned to baseline at least 2 weeks before first dose of nivolumab",
+                                "criterion": "CNS metastasis",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "returned to baseline"
+                                }
+                            },
+                            {
+                                "exact_snippets": "CNS metastasis ... returned to baseline at least 2 weeks before first dose of nivolumab",
+                                "criterion": "CNS metastasis",
+                                "requirement": {
+                                    "requirement_type": "time since baseline",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "weeks"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "off steroids or using stable or decreasing dose of < 10 mg prednisone or equivalent",
+                                "criterion": "steroid use",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "off steroids"
+                                }
+                            },
+                            {
+                                "exact_snippets": "off steroids or using stable or decreasing dose of < 10 mg prednisone or equivalent",
+                                "criterion": "steroid use",
+                                "requirement": {
+                                    "requirement_type": "dose",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 10,
+                                        "unit": "mg prednisone or equivalent"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior chemotherapy, Tyrosine Kinase Inhibitor (TKI) therapy or Immunotherapy (tumor vaccine, cytokine or growth factor to control cancer) must be completed at least 2 weeks before first nivolumab dose",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior chemotherapy ... must be completed at least 2 weeks before first nivolumab dose",
+                        "criterion": "prior chemotherapy",
+                        "requirement": {
+                            "requirement_type": "completion time",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Tyrosine Kinase Inhibitor (TKI) therapy ... must be completed at least 2 weeks before first nivolumab dose",
+                        "criterion": "Tyrosine Kinase Inhibitor (TKI) therapy",
+                        "requirement": {
+                            "requirement_type": "completion time",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Immunotherapy (tumor vaccine, cytokine or growth factor to control cancer) must be completed at least 2 weeks before first nivolumab dose",
+                        "criterion": "immunotherapy",
+                        "requirement": {
+                            "requirement_type": "completion time",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Prior chemotherapy ... must be completed at least 2 weeks before first nivolumab dose",
+                                "criterion": "prior chemotherapy",
+                                "requirement": {
+                                    "requirement_type": "completion time",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "weeks"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Tyrosine Kinase Inhibitor (TKI) therapy ... must be completed at least 2 weeks before first nivolumab dose",
+                                "criterion": "Tyrosine Kinase Inhibitor (TKI) therapy",
+                                "requirement": {
+                                    "requirement_type": "completion time",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "weeks"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Immunotherapy (tumor vaccine, cytokine or growth factor to control cancer) must be completed at least 2 weeks before first nivolumab dose",
+                                "criterion": "immunotherapy",
+                                "requirement": {
+                                    "requirement_type": "completion time",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "weeks"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* CNS metastases (untreated and/or symptomatic)",
+                "criterions": [
+                    {
+                        "exact_snippets": "CNS metastases",
+                        "criterion": "CNS metastases",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": "untreated"
+                        }
+                    },
+                    {
+                        "exact_snippets": "CNS metastases",
+                        "criterion": "CNS metastases",
+                        "requirement": {
+                            "requirement_type": "symptom status",
+                            "expected_value": "symptomatic"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "CNS metastases",
+                                "criterion": "CNS metastases",
+                                "requirement": {
+                                    "requirement_type": "treatment status",
+                                    "expected_value": "untreated"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "CNS metastases",
+                                "criterion": "CNS metastases",
+                                "requirement": {
+                                    "requirement_type": "symptom status",
+                                    "expected_value": "symptomatic"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Carcinomatous meningitis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Carcinomatous meningitis",
+                        "criterion": "carcinomatous meningitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Carcinomatous meningitis",
+                    "criterion": "carcinomatous meningitis",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* ECOG Performance status > 3",
+                "criterions": [
+                    {
+                        "exact_snippets": "ECOG Performance status > 3",
+                        "criterion": "ECOG Performance status",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "ECOG Performance status > 3",
+                    "criterion": "ECOG Performance status",
+                    "requirement": {
+                        "requirement_type": "severity",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 3,
+                            "unit": "N/A"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Corticosteroids > 10 mg prednisolone/day (or equivalent)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Corticosteroids > 10 mg prednisolone/day (or equivalent)",
+                        "criterion": "corticosteroids",
+                        "requirement": {
+                            "requirement_type": "dosage",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "mg prednisolone/day (or equivalent)"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Corticosteroids > 10 mg prednisolone/day (or equivalent)",
+                        "criterion": "corticosteroids",
+                        "requirement": {
+                            "requirement_type": "dosage",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "mg prednisolone/day (or equivalent)"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior treatment with anti-PD-1, anti-PD-L-1, anti-PDL2, anti-CT137 or anti-CTLA antibody, including ipilimumab or any other drugs specifically targeting T cell costimulation or checkpoint pathways",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior treatment with anti-PD-1",
+                        "criterion": "prior treatment with anti-PD-1",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... anti-PD-L-1",
+                        "criterion": "prior treatment with anti-PD-L-1",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... anti-PDL2",
+                        "criterion": "prior treatment with anti-PDL2",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... anti-CT137",
+                        "criterion": "prior treatment with anti-CT137",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... anti-CTLA antibody",
+                        "criterion": "prior treatment with anti-CTLA antibody",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... ipilimumab",
+                        "criterion": "prior treatment with ipilimumab",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... any other drugs specifically targeting T cell costimulation or checkpoint pathways",
+                        "criterion": "prior treatment with drugs targeting T cell costimulation or checkpoint pathways",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Prior treatment with anti-PD-1",
+                                "criterion": "prior treatment with anti-PD-1",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Prior treatment with ... anti-PD-L-1",
+                                "criterion": "prior treatment with anti-PD-L-1",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Prior treatment with ... anti-PDL2",
+                                "criterion": "prior treatment with anti-PDL2",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Prior treatment with ... anti-CT137",
+                                "criterion": "prior treatment with anti-CT137",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Prior treatment with ... anti-CTLA antibody",
+                                "criterion": "prior treatment with anti-CTLA antibody",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Prior treatment with ... ipilimumab",
+                                "criterion": "prior treatment with ipilimumab",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... any other drugs specifically targeting T cell costimulation or checkpoint pathways",
+                        "criterion": "prior treatment with drugs targeting T cell costimulation or checkpoint pathways",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [
+        {
+            "identified_line": {
+                "line": "For more information regarding BMS clinical trial participation, please visit www.BMSStudyConnect.com",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Sq or Non-Sq NSCLC, Stage IIIb/IV (histologically or cytologically confirmed)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Sq or Non-Sq NSCLC",
+                        "criterion": "NSCLC subtype",
+                        "requirement": {
+                            "requirement_type": "subtype",
+                            "expected_value": [
+                                "Sq",
+                                "Non-Sq"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Stage IIIb/IV",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "IIIb",
+                                "IV"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "histologically or cytologically confirmed",
+                        "criterion": "confirmation method",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Sq or Non-Sq NSCLC",
+                                "criterion": "NSCLC subtype",
+                                "requirement": {
+                                    "requirement_type": "subtype",
+                                    "expected_value": "Sq"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Sq or Non-Sq NSCLC",
+                                "criterion": "NSCLC subtype",
+                                "requirement": {
+                                    "requirement_type": "subtype",
+                                    "expected_value": "Non-Sq"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Stage IIIb/IV",
+                                "criterion": "cancer stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": "IIIb"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Stage IIIb/IV",
+                                "criterion": "cancer stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": "IV"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "histologically or cytologically confirmed",
+                                "criterion": "confirmation method",
+                                "requirement": {
+                                    "requirement_type": "method",
+                                    "expected_value": "histologically"
+                                }
+                            },
+                            {
+                                "exact_snippets": "histologically or cytologically confirmed",
+                                "criterion": "confirmation method",
+                                "requirement": {
+                                    "requirement_type": "method",
+                                    "expected_value": "cytologically"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

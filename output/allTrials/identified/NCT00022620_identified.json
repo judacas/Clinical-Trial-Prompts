@@ -142,7 +142,7 @@
             "criterions": [
                 {
                     "exact_snippets": "Stable disease for at least 4 courses of platinum-based chemotherapy",
-                    "criterion": "stable disease",
+                    "criterion": "disease stability",
                     "requirements": [
                         {
                             "requirement_type": "duration",
@@ -164,7 +164,7 @@
                     "criterion": "recurrence",
                     "requirements": [
                         {
-                            "requirement_type": "time since chemotherapy",
+                            "requirement_type": "time since last treatment",
                             "expected_value": {
                                 "comparisons": [
                                     {
@@ -176,8 +176,8 @@
                             }
                         },
                         {
-                            "requirement_type": "chemotherapy type",
-                            "expected_value": "platinum-based"
+                            "requirement_type": "treatment type",
+                            "expected_value": "platinum-based chemotherapy"
                         }
                     ]
                 }
@@ -380,7 +380,7 @@
                     "criterion": "bilirubin level",
                     "requirements": [
                         {
-                            "requirement_type": "quantity",
+                            "requirement_type": "level",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 50,
@@ -433,7 +433,7 @@
                     "criterion": "creatinine level",
                     "requirements": [
                         {
-                            "requirement_type": "quantity",
+                            "requirement_type": "level",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 120,
@@ -686,7 +686,7 @@
                     "requirements": [
                         {
                             "requirement_type": "N/A",
-                            "expected_value": "see disease characteristics"
+                            "expected_value": "see details"
                         }
                     ]
                 }
@@ -738,21 +738,21 @@
                     "criterion": "cisplatin dosage",
                     "requirements": [
                         {
-                            "requirement_type": "dosage",
+                            "requirement_type": "minimum dosage",
                             "expected_value": {
                                 "operator": ">=",
                                 "value": 50,
-                                "unit": "mg/m2 per course"
+                                "unit": "mg/m2"
                             }
                         }
                     ]
                 },
                 {
-                    "exact_snippets": "maximum of 28 days for cisplatin",
-                    "criterion": "cisplatin treatment duration",
+                    "exact_snippets": "maximum of 28 days",
+                    "criterion": "treatment duration",
                     "requirements": [
                         {
-                            "requirement_type": "duration",
+                            "requirement_type": "maximum duration",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 28,
@@ -898,7 +898,7 @@
             "criterions": [
                 {
                     "exact_snippets": "At least 3 months since prior radiotherapy to target lesion",
-                    "criterion": "time since prior radiotherapy to target lesion",
+                    "criterion": "prior radiotherapy to target lesion",
                     "requirements": [
                         {
                             "requirement_type": "time since treatment",
@@ -941,7 +941,7 @@
             "line": "Surgery:",
             "criterions": [
                 {
-                    "exact_snippets": "Surgery",
+                    "exact_snippets": "Surgery:",
                     "criterion": "surgery",
                     "requirements": [
                         {

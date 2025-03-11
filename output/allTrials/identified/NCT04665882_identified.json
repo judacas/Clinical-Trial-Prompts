@@ -1,0 +1,251 @@
+{
+    "info": {
+        "nct_id": "NCT04665882",
+        "official_title": "Intraoperative Nomogram to Predict Breast Cancer- Related Lymphedema Based in Artificial Intelligence Image Recognition: a Randomized Controlled Trial",
+        "inclusion_criteria": "* Patients aged 18 years or older with T1-3 invasive breast cancer;\n* Clinically node-positive breast cancer, defined as positive on preoperative axillary palpation, ultrasound examination, and computed tomography scan with contrast;\n* Patients who underwent mastectomy with a positive sentinel lymph node (SLN);\n* Patients who underwent breast-conserving surgery containing more than two positive SLNs.\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years\nMust have maximum age of 80 Years",
+        "exclusion_criteria": "* Neoadjuvant chemotherapy;\n* Previous history of breast cancer.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Patients aged 18 years or older with T1-3 invasive breast cancer;",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients aged 18 years or older",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "T1-3 invasive breast cancer",
+                    "criterion": "breast cancer stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "T1",
+                                "T2",
+                                "T3"
+                            ]
+                        },
+                        {
+                            "requirement_type": "invasiveness",
+                            "expected_value": "invasive"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Clinically node-positive breast cancer, defined as positive on preoperative axillary palpation, ultrasound examination, and computed tomography scan with contrast;",
+            "criterions": [
+                {
+                    "exact_snippets": "Clinically node-positive breast cancer",
+                    "criterion": "node-positive breast cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "positive on preoperative axillary palpation",
+                    "criterion": "preoperative axillary palpation",
+                    "requirements": [
+                        {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "positive on ... ultrasound examination",
+                    "criterion": "ultrasound examination",
+                    "requirements": [
+                        {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "positive on ... computed tomography scan with contrast",
+                    "criterion": "computed tomography scan with contrast",
+                    "requirements": [
+                        {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients who underwent mastectomy with a positive sentinel lymph node (SLN);",
+            "criterions": [
+                {
+                    "exact_snippets": "underwent mastectomy",
+                    "criterion": "mastectomy",
+                    "requirements": [
+                        {
+                            "requirement_type": "procedure",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "positive sentinel lymph node (SLN)",
+                    "criterion": "sentinel lymph node (SLN)",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "positive"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients who underwent breast-conserving surgery containing more than two positive SLNs.",
+            "criterions": [
+                {
+                    "exact_snippets": "breast-conserving surgery",
+                    "criterion": "breast-conserving surgery",
+                    "requirements": [
+                        {
+                            "requirement_type": "underwent",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "more than two positive SLNs",
+                    "criterion": "positive SLNs",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "SLNs"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be FEMALE",
+            "criterions": [
+                {
+                    "exact_snippets": "Must be FEMALE",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 80 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 80 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 80,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Neoadjuvant chemotherapy;",
+            "criterions": [
+                {
+                    "exact_snippets": "Neoadjuvant chemotherapy",
+                    "criterion": "neoadjuvant chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Previous history of breast cancer.",
+            "criterions": [
+                {
+                    "exact_snippets": "Previous history of breast cancer.",
+                    "criterion": "breast cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

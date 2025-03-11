@@ -1,0 +1,368 @@
+{
+    "info": {
+        "nct_id": "NCT05604573",
+        "official_title": "DNA Mutation Detection in Circulating Tumor DNA and Tissue by Massive Multiplex Allele Discrimination Priming System(mmADPS) for Pancreatic Cancer",
+        "inclusion_criteria": "* Patients diagnosed with pancreatic cancer through histological or radiologic examination and before treatment begins\n* Patients aged 18 or older who voluntarily agrees to participate in the study and is willing to understand and comply with the subsequent treatment procedures and sample collection schedule\n* Among patients diagnosed with benign pancreatic diseases (pancreatic cyst, chronic pancreatitis, etc.), patients who have need for histological examination as control group\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Where the subject himself/herself refuses to fill out the consent form or is unable to fill out the consent form\n* If a laboratory test is impossible due to a qualitative problem with the collected blood sample\n* Where the collected tissue does not contain tissue of the desired malignant or benign disease",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients aged 18 or older who voluntarily agrees to participate in the study and is willing to understand and comply with the subsequent treatment procedures and sample collection schedule",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients aged 18 or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "voluntarily agrees to participate",
+                        "criterion": "voluntary participation",
+                        "requirement": {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willing to understand and comply with the subsequent treatment procedures",
+                        "criterion": "compliance with treatment procedures",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willing to ... comply with the ... sample collection schedule",
+                        "criterion": "compliance with sample collection schedule",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "willing to understand and comply with the subsequent treatment procedures",
+                                "criterion": "compliance with treatment procedures",
+                                "requirement": {
+                                    "requirement_type": "willingness",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "willing to ... comply with the ... sample collection schedule",
+                                "criterion": "compliance with sample collection schedule",
+                                "requirement": {
+                                    "requirement_type": "willingness",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Patients aged 18 or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "voluntarily agrees to participate",
+                        "criterion": "voluntary participation",
+                        "requirement": {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Among patients diagnosed with benign pancreatic diseases (pancreatic cyst, chronic pancreatitis, etc.), patients who have need for histological examination as control group",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosed with benign pancreatic diseases",
+                        "criterion": "benign pancreatic diseases",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "need for histological examination",
+                        "criterion": "need for histological examination",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "diagnosed with benign pancreatic diseases",
+                    "criterion": "benign pancreatic diseases",
+                    "requirement": {
+                        "requirement_type": "diagnosis",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "need for histological examination",
+                    "criterion": "need for histological examination",
+                    "requirement": {
+                        "requirement_type": "necessity",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Where the subject himself/herself refuses to fill out the consent form or is unable to fill out the consent form",
+                "criterions": [
+                    {
+                        "exact_snippets": "subject himself/herself refuses to fill out the consent form",
+                        "criterion": "consent form completion",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unable to fill out the consent form",
+                        "criterion": "consent form completion",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "subject himself/herself refuses to fill out the consent form",
+                            "criterion": "consent form completion",
+                            "requirement": {
+                                "requirement_type": "willingness",
+                                "expected_value": true
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "unable to fill out the consent form",
+                            "criterion": "consent form completion",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* If a laboratory test is impossible due to a qualitative problem with the collected blood sample",
+                "criterions": [
+                    {
+                        "exact_snippets": "a laboratory test is impossible due to a qualitative problem with the collected blood sample",
+                        "criterion": "blood sample",
+                        "requirement": {
+                            "requirement_type": "quality",
+                            "expected_value": "sufficient for laboratory test"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "a laboratory test is impossible due to a qualitative problem with the collected blood sample",
+                    "criterion": "blood sample",
+                    "requirement": {
+                        "requirement_type": "quality",
+                        "expected_value": "sufficient for laboratory test"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Where the collected tissue does not contain tissue of the desired malignant or benign disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "collected tissue does not contain tissue of the desired malignant or benign disease",
+                        "criterion": "collected tissue",
+                        "requirement": {
+                            "requirement_type": "content",
+                            "expected_value": "desired malignant or benign disease"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "collected tissue does not contain tissue of the desired malignant or benign disease",
+                    "criterion": "collected tissue",
+                    "requirement": {
+                        "requirement_type": "content",
+                        "expected_value": "desired malignant or benign disease"
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients diagnosed with pancreatic cancer through histological or radiologic examination and before treatment begins",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosed with pancreatic cancer",
+                        "criterion": "pancreatic cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": [
+                                "histological",
+                                "radiologic"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "before treatment begins",
+                        "criterion": "treatment status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "before treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "diagnosed with pancreatic cancer",
+                                "criterion": "pancreatic cancer diagnosis",
+                                "requirement": {
+                                    "requirement_type": "method",
+                                    "expected_value": [
+                                        "histological"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "diagnosed with pancreatic cancer",
+                                "criterion": "pancreatic cancer diagnosis",
+                                "requirement": {
+                                    "requirement_type": "method",
+                                    "expected_value": [
+                                        "radiologic"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "before treatment begins",
+                        "criterion": "treatment status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "before treatment"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

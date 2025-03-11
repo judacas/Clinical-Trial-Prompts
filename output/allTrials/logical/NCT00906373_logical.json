@@ -1,0 +1,786 @@
+{
+    "info": {
+        "nct_id": "NCT00906373",
+        "official_title": "A Multicenter, Phase 2 Study Evaluating IMC-A12 in Combination With Sorafenib as First-Line Therapy for Patients With Advanced Hepatocellular Carcinoma (HCC)",
+        "inclusion_criteria": "* The participant has histologically or cytologically confirmed, unresectable HCC\n* The participant has at least one target lesion measurable according to Response Evaluation Criteria in Solid Tumors (RECIST) guidelines. Target lesion(s) must not lay within a previously irradiated, ablated, or chemoembolized area. If a lesion does lie in such an area, there must be evidence of growth on successive imaging studies, including tumor hypervascularity, in order for such a lesion to be considered a target lesion\n* The participant has not received prior systemic therapy for HCC. Participants may have received prior embolization, chemoembolization, intra-arterial chemotherapy infusion, ethanol injection, radiofrequency ablation, or cryosurgery\n* The participant has fasting serum glucose <160 milligrams/deciliter (mg/dL) or below the upper limit of normal (ULN) and/or hemoglobin A1C <7%. If baseline nonfasting glucose <160 mg/dL, fasting glucose measurement is not required\n* The participant has the ability to understand and the willingness to sign a written informed consent document\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* The participant has brain metastases\n* The participant has acute hepatitis\n* The participant has poorly controlled diabetes mellitus. Participants with a history of diabetes mellitus are allowed to participate, provided that their blood glucose is within normal range and that they are on a stable dietary or therapeutic regimen for this condition\n* The participant has congestive heart failure > class II New York Heart Association (NYHA), unstable angina pectoris, new onset of angina pectoris, myocardial infarction within the past 6 months, or cardiac ventricular arrhythmias requiring antiarrhythmic therapy\n* The participant has experienced a hemorrhage or bleeding event ≥ National Cancer Institute-Common Terminology Criteria for Adverse Events (NCI-CTCAE) Grade 3 within 4 weeks prior first dose of study therapy",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* The participant has at least one target lesion measurable according to Response Evaluation Criteria in Solid Tumors (RECIST) guidelines. Target lesion(s) must not lay within a previously irradiated, ablated, or chemoembolized area. If a lesion does lie in such an area, there must be evidence of growth on successive imaging studies, including tumor hypervascularity, in order for such a lesion to be considered a target lesion",
+                "criterions": [
+                    {
+                        "exact_snippets": "at least one target lesion measurable according to Response Evaluation Criteria in Solid Tumors (RECIST) guidelines",
+                        "criterion": "target lesion",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least one target lesion measurable according to Response Evaluation Criteria in Solid Tumors (RECIST) guidelines",
+                        "criterion": "target lesion",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": "RECIST guidelines"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Target lesion(s) must not lay within a previously irradiated, ablated, or chemoembolized area",
+                        "criterion": "target lesion location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "not irradiated",
+                                "not ablated",
+                                "not chemoembolized"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "If a lesion does lie in such an area, there must be evidence of growth on successive imaging studies, including tumor hypervascularity",
+                        "criterion": "lesion growth evidence",
+                        "requirement": {
+                            "requirement_type": "growth evidence",
+                            "expected_value": "successive imaging studies including tumor hypervascularity"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "at least one target lesion measurable according to Response Evaluation Criteria in Solid Tumors (RECIST) guidelines",
+                                "criterion": "target lesion",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "at least one target lesion measurable according to Response Evaluation Criteria in Solid Tumors (RECIST) guidelines",
+                                "criterion": "target lesion",
+                                "requirement": {
+                                    "requirement_type": "measurability",
+                                    "expected_value": "RECIST guidelines"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Target lesion(s) must not lay within a previously irradiated, ablated, or chemoembolized area",
+                                "criterion": "target lesion location",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": [
+                                        "not irradiated",
+                                        "not ablated",
+                                        "not chemoembolized"
+                                    ]
+                                }
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Target lesion(s) must not lay within a previously irradiated, ablated, or chemoembolized area",
+                                        "criterion": "target lesion location",
+                                        "requirement": {
+                                            "requirement_type": "location",
+                                            "expected_value": [
+                                                "irradiated",
+                                                "ablated",
+                                                "chemoembolized"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "If a lesion does lie in such an area, there must be evidence of growth on successive imaging studies, including tumor hypervascularity",
+                                        "criterion": "lesion growth evidence",
+                                        "requirement": {
+                                            "requirement_type": "growth evidence",
+                                            "expected_value": "successive imaging studies including tumor hypervascularity"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The participant has not received prior systemic therapy for HCC. Participants may have received prior embolization, chemoembolization, intra-arterial chemotherapy infusion, ethanol injection, radiofrequency ablation, or cryosurgery",
+                "criterions": [
+                    {
+                        "exact_snippets": "The participant has not received prior systemic therapy for HCC.",
+                        "criterion": "prior systemic therapy for HCC",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participants may have received prior embolization, chemoembolization, intra-arterial chemotherapy infusion, ethanol injection, radiofrequency ablation, or cryosurgery",
+                        "criterion": "prior treatments",
+                        "requirement": {
+                            "requirement_type": "types",
+                            "expected_value": [
+                                "embolization",
+                                "chemoembolization",
+                                "intra-arterial chemotherapy infusion",
+                                "ethanol injection",
+                                "radiofrequency ablation",
+                                "cryosurgery"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "The participant has not received prior systemic therapy for HCC.",
+                            "criterion": "prior systemic therapy for HCC",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": false
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participants may have received prior embolization, chemoembolization, intra-arterial chemotherapy infusion, ethanol injection, radiofrequency ablation, or cryosurgery",
+                        "criterion": "prior treatments",
+                        "requirement": {
+                            "requirement_type": "types",
+                            "expected_value": [
+                                "embolization",
+                                "chemoembolization",
+                                "intra-arterial chemotherapy infusion",
+                                "ethanol injection",
+                                "radiofrequency ablation",
+                                "cryosurgery"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The participant has fasting serum glucose <160 milligrams/deciliter (mg/dL) or below the upper limit of normal (ULN) and/or hemoglobin A1C <7%. If baseline nonfasting glucose <160 mg/dL, fasting glucose measurement is not required",
+                "criterions": [
+                    {
+                        "exact_snippets": "fasting serum glucose <160 milligrams/deciliter (mg/dL) or below the upper limit of normal (ULN)",
+                        "criterion": "fasting serum glucose",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<",
+                                        "value": 160,
+                                        "unit": "mg/dL"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "fasting serum glucose <160 milligrams/deciliter (mg/dL) or below the upper limit of normal (ULN)",
+                        "criterion": "fasting serum glucose",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": "below the upper limit of normal (ULN)"
+                        }
+                    },
+                    {
+                        "exact_snippets": "hemoglobin A1C <7%",
+                        "criterion": "hemoglobin A1C",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<",
+                                        "value": 7,
+                                        "unit": "%"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "baseline nonfasting glucose <160 mg/dL",
+                        "criterion": "baseline nonfasting glucose",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<",
+                                        "value": 160,
+                                        "unit": "mg/dL"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "or_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "and_criteria": [
+                                        {
+                                            "exact_snippets": "fasting serum glucose <160 milligrams/deciliter (mg/dL) or below the upper limit of normal (ULN)",
+                                            "criterion": "fasting serum glucose",
+                                            "requirement": {
+                                                "requirement_type": "level",
+                                                "expected_value": {
+                                                    "comparisons": [
+                                                        {
+                                                            "operator": "<",
+                                                            "value": 160,
+                                                            "unit": "mg/dL"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "exact_snippets": "fasting serum glucose <160 milligrams/deciliter (mg/dL) or below the upper limit of normal (ULN)",
+                                            "criterion": "fasting serum glucose",
+                                            "requirement": {
+                                                "requirement_type": "level",
+                                                "expected_value": "below the upper limit of normal (ULN)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "exact_snippets": "hemoglobin A1C <7%",
+                                    "criterion": "hemoglobin A1C",
+                                    "requirement": {
+                                        "requirement_type": "level",
+                                        "expected_value": {
+                                            "comparisons": [
+                                                {
+                                                    "operator": "<",
+                                                    "value": 7,
+                                                    "unit": "%"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "exact_snippets": "baseline nonfasting glucose <160 mg/dL",
+                    "criterion": "baseline nonfasting glucose",
+                    "requirement": {
+                        "requirement_type": "level",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": "<",
+                                    "value": 160,
+                                    "unit": "mg/dL"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The participant has the ability to understand and the willingness to sign a written informed consent document",
+                "criterions": [
+                    {
+                        "exact_snippets": "The participant has the ability to understand",
+                        "criterion": "ability to understand",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "the willingness to sign a written informed consent document",
+                        "criterion": "willingness to sign informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "The participant has the ability to understand",
+                        "criterion": "ability to understand",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "the willingness to sign a written informed consent document",
+                        "criterion": "willingness to sign informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* The participant has brain metastases",
+                "criterions": [
+                    {
+                        "exact_snippets": "brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "brain metastases",
+                    "criterion": "brain metastases",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The participant has acute hepatitis",
+                "criterions": [
+                    {
+                        "exact_snippets": "acute hepatitis",
+                        "criterion": "hepatitis",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "acute"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "acute hepatitis",
+                    "criterion": "hepatitis",
+                    "requirement": {
+                        "requirement_type": "severity",
+                        "expected_value": "acute"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The participant has poorly controlled diabetes mellitus. Participants with a history of diabetes mellitus are allowed to participate, provided that their blood glucose is within normal range and that they are on a stable dietary or therapeutic regimen for this condition",
+                "criterions": [
+                    {
+                        "exact_snippets": "poorly controlled diabetes mellitus",
+                        "criterion": "diabetes mellitus control",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of diabetes mellitus",
+                        "criterion": "history of diabetes mellitus",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "blood glucose is within normal range",
+                        "criterion": "blood glucose level",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": "within normal range"
+                        }
+                    },
+                    {
+                        "exact_snippets": "stable dietary or therapeutic regimen",
+                        "criterion": "dietary or therapeutic regimen stability",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "poorly controlled diabetes mellitus",
+                                    "criterion": "diabetes mellitus control",
+                                    "requirement": {
+                                        "requirement_type": "control",
+                                        "expected_value": false
+                                    }
+                                },
+                                {
+                                    "or_criteria": [
+                                        {
+                                            "exact_snippets": "history of diabetes mellitus",
+                                            "criterion": "history of diabetes mellitus",
+                                            "requirement": {
+                                                "requirement_type": "presence",
+                                                "expected_value": true
+                                            }
+                                        },
+                                        {
+                                            "and_criteria": [
+                                                {
+                                                    "exact_snippets": "blood glucose is within normal range",
+                                                    "criterion": "blood glucose level",
+                                                    "requirement": {
+                                                        "requirement_type": "range",
+                                                        "expected_value": "within normal range"
+                                                    }
+                                                },
+                                                {
+                                                    "exact_snippets": "stable dietary or therapeutic regimen",
+                                                    "criterion": "dietary or therapeutic regimen stability",
+                                                    "requirement": {
+                                                        "requirement_type": "stability",
+                                                        "expected_value": true
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The participant has congestive heart failure > class II New York Heart Association (NYHA), unstable angina pectoris, new onset of angina pectoris, myocardial infarction within the past 6 months, or cardiac ventricular arrhythmias requiring antiarrhythmic therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "congestive heart failure > class II New York Heart Association (NYHA)",
+                        "criterion": "congestive heart failure",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "class II New York Heart Association (NYHA)"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "unstable angina pectoris",
+                        "criterion": "unstable angina pectoris",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "new onset of angina pectoris",
+                        "criterion": "new onset of angina pectoris",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "myocardial infarction within the past 6 months",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "time since event",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "cardiac ventricular arrhythmias requiring antiarrhythmic therapy",
+                        "criterion": "cardiac ventricular arrhythmias",
+                        "requirement": {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": "antiarrhythmic therapy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "congestive heart failure > class II New York Heart Association (NYHA)",
+                        "criterion": "congestive heart failure",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "class II New York Heart Association (NYHA)"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "unstable angina pectoris",
+                        "criterion": "unstable angina pectoris",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "new onset of angina pectoris",
+                        "criterion": "new onset of angina pectoris",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "myocardial infarction within the past 6 months",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "time since event",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "cardiac ventricular arrhythmias requiring antiarrhythmic therapy",
+                        "criterion": "cardiac ventricular arrhythmias",
+                        "requirement": {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": "antiarrhythmic therapy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The participant has experienced a hemorrhage or bleeding event ≥ National Cancer Institute-Common Terminology Criteria for Adverse Events (NCI-CTCAE) Grade 3 within 4 weeks prior first dose of study therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "The participant has experienced a hemorrhage or bleeding event",
+                        "criterion": "hemorrhage or bleeding event",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": ">= National Cancer Institute-Common Terminology Criteria for Adverse Events (NCI-CTCAE) Grade 3"
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 4 weeks prior first dose of study therapy",
+                        "criterion": "time since hemorrhage or bleeding event",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "The participant has experienced a hemorrhage or bleeding event",
+                        "criterion": "hemorrhage or bleeding event",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": ">= National Cancer Institute-Common Terminology Criteria for Adverse Events (NCI-CTCAE) Grade 3"
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 4 weeks prior first dose of study therapy",
+                        "criterion": "time since hemorrhage or bleeding event",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* The participant has histologically or cytologically confirmed, unresectable HCC",
+                "criterions": [
+                    {
+                        "exact_snippets": "histologically or cytologically confirmed",
+                        "criterion": "HCC confirmation method",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "unresectable HCC",
+                        "criterion": "HCC resectability",
+                        "requirement": {
+                            "requirement_type": "resectability",
+                            "expected_value": "unresectable"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "histologically or cytologically confirmed",
+                                "criterion": "HCC confirmation method",
+                                "requirement": {
+                                    "requirement_type": "method",
+                                    "expected_value": "histologically"
+                                }
+                            },
+                            {
+                                "exact_snippets": "histologically or cytologically confirmed",
+                                "criterion": "HCC confirmation method",
+                                "requirement": {
+                                    "requirement_type": "method",
+                                    "expected_value": "cytologically"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "unresectable HCC",
+                        "criterion": "HCC resectability",
+                        "requirement": {
+                            "requirement_type": "resectability",
+                            "expected_value": "unresectable"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

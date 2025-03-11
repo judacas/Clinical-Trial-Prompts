@@ -1,0 +1,446 @@
+{
+    "info": {
+        "nct_id": "NCT06822582",
+        "official_title": "A Pelvic Health EModule to Address Urogenital Impairments After Breast and Gynecologic Cancer: a Pilot Prospective Interventional Study",
+        "inclusion_criteria": "* be >18 years of age;\n* have received a diagnosis of breast or gynecological (endometrial, cervical, ovarian, vulvar or vaginal) cancer (Stage I-IV) ;\n* be on active cancer treatment or have completed any cancer treatment (surgery and/or radiation therapy and/or chemotherapy) within the last 3 years;\n* be able to provide informed written consent in English or French;\n* have a urogenital dysfunction, as screened by a score of ≥ 2 on the Pelvic Floor Bother Questionnaire.\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* do not have regular access to internet, to a smart device or a computer, at home.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* be >18 years of age;",
+                "criterions": [
+                    {
+                        "exact_snippets": "be >18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "be >18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* have received a diagnosis of breast or gynecological (endometrial, cervical, ovarian, vulvar or vaginal) cancer (Stage I-IV) ;",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosis of breast or gynecological (endometrial, cervical, ovarian, vulvar or vaginal) cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of breast or gynecological (endometrial, cervical, ovarian, vulvar or vaginal) cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "breast",
+                                "endometrial",
+                                "cervical",
+                                "ovarian",
+                                "vulvar",
+                                "vaginal"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Stage I-IV",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "Stage"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "Stage"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "diagnosis of breast or gynecological (endometrial, cervical, ovarian, vulvar or vaginal) cancer",
+                                "criterion": "cancer diagnosis",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "diagnosis of breast or gynecological (endometrial, cervical, ovarian, vulvar or vaginal) cancer",
+                                "criterion": "cancer diagnosis",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": [
+                                        "breast",
+                                        "endometrial",
+                                        "cervical",
+                                        "ovarian",
+                                        "vulvar",
+                                        "vaginal"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Stage I-IV",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "Stage"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "Stage"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* be on active cancer treatment or have completed any cancer treatment (surgery and/or radiation therapy and/or chemotherapy) within the last 3 years;",
+                "criterions": [
+                    {
+                        "exact_snippets": "be on active cancer treatment",
+                        "criterion": "active cancer treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "have completed any cancer treatment (surgery and/or radiation therapy and/or chemotherapy) within the last 3 years",
+                        "criterion": "completion of cancer treatment",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "be on active cancer treatment",
+                        "criterion": "active cancer treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "have completed any cancer treatment (surgery and/or radiation therapy and/or chemotherapy) within the last 3 years",
+                        "criterion": "completion of cancer treatment",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* be able to provide informed written consent in English or French;",
+                "criterions": [
+                    {
+                        "exact_snippets": "be able to provide informed written consent",
+                        "criterion": "ability to provide informed consent",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": [
+                                "English",
+                                "French"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "be able to provide informed written consent",
+                        "criterion": "ability to provide informed consent",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": [
+                                "English",
+                                "French"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* have a urogenital dysfunction, as screened by a score of ≥ 2 on the Pelvic Floor Bother Questionnaire.",
+                "criterions": [
+                    {
+                        "exact_snippets": "urogenital dysfunction",
+                        "criterion": "urogenital dysfunction",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "score of ≥ 2 on the Pelvic Floor Bother Questionnaire",
+                        "criterion": "Pelvic Floor Bother Questionnaire score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "urogenital dysfunction",
+                        "criterion": "urogenital dysfunction",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "score of ≥ 2 on the Pelvic Floor Bother Questionnaire",
+                        "criterion": "Pelvic Floor Bother Questionnaire score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* do not have regular access to internet, to a smart device or a computer, at home.",
+                "criterions": [
+                    {
+                        "exact_snippets": "do not have regular access to internet",
+                        "criterion": "internet access",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "do not have regular access ... to a smart device",
+                        "criterion": "smart device access",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "do not have regular access ... to a computer, at home",
+                        "criterion": "computer access",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "do not have regular access to internet",
+                        "criterion": "internet access",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "do not have regular access ... to a smart device",
+                        "criterion": "smart device access",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "do not have regular access ... to a computer, at home",
+                        "criterion": "computer access",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,1073 @@
+{
+    "info": {
+        "nct_id": "NCT04803773",
+        "official_title": "MRI-guided Focused Ultrasound for Bone Tumors Treatment: Feasibility Study for the Treatment of Bone Metastases and osteoïd Osteoma",
+        "inclusion_criteria": "* Subject with one or more painful bone metastases (EVA≥5)\n* Subject with sub-perolate or cortical osteoid osteoma\n* For people with painful bone metastases: first-line treatment or radiotherapy failure\n* Weight < 140kg.\n* Target tumor accessible by HIFU-MRI\n* Maximum size of the lesion - 20cm²\n* Depth of the lesion to be treated - 4mm and 10cm\n* Subject affiliated with a health insurance social protection.\n* A subject capable of understanding research objectives and risks and giving informed and signed consent\n* Subject who has been informed of the pre-medical visit results\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* MRI contraindication\n* Contraindication to the use of a gadolinium contrast or hypersensitivity to gadoteric acid, meglumine or any drug containing gadolinium\n* General anesthesia contraindication\n* Non-reversible hemostasis disorders\n* Previous injury on the area to be treated (radiotherapy, surgery, ...)\n* Tumors located on the spine or skull\n* Tumors located on the ribs\n* Pathological fracture\n* For Osteoid Osteoma: nidus more than 1cm deep within cortical bone\n* Pregnant woman (pregnancy test, urinary or HCG dosage, negative to inclusion) or lactating\n* existence of dermatological pathologies\n* Subject with a known latex allergy\n* Subject under safeguarding of justice, under guardianship or curatorship\n* Subject in an exclusion period by a previous or ongoing study",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Subject with one or more painful bone metastases (EVA≥5)",
+                "criterions": [
+                    {
+                        "exact_snippets": "one or more painful bone metastases",
+                        "criterion": "painful bone metastases",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "EVA≥5",
+                        "criterion": "EVA",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "one or more painful bone metastases",
+                        "criterion": "painful bone metastases",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "EVA≥5",
+                        "criterion": "EVA",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* For people with painful bone metastases: first-line treatment or radiotherapy failure",
+                "criterions": [
+                    {
+                        "exact_snippets": "painful bone metastases",
+                        "criterion": "bone metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "painful bone metastases",
+                        "criterion": "bone metastases",
+                        "requirement": {
+                            "requirement_type": "painful",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "first-line treatment or radiotherapy failure",
+                        "criterion": "treatment history",
+                        "requirement": {
+                            "requirement_type": "first-line treatment",
+                            "expected_value": "failure"
+                        }
+                    },
+                    {
+                        "exact_snippets": "first-line treatment or radiotherapy failure",
+                        "criterion": "treatment history",
+                        "requirement": {
+                            "requirement_type": "radiotherapy",
+                            "expected_value": "failure"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "painful bone metastases",
+                            "criterion": "bone metastases",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "painful bone metastases",
+                            "criterion": "bone metastases",
+                            "requirement": {
+                                "requirement_type": "painful",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "or_criteria": [
+                        {
+                            "exact_snippets": "first-line treatment or radiotherapy failure",
+                            "criterion": "treatment history",
+                            "requirement": {
+                                "requirement_type": "first-line treatment",
+                                "expected_value": "failure"
+                            }
+                        },
+                        {
+                            "exact_snippets": "first-line treatment or radiotherapy failure",
+                            "criterion": "treatment history",
+                            "requirement": {
+                                "requirement_type": "radiotherapy",
+                                "expected_value": "failure"
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Weight < 140kg.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Weight < 140kg",
+                        "criterion": "weight",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 140,
+                                "unit": "kg"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Weight < 140kg",
+                        "criterion": "weight",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 140,
+                                "unit": "kg"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Target tumor accessible by HIFU-MRI",
+                "criterions": [
+                    {
+                        "exact_snippets": "Target tumor accessible by HIFU-MRI",
+                        "criterion": "target tumor",
+                        "requirement": {
+                            "requirement_type": "accessibility",
+                            "expected_value": "HIFU-MRI"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Target tumor accessible by HIFU-MRI",
+                        "criterion": "target tumor",
+                        "requirement": {
+                            "requirement_type": "accessibility",
+                            "expected_value": "HIFU-MRI"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Maximum size of the lesion - 20cm²",
+                "criterions": [
+                    {
+                        "exact_snippets": "Maximum size of the lesion - 20cm²",
+                        "criterion": "lesion size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 20,
+                                "unit": "cm²"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Maximum size of the lesion - 20cm²",
+                        "criterion": "lesion size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 20,
+                                "unit": "cm²"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Depth of the lesion to be treated - 4mm and 10cm",
+                "criterions": [
+                    {
+                        "exact_snippets": "Depth of the lesion to be treated - 4mm and 10cm",
+                        "criterion": "lesion depth",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "=",
+                                        "value": 4,
+                                        "unit": "mm"
+                                    },
+                                    {
+                                        "operator": "=",
+                                        "value": 10,
+                                        "unit": "cm"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Depth of the lesion to be treated - 4mm and 10cm",
+                        "criterion": "lesion depth",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "=",
+                                        "value": 4,
+                                        "unit": "mm"
+                                    },
+                                    {
+                                        "operator": "=",
+                                        "value": 10,
+                                        "unit": "cm"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subject affiliated with a health insurance social protection.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subject affiliated with a health insurance social protection.",
+                        "criterion": "health insurance social protection affiliation",
+                        "requirement": {
+                            "requirement_type": "affiliation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Subject affiliated with a health insurance social protection.",
+                        "criterion": "health insurance social protection affiliation",
+                        "requirement": {
+                            "requirement_type": "affiliation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* A subject capable of understanding research objectives and risks and giving informed and signed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "capable of understanding research objectives and risks",
+                        "criterion": "understanding of research objectives and risks",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "giving informed and signed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "capable of understanding research objectives and risks",
+                        "criterion": "understanding of research objectives and risks",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "giving informed and signed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subject who has been informed of the pre-medical visit results",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subject who has been informed of the pre-medical visit results",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "informed"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Subject who has been informed of the pre-medical visit results",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "informed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* MRI contraindication",
+                "criterions": [
+                    {
+                        "exact_snippets": "MRI contraindication",
+                        "criterion": "MRI contraindication",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "MRI contraindication",
+                    "criterion": "MRI contraindication",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Contraindication to the use of a gadolinium contrast or hypersensitivity to gadoteric acid, meglumine or any drug containing gadolinium",
+                "criterions": [
+                    {
+                        "exact_snippets": "Contraindication to the use of a gadolinium contrast",
+                        "criterion": "gadolinium contrast use",
+                        "requirement": {
+                            "requirement_type": "contraindication",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "hypersensitivity to gadoteric acid",
+                        "criterion": "hypersensitivity to gadoteric acid",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "hypersensitivity to ... meglumine",
+                        "criterion": "hypersensitivity to meglumine",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "hypersensitivity to ... any drug containing gadolinium",
+                        "criterion": "hypersensitivity to any drug containing gadolinium",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Contraindication to the use of a gadolinium contrast",
+                                "criterion": "gadolinium contrast use",
+                                "requirement": {
+                                    "requirement_type": "contraindication",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "hypersensitivity to gadoteric acid",
+                                "criterion": "hypersensitivity to gadoteric acid",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "hypersensitivity to ... meglumine",
+                                "criterion": "hypersensitivity to meglumine",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "hypersensitivity to ... any drug containing gadolinium",
+                                "criterion": "hypersensitivity to any drug containing gadolinium",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* General anesthesia contraindication",
+                "criterions": [
+                    {
+                        "exact_snippets": "General anesthesia contraindication",
+                        "criterion": "general anesthesia",
+                        "requirement": {
+                            "requirement_type": "contraindication",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "General anesthesia contraindication",
+                    "criterion": "general anesthesia",
+                    "requirement": {
+                        "requirement_type": "contraindication",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Non-reversible hemostasis disorders",
+                "criterions": [
+                    {
+                        "exact_snippets": "Non-reversible hemostasis disorders",
+                        "criterion": "hemostasis disorders",
+                        "requirement": {
+                            "requirement_type": "reversibility",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Non-reversible hemostasis disorders",
+                    "criterion": "hemostasis disorders",
+                    "requirement": {
+                        "requirement_type": "reversibility",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Previous injury on the area to be treated (radiotherapy, surgery, ...)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous injury on the area to be treated",
+                        "criterion": "previous injury on treatment area",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Previous injury on the area to be treated",
+                        "criterion": "previous injury on treatment area",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Tumors located on the spine or skull",
+                "criterions": [
+                    {
+                        "exact_snippets": "Tumors located on the spine",
+                        "criterion": "tumor location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "spine"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Tumors located on the ... skull",
+                        "criterion": "tumor location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "skull"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Tumors located on the spine",
+                        "criterion": "tumor location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "spine"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Tumors located on the ... skull",
+                        "criterion": "tumor location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "skull"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Tumors located on the ribs",
+                "criterions": [
+                    {
+                        "exact_snippets": "Tumors located on the ribs",
+                        "criterion": "tumor location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "ribs"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Tumors located on the ribs",
+                    "criterion": "tumor location",
+                    "requirement": {
+                        "requirement_type": "location",
+                        "expected_value": "ribs"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pathological fracture",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pathological fracture",
+                        "criterion": "pathological fracture",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Pathological fracture",
+                    "criterion": "pathological fracture",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* For Osteoid Osteoma: nidus more than 1cm deep within cortical bone",
+                "criterions": [
+                    {
+                        "exact_snippets": "Osteoid Osteoma",
+                        "criterion": "osteoid osteoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "nidus more than 1cm deep within cortical bone",
+                        "criterion": "nidus depth",
+                        "requirement": {
+                            "requirement_type": "depth",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Osteoid Osteoma",
+                    "criterion": "osteoid osteoma",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "nidus more than 1cm deep within cortical bone",
+                    "criterion": "nidus depth",
+                    "requirement": {
+                        "requirement_type": "depth",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 1,
+                            "unit": "cm"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pregnant woman (pregnancy test, urinary or HCG dosage, negative to inclusion) or lactating",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant woman (pregnancy test, urinary or HCG dosage, negative to inclusion)",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "test",
+                            "expected_value": [
+                                "pregnancy test",
+                                "urinary",
+                                "HCG dosage"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Pregnant woman (pregnancy test, urinary or HCG dosage, negative to inclusion)",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "lactating",
+                        "criterion": "lactation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Pregnant woman (pregnancy test, urinary or HCG dosage, negative to inclusion)",
+                                        "criterion": "pregnancy",
+                                        "requirement": {
+                                            "requirement_type": "test",
+                                            "expected_value": [
+                                                "pregnancy test",
+                                                "urinary",
+                                                "HCG dosage"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Pregnant woman (pregnancy test, urinary or HCG dosage, negative to inclusion)",
+                                        "criterion": "pregnancy",
+                                        "requirement": {
+                                            "requirement_type": "result",
+                                            "expected_value": "negative"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "lactating",
+                                    "criterion": "lactation",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": false
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "lactating",
+                        "criterion": "lactation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* existence of dermatological pathologies",
+                "criterions": [
+                    {
+                        "exact_snippets": "existence of dermatological pathologies",
+                        "criterion": "dermatological pathologies",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "existence of dermatological pathologies",
+                    "criterion": "dermatological pathologies",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subject with a known latex allergy",
+                "criterions": [
+                    {
+                        "exact_snippets": "known latex allergy",
+                        "criterion": "latex allergy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "known latex allergy",
+                    "criterion": "latex allergy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subject under safeguarding of justice, under guardianship or curatorship",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subject under safeguarding of justice",
+                        "criterion": "safeguarding of justice",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "under guardianship",
+                        "criterion": "guardianship",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "under ... curatorship",
+                        "criterion": "curatorship",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Subject under safeguarding of justice",
+                                "criterion": "safeguarding of justice",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "under guardianship",
+                                "criterion": "guardianship",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "under ... curatorship",
+                                "criterion": "curatorship",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subject in an exclusion period by a previous or ongoing study",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subject in an exclusion period by a previous or ongoing study",
+                        "criterion": "exclusion period",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Subject in an exclusion period by a previous or ongoing study",
+                    "criterion": "exclusion period",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Subject with sub-perolate or cortical osteoid osteoma",
+                "criterions": [
+                    {
+                        "exact_snippets": "sub-perolate or cortical osteoid osteoma",
+                        "criterion": "osteoid osteoma",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "sub-perolate",
+                                "cortical"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "sub-perolate or cortical osteoid osteoma",
+                        "criterion": "osteoid osteoma",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "sub-perolate"
+                        }
+                    },
+                    {
+                        "exact_snippets": "sub-perolate or cortical osteoid osteoma",
+                        "criterion": "osteoid osteoma",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "cortical"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}
