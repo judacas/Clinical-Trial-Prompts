@@ -1,0 +1,27 @@
+name: Pre-Commit Checks
+
+on: [push, pull_request]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Install Dependencies
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install pre-commit
+
+      - name: Run Pre-Commit Hooks
+        run: |
+          source .venv/bin/activate
+          pre-commit run --all-files
