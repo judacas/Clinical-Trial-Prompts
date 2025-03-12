@@ -14,6 +14,7 @@ Each trial is processed to extract and structure its eligibility criteria.
 """
 import logging
 import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Generator
 
 from src.services.trial_manager import process_trial
@@ -71,14 +72,14 @@ def get_all_nct_ids_from_folder(folder_path: str) -> list[str]:
     ]
 
 
-def getAllCancerTrials() -> Generator[str, None, None]:
+def getAllCancerTrials(n: int) -> Generator[str, None, None]:
     """
     Retrieve a generator of all cancer trial NCT IDs available in clinicaltrials.gov.
 
     Yields:
         str: NCT ID for a cancer trial.
     """
-    url = "https://clinicaltrials.gov/api/v2/studies?query.cond=cancer&query.term=cancer&query.titles=Cancer&fields=NCTId&pageSize=10"
+    url = f"https://clinicaltrials.gov/api/v2/studies?query.cond=cancer&query.term=cancer&query.titles=Cancer&fields=NCTId&pageSize={n}"
 
     folder_path = os.path.join(DEFAULT_OUTPUT_DIR, "allTrials", "logical")
     nct_ids = get_all_nct_ids_from_folder(folder_path)
@@ -103,7 +104,7 @@ def getAllCancerTrials() -> Generator[str, None, None]:
         nextToken = response.get("nextPageToken", "")
 
 
-def get_trials() -> list[str] | Generator[str] | None:
+def get_trials(n: int = 100) -> list[str] | Generator[str] | None:
     """
     Present options to the user for selecting trials to process.
 
@@ -124,11 +125,26 @@ def get_trials() -> list[str] | Generator[str] | None:
         elif user_choice == "c":
             return getChiaCancerTrials()
         elif user_choice == "a":
-            return getAllCancerTrials()
+            return getAllCancerTrials(n)
         elif user_choice == "q":
             return None
         else:
             print("Invalid choice. Please try again.")
+
+
+def process_trial_wrapper(nct_id: str):
+    """
+    Wrapper function to process a trial and handle exceptions.
+
+    Args:
+        nct_id (str): NCT ID of the trial to process.
+    """
+    logger = logging.getLogger(__name__)
+    try:
+        process_trial(nct_id, os.path.join(DEFAULT_OUTPUT_DIR, "allTrials"))
+        logger.info(f"Successfully processed trial {nct_id}")
+    except Exception as e:
+        logger.error(f"Failed to process trial {nct_id}: {str(e)}")
 
 
 def main():
@@ -137,28 +153,28 @@ def main():
     """
     logger = logging.getLogger(__name__)
     logger.info("Application started...")
+    parallelMultiplier = 100
 
-    trials = get_trials()
+    trials = get_trials(parallelMultiplier)
     if not trials:
         logger.info("No trials selected, exiting...")
         return
 
     if isinstance(trials, list):
-
         logger.info(f"Selected {len(trials)} trials for processing")
-        logger.info("these are the trials selected: %s", trials)
+        logger.info("These are the trials selected: %s", trials)
 
-    # Process each trial
-    for i, nct_id in enumerate(trials, 1):
-        if isinstance(trials, Generator):
-            logger.info(f"Processing trial {i}: NCT ID {nct_id}")
-        else:
-            logger.info(f"Processing trial {i}/{len(trials)}: NCT ID {nct_id}")
-        try:
-            process_trial(nct_id, os.path.join(DEFAULT_OUTPUT_DIR, "allTrials"))
-            logger.info(f"Successfully processed trial {nct_id}")
-        except Exception as e:
-            logger.error(f"Failed to process trial {nct_id}: {str(e)}")
+    # Process each trial in parallel using ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=parallelMultiplier) as executor:
+        future_to_nct_id = {
+            executor.submit(process_trial_wrapper, nct_id): nct_id for nct_id in trials
+        }
+        for future in as_completed(future_to_nct_id):
+            nct_id = future_to_nct_id[future]
+            try:
+                future.result()
+            except Exception as e:
+                logger.error(f"Error processing trial {nct_id}: {str(e)}")
 
     logger.info("Processing complete")
 
