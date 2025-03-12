@@ -2,116 +2,110 @@
 
 A Python tool for the structured analysis of clinical trial eligibility criteria by extracting and organizing atomic criteria into logical structures.
 
-## Overview
+## 🚀 Overview
 
 ClearMatch processes clinical trial data from **ClinicalTrials.gov**, extracting structured information about eligibility criteria. It performs three key steps:
 
 1. **Identification** – Extracts atomic criteria from raw text.
-2. **Logical Structuring** – Organizes these criteria into logical relationships.
-3. **Matching Patients to Oncological Clinical Trials** – *(Not implemented yet).*
+2. **Logical Structuring** – Organizes these criteria using logical relationships (`AND`, `OR`, `NOT`, `XOR`, `CONDITIONAL`).
+3. **Matching Patients to Oncological Clinical Trials** – _(Planned but not yet implemented)._
 
-## Features
-
-- Fetches clinical trial data from the **ClinicalTrials.gov API**.
-- Breaks down complex eligibility criteria into **atomic components**.
-- Structures criteria using **logical operators** (`AND`, `OR`, `NOT`, `XOR`, `CONDITIONAL`).
-- Persists processed data as **JSON files** for further analysis.
-
-## Requirements
-
-- **Python 3.8+**
-- **OpenAI API key** (for GPT-4o access)
-
-## Installation
-
-1. **Navigate to the directory where you want to clone the repository:**
-    ```sh
-    cd ~/path/to/repo/
-    ```
-
-2. **Clone this repository:**
-    ```sh
-    gh repo clone judacas/Clinical-Trial-Prompts
-    ```
-    *This uses [GitHub CLI](https://cli.github.com/). If you don’t have it, use:*
-    ```sh
-    git clone https://github.com/judacas/Clinical-Trial-Prompts.git
-    ```
-
-3. **Enter the project directory:**
-    ```sh
-    cd Clinical-Trial-Prompts
-    ```
-
-4. *(Optional but Recommended)* **Create and activate a virtual environment:**
-    ```sh
-    python -m venv .venv
-    source .venv/bin/activate  # On macOS/Linux
-    .venv\Scripts\activate     # On Windows (Command Prompt)
-    ```
-
-5. **Install dependencies:**
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-6. **Set up environment variables:**
-
-    **For CLI users (Linux/macOS/Windows Command Line):**
-    Run the following commands to create a new `.env` file inside `src/` and remove `sample.env`:
-    
-    ```sh
-    echo 'OPENAI_API_KEY="your-api-key-here"' > src/.env
-    rm src/sample.env  # Remove the sample file
-    ```
-
-    *(Replace `"your-api-key-here"` with your actual OpenAI API key.)*
-
-    To verify the contents of `.env`, you can run:
-    ```sh
-    cat src/.env
-    ```
-
-    **For GUI users (Windows Explorer/macOS Finder):**
-    - Navigate to the **`src/`** directory inside the project.
-    - **Rename** `sample.env` to `.env`.
-    - Open `.env` with a text editor (Notepad, VS Code, etc.).
-    - Replace `your-api-key-here` with your actual API key.
-    - Save and close the file.
-
-    **Make sure `src/.env` is not committed to Git** (it’s already in `.gitignore`).
-
+### **✅ Features**
+- ✅ Fetches clinical trial data from the **ClinicalTrials.gov API**.
+- ✅ Extracts and structures **eligibility criteria** into logical expressions.
+- ✅ Persists processed data as **JSON files** for further analysis.
+- 🚧 **Upcoming:** Automated patient matching system.
+- 🚧 **Upcoming:** UI.
 
 ---
 
-## **Usage**
+## **📋 Requirements**
+- **Python 3.13+**
+- **OpenAI API key** (for GPT-4o access)
+  📌 **Get your API key here:** [OpenAI API Keys](https://platform.openai.com/api-keys)
 
-To run ClearMatch, simply execute the main script:
+---
 
+## **💾 Installation**
+
+1️⃣ **Clone the repository**
 ```sh
-python -m scripts.main
+   gh repo clone judacas/Clinical-Trial-Prompts
+   ```
+
+   _This uses [GitHub CLI](https://cli.github.com/). If you don’t have it, use:_
+
+   ```sh
+   git clone https://github.com/judacas/Clinical-Trial-Prompts.git
+   ```
+make sure to then cd into the root directory
+```sh
+cd Clinical-Trial-Prompts
 ```
 
+2️⃣ **Set up a virtual environment _(Optional but Recommended)_ **
+```sh
+python -m venv .venv
+source .venv/bin/activate  # macOS/Linux
+.venv\Scripts\activate     # Windows
+```
+
+3️⃣ **Install dependencies**
+```sh
+pip install -r requirements.txt
+```
+
+4️⃣ **Set up environment variables**
+Copy the example [`sample.env`](src/sample.env) file and rename it to proper `.env` naming convention:
+```sh
+cp src/sample.env src/.env  # macOS/Linux
+copy src\sample.env src\.env  # Windows
+```
+
+To edit the `.env` file in the terminal, use:
+```sh
+nano src/.env  # Linux/macOS
+notepad src\.env  # Windows
+```
+Then, add your OpenAI API key:
+```sh
+OPENAI_API_KEY="your-api-key-here"
+```
+
+📌 **Note:** The `.env` file is ignored by Git to prevent accidental key exposure.
+
+---
+
+## **🛠 Usage**
+Run ClearMatch using:
+```sh
+python -m src.main
+```
 Follow the command-line instructions to process and structure clinical trial data.
 
 ---
 
-## **Project Structure**
-```
-Clinical-Trial-Prompts/
-│── models/          # Pydantic data models
-│── services/        # Business logic components
-│── repositories/    # Data persistence layer
-│── utils/           # Helper functions and utilities
-│── scripts/         # Entry points for execution
-```
+## **📊 Data Flow**
+1. **Fetch raw trial data** from **ClinicalTrials.gov**.
+2. [**Identify**](src/services/identifier.py) the atomic eligibility criteria in the selected trials.
+3. [**Structure criteria**](src/services/logical_structurizer.py) using logical operators (`AND`, `OR`, etc.).
+4. **Store results** as structured **JSON files** in [`output/`](output/) subdirectory for further use.
 
 ---
 
-## **Data Flow**
+## **💡 Future Plans**
+- 🔹 Add **automated patient-trial matching**.
+- 🔹 Implement **an API** to allow external applications to query structured trial data.
+- 🔹 Optimize **logical structuring** for better accuracy.
 
-1. **Raw trial data** is fetched from **ClinicalTrials.gov**.
-2. The text is **processed** to extract atomic eligibility criteria.
-3. Criteria are **organized into logical structures**.
-4. The results are **stored as structured JSON files** for further use.
+---
+
+## **🤝 Contributions**
+Contributions are welcome! Please open an issue or submit a pull request.
+
+---
+
+## **📜 License**
+This project is licensed under the **MIT License**.
+
 ---
