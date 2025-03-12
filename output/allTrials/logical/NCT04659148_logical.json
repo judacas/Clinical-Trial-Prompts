@@ -1,0 +1,357 @@
+{
+    "info": {
+        "nct_id": "NCT04659148",
+        "official_title": "Surgical and Oncological Outcomes in Patients With Ulcerative Colitis Associated Rectal Cancer: a Retrospective Study",
+        "inclusion_criteria": "* Patients diagnosed with Ulcerative Colitis;\n* Patients diagnosed with rectal cancer (within 15 cm from the anal verge);\n* Patients who underwent surgery for rectal cancer between January 2004 and January 2020;\n* All type of surgery will be included;\n* Surgery in elective and emergency settings.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients aged<18 years;\n* Patients with a diagnosis of undetermined colitis;\n* Insufficient follow-up data.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients diagnosed with Ulcerative Colitis;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients diagnosed with Ulcerative Colitis",
+                        "criterion": "Ulcerative Colitis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients diagnosed with Ulcerative Colitis",
+                        "criterion": "Ulcerative Colitis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients diagnosed with rectal cancer (within 15 cm from the anal verge);",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients diagnosed with rectal cancer",
+                        "criterion": "rectal cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 15 cm from the anal verge",
+                        "criterion": "tumor location",
+                        "requirement": {
+                            "requirement_type": "distance from anal verge",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 15,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients diagnosed with rectal cancer",
+                        "criterion": "rectal cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 15 cm from the anal verge",
+                        "criterion": "tumor location",
+                        "requirement": {
+                            "requirement_type": "distance from anal verge",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 15,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who underwent surgery for rectal cancer between January 2004 and January 2020;",
+                "criterions": [
+                    {
+                        "exact_snippets": "underwent surgery for rectal cancer",
+                        "criterion": "surgery for rectal cancer",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2004,
+                                        "unit": "year"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2020,
+                                        "unit": "year"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "underwent surgery for rectal cancer",
+                        "criterion": "surgery for rectal cancer",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2004,
+                                        "unit": "year"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2020,
+                                        "unit": "year"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* All type of surgery will be included;",
+                "criterions": [
+                    {
+                        "exact_snippets": "All type of surgery will be included",
+                        "criterion": "surgery type",
+                        "requirement": {
+                            "requirement_type": "inclusion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "All type of surgery will be included",
+                        "criterion": "surgery type",
+                        "requirement": {
+                            "requirement_type": "inclusion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Surgery in elective and emergency settings.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Surgery in elective and emergency settings.",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "setting",
+                            "expected_value": [
+                                "elective",
+                                "emergency"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Surgery in elective and emergency settings.",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "setting",
+                            "expected_value": [
+                                "elective",
+                                "emergency"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients aged<18 years;",
+                "criterions": [
+                    {
+                        "exact_snippets": "aged<18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "aged<18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with a diagnosis of undetermined colitis;",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosis of undetermined colitis",
+                        "criterion": "undetermined colitis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "diagnosis of undetermined colitis",
+                        "criterion": "undetermined colitis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Insufficient follow-up data.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Insufficient follow-up data",
+                        "criterion": "follow-up data",
+                        "requirement": {
+                            "requirement_type": "sufficiency",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Insufficient follow-up data",
+                    "criterion": "follow-up data",
+                    "requirement": {
+                        "requirement_type": "sufficiency",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

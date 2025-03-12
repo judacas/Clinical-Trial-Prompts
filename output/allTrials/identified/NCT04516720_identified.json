@@ -1,0 +1,212 @@
+{
+    "info": {
+        "nct_id": "NCT04516720",
+        "official_title": "Creation of a Clinical Database on Primary Nervous System Tumors",
+        "inclusion_criteria": "* Adult patient aged ≥ 18, no age limit;\n* Diagnosis of Primary central nervous system tumors ;\n* Patient treated at the Montpellier Cancer Institute, whatever the treatment received (systemic treatment, radiotherapy or exclusive supportive care);\n* For the retrospective part of the study, patient first treated at the Montpellier Cancer Institute between January 1rst, 2004 and the beginning of the prospective part;\n* Patient information for the retrospective (patient still alive at the beginning of the study) and prospective study.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Secondary lesions of the central nervous system;\n* Patient not affiliated to a social protection scheme;\n* Subject under tutelage, curatorship or safeguard of justice.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Adult patient aged ≥ 18, no age limit;",
+            "criterions": [
+                {
+                    "exact_snippets": "Adult patient aged ≥ 18, no age limit",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Diagnosis of Primary central nervous system tumors ;",
+            "criterions": [
+                {
+                    "exact_snippets": "Diagnosis of Primary central nervous system tumors",
+                    "criterion": "primary central nervous system tumors",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient treated at the Montpellier Cancer Institute, whatever the treatment received (systemic treatment, radiotherapy or exclusive supportive care);",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient treated at the Montpellier Cancer Institute",
+                    "criterion": "treatment location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "Montpellier Cancer Institute"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* For the retrospective part of the study, patient first treated at the Montpellier Cancer Institute between January 1rst, 2004 and the beginning of the prospective part;",
+            "criterions": [
+                {
+                    "exact_snippets": "patient first treated at the Montpellier Cancer Institute between January 1rst, 2004 and the beginning of the prospective part",
+                    "criterion": "treatment date at Montpellier Cancer Institute",
+                    "requirements": [
+                        {
+                            "requirement_type": "date range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2004,
+                                        "unit": "year"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 2023,
+                                        "unit": "year"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient information for the retrospective (patient still alive at the beginning of the study) and prospective study.",
+            "criterions": [
+                {
+                    "exact_snippets": "patient still alive at the beginning of the study",
+                    "criterion": "patient status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "alive"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Secondary lesions of the central nervous system;",
+            "criterions": [
+                {
+                    "exact_snippets": "Secondary lesions of the central nervous system",
+                    "criterion": "secondary lesions",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "central nervous system"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient not affiliated to a social protection scheme;",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient not affiliated to a social protection scheme",
+                    "criterion": "social protection scheme affiliation",
+                    "requirements": [
+                        {
+                            "requirement_type": "affiliation",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Subject under tutelage, curatorship or safeguard of justice.",
+            "criterions": [
+                {
+                    "exact_snippets": "Subject under tutelage",
+                    "criterion": "tutelage",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "curatorship",
+                    "criterion": "curatorship",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "safeguard of justice",
+                    "criterion": "safeguard of justice",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

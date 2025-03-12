@@ -1,0 +1,1026 @@
+{
+    "info": {
+        "nct_id": "NCT05539157",
+        "official_title": "A Phase 1 Open-Label Study to Evaluate the Safety, Tolerability and Efficacy of JCXH-211 Intratumoral Injection in Patients With Malignant Solid Tumors",
+        "inclusion_criteria": "All of the following conditions should be met at screening:\n\n* Male or female patients 18-75\n* Patients with malignant solid tumors that have been diagnosed by pathology and/or cytology\n* Patients who have progressed on or who cannot tolerate available therapies or for whom curative therapy does not exist\n* Patients with at least one non-injected measurable tumor lesion per RECIST v1.1\n* Patients with lesions suitable for intratumoral injection (the lesion length is at least 10 mm and not exceeding 80 mm)\n* Patients enrolled in the single and multiple administration stages of Phase 1a must agree to provide pre- and post-treatment tumor biopsy tissues\n* Patients must have adequate organ and marrow functions\n* Patients with treated brain metastases are eligible if meeting protocol's requirement\n* Patients must be ≥ 4 weeks beyond treatment with any chemotherapy (6 weeks for nitrosoureas or mitomycin C), hormonal, biological, targeted agents, other investigational therapy or radiotherapy\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 75 Years",
+        "exclusion_criteria": "Patients who meet any of the following criteria will be excluded from study entry:\n\n* Patients who have received prior IL-12 either alone or as part of a treatment regimen\n* Patients who have received prior therapy with an immuno-oncology agent and were discontinued from that treatment due to a Grade 3 or higher immune-related adverse event (irAE)\n* Patients requiring therapeutic doses of anticoagulation\n* Patients with tumors that impinge on major airways, blood vessels, or nerve bundles\n* Patients with a history of autoimmune disease that has the possibility of recurrence or active autoimmune disease that requires immunosuppressive medications\n* Patients who had a major surgical procedure within 4 weeks prior to the first dose of study treatment\n* Current or prior use of immunosuppressive medication within 2 weeks prior to the first dose of study treatment\n* Patient with history of solid organ or allogenic bone marrow transplantation",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients who have progressed on or who cannot tolerate available therapies or for whom curative therapy does not exist",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who have progressed on ... available therapies",
+                        "criterion": "progression on available therapies",
+                        "requirement": {
+                            "requirement_type": "progression",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients ... who cannot tolerate available therapies",
+                        "criterion": "tolerance to available therapies",
+                        "requirement": {
+                            "requirement_type": "tolerance",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients ... for whom curative therapy does not exist",
+                        "criterion": "existence of curative therapy",
+                        "requirement": {
+                            "requirement_type": "existence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients who have progressed on ... available therapies",
+                                "criterion": "progression on available therapies",
+                                "requirement": {
+                                    "requirement_type": "progression",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Patients ... who cannot tolerate available therapies",
+                                "criterion": "tolerance to available therapies",
+                                "requirement": {
+                                    "requirement_type": "tolerance",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Patients ... for whom curative therapy does not exist",
+                        "criterion": "existence of curative therapy",
+                        "requirement": {
+                            "requirement_type": "existence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with at least one non-injected measurable tumor lesion per RECIST v1.1",
+                "criterions": [
+                    {
+                        "exact_snippets": "at least one non-injected measurable tumor lesion per RECIST v1.1",
+                        "criterion": "non-injected measurable tumor lesion",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "lesion"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "at least one non-injected measurable tumor lesion per RECIST v1.1",
+                        "criterion": "non-injected measurable tumor lesion",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "lesion"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with lesions suitable for intratumoral injection (the lesion length is at least 10 mm and not exceeding 80 mm)",
+                "criterions": [
+                    {
+                        "exact_snippets": "lesions suitable for intratumoral injection",
+                        "criterion": "lesion suitability for intratumoral injection",
+                        "requirement": {
+                            "requirement_type": "suitability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "the lesion length is at least 10 mm and not exceeding 80 mm",
+                        "criterion": "lesion length",
+                        "requirement": {
+                            "requirement_type": "length",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "mm"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 80,
+                                        "unit": "mm"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "lesions suitable for intratumoral injection",
+                        "criterion": "lesion suitability for intratumoral injection",
+                        "requirement": {
+                            "requirement_type": "suitability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "the lesion length is at least 10 mm and not exceeding 80 mm",
+                        "criterion": "lesion length",
+                        "requirement": {
+                            "requirement_type": "length",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "mm"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 80,
+                                        "unit": "mm"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients enrolled in the single and multiple administration stages of Phase 1a must agree to provide pre- and post-treatment tumor biopsy tissues",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients ... must agree to provide pre- and post-treatment tumor biopsy tissues",
+                        "criterion": "tumor biopsy tissues",
+                        "requirement": {
+                            "requirement_type": "agreement to provide",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients ... must agree to provide pre- and post-treatment tumor biopsy tissues",
+                        "criterion": "tumor biopsy tissues",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": [
+                                "pre-treatment",
+                                "post-treatment"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients ... must agree to provide pre- and post-treatment tumor biopsy tissues",
+                                "criterion": "tumor biopsy tissues",
+                                "requirement": {
+                                    "requirement_type": "agreement to provide",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Patients ... must agree to provide pre- and post-treatment tumor biopsy tissues",
+                                "criterion": "tumor biopsy tissues",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": [
+                                        "pre-treatment",
+                                        "post-treatment"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must have adequate organ and marrow functions",
+                "criterions": [
+                    {
+                        "exact_snippets": "adequate organ ... functions",
+                        "criterion": "organ functions",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... marrow functions",
+                        "criterion": "marrow functions",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "adequate organ ... functions",
+                        "criterion": "organ functions",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... marrow functions",
+                        "criterion": "marrow functions",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with treated brain metastases are eligible if meeting protocol's requirement",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with treated brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": "treated"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients with treated brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": "treated"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must be ≥ 4 weeks beyond treatment with any chemotherapy (6 weeks for nitrosoureas or mitomycin C), hormonal, biological, targeted agents, other investigational therapy or radiotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any chemotherapy",
+                        "criterion": "time since chemotherapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "6 weeks for nitrosoureas or mitomycin C",
+                        "criterion": "time since nitrosoureas or mitomycin C",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any ... hormonal ... agents",
+                        "criterion": "time since hormonal agents",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any ... biological ... agents",
+                        "criterion": "time since biological agents",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any ... targeted agents",
+                        "criterion": "time since targeted agents",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any ... other investigational therapy",
+                        "criterion": "time since other investigational therapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any ... radiotherapy",
+                        "criterion": "time since radiotherapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any chemotherapy",
+                                        "criterion": "time since chemotherapy",
+                                        "requirement": {
+                                            "requirement_type": "time since last treatment",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 4,
+                                                "unit": "weeks"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "6 weeks for nitrosoureas or mitomycin C",
+                                        "criterion": "time since nitrosoureas or mitomycin C",
+                                        "requirement": {
+                                            "requirement_type": "time since last treatment",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 6,
+                                                "unit": "weeks"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any ... hormonal ... agents",
+                                        "criterion": "time since hormonal agents",
+                                        "requirement": {
+                                            "requirement_type": "time since last treatment",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 4,
+                                                "unit": "weeks"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any ... biological ... agents",
+                                        "criterion": "time since biological agents",
+                                        "requirement": {
+                                            "requirement_type": "time since last treatment",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 4,
+                                                "unit": "weeks"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any ... targeted agents",
+                                        "criterion": "time since targeted agents",
+                                        "requirement": {
+                                            "requirement_type": "time since last treatment",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 4,
+                                                "unit": "weeks"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any ... other investigational therapy",
+                                        "criterion": "time since other investigational therapy",
+                                        "requirement": {
+                                            "requirement_type": "time since last treatment",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 4,
+                                                "unit": "weeks"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Patients must be ≥ 4 weeks beyond treatment with any ... radiotherapy",
+                                        "criterion": "time since radiotherapy",
+                                        "requirement": {
+                                            "requirement_type": "time since last treatment",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 4,
+                                                "unit": "weeks"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 75 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Male or female patients 18-75",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male or female patients",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "18-75",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 75,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Male or female patients",
+                                "criterion": "gender",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": [
+                                        "male"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "Male or female patients",
+                                "criterion": "gender",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": [
+                                        "female"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "18-75",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 75,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with malignant solid tumors that have been diagnosed by pathology and/or cytology",
+                "criterions": [
+                    {
+                        "exact_snippets": "malignant solid tumors",
+                        "criterion": "malignant solid tumors",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosed by pathology and/or cytology",
+                        "criterion": "diagnosis method",
+                        "requirement": {
+                            "requirement_type": "methods",
+                            "expected_value": [
+                                "pathology",
+                                "cytology"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "malignant solid tumors",
+                                "criterion": "malignant solid tumors",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "diagnosed by pathology and/or cytology",
+                                        "criterion": "diagnosis method",
+                                        "requirement": {
+                                            "requirement_type": "methods",
+                                            "expected_value": "pathology"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "diagnosed by pathology and/or cytology",
+                                        "criterion": "diagnosis method",
+                                        "requirement": {
+                                            "requirement_type": "methods",
+                                            "expected_value": "cytology"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "All of the following conditions should be met at screening:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients who have received prior IL-12 either alone or as part of a treatment regimen",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who have received prior IL-12",
+                        "criterion": "prior IL-12 treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who have received prior therapy with an immuno-oncology agent and were discontinued from that treatment due to a Grade 3 or higher immune-related adverse event (irAE)",
+                "criterions": [
+                    {
+                        "exact_snippets": "received prior therapy with an immuno-oncology agent",
+                        "criterion": "prior therapy with an immuno-oncology agent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "discontinued from that treatment due to a Grade 3 or higher immune-related adverse event (irAE)",
+                        "criterion": "discontinuation due to immune-related adverse event",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "Grade"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients requiring therapeutic doses of anticoagulation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients requiring therapeutic doses of anticoagulation",
+                        "criterion": "anticoagulation",
+                        "requirement": {
+                            "requirement_type": "dose",
+                            "expected_value": "therapeutic"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with tumors that impinge on major airways, blood vessels, or nerve bundles",
+                "criterions": [
+                    {
+                        "exact_snippets": "tumors that impinge on major airways",
+                        "criterion": "tumor location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "impinge on major airways"
+                        }
+                    },
+                    {
+                        "exact_snippets": "tumors that impinge on ... blood vessels",
+                        "criterion": "tumor location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "impinge on blood vessels"
+                        }
+                    },
+                    {
+                        "exact_snippets": "tumors that impinge on ... nerve bundles",
+                        "criterion": "tumor location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "impinge on nerve bundles"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with a history of autoimmune disease that has the possibility of recurrence or active autoimmune disease that requires immunosuppressive medications",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of autoimmune disease",
+                        "criterion": "autoimmune disease history",
+                        "requirement": {
+                            "requirement_type": "possibility of recurrence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "active autoimmune disease",
+                        "criterion": "active autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "requires immunosuppressive medications",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who had a major surgical procedure within 4 weeks prior to the first dose of study treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "major surgical procedure within 4 weeks prior to the first dose of study treatment",
+                        "criterion": "major surgical procedure",
+                        "requirement": {
+                            "requirement_type": "time since procedure",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Current or prior use of immunosuppressive medication within 2 weeks prior to the first dose of study treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Current or prior use of immunosuppressive medication within 2 weeks prior to the first dose of study treatment",
+                        "criterion": "use of immunosuppressive medication",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": "within 2 weeks prior to the first dose of study treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Patients who meet any of the following criteria will be excluded from study entry:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient with history of solid organ or allogenic bone marrow transplantation",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of solid organ transplantation",
+                        "criterion": "solid organ transplantation",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of ... allogenic bone marrow transplantation",
+                        "criterion": "allogenic bone marrow transplantation",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

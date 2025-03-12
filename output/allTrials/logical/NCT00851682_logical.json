@@ -1,0 +1,443 @@
+{
+    "info": {
+        "nct_id": "NCT00851682",
+        "official_title": "Feasibility Study of Prostate Tumor Localization for Focal Cryoablation of Prostate Carcinoma",
+        "inclusion_criteria": "* patients who have been diagnosed with prostate cancer and are scheduled for radical prostatectomy or for brachytherapy\n* patients who have not received any preoperative treatment for their diagnosis of prostate cancer\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 20 Years\nMust have maximum age of 85 Years",
+        "exclusion_criteria": "* patients with implants that are electronically, magnetically, or mechanically active\n* patients with intracranial aneurysm clips\n* patients who have undergone cosmetic eyelid surgery\n* patients with history of pheochromocytoma, insulinoma and acute glaucoma\n* patients with estimated glomerular filtration rate (eGFR) less than 60 ml/min/1.73m2",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* patients who have been diagnosed with prostate cancer and are scheduled for radical prostatectomy or for brachytherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients who have been diagnosed with prostate cancer",
+                        "criterion": "prostate cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "scheduled for radical prostatectomy",
+                        "criterion": "radical prostatectomy",
+                        "requirement": {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "scheduled for ... brachytherapy",
+                        "criterion": "brachytherapy",
+                        "requirement": {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "patients who have been diagnosed with prostate cancer",
+                        "criterion": "prostate cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "scheduled for radical prostatectomy",
+                                "criterion": "radical prostatectomy",
+                                "requirement": {
+                                    "requirement_type": "scheduled",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "scheduled for ... brachytherapy",
+                                "criterion": "brachytherapy",
+                                "requirement": {
+                                    "requirement_type": "scheduled",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients who have not received any preoperative treatment for their diagnosis of prostate cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients who have not received any preoperative treatment",
+                        "criterion": "preoperative treatment",
+                        "requirement": {
+                            "requirement_type": "receipt",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of prostate cancer",
+                        "criterion": "prostate cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "patients who have not received any preoperative treatment",
+                        "criterion": "preoperative treatment",
+                        "requirement": {
+                            "requirement_type": "receipt",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of prostate cancer",
+                        "criterion": "prostate cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 20 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 20 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 20 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 85 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 85 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 85,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 85 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 85,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* patients with intracranial aneurysm clips",
+                "criterions": [
+                    {
+                        "exact_snippets": "intracranial aneurysm clips",
+                        "criterion": "intracranial aneurysm clips",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "intracranial aneurysm clips",
+                    "criterion": "intracranial aneurysm clips",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients who have undergone cosmetic eyelid surgery",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients who have undergone cosmetic eyelid surgery",
+                        "criterion": "cosmetic eyelid surgery",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "patients who have undergone cosmetic eyelid surgery",
+                    "criterion": "cosmetic eyelid surgery",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients with history of pheochromocytoma, insulinoma and acute glaucoma",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of pheochromocytoma",
+                        "criterion": "pheochromocytoma",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of ... insulinoma",
+                        "criterion": "insulinoma",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of ... acute glaucoma",
+                        "criterion": "acute glaucoma",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "history of pheochromocytoma",
+                                "criterion": "pheochromocytoma",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "history of ... insulinoma",
+                                "criterion": "insulinoma",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "history of ... acute glaucoma",
+                        "criterion": "acute glaucoma",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients with estimated glomerular filtration rate (eGFR) less than 60 ml/min/1.73m2",
+                "criterions": [
+                    {
+                        "exact_snippets": "estimated glomerular filtration rate (eGFR) less than 60 ml/min/1.73m2",
+                        "criterion": "estimated glomerular filtration rate (eGFR)",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 60,
+                                "unit": "ml/min/1.73m2"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "estimated glomerular filtration rate (eGFR) less than 60 ml/min/1.73m2",
+                        "criterion": "estimated glomerular filtration rate (eGFR)",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 60,
+                                "unit": "ml/min/1.73m2"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* patients with implants that are electronically, magnetically, or mechanically active",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients with implants that are electronically, magnetically, or mechanically active",
+                        "criterion": "implants",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": [
+                                "electronically active",
+                                "magnetically active",
+                                "mechanically active"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "patients with implants that are electronically, magnetically, or mechanically active",
+                        "criterion": "implants",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "electronically active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with implants that are electronically, magnetically, or mechanically active",
+                        "criterion": "implants",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "magnetically active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with implants that are electronically, magnetically, or mechanically active",
+                        "criterion": "implants",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "mechanically active"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,567 @@
+{
+    "info": {
+        "nct_id": "NCT06415266",
+        "official_title": "Multicentric Randomized Study eValuating the sExual Quality of Life in Breast Cancer Patients Receiving oncoSexology Supportive Care on Proactive Versus On-request",
+        "inclusion_criteria": "* Woman or man at least 18 years old\n* Diagnosis of infiltrating breast cancer regardless of the biological characteristics of the tumor\n* Standard treatment by surgery, radiotherapy and/or chemotherapy, completed a maximum of 3 months ago with the exception of post-neoadjuvant treatments (chemotherapy, poly(ADP-ribose) polymerase (PARP) inhibitor, immunotherapy, targeted treatment, ...) which must have been started less than 3 months previously\n* Patient with sufficient command of the French language to be able to answer the questionnaires\n* Patient having given informed, written and express consent.\n* Affiliation to the French Social Security System\n* Willingness and ability to comply with scheduled visits, treatment plan and other study procedures\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patient already taken cared of in oncosexology. The following are not criteria for non-inclusion (a previous single consultation without treatment, use of local vaginal treatments)\n* Metastatic disease\n* Patient under guardianship, curatorship or safeguard of justice",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Woman or man at least 18 years old",
+                "criterions": [
+                    {
+                        "exact_snippets": "Woman or man",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "woman",
+                                "man"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Woman or man",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "woman",
+                                "man"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Diagnosis of infiltrating breast cancer regardless of the biological characteristics of the tumor",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of infiltrating breast cancer",
+                        "criterion": "infiltrating breast cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Diagnosis of infiltrating breast cancer",
+                        "criterion": "infiltrating breast cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Standard treatment by surgery, radiotherapy and/or chemotherapy, completed a maximum of 3 months ago with the exception of post-neoadjuvant treatments (chemotherapy, poly(ADP-ribose) polymerase (PARP) inhibitor, immunotherapy, targeted treatment, ...) which must have been started less than 3 months previously",
+                "criterions": [
+                    {
+                        "exact_snippets": "Standard treatment by surgery, radiotherapy and/or chemotherapy, completed a maximum of 3 months ago",
+                        "criterion": "standard treatment completion",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "post-neoadjuvant treatments (chemotherapy, poly(ADP-ribose) polymerase (PARP) inhibitor, immunotherapy, targeted treatment, ...) which must have been started less than 3 months previously",
+                        "criterion": "post-neoadjuvant treatment initiation",
+                        "requirement": {
+                            "requirement_type": "time since initiation",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Standard treatment by surgery, radiotherapy and/or chemotherapy, completed a maximum of 3 months ago",
+                                "criterion": "standard treatment completion",
+                                "requirement": {
+                                    "requirement_type": "time since completion",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "post-neoadjuvant treatments (chemotherapy, poly(ADP-ribose) polymerase (PARP) inhibitor, immunotherapy, targeted treatment, ...) which must have been started less than 3 months previously",
+                                "criterion": "post-neoadjuvant treatment initiation",
+                                "requirement": {
+                                    "requirement_type": "time since initiation",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient with sufficient command of the French language to be able to answer the questionnaires",
+                "criterions": [
+                    {
+                        "exact_snippets": "sufficient command of the French language",
+                        "criterion": "command of the French language",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": "sufficient"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "sufficient command of the French language",
+                        "criterion": "command of the French language",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": "sufficient"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient having given informed, written and express consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient having given informed, written and express consent.",
+                        "criterion": "consent",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "informed",
+                                "written",
+                                "express"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patient having given informed, written and express consent.",
+                        "criterion": "consent",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "informed",
+                                "written",
+                                "express"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Affiliation to the French Social Security System",
+                "criterions": [
+                    {
+                        "exact_snippets": "Affiliation to the French Social Security System",
+                        "criterion": "affiliation to the French Social Security System",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Affiliation to the French Social Security System",
+                        "criterion": "affiliation to the French Social Security System",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Willingness and ability to comply with scheduled visits, treatment plan and other study procedures",
+                "criterions": [
+                    {
+                        "exact_snippets": "Willingness and ability to comply with scheduled visits",
+                        "criterion": "compliance with scheduled visits",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willingness and ability to comply with scheduled visits",
+                        "criterion": "compliance with scheduled visits",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willingness and ability to comply with ... treatment plan",
+                        "criterion": "compliance with treatment plan",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willingness and ability to comply with ... treatment plan",
+                        "criterion": "compliance with treatment plan",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willingness and ability to comply with ... other study procedures",
+                        "criterion": "compliance with other study procedures",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willingness and ability to comply with ... other study procedures",
+                        "criterion": "compliance with other study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Willingness and ability to comply with scheduled visits",
+                                        "criterion": "compliance with scheduled visits",
+                                        "requirement": {
+                                            "requirement_type": "willingness",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Willingness and ability to comply with scheduled visits",
+                                        "criterion": "compliance with scheduled visits",
+                                        "requirement": {
+                                            "requirement_type": "ability",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Willingness and ability to comply with ... treatment plan",
+                                        "criterion": "compliance with treatment plan",
+                                        "requirement": {
+                                            "requirement_type": "willingness",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Willingness and ability to comply with ... treatment plan",
+                                        "criterion": "compliance with treatment plan",
+                                        "requirement": {
+                                            "requirement_type": "ability",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Willingness and ability to comply with ... other study procedures",
+                                        "criterion": "compliance with other study procedures",
+                                        "requirement": {
+                                            "requirement_type": "willingness",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Willingness and ability to comply with ... other study procedures",
+                                        "criterion": "compliance with other study procedures",
+                                        "requirement": {
+                                            "requirement_type": "ability",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patient already taken cared of in oncosexology. The following are not criteria for non-inclusion (a previous single consultation without treatment, use of local vaginal treatments)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient already taken cared of in oncosexology",
+                        "criterion": "oncosexology care",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "a previous single consultation without treatment",
+                        "criterion": "previous single consultation without treatment",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "use of local vaginal treatments",
+                        "criterion": "use of local vaginal treatments",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "a previous single consultation without treatment",
+                                    "criterion": "previous single consultation without treatment",
+                                    "requirement": {
+                                        "requirement_type": "history",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "use of local vaginal treatments",
+                                    "criterion": "use of local vaginal treatments",
+                                    "requirement": {
+                                        "requirement_type": "history",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patient already taken cared of in oncosexology",
+                        "criterion": "oncosexology care",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Metastatic disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Metastatic disease",
+                        "criterion": "metastatic disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Metastatic disease",
+                    "criterion": "metastatic disease",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient under guardianship, curatorship or safeguard of justice",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient under guardianship, curatorship or safeguard of justice",
+                        "criterion": "legal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "guardianship",
+                                "curatorship",
+                                "safeguard of justice"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patient under guardianship, curatorship or safeguard of justice",
+                        "criterion": "legal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "guardianship",
+                                "curatorship",
+                                "safeguard of justice"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

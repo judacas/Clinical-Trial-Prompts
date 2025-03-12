@@ -1,0 +1,256 @@
+{
+    "info": {
+        "nct_id": "NCT03979573",
+        "official_title": "Prospective Phase II Trial Evaluating Multiparametric MRI, Radiomics, MR-guided Biopsy, and Molecular Markers for Active Surveillance of Patients With Low- and Intermediate-Risk Prostate Cancer",
+        "inclusion_criteria": "* Patients with a Gleason score of 3+3=6 or 3+4=7a and ≤ 33% of positive biopsy cores verified by an at least 12 core systematic prostate biopsy (SB)\n* Organ-confined disease (≤cT2a), note: tumor-positive biopsies in both lobes with non-palpable tumor are rated as cT1c\n* PSA value ≤10 ng/ml\nHealthy volunteers allowed\nMust be MALE",
+        "exclusion_criteria": "* Gleason score ≥4+3=7b or a Gleason score 3+4=7a with positive biopsy cores >33% of all cores in SB\n* PSA >10 ng/ml\n* Patients not able to give informed consent\n* Contraindication to mp-MRI\n* Contraindication to prostate biopsy",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Patients with a Gleason score of 3+3=6 or 3+4=7a and ≤ 33% of positive biopsy cores verified by an at least 12 core systematic prostate biopsy (SB)",
+            "criterions": [
+                {
+                    "exact_snippets": "Gleason score of 3+3=6 or 3+4=7a",
+                    "criterion": "Gleason score",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": [
+                                "3+3=6",
+                                "3+4=7a"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "≤ 33% of positive biopsy cores",
+                    "criterion": "positive biopsy cores",
+                    "requirements": [
+                        {
+                            "requirement_type": "percentage",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 33,
+                                "unit": "%"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "verified by an at least 12 core systematic prostate biopsy (SB)",
+                    "criterion": "systematic prostate biopsy",
+                    "requirements": [
+                        {
+                            "requirement_type": "core count",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 12,
+                                "unit": "core"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Organ-confined disease (≤cT2a), note: tumor-positive biopsies in both lobes with non-palpable tumor are rated as cT1c",
+            "criterions": [
+                {
+                    "exact_snippets": "Organ-confined disease (≤cT2a)",
+                    "criterion": "disease stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "cT"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "tumor-positive biopsies in both lobes",
+                    "criterion": "tumor-positive biopsies",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "both lobes"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "non-palpable tumor",
+                    "criterion": "tumor palpability",
+                    "requirements": [
+                        {
+                            "requirement_type": "palpability",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* PSA value ≤10 ng/ml",
+            "criterions": [
+                {
+                    "exact_snippets": "PSA value ≤10 ng/ml",
+                    "criterion": "PSA value",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "ng/ml"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be MALE",
+            "criterions": [
+                {
+                    "exact_snippets": "MALE",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Gleason score ≥4+3=7b or a Gleason score 3+4=7a with positive biopsy cores >33% of all cores in SB",
+            "criterions": [
+                {
+                    "exact_snippets": "Gleason score ≥4+3=7b",
+                    "criterion": "Gleason score",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 7,
+                                "unit": "b"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Gleason score 3+4=7a with positive biopsy cores >33% of all cores",
+                    "criterion": "Gleason score with positive biopsy cores",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 7,
+                                "unit": "a"
+                            }
+                        },
+                        {
+                            "requirement_type": "positive biopsy cores",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 33,
+                                "unit": "% of all cores"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* PSA >10 ng/ml",
+            "criterions": [
+                {
+                    "exact_snippets": "PSA >10 ng/ml",
+                    "criterion": "PSA level",
+                    "requirements": [
+                        {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "ng/ml"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients not able to give informed consent",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients not able to give informed consent",
+                    "criterion": "ability to give informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Contraindication to mp-MRI",
+            "criterions": [
+                {
+                    "exact_snippets": "Contraindication to mp-MRI",
+                    "criterion": "mp-MRI",
+                    "requirements": [
+                        {
+                            "requirement_type": "contraindication",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Contraindication to prostate biopsy",
+            "criterions": [
+                {
+                    "exact_snippets": "Contraindication to prostate biopsy",
+                    "criterion": "prostate biopsy",
+                    "requirements": [
+                        {
+                            "requirement_type": "contraindication",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

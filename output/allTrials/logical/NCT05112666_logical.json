@@ -1,0 +1,730 @@
+{
+    "info": {
+        "nct_id": "NCT05112666",
+        "official_title": "Observational Studies in Cancer Associated Thrombosis for Rivaroxaban - United Kingdom Cohort (OSCAR-UK)",
+        "inclusion_criteria": "* Be ≥18 years of age at the time of anticoagulation initiation\n* Have active cancer and acute deep vein thrombosis (DVT) and/or pulmonary embolism (PE)\n* Treated with rivaroxaban (or any DOAC) or LMWH as their first recorded anticoagulant prescription 7 to 30 days post-acute CAT event diagnosis\n* Have been active in the data set for at least 12-months prior to the index event and had at least one provider visit in the 12-months prior to the acute VTE event\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Evidence of atrial fibrillation, recent hip/knee replacement (with 90 days of CAT), ongoing VTE treatment, valvular heart disease defined as any rheumatic heart disease, mitral stenosis or mitral valve repair/replacement\n* History of inferior vena cava filter before cohort entry\n* vitamin K antagonist (VKA) use between cohort entry and index day (initiation of DOAC or LMWH)\n* Evidence of any type of therapeutic anticoagulation use during all available look-back period per written prescription or patient self-report\n* Initiation of rivaroxaban or other DOACs or LMWH during the study period at non-therapeutic doses (e.g., enoxaparin at a dose other than 1 mg/kg twice daily or 1.5 mg/kg once daily; dalteparin at a dose other than 200 IU/kg of total body weight)\n* Pregnancy\n* Recording indicative of palliative care before cohort entry\n* Any clinically-relevant bleeding-related d hospitalization or VTE recurrence between the initial CAT and the start of observation",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Be ≥18 years of age at the time of anticoagulation initiation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Be ≥18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Be ≥18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have active cancer and acute deep vein thrombosis (DVT) and/or pulmonary embolism (PE)",
+                "criterions": [
+                    {
+                        "exact_snippets": "active cancer",
+                        "criterion": "cancer",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "acute deep vein thrombosis (DVT)",
+                        "criterion": "deep vein thrombosis",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "acute"
+                        }
+                    },
+                    {
+                        "exact_snippets": "pulmonary embolism (PE)",
+                        "criterion": "pulmonary embolism",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "acute"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "active cancer",
+                        "criterion": "cancer",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "acute deep vein thrombosis (DVT)",
+                                "criterion": "deep vein thrombosis",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "acute"
+                                }
+                            },
+                            {
+                                "exact_snippets": "pulmonary embolism (PE)",
+                                "criterion": "pulmonary embolism",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "acute"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have been active in the data set for at least 12-months prior to the index event and had at least one provider visit in the 12-months prior to the acute VTE event",
+                "criterions": [
+                    {
+                        "exact_snippets": "Have been active in the data set for at least 12-months prior to the index event",
+                        "criterion": "activity in data set",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 12,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "had at least one provider visit in the 12-months prior to the acute VTE event",
+                        "criterion": "provider visit",
+                        "requirement": {
+                            "requirement_type": "count",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "visit"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Have been active in the data set for at least 12-months prior to the index event",
+                        "criterion": "activity in data set",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 12,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "had at least one provider visit in the 12-months prior to the acute VTE event",
+                        "criterion": "provider visit",
+                        "requirement": {
+                            "requirement_type": "count",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "visit"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Evidence of atrial fibrillation, recent hip/knee replacement (with 90 days of CAT), ongoing VTE treatment, valvular heart disease defined as any rheumatic heart disease, mitral stenosis or mitral valve repair/replacement",
+                "criterions": [
+                    {
+                        "exact_snippets": "Evidence of atrial fibrillation",
+                        "criterion": "atrial fibrillation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "recent hip/knee replacement (with 90 days of CAT)",
+                        "criterion": "hip/knee replacement",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 90,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "ongoing VTE treatment",
+                        "criterion": "VTE treatment",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "ongoing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "valvular heart disease defined as any rheumatic heart disease, mitral stenosis or mitral valve repair/replacement",
+                        "criterion": "valvular heart disease",
+                        "requirement": {
+                            "requirement_type": "types",
+                            "expected_value": [
+                                "rheumatic heart disease",
+                                "mitral stenosis",
+                                "mitral valve repair/replacement"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Evidence of atrial fibrillation",
+                                "criterion": "atrial fibrillation",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "recent hip/knee replacement (with 90 days of CAT)",
+                                "criterion": "hip/knee replacement",
+                                "requirement": {
+                                    "requirement_type": "recency",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 90,
+                                        "unit": "days"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "ongoing VTE treatment",
+                        "criterion": "VTE treatment",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "ongoing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "valvular heart disease defined as any rheumatic heart disease, mitral stenosis or mitral valve repair/replacement",
+                        "criterion": "valvular heart disease",
+                        "requirement": {
+                            "requirement_type": "types",
+                            "expected_value": [
+                                "rheumatic heart disease",
+                                "mitral stenosis",
+                                "mitral valve repair/replacement"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of inferior vena cava filter before cohort entry",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of inferior vena cava filter",
+                        "criterion": "inferior vena cava filter",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "History of inferior vena cava filter",
+                    "criterion": "inferior vena cava filter",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* vitamin K antagonist (VKA) use between cohort entry and index day (initiation of DOAC or LMWH)",
+                "criterions": [
+                    {
+                        "exact_snippets": "vitamin K antagonist (VKA) use between cohort entry and index day",
+                        "criterion": "vitamin K antagonist (VKA) use",
+                        "requirement": {
+                            "requirement_type": "time period",
+                            "expected_value": "between cohort entry and index day"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "vitamin K antagonist (VKA) use between cohort entry and index day",
+                    "criterion": "vitamin K antagonist (VKA) use",
+                    "requirement": {
+                        "requirement_type": "time period",
+                        "expected_value": "between cohort entry and index day"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Initiation of rivaroxaban or other DOACs or LMWH during the study period at non-therapeutic doses (e.g., enoxaparin at a dose other than 1 mg/kg twice daily or 1.5 mg/kg once daily; dalteparin at a dose other than 200 IU/kg of total body weight)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Initiation of rivaroxaban or other DOACs or LMWH during the study period",
+                        "criterion": "initiation of anticoagulant therapy",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "during the study period"
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-therapeutic doses",
+                        "criterion": "anticoagulant dose",
+                        "requirement": {
+                            "requirement_type": "therapeutic",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "enoxaparin at a dose other than 1 mg/kg twice daily or 1.5 mg/kg once daily",
+                        "criterion": "enoxaparin dose",
+                        "requirement": {
+                            "requirement_type": "specific dose",
+                            "expected_value": "other than 1 mg/kg twice daily or 1.5 mg/kg once daily"
+                        }
+                    },
+                    {
+                        "exact_snippets": "dalteparin at a dose other than 200 IU/kg of total body weight",
+                        "criterion": "dalteparin dose",
+                        "requirement": {
+                            "requirement_type": "specific dose",
+                            "expected_value": "other than 200 IU/kg of total body weight"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Initiation of rivaroxaban or other DOACs or LMWH during the study period",
+                                "criterion": "initiation of anticoagulant therapy",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": "during the study period"
+                                }
+                            },
+                            {
+                                "exact_snippets": "non-therapeutic doses",
+                                "criterion": "anticoagulant dose",
+                                "requirement": {
+                                    "requirement_type": "therapeutic",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "enoxaparin at a dose other than 1 mg/kg twice daily or 1.5 mg/kg once daily",
+                                "criterion": "enoxaparin dose",
+                                "requirement": {
+                                    "requirement_type": "specific dose",
+                                    "expected_value": "other than 1 mg/kg twice daily or 1.5 mg/kg once daily"
+                                }
+                            },
+                            {
+                                "exact_snippets": "dalteparin at a dose other than 200 IU/kg of total body weight",
+                                "criterion": "dalteparin dose",
+                                "requirement": {
+                                    "requirement_type": "specific dose",
+                                    "expected_value": "other than 200 IU/kg of total body weight"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pregnancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Pregnancy",
+                    "criterion": "pregnancy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Recording indicative of palliative care before cohort entry",
+                "criterions": [
+                    {
+                        "exact_snippets": "Recording indicative of palliative care",
+                        "criterion": "palliative care",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Recording indicative of palliative care",
+                    "criterion": "palliative care",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Any clinically-relevant bleeding-related d hospitalization or VTE recurrence between the initial CAT and the start of observation",
+                "criterions": [
+                    {
+                        "exact_snippets": "clinically-relevant bleeding-related d hospitalization",
+                        "criterion": "clinically-relevant bleeding-related hospitalization",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "VTE recurrence between the initial CAT and the start of observation",
+                        "criterion": "VTE recurrence",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "clinically-relevant bleeding-related d hospitalization",
+                        "criterion": "clinically-relevant bleeding-related hospitalization",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "VTE recurrence between the initial CAT and the start of observation",
+                        "criterion": "VTE recurrence",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Treated with rivaroxaban (or any DOAC) or LMWH as their first recorded anticoagulant prescription 7 to 30 days post-acute CAT event diagnosis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Treated with rivaroxaban (or any DOAC) or LMWH as their first recorded anticoagulant prescription",
+                        "criterion": "first recorded anticoagulant prescription",
+                        "requirement": {
+                            "requirement_type": "medication",
+                            "expected_value": [
+                                "rivaroxaban",
+                                "DOAC",
+                                "LMWH"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "7 to 30 days post-acute CAT event diagnosis",
+                        "criterion": "time since acute CAT event diagnosis",
+                        "requirement": {
+                            "requirement_type": "time range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 7,
+                                        "unit": "days"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 30,
+                                        "unit": "days"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Treated with rivaroxaban (or any DOAC) or LMWH as their first recorded anticoagulant prescription",
+                                "criterion": "first recorded anticoagulant prescription",
+                                "requirement": {
+                                    "requirement_type": "medication",
+                                    "expected_value": "rivaroxaban"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Treated with rivaroxaban (or any DOAC) or LMWH as their first recorded anticoagulant prescription",
+                                "criterion": "first recorded anticoagulant prescription",
+                                "requirement": {
+                                    "requirement_type": "medication",
+                                    "expected_value": "DOAC"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Treated with rivaroxaban (or any DOAC) or LMWH as their first recorded anticoagulant prescription",
+                                "criterion": "first recorded anticoagulant prescription",
+                                "requirement": {
+                                    "requirement_type": "medication",
+                                    "expected_value": "LMWH"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "7 to 30 days post-acute CAT event diagnosis",
+                        "criterion": "time since acute CAT event diagnosis",
+                        "requirement": {
+                            "requirement_type": "time range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 7,
+                                        "unit": "days"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 30,
+                                        "unit": "days"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Evidence of any type of therapeutic anticoagulation use during all available look-back period per written prescription or patient self-report",
+                "criterions": [
+                    {
+                        "exact_snippets": "Evidence of any type of therapeutic anticoagulation use",
+                        "criterion": "therapeutic anticoagulation use",
+                        "requirement": {
+                            "requirement_type": "evidence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "during all available look-back period",
+                        "criterion": "look-back period",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": "all available"
+                        }
+                    },
+                    {
+                        "exact_snippets": "per written prescription or patient self-report",
+                        "criterion": "source of evidence",
+                        "requirement": {
+                            "requirement_type": "source",
+                            "expected_value": [
+                                "written prescription",
+                                "patient self-report"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Evidence of any type of therapeutic anticoagulation use",
+                                "criterion": "therapeutic anticoagulation use",
+                                "requirement": {
+                                    "requirement_type": "evidence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "during all available look-back period",
+                                "criterion": "look-back period",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": "all available"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "per written prescription or patient self-report",
+                                "criterion": "source of evidence",
+                                "requirement": {
+                                    "requirement_type": "source",
+                                    "expected_value": "written prescription"
+                                }
+                            },
+                            {
+                                "exact_snippets": "per written prescription or patient self-report",
+                                "criterion": "source of evidence",
+                                "requirement": {
+                                    "requirement_type": "source",
+                                    "expected_value": "patient self-report"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

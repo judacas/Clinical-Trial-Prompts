@@ -1,0 +1,381 @@
+{
+    "info": {
+        "nct_id": "NCT06436248",
+        "official_title": "Polygenic Risk Scores and Multi-cancer Early Detection for Ovarian Cancer",
+        "inclusion_criteria": "* Female, age 25 or older (given that women under this age are not generally recommended to receive BRCA1/2 genetic testing)\n* Completed full sequence or targeted genetic testing with a clinically confirmed BRCA1 or BRCA2 deleterious mutation identified.\n* English-fluent; the surveys and interviews were designed and validated in English and are not currently available in other languages. Translation of questionnaires into other languages would require reestablishing the reliability and validity of these measures. Therefore, participants must be able to communicate in English to complete the surveys.\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 25 Years",
+        "exclusion_criteria": "* Previous receipt of any prophylactic oophorectomy\n* Personal history of ovarian cancer\n* Major psychiatric illness or cognitive impairment that in the judgment of the study investigators would preclude study participation.\n* Any patients who are unable to comply with the study procedures as determined by the study investigators or study staff.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Female, age 25 or older (given that women under this age are not generally recommended to receive BRCA1/2 genetic testing)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "age 25 or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 25,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "age 25 or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 25,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Completed full sequence or targeted genetic testing with a clinically confirmed BRCA1 or BRCA2 deleterious mutation identified.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Completed full sequence or targeted genetic testing",
+                        "criterion": "genetic testing",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "clinically confirmed BRCA1 or BRCA2 deleterious mutation identified",
+                        "criterion": "BRCA1 or BRCA2 mutation",
+                        "requirement": {
+                            "requirement_type": "mutation type",
+                            "expected_value": "deleterious"
+                        }
+                    },
+                    {
+                        "exact_snippets": "clinically confirmed BRCA1 or BRCA2 deleterious mutation identified",
+                        "criterion": "BRCA1 or BRCA2 mutation",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": "clinically confirmed"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Completed full sequence or targeted genetic testing",
+                                "criterion": "genetic testing",
+                                "requirement": {
+                                    "requirement_type": "completion",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "clinically confirmed BRCA1 or BRCA2 deleterious mutation identified",
+                                        "criterion": "BRCA1 or BRCA2 mutation",
+                                        "requirement": {
+                                            "requirement_type": "mutation type",
+                                            "expected_value": "deleterious"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "clinically confirmed BRCA1 or BRCA2 deleterious mutation identified",
+                                        "criterion": "BRCA1 or BRCA2 mutation",
+                                        "requirement": {
+                                            "requirement_type": "confirmation",
+                                            "expected_value": "clinically confirmed"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* English-fluent; the surveys and interviews were designed and validated in English and are not currently available in other languages. Translation of questionnaires into other languages would require reestablishing the reliability and validity of these measures. Therefore, participants must be able to communicate in English to complete the surveys.",
+                "criterions": [
+                    {
+                        "exact_snippets": "participants must be able to communicate in English",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "English"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "participants must be able to communicate in English",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "English"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 25 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 25 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 25,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 25 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 25,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Previous receipt of any prophylactic oophorectomy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous receipt of any prophylactic oophorectomy",
+                        "criterion": "prophylactic oophorectomy",
+                        "requirement": {
+                            "requirement_type": "receipt",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Previous receipt of any prophylactic oophorectomy",
+                    "criterion": "prophylactic oophorectomy",
+                    "requirement": {
+                        "requirement_type": "receipt",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Personal history of ovarian cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Personal history of ovarian cancer",
+                        "criterion": "ovarian cancer",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Personal history of ovarian cancer",
+                    "criterion": "ovarian cancer",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Major psychiatric illness or cognitive impairment that in the judgment of the study investigators would preclude study participation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Major psychiatric illness",
+                        "criterion": "psychiatric illness",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "major"
+                        }
+                    },
+                    {
+                        "exact_snippets": "cognitive impairment",
+                        "criterion": "cognitive impairment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Major psychiatric illness",
+                                "criterion": "psychiatric illness",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "major"
+                                }
+                            },
+                            {
+                                "exact_snippets": "cognitive impairment",
+                                "criterion": "cognitive impairment",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "in the judgment of the study investigators would preclude study participation",
+                        "criterion": "judgment of the study investigators",
+                        "requirement": {
+                            "requirement_type": "preclusion of study participation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Any patients who are unable to comply with the study procedures as determined by the study investigators or study staff.",
+                "criterions": [
+                    {
+                        "exact_snippets": "unable to comply with the study procedures",
+                        "criterion": "compliance with study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "unable to comply with the study procedures",
+                    "criterion": "compliance with study procedures",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

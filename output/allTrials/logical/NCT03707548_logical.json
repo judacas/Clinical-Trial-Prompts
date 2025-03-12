@@ -1,0 +1,645 @@
+{
+    "info": {
+        "nct_id": "NCT03707548",
+        "official_title": "A Clinical Trial of Group-based Body Psychotherapy (BPT) to Improve Bodily Disturbances in Post-treatment Cancer Patients in Combination With Randomized Controlled Smartphone-triggered Bodily Interventions",
+        "inclusion_criteria": "* Having received curatively intended treatment for any malignant neoplasm; primary treatment (surgery, radiotherapy, chemotherapy) being completed >/= 3 months ago before study inclusion. Any other ongoing anti-tumor therapy is allowed (e.g., hormonal therapy, adjuvant immunotherapy)\n* existing bodily disturbances\n* No sign of progress or recurrence of malignancy at study inclusion according to treating physician\n* Score of 0 or 1 according to the Eastern Cooperative Oncology Group (ECOG) Performance Score\n* Having an anticipated life expectancy of >/= 12 months, according to treating physician\n* age 18 years or older\n* Capacity to participate in group BPT sessions in Basel or Winterthur, 3 study assessments, and the smartphone-triggered interventions\n* Ability to provide informed consent\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Suffering from a severe current mental disorder\n* Risk of current suicidality, as indicated by a suicide item score >/= 2 in the BDI-II (Beck Depression Inventory), as this group BPT intervention is not appropriate to support suicidal patients in acute crises\n* Participation in any other clinical trial with a psychosocial intervention\n* Receiving any other current psychotherapeutic treatment with the exception of already established therapies\n* Inability to understand and speak German",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Having received curatively intended treatment for any malignant neoplasm; primary treatment (surgery, radiotherapy, chemotherapy) being completed >/= 3 months ago before study inclusion. Any other ongoing anti-tumor therapy is allowed (e.g., hormonal therapy, adjuvant immunotherapy)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Having received curatively intended treatment for any malignant neoplasm",
+                        "criterion": "curatively intended treatment for malignant neoplasm",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "primary treatment (surgery, radiotherapy, chemotherapy) being completed >/= 3 months ago before study inclusion",
+                        "criterion": "completion of primary treatment",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Any other ongoing anti-tumor therapy is allowed (e.g., hormonal therapy, adjuvant immunotherapy)",
+                        "criterion": "ongoing anti-tumor therapy",
+                        "requirement": {
+                            "requirement_type": "allowance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Having received curatively intended treatment for any malignant neoplasm",
+                                "criterion": "curatively intended treatment for malignant neoplasm",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "primary treatment (surgery, radiotherapy, chemotherapy) being completed >/= 3 months ago before study inclusion",
+                                "criterion": "completion of primary treatment",
+                                "requirement": {
+                                    "requirement_type": "time since completion",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Any other ongoing anti-tumor therapy is allowed (e.g., hormonal therapy, adjuvant immunotherapy)",
+                        "criterion": "ongoing anti-tumor therapy",
+                        "requirement": {
+                            "requirement_type": "allowance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* existing bodily disturbances",
+                "criterions": [
+                    {
+                        "exact_snippets": "existing bodily disturbances",
+                        "criterion": "bodily disturbances",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "existing bodily disturbances",
+                        "criterion": "bodily disturbances",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No sign of progress or recurrence of malignancy at study inclusion according to treating physician",
+                "criterions": [
+                    {
+                        "exact_snippets": "No sign of progress or recurrence of malignancy",
+                        "criterion": "progress or recurrence of malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "according to treating physician",
+                        "criterion": "treating physician's assessment",
+                        "requirement": {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No sign of progress or recurrence of malignancy",
+                        "criterion": "progress or recurrence of malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "according to treating physician",
+                        "criterion": "treating physician's assessment",
+                        "requirement": {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Score of 0 or 1 according to the Eastern Cooperative Oncology Group (ECOG) Performance Score",
+                "criterions": [
+                    {
+                        "exact_snippets": "Score of 0 or 1 according to the Eastern Cooperative Oncology Group (ECOG) Performance Score",
+                        "criterion": "ECOG Performance Score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Score of 0 or 1 according to the Eastern Cooperative Oncology Group (ECOG) Performance Score",
+                        "criterion": "ECOG Performance Score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Having an anticipated life expectancy of >/= 12 months, according to treating physician",
+                "criterions": [
+                    {
+                        "exact_snippets": "anticipated life expectancy of >/= 12 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 12,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "anticipated life expectancy of >/= 12 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 12,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* age 18 years or older",
+                "criterions": [
+                    {
+                        "exact_snippets": "age 18 years or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "age 18 years or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Capacity to participate in group BPT sessions in Basel or Winterthur, 3 study assessments, and the smartphone-triggered interventions",
+                "criterions": [
+                    {
+                        "exact_snippets": "Capacity to participate in group BPT sessions in Basel or Winterthur",
+                        "criterion": "capacity to participate in group BPT sessions",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "Basel",
+                                "Winterthur"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Capacity to participate in ... 3 study assessments",
+                        "criterion": "capacity to participate in study assessments",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 3,
+                                "unit": "assessments"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Capacity to participate in ... smartphone-triggered interventions",
+                        "criterion": "capacity to participate in smartphone-triggered interventions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Capacity to participate in group BPT sessions in Basel or Winterthur",
+                                        "criterion": "capacity to participate in group BPT sessions",
+                                        "requirement": {
+                                            "requirement_type": "location",
+                                            "expected_value": [
+                                                "Basel",
+                                                "Winterthur"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Capacity to participate in ... 3 study assessments",
+                                        "criterion": "capacity to participate in study assessments",
+                                        "requirement": {
+                                            "requirement_type": "quantity",
+                                            "expected_value": {
+                                                "operator": "=",
+                                                "value": 3,
+                                                "unit": "assessments"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "Capacity to participate in ... smartphone-triggered interventions",
+                                "criterion": "capacity to participate in smartphone-triggered interventions",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Ability to provide informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ability to provide informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ability to provide informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Suffering from a severe current mental disorder",
+                "criterions": [
+                    {
+                        "exact_snippets": "Suffering from a severe current mental disorder",
+                        "criterion": "mental disorder",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Suffering from a severe current mental disorder",
+                        "criterion": "mental disorder",
+                        "requirement": {
+                            "requirement_type": "temporal",
+                            "expected_value": "current"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Suffering from a severe current mental disorder",
+                        "criterion": "mental disorder",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Suffering from a severe current mental disorder",
+                        "criterion": "mental disorder",
+                        "requirement": {
+                            "requirement_type": "temporal",
+                            "expected_value": "current"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Risk of current suicidality, as indicated by a suicide item score >/= 2 in the BDI-II (Beck Depression Inventory), as this group BPT intervention is not appropriate to support suicidal patients in acute crises",
+                "criterions": [
+                    {
+                        "exact_snippets": "Risk of current suicidality, as indicated by a suicide item score >/= 2 in the BDI-II (Beck Depression Inventory)",
+                        "criterion": "suicidality",
+                        "requirement": {
+                            "requirement_type": "risk",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "suicide item score >/= 2 in the BDI-II (Beck Depression Inventory)",
+                        "criterion": "suicide item score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Risk of current suicidality, as indicated by a suicide item score >/= 2 in the BDI-II (Beck Depression Inventory)",
+                        "criterion": "suicidality",
+                        "requirement": {
+                            "requirement_type": "risk",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "suicide item score >/= 2 in the BDI-II (Beck Depression Inventory)",
+                        "criterion": "suicide item score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participation in any other clinical trial with a psychosocial intervention",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participation in any other clinical trial with a psychosocial intervention",
+                        "criterion": "participation in other clinical trial",
+                        "requirement": {
+                            "requirement_type": "intervention type",
+                            "expected_value": "psychosocial"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participation in any other clinical trial with a psychosocial intervention",
+                    "criterion": "participation in other clinical trial",
+                    "requirement": {
+                        "requirement_type": "intervention type",
+                        "expected_value": "psychosocial"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Receiving any other current psychotherapeutic treatment with the exception of already established therapies",
+                "criterions": [
+                    {
+                        "exact_snippets": "Receiving any other current psychotherapeutic treatment",
+                        "criterion": "current psychotherapeutic treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "with the exception of already established therapies",
+                        "criterion": "already established therapies",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "with the exception of already established therapies",
+                    "criterion": "already established therapies",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "exact_snippets": "Receiving any other current psychotherapeutic treatment",
+                    "criterion": "current psychotherapeutic treatment",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Inability to understand and speak German",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inability to understand and speak German",
+                        "criterion": "German language proficiency",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Inability to understand and speak German",
+                    "criterion": "German language proficiency",
+                    "requirement": {
+                        "requirement_type": "proficiency",
+                        "expected_value": false
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

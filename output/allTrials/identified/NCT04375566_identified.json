@@ -1,0 +1,137 @@
+{
+    "info": {
+        "nct_id": "NCT04375566",
+        "official_title": "Improving Decision Making by Developing and Testing a Progressive Web App About Patient Decision Aid for Stage I-II Non-small Cell Lung Cancer",
+        "inclusion_criteria": "Early stage non-small cell lung patients, Treated with curative intent minimum 6 month ago, max 5 years. Doctors IT\nHealthy volunteers allowed\nMust have minimum age of 21 Years\nMust have maximum age of 100 Years",
+        "exclusion_criteria": "Others",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "Early stage non-small cell lung patients, Treated with curative intent minimum 6 month ago, max 5 years. Doctors IT",
+            "criterions": [
+                {
+                    "exact_snippets": "Early stage non-small cell lung",
+                    "criterion": "lung cancer type",
+                    "requirements": [
+                        {
+                            "requirement_type": "specific type",
+                            "expected_value": "non-small cell"
+                        },
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": "early"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Treated with curative intent",
+                    "criterion": "treatment intent",
+                    "requirements": [
+                        {
+                            "requirement_type": "intent",
+                            "expected_value": "curative"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "minimum 6 month ago, max 5 years",
+                    "criterion": "treatment time frame",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 6,
+                                        "unit": "month"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 21 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 21 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 21,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 100 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 100 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 100,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "Others",
+            "criterions": [
+                {
+                    "exact_snippets": "Others",
+                    "criterion": "others",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

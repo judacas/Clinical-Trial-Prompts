@@ -1,0 +1,640 @@
+{
+    "info": {
+        "nct_id": "NCT02960620",
+        "official_title": "A Humanitarian Device Exemption (HDE) Treatment Protocol of TheraSphere® For Treatment of Unresectable Primary or Secondary Liver Neoplasia - HDE #980006",
+        "inclusion_criteria": "* Patients will be recruited from the patient population referred to the principal clinician for regional liver cancer therapy.\n* Potential candidates are those diagnosed with primary or secondary liver neoplasia. The histopathology confirmation criterion may be waived in patients with a radiographically identifiable liver mass, known laboratory or clinical risk factors for cancer or elevated tumor markers and clinical findings. Guidelines from the American Association for the Study of Liver Diseases (AASLD) and the European Association for the Study of the Liver (EASL) describe in detail the approach and algorithm for diagnosing Hepatocellular Carcinoma (HCC).\n* Eastern Cooperative Oncology Group (ECOG) Performance Status Score 0 - 2\n* Life expectancy ≥ 3 months\n* > 4 weeks since prior radiation, surgery or chemotherapy\n* Able to comprehend and provide consent in accordance with institutional and federal guidelines\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Any other liver therapy planned for cancer treatment\n* Uncorrectable flow to the gastrointestinal tract\n* Estimated radiation doses to the lungs greater than 30 Gy in a single administration or 50 Gy in multiple administrations\n* Significant extrahepatic disease representing imminent life-threatening outcome\n* Pregnancy",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients will be recruited from the patient population referred to the principal clinician for regional liver cancer therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "regional liver cancer",
+                        "criterion": "liver cancer",
+                        "requirement": {
+                            "requirement_type": "region",
+                            "expected_value": "regional"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "regional liver cancer",
+                        "criterion": "liver cancer",
+                        "requirement": {
+                            "requirement_type": "region",
+                            "expected_value": "regional"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Potential candidates are those diagnosed with primary or secondary liver neoplasia. The histopathology confirmation criterion may be waived in patients with a radiographically identifiable liver mass, known laboratory or clinical risk factors for cancer or elevated tumor markers and clinical findings. Guidelines from the American Association for the Study of Liver Diseases (AASLD) and the European Association for the Study of the Liver (EASL) describe in detail the approach and algorithm for diagnosing Hepatocellular Carcinoma (HCC).",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosed with primary or secondary liver neoplasia",
+                        "criterion": "liver neoplasia",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": [
+                                "primary",
+                                "secondary"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "histopathology confirmation criterion may be waived",
+                        "criterion": "histopathology confirmation",
+                        "requirement": {
+                            "requirement_type": "waived",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "radiographically identifiable liver mass",
+                        "criterion": "liver mass",
+                        "requirement": {
+                            "requirement_type": "identifiability",
+                            "expected_value": "radiographically"
+                        }
+                    },
+                    {
+                        "exact_snippets": "known laboratory or clinical risk factors for cancer",
+                        "criterion": "risk factors for cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "known laboratory or clinical"
+                        }
+                    },
+                    {
+                        "exact_snippets": "elevated tumor markers",
+                        "criterion": "tumor markers",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": "elevated"
+                        }
+                    },
+                    {
+                        "exact_snippets": "clinical findings",
+                        "criterion": "clinical findings",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "diagnosed with primary or secondary liver neoplasia",
+                                    "criterion": "liver neoplasia",
+                                    "requirement": {
+                                        "requirement_type": "diagnosis",
+                                        "expected_value": [
+                                            "primary",
+                                            "secondary"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "not_criteria": {
+                                        "exact_snippets": "histopathology confirmation criterion may be waived",
+                                        "criterion": "histopathology confirmation",
+                                        "requirement": {
+                                            "requirement_type": "waived",
+                                            "expected_value": true
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "or_criteria": [
+                        {
+                            "exact_snippets": "radiographically identifiable liver mass",
+                            "criterion": "liver mass",
+                            "requirement": {
+                                "requirement_type": "identifiability",
+                                "expected_value": "radiographically"
+                            }
+                        },
+                        {
+                            "exact_snippets": "known laboratory or clinical risk factors for cancer",
+                            "criterion": "risk factors for cancer",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": "known laboratory or clinical"
+                            }
+                        },
+                        {
+                            "exact_snippets": "elevated tumor markers",
+                            "criterion": "tumor markers",
+                            "requirement": {
+                                "requirement_type": "level",
+                                "expected_value": "elevated"
+                            }
+                        },
+                        {
+                            "exact_snippets": "clinical findings",
+                            "criterion": "clinical findings",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) Performance Status Score 0 - 2",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) Performance Status Score 0 - 2",
+                        "criterion": "ECOG Performance Status Score",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) Performance Status Score 0 - 2",
+                        "criterion": "ECOG Performance Status Score",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Life expectancy ≥ 3 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "Life expectancy ≥ 3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Life expectancy ≥ 3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* > 4 weeks since prior radiation, surgery or chemotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": " > 4 weeks since prior radiation",
+                        "criterion": "time since prior radiation",
+                        "requirement": {
+                            "requirement_type": "time since",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": " > 4 weeks since prior ... surgery",
+                        "criterion": "time since prior surgery",
+                        "requirement": {
+                            "requirement_type": "time since",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": " > 4 weeks since prior ... chemotherapy",
+                        "criterion": "time since prior chemotherapy",
+                        "requirement": {
+                            "requirement_type": "time since",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": " > 4 weeks since prior radiation",
+                        "criterion": "time since prior radiation",
+                        "requirement": {
+                            "requirement_type": "time since",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": " > 4 weeks since prior ... surgery",
+                        "criterion": "time since prior surgery",
+                        "requirement": {
+                            "requirement_type": "time since",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": " > 4 weeks since prior ... chemotherapy",
+                        "criterion": "time since prior chemotherapy",
+                        "requirement": {
+                            "requirement_type": "time since",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able to comprehend and provide consent in accordance with institutional and federal guidelines",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to comprehend",
+                        "criterion": "comprehension ability",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "provide consent",
+                        "criterion": "consent capability",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able to comprehend",
+                        "criterion": "comprehension ability",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "provide consent",
+                        "criterion": "consent capability",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Any other liver therapy planned for cancer treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Any other liver therapy planned for cancer treatment",
+                        "criterion": "liver therapy",
+                        "requirement": {
+                            "requirement_type": "planned",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Any other liver therapy planned for cancer treatment",
+                    "criterion": "liver therapy",
+                    "requirement": {
+                        "requirement_type": "planned",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Uncorrectable flow to the gastrointestinal tract",
+                "criterions": [
+                    {
+                        "exact_snippets": "Uncorrectable flow to the gastrointestinal tract",
+                        "criterion": "flow to the gastrointestinal tract",
+                        "requirement": {
+                            "requirement_type": "correctability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Uncorrectable flow to the gastrointestinal tract",
+                    "criterion": "flow to the gastrointestinal tract",
+                    "requirement": {
+                        "requirement_type": "correctability",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Estimated radiation doses to the lungs greater than 30 Gy in a single administration or 50 Gy in multiple administrations",
+                "criterions": [
+                    {
+                        "exact_snippets": "Estimated radiation doses to the lungs greater than 30 Gy in a single administration",
+                        "criterion": "radiation dose to the lungs",
+                        "requirement": {
+                            "requirement_type": "dose",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 30,
+                                "unit": "Gy"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Estimated radiation doses to the lungs greater than 30 Gy in a single administration",
+                        "criterion": "radiation dose to the lungs",
+                        "requirement": {
+                            "requirement_type": "administration type",
+                            "expected_value": "single"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Estimated radiation doses to the lungs ... 50 Gy in multiple administrations",
+                        "criterion": "radiation dose to the lungs",
+                        "requirement": {
+                            "requirement_type": "dose",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 50,
+                                "unit": "Gy"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Estimated radiation doses to the lungs ... 50 Gy in multiple administrations",
+                        "criterion": "radiation dose to the lungs",
+                        "requirement": {
+                            "requirement_type": "administration type",
+                            "expected_value": "multiple"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Estimated radiation doses to the lungs greater than 30 Gy in a single administration",
+                                "criterion": "radiation dose to the lungs",
+                                "requirement": {
+                                    "requirement_type": "dose",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 30,
+                                        "unit": "Gy"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "Estimated radiation doses to the lungs greater than 30 Gy in a single administration",
+                                "criterion": "radiation dose to the lungs",
+                                "requirement": {
+                                    "requirement_type": "administration type",
+                                    "expected_value": "single"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Estimated radiation doses to the lungs ... 50 Gy in multiple administrations",
+                                "criterion": "radiation dose to the lungs",
+                                "requirement": {
+                                    "requirement_type": "dose",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 50,
+                                        "unit": "Gy"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "Estimated radiation doses to the lungs ... 50 Gy in multiple administrations",
+                                "criterion": "radiation dose to the lungs",
+                                "requirement": {
+                                    "requirement_type": "administration type",
+                                    "expected_value": "multiple"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Significant extrahepatic disease representing imminent life-threatening outcome",
+                "criterions": [
+                    {
+                        "exact_snippets": "Significant extrahepatic disease",
+                        "criterion": "extrahepatic disease",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "significant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "imminent life-threatening outcome",
+                        "criterion": "life-threatening outcome",
+                        "requirement": {
+                            "requirement_type": "imminence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Significant extrahepatic disease",
+                                "criterion": "extrahepatic disease",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "significant"
+                                }
+                            },
+                            {
+                                "exact_snippets": "imminent life-threatening outcome",
+                                "criterion": "life-threatening outcome",
+                                "requirement": {
+                                    "requirement_type": "imminence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pregnancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Pregnancy",
+                    "criterion": "pregnancy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

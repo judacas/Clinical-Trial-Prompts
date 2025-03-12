@@ -1,0 +1,787 @@
+{
+    "info": {
+        "nct_id": "NCT02505165",
+        "official_title": "A Clinic-Based Interdisciplinary Intervention for Parents of Children With Cancer",
+        "inclusion_criteria": "* The child has been diagnosed with leukemia or lymphoma, malignant solid tumor, or malignant brain tumor\n* The child is being treated for cancer and returning to the medical center (CCHMC or OUHSC).\n* The child is 18 years of age or younger\n* Recruitment occurs within 2-12 weeks post diagnosis\n* The parent is responsible for care and is willing to give consent and participate\n* The child is willing to give assent or consent and participate (only for children 8 years old and older)\n* The parent gives patient permission to participate.\n* Parent is fluent in English\nHealthy volunteers allowed\nMust have minimum age of 0 Years\nMust have maximum age of 18 Years",
+        "exclusion_criteria": "* The child is experiencing an imminent medical crisis necessitating significant medical intervention\n* The child with cancer is determined to be in the terminal phase of illness and/or is receiving end of life care\n* The diagnosis is determined to be a relapse or a second malignancy\n* The parent is currently being treated for a serious psychiatric disorder, or, evidences mental retardation\n* The parent is younger than 18 years of age\n* The parent is not English speaking\n* The parent is unwilling to give written permission for child participation\n* If the patient's treatment visit schedule is too infrequent to meet the study visit timeline requirements",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* The child has been diagnosed with leukemia or lymphoma, malignant solid tumor, or malignant brain tumor",
+                "criterions": [
+                    {
+                        "exact_snippets": "The child has been diagnosed with leukemia",
+                        "criterion": "leukemia",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "The child has been diagnosed with ... lymphoma",
+                        "criterion": "lymphoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "The child has been diagnosed with ... malignant solid tumor",
+                        "criterion": "malignant solid tumor",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "The child has been diagnosed with ... malignant brain tumor",
+                        "criterion": "malignant brain tumor",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "The child has been diagnosed with leukemia",
+                        "criterion": "leukemia",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "The child has been diagnosed with ... lymphoma",
+                        "criterion": "lymphoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "The child has been diagnosed with ... malignant solid tumor",
+                        "criterion": "malignant solid tumor",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "The child has been diagnosed with ... malignant brain tumor",
+                        "criterion": "malignant brain tumor",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The child is being treated for cancer and returning to the medical center (CCHMC or OUHSC).",
+                "criterions": [
+                    {
+                        "exact_snippets": "The child is being treated for cancer",
+                        "criterion": "cancer treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "returning to the medical center (CCHMC or OUHSC)",
+                        "criterion": "returning to medical center",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "CCHMC",
+                                "OUHSC"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "The child is being treated for cancer",
+                        "criterion": "cancer treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "returning to the medical center (CCHMC or OUHSC)",
+                        "criterion": "returning to medical center",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "CCHMC",
+                                "OUHSC"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The child is 18 years of age or younger",
+                "criterions": [
+                    {
+                        "exact_snippets": "The child is 18 years of age or younger",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "The child is 18 years of age or younger",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Recruitment occurs within 2-12 weeks post diagnosis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Recruitment occurs within 2-12 weeks post diagnosis",
+                        "criterion": "time since diagnosis",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "weeks"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "weeks"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Recruitment occurs within 2-12 weeks post diagnosis",
+                        "criterion": "time since diagnosis",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "weeks"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "weeks"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The parent is responsible for care and is willing to give consent and participate",
+                "criterions": [
+                    {
+                        "exact_snippets": "The parent is responsible for care",
+                        "criterion": "parental responsibility",
+                        "requirement": {
+                            "requirement_type": "responsibility",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willing to give consent",
+                        "criterion": "willingness to give consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willing to ... participate",
+                        "criterion": "willingness to participate",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "The parent is responsible for care",
+                        "criterion": "parental responsibility",
+                        "requirement": {
+                            "requirement_type": "responsibility",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willing to give consent",
+                        "criterion": "willingness to give consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willing to ... participate",
+                        "criterion": "willingness to participate",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The child is willing to give assent or consent and participate (only for children 8 years old and older)",
+                "criterions": [
+                    {
+                        "exact_snippets": "The child is willing to give assent or consent",
+                        "criterion": "willingness to give assent or consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "only for children 8 years old and older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 8,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "only for children 8 years old and older",
+                    "criterion": "age",
+                    "requirement": {
+                        "requirement_type": "minimum age",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 8,
+                            "unit": "years"
+                        }
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "The child is willing to give assent or consent",
+                    "criterion": "willingness to give assent or consent",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The parent gives patient permission to participate.",
+                "criterions": [
+                    {
+                        "exact_snippets": "The parent gives patient permission to participate.",
+                        "criterion": "parental permission",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "The parent gives patient permission to participate.",
+                        "criterion": "parental permission",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Parent is fluent in English",
+                "criterions": [
+                    {
+                        "exact_snippets": "Parent is fluent in English",
+                        "criterion": "parent's English fluency",
+                        "requirement": {
+                            "requirement_type": "fluency",
+                            "expected_value": "fluent"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Parent is fluent in English",
+                        "criterion": "parent's English fluency",
+                        "requirement": {
+                            "requirement_type": "fluency",
+                            "expected_value": "fluent"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 0 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 0 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 0 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* The child is experiencing an imminent medical crisis necessitating significant medical intervention",
+                "criterions": [
+                    {
+                        "exact_snippets": "The child is experiencing an imminent medical crisis",
+                        "criterion": "imminent medical crisis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "necessitating significant medical intervention",
+                        "criterion": "significant medical intervention",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "The child is experiencing an imminent medical crisis",
+                        "criterion": "imminent medical crisis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "necessitating significant medical intervention",
+                        "criterion": "significant medical intervention",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The child with cancer is determined to be in the terminal phase of illness and/or is receiving end of life care",
+                "criterions": [
+                    {
+                        "exact_snippets": "The child with cancer is determined to be in the terminal phase of illness",
+                        "criterion": "terminal phase of illness",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "is receiving end of life care",
+                        "criterion": "end of life care",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "The child with cancer is determined to be in the terminal phase of illness",
+                                "criterion": "terminal phase of illness",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "is receiving end of life care",
+                                "criterion": "end of life care",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The diagnosis is determined to be a relapse or a second malignancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosis is determined to be a relapse",
+                        "criterion": "diagnosis",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "relapse"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis is determined to be ... a second malignancy",
+                        "criterion": "diagnosis",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "second malignancy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "diagnosis is determined to be a relapse",
+                        "criterion": "diagnosis",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "relapse"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis is determined to be ... a second malignancy",
+                        "criterion": "diagnosis",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "second malignancy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The parent is currently being treated for a serious psychiatric disorder, or, evidences mental retardation",
+                "criterions": [
+                    {
+                        "exact_snippets": "The parent is currently being treated for a serious psychiatric disorder",
+                        "criterion": "psychiatric disorder treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "evidences mental retardation",
+                        "criterion": "mental retardation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "The parent is currently being treated for a serious psychiatric disorder",
+                        "criterion": "psychiatric disorder treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "evidences mental retardation",
+                        "criterion": "mental retardation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The parent is younger than 18 years of age",
+                "criterions": [
+                    {
+                        "exact_snippets": "parent is younger than 18 years of age",
+                        "criterion": "parent age",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "parent is younger than 18 years of age",
+                        "criterion": "parent age",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The parent is not English speaking",
+                "criterions": [
+                    {
+                        "exact_snippets": "The parent is not English speaking",
+                        "criterion": "parent language",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "not English"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "The parent is not English speaking",
+                    "criterion": "parent language",
+                    "requirement": {
+                        "requirement_type": "language",
+                        "expected_value": "not English"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The parent is unwilling to give written permission for child participation",
+                "criterions": [
+                    {
+                        "exact_snippets": "The parent is unwilling to give written permission",
+                        "criterion": "parental consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "The parent is unwilling to give written permission",
+                    "criterion": "parental consent",
+                    "requirement": {
+                        "requirement_type": "willingness",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* If the patient's treatment visit schedule is too infrequent to meet the study visit timeline requirements",
+                "criterions": [
+                    {
+                        "exact_snippets": "patient's treatment visit schedule is too infrequent",
+                        "criterion": "treatment visit schedule",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": "sufficient to meet study visit timeline requirements"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "patient's treatment visit schedule is too infrequent",
+                    "criterion": "treatment visit schedule",
+                    "requirement": {
+                        "requirement_type": "frequency",
+                        "expected_value": "sufficient to meet study visit timeline requirements"
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

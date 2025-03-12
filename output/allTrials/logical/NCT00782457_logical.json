@@ -1,0 +1,239 @@
+{
+    "info": {
+        "nct_id": "NCT00782457",
+        "official_title": "",
+        "inclusion_criteria": "* Mid- and low-lying rectal cancer (between 0 and 11 cm from the anal margin)\n* Histology of adenocarcinoma\nHealthy volunteers allowed",
+        "exclusion_criteria": "* Locally advanced disease (T4)\n* Emergency surgery\n* Rectal cancer over familial colic polyposis",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Mid- and low-lying rectal cancer (between 0 and 11 cm from the anal margin)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Mid- and low-lying rectal cancer",
+                        "criterion": "rectal cancer location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "mid-lying",
+                                "low-lying"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "between 0 and 11 cm from the anal margin",
+                        "criterion": "distance from anal margin",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "cm"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 11,
+                                        "unit": "cm"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Mid- and low-lying rectal cancer",
+                        "criterion": "rectal cancer location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "mid-lying",
+                                "low-lying"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "between 0 and 11 cm from the anal margin",
+                        "criterion": "distance from anal margin",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "cm"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 11,
+                                        "unit": "cm"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Histology of adenocarcinoma",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histology of adenocarcinoma",
+                        "criterion": "adenocarcinoma",
+                        "requirement": {
+                            "requirement_type": "histology",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Histology of adenocarcinoma",
+                        "criterion": "adenocarcinoma",
+                        "requirement": {
+                            "requirement_type": "histology",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Locally advanced disease (T4)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Locally advanced disease (T4)",
+                        "criterion": "disease stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "T4"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Locally advanced disease (T4)",
+                    "criterion": "disease stage",
+                    "requirement": {
+                        "requirement_type": "stage",
+                        "expected_value": "T4"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Emergency surgery",
+                "criterions": [
+                    {
+                        "exact_snippets": "Emergency surgery",
+                        "criterion": "emergency surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Emergency surgery",
+                    "criterion": "emergency surgery",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Rectal cancer over familial colic polyposis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Rectal cancer",
+                        "criterion": "rectal cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "familial colic polyposis",
+                        "criterion": "familial colic polyposis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Rectal cancer",
+                        "criterion": "rectal cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "familial colic polyposis",
+                        "criterion": "familial colic polyposis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

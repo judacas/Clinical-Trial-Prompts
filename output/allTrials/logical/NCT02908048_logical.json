@@ -1,0 +1,513 @@
+{
+    "info": {
+        "nct_id": "NCT02908048",
+        "official_title": "Extracellular RNA Markers of Liver Disease and Cancer",
+        "inclusion_criteria": "* Lab results from within the previous 90 days.\n* Diagnosis of HCC or biliary tract cancer\n* Diagnosis of cirrhosis based on histology, imaging, or ultrasound.\n* Diagnosis of a chronic liver disease without cirrhosis.\n\nExclusion Criteria for the HCC/biliary tract cancer group:\n\n* Prior solid organ transplant.\n* Previous cancer history with the last 5 years (excluding non-melanoma skin cancer), participation in a treatment trial for HCC\n\nExclusion criteria for the cirrhosis and chronic liver disease groups:\n\n* Prior solid organ transplant.\n* Previous or current cancer history within the past 5 years (excluding non-melanoma skin cancer).\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Lab results from within the previous 90 days.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lab results from within the previous 90 days.",
+                        "criterion": "lab results",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": "within the previous 90 days"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Lab results from within the previous 90 days.",
+                        "criterion": "lab results",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": "within the previous 90 days"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Diagnosis of HCC or biliary tract cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of HCC",
+                        "criterion": "HCC",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosis of ... biliary tract cancer",
+                        "criterion": "biliary tract cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Diagnosis of HCC",
+                        "criterion": "HCC",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosis of ... biliary tract cancer",
+                        "criterion": "biliary tract cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Diagnosis of a chronic liver disease without cirrhosis.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of a chronic liver disease",
+                        "criterion": "chronic liver disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "without cirrhosis",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Diagnosis of a chronic liver disease",
+                        "criterion": "chronic liver disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "without cirrhosis",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion Criteria for the HCC/biliary tract cancer group:",
+                "criterions": [
+                    {
+                        "exact_snippets": "HCC/biliary tract cancer",
+                        "criterion": "cancer type",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": [
+                                "HCC",
+                                "biliary tract cancer"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "HCC/biliary tract cancer",
+                    "criterion": "cancer type",
+                    "requirement": {
+                        "requirement_type": "exclusion",
+                        "expected_value": [
+                            "HCC",
+                            "biliary tract cancer"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior solid organ transplant.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior solid organ transplant.",
+                        "criterion": "solid organ transplant",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prior solid organ transplant.",
+                        "criterion": "solid organ transplant",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Previous cancer history with the last 5 years (excluding non-melanoma skin cancer), participation in a treatment trial for HCC",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous cancer history with the last 5 years",
+                        "criterion": "previous cancer history",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "excluding non-melanoma skin cancer",
+                        "criterion": "non-melanoma skin cancer",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "participation in a treatment trial for HCC",
+                        "criterion": "participation in a treatment trial for HCC",
+                        "requirement": {
+                            "requirement_type": "participation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Previous cancer history with the last 5 years",
+                                "criterion": "previous cancer history",
+                                "requirement": {
+                                    "requirement_type": "time frame",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "excluding non-melanoma skin cancer",
+                                    "criterion": "non-melanoma skin cancer",
+                                    "requirement": {
+                                        "requirement_type": "exclusion",
+                                        "expected_value": true
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "participation in a treatment trial for HCC",
+                        "criterion": "participation in a treatment trial for HCC",
+                        "requirement": {
+                            "requirement_type": "participation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion criteria for the cirrhosis and chronic liver disease groups:",
+                "criterions": [
+                    {
+                        "exact_snippets": "cirrhosis",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "chronic liver disease",
+                        "criterion": "chronic liver disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "cirrhosis",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "chronic liver disease",
+                        "criterion": "chronic liver disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior solid organ transplant.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior solid organ transplant.",
+                        "criterion": "solid organ transplant",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prior solid organ transplant.",
+                        "criterion": "solid organ transplant",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Previous or current cancer history within the past 5 years (excluding non-melanoma skin cancer).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous or current cancer history within the past 5 years",
+                        "criterion": "cancer history",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "excluding non-melanoma skin cancer",
+                        "criterion": "non-melanoma skin cancer",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Previous or current cancer history within the past 5 years",
+                                    "criterion": "cancer history",
+                                    "requirement": {
+                                        "requirement_type": "time frame",
+                                        "expected_value": {
+                                            "comparisons": [
+                                                {
+                                                    "operator": "<=",
+                                                    "value": 5,
+                                                    "unit": "years"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "excluding non-melanoma skin cancer",
+                                    "criterion": "non-melanoma skin cancer",
+                                    "requirement": {
+                                        "requirement_type": "exclusion",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "excluding non-melanoma skin cancer",
+                        "criterion": "non-melanoma skin cancer",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Diagnosis of cirrhosis based on histology, imaging, or ultrasound.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of cirrhosis based on histology, imaging, or ultrasound.",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Diagnosis of cirrhosis based on histology, imaging, or ultrasound.",
+                                "criterion": "cirrhosis",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": "histology"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Diagnosis of cirrhosis based on histology, imaging, or ultrasound.",
+                                "criterion": "cirrhosis",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": "imaging"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Diagnosis of cirrhosis based on histology, imaging, or ultrasound.",
+                                "criterion": "cirrhosis",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": "ultrasound"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

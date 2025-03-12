@@ -1,0 +1,215 @@
+{
+    "info": {
+        "nct_id": "NCT06129448",
+        "official_title": "Evaluation of Tumor Necrosis Factor-alpha Levels and Cardiac Functions in Pediatric Patients Diagnosed With Type 1 Diabetes Mellitus",
+        "inclusion_criteria": "-Patients with a diagnosis of Type 1 Diabetes Mellitus (T1DM) who have been under follow-up for at least 1 year (for the patient group)\nHealthy volunteers allowed\nMust have minimum age of 1 Year\nMust have maximum age of 18 Years",
+        "exclusion_criteria": "* Having an additional cardiac anomaly\n* Having an additional chronic medical condition",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "-Patients with a diagnosis of Type 1 Diabetes Mellitus (T1DM) who have been under follow-up for at least 1 year (for the patient group)",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosis of Type 1 Diabetes Mellitus (T1DM)",
+                        "criterion": "Type 1 Diabetes Mellitus (T1DM)",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "under follow-up for at least 1 year",
+                        "criterion": "follow-up duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "diagnosis of Type 1 Diabetes Mellitus (T1DM)",
+                        "criterion": "Type 1 Diabetes Mellitus (T1DM)",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "under follow-up for at least 1 year",
+                        "criterion": "follow-up duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 1 Year",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 1 Year",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "Year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 1 Year",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "Year"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Having an additional cardiac anomaly",
+                "criterions": [
+                    {
+                        "exact_snippets": "additional cardiac anomaly",
+                        "criterion": "cardiac anomaly",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "additional cardiac anomaly",
+                    "criterion": "cardiac anomaly",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Having an additional chronic medical condition",
+                "criterions": [
+                    {
+                        "exact_snippets": "additional chronic medical condition",
+                        "criterion": "chronic medical condition",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "additional chronic medical condition",
+                    "criterion": "chronic medical condition",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

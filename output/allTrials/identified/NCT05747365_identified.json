@@ -1,0 +1,139 @@
+{
+    "info": {
+        "nct_id": "NCT05747365",
+        "official_title": "Cross-sectional Case-control Study on the Role of Endocrine Disruptors in Thyroid Cancer",
+        "inclusion_criteria": "* patients with a diagnosis of thyroid cancer in the last 5 years (arm A)\n* patients without a diagnosis of thyroid cancer will match patients included in arm A\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* subjects under 18 years old\n* patients unable to sign the informed consent or questionnaires",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* patients with a diagnosis of thyroid cancer in the last 5 years (arm A)",
+            "criterions": [
+                {
+                    "exact_snippets": "diagnosis of thyroid cancer",
+                    "criterion": "thyroid cancer diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "in the last 5 years",
+                    "criterion": "diagnosis timeframe",
+                    "requirements": [
+                        {
+                            "requirement_type": "timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* patients without a diagnosis of thyroid cancer will match patients included in arm A",
+            "criterions": [
+                {
+                    "exact_snippets": "patients without a diagnosis of thyroid cancer",
+                    "criterion": "thyroid cancer diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* subjects under 18 years old",
+            "criterions": [
+                {
+                    "exact_snippets": "subjects under 18 years old",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* patients unable to sign the informed consent or questionnaires",
+            "criterions": [
+                {
+                    "exact_snippets": "patients unable to sign the informed consent",
+                    "criterion": "ability to sign informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "patients unable to sign ... questionnaires",
+                    "criterion": "ability to sign questionnaires",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,852 @@
+{
+    "info": {
+        "nct_id": "NCT03310957",
+        "official_title": "Single Arm, Open Label Phase 1b/2 Study of SGN-LIV1A in Combination With Pembrolizumab for First-Line Treatment of Patients With Unresectable Locally-Advanced or Metastatic Triple-Negative Breast Cancer",
+        "inclusion_criteria": "* Metastatic or locally-advanced, histologically documented TNBC (absence of HER2, ER, and PR expression)\n\n  * Part D only: Tumor tissue PD-L1 Combined Positive Score <10 expression.\n* Have not previously received cytotoxic therapy for the treatment of unresectable locally-advanced breast cancer or metastatic breast cancer\n* At least 6 months since prior treatment with curative intent and recurrence\n* At least 1 tumor 10mm in diameter or greater OR lymph node of at least 15 mm in short axis\n* Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1\n* Able to provide biopsy tissue for biomarker analysis\n* Meet baseline laboratory data criteria\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Prior immune-oncology therapy\n* Pre-existing neuropathy of at least Grade 2\n* History of carcinomatous meningitis or active central nervous system (CNS) metastases. Patients are eligible if CNS metastases are adequately treated and patients have neurologically returned to baseline (except for residual signs or symptoms related to the CNS treatment) for at least 4 weeks prior to enrollment. Patients must be off corticosteroids.\n* Received prior radiotherapy within 2 weeks of start of study treatment or have not adequately recovered from prior radiotherapy\n* Active autoimmune disease requiring systemic treatment within the past 2 years\n* History of interstitial lung disease\n* Current pneumonitis or history of pneumonitis requiring steroids",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Metastatic or locally-advanced, histologically documented TNBC (absence of HER2, ER, and PR expression)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Metastatic or locally-advanced",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "metastatic",
+                                "locally-advanced"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "histologically documented TNBC",
+                        "criterion": "TNBC",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "histologically documented"
+                        }
+                    },
+                    {
+                        "exact_snippets": "absence of HER2, ER, and PR expression",
+                        "criterion": "HER2, ER, and PR expression",
+                        "requirement": {
+                            "requirement_type": "expression",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Metastatic or locally-advanced",
+                                "criterion": "cancer stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": [
+                                        "metastatic",
+                                        "locally-advanced"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "histologically documented TNBC",
+                                "criterion": "TNBC",
+                                "requirement": {
+                                    "requirement_type": "documentation",
+                                    "expected_value": "histologically documented"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "absence of HER2, ER, and PR expression",
+                        "criterion": "HER2, ER, and PR expression",
+                        "requirement": {
+                            "requirement_type": "expression",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Part D only: Tumor tissue PD-L1 Combined Positive Score <10 expression.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Tumor tissue PD-L1 Combined Positive Score <10 expression",
+                        "criterion": "PD-L1 Combined Positive Score",
+                        "requirement": {
+                            "requirement_type": "expression",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 10,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Tumor tissue PD-L1 Combined Positive Score <10 expression",
+                        "criterion": "PD-L1 Combined Positive Score",
+                        "requirement": {
+                            "requirement_type": "expression",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 10,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have not previously received cytotoxic therapy for the treatment of unresectable locally-advanced breast cancer or metastatic breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Have not previously received cytotoxic therapy for the treatment of unresectable locally-advanced breast cancer",
+                        "criterion": "previous cytotoxic therapy for unresectable locally-advanced breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Have not previously received cytotoxic therapy for the treatment of ... metastatic breast cancer",
+                        "criterion": "previous cytotoxic therapy for metastatic breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Have not previously received cytotoxic therapy for the treatment of unresectable locally-advanced breast cancer",
+                                "criterion": "previous cytotoxic therapy for unresectable locally-advanced breast cancer",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "Have not previously received cytotoxic therapy for the treatment of ... metastatic breast cancer",
+                                "criterion": "previous cytotoxic therapy for metastatic breast cancer",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* At least 6 months since prior treatment with curative intent and recurrence",
+                "criterions": [
+                    {
+                        "exact_snippets": "At least 6 months since prior treatment with curative intent",
+                        "criterion": "time since prior treatment with curative intent",
+                        "requirement": {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "recurrence",
+                        "criterion": "recurrence",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "At least 6 months since prior treatment with curative intent",
+                        "criterion": "time since prior treatment with curative intent",
+                        "requirement": {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "recurrence",
+                        "criterion": "recurrence",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* At least 1 tumor 10mm in diameter or greater OR lymph node of at least 15 mm in short axis",
+                "criterions": [
+                    {
+                        "exact_snippets": "At least 1 tumor 10mm in diameter or greater",
+                        "criterion": "tumor",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "At least 1 tumor 10mm in diameter or greater",
+                        "criterion": "tumor",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 10,
+                                "unit": "mm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "lymph node of at least 15 mm in short axis",
+                        "criterion": "lymph node",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "mm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "At least 1 tumor 10mm in diameter or greater",
+                                "criterion": "tumor",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "At least 1 tumor 10mm in diameter or greater",
+                                "criterion": "tumor",
+                                "requirement": {
+                                    "requirement_type": "size",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "mm"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "lymph node of at least 15 mm in short axis",
+                        "criterion": "lymph node",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "mm"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able to provide biopsy tissue for biomarker analysis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to provide biopsy tissue",
+                        "criterion": "biopsy tissue",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "biomarker analysis",
+                        "criterion": "biomarker analysis",
+                        "requirement": {
+                            "requirement_type": "purpose",
+                            "expected_value": "biomarker analysis"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able to provide biopsy tissue",
+                        "criterion": "biopsy tissue",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "biomarker analysis",
+                        "criterion": "biomarker analysis",
+                        "requirement": {
+                            "requirement_type": "purpose",
+                            "expected_value": "biomarker analysis"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Meet baseline laboratory data criteria",
+                "criterions": [
+                    {
+                        "exact_snippets": "baseline laboratory data criteria",
+                        "criterion": "laboratory data",
+                        "requirement": {
+                            "requirement_type": "baseline",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "baseline laboratory data criteria",
+                        "criterion": "laboratory data",
+                        "requirement": {
+                            "requirement_type": "baseline",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Prior immune-oncology therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior immune-oncology therapy",
+                        "criterion": "immune-oncology therapy",
+                        "requirement": {
+                            "requirement_type": "prior treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prior immune-oncology therapy",
+                    "criterion": "immune-oncology therapy",
+                    "requirement": {
+                        "requirement_type": "prior treatment",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pre-existing neuropathy of at least Grade 2",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pre-existing neuropathy of at least Grade 2",
+                        "criterion": "neuropathy",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "Grade"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Pre-existing neuropathy of at least Grade 2",
+                    "criterion": "neuropathy",
+                    "requirement": {
+                        "requirement_type": "severity",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 2,
+                            "unit": "Grade"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of carcinomatous meningitis or active central nervous system (CNS) metastases. Patients are eligible if CNS metastases are adequately treated and patients have neurologically returned to baseline (except for residual signs or symptoms related to the CNS treatment) for at least 4 weeks prior to enrollment. Patients must be off corticosteroids.",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of carcinomatous meningitis",
+                        "criterion": "carcinomatous meningitis",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "active central nervous system (CNS) metastases",
+                        "criterion": "active CNS metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "CNS metastases are adequately treated",
+                        "criterion": "CNS metastases treatment",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "neurologically returned to baseline ... for at least 4 weeks prior to enrollment",
+                        "criterion": "neurological status",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients must be off corticosteroids",
+                        "criterion": "corticosteroid use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "History of carcinomatous meningitis",
+                                "criterion": "carcinomatous meningitis",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "active central nervous system (CNS) metastases",
+                                "criterion": "active CNS metastases",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "CNS metastases are adequately treated",
+                                "criterion": "CNS metastases treatment",
+                                "requirement": {
+                                    "requirement_type": "adequacy",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "neurologically returned to baseline ... for at least 4 weeks prior to enrollment",
+                                "criterion": "neurological status",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 4,
+                                        "unit": "weeks"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "Patients must be off corticosteroids",
+                                "criterion": "corticosteroid use",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Received prior radiotherapy within 2 weeks of start of study treatment or have not adequately recovered from prior radiotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Received prior radiotherapy within 2 weeks of start of study treatment",
+                        "criterion": "prior radiotherapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "have not adequately recovered from prior radiotherapy",
+                        "criterion": "recovery from prior radiotherapy",
+                        "requirement": {
+                            "requirement_type": "recovery status",
+                            "expected_value": "not adequately recovered"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Received prior radiotherapy within 2 weeks of start of study treatment",
+                                "criterion": "prior radiotherapy",
+                                "requirement": {
+                                    "requirement_type": "time since last treatment",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 2,
+                                        "unit": "weeks"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "have not adequately recovered from prior radiotherapy",
+                        "criterion": "recovery from prior radiotherapy",
+                        "requirement": {
+                            "requirement_type": "recovery status",
+                            "expected_value": "not adequately recovered"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active autoimmune disease requiring systemic treatment within the past 2 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active autoimmune disease requiring systemic treatment within the past 2 years",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Active autoimmune disease requiring systemic treatment within the past 2 years",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "systemic"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Active autoimmune disease requiring systemic treatment within the past 2 years",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": "within the past 2 years"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Active autoimmune disease requiring systemic treatment within the past 2 years",
+                                        "criterion": "autoimmune disease",
+                                        "requirement": {
+                                            "requirement_type": "activity",
+                                            "expected_value": "active"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Active autoimmune disease requiring systemic treatment within the past 2 years",
+                                        "criterion": "autoimmune disease",
+                                        "requirement": {
+                                            "requirement_type": "treatment",
+                                            "expected_value": "systemic"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "Active autoimmune disease requiring systemic treatment within the past 2 years",
+                                "criterion": "autoimmune disease",
+                                "requirement": {
+                                    "requirement_type": "time frame",
+                                    "expected_value": "within the past 2 years"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of interstitial lung disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of interstitial lung disease",
+                        "criterion": "interstitial lung disease",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "History of interstitial lung disease",
+                    "criterion": "interstitial lung disease",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Current pneumonitis or history of pneumonitis requiring steroids",
+                "criterions": [
+                    {
+                        "exact_snippets": "Current pneumonitis",
+                        "criterion": "pneumonitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of pneumonitis requiring steroids",
+                        "criterion": "pneumonitis",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of pneumonitis requiring steroids",
+                        "criterion": "pneumonitis",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "steroids"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Current pneumonitis",
+                        "criterion": "pneumonitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "history of pneumonitis requiring steroids",
+                                "criterion": "pneumonitis",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "history of pneumonitis requiring steroids",
+                                "criterion": "pneumonitis",
+                                "requirement": {
+                                    "requirement_type": "treatment",
+                                    "expected_value": "steroids"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": [
+                                "0",
+                                "1"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "0"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "1"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

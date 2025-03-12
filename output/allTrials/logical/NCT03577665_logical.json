@@ -1,0 +1,588 @@
+{
+    "info": {
+        "nct_id": "NCT03577665",
+        "official_title": "A Phase II Study of Curative Proton Beam Therapy for Patients With Liver Metastasis of Colorectal Cancer",
+        "inclusion_criteria": "1. Histologically diagnosed colon adenocarcinoma in primary or metastatic lesions..\n2. If there is no other remote metastasis other than liver, or if there is, control is possible\n3. If there are less than 2 liver metastatic lesions\n4. If they refuse lung surgery or surgery is inappropriate (medically unsuitable for surgery due to surgery refusal, diabetes mellitus, high blood pressure, pulmonary disease, heart disease, etc., repeated surgery, poor systematic function, short disease-free period, etc.)\nHealthy volunteers allowed",
+        "exclusion_criteria": "1. Other histologic cancer other than adenocarcinoma of the colorectal\n2. Colorectal cancer without primary lesion resection\n3. If there is another remote metastasis and is not completely resected or regulated\n4. If the patient has experience of other invasive cancer diagnosis within 5 years of colorectal cancer diagnosis\n5. Pregnancy and women under lactation",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "2. If there is no other remote metastasis other than liver, or if there is, control is possible",
+                "criterions": [
+                    {
+                        "exact_snippets": "no other remote metastasis other than liver",
+                        "criterion": "remote metastasis",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "liver"
+                        }
+                    },
+                    {
+                        "exact_snippets": "if there is, control is possible",
+                        "criterion": "remote metastasis",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "no other remote metastasis other than liver",
+                                "criterion": "remote metastasis",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": "liver"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "if there is, control is possible",
+                                "criterion": "remote metastasis",
+                                "requirement": {
+                                    "requirement_type": "control",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. If there are less than 2 liver metastatic lesions",
+                "criterions": [
+                    {
+                        "exact_snippets": "less than 2 liver metastatic lesions",
+                        "criterion": "liver metastatic lesions",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "less than 2 liver metastatic lesions",
+                    "criterion": "liver metastatic lesions",
+                    "requirement": {
+                        "requirement_type": "quantity",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 2,
+                            "unit": "N/A"
+                        }
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. If they refuse lung surgery or surgery is inappropriate (medically unsuitable for surgery due to surgery refusal, diabetes mellitus, high blood pressure, pulmonary disease, heart disease, etc., repeated surgery, poor systematic function, short disease-free period, etc.)",
+                "criterions": [
+                    {
+                        "exact_snippets": "lung surgery or surgery is inappropriate",
+                        "criterion": "surgery appropriateness",
+                        "requirement": {
+                            "requirement_type": "appropriateness",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "surgery refusal",
+                        "criterion": "surgery refusal",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diabetes mellitus",
+                        "criterion": "diabetes mellitus",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "high blood pressure",
+                        "criterion": "high blood pressure",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "pulmonary disease",
+                        "criterion": "pulmonary disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "heart disease",
+                        "criterion": "heart disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "repeated surgery",
+                        "criterion": "repeated surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "poor systematic function",
+                        "criterion": "systematic function",
+                        "requirement": {
+                            "requirement_type": "quality",
+                            "expected_value": "poor"
+                        }
+                    },
+                    {
+                        "exact_snippets": "short disease-free period",
+                        "criterion": "disease-free period",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": "short"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "or_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "lung surgery or surgery is inappropriate",
+                                    "criterion": "surgery appropriateness",
+                                    "requirement": {
+                                        "requirement_type": "appropriateness",
+                                        "expected_value": false
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "surgery refusal",
+                                    "criterion": "surgery refusal",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "exact_snippets": "diabetes mellitus",
+                            "criterion": "diabetes mellitus",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "high blood pressure",
+                            "criterion": "high blood pressure",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "pulmonary disease",
+                            "criterion": "pulmonary disease",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "heart disease",
+                            "criterion": "heart disease",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "repeated surgery",
+                            "criterion": "repeated surgery",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "poor systematic function",
+                            "criterion": "systematic function",
+                            "requirement": {
+                                "requirement_type": "quality",
+                                "expected_value": "poor"
+                            }
+                        },
+                        {
+                            "exact_snippets": "short disease-free period",
+                            "criterion": "disease-free period",
+                            "requirement": {
+                                "requirement_type": "duration",
+                                "expected_value": "short"
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": null,
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Other histologic cancer other than adenocarcinoma of the colorectal",
+                "criterions": [
+                    {
+                        "exact_snippets": "Other histologic cancer other than adenocarcinoma of the colorectal",
+                        "criterion": "histologic cancer",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "adenocarcinoma of the colorectal"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Other histologic cancer other than adenocarcinoma of the colorectal",
+                    "criterion": "histologic cancer",
+                    "requirement": {
+                        "requirement_type": "type",
+                        "expected_value": "adenocarcinoma of the colorectal"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Colorectal cancer without primary lesion resection",
+                "criterions": [
+                    {
+                        "exact_snippets": "Colorectal cancer",
+                        "criterion": "colorectal cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "without primary lesion resection",
+                        "criterion": "primary lesion resection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Colorectal cancer",
+                        "criterion": "colorectal cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "without primary lesion resection",
+                        "criterion": "primary lesion resection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. If there is another remote metastasis and is not completely resected or regulated",
+                "criterions": [
+                    {
+                        "exact_snippets": "another remote metastasis",
+                        "criterion": "remote metastasis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "not completely resected",
+                        "criterion": "remote metastasis resection",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "not completely ... regulated",
+                        "criterion": "remote metastasis regulation",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "another remote metastasis",
+                    "criterion": "remote metastasis",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "or_criteria": [
+                        {
+                            "exact_snippets": "not completely resected",
+                            "criterion": "remote metastasis resection",
+                            "requirement": {
+                                "requirement_type": "completeness",
+                                "expected_value": false
+                            }
+                        },
+                        {
+                            "exact_snippets": "not completely ... regulated",
+                            "criterion": "remote metastasis regulation",
+                            "requirement": {
+                                "requirement_type": "completeness",
+                                "expected_value": false
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. If the patient has experience of other invasive cancer diagnosis within 5 years of colorectal cancer diagnosis",
+                "criterions": [
+                    {
+                        "exact_snippets": "experience of other invasive cancer diagnosis",
+                        "criterion": "other invasive cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 5 years of colorectal cancer diagnosis",
+                        "criterion": "time since colorectal cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "experience of other invasive cancer diagnosis",
+                            "criterion": "other invasive cancer diagnosis",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "within 5 years of colorectal cancer diagnosis",
+                            "criterion": "time since colorectal cancer diagnosis",
+                            "requirement": {
+                                "requirement_type": "duration",
+                                "expected_value": {
+                                    "comparisons": [
+                                        {
+                                            "operator": "<=",
+                                            "value": 5,
+                                            "unit": "years"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": null,
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Pregnancy and women under lactation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "women under lactation",
+                        "criterion": "lactation",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "not under lactation"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "women under lactation",
+                        "criterion": "lactation",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "not under lactation"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "1. Histologically diagnosed colon adenocarcinoma in primary or metastatic lesions..",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologically diagnosed colon adenocarcinoma",
+                        "criterion": "colon adenocarcinoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis method",
+                            "expected_value": "histologically"
+                        }
+                    },
+                    {
+                        "exact_snippets": "primary or metastatic lesions",
+                        "criterion": "lesion type",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "primary",
+                                "metastatic"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Histologically diagnosed colon adenocarcinoma",
+                        "criterion": "colon adenocarcinoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis method",
+                            "expected_value": "histologically"
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "primary or metastatic lesions",
+                                "criterion": "lesion type",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": "primary"
+                                }
+                            },
+                            {
+                                "exact_snippets": "primary or metastatic lesions",
+                                "criterion": "lesion type",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": "metastatic"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}
