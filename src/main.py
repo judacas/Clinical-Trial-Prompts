@@ -54,6 +54,23 @@ def getTrialsFromUser() -> list[str]:
     return trials
 
 
+def get_all_nct_ids_from_folder(folder_path: str) -> list[str]:
+    """
+    Retrieve all NCT IDs from the first 11 characters of JSON file names in the specified folder.
+
+    Args:
+        folder_path (str): Path to the folder containing JSON files.
+
+    Returns:
+        list[str]: List of NCT IDs.
+    """
+    return [
+        file_name[:11]
+        for file_name in os.listdir(folder_path)
+        if file_name.endswith(".json")
+    ]
+
+
 def getAllCancerTrials() -> Generator[str, None, None]:
     """
     Retrieve a generator of all cancer trial NCT IDs available in clinicaltrials.gov.
@@ -61,13 +78,20 @@ def getAllCancerTrials() -> Generator[str, None, None]:
     Yields:
         str: NCT ID for a cancer trial.
     """
-    url = "https://clinicaltrials.gov/api/v2/studies?query.cond=cancer&query.term=cancer&query.titles=Cancer&fields=NCTId&pageSize=1"
+    url = "https://clinicaltrials.gov/api/v2/studies?query.cond=cancer&query.term=cancer&query.titles=Cancer&fields=NCTId&pageSize=10"
+
+    folder_path = os.path.join(DEFAULT_OUTPUT_DIR, "allTrials", "logical")
+    nct_ids = get_all_nct_ids_from_folder(folder_path)
     response = curl_with_status_check(url)
     studies = response.get("studies", [])
     nextToken = response.get("nextPageToken", "")
 
     while True:
-        for study in studies:
+        for study in [
+            s
+            for s in studies
+            if s["protocolSection"]["identificationModule"]["nctId"] not in nct_ids
+        ]:
             yield study["protocolSection"]["identificationModule"]["nctId"]
 
         if not nextToken:
