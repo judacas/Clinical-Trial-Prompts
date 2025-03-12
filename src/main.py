@@ -14,26 +14,20 @@ Each trial is processed to extract and structure its eligibility criteria.
 """
 import logging
 import os
-import sys
 from typing import Generator
 
-from src.utils.helpers import curl_with_status_check
-
-
-# Add project root to Python path to ensure imports work correctly
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-
-from src.utils.config import DEFAULT_OUTPUT_DIR, setup_logging
 from src.services.trial_manager import process_trial
+from src.utils.config import DEFAULT_OUTPUT_DIR, setup_logging
+from src.utils.helpers import curl_with_status_check
 
 # Configure application logging
 setup_logging(log_to_file=True, log_level=logging.DEBUG)
 
-    
+
 def getChiaCancerTrials() -> list[str]:
     """
     Retrieve a list of all cancer trial NCT IDs from the CHIA dataset.
-    
+
     Returns:
         list[str]: List of NCT IDs for cancer trials.
     """
@@ -43,23 +37,27 @@ def getChiaCancerTrials() -> list[str]:
         for file in os.listdir(onlyCancerFolder)
         if file.endswith(".json")
     ]
-    
+
+
 def getTrialsFromUser() -> list[str]:
     """
     Prompt the user to enter trial NCT IDs manually.
-    
+
     Returns:
         list[str]: List of user-specified NCT IDs.
     """
     trials = []
-    while nct_id := input("Enter the NCT ID of the trial you want to process (or press Enter to finish): ").strip():
+    while nct_id := input(
+        "Enter the NCT ID of the trial you want to process (or press Enter to finish): "
+    ).strip():
         trials.append(nct_id)
     return trials
+
 
 def getAllCancerTrials() -> Generator[str, None, None]:
     """
     Retrieve a generator of all cancer trial NCT IDs available in clinicaltrials.gov.
-    
+
     Yields:
         str: NCT ID for a cancer trial.
     """
@@ -71,10 +69,10 @@ def getAllCancerTrials() -> Generator[str, None, None]:
     while True:
         for study in studies:
             yield study["protocolSection"]["identificationModule"]["nctId"]
-        
+
         if not nextToken:
             break
-        
+
         next_url = f"{url}&pageToken={nextToken}"
         response = curl_with_status_check(next_url)
         studies = response.get("studies", [])
@@ -84,23 +82,30 @@ def getAllCancerTrials() -> Generator[str, None, None]:
 def get_trials() -> list[str] | Generator[str] | None:
     """
     Present options to the user for selecting trials to process.
-    
+
     Returns:
         list[str] | None: List of NCT IDs to process, or None if user chooses to quit.
     """
     while True:
-        user_choice = input("Please choose one of the following\n'm' for manual input\n'c' to process all cancer trials from CHIA\n'a' for all cancer trials\n'q' to quit: ").strip().lower()
+        user_choice = (
+            input(
+                "Please choose one of the following\n'm' for manual input\n'c' to process all cancer trials from CHIA\n'a' for all cancer trials\n'q' to quit: "
+            )
+            .strip()
+            .lower()
+        )
 
-        if user_choice == 'm':
+        if user_choice == "m":
             return getTrialsFromUser()
-        elif user_choice == 'c':
+        elif user_choice == "c":
             return getChiaCancerTrials()
-        elif user_choice == 'a':
+        elif user_choice == "a":
             return getAllCancerTrials()
-        elif user_choice == 'q':
+        elif user_choice == "q":
             return None
         else:
             print("Invalid choice. Please try again.")
+
 
 def main():
     """
@@ -108,18 +113,17 @@ def main():
     """
     logger = logging.getLogger(__name__)
     logger.info("Application started...")
-    
+
     trials = get_trials()
     if not trials:
         logger.info("No trials selected, exiting...")
         return
-    
+
     if isinstance(trials, list):
-        
+
         logger.info(f"Selected {len(trials)} trials for processing")
         logger.info("these are the trials selected: %s", trials)
-    
-    
+
     # Process each trial
     for i, nct_id in enumerate(trials, 1):
         if isinstance(trials, Generator):
@@ -131,8 +135,9 @@ def main():
             logger.info(f"Successfully processed trial {nct_id}")
         except Exception as e:
             logger.error(f"Failed to process trial {nct_id}: {str(e)}")
-    
+
     logger.info("Processing complete")
+
 
 if __name__ == "__main__":
     main()

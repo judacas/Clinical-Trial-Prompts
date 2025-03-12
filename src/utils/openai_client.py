@@ -16,8 +16,9 @@ Functions:
     get_openai_client: Initialize and return a configured OpenAI client.
 """
 
-import os
 import logging
+import os
+
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -31,7 +32,7 @@ load_dotenv()
 def get_openai_client() -> OpenAI:
     """
     Initialize and return an OpenAI client configured with the appropriate API key.
-    
+
     This function loads the API key from environment variables and creates a
     properly configured OpenAI client for use throughout the application.
 
@@ -43,13 +44,13 @@ def get_openai_client() -> OpenAI:
     """
     # Retrieve API key from environment variables
     api_key = os.getenv("OPENAI_API_KEY")
-    
+
     # Verify API key existence
     if not api_key:
         logger.error("OPENAI_API_KEY not found in environment variables.")
         raise ValueError("OPENAI_API_KEY not found in environment variables.")
-    
+
     logger.info("OpenAI client initialized.")
-    
+
     # Create and return the OpenAI client
     return OpenAI(api_key=api_key)

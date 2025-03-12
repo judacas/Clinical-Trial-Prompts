@@ -20,16 +20,16 @@ Functions:
     setup_file_logging: Set up logging to a file with appropriate formatting.
 """
 
-import os
 import logging
+import os
 from datetime import datetime
 
 # Get the project root directory (one level up from Code)
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 # Define output directory relative to project root
 # This ensures consistent output paths regardless of execution directory
-DEFAULT_OUTPUT_DIR = os.path.join(PROJECT_ROOT, 'output')
+DEFAULT_OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output")
 
 TIMEOUT = 30
 TEMPERATURE = 0.0
@@ -39,24 +39,24 @@ class ColoredFormatter(logging.Formatter):
     """
     Custom formatter that adds color to console logs based on severity.
     """
-    
+
     # ANSI escape codes for colors
     COLORS = {
-        'DEBUG': '\033[92m',    # Green
-        'INFO': '\033[94m',     # Blue
-        'WARNING': '\033[93m',  # Yellow
-        'ERROR': '\033[91m',    # Red
-        'CRITICAL': '\033[91m', # Red
+        "DEBUG": "\033[92m",  # Green
+        "INFO": "\033[94m",  # Blue
+        "WARNING": "\033[93m",  # Yellow
+        "ERROR": "\033[91m",  # Red
+        "CRITICAL": "\033[91m",  # Red
     }
-    RESET = '\033[0m'  # Reset color code
+    RESET = "\033[0m"  # Reset color code
 
     def format(self, record):
         """
         Format the log record with appropriate colors.
-        
+
         Args:
             record: The log record to format.
-            
+
         Returns:
             str: The formatted, color-coded log message.
         """
@@ -68,24 +68,24 @@ class ColoredFormatter(logging.Formatter):
 def setup_logging(log_level=logging.INFO, log_to_file=False, log_dir="logs"):
     """
     Set up application-wide logging configuration.
-    
+
     Args:
         log_level (int): The logging level (e.g., logging.DEBUG, logging.INFO)
         log_to_file (bool): Whether to save logs to a file
         log_dir (str): Directory to store log files if log_to_file is True
-        
+
     Returns:
         logging.Logger: The configured root logger.
     """
     # Create formatters
     console_formatter = ColoredFormatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S'
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
     )
 
     file_formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S'
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
     )
 
     # Create console handler
@@ -106,14 +106,14 @@ def setup_logging(log_level=logging.INFO, log_to_file=False, log_dir="logs"):
     # Add file handler if requested
     if log_to_file:
         setup_file_logging(log_dir, logging, file_formatter, root_logger)
-        
+
     return root_logger
 
 
 def setup_file_logging(log_dir, logging, file_formatter, root_logger):
     """
     Set up logging to a file with timestamped filename.
-    
+
     Args:
         log_dir (str): Directory to store log files
         logging: The logging module
