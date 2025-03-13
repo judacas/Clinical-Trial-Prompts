@@ -163,6 +163,7 @@ def main():
     if isinstance(trials, list):
         logger.info(f"Selected {len(trials)} trials for processing")
         logger.info("These are the trials selected: %s", trials)
+        parallelMultiplier = min(parallelMultiplier, len(trials))
 
     # Process each trial in parallel using ThreadPoolExecutor
     with ThreadPoolExecutor(max_workers=parallelMultiplier) as executor:
