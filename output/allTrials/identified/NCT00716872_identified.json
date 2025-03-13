@@ -1,0 +1,586 @@
+{
+    "info": {
+        "nct_id": "NCT00716872",
+        "official_title": "Evaluating Internet-Based Interventions for Insomnia in Cancer Patients",
+        "inclusion_criteria": "* Age = At least 21 years old\n* Regular access to the Internet, including e-mail\n* Cancer patient\n\n  * Any type of cancer (EXCEPT non-melanoma skin cancer)\n  * In remission from any stage of cancer (active treatment completed at least one month prior to enrollment)\n* Insomnia diagnosis (combined from DSM-IV and ICSD):\n\n  * Subjective complaints of poor sleep for at least 6 months\n  * Sleep difficulties ≥3 nights/week\n* Difficulty falling asleep (≥30 minutes to fall asleep) OR\n* Difficulty staying asleep (≥30 minutes awake in the middle of the night)\n\n  * ≤6.5 hours sleep/night\n  * Poor sleep causes marked distress or significant impairment in daytime functioning (e.g. fatigue, performance deficits, mood disturbance)\n* Participant feels that the insomnia was caused/aggravated by cancer or cancer treatment\nHealthy volunteers allowed\nMust have minimum age of 21 Years",
+        "exclusion_criteria": "* Having a sleep disorder other than insomnia (e.g. sleep apnea, RLS, narcolepsy, parasomnias)\n* Having a medical condition other than cancer that causes insomnia\n* Experiencing a psychiatric disturbance (major depression, psychosis)\n* Experiencing substance abuse\n* Currently undergoing psychotherapy or counseling\n* Changing sleep/anxiety/depression medication within the past month\n* Having an \"unusual\" sleep pattern\n\n  * Normal bedtime is after 2am OR\n  * Normal wake time is after 9am\n* Working as a shift worker (that is, having a schedule that requires working through the night)\n* Participants reports that she is pregnant or intending to get pregnant in the next 4 months",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Age = At least 21 years old",
+            "criterions": [
+                {
+                    "exact_snippets": "Age = At least 21 years old",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 21,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Regular access to the Internet, including e-mail",
+            "criterions": [
+                {
+                    "exact_snippets": "Regular access to the Internet",
+                    "criterion": "Internet access",
+                    "requirements": [
+                        {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "including e-mail",
+                    "criterion": "e-mail access",
+                    "requirements": [
+                        {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Cancer patient",
+            "criterions": [
+                {
+                    "exact_snippets": "Cancer patient",
+                    "criterion": "cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Any type of cancer (EXCEPT non-melanoma skin cancer)",
+            "criterions": [
+                {
+                    "exact_snippets": "Any type of cancer",
+                    "criterion": "cancer type",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": "any"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "EXCEPT non-melanoma skin cancer",
+                    "criterion": "cancer type",
+                    "requirements": [
+                        {
+                            "requirement_type": "exclusion",
+                            "expected_value": "non-melanoma skin cancer"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* In remission from any stage of cancer (active treatment completed at least one month prior to enrollment)",
+            "criterions": [
+                {
+                    "exact_snippets": "In remission from any stage of cancer",
+                    "criterion": "cancer remission",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "in remission"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "active treatment completed at least one month prior to enrollment",
+                    "criterion": "cancer treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "completion time",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "month"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Insomnia diagnosis (combined from DSM-IV and ICSD):",
+            "criterions": [
+                {
+                    "exact_snippets": "Insomnia diagnosis (combined from DSM-IV and ICSD)",
+                    "criterion": "insomnia",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "diagnostic_criteria",
+                            "expected_value": [
+                                "DSM-IV",
+                                "ICSD"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Subjective complaints of poor sleep for at least 6 months",
+            "criterions": [
+                {
+                    "exact_snippets": "Subjective complaints of poor sleep for at least 6 months",
+                    "criterion": "poor sleep",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Sleep difficulties ≥3 nights/week",
+            "criterions": [
+                {
+                    "exact_snippets": "Sleep difficulties ≥3 nights/week",
+                    "criterion": "sleep difficulties",
+                    "requirements": [
+                        {
+                            "requirement_type": "frequency",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "nights/week"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Difficulty falling asleep (≥30 minutes to fall asleep) OR",
+            "criterions": [
+                {
+                    "exact_snippets": "Difficulty falling asleep (≥30 minutes to fall asleep)",
+                    "criterion": "difficulty falling asleep",
+                    "requirements": [
+                        {
+                            "requirement_type": "time to fall asleep",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 30,
+                                "unit": "minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Difficulty staying asleep (≥30 minutes awake in the middle of the night)",
+            "criterions": [
+                {
+                    "exact_snippets": "Difficulty staying asleep (≥30 minutes awake in the middle of the night)",
+                    "criterion": "difficulty staying asleep",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 30,
+                                "unit": "minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* ≤6.5 hours sleep/night",
+            "criterions": [
+                {
+                    "exact_snippets": "≤6.5 hours sleep/night",
+                    "criterion": "sleep duration",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6.5,
+                                "unit": "hours/night"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Poor sleep causes marked distress or significant impairment in daytime functioning (e.g. fatigue, performance deficits, mood disturbance)",
+            "criterions": [
+                {
+                    "exact_snippets": "Poor sleep causes marked distress",
+                    "criterion": "sleep quality",
+                    "requirements": [
+                        {
+                            "requirement_type": "impact",
+                            "expected_value": "marked distress"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Poor sleep causes ... significant impairment in daytime functioning",
+                    "criterion": "sleep quality",
+                    "requirements": [
+                        {
+                            "requirement_type": "impact",
+                            "expected_value": "significant impairment in daytime functioning"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "fatigue",
+                    "criterion": "daytime functioning",
+                    "requirements": [
+                        {
+                            "requirement_type": "symptom",
+                            "expected_value": "fatigue"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "performance deficits",
+                    "criterion": "daytime functioning",
+                    "requirements": [
+                        {
+                            "requirement_type": "symptom",
+                            "expected_value": "performance deficits"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "mood disturbance",
+                    "criterion": "daytime functioning",
+                    "requirements": [
+                        {
+                            "requirement_type": "symptom",
+                            "expected_value": "mood disturbance"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Participant feels that the insomnia was caused/aggravated by cancer or cancer treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Participant feels that the insomnia was caused/aggravated by cancer",
+                    "criterion": "insomnia",
+                    "requirements": [
+                        {
+                            "requirement_type": "cause",
+                            "expected_value": "cancer"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Participant feels that the insomnia was ... aggravated by ... cancer treatment",
+                    "criterion": "insomnia",
+                    "requirements": [
+                        {
+                            "requirement_type": "aggravation",
+                            "expected_value": "cancer treatment"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 21 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 21 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 21,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Having a sleep disorder other than insomnia (e.g. sleep apnea, RLS, narcolepsy, parasomnias)",
+            "criterions": [
+                {
+                    "exact_snippets": "Having a sleep disorder other than insomnia (e.g. sleep apnea, RLS, narcolepsy, parasomnias)",
+                    "criterion": "sleep disorder",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "exclusion",
+                            "expected_value": "insomnia"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Having a medical condition other than cancer that causes insomnia",
+            "criterions": [
+                {
+                    "exact_snippets": "Having a medical condition other than cancer that causes insomnia",
+                    "criterion": "medical condition other than cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "effect",
+                            "expected_value": "causes insomnia"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Experiencing a psychiatric disturbance (major depression, psychosis)",
+            "criterions": [
+                {
+                    "exact_snippets": "Experiencing a psychiatric disturbance (major depression, psychosis)",
+                    "criterion": "psychiatric disturbance",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "major depression",
+                    "criterion": "major depression",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "psychosis",
+                    "criterion": "psychosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Experiencing substance abuse",
+            "criterions": [
+                {
+                    "exact_snippets": "Experiencing substance abuse",
+                    "criterion": "substance abuse",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Currently undergoing psychotherapy or counseling",
+            "criterions": [
+                {
+                    "exact_snippets": "Currently undergoing psychotherapy or counseling",
+                    "criterion": "psychotherapy or counseling",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Changing sleep/anxiety/depression medication within the past month",
+            "criterions": [
+                {
+                    "exact_snippets": "Changing sleep/anxiety/depression medication",
+                    "criterion": "medication change",
+                    "requirements": [
+                        {
+                            "requirement_type": "medication type",
+                            "expected_value": [
+                                "sleep",
+                                "anxiety",
+                                "depression"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "within the past month",
+                    "criterion": "time since medication change",
+                    "requirements": [
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "month"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Having an \"unusual\" sleep pattern",
+            "criterions": [
+                {
+                    "exact_snippets": "Having an \"unusual\" sleep pattern",
+                    "criterion": "sleep pattern",
+                    "requirements": [
+                        {
+                            "requirement_type": "pattern",
+                            "expected_value": "unusual"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Normal bedtime is after 2am OR",
+            "criterions": [
+                {
+                    "exact_snippets": "Normal bedtime is after 2am",
+                    "criterion": "bedtime",
+                    "requirements": [
+                        {
+                            "requirement_type": "time",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "am"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Normal wake time is after 9am",
+            "criterions": [
+                {
+                    "exact_snippets": "Normal wake time is after 9am",
+                    "criterion": "wake time",
+                    "requirements": [
+                        {
+                            "requirement_type": "time",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 9,
+                                "unit": "am"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Working as a shift worker (that is, having a schedule that requires working through the night)",
+            "criterions": [
+                {
+                    "exact_snippets": "Working as a shift worker (that is, having a schedule that requires working through the night)",
+                    "criterion": "shift work",
+                    "requirements": [
+                        {
+                            "requirement_type": "schedule",
+                            "expected_value": "working through the night"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Participants reports that she is pregnant or intending to get pregnant in the next 4 months",
+            "criterions": [
+                {
+                    "exact_snippets": "Participants reports that she is pregnant",
+                    "criterion": "pregnancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "intending to get pregnant in the next 4 months",
+                    "criterion": "intention to get pregnant",
+                    "requirements": [
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": "next 4 months"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

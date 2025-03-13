@@ -1,0 +1,168 @@
+{
+    "info": {
+        "nct_id": "NCT03560791",
+        "official_title": "A Review of Low-Dose CT Lung Cancer Screenings in a Community-Based Healthcare System With High Incidence",
+        "inclusion_criteria": "* Patients within St Elizabeth Healthcare who are referred for and/or have completed a LDCT from January 2015-February 2018\n* >=18 years of age\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "• Patient undergoes subsequent imaging, procedures and/or treatment at a facility outside of St. Elizabeth where records are not available through EPIC",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Patients within St Elizabeth Healthcare who are referred for and/or have completed a LDCT from January 2015-February 2018",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients within St Elizabeth Healthcare",
+                    "criterion": "healthcare facility",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "St Elizabeth Healthcare"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "referred for and/or have completed a LDCT",
+                    "criterion": "LDCT referral/completion",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "referred",
+                                "completed"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "from January 2015-February 2018",
+                    "criterion": "LDCT date",
+                    "requirements": [
+                        {
+                            "requirement_type": "date range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2015,
+                                        "unit": "year"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2018,
+                                        "unit": "year"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* >=18 years of age",
+            "criterions": [
+                {
+                    "exact_snippets": ">=18 years of age",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "• Patient undergoes subsequent imaging, procedures and/or treatment at a facility outside of St. Elizabeth where records are not available through EPIC",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient undergoes subsequent imaging",
+                    "criterion": "subsequent imaging",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "outside of St. Elizabeth"
+                        },
+                        {
+                            "requirement_type": "record availability",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Patient undergoes subsequent ... procedures",
+                    "criterion": "subsequent procedures",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "outside of St. Elizabeth"
+                        },
+                        {
+                            "requirement_type": "record availability",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Patient undergoes subsequent ... treatment",
+                    "criterion": "subsequent treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "outside of St. Elizabeth"
+                        },
+                        {
+                            "requirement_type": "record availability",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

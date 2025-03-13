@@ -1,0 +1,563 @@
+{
+    "info": {
+        "nct_id": "NCT04854980",
+        "official_title": "Serologic Response to the SARS-CoV-2 mRNA-1273 Vaccine in Select Subsets of Oncology Patients - A Pilot Study",
+        "inclusion_criteria": "* Subjects are between 50 and 75 years of age;\n* Have not had known or suspected infection with SARS-CoV-2 at any time;\n* Subjects must fall into one of the following subsets of cancer patients:\n\n  * Localized prostate cancer on radiotherapy or have completed radiotherapy in the last three months\n  * Prostate cancer on androgen-deprivation therapy for biochemical recurrence\n  * Colon cancer on adjuvant chemotherapy for stage III disease\n  * CLL on a BTK inhibitor as a first-line single agent for at least 3 months\n  * Melanoma patients on adjuvant immunotherapy with PD-1 checkpoint inhibitors for at least 3 months\n* Have received both doses of SARS-CoV-2 mRNA-1273 vaccine with proof of vaccination or are scheduled to do so;\n* Have at least a one-year life expectancy;\n* Prior radiation therapy is allowed, as long as it was completed more than 6 months prior to vaccination\nMust have minimum age of 50 Years\nMust have maximum age of 75 Years",
+        "exclusion_criteria": "* Subjects have a known hypersensitivity to a vaccine component;\n* Have had known or suspected infection with SARS-CoV-2 at any time;\n* Are organ transplant recipient on immunosuppression;\n* Had received or are scheduled to receive a live virus vaccine in the period from 4 weeks prior to Dose 1 through 28 days post second dose;\n* Had received or are scheduled to receive an inactivated vaccine in the period ranging from 7 days prior to Dose 1 through 7 days post second dose;\n* Received high-dose corticosteroids at any time after receiving the vaccine;\n* Are unable to give informed consent;\n* Are receiving treatment for CLL with another agent (such as rituximab) in addition to a BTK inhibitor",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Subjects are between 50 and 75 years of age;",
+            "criterions": [
+                {
+                    "exact_snippets": "Subjects are between 50 and 75 years of age",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 50,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 75,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Have not had known or suspected infection with SARS-CoV-2 at any time;",
+            "criterions": [
+                {
+                    "exact_snippets": "known or suspected infection with SARS-CoV-2",
+                    "criterion": "SARS-CoV-2 infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Subjects must fall into one of the following subsets of cancer patients:",
+            "criterions": [
+                {
+                    "exact_snippets": "Subjects must fall into one of the following subsets of cancer patients",
+                    "criterion": "cancer patient subset",
+                    "requirements": [
+                        {
+                            "requirement_type": "membership",
+                            "expected_value": "one of the following subsets"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Localized prostate cancer on radiotherapy or have completed radiotherapy in the last three months",
+            "criterions": [
+                {
+                    "exact_snippets": "Localized prostate cancer",
+                    "criterion": "prostate cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "localization",
+                            "expected_value": "localized"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "on radiotherapy",
+                    "criterion": "radiotherapy status",
+                    "requirements": [
+                        {
+                            "requirement_type": "current treatment",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "have completed radiotherapy in the last three months",
+                    "criterion": "radiotherapy completion",
+                    "requirements": [
+                        {
+                            "requirement_type": "completion time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prostate cancer on androgen-deprivation therapy for biochemical recurrence",
+            "criterions": [
+                {
+                    "exact_snippets": "Prostate cancer",
+                    "criterion": "prostate cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "on androgen-deprivation therapy",
+                    "criterion": "androgen-deprivation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "current treatment",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "biochemical recurrence",
+                    "criterion": "biochemical recurrence",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Colon cancer on adjuvant chemotherapy for stage III disease",
+            "criterions": [
+                {
+                    "exact_snippets": "Colon cancer",
+                    "criterion": "colon cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "adjuvant chemotherapy",
+                    "criterion": "adjuvant chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "stage III disease",
+                    "criterion": "cancer stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": "III"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* CLL on a BTK inhibitor as a first-line single agent for at least 3 months",
+            "criterions": [
+                {
+                    "exact_snippets": "CLL",
+                    "criterion": "CLL",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "BTK inhibitor",
+                    "criterion": "BTK inhibitor",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "first-line single agent",
+                    "criterion": "first-line single agent",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "at least 3 months",
+                    "criterion": "treatment duration",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Melanoma patients on adjuvant immunotherapy with PD-1 checkpoint inhibitors for at least 3 months",
+            "criterions": [
+                {
+                    "exact_snippets": "Melanoma patients",
+                    "criterion": "melanoma",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "adjuvant immunotherapy",
+                    "criterion": "adjuvant immunotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "PD-1 checkpoint inhibitors",
+                    "criterion": "PD-1 checkpoint inhibitors",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "at least 3 months",
+                    "criterion": "duration of treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Have received both doses of SARS-CoV-2 mRNA-1273 vaccine with proof of vaccination or are scheduled to do so;",
+            "criterions": [
+                {
+                    "exact_snippets": "Have received both doses of SARS-CoV-2 mRNA-1273 vaccine",
+                    "criterion": "SARS-CoV-2 mRNA-1273 vaccine doses",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "proof of vaccination",
+                    "criterion": "proof of vaccination",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "are scheduled to do so",
+                    "criterion": "scheduled for vaccination",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Have at least a one-year life expectancy;",
+            "criterions": [
+                {
+                    "exact_snippets": "at least a one-year life expectancy",
+                    "criterion": "life expectancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior radiation therapy is allowed, as long as it was completed more than 6 months prior to vaccination",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior radiation therapy is allowed",
+                    "criterion": "prior radiation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "allowance",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "completed more than 6 months prior to vaccination",
+                    "criterion": "time since completion of prior radiation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 50 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 50 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 75 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 75 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Subjects have a known hypersensitivity to a vaccine component;",
+            "criterions": [
+                {
+                    "exact_snippets": "Subjects have a known hypersensitivity to a vaccine component",
+                    "criterion": "hypersensitivity to a vaccine component",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Have had known or suspected infection with SARS-CoV-2 at any time;",
+            "criterions": [
+                {
+                    "exact_snippets": "known or suspected infection with SARS-CoV-2",
+                    "criterion": "SARS-CoV-2 infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Are organ transplant recipient on immunosuppression;",
+            "criterions": [
+                {
+                    "exact_snippets": "organ transplant recipient",
+                    "criterion": "organ transplant recipient",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "on immunosuppression",
+                    "criterion": "immunosuppression",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Had received or are scheduled to receive a live virus vaccine in the period from 4 weeks prior to Dose 1 through 28 days post second dose;",
+            "criterions": [
+                {
+                    "exact_snippets": "Had received or are scheduled to receive a live virus vaccine",
+                    "criterion": "live virus vaccine",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "4 weeks prior to Dose 1 through 28 days post second dose"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Had received or are scheduled to receive an inactivated vaccine in the period ranging from 7 days prior to Dose 1 through 7 days post second dose;",
+            "criterions": [
+                {
+                    "exact_snippets": "Had received or are scheduled to receive an inactivated vaccine",
+                    "criterion": "inactivated vaccine administration",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "in the period ranging from 7 days prior to Dose 1 through 7 days post second dose"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Received high-dose corticosteroids at any time after receiving the vaccine;",
+            "criterions": [
+                {
+                    "exact_snippets": "Received high-dose corticosteroids",
+                    "criterion": "high-dose corticosteroids",
+                    "requirements": [
+                        {
+                            "requirement_type": "receipt",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "after receiving the vaccine",
+                    "criterion": "vaccine receipt",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "before high-dose corticosteroids"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Are unable to give informed consent;",
+            "criterions": [
+                {
+                    "exact_snippets": "unable to give informed consent",
+                    "criterion": "informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Are receiving treatment for CLL with another agent (such as rituximab) in addition to a BTK inhibitor",
+            "criterions": [
+                {
+                    "exact_snippets": "receiving treatment for CLL",
+                    "criterion": "treatment for CLL",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "another agent (such as rituximab)",
+                    "criterion": "treatment with another agent",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "in addition to a BTK inhibitor",
+                    "criterion": "treatment with BTK inhibitor",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

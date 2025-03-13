@@ -1,0 +1,642 @@
+{
+    "info": {
+        "nct_id": "NCT00776594",
+        "official_title": "Randomized Phase II Trial of Short-Course Androgen Deprivation Therapy +/- Bevacizumab for PSA Recurrence of Prostate Cancer After Definitive Local Therapy",
+        "inclusion_criteria": "* History of biopsy documented prostate cancer (any Gleason score)\n* Past treatment with prostatectomy with or without salvage prostate/pelvic radiation or primary radiation (external beam or brachytherapy)\n* If past prostatectomy, pathologic stage no greater than T1-3, N1, M0\n* PSA recurrence with PSAdt < 18 months. There is no minimum PSA for prostatectomy patients. For patients treated with primary radiation therapy PSA should be greater than 2.0 ng/ml\n* No evidence of recurrent disease on exam, bone scan, CT/MRI abdomen/pelvis or CXR\n* Prior ADT allowed if < 6 months and testosterone recovered to within 50 units (ng/dl) of normal range\n* ECOG Performance status of 0-1\n* Absolute neutrophil count of >1,500\n* Platelet count > 100,000\n* Hg > 8g/dl\n* No history of bleeding or thromboses within the last 12 months that required medical intervention\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* History of cancer within 5 years, other than prostate cancer and non-melanoma skin cancer\n* Medical condition requiring concomitant corticosteroids\n* Active infection\n* Prior chemotherapy allowed if was < 6 cycles and > 6 months prior to study entry\n* Documented local recurrence or metastatic prostate cancer\n* Inability to comply with study and/or follow-up procedures\n* Life expectancy of less than 2 years\n* Current, recent (within 4 weeks of the first infusion of this study), or planned participation in an experimental drug study other than a Genentech-sponsored bevacizumab cancer study",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* History of biopsy documented prostate cancer (any Gleason score)",
+            "criterions": [
+                {
+                    "exact_snippets": "History of biopsy documented prostate cancer",
+                    "criterion": "prostate cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "documentation",
+                            "expected_value": "biopsy"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "any Gleason score",
+                    "criterion": "Gleason score",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": "any"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Past treatment with prostatectomy with or without salvage prostate/pelvic radiation or primary radiation (external beam or brachytherapy)",
+            "criterions": [
+                {
+                    "exact_snippets": "Past treatment with prostatectomy",
+                    "criterion": "past treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment type",
+                            "expected_value": "prostatectomy"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "with or without salvage prostate/pelvic radiation",
+                    "criterion": "past treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment type",
+                            "expected_value": [
+                                "salvage prostate radiation",
+                                "salvage pelvic radiation"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "primary radiation (external beam or brachytherapy)",
+                    "criterion": "past treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment type",
+                            "expected_value": [
+                                "primary external beam radiation",
+                                "primary brachytherapy"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* If past prostatectomy, pathologic stage no greater than T1-3, N1, M0",
+            "criterions": [
+                {
+                    "exact_snippets": "past prostatectomy",
+                    "criterion": "past prostatectomy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "pathologic stage no greater than T1-3",
+                    "criterion": "pathologic stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "T"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "pathologic stage ... N1",
+                    "criterion": "pathologic stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "node involvement",
+                            "expected_value": "N1"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "pathologic stage ... M0",
+                    "criterion": "pathologic stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "metastasis",
+                            "expected_value": "M0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* PSA recurrence with PSAdt < 18 months. There is no minimum PSA for prostatectomy patients. For patients treated with primary radiation therapy PSA should be greater than 2.0 ng/ml",
+            "criterions": [
+                {
+                    "exact_snippets": "PSA recurrence with PSAdt < 18 months",
+                    "criterion": "PSA doubling time (PSAdt)",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "no minimum PSA for prostatectomy patients",
+                    "criterion": "PSA level for prostatectomy patients",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum level",
+                            "expected_value": "none"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "PSA should be greater than 2.0 ng/ml",
+                    "criterion": "PSA level for patients treated with primary radiation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2.0,
+                                "unit": "ng/ml"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* No evidence of recurrent disease on exam, bone scan, CT/MRI abdomen/pelvis or CXR",
+            "criterions": [
+                {
+                    "exact_snippets": "No evidence of recurrent disease on exam",
+                    "criterion": "recurrent disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "evidence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "No evidence of recurrent disease ... bone scan",
+                    "criterion": "recurrent disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "evidence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "No evidence of recurrent disease ... CT/MRI abdomen/pelvis",
+                    "criterion": "recurrent disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "evidence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "No evidence of recurrent disease ... CXR",
+                    "criterion": "recurrent disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "evidence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior ADT allowed if < 6 months and testosterone recovered to within 50 units (ng/dl) of normal range",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior ADT allowed if < 6 months",
+                    "criterion": "prior ADT",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "testosterone recovered to within 50 units (ng/dl) of normal range",
+                    "criterion": "testosterone level",
+                    "requirements": [
+                        {
+                            "requirement_type": "recovery",
+                            "expected_value": "within 50 units (ng/dl) of normal range"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* ECOG Performance status of 0-1",
+            "criterions": [
+                {
+                    "exact_snippets": "ECOG Performance status of 0-1",
+                    "criterion": "ECOG Performance status",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Absolute neutrophil count of >1,500",
+            "criterions": [
+                {
+                    "exact_snippets": "Absolute neutrophil count of >1,500",
+                    "criterion": "absolute neutrophil count",
+                    "requirements": [
+                        {
+                            "requirement_type": "count",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1500,
+                                "unit": "N/A"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Platelet count > 100,000",
+            "criterions": [
+                {
+                    "exact_snippets": "Platelet count > 100,000",
+                    "criterion": "platelet count",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 100000,
+                                "unit": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Hg > 8g/dl",
+            "criterions": [
+                {
+                    "exact_snippets": "Hg > 8g/dl",
+                    "criterion": "hemoglobin level",
+                    "requirements": [
+                        {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 8,
+                                "unit": "g/dl"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* No history of bleeding or thromboses within the last 12 months that required medical intervention",
+            "criterions": [
+                {
+                    "exact_snippets": "No history of bleeding ... within the last 12 months",
+                    "criterion": "history of bleeding",
+                    "requirements": [
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "No history of ... thromboses within the last 12 months",
+                    "criterion": "history of thromboses",
+                    "requirements": [
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "bleeding or thromboses ... that required medical intervention",
+                    "criterion": "medical intervention for bleeding or thromboses",
+                    "requirements": [
+                        {
+                            "requirement_type": "necessity",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be MALE",
+            "criterions": [
+                {
+                    "exact_snippets": "MALE",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* History of cancer within 5 years, other than prostate cancer and non-melanoma skin cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "History of cancer within 5 years",
+                    "criterion": "history of cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "other than prostate cancer",
+                    "criterion": "prostate cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "other than ... non-melanoma skin cancer",
+                    "criterion": "non-melanoma skin cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Medical condition requiring concomitant corticosteroids",
+            "criterions": [
+                {
+                    "exact_snippets": "Medical condition requiring concomitant corticosteroids",
+                    "criterion": "medical condition",
+                    "requirements": [
+                        {
+                            "requirement_type": "necessity for concomitant corticosteroids",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Active infection",
+            "criterions": [
+                {
+                    "exact_snippets": "Active infection",
+                    "criterion": "infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "active"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior chemotherapy allowed if was < 6 cycles and > 6 months prior to study entry",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior chemotherapy allowed if was < 6 cycles",
+                    "criterion": "prior chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 6,
+                                "unit": "cycles"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Prior chemotherapy allowed if was ... > 6 months prior to study entry",
+                    "criterion": "prior chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Documented local recurrence or metastatic prostate cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "Documented local recurrence",
+                    "criterion": "local recurrence",
+                    "requirements": [
+                        {
+                            "requirement_type": "documentation",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "metastatic prostate cancer",
+                    "criterion": "metastatic prostate cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Inability to comply with study and/or follow-up procedures",
+            "criterions": [
+                {
+                    "exact_snippets": "Inability to comply with study and/or follow-up procedures",
+                    "criterion": "compliance with study procedures",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Inability to comply with study and/or follow-up procedures",
+                    "criterion": "compliance with follow-up procedures",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Life expectancy of less than 2 years",
+            "criterions": [
+                {
+                    "exact_snippets": "Life expectancy of less than 2 years",
+                    "criterion": "life expectancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Current, recent (within 4 weeks of the first infusion of this study), or planned participation in an experimental drug study other than a Genentech-sponsored bevacizumab cancer study",
+            "criterions": [
+                {
+                    "exact_snippets": "Current, recent (within 4 weeks of the first infusion of this study), or planned participation in an experimental drug study",
+                    "criterion": "participation in an experimental drug study",
+                    "requirements": [
+                        {
+                            "requirement_type": "timeframe",
+                            "expected_value": "current"
+                        },
+                        {
+                            "requirement_type": "timeframe",
+                            "expected_value": "recent (within 4 weeks of the first infusion of this study)"
+                        },
+                        {
+                            "requirement_type": "timeframe",
+                            "expected_value": "planned"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "other than a Genentech-sponsored bevacizumab cancer study",
+                    "criterion": "Genentech-sponsored bevacizumab cancer study",
+                    "requirements": [
+                        {
+                            "requirement_type": "participation",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,721 @@
+{
+    "info": {
+        "nct_id": "NCT02225262",
+        "official_title": "Prospective Evaluation of CyberKnife Stereotactic Radiosurgery for Low and Intermediate Risk Prostate Cancer: Emulating Homogenous Dose Distribution",
+        "inclusion_criteria": "* Male Age ≥ 21\n* Histologically proven prostate adenocarcinoma\n* Clinical stage T1b-T2b, N0-Nx, M0-Mx (AJCC 6th Edition)\n* PSA ≤ 20 ng/ml\n* Prostate volume ≤ 100 cc\n\nPatients belonging in one of the following risk groups:\n\n* Low:\n\n  * CS T1b-T2a and Gleason 2-6 and PSA ≤ 10\n* Intermediate:\n\n  * CS T2b and Gleason 2-6 and PSA ≤ 10, OR\n  * CS T1b-T2b, and Gleason 2-6 and PSA ≤ 20 ng/ml OR Gleason 7 and PSA ≤ 10 ng/ml\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 21 Years",
+        "exclusion_criteria": "* Any histology other than adenocarcinoma\n* Age < 21\n* KPS <= 40 <70\n* ECOG Performance Status ≥ 2\n* Patient weight >350 lbs. (table limitation)\n* Prior XRT to prostate or lower pelvis\n* Prior surgery or cryotherapy to prostate\n* Implanted hardware or other material that would prohibit appropriate treatment planning or treatment delivery, in the investigator's opinion\n* Chemotherapy for a malignancy in the last 5 years\n* History of an invasive malignancy (other than this prostate cancer, or basal or squamous skin cancers) in the last 5 years\n* Hormone ablation for 2 months prior to enrollment, or during treatment",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Male Age ≥ 21",
+            "criterions": [
+                {
+                    "exact_snippets": "Male",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Age ≥ 21",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 21,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Histologically proven prostate adenocarcinoma",
+            "criterions": [
+                {
+                    "exact_snippets": "Histologically proven prostate adenocarcinoma",
+                    "criterion": "prostate adenocarcinoma",
+                    "requirements": [
+                        {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "histologically proven"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Clinical stage T1b-T2b, N0-Nx, M0-Mx (AJCC 6th Edition)",
+            "criterions": [
+                {
+                    "exact_snippets": "Clinical stage T1b-T2b",
+                    "criterion": "clinical stage T",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "b"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "b"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "N0-Nx",
+                    "criterion": "clinical stage N",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 0,
+                                        "unit": "x"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "M0-Mx",
+                    "criterion": "clinical stage M",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 0,
+                                        "unit": "x"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* PSA ≤ 20 ng/ml",
+            "criterions": [
+                {
+                    "exact_snippets": "PSA ≤ 20 ng/ml",
+                    "criterion": "PSA",
+                    "requirements": [
+                        {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 20,
+                                "unit": "ng/ml"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prostate volume ≤ 100 cc",
+            "criterions": [
+                {
+                    "exact_snippets": "Prostate volume ≤ 100 cc",
+                    "criterion": "prostate volume",
+                    "requirements": [
+                        {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 100,
+                                "unit": "cc"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Patients belonging in one of the following risk groups:",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients belonging in one of the following risk groups",
+                    "criterion": "risk group",
+                    "requirements": [
+                        {
+                            "requirement_type": "membership",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Low:",
+            "criterions": [
+                {
+                    "exact_snippets": "Low",
+                    "criterion": "risk level",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": "low"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* CS T1b-T2a and Gleason 2-6 and PSA ≤ 10",
+            "criterions": [
+                {
+                    "exact_snippets": "CS T1b-T2a",
+                    "criterion": "clinical stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1.1,
+                                        "unit": "T"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2.1,
+                                        "unit": "T"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Gleason 2-6",
+                    "criterion": "Gleason score",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 6,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "PSA ≤ 10",
+                    "criterion": "PSA level",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "N/A"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Intermediate:",
+            "criterions": [
+                {
+                    "exact_snippets": "Intermediate",
+                    "criterion": "disease stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": "Intermediate"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* CS T2b and Gleason 2-6 and PSA ≤ 10, OR",
+            "criterions": [
+                {
+                    "exact_snippets": "CS T2b",
+                    "criterion": "clinical stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": "T2b"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Gleason 2-6",
+                    "criterion": "Gleason score",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 6,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "PSA ≤ 10",
+                    "criterion": "PSA level",
+                    "requirements": [
+                        {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "N/A"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* CS T1b-T2b, and Gleason 2-6 and PSA ≤ 20 ng/ml OR Gleason 7 and PSA ≤ 10 ng/ml",
+            "criterions": [
+                {
+                    "exact_snippets": "CS T1b-T2b",
+                    "criterion": "clinical stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "b"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "b"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Gleason 2-6",
+                    "criterion": "Gleason score",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 6,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "PSA ≤ 20 ng/ml",
+                    "criterion": "PSA level",
+                    "requirements": [
+                        {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 20,
+                                "unit": "ng/ml"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Gleason 7",
+                    "criterion": "Gleason score",
+                    "requirements": [
+                        {
+                            "requirement_type": "exact",
+                            "expected_value": "7"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "PSA ≤ 10 ng/ml",
+                    "criterion": "PSA level",
+                    "requirements": [
+                        {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "ng/ml"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be MALE",
+            "criterions": [
+                {
+                    "exact_snippets": "Must be MALE",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 21 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 21 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 21,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Any histology other than adenocarcinoma",
+            "criterions": [
+                {
+                    "exact_snippets": "histology other than adenocarcinoma",
+                    "criterion": "histology",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": {
+                                "operator": "!=",
+                                "value": 1,
+                                "unit": "adenocarcinoma"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Age < 21",
+            "criterions": [
+                {
+                    "exact_snippets": "Age < 21",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 21,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* KPS <= 40 <70",
+            "criterions": [
+                {
+                    "exact_snippets": "KPS <= 40 <70",
+                    "criterion": "Karnofsky Performance Status (KPS)",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 40,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 70,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* ECOG Performance Status ≥ 2",
+            "criterions": [
+                {
+                    "exact_snippets": "ECOG Performance Status ≥ 2",
+                    "criterion": "ECOG Performance Status",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient weight >350 lbs. (table limitation)",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient weight >350 lbs.",
+                    "criterion": "weight",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 350,
+                                "unit": "lbs"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior XRT to prostate or lower pelvis",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior XRT to prostate",
+                    "criterion": "prior XRT to prostate",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Prior XRT to ... lower pelvis",
+                    "criterion": "prior XRT to lower pelvis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior surgery or cryotherapy to prostate",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior surgery ... to prostate",
+                    "criterion": "prostate surgery",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Prior ... cryotherapy to prostate",
+                    "criterion": "prostate cryotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Implanted hardware or other material that would prohibit appropriate treatment planning or treatment delivery, in the investigator's opinion",
+            "criterions": [
+                {
+                    "exact_snippets": "Implanted hardware or other material that would prohibit appropriate treatment planning or treatment delivery",
+                    "criterion": "implanted hardware or other material",
+                    "requirements": [
+                        {
+                            "requirement_type": "impact on treatment",
+                            "expected_value": "prohibit appropriate treatment planning or treatment delivery"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Chemotherapy for a malignancy in the last 5 years",
+            "criterions": [
+                {
+                    "exact_snippets": "Chemotherapy for a malignancy in the last 5 years",
+                    "criterion": "chemotherapy for a malignancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* History of an invasive malignancy (other than this prostate cancer, or basal or squamous skin cancers) in the last 5 years",
+            "criterions": [
+                {
+                    "exact_snippets": "History of an invasive malignancy (other than this prostate cancer, or basal or squamous skin cancers) in the last 5 years",
+                    "criterion": "invasive malignancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Hormone ablation for 2 months prior to enrollment, or during treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Hormone ablation for 2 months prior to enrollment",
+                    "criterion": "hormone ablation",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "months"
+                            }
+                        },
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "prior to enrollment"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Hormone ablation ... during treatment",
+                    "criterion": "hormone ablation",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "during treatment"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

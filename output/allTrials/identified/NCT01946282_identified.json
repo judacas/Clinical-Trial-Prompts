@@ -1,0 +1,216 @@
+{
+    "info": {
+        "nct_id": "NCT01946282",
+        "official_title": "Evidence-Based Colorectal Cancer Screening for the Uninsured",
+        "inclusion_criteria": "* Age 50-64.\n* Uninsured, but participants in John Peter Smith Health System (JPS) medical assistance program for the uninsured.\n* One or more visits to a JPS primary care clinic within a year.\n* Not up-to-date with colorectal cancer screening.\nHealthy volunteers allowed\nMust have minimum age of 50 Years\nMust have maximum age of 64 Years",
+        "exclusion_criteria": "* Patients with a history of Colorectal Cancer or colon resection, no address and/or phone number on file, or who are incarcerated will be excluded.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Age 50-64.",
+            "criterions": [
+                {
+                    "exact_snippets": "Age 50-64",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 50,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 64,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Uninsured, but participants in John Peter Smith Health System (JPS) medical assistance program for the uninsured.",
+            "criterions": [
+                {
+                    "exact_snippets": "Uninsured",
+                    "criterion": "insurance status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "uninsured"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "participants in John Peter Smith Health System (JPS) medical assistance program for the uninsured",
+                    "criterion": "participation in JPS medical assistance program",
+                    "requirements": [
+                        {
+                            "requirement_type": "participation",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* One or more visits to a JPS primary care clinic within a year.",
+            "criterions": [
+                {
+                    "exact_snippets": "One or more visits to a JPS primary care clinic within a year.",
+                    "criterion": "visits to a JPS primary care clinic",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "visits"
+                            }
+                        },
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": "within a year"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Not up-to-date with colorectal cancer screening.",
+            "criterions": [
+                {
+                    "exact_snippets": "Not up-to-date with colorectal cancer screening.",
+                    "criterion": "colorectal cancer screening",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "up-to-date"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 50 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 50 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 64 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 64 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 64,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Patients with a history of Colorectal Cancer or colon resection, no address and/or phone number on file, or who are incarcerated will be excluded.",
+            "criterions": [
+                {
+                    "exact_snippets": "history of Colorectal Cancer",
+                    "criterion": "history of Colorectal Cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "colon resection",
+                    "criterion": "colon resection",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "no address",
+                    "criterion": "address on file",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "no ... phone number on file",
+                    "criterion": "phone number on file",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "incarcerated",
+                    "criterion": "incarceration status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "incarcerated"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,277 @@
+{
+    "info": {
+        "nct_id": "NCT01988376",
+        "official_title": "",
+        "inclusion_criteria": "1. All women who had received radiotherapy for cervical cancer in our outpatient clinics.\n2. Prior to joining test subjects for 90 days or more earlier had received a complete pelvic radiation therapy, including treatment of the cervix or vagina.\n3. Subjects with radiation therapy (including combined chemical and radiation therapy or postoperative adjuvant [chemical] radiation therapy) for their first treatment.\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 20 Years\nMust have maximum age of 99 Years",
+        "exclusion_criteria": "1. recurrence of cervical cancer\n2. hormone treatment within 90 days\n3. vaginal vault or cervix topical treatment within 90 days.\n4. Subjects had or now have other malignancies",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "1. All women who had received radiotherapy for cervical cancer in our outpatient clinics.",
+            "criterions": [
+                {
+                    "exact_snippets": "women",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "received radiotherapy",
+                    "criterion": "radiotherapy treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "cervical cancer",
+                    "criterion": "cervical cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "our outpatient clinics",
+                    "criterion": "treatment location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "our outpatient clinics"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. Prior to joining test subjects for 90 days or more earlier had received a complete pelvic radiation therapy, including treatment of the cervix or vagina.",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior to joining test subjects for 90 days or more earlier had received a complete pelvic radiation therapy",
+                    "criterion": "prior pelvic radiation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 90,
+                                "unit": "days"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "including treatment of the cervix or vagina",
+                    "criterion": "treatment area",
+                    "requirements": [
+                        {
+                            "requirement_type": "areas treated",
+                            "expected_value": [
+                                "cervix",
+                                "vagina"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "3. Subjects with radiation therapy (including combined chemical and radiation therapy or postoperative adjuvant [chemical] radiation therapy) for their first treatment.",
+            "criterions": [
+                {
+                    "exact_snippets": "radiation therapy (including combined chemical and radiation therapy or postoperative adjuvant [chemical] radiation therapy)",
+                    "criterion": "radiation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment type",
+                            "expected_value": [
+                                "radiation therapy",
+                                "combined chemical and radiation therapy",
+                                "postoperative adjuvant chemical radiation therapy"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "first treatment",
+                    "criterion": "treatment history",
+                    "requirements": [
+                        {
+                            "requirement_type": "sequence",
+                            "expected_value": "first"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be FEMALE",
+            "criterions": [
+                {
+                    "exact_snippets": "Must be FEMALE",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 20 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 20 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 99 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 99 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 99,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "1. recurrence of cervical cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "recurrence of cervical cancer",
+                    "criterion": "cervical cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "recurrence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. hormone treatment within 90 days",
+            "criterions": [
+                {
+                    "exact_snippets": "hormone treatment within 90 days",
+                    "criterion": "hormone treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 90,
+                                "unit": "days"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "3. vaginal vault or cervix topical treatment within 90 days.",
+            "criterions": [
+                {
+                    "exact_snippets": "vaginal vault or cervix topical treatment within 90 days",
+                    "criterion": "vaginal vault topical treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 90,
+                                "unit": "days"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "vaginal vault or cervix topical treatment within 90 days",
+                    "criterion": "cervix topical treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 90,
+                                "unit": "days"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "4. Subjects had or now have other malignancies",
+            "criterions": [
+                {
+                    "exact_snippets": "Subjects had or now have other malignancies",
+                    "criterion": "other malignancies",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

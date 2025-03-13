@@ -1,0 +1,319 @@
+{
+    "info": {
+        "nct_id": "NCT06577220",
+        "official_title": "A Randomized Controlled Trial of Mailed Self-Sample HPV Testing to Increase Cervical Cancer Screening Participation Among Minority/Underserved Women in an Integrated Safety Net Healthcare System Asian/Asian American Women",
+        "inclusion_criteria": "* Asian ethnicity reported in the electronic health record\n* no history of hysterectomy or cervical cancer\n* no Pap test in the past 3.5 years or Pap/HPV co-test in the past 5.5 years\n* patient of Harris Health System in Harris County (Houston), Texas\n* have at least 2 visits to ambulatory care within Harris Health System in the past 5 years\n* be currently enrolled in a healthcare coverage or financial assistance plan accepted by Harris Health System or have been enrolled in a Harris Health coverage plan in the past 12 months\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 30 Years\nMust have maximum age of 65 Years",
+        "exclusion_criteria": "* no valid telephone contact information\n* unable to communicate in English, Vietnamese or Spanish\n* currently pregnant\n* history of cervical dysplasia in the past 3.5 years",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Asian ethnicity reported in the electronic health record",
+            "criterions": [
+                {
+                    "exact_snippets": "Asian ethnicity reported in the electronic health record",
+                    "criterion": "ethnicity",
+                    "requirements": [
+                        {
+                            "requirement_type": "reported",
+                            "expected_value": "Asian"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* no history of hysterectomy or cervical cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "no history of hysterectomy",
+                    "criterion": "hysterectomy",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "no history of ... cervical cancer",
+                    "criterion": "cervical cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* no Pap test in the past 3.5 years or Pap/HPV co-test in the past 5.5 years",
+            "criterions": [
+                {
+                    "exact_snippets": "no Pap test in the past 3.5 years",
+                    "criterion": "Pap test",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last test",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3.5,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Pap/HPV co-test in the past 5.5 years",
+                    "criterion": "Pap/HPV co-test",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last test",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5.5,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* patient of Harris Health System in Harris County (Houston), Texas",
+            "criterions": [
+                {
+                    "exact_snippets": "patient of Harris Health System",
+                    "criterion": "Harris Health System patient",
+                    "requirements": [
+                        {
+                            "requirement_type": "membership",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Harris County (Houston), Texas",
+                    "criterion": "location",
+                    "requirements": [
+                        {
+                            "requirement_type": "residence",
+                            "expected_value": "Harris County (Houston), Texas"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* have at least 2 visits to ambulatory care within Harris Health System in the past 5 years",
+            "criterions": [
+                {
+                    "exact_snippets": "at least 2 visits to ambulatory care within Harris Health System in the past 5 years",
+                    "criterion": "ambulatory care visits",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "visits"
+                            }
+                        },
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "Harris Health System"
+                        },
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": "past 5 years"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* be currently enrolled in a healthcare coverage or financial assistance plan accepted by Harris Health System or have been enrolled in a Harris Health coverage plan in the past 12 months",
+            "criterions": [
+                {
+                    "exact_snippets": "currently enrolled in a healthcare coverage or financial assistance plan accepted by Harris Health System",
+                    "criterion": "current healthcare coverage or financial assistance plan",
+                    "requirements": [
+                        {
+                            "requirement_type": "acceptance by Harris Health System",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "have been enrolled in a Harris Health coverage plan in the past 12 months",
+                    "criterion": "past enrollment in Harris Health coverage plan",
+                    "requirements": [
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be FEMALE",
+            "criterions": [
+                {
+                    "exact_snippets": "Must be FEMALE",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 30 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 30 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 30,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 65 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 65 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 65,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* no valid telephone contact information",
+            "criterions": [
+                {
+                    "exact_snippets": "no valid telephone contact information",
+                    "criterion": "telephone contact information",
+                    "requirements": [
+                        {
+                            "requirement_type": "validity",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* unable to communicate in English, Vietnamese or Spanish",
+            "criterions": [
+                {
+                    "exact_snippets": "unable to communicate in English, Vietnamese or Spanish",
+                    "criterion": "language communication ability",
+                    "requirements": [
+                        {
+                            "requirement_type": "languages",
+                            "expected_value": [
+                                "English",
+                                "Vietnamese",
+                                "Spanish"
+                            ]
+                        },
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* currently pregnant",
+            "criterions": [
+                {
+                    "exact_snippets": "currently pregnant",
+                    "criterion": "pregnancy status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "pregnant"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* history of cervical dysplasia in the past 3.5 years",
+            "criterions": [
+                {
+                    "exact_snippets": "history of cervical dysplasia in the past 3.5 years",
+                    "criterion": "cervical dysplasia",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3.5,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

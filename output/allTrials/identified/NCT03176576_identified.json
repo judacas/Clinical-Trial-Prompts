@@ -1,0 +1,225 @@
+{
+    "info": {
+        "nct_id": "NCT03176576",
+        "official_title": "Patient Navigation in the Adolescent and Young Adult (AYA) Cancer Population",
+        "inclusion_criteria": "* Patients 18 to 39 years old.\n* Will undergo chemotherapy and/or radiotherapy and/or surgery with no plans to undergo a transplant procedure within the next 3 months.\n* Have no previous cancer history other than non-melanoma skin cancer.\n* Able to speak and read English.\n* Able to provide written informed consent.\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 39 Years",
+        "exclusion_criteria": "* Does not meet any of the Inclusion Criteria.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Patients 18 to 39 years old.",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients 18 to 39 years old.",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 39,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Will undergo chemotherapy and/or radiotherapy and/or surgery with no plans to undergo a transplant procedure within the next 3 months.",
+            "criterions": [
+                {
+                    "exact_snippets": "Will undergo chemotherapy",
+                    "criterion": "chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "planned",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "and/or radiotherapy",
+                    "criterion": "radiotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "planned",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "and/or surgery",
+                    "criterion": "surgery",
+                    "requirements": [
+                        {
+                            "requirement_type": "planned",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "no plans to undergo a transplant procedure within the next 3 months",
+                    "criterion": "transplant procedure",
+                    "requirements": [
+                        {
+                            "requirement_type": "planned",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Have no previous cancer history other than non-melanoma skin cancer.",
+            "criterions": [
+                {
+                    "exact_snippets": "no previous cancer history other than non-melanoma skin cancer",
+                    "criterion": "cancer history",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "exception",
+                            "expected_value": "non-melanoma skin cancer"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Able to speak and read English.",
+            "criterions": [
+                {
+                    "exact_snippets": "Able to speak ... English.",
+                    "criterion": "English speaking ability",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Able to ... read English.",
+                    "criterion": "English reading ability",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Able to provide written informed consent.",
+            "criterions": [
+                {
+                    "exact_snippets": "Able to provide written informed consent.",
+                    "criterion": "written informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 39 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 39 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 39,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Does not meet any of the Inclusion Criteria.",
+            "criterions": [
+                {
+                    "exact_snippets": "Does not meet any of the Inclusion Criteria",
+                    "criterion": "inclusion criteria",
+                    "requirements": [
+                        {
+                            "requirement_type": "compliance",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

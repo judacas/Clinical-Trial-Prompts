@@ -1,0 +1,111 @@
+{
+    "info": {
+        "nct_id": "NCT06415201",
+        "official_title": "Scenario-based Clinical Interview Data Construction and User Experience Evaluation",
+        "inclusion_criteria": "* Patients diagnosed with malignant tumor and undergoing treatment, or patients undergoing follow-up after completing curative treatment\nHealthy volunteers allowed\nMust have minimum age of 19 Years",
+        "exclusion_criteria": "* Patients unable to consent to research or be interviewed due to cognitive decline",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Patients diagnosed with malignant tumor and undergoing treatment, or patients undergoing follow-up after completing curative treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients diagnosed with malignant tumor",
+                    "criterion": "malignant tumor",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "undergoing treatment",
+                    "criterion": "treatment status",
+                    "requirements": [
+                        {
+                            "requirement_type": "current status",
+                            "expected_value": "undergoing treatment"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "undergoing follow-up after completing curative treatment",
+                    "criterion": "follow-up status",
+                    "requirements": [
+                        {
+                            "requirement_type": "current status",
+                            "expected_value": "undergoing follow-up after curative treatment"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 19 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 19 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 19,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Patients unable to consent to research or be interviewed due to cognitive decline",
+            "criterions": [
+                {
+                    "exact_snippets": "unable to consent to research",
+                    "criterion": "ability to consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "unable to ... be interviewed due to cognitive decline",
+                    "criterion": "cognitive ability",
+                    "requirements": [
+                        {
+                            "requirement_type": "sufficiency",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

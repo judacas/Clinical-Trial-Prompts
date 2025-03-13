@@ -1,0 +1,525 @@
+{
+    "info": {
+        "nct_id": "NCT06397573",
+        "official_title": "Phase 1 Trial of Ablative Stereotactic MR-Guided Adaptive Reirradiation for Abdominal and Pelvic Tumors",
+        "inclusion_criteria": "* A primary or metastatic lesion in the abdomen or pelvis for which reirradiation will be delivered. There is no maximum lesion size.\n* Single course of prior radiation therapy with prescribed equivalent dose in 2 Gy fractions (EDQ210) of at least 40 Gy.\n* 50% isodose line of the prior radiation therapy course is expected to overlap at minimum the 50% isodose line of the radiation therapy delivered in this study.\n* At least 6 months from completion of prior radiation therapy to initiation of study therapy.\n* Eastern Cooperative Oncology Group (ECOG) performance status 0-2.\n* Life expectancy at least 6 months.\n* Women of childbearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control) prior to study entry and for the duration of study participation. Abstinence is acceptable if it is the participant's preferred method. Should a participant become pregnant or suspect pregnancy while participating in this study, the treating physician must be informed immediately.\n* Concurrent hormonal therapy or immunotherapy such as immune checkpoint inhibitor is allowed\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Contraindication to having an MRI scan.\n* Lesion that would receive study therapy arises from or invades a gastrointestinal (GI) luminal organ (a lesion abutting but not invading a GI luminal organ is permitted)\n* Lesion that would receive study therapy is not located in the abdomen or pelvis.\n* > 1 course of overlapping radiation therapy delivered to the abdomen or pelvis.\n* < 70% of the gross tumor volume (GTV) receives at least the 95% of the prescribed dose on the original plan using the simulation day anatomy.\n* More than 1 lesion in the abdomen or pelvis that requires reirradiation.\n* History of inflammatory bowel disease.\n* Unable to acquire DICOM radiation therapy treatment plan from the prior radiation therapy.\n* Unresolved grade 2+ toxicity (Common Terminology Criteria for Adverse Events version 5.0) from previous anti-cancer therapy.\n* Any condition in the opinion of the investigator that would interfere with evaluation of study treatment or interpretation of participant safety or study results.\n* Individuals who are pregnant.\n* Chemotherapy given within 1 week prior to or following reirradiation.\n* Vascular endothelial growth factor (VEGF) inhibitor given within 8 weeks prior to or following reirradiation",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* A primary or metastatic lesion in the abdomen or pelvis for which reirradiation will be delivered. There is no maximum lesion size.",
+            "criterions": [
+                {
+                    "exact_snippets": "A primary or metastatic lesion in the abdomen or pelvis",
+                    "criterion": "lesion location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "abdomen",
+                                "pelvis"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "reirradiation will be delivered",
+                    "criterion": "reirradiation",
+                    "requirements": [
+                        {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "There is no maximum lesion size",
+                    "criterion": "lesion size",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum size",
+                            "expected_value": "none"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Single course of prior radiation therapy with prescribed equivalent dose in 2 Gy fractions (EDQ210) of at least 40 Gy.",
+            "criterions": [
+                {
+                    "exact_snippets": "Single course of prior radiation therapy",
+                    "criterion": "prior radiation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": "single course"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "prescribed equivalent dose in 2 Gy fractions (EDQ210) of at least 40 Gy",
+                    "criterion": "equivalent dose in 2 Gy fractions (EDQ210)",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 40,
+                                "unit": "Gy"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* 50% isodose line of the prior radiation therapy course is expected to overlap at minimum the 50% isodose line of the radiation therapy delivered in this study.",
+            "criterions": [
+                {
+                    "exact_snippets": "50% isodose line of the prior radiation therapy course is expected to overlap at minimum the 50% isodose line of the radiation therapy delivered in this study.",
+                    "criterion": "isodose line overlap",
+                    "requirements": [
+                        {
+                            "requirement_type": "overlap",
+                            "expected_value": "minimum 50%"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* At least 6 months from completion of prior radiation therapy to initiation of study therapy.",
+            "criterions": [
+                {
+                    "exact_snippets": "At least 6 months from completion of prior radiation therapy",
+                    "criterion": "time since prior radiation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Eastern Cooperative Oncology Group (ECOG) performance status 0-2.",
+            "criterions": [
+                {
+                    "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status 0-2.",
+                    "criterion": "ECOG performance status",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Life expectancy at least 6 months.",
+            "criterions": [
+                {
+                    "exact_snippets": "Life expectancy at least 6 months.",
+                    "criterion": "life expectancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Women of childbearing potential and men must agree to use adequate contraception (hormonal or barrier method of birth control) prior to study entry and for the duration of study participation. Abstinence is acceptable if it is the participant's preferred method. Should a participant become pregnant or suspect pregnancy while participating in this study, the treating physician must be informed immediately.",
+            "criterions": [
+                {
+                    "exact_snippets": "Women of childbearing potential",
+                    "criterion": "women of childbearing potential",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "men must agree to use adequate contraception (hormonal or barrier method of birth control)",
+                    "criterion": "contraception use",
+                    "requirements": [
+                        {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Abstinence is acceptable if it is the participant's preferred method",
+                    "criterion": "abstinence",
+                    "requirements": [
+                        {
+                            "requirement_type": "acceptability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Should a participant become pregnant or suspect pregnancy while participating in this study, the treating physician must be informed immediately",
+                    "criterion": "pregnancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "notification",
+                            "expected_value": "immediate"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Concurrent hormonal therapy or immunotherapy such as immune checkpoint inhibitor is allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Concurrent hormonal therapy ... is allowed",
+                    "criterion": "concurrent hormonal therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "allowance",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Concurrent ... immunotherapy such as immune checkpoint inhibitor is allowed",
+                    "criterion": "concurrent immunotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "allowance",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Contraindication to having an MRI scan.",
+            "criterions": [
+                {
+                    "exact_snippets": "Contraindication to having an MRI scan.",
+                    "criterion": "MRI scan",
+                    "requirements": [
+                        {
+                            "requirement_type": "contraindication",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Lesion that would receive study therapy arises from or invades a gastrointestinal (GI) luminal organ (a lesion abutting but not invading a GI luminal organ is permitted)",
+            "criterions": [
+                {
+                    "exact_snippets": "Lesion that would receive study therapy arises from or invades a gastrointestinal (GI) luminal organ",
+                    "criterion": "lesion location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "arises from or invades a gastrointestinal (GI) luminal organ"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "a lesion abutting but not invading a GI luminal organ is permitted",
+                    "criterion": "lesion location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "abutting but not invading a GI luminal organ"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Lesion that would receive study therapy is not located in the abdomen or pelvis.",
+            "criterions": [
+                {
+                    "exact_snippets": "Lesion that would receive study therapy is not located in the abdomen",
+                    "criterion": "lesion location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "not in abdomen"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Lesion that would receive study therapy is not located in the ... pelvis.",
+                    "criterion": "lesion location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "not in pelvis"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* > 1 course of overlapping radiation therapy delivered to the abdomen or pelvis.",
+            "criterions": [
+                {
+                    "exact_snippets": "1 course of overlapping radiation therapy delivered to the abdomen or pelvis.",
+                    "criterion": "overlapping radiation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "course"
+                            }
+                        },
+                        {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "abdomen",
+                                "pelvis"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* < 70% of the gross tumor volume (GTV) receives at least the 95% of the prescribed dose on the original plan using the simulation day anatomy.",
+            "criterions": [
+                {
+                    "exact_snippets": "< 70% of the gross tumor volume (GTV) receives at least the 95% of the prescribed dose",
+                    "criterion": "gross tumor volume (GTV) dose coverage",
+                    "requirements": [
+                        {
+                            "requirement_type": "coverage",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 70,
+                                "unit": "%"
+                            }
+                        },
+                        {
+                            "requirement_type": "dose",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 95,
+                                "unit": "% of the prescribed dose"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* More than 1 lesion in the abdomen or pelvis that requires reirradiation.",
+            "criterions": [
+                {
+                    "exact_snippets": "More than 1 lesion in the abdomen or pelvis",
+                    "criterion": "lesion count in the abdomen or pelvis",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "lesions"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "requires reirradiation",
+                    "criterion": "reirradiation requirement",
+                    "requirements": [
+                        {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* History of inflammatory bowel disease.",
+            "criterions": [
+                {
+                    "exact_snippets": "History of inflammatory bowel disease.",
+                    "criterion": "inflammatory bowel disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Unable to acquire DICOM radiation therapy treatment plan from the prior radiation therapy.",
+            "criterions": [
+                {
+                    "exact_snippets": "Unable to acquire DICOM radiation therapy treatment plan from the prior radiation therapy.",
+                    "criterion": "DICOM radiation therapy treatment plan",
+                    "requirements": [
+                        {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Unresolved grade 2+ toxicity (Common Terminology Criteria for Adverse Events version 5.0) from previous anti-cancer therapy.",
+            "criterions": [
+                {
+                    "exact_snippets": "Unresolved grade 2+ toxicity (Common Terminology Criteria for Adverse Events version 5.0) from previous anti-cancer therapy.",
+                    "criterion": "toxicity from previous anti-cancer therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "grade"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Any condition in the opinion of the investigator that would interfere with evaluation of study treatment or interpretation of participant safety or study results.",
+            "criterions": [
+                {
+                    "exact_snippets": "Any condition in the opinion of the investigator that would interfere with evaluation of study treatment or interpretation of participant safety or study results.",
+                    "criterion": "condition interfering with study",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Individuals who are pregnant.",
+            "criterions": [
+                {
+                    "exact_snippets": "Individuals who are pregnant",
+                    "criterion": "pregnancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Chemotherapy given within 1 week prior to or following reirradiation.",
+            "criterions": [
+                {
+                    "exact_snippets": "Chemotherapy given within 1 week prior to or following reirradiation.",
+                    "criterion": "chemotherapy timing",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "within 1 week prior to or following reirradiation"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Vascular endothelial growth factor (VEGF) inhibitor given within 8 weeks prior to or following reirradiation",
+            "criterions": [
+                {
+                    "exact_snippets": "Vascular endothelial growth factor (VEGF) inhibitor given within 8 weeks prior to or following reirradiation",
+                    "criterion": "VEGF inhibitor administration",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "within 8 weeks prior to or following reirradiation"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

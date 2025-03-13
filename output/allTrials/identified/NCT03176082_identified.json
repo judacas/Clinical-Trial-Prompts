@@ -1,0 +1,439 @@
+{
+    "info": {
+        "nct_id": "NCT03176082",
+        "official_title": "Mailed Reminders Plus Fecal Immunochemical Testing (FIT) to Increase Colorectal Cancer Screening Among Medicaid Beneficiaries in Mecklenburg County",
+        "inclusion_criteria": "1. Current Medicaid beneficiary,\n2. Enrolled in Community Care Partners of Greater Mecklenburg (CCPGM),\n3. 52-64 years old,\n4. English or Spanish speaking,\n5. No record of FOBT/FIT within 12 months or colonoscopy with 10 years, sigmoidoscopy within 5 years; barium enema within 5 years, CT colonography within 10 years,\n6. No record of any CRC diagnosis or total colectomy\nHealthy volunteers allowed\nMust have minimum age of 52 Years\nMust have maximum age of 64 Years",
+        "exclusion_criteria": "1. < 52 or >64 years of age;\n2. History of colorectal cancer or total colectomy (see attached table for codes),\n3. Persons dually enrolled in Medicare,\n4. Not enrolled in CCPGM, 5. Received FOBT or FIT within 12 months; colonoscopy within 10 years; sigmoidoscopy within 5 years; barium enema within 5 years, CT colonography within 10 years",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "1. Current Medicaid beneficiary,",
+            "criterions": [
+                {
+                    "exact_snippets": "Current Medicaid beneficiary",
+                    "criterion": "Medicaid beneficiary status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "current"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. Enrolled in Community Care Partners of Greater Mecklenburg (CCPGM),",
+            "criterions": [
+                {
+                    "exact_snippets": "Enrolled in Community Care Partners of Greater Mecklenburg (CCPGM)",
+                    "criterion": "enrollment in CCPGM",
+                    "requirements": [
+                        {
+                            "requirement_type": "enrollment",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "3. 52-64 years old,",
+            "criterions": [
+                {
+                    "exact_snippets": "52-64 years old",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 52,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 64,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "4. English or Spanish speaking,",
+            "criterions": [
+                {
+                    "exact_snippets": "English or Spanish speaking",
+                    "criterion": "language",
+                    "requirements": [
+                        {
+                            "requirement_type": "languages",
+                            "expected_value": [
+                                "English",
+                                "Spanish"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "5. No record of FOBT/FIT within 12 months or colonoscopy with 10 years, sigmoidoscopy within 5 years; barium enema within 5 years, CT colonography within 10 years,",
+            "criterions": [
+                {
+                    "exact_snippets": "No record of FOBT/FIT within 12 months",
+                    "criterion": "FOBT/FIT record",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 12,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "No record of ... colonoscopy with 10 years",
+                    "criterion": "colonoscopy record",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "No record of ... sigmoidoscopy within 5 years",
+                    "criterion": "sigmoidoscopy record",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "No record of ... barium enema within 5 years",
+                    "criterion": "barium enema record",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "No record of ... CT colonography within 10 years",
+                    "criterion": "CT colonography record",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "6. No record of any CRC diagnosis or total colectomy",
+            "criterions": [
+                {
+                    "exact_snippets": "No record of any CRC diagnosis",
+                    "criterion": "CRC diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "No record of ... total colectomy",
+                    "criterion": "total colectomy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 52 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 52 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 52,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 64 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 64 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 64,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "1. < 52 or >64 years of age;",
+            "criterions": [
+                {
+                    "exact_snippets": "< 52 or >64 years of age",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<",
+                                        "value": 52,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": ">",
+                                        "value": 64,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. History of colorectal cancer or total colectomy (see attached table for codes),",
+            "criterions": [
+                {
+                    "exact_snippets": "History of colorectal cancer",
+                    "criterion": "colorectal cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "total colectomy",
+                    "criterion": "total colectomy",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "3. Persons dually enrolled in Medicare,",
+            "criterions": [
+                {
+                    "exact_snippets": "dually enrolled in Medicare",
+                    "criterion": "Medicare enrollment",
+                    "requirements": [
+                        {
+                            "requirement_type": "enrollment status",
+                            "expected_value": "dually enrolled"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "4. Not enrolled in CCPGM, 5. Received FOBT or FIT within 12 months; colonoscopy within 10 years; sigmoidoscopy within 5 years; barium enema within 5 years, CT colonography within 10 years",
+            "criterions": [
+                {
+                    "exact_snippets": "Not enrolled in CCPGM",
+                    "criterion": "CCPGM enrollment",
+                    "requirements": [
+                        {
+                            "requirement_type": "enrollment status",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Received FOBT or FIT within 12 months",
+                    "criterion": "FOBT or FIT",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last test",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "colonoscopy within 10 years",
+                    "criterion": "colonoscopy",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last test",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 10,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "sigmoidoscopy within 5 years",
+                    "criterion": "sigmoidoscopy",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last test",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "barium enema within 5 years",
+                    "criterion": "barium enema",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last test",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "CT colonography within 10 years",
+                    "criterion": "CT colonography",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last test",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 10,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

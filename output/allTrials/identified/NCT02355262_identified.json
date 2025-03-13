@@ -1,0 +1,211 @@
+{
+    "info": {
+        "nct_id": "NCT02355262",
+        "official_title": "Community-Based HIT Tools for Cancer Screening and Health Insurance Promotion (CATCH-UP)",
+        "inclusion_criteria": "* Established patients at CHC sites\n* Low-income\n* Ethnically diverse populations with lower rates of cancer screening compared to national rates\n* Uninsured patients\n* Patients 18 to 64 years of age\n* Clinics must be primary care sites, with greater than 1,000 adult patients in the past year, be located in a state that expanded Medicaid, and have implemented the OCHIN EHR prior to January 1, 2012\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Established patients at CHC sites",
+            "criterions": [
+                {
+                    "exact_snippets": "Established patients",
+                    "criterion": "patient status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "established"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "CHC sites",
+                    "criterion": "location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "CHC sites"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Low-income",
+            "criterions": [
+                {
+                    "exact_snippets": "Low-income",
+                    "criterion": "income",
+                    "requirements": [
+                        {
+                            "requirement_type": "level",
+                            "expected_value": "low"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Ethnically diverse populations with lower rates of cancer screening compared to national rates",
+            "criterions": [
+                {
+                    "exact_snippets": "Ethnically diverse populations",
+                    "criterion": "ethnicity",
+                    "requirements": [
+                        {
+                            "requirement_type": "diversity",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "lower rates of cancer screening compared to national rates",
+                    "criterion": "cancer screening rate",
+                    "requirements": [
+                        {
+                            "requirement_type": "comparison",
+                            "expected_value": "lower than national rates"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Uninsured patients",
+            "criterions": [
+                {
+                    "exact_snippets": "Uninsured patients",
+                    "criterion": "insurance status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "uninsured"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients 18 to 64 years of age",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients 18 to 64 years of age",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 64,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Clinics must be primary care sites, with greater than 1,000 adult patients in the past year, be located in a state that expanded Medicaid, and have implemented the OCHIN EHR prior to January 1, 2012",
+            "criterions": [
+                {
+                    "exact_snippets": "Clinics must be primary care sites",
+                    "criterion": "clinic type",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": "primary care"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "greater than 1,000 adult patients in the past year",
+                    "criterion": "adult patient count",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1000,
+                                "unit": "patients"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "be located in a state that expanded Medicaid",
+                    "criterion": "state Medicaid expansion",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "expanded"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "have implemented the OCHIN EHR prior to January 1, 2012",
+                    "criterion": "OCHIN EHR implementation date",
+                    "requirements": [
+                        {
+                            "requirement_type": "date",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2012,
+                                "unit": "year"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

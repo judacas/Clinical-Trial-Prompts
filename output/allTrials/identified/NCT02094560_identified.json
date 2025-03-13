@@ -1,0 +1,225 @@
+{
+    "info": {
+        "nct_id": "NCT02094560",
+        "official_title": "Phase II Trial of CAP7.1 in Adult Patients With Refractory Malignancies: Small Cell Lung Carcinoma, Non-Small Cell Lung Carcinoma, Biliary Carcinoma (PIITCAP)",
+        "inclusion_criteria": "* Histologically- or cytologically-confirmed, advanced disease with documented progression (RECIST1.1.) after one or several chemotherapy line\n* Patients may also have received molecular targeted therapy and progressed while on therapy or after completion\n* Must have recovered from the acute reversible effects of previous anti-cancer chemotherapy, usually 3-4 weeks after myelosuppressive chemotherapy\nHealthy volunteers allowed",
+        "exclusion_criteria": "* Serious concurrent medical condition, which could affect compliance with the protocol or interpretation of results.\n* Patients with uncontrolled infection and patients known to be infected with the human immunodeficiency virus (HIV) or hepatitis infection are not eligible for the study\n* Pregnancy or breast-feeding",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Histologically- or cytologically-confirmed, advanced disease with documented progression (RECIST1.1.) after one or several chemotherapy line",
+            "criterions": [
+                {
+                    "exact_snippets": "Histologically- or cytologically-confirmed",
+                    "criterion": "disease confirmation method",
+                    "requirements": [
+                        {
+                            "requirement_type": "method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "advanced disease",
+                    "criterion": "disease stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": "advanced"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "documented progression (RECIST1.1.)",
+                    "criterion": "disease progression",
+                    "requirements": [
+                        {
+                            "requirement_type": "documentation",
+                            "expected_value": "RECIST1.1."
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "after one or several chemotherapy line",
+                    "criterion": "prior chemotherapy lines",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "lines"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients may also have received molecular targeted therapy and progressed while on therapy or after completion",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients may also have received molecular targeted therapy",
+                    "criterion": "molecular targeted therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "receipt",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "progressed while on therapy or after completion",
+                    "criterion": "progression",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": [
+                                "while on therapy",
+                                "after completion"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Must have recovered from the acute reversible effects of previous anti-cancer chemotherapy, usually 3-4 weeks after myelosuppressive chemotherapy",
+            "criterions": [
+                {
+                    "exact_snippets": "Must have recovered from the acute reversible effects of previous anti-cancer chemotherapy",
+                    "criterion": "recovery from acute reversible effects of previous anti-cancer chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "recovery",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "usually 3-4 weeks after myelosuppressive chemotherapy",
+                    "criterion": "time since myelosuppressive chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "weeks"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "weeks"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Serious concurrent medical condition, which could affect compliance with the protocol or interpretation of results.",
+            "criterions": [
+                {
+                    "exact_snippets": "Serious concurrent medical condition",
+                    "criterion": "concurrent medical condition",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients with uncontrolled infection and patients known to be infected with the human immunodeficiency virus (HIV) or hepatitis infection are not eligible for the study",
+            "criterions": [
+                {
+                    "exact_snippets": "uncontrolled infection",
+                    "criterion": "infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "infected with the human immunodeficiency virus (HIV)",
+                    "criterion": "HIV infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "hepatitis infection",
+                    "criterion": "hepatitis infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Pregnancy or breast-feeding",
+            "criterions": [
+                {
+                    "exact_snippets": "Pregnancy",
+                    "criterion": "pregnancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "breast-feeding",
+                    "criterion": "breast-feeding",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

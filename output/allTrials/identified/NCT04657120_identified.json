@@ -1,0 +1,482 @@
+{
+    "info": {
+        "nct_id": "NCT04657120",
+        "official_title": "Safety and Efficiency of the YEARS Algorithm Versus Computed Tomography Pulmonary Angiography Alone for Suspected Pulmonary Embolism in Patients With Malignancy : HYDRA Study",
+        "inclusion_criteria": "In order to be eligible to participate in this study, a subject must meet all of the following criteria:\n\n* Clinically suspected PE as judged by the treating clinician\n* Any type of active malignancy (other than basal-cell or squamous-cell carcinoma of the skin), defined as diagnosis within six months before the study inclusion (as confirmed histologically or high suspicion as judged by the clinician), receiving treatment for malignancy at time of inclusion or during 6 months prior to randomization, including recurrent or local metastatic malignancy\n* Outpatients and hospitalized patients\n* Age ≥ 18 years\n* Signed and dated informed consent, available for start of the trial procedure\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "A potential subject who meets any of the following criteria will be excluded from participation in this study:\n\n* Medical or psychological condition that would not permit completion of the study or signing of informed consent, including life expectancy less than 3 months, or unwillingness to sign informed consent\n* Treatment with full-dose therapeutically dosed anticoagulation that was initiated 24 hours or more prior to eligibility assessment\n* Contraindication to CTPA\n\n  * contrast allergy\n\nHemodynamic instability at presentation (as a consequence of concurrent acute PE or otherwise), indicated by at least one of the following:\n\n* systolic blood pressure (SBP) < 100 mm Hg, or heart rate >120 beats per minute or SBP drop by > 40 mm Hg, for > 15 min\n* need for catecholamines to maintain adequate organ perfusion and a systolic blood pressure of > 100 mmHg\n* Need for cardiopulmonary resuscitation\n* Inability to follow-up\n* Life expectancy less than 3 months",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Clinically suspected PE as judged by the treating clinician",
+            "criterions": [
+                {
+                    "exact_snippets": "Clinically suspected PE",
+                    "criterion": "pulmonary embolism (PE)",
+                    "requirements": [
+                        {
+                            "requirement_type": "suspicion",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "as judged by the treating clinician",
+                    "criterion": "treating clinician judgment",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Any type of active malignancy (other than basal-cell or squamous-cell carcinoma of the skin), defined as diagnosis within six months before the study inclusion (as confirmed histologically or high suspicion as judged by the clinician), receiving treatment for malignancy at time of inclusion or during 6 months prior to randomization, including recurrent or local metastatic malignancy",
+            "criterions": [
+                {
+                    "exact_snippets": "Any type of active malignancy (other than basal-cell or squamous-cell carcinoma of the skin)",
+                    "criterion": "active malignancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "exclusion",
+                            "expected_value": [
+                                "basal-cell carcinoma of the skin",
+                                "squamous-cell carcinoma of the skin"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "diagnosis within six months before the study inclusion",
+                    "criterion": "malignancy diagnosis timing",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "as confirmed histologically or high suspicion as judged by the clinician",
+                    "criterion": "malignancy confirmation",
+                    "requirements": [
+                        {
+                            "requirement_type": "confirmation",
+                            "expected_value": [
+                                "histologically confirmed",
+                                "high suspicion as judged by the clinician"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "receiving treatment for malignancy at time of inclusion or during 6 months prior to randomization",
+                    "criterion": "malignancy treatment timing",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "=",
+                                        "value": 0,
+                                        "unit": "months"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 6,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "recurrent or local metastatic malignancy",
+                    "criterion": "malignancy type",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "recurrent",
+                                "local metastatic"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Outpatients and hospitalized patients",
+            "criterions": [
+                {
+                    "exact_snippets": "Outpatients",
+                    "criterion": "patient status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "outpatient"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "hospitalized patients",
+                    "criterion": "patient status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "hospitalized"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Age ≥ 18 years",
+            "criterions": [
+                {
+                    "exact_snippets": "Age ≥ 18 years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Signed and dated informed consent, available for start of the trial procedure",
+            "criterions": [
+                {
+                    "exact_snippets": "Signed and dated informed consent",
+                    "criterion": "informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "signed and dated"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "available for start of the trial procedure",
+                    "criterion": "availability for trial start",
+                    "requirements": [
+                        {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Medical or psychological condition that would not permit completion of the study or signing of informed consent, including life expectancy less than 3 months, or unwillingness to sign informed consent",
+            "criterions": [
+                {
+                    "exact_snippets": "Medical or psychological condition that would not permit completion of the study or signing of informed consent",
+                    "criterion": "medical or psychological condition",
+                    "requirements": [
+                        {
+                            "requirement_type": "impact on study participation",
+                            "expected_value": "would not permit completion of the study or signing of informed consent"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "life expectancy less than 3 months",
+                    "criterion": "life expectancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "unwillingness to sign informed consent",
+                    "criterion": "willingness to sign informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "willingness",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Treatment with full-dose therapeutically dosed anticoagulation that was initiated 24 hours or more prior to eligibility assessment",
+            "criterions": [
+                {
+                    "exact_snippets": "Treatment with full-dose therapeutically dosed anticoagulation",
+                    "criterion": "anticoagulation treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "dosage",
+                            "expected_value": "full-dose therapeutically dosed"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "initiated 24 hours or more prior to eligibility assessment",
+                    "criterion": "anticoagulation treatment initiation time",
+                    "requirements": [
+                        {
+                            "requirement_type": "time before eligibility assessment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 24,
+                                "unit": "hours"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Contraindication to CTPA",
+            "criterions": [
+                {
+                    "exact_snippets": "Contraindication to CTPA",
+                    "criterion": "CTPA",
+                    "requirements": [
+                        {
+                            "requirement_type": "contraindication",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* contrast allergy",
+            "criterions": [
+                {
+                    "exact_snippets": "contrast allergy",
+                    "criterion": "contrast allergy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Hemodynamic instability at presentation (as a consequence of concurrent acute PE or otherwise), indicated by at least one of the following:",
+            "criterions": [
+                {
+                    "exact_snippets": "Hemodynamic instability at presentation",
+                    "criterion": "hemodynamic instability",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* systolic blood pressure (SBP) < 100 mm Hg, or heart rate >120 beats per minute or SBP drop by > 40 mm Hg, for > 15 min",
+            "criterions": [
+                {
+                    "exact_snippets": "systolic blood pressure (SBP) < 100 mm Hg",
+                    "criterion": "systolic blood pressure",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 100,
+                                "unit": "mm Hg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "heart rate >120 beats per minute",
+                    "criterion": "heart rate",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 120,
+                                "unit": "beats per minute"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "SBP drop by > 40 mm Hg, for > 15 min",
+                    "criterion": "systolic blood pressure drop",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 40,
+                                "unit": "mm Hg"
+                            }
+                        },
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 15,
+                                "unit": "min"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* need for catecholamines to maintain adequate organ perfusion and a systolic blood pressure of > 100 mmHg",
+            "criterions": [
+                {
+                    "exact_snippets": "need for catecholamines to maintain adequate organ perfusion",
+                    "criterion": "need for catecholamines",
+                    "requirements": [
+                        {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "systolic blood pressure of > 100 mmHg",
+                    "criterion": "systolic blood pressure",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 100,
+                                "unit": "mmHg"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Need for cardiopulmonary resuscitation",
+            "criterions": [
+                {
+                    "exact_snippets": "Need for cardiopulmonary resuscitation",
+                    "criterion": "cardiopulmonary resuscitation",
+                    "requirements": [
+                        {
+                            "requirement_type": "need",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Inability to follow-up",
+            "criterions": [
+                {
+                    "exact_snippets": "Inability to follow-up",
+                    "criterion": "follow-up ability",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Life expectancy less than 3 months",
+            "criterions": [
+                {
+                    "exact_snippets": "Life expectancy less than 3 months",
+                    "criterion": "life expectancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "line": "In order to be eligible to participate in this study, a subject must meet all of the following criteria:",
+            "criterions": []
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "line": "A potential subject who meets any of the following criteria will be excluded from participation in this study:",
+            "criterions": []
+        }
+    ],
+    "failed_miscellaneous": []
+}

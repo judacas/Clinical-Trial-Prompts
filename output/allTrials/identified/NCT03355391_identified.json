@@ -1,0 +1,186 @@
+{
+    "info": {
+        "nct_id": "NCT03355391",
+        "official_title": "Implementation of a Data System to Better Characterize Brazilian Colorectal Cancer Screening Population",
+        "inclusion_criteria": "* Individuals aged 50 to 65 years who were included in the HCB screening program from November 2017 to December 2018.\nHealthy volunteers allowed\nMust have minimum age of 50 Years\nMust have maximum age of 65 Years",
+        "exclusion_criteria": "* Presence of signs and symptoms of CRC (rectal bleeding, recent change of the bowel pattern, abdominal mass or anemia).\n* Family history of CRC.\n* Personal history of adenoma or CRC",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Individuals aged 50 to 65 years who were included in the HCB screening program from November 2017 to December 2018.",
+            "criterions": [
+                {
+                    "exact_snippets": "Individuals aged 50 to 65 years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 50,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 65,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "included in the HCB screening program",
+                    "criterion": "HCB screening program inclusion",
+                    "requirements": [
+                        {
+                            "requirement_type": "inclusion",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "from November 2017 to December 2018",
+                    "criterion": "HCB screening program inclusion period",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2017.11,
+                                        "unit": "year.month"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2018.12,
+                                        "unit": "year.month"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 50 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 50 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 65 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 65 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 65,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Presence of signs and symptoms of CRC (rectal bleeding, recent change of the bowel pattern, abdominal mass or anemia).",
+            "criterions": [
+                {
+                    "exact_snippets": "Presence of signs and symptoms of CRC (rectal bleeding, recent change of the bowel pattern, abdominal mass or anemia)",
+                    "criterion": "signs and symptoms of CRC",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Family history of CRC.",
+            "criterions": [
+                {
+                    "exact_snippets": "Family history of CRC",
+                    "criterion": "family history of CRC",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Personal history of adenoma or CRC",
+            "criterions": [
+                {
+                    "exact_snippets": "Personal history of adenoma",
+                    "criterion": "adenoma",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Personal history of ... CRC",
+                    "criterion": "colorectal cancer (CRC)",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

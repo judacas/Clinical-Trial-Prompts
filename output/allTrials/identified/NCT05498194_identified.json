@@ -1,0 +1,246 @@
+{
+    "info": {
+        "nct_id": "NCT05498194",
+        "official_title": "Computational Prediction and Experimental Validation of Gastric Cancer Associated Neoantigens",
+        "inclusion_criteria": "1. Male or Female patients aged 15 years and older\n2. Diagnosed with advanced gastric cancer (T2-4b/N0-3/M0-1 stage, according to the eighth edition of the American Joint Committee on Cancer TNM (AJCC TNM) system)\n3. Treatment-Naive\n4. Not known for other concomitant cancers\n5. Provide written informed consent\nMust have minimum age of 15 Years\nMust have maximum age of 18 Years",
+        "exclusion_criteria": "1. Insufficient tumor tissues (less than 1 cm3)\n2. Unable to sign informed consent\n3. Underwent treatment",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "1. Male or Female patients aged 15 years and older",
+            "criterions": [
+                {
+                    "exact_snippets": "Male or Female",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "allowed_values",
+                            "expected_value": [
+                                "Male",
+                                "Female"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "aged 15 years and older",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum_age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. Diagnosed with advanced gastric cancer (T2-4b/N0-3/M0-1 stage, according to the eighth edition of the American Joint Committee on Cancer TNM (AJCC TNM) system)",
+            "criterions": [
+                {
+                    "exact_snippets": "Diagnosed with advanced gastric cancer",
+                    "criterion": "gastric cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": "advanced"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "T2-4b/N0-3/M0-1 stage",
+                    "criterion": "cancer stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "T2",
+                                "T3",
+                                "T4",
+                                "T4a",
+                                "T4b"
+                            ]
+                        },
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "N0",
+                                "N1",
+                                "N2",
+                                "N3"
+                            ]
+                        },
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "M0",
+                                "M1"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "according to the eighth edition of the American Joint Committee on Cancer TNM (AJCC TNM) system",
+                    "criterion": "staging system",
+                    "requirements": [
+                        {
+                            "requirement_type": "edition",
+                            "expected_value": "eighth"
+                        },
+                        {
+                            "requirement_type": "organization",
+                            "expected_value": "American Joint Committee on Cancer"
+                        },
+                        {
+                            "requirement_type": "system",
+                            "expected_value": "TNM"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "3. Treatment-Naive",
+            "criterions": [
+                {
+                    "exact_snippets": "Treatment-Naive",
+                    "criterion": "treatment history",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "naive"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "4. Not known for other concomitant cancers",
+            "criterions": [
+                {
+                    "exact_snippets": "Not known for other concomitant cancers",
+                    "criterion": "concomitant cancers",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "5. Provide written informed consent",
+            "criterions": [
+                {
+                    "exact_snippets": "Provide written informed consent",
+                    "criterion": "informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "provision",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 15 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 15 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "1. Insufficient tumor tissues (less than 1 cm3)",
+            "criterions": [
+                {
+                    "exact_snippets": "Insufficient tumor tissues (less than 1 cm3)",
+                    "criterion": "tumor tissue",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1,
+                                "unit": "cm3"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. Unable to sign informed consent",
+            "criterions": [
+                {
+                    "exact_snippets": "Unable to sign informed consent",
+                    "criterion": "informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability to sign",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "3. Underwent treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Underwent treatment",
+                    "criterion": "treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": "underwent"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

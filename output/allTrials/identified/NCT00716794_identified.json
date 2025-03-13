@@ -1,0 +1,546 @@
+{
+    "info": {
+        "nct_id": "NCT00716794",
+        "official_title": "A Phase I/II, Open-Label, Dose Ranging Study of the Safety, Tolerance, Pharmacokinetics and Potential Activity of HE3235 When Administered Orally to Patients With Prostate Cancer",
+        "inclusion_criteria": "* Patient is male and at least 18 years of age, at the time of screening;\n* Patient has metastatic disease (any T, any N, M1);\n* Patient has failed at least 1 taxane regimen; or Patient has symptomatic or asymptomatic CRPC and is chemotherapy-naïve\n* Patient has histologically or cytologically confirmed adenocarcinoma of the prostate;\n* Patient has progression of disease despite adequate hormone therapy, demonstrated by one of the following:\n\n  * PSA level of at least 2 ng/ml that has risen on at least 2 successive occasions, at least 1 week apart.\n  * Evaluable disease progression by modified RECIST (Response Evaluation Criteria in Solid Tumors) criteria;\n  * Progression of metastatic bone disease on bone scan with > 2 new lesions\n* Patient has ECOG (Eastern Cooperative Oncology Group) performance status of 0-2;\n\nMain\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patient has symptomatic parenchymal brain metastases or active epidural disease requiring whole-brain irradiation Treated epidural disease is allowed\n* Patient has active infection;\n* Patient having a history of clinically significant cardiovascular disease (such as CHF), clinically significant hepatic, respiratory or renal abnormalities;\n* Patient who has any clinically significant abnormalities in laboratory results at screening\n* Patient who has a history of clinically significant neurological or psychiatric condition;\n\nAdditional criteria are applicable to expansion cohorts.",
+        "miscellaneous_criteria": "Main"
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Patient is male and at least 18 years of age, at the time of screening;",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient is male",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "at least 18 years of age",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has metastatic disease (any T, any N, M1);",
+            "criterions": [
+                {
+                    "exact_snippets": "metastatic disease (any T, any N, M1)",
+                    "criterion": "metastatic disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has failed at least 1 taxane regimen; or Patient has symptomatic or asymptomatic CRPC and is chemotherapy-naïve",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient has failed at least 1 taxane regimen",
+                    "criterion": "taxane regimen",
+                    "requirements": [
+                        {
+                            "requirement_type": "failure",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "regimen"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Patient has symptomatic or asymptomatic CRPC",
+                    "criterion": "CRPC",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "symptom status",
+                            "expected_value": [
+                                "symptomatic",
+                                "asymptomatic"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Patient ... is chemotherapy-naïve",
+                    "criterion": "chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "naivety",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has histologically or cytologically confirmed adenocarcinoma of the prostate;",
+            "criterions": [
+                {
+                    "exact_snippets": "histologically or cytologically confirmed adenocarcinoma of the prostate",
+                    "criterion": "adenocarcinoma of the prostate",
+                    "requirements": [
+                        {
+                            "requirement_type": "confirmation method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has progression of disease despite adequate hormone therapy, demonstrated by one of the following:",
+            "criterions": [
+                {
+                    "exact_snippets": "progression of disease",
+                    "criterion": "disease progression",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "adequate hormone therapy",
+                    "criterion": "hormone therapy adequacy",
+                    "requirements": [
+                        {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* PSA level of at least 2 ng/ml that has risen on at least 2 successive occasions, at least 1 week apart.",
+            "criterions": [
+                {
+                    "exact_snippets": "PSA level of at least 2 ng/ml",
+                    "criterion": "PSA level",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "ng/ml"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "risen on at least 2 successive occasions, at least 1 week apart",
+                    "criterion": "PSA level rise",
+                    "requirements": [
+                        {
+                            "requirement_type": "frequency",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "occasions"
+                            }
+                        },
+                        {
+                            "requirement_type": "interval",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "week"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Evaluable disease progression by modified RECIST (Response Evaluation Criteria in Solid Tumors) criteria;",
+            "criterions": [
+                {
+                    "exact_snippets": "Evaluable disease progression by modified RECIST (Response Evaluation Criteria in Solid Tumors) criteria",
+                    "criterion": "disease progression",
+                    "requirements": [
+                        {
+                            "requirement_type": "evaluation method",
+                            "expected_value": "modified RECIST (Response Evaluation Criteria in Solid Tumors) criteria"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Progression of metastatic bone disease on bone scan with > 2 new lesions",
+            "criterions": [
+                {
+                    "exact_snippets": "Progression of metastatic bone disease on bone scan",
+                    "criterion": "metastatic bone disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "progression",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "... > 2 new lesions",
+                    "criterion": "new lesions",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "lesions"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has ECOG (Eastern Cooperative Oncology Group) performance status of 0-2;",
+            "criterions": [
+                {
+                    "exact_snippets": "ECOG (Eastern Cooperative Oncology Group) performance status of 0-2",
+                    "criterion": "ECOG performance status",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be MALE",
+            "criterions": [
+                {
+                    "exact_snippets": "Must be MALE",
+                    "criterion": "gender",
+                    "requirements": [
+                        {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Patient has symptomatic parenchymal brain metastases or active epidural disease requiring whole-brain irradiation Treated epidural disease is allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient has symptomatic parenchymal brain metastases",
+                    "criterion": "parenchymal brain metastases",
+                    "requirements": [
+                        {
+                            "requirement_type": "symptomatic",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "active epidural disease requiring whole-brain irradiation",
+                    "criterion": "epidural disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        },
+                        {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": "requiring whole-brain irradiation"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Treated epidural disease is allowed",
+                    "criterion": "epidural disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment status",
+                            "expected_value": "treated"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has active infection;",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient has active infection",
+                    "criterion": "active infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient having a history of clinically significant cardiovascular disease (such as CHF), clinically significant hepatic, respiratory or renal abnormalities;",
+            "criterions": [
+                {
+                    "exact_snippets": "history of clinically significant cardiovascular disease",
+                    "criterion": "cardiovascular disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "significance",
+                            "expected_value": "clinically significant"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "clinically significant hepatic ... abnormalities",
+                    "criterion": "hepatic abnormalities",
+                    "requirements": [
+                        {
+                            "requirement_type": "significance",
+                            "expected_value": "clinically significant"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "clinically significant ... respiratory ... abnormalities",
+                    "criterion": "respiratory abnormalities",
+                    "requirements": [
+                        {
+                            "requirement_type": "significance",
+                            "expected_value": "clinically significant"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "clinically significant ... renal abnormalities",
+                    "criterion": "renal abnormalities",
+                    "requirements": [
+                        {
+                            "requirement_type": "significance",
+                            "expected_value": "clinically significant"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient who has any clinically significant abnormalities in laboratory results at screening",
+            "criterions": [
+                {
+                    "exact_snippets": "clinically significant abnormalities in laboratory results",
+                    "criterion": "laboratory results",
+                    "requirements": [
+                        {
+                            "requirement_type": "abnormalities",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "clinical significance",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient who has a history of clinically significant neurological or psychiatric condition;",
+            "criterions": [
+                {
+                    "exact_snippets": "history of clinically significant neurological ... condition",
+                    "criterion": "neurological condition",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "clinical significance",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "history of clinically significant ... psychiatric condition",
+                    "criterion": "psychiatric condition",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "clinical significance",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Additional criteria are applicable to expansion cohorts.",
+            "criterions": [
+                {
+                    "exact_snippets": "expansion cohorts",
+                    "criterion": "expansion cohorts",
+                    "requirements": [
+                        {
+                            "requirement_type": "applicability",
+                            "expected_value": "additional criteria"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "line": "Main",
+            "criterions": [
+                {
+                    "exact_snippets": "Tissue from tumor must be available",
+                    "criterion": "tumor tissue",
+                    "requirements": [
+                        {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "> 2 cm in diameter",
+                    "criterion": "tumor tissue",
+                    "requirements": [
+                        {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "cm"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": [
+        {
+            "line": "Main",
+            "criterions": [
+                {
+                    "exact_snippets": "Tissue from tumor must be available",
+                    "criterion": "tumor tissue",
+                    "requirements": [
+                        {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "> 2 cm in diameter",
+                    "criterion": "tumor tissue",
+                    "requirements": [
+                        {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "cm"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

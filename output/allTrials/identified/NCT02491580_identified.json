@@ -1,0 +1,185 @@
+{
+    "info": {
+        "nct_id": "NCT02491580",
+        "official_title": "Post-transplant Cancer Incidence and Survival in Patients With or Without Pre-transplant Cancer",
+        "inclusion_criteria": "* Kidney transplanted patients from January 1982 through December 2013 with or without a pre transplant cancer.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Simultaneous kidney+pancreas transplantation.\n* Islet cell transplanted patients\n* Undiagnosed malignancies at the time of transplantation\n* Death within a week after transplantation\n* First transplantation at another hospital",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Kidney transplanted patients from January 1982 through December 2013 with or without a pre transplant cancer.",
+            "criterions": [
+                {
+                    "exact_snippets": "Kidney transplanted patients",
+                    "criterion": "kidney transplant",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "from January 1982 through December 2013",
+                    "criterion": "transplant date",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1982,
+                                        "unit": "year"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2013,
+                                        "unit": "year"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "with or without a pre transplant cancer",
+                    "criterion": "pre transplant cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "with",
+                                "without"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Simultaneous kidney+pancreas transplantation.",
+            "criterions": [
+                {
+                    "exact_snippets": "Simultaneous kidney+pancreas transplantation",
+                    "criterion": "simultaneous kidney and pancreas transplantation",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Islet cell transplanted patients",
+            "criterions": [
+                {
+                    "exact_snippets": "Islet cell transplanted patients",
+                    "criterion": "islet cell transplantation",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Undiagnosed malignancies at the time of transplantation",
+            "criterions": [
+                {
+                    "exact_snippets": "Undiagnosed malignancies at the time of transplantation",
+                    "criterion": "malignancies",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis status",
+                            "expected_value": "undiagnosed"
+                        },
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "at the time of transplantation"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Death within a week after transplantation",
+            "criterions": [
+                {
+                    "exact_snippets": "Death within a week after transplantation",
+                    "criterion": "death",
+                    "requirements": [
+                        {
+                            "requirement_type": "timeframe",
+                            "expected_value": "within a week after transplantation"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* First transplantation at another hospital",
+            "criterions": [
+                {
+                    "exact_snippets": "First transplantation at another hospital",
+                    "criterion": "transplantation",
+                    "requirements": [
+                        {
+                            "requirement_type": "order",
+                            "expected_value": "first"
+                        },
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "another hospital"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}
