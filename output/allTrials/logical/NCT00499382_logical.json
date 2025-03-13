@@ -1,0 +1,330 @@
+{
+    "info": {
+        "nct_id": "NCT00499382",
+        "official_title": "Quantitation of Left Ventricular Ejection Fraction as Part of F-18 FDG Whole Body PET/CT Scans For Tumor Staging",
+        "inclusion_criteria": "* Patients undergoing both FDG PET/CT scan and RNV within two weeks interval, whether for initial staging, restaging or to evaluate response to therapy.\n* Patients who would consent to an additional 10-15 minutes acquisition of the gated images after completion of their FDG PET/CT study with the additional radiation exposure.\n* Patients with regular heart rate.\nHealthy volunteers allowed",
+        "exclusion_criteria": "* Blood glucose level above 200 mg/dL.\n* Irregular heart rate.\n* An interval of less than 1 day between the FDG PET/CT scan and RNV.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients undergoing both FDG PET/CT scan and RNV within two weeks interval, whether for initial staging, restaging or to evaluate response to therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "undergoing both FDG PET/CT scan",
+                        "criterion": "FDG PET/CT scan",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "undergoing ... RNV",
+                        "criterion": "RNV",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "within two weeks interval",
+                        "criterion": "interval between FDG PET/CT scan and RNV",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "whether for initial staging, restaging or to evaluate response to therapy",
+                        "criterion": "purpose of scan",
+                        "requirement": {
+                            "requirement_type": "purpose",
+                            "expected_value": [
+                                "initial staging",
+                                "restaging",
+                                "evaluate response to therapy"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "undergoing both FDG PET/CT scan",
+                                "criterion": "FDG PET/CT scan",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "undergoing ... RNV",
+                                "criterion": "RNV",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "within two weeks interval",
+                        "criterion": "interval between FDG PET/CT scan and RNV",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "whether for initial staging, restaging or to evaluate response to therapy",
+                        "criterion": "purpose of scan",
+                        "requirement": {
+                            "requirement_type": "purpose",
+                            "expected_value": [
+                                "initial staging",
+                                "restaging",
+                                "evaluate response to therapy"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who would consent to an additional 10-15 minutes acquisition of the gated images after completion of their FDG PET/CT study with the additional radiation exposure.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who would consent to an additional 10-15 minutes acquisition of the gated images",
+                        "criterion": "consent to additional acquisition",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "minutes"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 15,
+                                        "unit": "minutes"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "additional radiation exposure",
+                        "criterion": "consent to additional radiation exposure",
+                        "requirement": {
+                            "requirement_type": "consent",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients who would consent to an additional 10-15 minutes acquisition of the gated images",
+                        "criterion": "consent to additional acquisition",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "minutes"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 15,
+                                        "unit": "minutes"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "additional radiation exposure",
+                        "criterion": "consent to additional radiation exposure",
+                        "requirement": {
+                            "requirement_type": "consent",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with regular heart rate.",
+                "criterions": [
+                    {
+                        "exact_snippets": "regular heart rate",
+                        "criterion": "heart rate",
+                        "requirement": {
+                            "requirement_type": "regularity",
+                            "expected_value": "regular"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "regular heart rate",
+                        "criterion": "heart rate",
+                        "requirement": {
+                            "requirement_type": "regularity",
+                            "expected_value": "regular"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Blood glucose level above 200 mg/dL.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Blood glucose level above 200 mg/dL",
+                        "criterion": "blood glucose level",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 200,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Blood glucose level above 200 mg/dL",
+                        "criterion": "blood glucose level",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 200,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Irregular heart rate.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Irregular heart rate",
+                        "criterion": "heart rate",
+                        "requirement": {
+                            "requirement_type": "regularity",
+                            "expected_value": "irregular"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Irregular heart rate",
+                    "criterion": "heart rate",
+                    "requirement": {
+                        "requirement_type": "regularity",
+                        "expected_value": "irregular"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* An interval of less than 1 day between the FDG PET/CT scan and RNV.",
+                "criterions": [
+                    {
+                        "exact_snippets": "An interval of less than 1 day between the FDG PET/CT scan and RNV.",
+                        "criterion": "interval between FDG PET/CT scan and RNV",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1,
+                                "unit": "day"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "An interval of less than 1 day between the FDG PET/CT scan and RNV.",
+                        "criterion": "interval between FDG PET/CT scan and RNV",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1,
+                                "unit": "day"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

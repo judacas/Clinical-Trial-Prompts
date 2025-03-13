@@ -1,0 +1,177 @@
+{
+    "info": {
+        "nct_id": "NCT05939401",
+        "official_title": "ANCABio - a Study Regarding Tumour Microenvironment and the Predictive Capability of Biopsies From Anal Cancer in Predicting Response and Outcome",
+        "inclusion_criteria": "* Newly diagnosed or recurrent anal cancer\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* No diagnosis of anal cancer, contraindication to biopsies and blood samples",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Newly diagnosed or recurrent anal cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Newly diagnosed or recurrent anal cancer",
+                        "criterion": "anal cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis status",
+                            "expected_value": [
+                                "newly diagnosed",
+                                "recurrent"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Newly diagnosed or recurrent anal cancer",
+                        "criterion": "anal cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis status",
+                            "expected_value": [
+                                "newly diagnosed",
+                                "recurrent"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* No diagnosis of anal cancer, contraindication to biopsies and blood samples",
+                "criterions": [
+                    {
+                        "exact_snippets": "No diagnosis of anal cancer",
+                        "criterion": "anal cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "contraindication to biopsies",
+                        "criterion": "contraindication to biopsies",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "contraindication to ... blood samples",
+                        "criterion": "contraindication to blood samples",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "No diagnosis of anal cancer",
+                            "criterion": "anal cancer diagnosis",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": false
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "contraindication to biopsies",
+                            "criterion": "contraindication to biopsies",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": false
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "contraindication to ... blood samples",
+                            "criterion": "contraindication to blood samples",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": false
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

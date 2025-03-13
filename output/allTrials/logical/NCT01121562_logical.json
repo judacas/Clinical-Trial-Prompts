@@ -1,0 +1,167 @@
+{
+    "info": {
+        "nct_id": "NCT01121562",
+        "official_title": "A Phase II Study Of Sunitinib In Patients With Progressive Advanced/Metastatic Well-Differentiated Pancreatic Neuroendocrine Tumors",
+        "inclusion_criteria": "* Patients must have advanced (unresectable or metastatic) biopsy-proven pancreatic NET (Neuroendocrine Tumor)\nHealthy volunteers allowed\nMust have minimum age of 20 Years",
+        "exclusion_criteria": "* Patients with poorly differentiated neuroendocrine cancer are not eligible",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 20 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 20 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 20 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with poorly differentiated neuroendocrine cancer are not eligible",
+                "criterions": [
+                    {
+                        "exact_snippets": "poorly differentiated neuroendocrine cancer",
+                        "criterion": "neuroendocrine cancer",
+                        "requirement": {
+                            "requirement_type": "differentiation",
+                            "expected_value": "poorly differentiated"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "poorly differentiated neuroendocrine cancer",
+                    "criterion": "neuroendocrine cancer",
+                    "requirement": {
+                        "requirement_type": "differentiation",
+                        "expected_value": "poorly differentiated"
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients must have advanced (unresectable or metastatic) biopsy-proven pancreatic NET (Neuroendocrine Tumor)",
+                "criterions": [
+                    {
+                        "exact_snippets": "advanced (unresectable or metastatic) biopsy-proven pancreatic NET (Neuroendocrine Tumor)",
+                        "criterion": "pancreatic NET",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "unresectable",
+                                "metastatic"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "advanced (unresectable or metastatic) biopsy-proven pancreatic NET (Neuroendocrine Tumor)",
+                        "criterion": "pancreatic NET",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": "biopsy-proven"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "advanced (unresectable or metastatic) biopsy-proven pancreatic NET (Neuroendocrine Tumor)",
+                                        "criterion": "pancreatic NET",
+                                        "requirement": {
+                                            "requirement_type": "stage",
+                                            "expected_value": "unresectable"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "advanced (unresectable or metastatic) biopsy-proven pancreatic NET (Neuroendocrine Tumor)",
+                                        "criterion": "pancreatic NET",
+                                        "requirement": {
+                                            "requirement_type": "stage",
+                                            "expected_value": "metastatic"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "advanced (unresectable or metastatic) biopsy-proven pancreatic NET (Neuroendocrine Tumor)",
+                                "criterion": "pancreatic NET",
+                                "requirement": {
+                                    "requirement_type": "confirmation",
+                                    "expected_value": "biopsy-proven"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

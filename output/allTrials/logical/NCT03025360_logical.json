@@ -1,0 +1,190 @@
+{
+    "info": {
+        "nct_id": "NCT03025360",
+        "official_title": "Expanded Access to Provide Larotrectinib (LOXO-101) for the Treatment of Cancers With a NTRK Gene Fusion",
+        "inclusion_criteria": "* Diagnosis of cancer with a NTRK1, NTRK2, or NTRK3 gene fusion\n* Subjects are unable to participate in an ongoing larotrectinib clinical trial\n* Medically suitable for treatment with larotrectinib\nHealthy volunteers allowed",
+        "exclusion_criteria": "* Currently enrolled in an ongoing clinical study of larotrectinib or another TRK inhibitor",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Diagnosis of cancer with a NTRK1, NTRK2, or NTRK3 gene fusion",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "NTRK1, NTRK2, or NTRK3 gene fusion",
+                        "criterion": "NTRK gene fusion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "NTRK1",
+                                "NTRK2",
+                                "NTRK3"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Diagnosis of cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "NTRK1, NTRK2, or NTRK3 gene fusion",
+                        "criterion": "NTRK gene fusion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "NTRK1",
+                                "NTRK2",
+                                "NTRK3"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects are unable to participate in an ongoing larotrectinib clinical trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "unable to participate in an ongoing larotrectinib clinical trial",
+                        "criterion": "participation in larotrectinib clinical trial",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "unable to participate in an ongoing larotrectinib clinical trial",
+                    "criterion": "participation in larotrectinib clinical trial",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Medically suitable for treatment with larotrectinib",
+                "criterions": [
+                    {
+                        "exact_snippets": "Medically suitable for treatment with larotrectinib",
+                        "criterion": "suitability for treatment with larotrectinib",
+                        "requirement": {
+                            "requirement_type": "suitability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Medically suitable for treatment with larotrectinib",
+                        "criterion": "suitability for treatment with larotrectinib",
+                        "requirement": {
+                            "requirement_type": "suitability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Currently enrolled in an ongoing clinical study of larotrectinib or another TRK inhibitor",
+                "criterions": [
+                    {
+                        "exact_snippets": "Currently enrolled in an ongoing clinical study of larotrectinib",
+                        "criterion": "enrollment in clinical study",
+                        "requirement": {
+                            "requirement_type": "drug",
+                            "expected_value": "larotrectinib"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Currently enrolled in an ongoing clinical study of ... another TRK inhibitor",
+                        "criterion": "enrollment in clinical study",
+                        "requirement": {
+                            "requirement_type": "drug",
+                            "expected_value": "TRK inhibitor"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Currently enrolled in an ongoing clinical study of larotrectinib",
+                        "criterion": "enrollment in clinical study",
+                        "requirement": {
+                            "requirement_type": "drug",
+                            "expected_value": "larotrectinib"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Currently enrolled in an ongoing clinical study of ... another TRK inhibitor",
+                        "criterion": "enrollment in clinical study",
+                        "requirement": {
+                            "requirement_type": "drug",
+                            "expected_value": "TRK inhibitor"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,529 @@
+{
+    "info": {
+        "nct_id": "NCT02321527",
+        "official_title": "Feasibility of Ultrasound Microbubble Contrast-Enhanced (CEUS) Ultrasound Sentinel Lymph Node Imaging With Guided Biopsy in Breast Cancer Patients",
+        "inclusion_criteria": "1. 18 years or older.\n2. Ipsilateral biopsy-proven invasive breast cancer <5 cm in maximal dimension by Ultrasound or Mammography.\n3. No abnormal axillary nodes identified on grayscale AUS, or abnormal nodes with benign subsequent FNA biopsy.\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "1. Pregnant or nursing women\n2. Prior SLN dissection\n3. Neoadjuvant chemotherapy.\n4. Prior axillary lymph node surgery.\n5. Prior history of ipsilateral breast cancer.\n6. Known or suspected: Cardiac shunts\n7. Known or suspected: hypersensitivity to perflutren, blood, blood products or albumin\n8. Known or suspected: hypersensitivity to a prior OPTISON administration",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. 18 years or older.",
+                "criterions": [
+                    {
+                        "exact_snippets": "18 years or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "18 years or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Ipsilateral biopsy-proven invasive breast cancer <5 cm in maximal dimension by Ultrasound or Mammography.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ipsilateral biopsy-proven invasive breast cancer",
+                        "criterion": "ipsilateral invasive breast cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": "biopsy-proven"
+                        }
+                    },
+                    {
+                        "exact_snippets": "<5 cm in maximal dimension by Ultrasound or Mammography",
+                        "criterion": "breast cancer size",
+                        "requirement": {
+                            "requirement_type": "maximal dimension",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 5,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ipsilateral biopsy-proven invasive breast cancer",
+                        "criterion": "ipsilateral invasive breast cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": "biopsy-proven"
+                        }
+                    },
+                    {
+                        "exact_snippets": "<5 cm in maximal dimension by Ultrasound or Mammography",
+                        "criterion": "breast cancer size",
+                        "requirement": {
+                            "requirement_type": "maximal dimension",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 5,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. No abnormal axillary nodes identified on grayscale AUS, or abnormal nodes with benign subsequent FNA biopsy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "No abnormal axillary nodes identified on grayscale AUS",
+                        "criterion": "abnormal axillary nodes on grayscale AUS",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "abnormal nodes with benign subsequent FNA biopsy",
+                        "criterion": "abnormal nodes with benign FNA biopsy",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "benign"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "No abnormal axillary nodes identified on grayscale AUS",
+                                "criterion": "abnormal axillary nodes on grayscale AUS",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "abnormal nodes with benign subsequent FNA biopsy",
+                                "criterion": "abnormal nodes with benign FNA biopsy",
+                                "requirement": {
+                                    "requirement_type": "result",
+                                    "expected_value": "benign"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Pregnant or nursing women",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "nursing women",
+                        "criterion": "nursing",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Pregnant",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "nursing women",
+                        "criterion": "nursing",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Prior SLN dissection",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior SLN dissection",
+                        "criterion": "SLN dissection",
+                        "requirement": {
+                            "requirement_type": "prior occurrence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prior SLN dissection",
+                    "criterion": "SLN dissection",
+                    "requirement": {
+                        "requirement_type": "prior occurrence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Neoadjuvant chemotherapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Neoadjuvant chemotherapy",
+                        "criterion": "neoadjuvant chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Neoadjuvant chemotherapy",
+                    "criterion": "neoadjuvant chemotherapy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Prior axillary lymph node surgery.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior axillary lymph node surgery",
+                        "criterion": "axillary lymph node surgery",
+                        "requirement": {
+                            "requirement_type": "prior occurrence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prior axillary lymph node surgery",
+                    "criterion": "axillary lymph node surgery",
+                    "requirement": {
+                        "requirement_type": "prior occurrence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Prior history of ipsilateral breast cancer.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior history of ipsilateral breast cancer",
+                        "criterion": "ipsilateral breast cancer",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prior history of ipsilateral breast cancer",
+                        "criterion": "ipsilateral breast cancer",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Known or suspected: Cardiac shunts",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known or suspected: Cardiac shunts",
+                        "criterion": "cardiac shunts",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Known or suspected: Cardiac shunts",
+                    "criterion": "cardiac shunts",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. Known or suspected: hypersensitivity to perflutren, blood, blood products or albumin",
+                "criterions": [
+                    {
+                        "exact_snippets": "hypersensitivity to perflutren",
+                        "criterion": "hypersensitivity to perflutren",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "hypersensitivity to ... blood",
+                        "criterion": "hypersensitivity to blood",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "hypersensitivity to ... blood products",
+                        "criterion": "hypersensitivity to blood products",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "hypersensitivity to ... albumin",
+                        "criterion": "hypersensitivity to albumin",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "hypersensitivity to perflutren",
+                                "criterion": "hypersensitivity to perflutren",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "hypersensitivity to ... blood",
+                                "criterion": "hypersensitivity to blood",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "hypersensitivity to ... blood products",
+                                "criterion": "hypersensitivity to blood products",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "hypersensitivity to ... albumin",
+                                "criterion": "hypersensitivity to albumin",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "8. Known or suspected: hypersensitivity to a prior OPTISON administration",
+                "criterions": [
+                    {
+                        "exact_snippets": "hypersensitivity to a prior OPTISON administration",
+                        "criterion": "hypersensitivity to OPTISON",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "hypersensitivity to a prior OPTISON administration",
+                    "criterion": "hypersensitivity to OPTISON",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

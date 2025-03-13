@@ -1,0 +1,223 @@
+{
+    "info": {
+        "nct_id": "NCT00220194",
+        "official_title": "A Six-Month, Open-Label, Crossover Study Of the Maintenance Of Serum Testosterone And PSA Suppression After Switching Between Lupron 22.5 Mg And Eligard 22.5 Mg Or Zoladex 10.8 Mg And Eligard 22.5 Mg In Patients With Advanced Prostate Cancer",
+        "inclusion_criteria": "Patient with Advanced Ca, on stable dose of Lupron or Zoladex\n\n-\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Previous exposure to Eligard.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "-",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Previous exposure to Eligard.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous exposure to Eligard",
+                        "criterion": "Eligard exposure",
+                        "requirement": {
+                            "requirement_type": "previous exposure",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Previous exposure to Eligard",
+                    "criterion": "Eligard exposure",
+                    "requirement": {
+                        "requirement_type": "previous exposure",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "Patient with Advanced Ca, on stable dose of Lupron or Zoladex",
+                "criterions": [
+                    {
+                        "exact_snippets": "Advanced Ca",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "advanced"
+                        }
+                    },
+                    {
+                        "exact_snippets": "stable dose of Lupron or Zoladex",
+                        "criterion": "medication stability",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "stable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "stable dose of Lupron or Zoladex",
+                        "criterion": "medication stability",
+                        "requirement": {
+                            "requirement_type": "medications",
+                            "expected_value": [
+                                "Lupron",
+                                "Zoladex"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Advanced Ca",
+                                "criterion": "cancer stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": "advanced"
+                                }
+                            },
+                            {
+                                "exact_snippets": "stable dose of Lupron or Zoladex",
+                                "criterion": "medication stability",
+                                "requirement": {
+                                    "requirement_type": "stability",
+                                    "expected_value": "stable"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "stable dose of Lupron or Zoladex",
+                                "criterion": "medication stability",
+                                "requirement": {
+                                    "requirement_type": "medications",
+                                    "expected_value": [
+                                        "Lupron"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "stable dose of Lupron or Zoladex",
+                                "criterion": "medication stability",
+                                "requirement": {
+                                    "requirement_type": "medications",
+                                    "expected_value": [
+                                        "Zoladex"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

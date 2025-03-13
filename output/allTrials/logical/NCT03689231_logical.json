@@ -1,0 +1,721 @@
+{
+    "info": {
+        "nct_id": "NCT03689231",
+        "official_title": "Volumetric Imaging Follow up of Patients With Liver Metastases of Small Intestinal Neuroendocrine Tumors (NETs).",
+        "inclusion_criteria": "* Well differentiated intestinal neuroendocrine tumor with at least one liver metastasis\n* The liver metastasis must be visible and measurable on CT scans or MRI\n* Patients monitored without invasive liver treatment : surgery, RF ablation / Trans-arterial chemoembolization\n* Patients monitored without systemic treatment such as: Chemotherapy, Everolimus, Sunitinib (Somatostatin analogues allowed)\n* Surgery of the primary tumor allowed\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Other type of NETs\n* Absence of liver metastases\n* Liver metastases not visible on CT scans/MRI, poorly limited lesions and small target lesions ( less than 10mm) that are difficult to measure\n* Lesions visible only on diffusion-weighted imaging -MRI acquisitions, thus presenting poorly limited contours\n* Invasive liver treatment : surgery, Radio frequency / Trans-arterial chemoembolization\n* Systemic treatments: Chemotherapy / Everolimus / Sunitinib\n* Insufficient follow-up data",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Well differentiated intestinal neuroendocrine tumor with at least one liver metastasis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Well differentiated intestinal neuroendocrine tumor",
+                        "criterion": "intestinal neuroendocrine tumor",
+                        "requirement": {
+                            "requirement_type": "differentiation",
+                            "expected_value": "well differentiated"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least one liver metastasis",
+                        "criterion": "liver metastasis",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "metastasis"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Well differentiated intestinal neuroendocrine tumor",
+                        "criterion": "intestinal neuroendocrine tumor",
+                        "requirement": {
+                            "requirement_type": "differentiation",
+                            "expected_value": "well differentiated"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least one liver metastasis",
+                        "criterion": "liver metastasis",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "metastasis"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The liver metastasis must be visible and measurable on CT scans or MRI",
+                "criterions": [
+                    {
+                        "exact_snippets": "liver metastasis must be visible",
+                        "criterion": "liver metastasis",
+                        "requirement": {
+                            "requirement_type": "visibility",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "liver metastasis ... measurable on CT scans or MRI",
+                        "criterion": "liver metastasis",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "liver metastasis must be visible",
+                                "criterion": "liver metastasis",
+                                "requirement": {
+                                    "requirement_type": "visibility",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "liver metastasis ... measurable on CT scans or MRI",
+                                "criterion": "liver metastasis",
+                                "requirement": {
+                                    "requirement_type": "measurability",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "liver metastasis must be visible",
+                                "criterion": "liver metastasis",
+                                "requirement": {
+                                    "requirement_type": "visibility",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "liver metastasis ... measurable on CT scans or MRI",
+                                "criterion": "liver metastasis",
+                                "requirement": {
+                                    "requirement_type": "measurability",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients monitored without invasive liver treatment : surgery, RF ablation / Trans-arterial chemoembolization",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients monitored without invasive liver treatment : surgery",
+                        "criterion": "invasive liver treatment",
+                        "requirement": {
+                            "requirement_type": "absence",
+                            "expected_value": [
+                                "surgery"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients monitored without invasive liver treatment : ... RF ablation",
+                        "criterion": "invasive liver treatment",
+                        "requirement": {
+                            "requirement_type": "absence",
+                            "expected_value": [
+                                "RF ablation"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients monitored without invasive liver treatment : ... Trans-arterial chemoembolization",
+                        "criterion": "invasive liver treatment",
+                        "requirement": {
+                            "requirement_type": "absence",
+                            "expected_value": [
+                                "Trans-arterial chemoembolization"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients monitored without invasive liver treatment : surgery",
+                                "criterion": "invasive liver treatment",
+                                "requirement": {
+                                    "requirement_type": "absence",
+                                    "expected_value": [
+                                        "surgery"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "Patients monitored without invasive liver treatment : ... RF ablation",
+                                "criterion": "invasive liver treatment",
+                                "requirement": {
+                                    "requirement_type": "absence",
+                                    "expected_value": [
+                                        "RF ablation"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Patients monitored without invasive liver treatment : ... Trans-arterial chemoembolization",
+                        "criterion": "invasive liver treatment",
+                        "requirement": {
+                            "requirement_type": "absence",
+                            "expected_value": [
+                                "Trans-arterial chemoembolization"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients monitored without systemic treatment such as: Chemotherapy, Everolimus, Sunitinib (Somatostatin analogues allowed)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients monitored without systemic treatment such as: Chemotherapy",
+                        "criterion": "systemic treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients monitored without systemic treatment such as: ... Everolimus",
+                        "criterion": "Everolimus treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients monitored without systemic treatment such as: ... Sunitinib",
+                        "criterion": "Sunitinib treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "(Somatostatin analogues allowed)",
+                        "criterion": "Somatostatin analogues",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Patients monitored without systemic treatment such as: Chemotherapy",
+                                        "criterion": "systemic treatment",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Patients monitored without systemic treatment such as: ... Everolimus",
+                                        "criterion": "Everolimus treatment",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "Patients monitored without systemic treatment such as: ... Sunitinib",
+                                "criterion": "Sunitinib treatment",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "(Somatostatin analogues allowed)",
+                        "criterion": "Somatostatin analogues",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Surgery of the primary tumor allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Surgery of the primary tumor allowed",
+                        "criterion": "surgery of the primary tumor",
+                        "requirement": {
+                            "requirement_type": "allowance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Surgery of the primary tumor allowed",
+                        "criterion": "surgery of the primary tumor",
+                        "requirement": {
+                            "requirement_type": "allowance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Other type of NETs",
+                "criterions": [
+                    {
+                        "exact_snippets": "Other type of NETs",
+                        "criterion": "type of NETs",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "other"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Other type of NETs",
+                    "criterion": "type of NETs",
+                    "requirement": {
+                        "requirement_type": "type",
+                        "expected_value": "other"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Absence of liver metastases",
+                "criterions": [
+                    {
+                        "exact_snippets": "Absence of liver metastases",
+                        "criterion": "liver metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Absence of liver metastases",
+                    "criterion": "liver metastases",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Liver metastases not visible on CT scans/MRI, poorly limited lesions and small target lesions ( less than 10mm) that are difficult to measure",
+                "criterions": [
+                    {
+                        "exact_snippets": "Liver metastases not visible on CT scans/MRI",
+                        "criterion": "liver metastases visibility",
+                        "requirement": {
+                            "requirement_type": "visibility",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "poorly limited lesions",
+                        "criterion": "lesion limitation",
+                        "requirement": {
+                            "requirement_type": "limitation",
+                            "expected_value": "poorly limited"
+                        }
+                    },
+                    {
+                        "exact_snippets": "small target lesions ( less than 10mm)",
+                        "criterion": "target lesion size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 10,
+                                "unit": "mm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "small target lesions ... that are difficult to measure",
+                        "criterion": "target lesion measurability",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": "difficult to measure"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Liver metastases not visible on CT scans/MRI",
+                                "criterion": "liver metastases visibility",
+                                "requirement": {
+                                    "requirement_type": "visibility",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "poorly limited lesions",
+                                "criterion": "lesion limitation",
+                                "requirement": {
+                                    "requirement_type": "limitation",
+                                    "expected_value": "poorly limited"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "small target lesions ( less than 10mm)",
+                                "criterion": "target lesion size",
+                                "requirement": {
+                                    "requirement_type": "size",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 10,
+                                        "unit": "mm"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "small target lesions ... that are difficult to measure",
+                                "criterion": "target lesion measurability",
+                                "requirement": {
+                                    "requirement_type": "measurability",
+                                    "expected_value": "difficult to measure"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lesions visible only on diffusion-weighted imaging -MRI acquisitions, thus presenting poorly limited contours",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lesions visible only on diffusion-weighted imaging -MRI acquisitions",
+                        "criterion": "lesions",
+                        "requirement": {
+                            "requirement_type": "visibility",
+                            "expected_value": "only on diffusion-weighted imaging -MRI acquisitions"
+                        }
+                    },
+                    {
+                        "exact_snippets": "presenting poorly limited contours",
+                        "criterion": "lesion contours",
+                        "requirement": {
+                            "requirement_type": "definition",
+                            "expected_value": "poorly limited"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Lesions visible only on diffusion-weighted imaging -MRI acquisitions",
+                        "criterion": "lesions",
+                        "requirement": {
+                            "requirement_type": "visibility",
+                            "expected_value": "only on diffusion-weighted imaging -MRI acquisitions"
+                        }
+                    },
+                    {
+                        "exact_snippets": "presenting poorly limited contours",
+                        "criterion": "lesion contours",
+                        "requirement": {
+                            "requirement_type": "definition",
+                            "expected_value": "poorly limited"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Invasive liver treatment : surgery, Radio frequency / Trans-arterial chemoembolization",
+                "criterions": [
+                    {
+                        "exact_snippets": "Invasive liver treatment : surgery",
+                        "criterion": "invasive liver treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "surgery"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Invasive liver treatment : ... Radio frequency",
+                        "criterion": "invasive liver treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "Radio frequency"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Invasive liver treatment : ... Trans-arterial chemoembolization",
+                        "criterion": "invasive liver treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "Trans-arterial chemoembolization"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Invasive liver treatment : surgery",
+                                "criterion": "invasive liver treatment",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "surgery"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Invasive liver treatment : ... Radio frequency",
+                                "criterion": "invasive liver treatment",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "Radio frequency"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Invasive liver treatment : ... Trans-arterial chemoembolization",
+                                "criterion": "invasive liver treatment",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "Trans-arterial chemoembolization"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Systemic treatments: Chemotherapy / Everolimus / Sunitinib",
+                "criterions": [
+                    {
+                        "exact_snippets": "Systemic treatments: Chemotherapy",
+                        "criterion": "systemic treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "Chemotherapy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Systemic treatments: ... Everolimus",
+                        "criterion": "systemic treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "Everolimus"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Systemic treatments: ... Sunitinib",
+                        "criterion": "systemic treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "Sunitinib"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Systemic treatments: Chemotherapy",
+                        "criterion": "systemic treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "Chemotherapy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Systemic treatments: ... Everolimus",
+                        "criterion": "systemic treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "Everolimus"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Systemic treatments: ... Sunitinib",
+                        "criterion": "systemic treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "Sunitinib"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Insufficient follow-up data",
+                "criterions": [
+                    {
+                        "exact_snippets": "Insufficient follow-up data",
+                        "criterion": "follow-up data",
+                        "requirement": {
+                            "requirement_type": "sufficiency",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Insufficient follow-up data",
+                    "criterion": "follow-up data",
+                    "requirement": {
+                        "requirement_type": "sufficiency",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

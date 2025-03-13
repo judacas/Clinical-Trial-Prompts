@@ -1,0 +1,1255 @@
+{
+    "info": {
+        "nct_id": "NCT00787982",
+        "official_title": "Pilot Study Evaluating the Feasibility of Real-Time, Magnetic Resonance Thermal Imaging and Magnetic Resonance Imaging-Guided Laser Induced Thermal Therapy for Treatment of Metastatic Brain Tumors",
+        "inclusion_criteria": "* Patient or family able and willing to give informed consent.\n* Subjects with metastatic cancer to the brain who have failed at least one conventional therapy (surgery, stereotactic radiosurgery, and/or whole brain radiotherapy).\n* Three or fewer previously treated or untreated lesion(s) in the brain.\n* Tumor size ≤ 3.0 cm in largest diameter.\n* MR imaging is not contraindicated for the patient.\n* Lesion(s) are clearly defined on pre-therapy contrast enhanced MRI scans as determined by the treating surgeon.\n* Able and willing to attend all study visits.\n* Karnofsky Performance Scale score >70 for patients over the age of 15.\n* Lansky Play Scale >70 for patients 15 years of age or younger.\nHealthy volunteers allowed",
+        "exclusion_criteria": "* Patients or family unwilling or unable to give written consent.\n* Patients who cannot physically fit in, or are too heavy for, the MRI scanner.\n* Patients with contra-indications to MRI imaging, such as, but not limited to, pacemakers or defibrillators, non-compatible aneurysm clips, shrapnel, or other internal ferromagnetic objects.\n* Known sensitivity to gadolinium-DTPA.\n* Based on Treatment Planning Imaging (MR and/or CT):\n\n  * Brain edema and/or mass effect that causes midline shift or shift in wall of ventricle of more than 5 mm.\n  * Lesions localized in the brain stem.\n  * Lesions less than 5mm from primary branches of cerebral vessels, venous sinus, hypophysis or cranial nerves.\n  * Evidence of recent (<2 weeks) hemorrhage.\n* Presence of more than 3 brain tumors at the time of enrollment.\n* Symptoms and signs of increased intracranial pressure.\n* Medical issues which prohibit the patient from undergoing surgery (as determined by the treating surgeon, anesthesiologist, IMPAC clinic, referring physician).\n* Patients who are unable to receive corticosteroids.\n* Positive pregnancy test for women of child-bearing age.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patient or family able and willing to give informed consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient or family able and willing to give informed consent.",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patient or family able and willing to give informed consent.",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patient or family able and willing to give informed consent.",
+                                "criterion": "informed consent",
+                                "requirement": {
+                                    "requirement_type": "ability",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Patient or family able and willing to give informed consent.",
+                                "criterion": "informed consent",
+                                "requirement": {
+                                    "requirement_type": "willingness",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patient or family able and willing to give informed consent.",
+                                "criterion": "informed consent",
+                                "requirement": {
+                                    "requirement_type": "ability",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Patient or family able and willing to give informed consent.",
+                                "criterion": "informed consent",
+                                "requirement": {
+                                    "requirement_type": "willingness",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects with metastatic cancer to the brain who have failed at least one conventional therapy (surgery, stereotactic radiosurgery, and/or whole brain radiotherapy).",
+                "criterions": [
+                    {
+                        "exact_snippets": "metastatic cancer to the brain",
+                        "criterion": "metastatic brain cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "failed at least one conventional therapy (surgery, stereotactic radiosurgery, and/or whole brain radiotherapy)",
+                        "criterion": "conventional therapy failure",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "therapy"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "metastatic cancer to the brain",
+                        "criterion": "metastatic brain cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "failed at least one conventional therapy (surgery, stereotactic radiosurgery, and/or whole brain radiotherapy)",
+                        "criterion": "conventional therapy failure",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "therapy"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Three or fewer previously treated or untreated lesion(s) in the brain.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Three or fewer previously treated or untreated lesion(s) in the brain.",
+                        "criterion": "brain lesions",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "lesions"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Three or fewer previously treated or untreated lesion(s) in the brain.",
+                        "criterion": "brain lesions",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": [
+                                "previously treated",
+                                "untreated"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Three or fewer previously treated or untreated lesion(s) in the brain.",
+                        "criterion": "brain lesions",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "lesions"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Three or fewer previously treated or untreated lesion(s) in the brain.",
+                        "criterion": "brain lesions",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": [
+                                "previously treated",
+                                "untreated"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* MR imaging is not contraindicated for the patient.",
+                "criterions": [
+                    {
+                        "exact_snippets": "MR imaging is not contraindicated",
+                        "criterion": "MR imaging",
+                        "requirement": {
+                            "requirement_type": "contraindication",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "MR imaging is not contraindicated",
+                        "criterion": "MR imaging",
+                        "requirement": {
+                            "requirement_type": "contraindication",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lesion(s) are clearly defined on pre-therapy contrast enhanced MRI scans as determined by the treating surgeon.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lesion(s) are clearly defined on pre-therapy contrast enhanced MRI scans",
+                        "criterion": "lesion definition on MRI",
+                        "requirement": {
+                            "requirement_type": "clarity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "as determined by the treating surgeon",
+                        "criterion": "determination by treating surgeon",
+                        "requirement": {
+                            "requirement_type": "determination",
+                            "expected_value": "treating surgeon"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Lesion(s) are clearly defined on pre-therapy contrast enhanced MRI scans",
+                        "criterion": "lesion definition on MRI",
+                        "requirement": {
+                            "requirement_type": "clarity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "as determined by the treating surgeon",
+                        "criterion": "determination by treating surgeon",
+                        "requirement": {
+                            "requirement_type": "determination",
+                            "expected_value": "treating surgeon"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able and willing to attend all study visits.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able and willing to attend all study visits.",
+                        "criterion": "attendance at study visits",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Able and willing to attend all study visits.",
+                        "criterion": "attendance at study visits",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able and willing to attend all study visits.",
+                        "criterion": "attendance at study visits",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Able and willing to attend all study visits.",
+                        "criterion": "attendance at study visits",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Karnofsky Performance Scale score >70 for patients over the age of 15.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Karnofsky Performance Scale score >70",
+                        "criterion": "Karnofsky Performance Scale score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 70,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients over the age of 15",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 15,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "patients over the age of 15",
+                    "criterion": "age",
+                    "requirement": {
+                        "requirement_type": "value",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 15,
+                            "unit": "years"
+                        }
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "Karnofsky Performance Scale score >70",
+                    "criterion": "Karnofsky Performance Scale score",
+                    "requirement": {
+                        "requirement_type": "value",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 70,
+                            "unit": "N/A"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lansky Play Scale >70 for patients 15 years of age or younger.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lansky Play Scale >70",
+                        "criterion": "Lansky Play Scale",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 70,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients 15 years of age or younger",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 15,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "patients 15 years of age or younger",
+                    "criterion": "age",
+                    "requirement": {
+                        "requirement_type": "range",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": "<=",
+                                    "value": 15,
+                                    "unit": "years"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "Lansky Play Scale >70",
+                    "criterion": "Lansky Play Scale",
+                    "requirement": {
+                        "requirement_type": "score",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 70,
+                            "unit": "N/A"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients or family unwilling or unable to give written consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients or family unwilling ... to give written consent.",
+                        "criterion": "written consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients or family ... unable to give written consent.",
+                        "criterion": "written consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Patients or family unwilling ... to give written consent.",
+                            "criterion": "written consent",
+                            "requirement": {
+                                "requirement_type": "willingness",
+                                "expected_value": true
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Patients or family ... unable to give written consent.",
+                            "criterion": "written consent",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who cannot physically fit in, or are too heavy for, the MRI scanner.",
+                "criterions": [
+                    {
+                        "exact_snippets": "cannot physically fit in ... MRI scanner",
+                        "criterion": "physical fit in MRI scanner",
+                        "requirement": {
+                            "requirement_type": "fit",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "too heavy for ... MRI scanner",
+                        "criterion": "weight for MRI scanner",
+                        "requirement": {
+                            "requirement_type": "weight",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 350,
+                                "unit": "lbs"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "cannot physically fit in ... MRI scanner",
+                            "criterion": "physical fit in MRI scanner",
+                            "requirement": {
+                                "requirement_type": "fit",
+                                "expected_value": true
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "too heavy for ... MRI scanner",
+                            "criterion": "weight for MRI scanner",
+                            "requirement": {
+                                "requirement_type": "weight",
+                                "expected_value": {
+                                    "operator": "<=",
+                                    "value": 350,
+                                    "unit": "lbs"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with contra-indications to MRI imaging, such as, but not limited to, pacemakers or defibrillators, non-compatible aneurysm clips, shrapnel, or other internal ferromagnetic objects.",
+                "criterions": [
+                    {
+                        "exact_snippets": "contra-indications to MRI imaging",
+                        "criterion": "contra-indications to MRI imaging",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "pacemakers",
+                        "criterion": "pacemakers",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "defibrillators",
+                        "criterion": "defibrillators",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-compatible aneurysm clips",
+                        "criterion": "non-compatible aneurysm clips",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "shrapnel",
+                        "criterion": "shrapnel",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "other internal ferromagnetic objects",
+                        "criterion": "internal ferromagnetic objects",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "contra-indications to MRI imaging",
+                                "criterion": "contra-indications to MRI imaging",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "pacemakers",
+                                        "criterion": "pacemakers",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "defibrillators",
+                                        "criterion": "defibrillators",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "non-compatible aneurysm clips",
+                                        "criterion": "non-compatible aneurysm clips",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "shrapnel",
+                                        "criterion": "shrapnel",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "other internal ferromagnetic objects",
+                                        "criterion": "internal ferromagnetic objects",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known sensitivity to gadolinium-DTPA.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known sensitivity to gadolinium-DTPA.",
+                        "criterion": "sensitivity to gadolinium-DTPA",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Known sensitivity to gadolinium-DTPA.",
+                    "criterion": "sensitivity to gadolinium-DTPA",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Based on Treatment Planning Imaging (MR and/or CT):",
+                "criterions": [
+                    {
+                        "exact_snippets": "Based on Treatment Planning Imaging (MR and/or CT)",
+                        "criterion": "treatment planning imaging",
+                        "requirement": {
+                            "requirement_type": "modality",
+                            "expected_value": [
+                                "MR",
+                                "CT"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Based on Treatment Planning Imaging (MR and/or CT)",
+                        "criterion": "treatment planning imaging",
+                        "requirement": {
+                            "requirement_type": "modality",
+                            "expected_value": [
+                                "MR",
+                                "CT"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Brain edema and/or mass effect that causes midline shift or shift in wall of ventricle of more than 5 mm.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Brain edema",
+                        "criterion": "brain edema",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "mass effect",
+                        "criterion": "mass effect",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "midline shift ... more than 5 mm",
+                        "criterion": "midline shift",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 5,
+                                "unit": "mm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "shift in wall of ventricle ... more than 5 mm",
+                        "criterion": "shift in wall of ventricle",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 5,
+                                "unit": "mm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Brain edema",
+                                "criterion": "brain edema",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "midline shift ... more than 5 mm",
+                                "criterion": "midline shift",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 5,
+                                        "unit": "mm"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "mass effect",
+                                "criterion": "mass effect",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "shift in wall of ventricle ... more than 5 mm",
+                                "criterion": "shift in wall of ventricle",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 5,
+                                        "unit": "mm"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lesions localized in the brain stem.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lesions localized in the brain stem",
+                        "criterion": "lesions",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "brain stem"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Lesions localized in the brain stem",
+                        "criterion": "lesions",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "brain stem"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lesions less than 5mm from primary branches of cerebral vessels, venous sinus, hypophysis or cranial nerves.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lesions less than 5mm from primary branches of cerebral vessels",
+                        "criterion": "lesion proximity to cerebral vessels",
+                        "requirement": {
+                            "requirement_type": "distance",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 5,
+                                "unit": "mm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Lesions less than 5mm from ... venous sinus",
+                        "criterion": "lesion proximity to venous sinus",
+                        "requirement": {
+                            "requirement_type": "distance",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 5,
+                                "unit": "mm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Lesions less than 5mm from ... hypophysis",
+                        "criterion": "lesion proximity to hypophysis",
+                        "requirement": {
+                            "requirement_type": "distance",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 5,
+                                "unit": "mm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Lesions less than 5mm from ... cranial nerves",
+                        "criterion": "lesion proximity to cranial nerves",
+                        "requirement": {
+                            "requirement_type": "distance",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 5,
+                                "unit": "mm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Lesions less than 5mm from primary branches of cerebral vessels",
+                        "criterion": "lesion proximity to cerebral vessels",
+                        "requirement": {
+                            "requirement_type": "distance",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 5,
+                                "unit": "mm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Lesions less than 5mm from ... venous sinus",
+                        "criterion": "lesion proximity to venous sinus",
+                        "requirement": {
+                            "requirement_type": "distance",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 5,
+                                "unit": "mm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Lesions less than 5mm from ... hypophysis",
+                        "criterion": "lesion proximity to hypophysis",
+                        "requirement": {
+                            "requirement_type": "distance",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 5,
+                                "unit": "mm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Lesions less than 5mm from ... cranial nerves",
+                        "criterion": "lesion proximity to cranial nerves",
+                        "requirement": {
+                            "requirement_type": "distance",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 5,
+                                "unit": "mm"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Evidence of recent (<2 weeks) hemorrhage.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Evidence of recent (<2 weeks) hemorrhage.",
+                        "criterion": "hemorrhage",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Evidence of recent (<2 weeks) hemorrhage.",
+                        "criterion": "hemorrhage",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Presence of more than 3 brain tumors at the time of enrollment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Presence of more than 3 brain tumors",
+                        "criterion": "brain tumors",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Presence of more than 3 brain tumors",
+                        "criterion": "brain tumors",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Symptoms and signs of increased intracranial pressure.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Symptoms and signs of increased intracranial pressure",
+                        "criterion": "increased intracranial pressure",
+                        "requirement": {
+                            "requirement_type": "symptoms and signs",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Symptoms and signs of increased intracranial pressure",
+                    "criterion": "increased intracranial pressure",
+                    "requirement": {
+                        "requirement_type": "symptoms and signs",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Medical issues which prohibit the patient from undergoing surgery (as determined by the treating surgeon, anesthesiologist, IMPAC clinic, referring physician).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Medical issues which prohibit the patient from undergoing surgery",
+                        "criterion": "medical issues prohibiting surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "Medical issues which prohibit the patient from undergoing surgery",
+                                                "criterion": "medical issues prohibiting surgery",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": false
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "as determined by the treating surgeon",
+                                                "criterion": "determination by treating surgeon",
+                                                "requirement": {
+                                                    "requirement_type": "determination",
+                                                    "expected_value": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "as determined by the anesthesiologist",
+                                        "criterion": "determination by anesthesiologist",
+                                        "requirement": {
+                                            "requirement_type": "determination",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "as determined by the IMPAC clinic",
+                                "criterion": "determination by IMPAC clinic",
+                                "requirement": {
+                                    "requirement_type": "determination",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "as determined by the referring physician",
+                        "criterion": "determination by referring physician",
+                        "requirement": {
+                            "requirement_type": "determination",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who are unable to receive corticosteroids.",
+                "criterions": [
+                    {
+                        "exact_snippets": "unable to receive corticosteroids",
+                        "criterion": "corticosteroid administration",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "unable to receive corticosteroids",
+                        "criterion": "corticosteroid administration",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Positive pregnancy test for women of child-bearing age.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Positive pregnancy test",
+                        "criterion": "pregnancy test",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "women of child-bearing age",
+                        "criterion": "gender and reproductive status",
+                        "requirement": {
+                            "requirement_type": "gender",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "women of child-bearing age",
+                        "criterion": "gender and reproductive status",
+                        "requirement": {
+                            "requirement_type": "reproductive status",
+                            "expected_value": "child-bearing age"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "women of child-bearing age",
+                            "criterion": "gender and reproductive status",
+                            "requirement": {
+                                "requirement_type": "gender",
+                                "expected_value": "female"
+                            }
+                        },
+                        {
+                            "exact_snippets": "women of child-bearing age",
+                            "criterion": "gender and reproductive status",
+                            "requirement": {
+                                "requirement_type": "reproductive status",
+                                "expected_value": "child-bearing age"
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "exact_snippets": "Positive pregnancy test",
+                    "criterion": "pregnancy test",
+                    "requirement": {
+                        "requirement_type": "result",
+                        "expected_value": "positive"
+                    }
+                },
+                "else_criteria": null
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Tumor size ≤ 3.0 cm in largest diameter.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Tumor size ≤ 3.0 cm in largest diameter.",
+                        "criterion": "tumor size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3.0,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Tumor size \u0010 3.0 cm in largest diameter.",
+                        "criterion": "tumor size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3.0,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

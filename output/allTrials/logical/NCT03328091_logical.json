@@ -1,0 +1,709 @@
+{
+    "info": {
+        "nct_id": "NCT03328091",
+        "official_title": "Genetic Counseling Processes and Outcomes Among Males With Prostate Cancer (ProGen)",
+        "inclusion_criteria": "* Metastatic prostate cancer (hormone-sensitive, de novo, or castration resistant)\n* Localized prostate cancer with Gleason score ≥8\n* Rising PSA after prostatectomy or radiation with PSA doubling time ≤ 6 months\n* Persistent PSA after prostatectomy for PSA ≥ 0.2 ng/mL observed in testing at least 1 week apart\n* Prostate cancer diagnosed at age ≤ 55 years\n* Prostate cancer and a personal history of prior malignancy that does not include non-melanoma skin cancer or superficial bladder cancer.\n* Prostate cancer diagnosis (any grade/stage) or prostate biopsy with high grade PIN or small acinar proliferation and a family history potentially indicating a germline mutation (e.g. breast cancer diagnosed at age ≤ 50, ovarian, pancreatic, uterine, colorectal, prostate cancer or sarcoma, in one or more first or second-degree relatives)\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Previous cancer genetic testing or counseling, or prior germline multigene panel testing. Previous tumor sequencing is acceptable if no genetic counseling took place.\n* Localized prostate cancer previously treated and in remission for > 2 years unless family history potentially indicates a germline mutation.\n* Active hematologic malignancy (e.g. CLL)",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Metastatic prostate cancer (hormone-sensitive, de novo, or castration resistant)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Metastatic prostate cancer",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "metastasis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "hormone-sensitive",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "hormone sensitivity",
+                            "expected_value": "sensitive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "de novo",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "disease status",
+                            "expected_value": "de novo"
+                        }
+                    },
+                    {
+                        "exact_snippets": "castration resistant",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "castration resistance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Metastatic prostate cancer",
+                                "criterion": "prostate cancer",
+                                "requirement": {
+                                    "requirement_type": "metastasis",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "hormone-sensitive",
+                                        "criterion": "prostate cancer",
+                                        "requirement": {
+                                            "requirement_type": "hormone sensitivity",
+                                            "expected_value": "sensitive"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "de novo",
+                                        "criterion": "prostate cancer",
+                                        "requirement": {
+                                            "requirement_type": "disease status",
+                                            "expected_value": "de novo"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "castration resistant",
+                                        "criterion": "prostate cancer",
+                                        "requirement": {
+                                            "requirement_type": "castration resistance",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Localized prostate cancer with Gleason score ≥8",
+                "criterions": [
+                    {
+                        "exact_snippets": "Localized prostate cancer",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "localization",
+                            "expected_value": "localized"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Gleason score ≥8",
+                        "criterion": "Gleason score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 8,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Localized prostate cancer",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "localization",
+                            "expected_value": "localized"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Gleason score ≥8",
+                        "criterion": "Gleason score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 8,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Rising PSA after prostatectomy or radiation with PSA doubling time ≤ 6 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "Rising PSA after prostatectomy or radiation",
+                        "criterion": "PSA status",
+                        "requirement": {
+                            "requirement_type": "trend",
+                            "expected_value": "rising"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Rising PSA after prostatectomy or radiation",
+                        "criterion": "PSA status",
+                        "requirement": {
+                            "requirement_type": "post-treatment",
+                            "expected_value": [
+                                "prostatectomy",
+                                "radiation"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "PSA doubling time ≤ 6 months",
+                        "criterion": "PSA doubling time",
+                        "requirement": {
+                            "requirement_type": "time",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Rising PSA after prostatectomy or radiation",
+                                        "criterion": "PSA status",
+                                        "requirement": {
+                                            "requirement_type": "trend",
+                                            "expected_value": "rising"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Rising PSA after prostatectomy or radiation",
+                                        "criterion": "PSA status",
+                                        "requirement": {
+                                            "requirement_type": "post-treatment",
+                                            "expected_value": [
+                                                "prostatectomy",
+                                                "radiation"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "PSA doubling time ≤ 6 months",
+                                "criterion": "PSA doubling time",
+                                "requirement": {
+                                    "requirement_type": "time",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 6,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Persistent PSA after prostatectomy for PSA ≥ 0.2 ng/mL observed in testing at least 1 week apart",
+                "criterions": [
+                    {
+                        "exact_snippets": "Persistent PSA after prostatectomy",
+                        "criterion": "persistent PSA after prostatectomy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "PSA ≥ 0.2 ng/mL",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0.2,
+                                "unit": "ng/mL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "observed in testing at least 1 week apart",
+                        "criterion": "PSA testing interval",
+                        "requirement": {
+                            "requirement_type": "interval",
+                            "expected_value": "at least 1 week apart"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Persistent PSA after prostatectomy",
+                                "criterion": "persistent PSA after prostatectomy",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "PSA ≥ 0.2 ng/mL",
+                                "criterion": "PSA level",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 0.2,
+                                        "unit": "ng/mL"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "observed in testing at least 1 week apart",
+                        "criterion": "PSA testing interval",
+                        "requirement": {
+                            "requirement_type": "interval",
+                            "expected_value": "at least 1 week apart"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prostate cancer diagnosed at age ≤ 55 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prostate cancer diagnosed",
+                        "criterion": "prostate cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "age at diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 55,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prostate cancer diagnosed",
+                        "criterion": "prostate cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "age at diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 55,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Localized prostate cancer previously treated and in remission for > 2 years unless family history potentially indicates a germline mutation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Localized prostate cancer previously treated",
+                        "criterion": "localized prostate cancer",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "previously treated"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Localized prostate cancer ... in remission for > 2 years",
+                        "criterion": "localized prostate cancer",
+                        "requirement": {
+                            "requirement_type": "remission duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "family history potentially indicates a germline mutation",
+                        "criterion": "family history",
+                        "requirement": {
+                            "requirement_type": "potential germline mutation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Localized prostate cancer previously treated",
+                                    "criterion": "localized prostate cancer",
+                                    "requirement": {
+                                        "requirement_type": "treatment",
+                                        "expected_value": "previously treated"
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "Localized prostate cancer ... in remission for > 2 years",
+                                    "criterion": "localized prostate cancer",
+                                    "requirement": {
+                                        "requirement_type": "remission duration",
+                                        "expected_value": {
+                                            "operator": ">",
+                                            "value": 2,
+                                            "unit": "years"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "exact_snippets": "family history potentially indicates a germline mutation",
+                    "criterion": "family history",
+                    "requirement": {
+                        "requirement_type": "potential germline mutation",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active hematologic malignancy (e.g. CLL)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active hematologic malignancy",
+                        "criterion": "hematologic malignancy",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Active hematologic malignancy",
+                    "criterion": "hematologic malignancy",
+                    "requirement": {
+                        "requirement_type": "activity",
+                        "expected_value": "active"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Previous cancer genetic testing or counseling, or prior germline multigene panel testing. Previous tumor sequencing is acceptable if no genetic counseling took place.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous cancer genetic testing",
+                        "criterion": "previous cancer genetic testing",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous cancer genetic ... prior germline multigene panel testing",
+                        "criterion": "prior germline multigene panel testing",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Previous tumor sequencing ... if no genetic counseling took place",
+                        "criterion": "previous tumor sequencing without genetic counseling",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Previous cancer genetic testing",
+                                        "criterion": "previous cancer genetic testing",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "previous cancer genetic ... prior germline multigene panel testing",
+                                        "criterion": "prior germline multigene panel testing",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Previous tumor sequencing ... if no genetic counseling took place",
+                                        "criterion": "previous tumor sequencing without genetic counseling",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Previous tumor sequencing ... if no genetic counseling took place",
+                                        "criterion": "genetic counseling",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Prostate cancer and a personal history of prior malignancy that does not include non-melanoma skin cancer or superficial bladder cancer.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prostate cancer",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "personal history of prior malignancy",
+                        "criterion": "personal history of prior malignancy",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": [
+                                "non-melanoma skin cancer",
+                                "superficial bladder cancer"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prostate cancer diagnosis (any grade/stage) or prostate biopsy with high grade PIN or small acinar proliferation and a family history potentially indicating a germline mutation (e.g. breast cancer diagnosed at age ≤ 50, ovarian, pancreatic, uterine, colorectal, prostate cancer or sarcoma, in one or more first or second-degree relatives)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prostate cancer diagnosis (any grade/stage)",
+                        "criterion": "prostate cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prostate biopsy with high grade PIN",
+                        "criterion": "high grade PIN",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prostate biopsy with ... small acinar proliferation",
+                        "criterion": "small acinar proliferation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "family history potentially indicating a germline mutation",
+                        "criterion": "family history of germline mutation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast cancer diagnosed at age ≤ 50",
+                        "criterion": "family history of breast cancer",
+                        "requirement": {
+                            "requirement_type": "age of diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 50,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "ovarian, pancreatic, uterine, colorectal, prostate cancer or sarcoma, in one or more first or second-degree relatives",
+                        "criterion": "family history of specific cancers",
+                        "requirement": {
+                            "requirement_type": "cancer types",
+                            "expected_value": [
+                                "ovarian",
+                                "pancreatic",
+                                "uterine",
+                                "colorectal",
+                                "prostate",
+                                "sarcoma"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "ovarian, pancreatic, uterine, colorectal, prostate cancer or sarcoma, in one or more first or second-degree relatives",
+                        "criterion": "family history of specific cancers",
+                        "requirement": {
+                            "requirement_type": "relationship",
+                            "expected_value": [
+                                "first-degree relatives",
+                                "second-degree relatives"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

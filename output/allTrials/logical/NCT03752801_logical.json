@@ -1,0 +1,185 @@
+{
+    "info": {
+        "nct_id": "NCT03752801",
+        "official_title": "Improving Quality and Consistency in Family Education Prior to First Discharge Following Pediatric Cancer Diagnosis",
+        "inclusion_criteria": "* for the first phase - review of script, eligible respondents will be any parent or caregiver of a child with cancer irrespective of type of timing of diagnosis.\n* for the video review phase - must be a parent/caregiver of a child diagnosed with cancer in the last 8 months\nHealthy volunteers allowed",
+        "exclusion_criteria": "* must have written and spoken English",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* for the first phase - review of script, eligible respondents will be any parent or caregiver of a child with cancer irrespective of type of timing of diagnosis.",
+                "criterions": [
+                    {
+                        "exact_snippets": "any parent or caregiver of a child with cancer",
+                        "criterion": "child with cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any parent or caregiver",
+                        "criterion": "parent or caregiver",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "any parent or caregiver of a child with cancer",
+                        "criterion": "child with cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any parent or caregiver",
+                        "criterion": "parent or caregiver",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* for the video review phase - must be a parent/caregiver of a child diagnosed with cancer in the last 8 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "must be a parent/caregiver",
+                        "criterion": "role",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "parent/caregiver"
+                        }
+                    },
+                    {
+                        "exact_snippets": "a child diagnosed with cancer",
+                        "criterion": "child cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "in the last 8 months",
+                        "criterion": "time since diagnosis",
+                        "requirement": {
+                            "requirement_type": "time since diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 8,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "must be a parent/caregiver",
+                        "criterion": "role",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "parent/caregiver"
+                        }
+                    },
+                    {
+                        "exact_snippets": "a child diagnosed with cancer",
+                        "criterion": "child cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "in the last 8 months",
+                        "criterion": "time since diagnosis",
+                        "requirement": {
+                            "requirement_type": "time since diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 8,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* must have written and spoken English",
+                "criterions": [
+                    {
+                        "exact_snippets": "must have written and spoken English",
+                        "criterion": "English proficiency",
+                        "requirement": {
+                            "requirement_type": "skills",
+                            "expected_value": [
+                                "written",
+                                "spoken"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "must have written and spoken English",
+                    "criterion": "English proficiency",
+                    "requirement": {
+                        "requirement_type": "skills",
+                        "expected_value": [
+                            "written",
+                            "spoken"
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

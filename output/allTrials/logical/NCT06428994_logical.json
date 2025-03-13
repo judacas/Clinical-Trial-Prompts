@@ -1,0 +1,222 @@
+{
+    "info": {
+        "nct_id": "NCT06428994",
+        "official_title": "Risk for Subsequent Osteoradionecrosis in A Transferred Fibula Flap in Head and Neck Cancer Patients Undergoing Segmental Mandibulectomy: a Cohort Study",
+        "inclusion_criteria": "* Patients who underwent a mandibular reconstruction with a free fibula flap due to head and neck cancer through January 2014 to December 2019.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Cases with incomplete medical records.\n* Patients who did not attend at least 6 months of follow ups.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients who underwent a mandibular reconstruction with a free fibula flap due to head and neck cancer through January 2014 to December 2019.",
+                "criterions": [
+                    {
+                        "exact_snippets": "underwent a mandibular reconstruction with a free fibula flap",
+                        "criterion": "mandibular reconstruction with a free fibula flap",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "due to head and neck cancer",
+                        "criterion": "head and neck cancer",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "through January 2014 to December 2019",
+                        "criterion": "procedure date",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2014,
+                                        "unit": "year"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2019,
+                                        "unit": "year"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "underwent a mandibular reconstruction with a free fibula flap",
+                        "criterion": "mandibular reconstruction with a free fibula flap",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "due to head and neck cancer",
+                        "criterion": "head and neck cancer",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "through January 2014 to December 2019",
+                        "criterion": "procedure date",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2014,
+                                        "unit": "year"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2019,
+                                        "unit": "year"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Cases with incomplete medical records.",
+                "criterions": [
+                    {
+                        "exact_snippets": "incomplete medical records",
+                        "criterion": "medical records",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "incomplete medical records",
+                    "criterion": "medical records",
+                    "requirement": {
+                        "requirement_type": "completeness",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who did not attend at least 6 months of follow ups.",
+                "criterions": [
+                    {
+                        "exact_snippets": "did not attend at least 6 months of follow ups",
+                        "criterion": "follow-up attendance",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "did not attend at least 6 months of follow ups",
+                    "criterion": "follow-up attendance",
+                    "requirement": {
+                        "requirement_type": "duration",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 6,
+                            "unit": "months"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

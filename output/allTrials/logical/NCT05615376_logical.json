@@ -1,0 +1,595 @@
+{
+    "info": {
+        "nct_id": "NCT05615376",
+        "official_title": "Beat to Beat A Prospective Study in Paediatric, Adolescent and Young Adult Patients Aged 7 to 18 Years of Age Who Are Undergoing or Have Undergone Cancer Therapy to Evaluate the Agreement Between QTc Measured Using 12 Lead Electrocardiogram (ECG) and a Wearable Device ECG",
+        "inclusion_criteria": "* Paediatric or adolescent diagnosis of cancer AND an inpatient of The Royal Children's Hospital, Melbourne for at least 5 days at the time of consent.\n* Patient age ≥ 7 years at time of eligibility screening\n* If age < 18 years, parent or guardian able to provide consent\n* Parental or participant ( if > 18 years of age) possession of the following at time of eligibility screening, ascertained from automatic hardware/software/device pairing check:\n\n  1. iPhone (6s or later) with iOS version 15.0 or later defined as iPhone model/iOS version used to complete screening eligibility.\n  2. Proficient in written and spoken English, defined by self-report of comfort reading, writing, and speaking English on iPhone.\n  3. Valid phone number associated with iPhone, ascertained from self-report.\n  4. Valid email address, ascertained from self-report.\n  5. Participants or parents need to be able to press down on the wearable device crown for 30 seconds\nHealthy volunteers allowed\nMust have minimum age of 7 Years\nMust have maximum age of 18 Years",
+        "exclusion_criteria": "* Unable to wear the wearable device.\n* < 18 years of age without guardian or parent to provide consent.\n* Interpreter required for consent purposes.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Paediatric or adolescent diagnosis of cancer AND an inpatient of The Royal Children's Hospital, Melbourne for at least 5 days at the time of consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Paediatric or adolescent diagnosis of cancer",
+                        "criterion": "diagnosis of cancer",
+                        "requirement": {
+                            "requirement_type": "age group",
+                            "expected_value": [
+                                "paediatric",
+                                "adolescent"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "inpatient of The Royal Children's Hospital, Melbourne",
+                        "criterion": "inpatient status",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "The Royal Children's Hospital, Melbourne"
+                        }
+                    },
+                    {
+                        "exact_snippets": "inpatient of The Royal Children's Hospital, Melbourne for at least 5 days",
+                        "criterion": "inpatient duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Paediatric or adolescent diagnosis of cancer",
+                        "criterion": "diagnosis of cancer",
+                        "requirement": {
+                            "requirement_type": "age group",
+                            "expected_value": [
+                                "paediatric",
+                                "adolescent"
+                            ]
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "inpatient of The Royal Children's Hospital, Melbourne",
+                                "criterion": "inpatient status",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": "The Royal Children's Hospital, Melbourne"
+                                }
+                            },
+                            {
+                                "exact_snippets": "inpatient of The Royal Children's Hospital, Melbourne for at least 5 days",
+                                "criterion": "inpatient duration",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 5,
+                                        "unit": "days"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient age ≥ 7 years at time of eligibility screening",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient age ≥ 7 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 7,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patient age ≥ 7 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 7,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* If age < 18 years, parent or guardian able to provide consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "age < 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "parent or guardian able to provide consent",
+                        "criterion": "parent or guardian consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "age < 18 years",
+                    "criterion": "age",
+                    "requirement": {
+                        "requirement_type": "comparison",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 18,
+                            "unit": "years"
+                        }
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "parent or guardian able to provide consent",
+                    "criterion": "parent or guardian consent",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Parental or participant ( if > 18 years of age) possession of the following at time of eligibility screening, ascertained from automatic hardware/software/device pairing check:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Parental or participant ( if > 18 years of age) possession of the following at time of eligibility screening",
+                        "criterion": "participant age",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "ascertained from automatic hardware/software/device pairing check",
+                        "criterion": "hardware/software/device pairing check",
+                        "requirement": {
+                            "requirement_type": "ascertainment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Parental or participant ( if > 18 years of age) possession of the following at time of eligibility screening",
+                            "criterion": "participant age",
+                            "requirement": {
+                                "requirement_type": "comparison",
+                                "expected_value": {
+                                    "operator": ">",
+                                    "value": 18,
+                                    "unit": "years"
+                                }
+                            }
+                        },
+                        {
+                            "exact_snippets": "ascertained from automatic hardware/software/device pairing check",
+                            "criterion": "hardware/software/device pairing check",
+                            "requirement": {
+                                "requirement_type": "ascertainment",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "exact_snippets": "ascertained from automatic hardware/software/device pairing check",
+                    "criterion": "hardware/software/device pairing check",
+                    "requirement": {
+                        "requirement_type": "ascertainment",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. iPhone (6s or later) with iOS version 15.0 or later defined as iPhone model/iOS version used to complete screening eligibility.",
+                "criterions": [
+                    {
+                        "exact_snippets": "iPhone (6s or later)",
+                        "criterion": "iPhone model",
+                        "requirement": {
+                            "requirement_type": "model",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6.0,
+                                "unit": "s"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "iOS version 15.0 or later",
+                        "criterion": "iOS version",
+                        "requirement": {
+                            "requirement_type": "version",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15.0,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "iPhone (6s or later)",
+                        "criterion": "iPhone model",
+                        "requirement": {
+                            "requirement_type": "model",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6.0,
+                                "unit": "s"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "iOS version 15.0 or later",
+                        "criterion": "iOS version",
+                        "requirement": {
+                            "requirement_type": "version",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15.0,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Proficient in written and spoken English, defined by self-report of comfort reading, writing, and speaking English on iPhone.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Proficient in written and spoken English, defined by self-report of comfort reading, writing, and speaking English",
+                        "criterion": "English proficiency",
+                        "requirement": {
+                            "requirement_type": "self-report",
+                            "expected_value": "comfort reading, writing, and speaking English"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Proficient in written and spoken English, defined by self-report of comfort reading, writing, and speaking English",
+                        "criterion": "English proficiency",
+                        "requirement": {
+                            "requirement_type": "self-report",
+                            "expected_value": "comfort reading, writing, and speaking English"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Valid phone number associated with iPhone, ascertained from self-report.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Valid phone number",
+                        "criterion": "phone number",
+                        "requirement": {
+                            "requirement_type": "validity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "associated with iPhone",
+                        "criterion": "phone number association",
+                        "requirement": {
+                            "requirement_type": "device",
+                            "expected_value": "iPhone"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Valid phone number",
+                        "criterion": "phone number",
+                        "requirement": {
+                            "requirement_type": "validity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "associated with iPhone",
+                        "criterion": "phone number association",
+                        "requirement": {
+                            "requirement_type": "device",
+                            "expected_value": "iPhone"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Valid email address, ascertained from self-report.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Valid email address",
+                        "criterion": "email address",
+                        "requirement": {
+                            "requirement_type": "validity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Valid email address",
+                        "criterion": "email address",
+                        "requirement": {
+                            "requirement_type": "validity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Participants or parents need to be able to press down on the wearable device crown for 30 seconds",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participants or parents need to be able to press down on the wearable device crown for 30 seconds",
+                        "criterion": "ability to press down on the wearable device crown",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 30,
+                                "unit": "seconds"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Participants or parents need to be able to press down on the wearable device crown for 30 seconds",
+                        "criterion": "ability to press down on the wearable device crown",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 30,
+                                "unit": "seconds"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 7 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 7 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 7,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Unable to wear the wearable device.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unable to wear the wearable device",
+                        "criterion": "wearable device",
+                        "requirement": {
+                            "requirement_type": "ability to wear",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* < 18 years of age without guardian or parent to provide consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "< 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "without guardian or parent to provide consent",
+                        "criterion": "guardian or parent consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Interpreter required for consent purposes.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Interpreter required for consent purposes.",
+                        "criterion": "interpreter",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

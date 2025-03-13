@@ -1,0 +1,303 @@
+{
+    "info": {
+        "nct_id": "NCT02148731",
+        "official_title": "Longitudinal Study Comparing Markers of Frailty in Geriatric Assessment to Detect Vulnerability to Chemotherapy in Patients Aged 70 Years or Older With Colon Cancer",
+        "inclusion_criteria": "* Patients with colon cancer with or without metastases\n* Age ≥ 70 years\n* Patients did not start chemotherapy yet\nHealthy volunteers allowed\nMust have minimum age of 70 Years",
+        "exclusion_criteria": "* Patients terminally ill with a life expectancy <3 months\n* Patients who have started chemotherapy or hormonal therapy",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Age ≥ 70 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age ≥ 70 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 70,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age ≥ 70 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 70,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients did not start chemotherapy yet",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients did not start chemotherapy yet",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "not started"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients did not start chemotherapy yet",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "not started"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 70 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 70 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 70,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 70 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 70,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients terminally ill with a life expectancy <3 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "terminally ill",
+                        "criterion": "terminal illness",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "life expectancy <3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "terminally ill",
+                        "criterion": "terminal illness",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "life expectancy <3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who have started chemotherapy or hormonal therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who have started chemotherapy",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "started"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients who have started ... hormonal therapy",
+                        "criterion": "hormonal therapy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "started"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Patients who have started chemotherapy",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "started"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients who have started ... hormonal therapy",
+                        "criterion": "hormonal therapy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "started"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients with colon cancer with or without metastases",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with colon cancer",
+                        "criterion": "colon cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "with or without metastases",
+                        "criterion": "metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "optional"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients with colon cancer",
+                                "criterion": "colon cancer",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "with or without metastases",
+                                "criterion": "metastases",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients with colon cancer",
+                                "criterion": "colon cancer",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "with or without metastases",
+                                "criterion": "metastases",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

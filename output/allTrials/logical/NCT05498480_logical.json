@@ -1,0 +1,520 @@
+{
+    "info": {
+        "nct_id": "NCT05498480",
+        "official_title": "A Phase 1 Study of Relatlimab (Anti-LAG-3 Monoclonal Antibody) in Combination With Nivolumab (Anti-PD-1 Monoclonal Antibody) in Chinese Participants With Advanced Solid Tumors",
+        "inclusion_criteria": "* Participants must have histologic or cytological confirmation of an incurable solid malignancy that is advanced (metastatic and/or unresectable) except for participants with primary central nervous system (CNS) tumors.\n* Participants must have received, and then progressed or been intolerant to at least 1 standard treatment regimen in the advanced or metastatic setting (immune check inhibitor-experienced or non-experienced population may be included), if such a therapy exists. Participants who refuse or are ineligible for standard therapy will be allowed to enroll provided their refusal/ineligibility is documented in medical records.\n* Eastern Cooperative Oncology Group (ECOG) 0 to 1.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Participants with history of severe and/or life-threatening toxicity related to prior immune therapy (eg, anti-cytotoxic T-lymphocyte-associated protein 4 [anti-CTLA-4] or anti-programmed cell death protein 1 [anti-PD-1]/programmed death-ligand 1 [PD-L1] treatment or any other antibody or drug specifically targeting T cell co-stimulation or immune checkpoint pathways) except those that are unlikely to re-occur with standard countermeasures (eg, hormone replacement after endocrinopathy).\n* Participants with an active, known, or suspected autoimmune disease. Participants with type I diabetes mellitus, hypothyroidism only requiring hormone replacement, skin disorders (such as vitiligo, psoriasis, or alopecia) not requiring systemic treatment, or conditions not expected to recur in the absence of an external trigger are permitted to enroll.\n* Prior treatment with LAG-3 targeted agents.\n\nOther protocol-defined inclusion/exclusion criteria apply",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Participants must have histologic or cytological confirmation of an incurable solid malignancy that is advanced (metastatic and/or unresectable) except for participants with primary central nervous system (CNS) tumors.",
+                "criterions": [
+                    {
+                        "exact_snippets": "histologic or cytological confirmation of an incurable solid malignancy",
+                        "criterion": "solid malignancy",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "advanced (metastatic and/or unresectable)",
+                        "criterion": "solid malignancy",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "metastatic",
+                                "unresectable"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "except for participants with primary central nervous system (CNS) tumors",
+                        "criterion": "primary central nervous system (CNS) tumors",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "histologic or cytological confirmation of an incurable solid malignancy",
+                                "criterion": "solid malignancy",
+                                "requirement": {
+                                    "requirement_type": "confirmation",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "advanced (metastatic and/or unresectable)",
+                                "criterion": "solid malignancy",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": [
+                                        "metastatic",
+                                        "unresectable"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "except for participants with primary central nervous system (CNS) tumors",
+                            "criterion": "primary central nervous system (CNS) tumors",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": false
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants must have received, and then progressed or been intolerant to at least 1 standard treatment regimen in the advanced or metastatic setting (immune check inhibitor-experienced or non-experienced population may be included), if such a therapy exists. Participants who refuse or are ineligible for standard therapy will be allowed to enroll provided their refusal/ineligibility is documented in medical records.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participants must have received, and then progressed or been intolerant to at least 1 standard treatment regimen in the advanced or metastatic setting",
+                        "criterion": "standard treatment regimen in the advanced or metastatic setting",
+                        "requirement": {
+                            "requirement_type": "received",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participants must have received, and then progressed or been intolerant to at least 1 standard treatment regimen in the advanced or metastatic setting",
+                        "criterion": "standard treatment regimen in the advanced or metastatic setting",
+                        "requirement": {
+                            "requirement_type": "progressed or been intolerant",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "immune check inhibitor-experienced or non-experienced population may be included",
+                        "criterion": "immune check inhibitor experience",
+                        "requirement": {
+                            "requirement_type": "inclusion",
+                            "expected_value": [
+                                "experienced",
+                                "non-experienced"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participants who refuse or are ineligible for standard therapy will be allowed to enroll provided their refusal/ineligibility is documented in medical records",
+                        "criterion": "standard therapy refusal or ineligibility",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "documented in medical records"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "Participants must have received, and then progressed or been intolerant to at least 1 standard treatment regimen in the advanced or metastatic setting",
+                                                "criterion": "standard treatment regimen in the advanced or metastatic setting",
+                                                "requirement": {
+                                                    "requirement_type": "received",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "Participants must have received, and then progressed or been intolerant to at least 1 standard treatment regimen in the advanced or metastatic setting",
+                                                "criterion": "standard treatment regimen in the advanced or metastatic setting",
+                                                "requirement": {
+                                                    "requirement_type": "progressed or been intolerant",
+                                                    "expected_value": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "immune check inhibitor-experienced or non-experienced population may be included",
+                                        "criterion": "immune check inhibitor experience",
+                                        "requirement": {
+                                            "requirement_type": "inclusion",
+                                            "expected_value": [
+                                                "experienced",
+                                                "non-experienced"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Participants who refuse or are ineligible for standard therapy will be allowed to enroll provided their refusal/ineligibility is documented in medical records",
+                        "criterion": "standard therapy refusal or ineligibility",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "documented in medical records"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) 0 to 1.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) 0 to 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) 0 to 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Participants with history of severe and/or life-threatening toxicity related to prior immune therapy (eg, anti-cytotoxic T-lymphocyte-associated protein 4 [anti-CTLA-4] or anti-programmed cell death protein 1 [anti-PD-1]/programmed death-ligand 1 [PD-L1] treatment or any other antibody or drug specifically targeting T cell co-stimulation or immune checkpoint pathways) except those that are unlikely to re-occur with standard countermeasures (eg, hormone replacement after endocrinopathy).",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of severe and/or life-threatening toxicity related to prior immune therapy",
+                        "criterion": "toxicity related to prior immune therapy",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": [
+                                "severe",
+                                "life-threatening"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior immune therapy (eg, anti-cytotoxic T-lymphocyte-associated protein 4 [anti-CTLA-4] or anti-programmed cell death protein 1 [anti-PD-1]/programmed death-ligand 1 [PD-L1] treatment or any other antibody or drug specifically targeting T cell co-stimulation or immune checkpoint pathways)",
+                        "criterion": "prior immune therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "except those that are unlikely to re-occur with standard countermeasures (eg, hormone replacement after endocrinopathy)",
+                        "criterion": "toxicity unlikely to re-occur with standard countermeasures",
+                        "requirement": {
+                            "requirement_type": "likelihood",
+                            "expected_value": "unlikely"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "history of severe and/or life-threatening toxicity related to prior immune therapy",
+                                        "criterion": "toxicity related to prior immune therapy",
+                                        "requirement": {
+                                            "requirement_type": "severity",
+                                            "expected_value": [
+                                                "severe",
+                                                "life-threatening"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "prior immune therapy (eg, anti-cytotoxic T-lymphocyte-associated protein 4 [anti-CTLA-4] or anti-programmed cell death protein 1 [anti-PD-1]/programmed death-ligand 1 [PD-L1] treatment or any other antibody or drug specifically targeting T cell co-stimulation or immune checkpoint pathways)",
+                                        "criterion": "prior immune therapy",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "except those that are unlikely to re-occur with standard countermeasures (eg, hormone replacement after endocrinopathy)",
+                                    "criterion": "toxicity unlikely to re-occur with standard countermeasures",
+                                    "requirement": {
+                                        "requirement_type": "likelihood",
+                                        "expected_value": "unlikely"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants with an active, known, or suspected autoimmune disease. Participants with type I diabetes mellitus, hypothyroidism only requiring hormone replacement, skin disorders (such as vitiligo, psoriasis, or alopecia) not requiring systemic treatment, or conditions not expected to recur in the absence of an external trigger are permitted to enroll.",
+                "criterions": [
+                    {
+                        "exact_snippets": "active, known, or suspected autoimmune disease",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "type I diabetes mellitus",
+                        "criterion": "type I diabetes mellitus",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "hypothyroidism only requiring hormone replacement",
+                        "criterion": "hypothyroidism",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "hormone replacement"
+                        }
+                    },
+                    {
+                        "exact_snippets": "skin disorders (such as vitiligo, psoriasis, or alopecia) not requiring systemic treatment",
+                        "criterion": "skin disorders",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "conditions not expected to recur in the absence of an external trigger",
+                        "criterion": "conditions not expected to recur",
+                        "requirement": {
+                            "requirement_type": "recurrence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "or_criteria": [
+                                {
+                                    "exact_snippets": "active, known, or suspected autoimmune disease",
+                                    "criterion": "autoimmune disease",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": false
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "type I diabetes mellitus",
+                                    "criterion": "type I diabetes mellitus",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "hypothyroidism only requiring hormone replacement",
+                                    "criterion": "hypothyroidism",
+                                    "requirement": {
+                                        "requirement_type": "treatment",
+                                        "expected_value": "hormone replacement"
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "skin disorders (such as vitiligo, psoriasis, or alopecia) not requiring systemic treatment",
+                                    "criterion": "skin disorders",
+                                    "requirement": {
+                                        "requirement_type": "treatment",
+                                        "expected_value": false
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "conditions not expected to recur in the absence of an external trigger",
+                                    "criterion": "conditions not expected to recur",
+                                    "requirement": {
+                                        "requirement_type": "recurrence",
+                                        "expected_value": false
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior treatment with LAG-3 targeted agents.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior treatment with LAG-3 targeted agents",
+                        "criterion": "LAG-3 targeted agents",
+                        "requirement": {
+                            "requirement_type": "prior treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prior treatment with LAG-3 targeted agents",
+                        "criterion": "LAG-3 targeted agents",
+                        "requirement": {
+                            "requirement_type": "prior treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Other protocol-defined inclusion/exclusion criteria apply",
+                "criterions": [
+                    {
+                        "exact_snippets": "Other protocol-defined inclusion/exclusion criteria apply",
+                        "criterion": "protocol-defined inclusion/exclusion criteria",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "apply"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Other protocol-defined inclusion/exclusion criteria apply",
+                    "criterion": "protocol-defined inclusion/exclusion criteria",
+                    "requirement": {
+                        "requirement_type": "N/A",
+                        "expected_value": "apply"
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

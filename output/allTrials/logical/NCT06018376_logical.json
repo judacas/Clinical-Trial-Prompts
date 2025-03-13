@@ -1,0 +1,427 @@
+{
+    "info": {
+        "nct_id": "NCT06018376",
+        "official_title": "Characteristics of Sexual Dysfunction in Patients With Lung Cancer",
+        "inclusion_criteria": "* Age greater than or equal to 18 years and less than or equal to 70 years.\n* Diagnosis of lung cancer stages IB to IV.\n* Having received systemic oncological treatment for at least 3 months or being in oncological follow-up after having received systemic treatment for a minimum of 3 months with stable tumor disease or partial or complete response in images.\n* ECOG ≤ 2\nMust have minimum age of 18 Years\nMust have maximum age of 70 Years",
+        "exclusion_criteria": "* Patients with comorbidities (renal failure, cardiovascular diseases or similar) not controlled with corresponding medical management.\n* Individuals with physical disability or cognitive impairment that prevents them from completing the electronic data collection form.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Age greater than or equal to 18 years and less than or equal to 70 years.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age greater than or equal to 18 years and less than or equal to 70 years.",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 70,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age greater than or equal to 18 years and less than or equal to 70 years.",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 70,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Diagnosis of lung cancer stages IB to IV.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of lung cancer",
+                        "criterion": "lung cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stages IB to IV",
+                        "criterion": "lung cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "B"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Diagnosis of lung cancer",
+                        "criterion": "lung cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stages IB to IV",
+                        "criterion": "lung cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "B"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Having received systemic oncological treatment for at least 3 months or being in oncological follow-up after having received systemic treatment for a minimum of 3 months with stable tumor disease or partial or complete response in images.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Having received systemic oncological treatment for at least 3 months",
+                        "criterion": "systemic oncological treatment duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "being in oncological follow-up after having received systemic treatment for a minimum of 3 months",
+                        "criterion": "oncological follow-up after systemic treatment",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "stable tumor disease",
+                        "criterion": "tumor disease stability",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "stable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "partial or complete response in images",
+                        "criterion": "tumor response in images",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": [
+                                "partial",
+                                "complete"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Having received systemic oncological treatment for at least 3 months",
+                                "criterion": "systemic oncological treatment duration",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "being in oncological follow-up after having received systemic treatment for a minimum of 3 months",
+                                "criterion": "oncological follow-up after systemic treatment",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "stable tumor disease",
+                                        "criterion": "tumor disease stability",
+                                        "requirement": {
+                                            "requirement_type": "stability",
+                                            "expected_value": "stable"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "partial or complete response in images",
+                                        "criterion": "tumor response in images",
+                                        "requirement": {
+                                            "requirement_type": "response",
+                                            "expected_value": [
+                                                "partial",
+                                                "complete"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* ECOG ≤ 2",
+                "criterions": [
+                    {
+                        "exact_snippets": "ECOG ≤ 2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "performance status",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "ECOG ≤ 2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "performance status",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 70 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 70 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 70,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 70 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 70,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with comorbidities (renal failure, cardiovascular diseases or similar) not controlled with corresponding medical management.",
+                "criterions": [
+                    {
+                        "exact_snippets": "comorbidities (renal failure, cardiovascular diseases or similar)",
+                        "criterion": "comorbidities",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "not controlled with corresponding medical management"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "comorbidities (renal failure, cardiovascular diseases or similar)",
+                                "criterion": "comorbidities",
+                                "requirement": {
+                                    "requirement_type": "control status",
+                                    "expected_value": "not controlled with corresponding medical management"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Individuals with physical disability or cognitive impairment that prevents them from completing the electronic data collection form.",
+                "criterions": [
+                    {
+                        "exact_snippets": "physical disability ... prevents them from completing the electronic data collection form",
+                        "criterion": "physical disability",
+                        "requirement": {
+                            "requirement_type": "impact on data collection",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cognitive impairment that prevents them from completing the electronic data collection form",
+                        "criterion": "cognitive impairment",
+                        "requirement": {
+                            "requirement_type": "impact on data collection",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "physical disability ... prevents them from completing the electronic data collection form",
+                        "criterion": "physical disability",
+                        "requirement": {
+                            "requirement_type": "impact on data collection",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cognitive impairment that prevents them from completing the electronic data collection form",
+                        "criterion": "cognitive impairment",
+                        "requirement": {
+                            "requirement_type": "impact on data collection",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

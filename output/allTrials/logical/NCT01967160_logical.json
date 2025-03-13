@@ -1,0 +1,389 @@
+{
+    "info": {
+        "nct_id": "NCT01967160",
+        "official_title": "A Non-interventional Pharmacovigilance Study of Osteonecrosis of the Jaw and Infection Leading to Hospitalization Among Patients With Cancer Treated With XGEVA™ or Zoledronic Acid in Sweden, Denmark, and Norway",
+        "inclusion_criteria": "* ≥ 18 years old\n* diagnosed with cancer\n* subsequent to cancer diagnosis, initiating cancer-related antiresorptive treatment during the treatment cohort identification period with XGEVA or zoledronic acid or switching to XGEVA from cancer-related treatment with oral or IV bisphosphonates at the dose indicated for SRE prevention of less than 2 years duration (≤ 24 IV infusions or ≤ 24 monthly oral prescriptions)\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 99 Years",
+        "exclusion_criteria": "* history of radiation treatment for head and neck cancer before a subject's potential index date\n* hypercalcemia of malignancy as the sole indication for treatment with an anti-resorptive agent",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* ≥ 18 years old",
+                "criterions": [
+                    {
+                        "exact_snippets": "≥ 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "≥ 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* diagnosed with cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosed with cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "diagnosed with cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* subsequent to cancer diagnosis, initiating cancer-related antiresorptive treatment during the treatment cohort identification period with XGEVA or zoledronic acid or switching to XGEVA from cancer-related treatment with oral or IV bisphosphonates at the dose indicated for SRE prevention of less than 2 years duration (≤ 24 IV infusions or ≤ 24 monthly oral prescriptions)",
+                "criterions": [
+                    {
+                        "exact_snippets": "subsequent to cancer diagnosis",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "subsequent"
+                        }
+                    },
+                    {
+                        "exact_snippets": "initiating cancer-related antiresorptive treatment during the treatment cohort identification period with XGEVA or zoledronic acid",
+                        "criterion": "cancer-related antiresorptive treatment",
+                        "requirement": {
+                            "requirement_type": "initiation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "initiating cancer-related antiresorptive treatment during the treatment cohort identification period with XGEVA or zoledronic acid",
+                        "criterion": "cancer-related antiresorptive treatment",
+                        "requirement": {
+                            "requirement_type": "medication",
+                            "expected_value": [
+                                "XGEVA",
+                                "zoledronic acid"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "switching to XGEVA from cancer-related treatment with oral or IV bisphosphonates",
+                        "criterion": "switching to XGEVA",
+                        "requirement": {
+                            "requirement_type": "previous treatment",
+                            "expected_value": [
+                                "oral bisphosphonates",
+                                "IV bisphosphonates"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at the dose indicated for SRE prevention of less than 2 years duration (≤ 24 IV infusions or ≤ 24 monthly oral prescriptions)",
+                        "criterion": "SRE prevention dose duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 24,
+                                        "unit": "IV infusions"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 24,
+                                        "unit": "monthly oral prescriptions"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "subsequent to cancer diagnosis",
+                                "criterion": "cancer diagnosis",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": "subsequent"
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "initiating cancer-related antiresorptive treatment during the treatment cohort identification period with XGEVA or zoledronic acid",
+                                                "criterion": "cancer-related antiresorptive treatment",
+                                                "requirement": {
+                                                    "requirement_type": "initiation",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "initiating cancer-related antiresorptive treatment during the treatment cohort identification period with XGEVA or zoledronic acid",
+                                                "criterion": "cancer-related antiresorptive treatment",
+                                                "requirement": {
+                                                    "requirement_type": "medication",
+                                                    "expected_value": [
+                                                        "XGEVA",
+                                                        "zoledronic acid"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "switching to XGEVA from cancer-related treatment with oral or IV bisphosphonates",
+                                                "criterion": "switching to XGEVA",
+                                                "requirement": {
+                                                    "requirement_type": "previous treatment",
+                                                    "expected_value": [
+                                                        "oral bisphosphonates",
+                                                        "IV bisphosphonates"
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "at the dose indicated for SRE prevention of less than 2 years duration (≤ 24 IV infusions or ≤ 24 monthly oral prescriptions)",
+                                                "criterion": "SRE prevention dose duration",
+                                                "requirement": {
+                                                    "requirement_type": "duration",
+                                                    "expected_value": {
+                                                        "comparisons": [
+                                                            {
+                                                                "operator": "<=",
+                                                                "value": 24,
+                                                                "unit": "IV infusions"
+                                                            },
+                                                            {
+                                                                "operator": "<=",
+                                                                "value": 24,
+                                                                "unit": "monthly oral prescriptions"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 99 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 99 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 99,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 99 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 99,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* history of radiation treatment for head and neck cancer before a subject's potential index date",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of radiation treatment for head and neck cancer",
+                        "criterion": "radiation treatment history",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "head and neck cancer"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "history of radiation treatment for head and neck cancer",
+                    "criterion": "radiation treatment history",
+                    "requirement": {
+                        "requirement_type": "condition",
+                        "expected_value": "head and neck cancer"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* hypercalcemia of malignancy as the sole indication for treatment with an anti-resorptive agent",
+                "criterions": [
+                    {
+                        "exact_snippets": "hypercalcemia of malignancy",
+                        "criterion": "hypercalcemia of malignancy",
+                        "requirement": {
+                            "requirement_type": "indication for treatment",
+                            "expected_value": "sole"
+                        }
+                    },
+                    {
+                        "exact_snippets": "treatment with an anti-resorptive agent",
+                        "criterion": "treatment with an anti-resorptive agent",
+                        "requirement": {
+                            "requirement_type": "indication",
+                            "expected_value": "hypercalcemia of malignancy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "hypercalcemia of malignancy",
+                        "criterion": "hypercalcemia of malignancy",
+                        "requirement": {
+                            "requirement_type": "indication for treatment",
+                            "expected_value": "sole"
+                        }
+                    },
+                    {
+                        "exact_snippets": "treatment with an anti-resorptive agent",
+                        "criterion": "treatment with an anti-resorptive agent",
+                        "requirement": {
+                            "requirement_type": "indication",
+                            "expected_value": "hypercalcemia of malignancy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

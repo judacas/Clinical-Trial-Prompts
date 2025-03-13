@@ -1,0 +1,750 @@
+{
+    "info": {
+        "nct_id": "NCT01512420",
+        "official_title": "A Multicenter, Prospective, Observational Study to Identify Different Prognostic Factors Related to Survival in Patients With Previously Treated Advanced NSCLC With Wild-type Epidermal Growth Factor Receptor (EGFR) Gene.",
+        "inclusion_criteria": "* Adult patients, >/= 18 years of age\n* Histologically or cytologically confirmed locally advanced or metastatic non-small cell lung cancer (NSCLC)\n* Patients with known wild-type EGFR gene; patients with unknown EGFR mutation status are allowed if they fulfil the following criteria:\n* squamous cell carcinoma lung cancer histology, and\n* current smoker, or former smoker who has stopped smoking less than 10 years ago and has had a total of >15 pack-years of smoking\n* Eastern Cooperative Oncology Group (ECOG) performance status 0 to 2\n* Patients having failed one prior chemotherapy regimen and eligible for a second-line treatment with Tarceva\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Current treatment with an investigational drug or participation in another investigational study\n* Severe or uncontrolled systemic disease, active infection, concomitant malignancy or a second primary malignancy except for in situ carcinoma of the cervix or adequately treated basal cell carcinoma of the skin\n* Clinically active interstitial lung disease\n* Recent myocardial infarction or unstable angina\n* Progressive or uncontrolled brain metastases",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Adult patients, >/= 18 years of age",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adult patients, >/= 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adult patients, >/= 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with known wild-type EGFR gene; patients with unknown EGFR mutation status are allowed if they fulfil the following criteria:",
+                "criterions": [
+                    {
+                        "exact_snippets": "known wild-type EGFR gene",
+                        "criterion": "EGFR gene mutation status",
+                        "requirement": {
+                            "requirement_type": "mutation type",
+                            "expected_value": "wild-type"
+                        }
+                    },
+                    {
+                        "exact_snippets": "unknown EGFR mutation status",
+                        "criterion": "EGFR gene mutation status",
+                        "requirement": {
+                            "requirement_type": "mutation status",
+                            "expected_value": "unknown"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "unknown EGFR mutation status",
+                    "criterion": "EGFR gene mutation status",
+                    "requirement": {
+                        "requirement_type": "mutation status",
+                        "expected_value": "unknown"
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "exact_snippets": "known wild-type EGFR gene",
+                    "criterion": "EGFR gene mutation status",
+                    "requirement": {
+                        "requirement_type": "mutation type",
+                        "expected_value": "wild-type"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* squamous cell carcinoma lung cancer histology, and",
+                "criterions": [
+                    {
+                        "exact_snippets": "squamous cell carcinoma lung cancer histology",
+                        "criterion": "lung cancer histology",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "squamous cell carcinoma"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "squamous cell carcinoma lung cancer histology",
+                        "criterion": "lung cancer histology",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "squamous cell carcinoma"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* current smoker, or former smoker who has stopped smoking less than 10 years ago and has had a total of >15 pack-years of smoking",
+                "criterions": [
+                    {
+                        "exact_snippets": "current smoker",
+                        "criterion": "smoking status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "current smoker"
+                        }
+                    },
+                    {
+                        "exact_snippets": "former smoker who has stopped smoking less than 10 years ago",
+                        "criterion": "smoking cessation duration",
+                        "requirement": {
+                            "requirement_type": "duration since cessation",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "has had a total of >15 pack-years of smoking",
+                        "criterion": "pack-years of smoking",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 15,
+                                "unit": "pack-years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "current smoker",
+                        "criterion": "smoking status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "current smoker"
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "former smoker who has stopped smoking less than 10 years ago",
+                                "criterion": "smoking cessation duration",
+                                "requirement": {
+                                    "requirement_type": "duration since cessation",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 10,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "has had a total of >15 pack-years of smoking",
+                                "criterion": "pack-years of smoking",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 15,
+                                        "unit": "pack-years"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) performance status 0 to 2",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status 0 to 2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status 0 to 2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients having failed one prior chemotherapy regimen and eligible for a second-line treatment with Tarceva",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients having failed one prior chemotherapy regimen",
+                        "criterion": "prior chemotherapy regimen",
+                        "requirement": {
+                            "requirement_type": "failure",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients having failed one prior chemotherapy regimen",
+                        "criterion": "prior chemotherapy regimen",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 1,
+                                "unit": "regimen"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "eligible for a second-line treatment with Tarceva",
+                        "criterion": "second-line treatment with Tarceva",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients having failed one prior chemotherapy regimen",
+                                "criterion": "prior chemotherapy regimen",
+                                "requirement": {
+                                    "requirement_type": "failure",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Patients having failed one prior chemotherapy regimen",
+                                "criterion": "prior chemotherapy regimen",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": "=",
+                                        "value": 1,
+                                        "unit": "regimen"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "eligible for a second-line treatment with Tarceva",
+                        "criterion": "second-line treatment with Tarceva",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteers",
+                        "requirement": {
+                            "requirement_type": "participation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteers",
+                        "requirement": {
+                            "requirement_type": "participation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Current treatment with an investigational drug or participation in another investigational study",
+                "criterions": [
+                    {
+                        "exact_snippets": "Current treatment with an investigational drug",
+                        "criterion": "treatment with an investigational drug",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "participation in another investigational study",
+                        "criterion": "participation in another investigational study",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Current treatment with an investigational drug",
+                        "criterion": "treatment with an investigational drug",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "participation in another investigational study",
+                        "criterion": "participation in another investigational study",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Severe or uncontrolled systemic disease, active infection, concomitant malignancy or a second primary malignancy except for in situ carcinoma of the cervix or adequately treated basal cell carcinoma of the skin",
+                "criterions": [
+                    {
+                        "exact_snippets": "Severe or uncontrolled systemic disease",
+                        "criterion": "systemic disease",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Severe or uncontrolled systemic disease",
+                        "criterion": "systemic disease",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "active infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "concomitant malignancy",
+                        "criterion": "concomitant malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "second primary malignancy",
+                        "criterion": "second primary malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "except for in situ carcinoma of the cervix",
+                        "criterion": "in situ carcinoma of the cervix",
+                        "requirement": {
+                            "requirement_type": "exception",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequately treated basal cell carcinoma of the skin",
+                        "criterion": "adequately treated basal cell carcinoma of the skin",
+                        "requirement": {
+                            "requirement_type": "exception",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Severe or uncontrolled systemic disease",
+                                        "criterion": "systemic disease",
+                                        "requirement": {
+                                            "requirement_type": "severity",
+                                            "expected_value": "severe"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Severe or uncontrolled systemic disease",
+                                        "criterion": "systemic disease",
+                                        "requirement": {
+                                            "requirement_type": "control",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "active infection",
+                                "criterion": "infection",
+                                "requirement": {
+                                    "requirement_type": "activity",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "concomitant malignancy",
+                                        "criterion": "concomitant malignancy",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "second primary malignancy",
+                                        "criterion": "second primary malignancy",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "not_criteria": {
+                                            "or_criteria": [
+                                                {
+                                                    "exact_snippets": "except for in situ carcinoma of the cervix",
+                                                    "criterion": "in situ carcinoma of the cervix",
+                                                    "requirement": {
+                                                        "requirement_type": "exception",
+                                                        "expected_value": true
+                                                    }
+                                                },
+                                                {
+                                                    "exact_snippets": "adequately treated basal cell carcinoma of the skin",
+                                                    "criterion": "adequately treated basal cell carcinoma of the skin",
+                                                    "requirement": {
+                                                        "requirement_type": "exception",
+                                                        "expected_value": true
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Clinically active interstitial lung disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinically active interstitial lung disease",
+                        "criterion": "interstitial lung disease",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "clinically active"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Clinically active interstitial lung disease",
+                    "criterion": "interstitial lung disease",
+                    "requirement": {
+                        "requirement_type": "activity",
+                        "expected_value": "clinically active"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Recent myocardial infarction or unstable angina",
+                "criterions": [
+                    {
+                        "exact_snippets": "Recent myocardial infarction",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": "recent"
+                        }
+                    },
+                    {
+                        "exact_snippets": "unstable angina",
+                        "criterion": "angina",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "unstable"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Recent myocardial infarction",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": "recent"
+                        }
+                    },
+                    {
+                        "exact_snippets": "unstable angina",
+                        "criterion": "angina",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "unstable"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Progressive or uncontrolled brain metastases",
+                "criterions": [
+                    {
+                        "exact_snippets": "Progressive or uncontrolled brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "progression",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Progressive or uncontrolled brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Progressive or uncontrolled brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "progression",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Progressive or uncontrolled brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Histologically or cytologically confirmed locally advanced or metastatic non-small cell lung cancer (NSCLC)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologically or cytologically confirmed",
+                        "criterion": "confirmation method",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "locally advanced or metastatic non-small cell lung cancer (NSCLC)",
+                        "criterion": "non-small cell lung cancer (NSCLC)",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "locally advanced",
+                                "metastatic"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Histologically or cytologically confirmed",
+                                "criterion": "confirmation method",
+                                "requirement": {
+                                    "requirement_type": "method",
+                                    "expected_value": [
+                                        "histologically",
+                                        "cytologically"
+                                    ]
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "locally advanced or metastatic non-small cell lung cancer (NSCLC)",
+                                        "criterion": "non-small cell lung cancer (NSCLC)",
+                                        "requirement": {
+                                            "requirement_type": "stage",
+                                            "expected_value": "locally advanced"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "locally advanced or metastatic non-small cell lung cancer (NSCLC)",
+                                        "criterion": "non-small cell lung cancer (NSCLC)",
+                                        "requirement": {
+                                            "requirement_type": "stage",
+                                            "expected_value": "metastatic"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

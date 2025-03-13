@@ -1,0 +1,243 @@
+{
+    "info": {
+        "nct_id": "NCT04946591",
+        "official_title": "Feasibility and Impact of ICG and 4K Overlay in Laparoscopic Hepatic Surgery on Real-time Tumor Detection: A Single-centre Prospective Study",
+        "inclusion_criteria": "* Patient consent\n* Aged above 18 years\n* Undergoing any type of liver resections\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Unresectable liver tumors\n* Known indocyanine green allergy\n* Iodine allergy\n* Advanced cirrhosis (Child C)",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patient consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient consent",
+                        "criterion": "patient consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patient consent",
+                        "criterion": "patient consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Aged above 18 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Aged above 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Aged above 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Undergoing any type of liver resections",
+                "criterions": [
+                    {
+                        "exact_snippets": "Undergoing any type of liver resections",
+                        "criterion": "liver resections",
+                        "requirement": {
+                            "requirement_type": "undergoing",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Undergoing any type of liver resections",
+                        "criterion": "liver resections",
+                        "requirement": {
+                            "requirement_type": "undergoing",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Unresectable liver tumors",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unresectable liver tumors",
+                        "criterion": "liver tumors",
+                        "requirement": {
+                            "requirement_type": "resectability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Unresectable liver tumors",
+                        "criterion": "liver tumors",
+                        "requirement": {
+                            "requirement_type": "resectability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known indocyanine green allergy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known indocyanine green allergy",
+                        "criterion": "indocyanine green allergy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Known indocyanine green allergy",
+                    "criterion": "indocyanine green allergy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Iodine allergy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Iodine allergy",
+                        "criterion": "iodine allergy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Iodine allergy",
+                    "criterion": "iodine allergy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Advanced cirrhosis (Child C)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Advanced cirrhosis (Child C)",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "Advanced (Child C)"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Advanced cirrhosis (Child C)",
+                    "criterion": "cirrhosis",
+                    "requirement": {
+                        "requirement_type": "severity",
+                        "expected_value": "Advanced (Child C)"
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

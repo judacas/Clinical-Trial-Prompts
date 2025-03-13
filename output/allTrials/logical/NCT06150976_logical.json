@@ -1,0 +1,812 @@
+{
+    "info": {
+        "nct_id": "NCT06150976",
+        "official_title": "Modifying Memory and Attention Adaptation Training (MAAT) For Young Adult Childhood Cancer Survivors",
+        "inclusion_criteria": "1. Adults aged 18-39\n2. Diagnosed prior to 18 years of age with non-CNS solid tumor or leukemia/lymphoma without known CNS involvement\n3. At least 1 year after completion of treatment including chemotherapy, cancer-free\n4. English fluent\n5. Memory or other cognitive problems attributed to cancer and/or cancer treatment\n6. Score of <10 on the FACT-Cog Impact on Quality of Life Scale\n7. Willing to use telehealth with internet access\n8. Willing to provide informed consent to participation\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 39 Years",
+        "exclusion_criteria": "1. Severe non-cancer brain injury such as severe traumatic brain injury, stroke or toxic injury causing memory impairments;\n2. Currently meeting Diagnostic and Statistical Manual-5 (DSM-5) criteria for a severe psychiatric disorder, including substance abuse, mood, anxiety, or psychotic disorders, as assessed by the PRIME-MD;\n3. Scoring 3 or below on the 6-item cognitive screen designed to detect severe memory disorders;59\n4. Severe uncorrected sensory impairment (severe hearing or visual impairment).",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Adults aged 18-39",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adults aged 18-39",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 39,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adults aged 18-39",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 39,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Diagnosed prior to 18 years of age with non-CNS solid tumor or leukemia/lymphoma without known CNS involvement",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosed prior to 18 years of age",
+                        "criterion": "age at diagnosis",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-CNS solid tumor",
+                        "criterion": "non-CNS solid tumor",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "leukemia/lymphoma",
+                        "criterion": "leukemia/lymphoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "without known CNS involvement",
+                        "criterion": "CNS involvement",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Diagnosed prior to 18 years of age",
+                                "criterion": "age at diagnosis",
+                                "requirement": {
+                                    "requirement_type": "age",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "non-CNS solid tumor",
+                                "criterion": "non-CNS solid tumor",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "without known CNS involvement",
+                                "criterion": "CNS involvement",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Diagnosed prior to 18 years of age",
+                                "criterion": "age at diagnosis",
+                                "requirement": {
+                                    "requirement_type": "age",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "leukemia/lymphoma",
+                                "criterion": "leukemia/lymphoma",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "without known CNS involvement",
+                                "criterion": "CNS involvement",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. At least 1 year after completion of treatment including chemotherapy, cancer-free",
+                "criterions": [
+                    {
+                        "exact_snippets": "At least 1 year after completion of treatment including chemotherapy",
+                        "criterion": "time since treatment completion",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "cancer-free",
+                        "criterion": "cancer status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "cancer-free"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "At least 1 year after completion of treatment including chemotherapy",
+                        "criterion": "time since treatment completion",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "cancer-free",
+                        "criterion": "cancer status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "cancer-free"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. English fluent",
+                "criterions": [
+                    {
+                        "exact_snippets": "English fluent",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": "fluent"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "English fluent",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": "fluent"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Memory or other cognitive problems attributed to cancer and/or cancer treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Memory or other cognitive problems attributed to cancer and/or cancer treatment",
+                        "criterion": "cognitive problems",
+                        "requirement": {
+                            "requirement_type": "attribution",
+                            "expected_value": [
+                                "cancer",
+                                "cancer treatment"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Memory or other cognitive problems attributed to cancer and/or cancer treatment",
+                        "criterion": "memory problems",
+                        "requirement": {
+                            "requirement_type": "attribution",
+                            "expected_value": [
+                                "cancer",
+                                "cancer treatment"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Memory or other cognitive problems attributed to cancer and/or cancer treatment",
+                                "criterion": "cognitive problems",
+                                "requirement": {
+                                    "requirement_type": "attribution",
+                                    "expected_value": [
+                                        "cancer",
+                                        "cancer treatment"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "Memory or other cognitive problems attributed to cancer and/or cancer treatment",
+                                "criterion": "memory problems",
+                                "requirement": {
+                                    "requirement_type": "attribution",
+                                    "expected_value": [
+                                        "cancer",
+                                        "cancer treatment"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Memory or other cognitive problems attributed to cancer and/or cancer treatment",
+                                "criterion": "memory problems",
+                                "requirement": {
+                                    "requirement_type": "attribution",
+                                    "expected_value": [
+                                        "cancer",
+                                        "cancer treatment"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "Memory or other cognitive problems attributed to cancer and/or cancer treatment",
+                                "criterion": "cognitive problems",
+                                "requirement": {
+                                    "requirement_type": "attribution",
+                                    "expected_value": [
+                                        "cancer",
+                                        "cancer treatment"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Score of <10 on the FACT-Cog Impact on Quality of Life Scale",
+                "criterions": [
+                    {
+                        "exact_snippets": "Score of <10 on the FACT-Cog Impact on Quality of Life Scale",
+                        "criterion": "FACT-Cog Impact on Quality of Life Scale score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 10,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Score of <10 on the FACT-Cog Impact on Quality of Life Scale",
+                        "criterion": "FACT-Cog Impact on Quality of Life Scale score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 10,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. Willing to use telehealth with internet access",
+                "criterions": [
+                    {
+                        "exact_snippets": "Willing to use telehealth",
+                        "criterion": "telehealth usage",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "internet access",
+                        "criterion": "internet access",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Willing to use telehealth",
+                        "criterion": "telehealth usage",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "internet access",
+                        "criterion": "internet access",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "8. Willing to provide informed consent to participation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Willing to provide informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Willing to provide informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 39 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 39 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 39,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 39 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 39,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Severe non-cancer brain injury such as severe traumatic brain injury, stroke or toxic injury causing memory impairments;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Severe non-cancer brain injury such as severe traumatic brain injury",
+                        "criterion": "severe traumatic brain injury",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Severe non-cancer brain injury such as ... stroke",
+                        "criterion": "stroke",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Severe non-cancer brain injury such as ... toxic injury causing memory impairments",
+                        "criterion": "toxic injury causing memory impairments",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Severe non-cancer brain injury such as severe traumatic brain injury",
+                                "criterion": "severe traumatic brain injury",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Severe non-cancer brain injury such as ... stroke",
+                                "criterion": "stroke",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Severe non-cancer brain injury such as ... toxic injury causing memory impairments",
+                                "criterion": "toxic injury causing memory impairments",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Currently meeting Diagnostic and Statistical Manual-5 (DSM-5) criteria for a severe psychiatric disorder, including substance abuse, mood, anxiety, or psychotic disorders, as assessed by the PRIME-MD;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Currently meeting Diagnostic and Statistical Manual-5 (DSM-5) criteria for a severe psychiatric disorder",
+                        "criterion": "severe psychiatric disorder",
+                        "requirement": {
+                            "requirement_type": "diagnostic criteria",
+                            "expected_value": "DSM-5"
+                        }
+                    },
+                    {
+                        "exact_snippets": "including substance abuse, mood, anxiety, or psychotic disorders",
+                        "criterion": "type of psychiatric disorder",
+                        "requirement": {
+                            "requirement_type": "types",
+                            "expected_value": [
+                                "substance abuse",
+                                "mood",
+                                "anxiety",
+                                "psychotic"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "as assessed by the PRIME-MD",
+                        "criterion": "assessment tool",
+                        "requirement": {
+                            "requirement_type": "tool",
+                            "expected_value": "PRIME-MD"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Currently meeting Diagnostic and Statistical Manual-5 (DSM-5) criteria for a severe psychiatric disorder",
+                                "criterion": "severe psychiatric disorder",
+                                "requirement": {
+                                    "requirement_type": "diagnostic criteria",
+                                    "expected_value": "DSM-5"
+                                }
+                            },
+                            {
+                                "exact_snippets": "as assessed by the PRIME-MD",
+                                "criterion": "assessment tool",
+                                "requirement": {
+                                    "requirement_type": "tool",
+                                    "expected_value": "PRIME-MD"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "including substance abuse, mood, anxiety, or psychotic disorders",
+                        "criterion": "type of psychiatric disorder",
+                        "requirement": {
+                            "requirement_type": "types",
+                            "expected_value": [
+                                "substance abuse",
+                                "mood",
+                                "anxiety",
+                                "psychotic"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Scoring 3 or below on the 6-item cognitive screen designed to detect severe memory disorders;59",
+                "criterions": [
+                    {
+                        "exact_snippets": "Scoring 3 or below on the 6-item cognitive screen",
+                        "criterion": "6-item cognitive screen score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Scoring 3 or below on the 6-item cognitive screen",
+                        "criterion": "6-item cognitive screen score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Severe uncorrected sensory impairment (severe hearing or visual impairment).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Severe uncorrected sensory impairment (severe hearing or visual impairment)",
+                        "criterion": "sensory impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Severe uncorrected sensory impairment (severe hearing or visual impairment)",
+                        "criterion": "sensory impairment",
+                        "requirement": {
+                            "requirement_type": "correction status",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe hearing",
+                        "criterion": "hearing impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe ... visual impairment",
+                        "criterion": "visual impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Severe uncorrected sensory impairment (severe hearing or visual impairment)",
+                                        "criterion": "sensory impairment",
+                                        "requirement": {
+                                            "requirement_type": "severity",
+                                            "expected_value": "severe"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Severe uncorrected sensory impairment (severe hearing or visual impairment)",
+                                        "criterion": "sensory impairment",
+                                        "requirement": {
+                                            "requirement_type": "correction status",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "severe hearing",
+                                        "criterion": "hearing impairment",
+                                        "requirement": {
+                                            "requirement_type": "severity",
+                                            "expected_value": "severe"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "severe ... visual impairment",
+                                        "criterion": "visual impairment",
+                                        "requirement": {
+                                            "requirement_type": "severity",
+                                            "expected_value": "severe"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

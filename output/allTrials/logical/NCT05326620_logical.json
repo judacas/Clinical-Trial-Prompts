@@ -1,0 +1,213 @@
+{
+    "info": {
+        "nct_id": "NCT05326620",
+        "official_title": "PROspective Renal Cancer Cohort (PRO-RCC)",
+        "inclusion_criteria": "* newly diagnosed patients with RCC or synchronous metastatic RCC\n* metachronous metastasized RCC\n* age >18 years\n* capable of understanding Dutch language\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* n/a",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* newly diagnosed patients with RCC or synchronous metastatic RCC",
+                "criterions": [
+                    {
+                        "exact_snippets": "newly diagnosed patients",
+                        "criterion": "diagnosis status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "newly diagnosed"
+                        }
+                    },
+                    {
+                        "exact_snippets": "RCC",
+                        "criterion": "disease type",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "synchronous metastatic RCC",
+                        "criterion": "metastatic status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "synchronous metastatic"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "newly diagnosed patients",
+                                "criterion": "diagnosis status",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "newly diagnosed"
+                                }
+                            },
+                            {
+                                "exact_snippets": "RCC",
+                                "criterion": "disease type",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "synchronous metastatic RCC",
+                        "criterion": "metastatic status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "synchronous metastatic"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* metachronous metastasized RCC",
+                "criterions": [
+                    {
+                        "exact_snippets": "metachronous metastasized RCC",
+                        "criterion": "metachronous metastasized RCC",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "metachronous metastasized RCC",
+                        "criterion": "metachronous metastasized RCC",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* age >18 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "age >18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "age >18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* capable of understanding Dutch language",
+                "criterions": [
+                    {
+                        "exact_snippets": "capable of understanding Dutch language",
+                        "criterion": "language comprehension",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "Dutch"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "capable of understanding Dutch language",
+                        "criterion": "language comprehension",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "Dutch"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* n/a",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

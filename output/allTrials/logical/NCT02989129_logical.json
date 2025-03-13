@@ -1,0 +1,886 @@
+{
+    "info": {
+        "nct_id": "NCT02989129",
+        "official_title": "Prospective Open Labeled Pilot Trial of Quercetin in the Treatment and Prevention of Chemotherapy-induced Neuropathic Pain in Cancer Patients",
+        "inclusion_criteria": "1. Patients > 18 years old.\n2. Patients starting, undergoing or completed chemotherapy at MD Anderson Cancer Center\n3. Any cancer patients who received any of the chemotherapeutic agents listed below and developed neuropathic pain for the treatment cohort; or any cancer patients who have been scheduled to receive any of the chemotherapeutic agents listed below for the preventive cohort. The chemotherapeutic agents include 1) taxanes (paclitaxel, docetaxel), 2) vinca alkaloids (vincristine, vinblastine), 3) platinum agents (cisplatin, carboplatin, oxaliplatin), and 4) others (thalidomide, bortezomib, lenalidomide).\n4. Patients have neuropathic pain intensity of at least 4/10 on numeric rating score (NRS, 0/10 being no pain and 10/10 excruciating pain) for the treatment cohort; or 0/10 on NRS for the preventive cohort.\n5. Patients are on stable dose of any medication\n6. Patients followed at the Pain Medicine department. Patients with normal renal function (Normal values, BUN (blood urea nitrogen): 8 to 20 mg/dL, Creatinine: 0.7 to 1.3 mg/dL).\n7. Patients able to speak English.\n8. Patients able to review, understand, and provide written consent.\n9. Patients with an Eastern Cooperative Oncology performance (ECOG) status of 0-2.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "1. Renal impairment.\n2. Pregnancy.\n3. Hypersensitivity reaction, anaphylaxis, or any other serious adverse reaction to quercetin or product components.\n4. Patients who are enrolled in another Pain Medicine trial.\n5. Patients with malabsorption syndrome or resection of the stomach or small bowel.\n6. Patients with any condition that precludes use of the study medication as determined by the treating physician.\n7. Patients taking Quercetin for other medical reasons.\n8. Patients taking Digoxin.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Patients > 18 years old.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients > 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients > 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Patients starting, undergoing or completed chemotherapy at MD Anderson Cancer Center",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients starting, undergoing or completed chemotherapy",
+                        "criterion": "chemotherapy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "starting",
+                                "undergoing",
+                                "completed"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at MD Anderson Cancer Center",
+                        "criterion": "treatment location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "MD Anderson Cancer Center"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients starting, undergoing or completed chemotherapy",
+                        "criterion": "chemotherapy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "starting",
+                                "undergoing",
+                                "completed"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at MD Anderson Cancer Center",
+                        "criterion": "treatment location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "MD Anderson Cancer Center"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Any cancer patients who received any of the chemotherapeutic agents listed below and developed neuropathic pain for the treatment cohort; or any cancer patients who have been scheduled to receive any of the chemotherapeutic agents listed below for the preventive cohort. The chemotherapeutic agents include 1) taxanes (paclitaxel, docetaxel), 2) vinca alkaloids (vincristine, vinblastine), 3) platinum agents (cisplatin, carboplatin, oxaliplatin), and 4) others (thalidomide, bortezomib, lenalidomide).",
+                "criterions": [
+                    {
+                        "exact_snippets": "cancer patients who received any of the chemotherapeutic agents listed below and developed neuropathic pain",
+                        "criterion": "neuropathic pain",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cancer patients who received any of the chemotherapeutic agents listed below",
+                        "criterion": "chemotherapeutic agents received",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cancer patients who have been scheduled to receive any of the chemotherapeutic agents listed below",
+                        "criterion": "chemotherapeutic agents scheduled",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "cancer patients who received any of the chemotherapeutic agents listed below",
+                                        "criterion": "chemotherapeutic agents received",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "cancer patients who received any of the chemotherapeutic agents listed below and developed neuropathic pain",
+                                        "criterion": "neuropathic pain",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "cancer patients who have been scheduled to receive any of the chemotherapeutic agents listed below",
+                                "criterion": "chemotherapeutic agents scheduled",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Patients have neuropathic pain intensity of at least 4/10 on numeric rating score (NRS, 0/10 being no pain and 10/10 excruciating pain) for the treatment cohort; or 0/10 on NRS for the preventive cohort.",
+                "criterions": [
+                    {
+                        "exact_snippets": "neuropathic pain intensity of at least 4/10 on numeric rating score (NRS, 0/10 being no pain and 10/10 excruciating pain) for the treatment cohort",
+                        "criterion": "neuropathic pain intensity",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "NRS"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "neuropathic pain intensity ... 0/10 on NRS for the preventive cohort",
+                        "criterion": "neuropathic pain intensity",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 0,
+                                "unit": "NRS"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "neuropathic pain intensity of at least 4/10 on numeric rating score (NRS, 0/10 being no pain and 10/10 excruciating pain) for the treatment cohort",
+                                "criterion": "neuropathic pain intensity",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 4,
+                                        "unit": "NRS"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "neuropathic pain intensity of at least 4/10 on numeric rating score (NRS, 0/10 being no pain and 10/10 excruciating pain) for the treatment cohort",
+                                "criterion": "cohort",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "treatment"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "neuropathic pain intensity ... 0/10 on NRS for the preventive cohort",
+                                "criterion": "neuropathic pain intensity",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": {
+                                        "operator": "=",
+                                        "value": 0,
+                                        "unit": "NRS"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "neuropathic pain intensity ... 0/10 on NRS for the preventive cohort",
+                                "criterion": "cohort",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "preventive"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Patients are on stable dose of any medication",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients are on stable dose of any medication",
+                        "criterion": "medication dose",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients are on stable dose of any medication",
+                        "criterion": "medication dose",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Patients followed at the Pain Medicine department. Patients with normal renal function (Normal values, BUN (blood urea nitrogen): 8 to 20 mg/dL, Creatinine: 0.7 to 1.3 mg/dL).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients followed at the Pain Medicine department",
+                        "criterion": "follow-up location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "Pain Medicine department"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients with normal renal function",
+                        "criterion": "renal function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "BUN (blood urea nitrogen): 8 to 20 mg/dL",
+                        "criterion": "BUN (blood urea nitrogen)",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 8,
+                                        "unit": "mg/dL"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 20,
+                                        "unit": "mg/dL"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Creatinine: 0.7 to 1.3 mg/dL",
+                        "criterion": "Creatinine",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0.7,
+                                        "unit": "mg/dL"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1.3,
+                                        "unit": "mg/dL"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "Patients followed at the Pain Medicine department",
+                                                "criterion": "follow-up location",
+                                                "requirement": {
+                                                    "requirement_type": "location",
+                                                    "expected_value": "Pain Medicine department"
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "Patients with normal renal function",
+                                                "criterion": "renal function",
+                                                "requirement": {
+                                                    "requirement_type": "status",
+                                                    "expected_value": "normal"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "BUN (blood urea nitrogen): 8 to 20 mg/dL",
+                                        "criterion": "BUN (blood urea nitrogen)",
+                                        "requirement": {
+                                            "requirement_type": "range",
+                                            "expected_value": {
+                                                "comparisons": [
+                                                    {
+                                                        "operator": ">=",
+                                                        "value": 8,
+                                                        "unit": "mg/dL"
+                                                    },
+                                                    {
+                                                        "operator": "<=",
+                                                        "value": 20,
+                                                        "unit": "mg/dL"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "Creatinine: 0.7 to 1.3 mg/dL",
+                                "criterion": "Creatinine",
+                                "requirement": {
+                                    "requirement_type": "range",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 0.7,
+                                                "unit": "mg/dL"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 1.3,
+                                                "unit": "mg/dL"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. Patients able to speak English.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients able to speak English",
+                        "criterion": "language ability",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "English"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients able to speak English",
+                        "criterion": "language ability",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "English"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "8. Patients able to review, understand, and provide written consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients able to review",
+                        "criterion": "ability to review",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "understand",
+                        "criterion": "ability to understand",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "provide written consent",
+                        "criterion": "ability to provide written consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients able to review",
+                        "criterion": "ability to review",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "understand",
+                        "criterion": "ability to understand",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "provide written consent",
+                        "criterion": "ability to provide written consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "9. Patients with an Eastern Cooperative Oncology performance (ECOG) status of 0-2.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology performance (ECOG) status of 0-2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology performance (ECOG) status of 0-2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Renal impairment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Renal impairment",
+                        "criterion": "renal impairment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Renal impairment",
+                    "criterion": "renal impairment",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Pregnancy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Pregnancy",
+                    "criterion": "pregnancy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Hypersensitivity reaction, anaphylaxis, or any other serious adverse reaction to quercetin or product components.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Hypersensitivity reaction, anaphylaxis, or any other serious adverse reaction to quercetin",
+                        "criterion": "adverse reaction to quercetin",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Hypersensitivity reaction, anaphylaxis, or any other serious adverse reaction to ... product components",
+                        "criterion": "adverse reaction to product components",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Hypersensitivity reaction, anaphylaxis, or any other serious adverse reaction to quercetin",
+                        "criterion": "adverse reaction to quercetin",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Hypersensitivity reaction, anaphylaxis, or any other serious adverse reaction to ... product components",
+                        "criterion": "adverse reaction to product components",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Patients who are enrolled in another Pain Medicine trial.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who are enrolled in another Pain Medicine trial",
+                        "criterion": "enrollment in another Pain Medicine trial",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients who are enrolled in another Pain Medicine trial",
+                        "criterion": "enrollment in another Pain Medicine trial",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Patients with malabsorption syndrome or resection of the stomach or small bowel.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with malabsorption syndrome",
+                        "criterion": "malabsorption syndrome",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "resection of the stomach",
+                        "criterion": "stomach resection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "resection of the ... small bowel",
+                        "criterion": "small bowel resection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients with malabsorption syndrome",
+                                "criterion": "malabsorption syndrome",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "resection of the stomach",
+                                "criterion": "stomach resection",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "resection of the ... small bowel",
+                                "criterion": "small bowel resection",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Patients with any condition that precludes use of the study medication as determined by the treating physician.",
+                "criterions": [
+                    {
+                        "exact_snippets": "any condition that precludes use of the study medication",
+                        "criterion": "condition precluding study medication use",
+                        "requirement": {
+                            "requirement_type": "determination",
+                            "expected_value": "as determined by the treating physician"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "any condition that precludes use of the study medication",
+                    "criterion": "condition precluding study medication use",
+                    "requirement": {
+                        "requirement_type": "determination",
+                        "expected_value": "as determined by the treating physician"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. Patients taking Quercetin for other medical reasons.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients taking Quercetin",
+                        "criterion": "Quercetin usage",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patients taking Quercetin",
+                    "criterion": "Quercetin usage",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "8. Patients taking Digoxin.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients taking Digoxin",
+                        "criterion": "Digoxin use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patients taking Digoxin",
+                    "criterion": "Digoxin use",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

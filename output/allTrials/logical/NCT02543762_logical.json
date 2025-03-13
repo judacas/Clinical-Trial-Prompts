@@ -1,0 +1,528 @@
+{
+    "info": {
+        "nct_id": "NCT02543762",
+        "official_title": "Usefulness of Chromoendoscopy for the Early Detection of Colorectal Cancer Associated With Inflammatory Bowel Disease",
+        "inclusion_criteria": "* Diagnosis of UC or colitis EC corroborated by clinical and histology\n* involvement of at least one third of the colon in patients with CD\n* involvement proximal to the rectum in patients with UC\n* Duration of disease > 10 years\n* No clinical activity:\n* May Score <6\n* CDEIS <3.5\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Personal history of CRC\n* colectomy\n* coagulopathy\n* refusal to participate in the study\n* known allergy to indigo carmine\n* colonoscopy in the last 6 months",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Diagnosis of UC or colitis EC corroborated by clinical and histology",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of UC",
+                        "criterion": "ulcerative colitis (UC)",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "colitis EC corroborated by clinical and histology",
+                        "criterion": "colitis EC",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "colitis EC corroborated by clinical and histology",
+                        "criterion": "colitis EC",
+                        "requirement": {
+                            "requirement_type": "corroboration",
+                            "expected_value": [
+                                "clinical",
+                                "histology"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Diagnosis of UC",
+                                "criterion": "ulcerative colitis (UC)",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "colitis EC corroborated by clinical and histology",
+                                "criterion": "colitis EC",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "colitis EC corroborated by clinical and histology",
+                                "criterion": "colitis EC",
+                                "requirement": {
+                                    "requirement_type": "corroboration",
+                                    "expected_value": [
+                                        "clinical",
+                                        "histology"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* involvement of at least one third of the colon in patients with CD",
+                "criterions": [
+                    {
+                        "exact_snippets": "involvement of at least one third of the colon",
+                        "criterion": "colon involvement",
+                        "requirement": {
+                            "requirement_type": "extent",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "third"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "involvement of at least one third of the colon",
+                        "criterion": "colon involvement",
+                        "requirement": {
+                            "requirement_type": "extent",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "third"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with CD",
+                        "criterion": "CD diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* involvement proximal to the rectum in patients with UC",
+                "criterions": [
+                    {
+                        "exact_snippets": "involvement proximal to the rectum",
+                        "criterion": "involvement proximal to the rectum",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "involvement proximal to the rectum",
+                        "criterion": "involvement proximal to the rectum",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with UC",
+                        "criterion": "ulcerative colitis (UC)",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Duration of disease > 10 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Duration of disease > 10 years",
+                        "criterion": "duration of disease",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Duration of disease > 10 years",
+                        "criterion": "duration of disease",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No clinical activity:",
+                "criterions": [
+                    {
+                        "exact_snippets": "No clinical activity",
+                        "criterion": "clinical activity",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No clinical activity",
+                        "criterion": "clinical activity",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* May Score <6",
+                "criterions": [
+                    {
+                        "exact_snippets": "May Score <6",
+                        "criterion": "May Score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 6,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "May Score <6",
+                        "criterion": "May Score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 6,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* CDEIS <3.5",
+                "criterions": [
+                    {
+                        "exact_snippets": "CDEIS <3.5",
+                        "criterion": "CDEIS",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3.5,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "CDEIS <3.5",
+                        "criterion": "CDEIS",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3.5,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Personal history of CRC",
+                "criterions": [
+                    {
+                        "exact_snippets": "Personal history of CRC",
+                        "criterion": "personal history of CRC",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Personal history of CRC",
+                    "criterion": "personal history of CRC",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* colectomy",
+                "criterions": [
+                    {
+                        "exact_snippets": "colectomy",
+                        "criterion": "colectomy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "colectomy",
+                    "criterion": "colectomy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* coagulopathy",
+                "criterions": [
+                    {
+                        "exact_snippets": "coagulopathy",
+                        "criterion": "coagulopathy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "coagulopathy",
+                    "criterion": "coagulopathy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* refusal to participate in the study",
+                "criterions": [
+                    {
+                        "exact_snippets": "refusal to participate in the study",
+                        "criterion": "participation in the study",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "refusal to participate in the study",
+                    "criterion": "participation in the study",
+                    "requirement": {
+                        "requirement_type": "willingness",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* known allergy to indigo carmine",
+                "criterions": [
+                    {
+                        "exact_snippets": "known allergy to indigo carmine",
+                        "criterion": "allergy",
+                        "requirement": {
+                            "requirement_type": "substance",
+                            "expected_value": "indigo carmine"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "known allergy to indigo carmine",
+                    "criterion": "allergy",
+                    "requirement": {
+                        "requirement_type": "substance",
+                        "expected_value": "indigo carmine"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* colonoscopy in the last 6 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "colonoscopy in the last 6 months",
+                        "criterion": "colonoscopy",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 6,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "colonoscopy in the last 6 months",
+                    "criterion": "colonoscopy",
+                    "requirement": {
+                        "requirement_type": "recency",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": "<=",
+                                    "value": 6,
+                                    "unit": "months"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

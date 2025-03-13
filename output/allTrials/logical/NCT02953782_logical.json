@@ -1,0 +1,832 @@
+{
+    "info": {
+        "nct_id": "NCT02953782",
+        "official_title": "A Phase 1b/2 Trial of Hu5F9-G4 in Combination With Cetuximab in Patients With Solid Tumors and Advanced Colorectal Cancer",
+        "inclusion_criteria": "* Histological Diagnosis\n\n  * Phase 1b only: Advanced solid malignancy with an emphasis on colorectal cancer (CRC), head and neck, breast, pancreatic and ovarian cancers who have been treated with at least one regimen of prior systemic therapy, or who refuse systemic therapy, and for which there is no curative therapy available.\n  * Phase 2:\n* KRAS Mutant CRC: Advanced KRAS mutant CRC who have progressed or are ineligible for both irinotecan and oxaliplatin based chemotherapy\n* KRAS Wild-Type CRC: Advanced KRAS wild type CRC who have progressed or are ineligible for fluoropyrimidine, irinotecan, and oxaliplatin based chemotherapy and who are relapsed or refractory to at least 1 prior systemic therapy that included an anti-epidermal growth factor receptor (EGFR) antibody, such as cetuximab, panitumumab or others.\n* Adequate performance status and hematological, liver, and kidney function\n* Phase 2 only: Willing to consent to 1 mandatory pre-treatment and 1 on-treatment tumor biopsy\n\nKey\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Active brain metastases\n* Prior treatment with cluster of differentiation 47 (CD47) or signal regulatory protein alpha (SIRPα) targeting agents.\n* Phase 2 only: second malignancy within the last 3 years.\n* Known active or chronic hepatitis B or C infection or human immunodeficiency virus (HIV)\n* Pregnancy or active breastfeeding\n\nNote: Other protocol defined Inclusion/Exclusion criteria may apply.",
+        "miscellaneous_criteria": "Key"
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Histological Diagnosis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histological Diagnosis",
+                        "criterion": "histological diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Histological Diagnosis",
+                        "criterion": "histological diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Phase 1b only: Advanced solid malignancy with an emphasis on colorectal cancer (CRC), head and neck, breast, pancreatic and ovarian cancers who have been treated with at least one regimen of prior systemic therapy, or who refuse systemic therapy, and for which there is no curative therapy available.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Advanced solid malignancy",
+                        "criterion": "solid malignancy",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "advanced"
+                        }
+                    },
+                    {
+                        "exact_snippets": "emphasis on colorectal cancer (CRC), head and neck, breast, pancreatic and ovarian cancers",
+                        "criterion": "cancer type",
+                        "requirement": {
+                            "requirement_type": "specific types",
+                            "expected_value": [
+                                "colorectal cancer",
+                                "head and neck cancer",
+                                "breast cancer",
+                                "pancreatic cancer",
+                                "ovarian cancer"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "treated with at least one regimen of prior systemic therapy",
+                        "criterion": "prior systemic therapy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "regimen"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "refuse systemic therapy",
+                        "criterion": "systemic therapy",
+                        "requirement": {
+                            "requirement_type": "refusal",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "no curative therapy available",
+                        "criterion": "curative therapy",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Phase 1b only",
+                    "criterion": "trial phase",
+                    "requirement": {
+                        "requirement_type": "specific phase",
+                        "expected_value": "1b"
+                    }
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Advanced solid malignancy",
+                                    "criterion": "solid malignancy",
+                                    "requirement": {
+                                        "requirement_type": "stage",
+                                        "expected_value": "advanced"
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "emphasis on colorectal cancer (CRC), head and neck, breast, pancreatic and ovarian cancers",
+                                    "criterion": "cancer type",
+                                    "requirement": {
+                                        "requirement_type": "specific types",
+                                        "expected_value": [
+                                            "colorectal cancer",
+                                            "head and neck cancer",
+                                            "breast cancer",
+                                            "pancreatic cancer",
+                                            "ovarian cancer"
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "or_criteria": [
+                                {
+                                    "exact_snippets": "treated with at least one regimen of prior systemic therapy",
+                                    "criterion": "prior systemic therapy",
+                                    "requirement": {
+                                        "requirement_type": "quantity",
+                                        "expected_value": {
+                                            "operator": ">=",
+                                            "value": 1,
+                                            "unit": "regimen"
+                                        }
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "refuse systemic therapy",
+                                    "criterion": "systemic therapy",
+                                    "requirement": {
+                                        "requirement_type": "refusal",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "exact_snippets": "no curative therapy available",
+                            "criterion": "curative therapy",
+                            "requirement": {
+                                "requirement_type": "availability",
+                                "expected_value": false
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* KRAS Mutant CRC: Advanced KRAS mutant CRC who have progressed or are ineligible for both irinotecan and oxaliplatin based chemotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "KRAS Mutant CRC",
+                        "criterion": "KRAS mutant CRC",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Advanced KRAS mutant CRC",
+                        "criterion": "advanced CRC",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "advanced"
+                        }
+                    },
+                    {
+                        "exact_snippets": "progressed or are ineligible for both irinotecan and oxaliplatin based chemotherapy",
+                        "criterion": "irinotecan and oxaliplatin based chemotherapy",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "KRAS Mutant CRC",
+                                "criterion": "KRAS mutant CRC",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Advanced KRAS mutant CRC",
+                                "criterion": "advanced CRC",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "advanced"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "progressed or are ineligible for both irinotecan and oxaliplatin based chemotherapy",
+                                "criterion": "irinotecan and oxaliplatin based chemotherapy",
+                                "requirement": {
+                                    "requirement_type": "eligibility",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "progressed or are ineligible for both irinotecan and oxaliplatin based chemotherapy",
+                                "criterion": "irinotecan and oxaliplatin based chemotherapy",
+                                "requirement": {
+                                    "requirement_type": "eligibility",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* KRAS Wild-Type CRC: Advanced KRAS wild type CRC who have progressed or are ineligible for fluoropyrimidine, irinotecan, and oxaliplatin based chemotherapy and who are relapsed or refractory to at least 1 prior systemic therapy that included an anti-epidermal growth factor receptor (EGFR) antibody, such as cetuximab, panitumumab or others.",
+                "criterions": [
+                    {
+                        "exact_snippets": "KRAS Wild-Type CRC",
+                        "criterion": "KRAS mutation status",
+                        "requirement": {
+                            "requirement_type": "mutation type",
+                            "expected_value": "wild-type"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Advanced KRAS wild type CRC",
+                        "criterion": "colorectal cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "advanced"
+                        }
+                    },
+                    {
+                        "exact_snippets": "progressed or are ineligible for fluoropyrimidine, irinotecan, and oxaliplatin based chemotherapy",
+                        "criterion": "eligibility for chemotherapy",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "relapsed or refractory to at least 1 prior systemic therapy that included an anti-epidermal growth factor receptor (EGFR) antibody",
+                        "criterion": "response to prior EGFR therapy",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": [
+                                "relapsed",
+                                "refractory"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "KRAS Wild-Type CRC",
+                        "criterion": "KRAS mutation status",
+                        "requirement": {
+                            "requirement_type": "mutation type",
+                            "expected_value": "wild-type"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Advanced KRAS wild type CRC",
+                        "criterion": "colorectal cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "advanced"
+                        }
+                    },
+                    {
+                        "exact_snippets": "progressed or are ineligible for fluoropyrimidine, irinotecan, and oxaliplatin based chemotherapy",
+                        "criterion": "eligibility for chemotherapy",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "relapsed or refractory to at least 1 prior systemic therapy that included an anti-epidermal growth factor receptor (EGFR) antibody",
+                        "criterion": "response to prior EGFR therapy",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": [
+                                "relapsed",
+                                "refractory"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Phase 2 only: Willing to consent to 1 mandatory pre-treatment and 1 on-treatment tumor biopsy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Willing to consent to 1 mandatory pre-treatment and 1 on-treatment tumor biopsy",
+                        "criterion": "tumor biopsy consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willing to consent to 1 mandatory pre-treatment and 1 on-treatment tumor biopsy",
+                        "criterion": "tumor biopsy consent",
+                        "requirement": {
+                            "requirement_type": "number of biopsies",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 2,
+                                "unit": "biopsies"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Phase 2 only",
+                    "criterion": "trial phase",
+                    "requirement": {
+                        "requirement_type": "phase",
+                        "expected_value": "2"
+                    }
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Willing to consent to 1 mandatory pre-treatment and 1 on-treatment tumor biopsy",
+                            "criterion": "tumor biopsy consent",
+                            "requirement": {
+                                "requirement_type": "willingness",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "Willing to consent to 1 mandatory pre-treatment and 1 on-treatment tumor biopsy",
+                            "criterion": "tumor biopsy consent",
+                            "requirement": {
+                                "requirement_type": "number of biopsies",
+                                "expected_value": {
+                                    "operator": "=",
+                                    "value": 2,
+                                    "unit": "biopsies"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Phase 2:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adequate performance status and hematological, liver, and kidney function",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adequate performance status",
+                        "criterion": "performance status",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... hematological ... function",
+                        "criterion": "hematological function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... liver ... function",
+                        "criterion": "liver function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... kidney function",
+                        "criterion": "kidney function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adequate performance status",
+                        "criterion": "performance status",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... hematological ... function",
+                        "criterion": "hematological function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... liver ... function",
+                        "criterion": "liver function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate ... kidney function",
+                        "criterion": "kidney function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Key",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Active brain metastases",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Active brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior treatment with cluster of differentiation 47 (CD47) or signal regulatory protein alpha (SIRPα) targeting agents.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior treatment with cluster of differentiation 47 (CD47) ... targeting agents.",
+                        "criterion": "prior treatment with CD47 targeting agents",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... signal regulatory protein alpha (SIRPα) targeting agents.",
+                        "criterion": "prior treatment with SIRPα targeting agents",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Prior treatment with cluster of differentiation 47 (CD47) ... targeting agents.",
+                        "criterion": "prior treatment with CD47 targeting agents",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... signal regulatory protein alpha (SIRPα) targeting agents.",
+                        "criterion": "prior treatment with SIRPα targeting agents",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Phase 2 only: second malignancy within the last 3 years.",
+                "criterions": [
+                    {
+                        "exact_snippets": "second malignancy within the last 3 years",
+                        "criterion": "second malignancy",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "second malignancy within the last 3 years",
+                                "criterion": "second malignancy",
+                                "requirement": {
+                                    "requirement_type": "time frame",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": "<=",
+                                                "value": 3,
+                                                "unit": "years"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "Phase 2 only",
+                                "criterion": "trial phase",
+                                "requirement": {
+                                    "requirement_type": "specific phase",
+                                    "expected_value": "Phase 2"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Note: Other protocol defined Inclusion/Exclusion criteria may apply.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Other protocol defined Inclusion/Exclusion criteria",
+                        "criterion": "protocol defined criteria",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Other protocol defined Inclusion/Exclusion criteria",
+                    "criterion": "protocol defined criteria",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known active or chronic hepatitis B or C infection or human immunodeficiency virus (HIV)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known active or chronic hepatitis B",
+                        "criterion": "hepatitis B infection",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "active or chronic"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known active or chronic ... hepatitis C infection",
+                        "criterion": "hepatitis C infection",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "active or chronic"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known ... human immunodeficiency virus (HIV)",
+                        "criterion": "HIV infection",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "known"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Known active or chronic hepatitis B",
+                                "criterion": "hepatitis B infection",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "active or chronic"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Known active or chronic ... hepatitis C infection",
+                                "criterion": "hepatitis C infection",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "active or chronic"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Known ... human immunodeficiency virus (HIV)",
+                        "criterion": "HIV infection",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "known"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [
+        {
+            "identified_line": {
+                "line": "Key",
+                "criterions": [
+                    {
+                        "exact_snippets": "Key",
+                        "criterion": "key",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "N/A"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Key",
+                        "criterion": "key",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "N/A"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Pregnancy or active breastfeeding",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "active breastfeeding",
+                        "criterion": "breastfeeding",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "active"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "active breastfeeding",
+                        "criterion": "breastfeeding",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "active"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

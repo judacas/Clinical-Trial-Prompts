@@ -1,0 +1,720 @@
+{
+    "info": {
+        "nct_id": "NCT00123773",
+        "official_title": "A Phase II Study of F-Fluorodeoxyglucose (FluGlucoScan) in Patients With Known or Suspected Cancers of Low Incidence",
+        "inclusion_criteria": "* Male or female. (If female of child bearing potential and outside of the window of 10 days since the last menstrual period, a negative serum or urine pregnancy test is required.)\n* Known or suspected primary or metastatic tumours of myeloma, sarcoma, testicular carcinoma (seminomatous and non-seminomatous germ cell tumours), endometrial carcinoma, renal cell carcinoma, pancreatic adenocarcinoma, malignant mesothelioma, gastric carcinoma and cholangiocarcinoma.\n* Age equal to or greater than 15 years\n* Able and willing to follow instructions and comply with the protocol\n* Provide written informed consent prior to participation in this study\n* Karnofsky Performance Scale score 60-100\nHealthy volunteers allowed\nMust have minimum age of 15 Years",
+        "exclusion_criteria": "* Nursing or pregnant females\n* Having had surgery or radiotherapy within 10 days of the planned imaging study\n* Presence of a severe infection\n* Age less than 15 years\n* Blood glucose greater than 10mmol/L",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Male or female. (If female of child bearing potential and outside of the window of 10 days since the last menstrual period, a negative serum or urine pregnancy test is required.)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male or female.",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "female of child bearing potential",
+                        "criterion": "child bearing potential",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "outside of the window of 10 days since the last menstrual period",
+                        "criterion": "time since last menstrual period",
+                        "requirement": {
+                            "requirement_type": "time since last menstrual period",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "a negative serum or urine pregnancy test is required",
+                        "criterion": "pregnancy test",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Male or female.",
+                                "criterion": "gender",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": [
+                                        "male",
+                                        "female"
+                                    ]
+                                }
+                            },
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "female of child bearing potential",
+                                    "criterion": "child bearing potential",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "female of child bearing potential",
+                                "criterion": "child bearing potential",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "outside of the window of 10 days since the last menstrual period",
+                                "criterion": "time since last menstrual period",
+                                "requirement": {
+                                    "requirement_type": "time since last menstrual period",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 10,
+                                        "unit": "days"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "a negative serum or urine pregnancy test is required",
+                                "criterion": "pregnancy test",
+                                "requirement": {
+                                    "requirement_type": "result",
+                                    "expected_value": "negative"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known or suspected primary or metastatic tumours of myeloma, sarcoma, testicular carcinoma (seminomatous and non-seminomatous germ cell tumours), endometrial carcinoma, renal cell carcinoma, pancreatic adenocarcinoma, malignant mesothelioma, gastric carcinoma and cholangiocarcinoma.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of myeloma",
+                        "criterion": "myeloma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... sarcoma",
+                        "criterion": "sarcoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... testicular carcinoma (seminomatous and non-seminomatous germ cell tumours)",
+                        "criterion": "testicular carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... endometrial carcinoma",
+                        "criterion": "endometrial carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... renal cell carcinoma",
+                        "criterion": "renal cell carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... pancreatic adenocarcinoma",
+                        "criterion": "pancreatic adenocarcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... malignant mesothelioma",
+                        "criterion": "malignant mesothelioma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... gastric carcinoma",
+                        "criterion": "gastric carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... cholangiocarcinoma",
+                        "criterion": "cholangiocarcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of myeloma",
+                        "criterion": "myeloma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... sarcoma",
+                        "criterion": "sarcoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... testicular carcinoma (seminomatous and non-seminomatous germ cell tumours)",
+                        "criterion": "testicular carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... endometrial carcinoma",
+                        "criterion": "endometrial carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... renal cell carcinoma",
+                        "criterion": "renal cell carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... pancreatic adenocarcinoma",
+                        "criterion": "pancreatic adenocarcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... malignant mesothelioma",
+                        "criterion": "malignant mesothelioma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... gastric carcinoma",
+                        "criterion": "gastric carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known or suspected primary or metastatic tumours of ... cholangiocarcinoma",
+                        "criterion": "cholangiocarcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age equal to or greater than 15 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age equal to or greater than 15 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 15,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age equal to or greater than 15 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 15,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able and willing to follow instructions and comply with the protocol",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able and willing to follow instructions",
+                        "criterion": "ability and willingness to follow instructions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "comply with the protocol",
+                        "criterion": "compliance with the protocol",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able and willing to follow instructions",
+                        "criterion": "ability and willingness to follow instructions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "comply with the protocol",
+                        "criterion": "compliance with the protocol",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Provide written informed consent prior to participation in this study",
+                "criterions": [
+                    {
+                        "exact_snippets": "written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Karnofsky Performance Scale score 60-100",
+                "criterions": [
+                    {
+                        "exact_snippets": "Karnofsky Performance Scale score 60-100",
+                        "criterion": "Karnofsky Performance Scale score",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 60,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 100,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Karnofsky Performance Scale score 60-100",
+                        "criterion": "Karnofsky Performance Scale score",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 60,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 100,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 15 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 15 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 15 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Nursing or pregnant females",
+                "criterions": [
+                    {
+                        "exact_snippets": "Nursing",
+                        "criterion": "nursing status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "nursing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "pregnant females",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "pregnant"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Nursing",
+                        "criterion": "nursing status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "nursing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "pregnant females",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "pregnant"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Having had surgery or radiotherapy within 10 days of the planned imaging study",
+                "criterions": [
+                    {
+                        "exact_snippets": "Having had surgery ... within 10 days of the planned imaging study",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "time since procedure",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Having had ... radiotherapy within 10 days of the planned imaging study",
+                        "criterion": "radiotherapy",
+                        "requirement": {
+                            "requirement_type": "time since procedure",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Having had surgery ... within 10 days of the planned imaging study",
+                        "criterion": "surgery",
+                        "requirement": {
+                            "requirement_type": "time since procedure",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Having had ... radiotherapy within 10 days of the planned imaging study",
+                        "criterion": "radiotherapy",
+                        "requirement": {
+                            "requirement_type": "time since procedure",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Presence of a severe infection",
+                "criterions": [
+                    {
+                        "exact_snippets": "Presence of a severe infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Presence of a severe infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Presence of a severe infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Presence of a severe infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age less than 15 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age less than 15 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 15,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age less than 15 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 15,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Blood glucose greater than 10mmol/L",
+                "criterions": [
+                    {
+                        "exact_snippets": "Blood glucose greater than 10mmol/L",
+                        "criterion": "blood glucose",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "mmol/L"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Blood glucose greater than 10mmol/L",
+                    "criterion": "blood glucose",
+                    "requirement": {
+                        "requirement_type": "level",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 10,
+                            "unit": "mmol/L"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

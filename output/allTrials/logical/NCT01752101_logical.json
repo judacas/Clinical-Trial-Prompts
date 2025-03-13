@@ -1,0 +1,780 @@
+{
+    "info": {
+        "nct_id": "NCT01752101",
+        "official_title": "Identification of a Plasma Proteomic Signature for Lung Cancer",
+        "inclusion_criteria": "* age ≥ 40\n* any smoking status, e.g. current, former, or never\n* co-morbid conditions, e.g. COPD\n* Nodule size ≥ 4 mm and ≤ 30 mm (up to Stage 2B eligible), any spiculation or ground glass opacity\n* Pathology: malignant - adenocarcinoma, squamous, or large cell\n* Pathology: benign - inflammatory (e.g. granulomatous, infectious) or non-inflammatory (e.g. hamartoma)\n* Clinical stage, Primary tumor: ≤T2 (e.g. 1A, 1B, 2A and 2B)\n* Clinical stage, Regional lymph nodes: N0 or N1 only\n* Clinical stage, Distant metastasis: M0 only\nHealthy volunteers allowed\nMust have minimum age of 40 Years",
+        "exclusion_criteria": "* prior malignancy within 5 years of lung nodule diagnosis\n* No nodule size available\n* No pathology data available for those with\n* Current diagnosis of non-small cell lung cancer\n* Clinical stage: Primary tumor ≥T3; Regional lymph nodes: ≥N2; 4 Distant metastasis: ≥M1",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* age ≥ 40",
+                "criterions": [
+                    {
+                        "exact_snippets": "age ≥ 40",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 40,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "age ≥ 40",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 40,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* any smoking status, e.g. current, former, or never",
+                "criterions": [
+                    {
+                        "exact_snippets": "any smoking status, e.g. current, former, or never",
+                        "criterion": "smoking status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "any smoking status, e.g. current, former, or never",
+                        "criterion": "smoking status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* co-morbid conditions, e.g. COPD",
+                "criterions": [
+                    {
+                        "exact_snippets": "co-morbid conditions",
+                        "criterion": "co-morbid conditions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "COPD",
+                        "criterion": "COPD",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "co-morbid conditions",
+                        "criterion": "co-morbid conditions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "COPD",
+                        "criterion": "COPD",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Nodule size ≥ 4 mm and ≤ 30 mm (up to Stage 2B eligible), any spiculation or ground glass opacity",
+                "criterions": [
+                    {
+                        "exact_snippets": "Nodule size ≥ 4 mm and ≤ 30 mm",
+                        "criterion": "nodule size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 4,
+                                        "unit": "mm"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 30,
+                                        "unit": "mm"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "up to Stage 2B eligible",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.5,
+                                "unit": "B"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "any spiculation",
+                        "criterion": "nodule spiculation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "ground glass opacity",
+                        "criterion": "ground glass opacity",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Nodule size ≥ 4 mm and ≤ 30 mm",
+                                "criterion": "nodule size",
+                                "requirement": {
+                                    "requirement_type": "size",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 4,
+                                                "unit": "mm"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 30,
+                                                "unit": "mm"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "up to Stage 2B eligible",
+                                "criterion": "cancer stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 2.5,
+                                        "unit": "B"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "any spiculation",
+                                "criterion": "nodule spiculation",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "ground glass opacity",
+                                "criterion": "ground glass opacity",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Clinical stage, Distant metastasis: M0 only",
+                "criterions": [
+                    {
+                        "exact_snippets": "Distant metastasis: M0 only",
+                        "criterion": "distant metastasis",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "M0"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Distant metastasis: M0 only",
+                        "criterion": "distant metastasis",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "M0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 40 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 40 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 40,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 40 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 40,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pathology: benign - inflammatory (e.g. granulomatous, infectious) or non-inflammatory (e.g. hamartoma)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pathology: benign - inflammatory (e.g. granulomatous, infectious)",
+                        "criterion": "pathology",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "benign"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Pathology: benign - inflammatory (e.g. granulomatous, infectious)",
+                        "criterion": "pathology",
+                        "requirement": {
+                            "requirement_type": "subtype",
+                            "expected_value": [
+                                "inflammatory",
+                                "granulomatous",
+                                "infectious"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Pathology: benign - non-inflammatory (e.g. hamartoma)",
+                        "criterion": "pathology",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "benign"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Pathology: benign - non-inflammatory (e.g. hamartoma)",
+                        "criterion": "pathology",
+                        "requirement": {
+                            "requirement_type": "subtype",
+                            "expected_value": "non-inflammatory"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Pathology: benign - inflammatory (e.g. granulomatous, infectious)",
+                                "criterion": "pathology",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "benign"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Pathology: benign - inflammatory (e.g. granulomatous, infectious)",
+                                "criterion": "pathology",
+                                "requirement": {
+                                    "requirement_type": "subtype",
+                                    "expected_value": [
+                                        "inflammatory",
+                                        "granulomatous",
+                                        "infectious"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Pathology: benign - non-inflammatory (e.g. hamartoma)",
+                                "criterion": "pathology",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "benign"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Pathology: benign - non-inflammatory (e.g. hamartoma)",
+                                "criterion": "pathology",
+                                "requirement": {
+                                    "requirement_type": "subtype",
+                                    "expected_value": "non-inflammatory"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* prior malignancy within 5 years of lung nodule diagnosis",
+                "criterions": [
+                    {
+                        "exact_snippets": "prior malignancy within 5 years of lung nodule diagnosis",
+                        "criterion": "prior malignancy",
+                        "requirement": {
+                            "requirement_type": "time since diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "prior malignancy within 5 years of lung nodule diagnosis",
+                        "criterion": "prior malignancy",
+                        "requirement": {
+                            "requirement_type": "time since diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No nodule size available",
+                "criterions": [
+                    {
+                        "exact_snippets": "No nodule size available",
+                        "criterion": "nodule size",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "No nodule size available",
+                    "criterion": "nodule size",
+                    "requirement": {
+                        "requirement_type": "availability",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No pathology data available for those with",
+                "criterions": [
+                    {
+                        "exact_snippets": "No pathology data available",
+                        "criterion": "pathology data",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No pathology data available",
+                        "criterion": "pathology data",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Current diagnosis of non-small cell lung cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Current diagnosis of non-small cell lung cancer",
+                        "criterion": "non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Current diagnosis of non-small cell lung cancer",
+                    "criterion": "non-small cell lung cancer",
+                    "requirement": {
+                        "requirement_type": "diagnosis",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Clinical stage: Primary tumor ≥T3; Regional lymph nodes: ≥N2; 4 Distant metastasis: ≥M1",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinical stage: Primary tumor ≥T3",
+                        "criterion": "primary tumor stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "T"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Regional lymph nodes: ≥N2",
+                        "criterion": "regional lymph nodes stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "N"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Distant metastasis: ≥M1",
+                        "criterion": "distant metastasis stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "M"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Clinical stage: Primary tumor ≥T3",
+                        "criterion": "primary tumor stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "T"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Regional lymph nodes: ≥N2",
+                        "criterion": "regional lymph nodes stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "N"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Distant metastasis: ≥M1",
+                        "criterion": "distant metastasis stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "M"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Pathology: malignant - adenocarcinoma, squamous, or large cell",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pathology: malignant - adenocarcinoma, squamous, or large cell",
+                        "criterion": "pathology",
+                        "requirement": {
+                            "requirement_type": "malignancy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Pathology: malignant - adenocarcinoma, squamous, or large cell",
+                        "criterion": "pathology",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "adenocarcinoma",
+                                "squamous",
+                                "large cell"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Pathology: malignant - adenocarcinoma, squamous, or large cell",
+                                "criterion": "pathology",
+                                "requirement": {
+                                    "requirement_type": "malignancy",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "Pathology: malignant - adenocarcinoma, squamous, or large cell",
+                                        "criterion": "pathology",
+                                        "requirement": {
+                                            "requirement_type": "type",
+                                            "expected_value": "adenocarcinoma"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Pathology: malignant - adenocarcinoma, squamous, or large cell",
+                                        "criterion": "pathology",
+                                        "requirement": {
+                                            "requirement_type": "type",
+                                            "expected_value": "squamous"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Pathology: malignant - adenocarcinoma, squamous, or large cell",
+                                        "criterion": "pathology",
+                                        "requirement": {
+                                            "requirement_type": "type",
+                                            "expected_value": "large cell"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Clinical stage, Primary tumor: ≤T2 (e.g. 1A, 1B, 2A and 2B)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinical stage, Primary tumor: ≤T2 (e.g. 1A, 1B, 2A and 2B)",
+                        "criterion": "clinical stage of primary tumor",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "T"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Clinical stage, Primary tumor: \u001aT2 (e.g. 1A, 1B, 2A and 2B)",
+                        "criterion": "clinical stage of primary tumor",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "T"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Clinical stage, Regional lymph nodes: N0 or N1 only",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinical stage",
+                        "criterion": "clinical stage",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "N0 or N1 only"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Regional lymph nodes: N0 or N1 only",
+                        "criterion": "regional lymph nodes",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "N0 or N1 only"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Clinical stage",
+                        "criterion": "clinical stage",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "N0"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Clinical stage",
+                        "criterion": "clinical stage",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "N1"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Regional lymph nodes: N0 or N1 only",
+                        "criterion": "regional lymph nodes",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "N0"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Regional lymph nodes: N0 or N1 only",
+                        "criterion": "regional lymph nodes",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "N1"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,226 @@
+{
+    "info": {
+        "nct_id": "NCT02405273",
+        "official_title": "Effects of Early Pulmonary Rehabilitation and Long-term Exercise on Functioning, Quality of Life and Postoperative Outcome in Lung Cancer Patients",
+        "inclusion_criteria": "* stage 1 to 2B diagnosed or suspected NSCLC in operable patients\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 75 Years",
+        "exclusion_criteria": "* unresectable disease, N2 disease requiring induction or postoperative chemotherapy\n* patients unfit for physical exercise requested by rehabilitation and assessments",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* stage 1 to 2B diagnosed or suspected NSCLC in operable patients",
+                "criterions": [
+                    {
+                        "exact_snippets": "stage 1 to 2B diagnosed or suspected NSCLC",
+                        "criterion": "NSCLC stage",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "stage"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2.5,
+                                        "unit": "stage"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "operable patients",
+                        "criterion": "operability",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "operable"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "stage 1 to 2B diagnosed or suspected NSCLC",
+                        "criterion": "NSCLC stage",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "stage"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2.5,
+                                        "unit": "stage"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "operable patients",
+                        "criterion": "operability",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "operable"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 75 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* unresectable disease, N2 disease requiring induction or postoperative chemotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "unresectable disease",
+                        "criterion": "disease resectability",
+                        "requirement": {
+                            "requirement_type": "resectability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "N2 disease",
+                        "criterion": "N2 disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "requiring induction or postoperative chemotherapy",
+                        "criterion": "chemotherapy requirement",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients unfit for physical exercise requested by rehabilitation and assessments",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients unfit for physical exercise",
+                        "criterion": "physical exercise fitness",
+                        "requirement": {
+                            "requirement_type": "fitness",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

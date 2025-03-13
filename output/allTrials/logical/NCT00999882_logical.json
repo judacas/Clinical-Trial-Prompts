@@ -1,0 +1,410 @@
+{
+    "info": {
+        "nct_id": "NCT00999882",
+        "official_title": "A Phase I/II, Open-label, Multicentre Study to Assess the Safety, Tolerability, Pharmacokinetics and Preliminary Efficacy of Tor Kinase Inhibitor (AZD8055) in Asian Patients With Advanced Stage Hepatocellular Carcinoma (HCC) and With Mild or Moderate Hepatic Impairment",
+        "inclusion_criteria": "* Advanced stage Hepatocellular Carcinoma (HCC) confirmed by cytology or histology\n* Advanced stage Hepatocellular Carcinoma (HCC) or metastatic Hepatocellular Carcinoma (HCC) which is inoperable and incurable with standard available treatments\n* Relatively good overall health other than cancer (WHO performance status (0-2)\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients with severe heart conditions, or those who have had heart surgery such as coronary artery bypass graft within the last 6 months, or patients with uncontrolled high blood pressure despite medical management.\n* Patients must not have received any other anti cancer therapy including TACE within 21 days of entering the trial\n* Patients must not have received a liver transplant.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with severe heart conditions, or those who have had heart surgery such as coronary artery bypass graft within the last 6 months, or patients with uncontrolled high blood pressure despite medical management.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with severe heart conditions",
+                        "criterion": "heart condition",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "heart surgery such as coronary artery bypass graft within the last 6 months",
+                        "criterion": "heart surgery",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "coronary artery bypass graft"
+                        }
+                    },
+                    {
+                        "exact_snippets": "heart surgery such as coronary artery bypass graft within the last 6 months",
+                        "criterion": "heart surgery",
+                        "requirement": {
+                            "requirement_type": "time since surgery",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with uncontrolled high blood pressure despite medical management",
+                        "criterion": "high blood pressure",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with uncontrolled high blood pressure despite medical management",
+                        "criterion": "high blood pressure",
+                        "requirement": {
+                            "requirement_type": "management",
+                            "expected_value": "despite medical management"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients with severe heart conditions",
+                                "criterion": "heart condition",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "severe"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "heart surgery such as coronary artery bypass graft within the last 6 months",
+                                "criterion": "heart surgery",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "coronary artery bypass graft"
+                                }
+                            },
+                            {
+                                "exact_snippets": "heart surgery such as coronary artery bypass graft within the last 6 months",
+                                "criterion": "heart surgery",
+                                "requirement": {
+                                    "requirement_type": "time since surgery",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 6,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "patients with uncontrolled high blood pressure despite medical management",
+                                "criterion": "high blood pressure",
+                                "requirement": {
+                                    "requirement_type": "control",
+                                    "expected_value": "uncontrolled"
+                                }
+                            },
+                            {
+                                "exact_snippets": "patients with uncontrolled high blood pressure despite medical management",
+                                "criterion": "high blood pressure",
+                                "requirement": {
+                                    "requirement_type": "management",
+                                    "expected_value": "despite medical management"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must not have received any other anti cancer therapy including TACE within 21 days of entering the trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must not have received any other anti cancer therapy",
+                        "criterion": "anti cancer therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "including TACE",
+                        "criterion": "TACE",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 21 days of entering the trial",
+                        "criterion": "time since last anti cancer therapy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 21,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients must not have received any other anti cancer therapy",
+                                "criterion": "anti cancer therapy",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "including TACE",
+                                "criterion": "TACE",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "within 21 days of entering the trial",
+                        "criterion": "time since last anti cancer therapy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 21,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must not have received a liver transplant.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must not have received a liver transplant.",
+                        "criterion": "liver transplant",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients must not have received a liver transplant.",
+                        "criterion": "liver transplant",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Advanced stage Hepatocellular Carcinoma (HCC) confirmed by cytology or histology",
+                "criterions": [
+                    {
+                        "exact_snippets": "Advanced stage Hepatocellular Carcinoma (HCC)",
+                        "criterion": "Hepatocellular Carcinoma (HCC)",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "advanced"
+                        }
+                    },
+                    {
+                        "exact_snippets": "confirmed by cytology or histology",
+                        "criterion": "Hepatocellular Carcinoma (HCC)",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": [
+                                "cytology",
+                                "histology"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Advanced stage Hepatocellular Carcinoma (HCC) or metastatic Hepatocellular Carcinoma (HCC) which is inoperable and incurable with standard available treatments",
+                "criterions": [
+                    {
+                        "exact_snippets": "Advanced stage Hepatocellular Carcinoma (HCC)",
+                        "criterion": "Hepatocellular Carcinoma (HCC)",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "advanced"
+                        }
+                    },
+                    {
+                        "exact_snippets": "metastatic Hepatocellular Carcinoma (HCC)",
+                        "criterion": "Hepatocellular Carcinoma (HCC)",
+                        "requirement": {
+                            "requirement_type": "metastasis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "inoperable",
+                        "criterion": "Hepatocellular Carcinoma (HCC)",
+                        "requirement": {
+                            "requirement_type": "operability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "incurable with standard available treatments",
+                        "criterion": "Hepatocellular Carcinoma (HCC)",
+                        "requirement": {
+                            "requirement_type": "curability with standard treatments",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Relatively good overall health other than cancer (WHO performance status (0-2)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Relatively good overall health other than cancer",
+                        "criterion": "overall health",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "relatively good"
+                        }
+                    },
+                    {
+                        "exact_snippets": "WHO performance status (0-2)",
+                        "criterion": "WHO performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,774 @@
+{
+    "info": {
+        "nct_id": "NCT02035631",
+        "official_title": "Prevention of Breast Cancer Recurrence Through Weight Control, Diet, and Physical Activity Intervention",
+        "inclusion_criteria": "* incident primary breast cancer (ICD-O C50)\n* stage at diagnosis I, II, IIIA (or T1-3, N0-N2, M0)\n* age at diagnosis below 76 years\n* within 3 months since completion of standard treatment (excluding hormonal therapy) and within 15 months since the diagnosis of the disease\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years\nMust have maximum age of 75 Years",
+        "exclusion_criteria": "* morbid obesity (BMI >40kg/m²) or underweight (BMI <18kg/m²)\n* ischemic heart disease (coronary syndrome, unstable angina or myocardial infarction) or cerebrovascular incident (ischemic or hemorrhagic) during the previous 12 months\n* diabetes (only if unstable - glycosylated haemoglobin >9%)\n* current medical or surgical treatment to lose weight\n* mental illness that would prevent the patient from carrying out the intervention\n* logistical factors which would prevent the patient from carrying out the intervention (distance to travel, work or family commitments)\n* pregnant or planning pregnancy",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* incident primary breast cancer (ICD-O C50)",
+                "criterions": [
+                    {
+                        "exact_snippets": "incident primary breast cancer (ICD-O C50)",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "incident primary"
+                        }
+                    },
+                    {
+                        "exact_snippets": "incident primary breast cancer (ICD-O C50)",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "ICD-O code",
+                            "expected_value": "C50"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "incident primary breast cancer (ICD-O C50)",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "incident primary"
+                        }
+                    },
+                    {
+                        "exact_snippets": "incident primary breast cancer (ICD-O C50)",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "ICD-O code",
+                            "expected_value": "C50"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* stage at diagnosis I, II, IIIA (or T1-3, N0-N2, M0)",
+                "criterions": [
+                    {
+                        "exact_snippets": "stage at diagnosis I, II, IIIA",
+                        "criterion": "stage at diagnosis",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "I",
+                                "II",
+                                "IIIA"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "T1-3, N0-N2, M0",
+                        "criterion": "TNM classification",
+                        "requirement": {
+                            "requirement_type": "T",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "T"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "T"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "T1-3, N0-N2, M0",
+                        "criterion": "TNM classification",
+                        "requirement": {
+                            "requirement_type": "N",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "T1-3, N0-N2, M0",
+                        "criterion": "TNM classification",
+                        "requirement": {
+                            "requirement_type": "M",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 0,
+                                "unit": "M"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "stage at diagnosis I, II, IIIA",
+                                "criterion": "stage at diagnosis",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": [
+                                        "I",
+                                        "II",
+                                        "IIIA"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "T1-3, N0-N2, M0",
+                                "criterion": "TNM classification",
+                                "requirement": {
+                                    "requirement_type": "T",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 1,
+                                                "unit": "T"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 3,
+                                                "unit": "T"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "T1-3, N0-N2, M0",
+                                "criterion": "TNM classification",
+                                "requirement": {
+                                    "requirement_type": "N",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 0,
+                                                "unit": "N"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 2,
+                                                "unit": "N"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "T1-3, N0-N2, M0",
+                                "criterion": "TNM classification",
+                                "requirement": {
+                                    "requirement_type": "M",
+                                    "expected_value": {
+                                        "operator": "=",
+                                        "value": 0,
+                                        "unit": "M"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* age at diagnosis below 76 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "age at diagnosis below 76 years",
+                        "criterion": "age at diagnosis",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 76,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "age at diagnosis below 76 years",
+                        "criterion": "age at diagnosis",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 76,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* within 3 months since completion of standard treatment (excluding hormonal therapy) and within 15 months since the diagnosis of the disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "within 3 months since completion of standard treatment (excluding hormonal therapy)",
+                        "criterion": "time since completion of standard treatment",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 15 months since the diagnosis of the disease",
+                        "criterion": "time since diagnosis",
+                        "requirement": {
+                            "requirement_type": "time since diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 15,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "within 3 months since completion of standard treatment (excluding hormonal therapy)",
+                        "criterion": "time since completion of standard treatment",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 15 months since the diagnosis of the disease",
+                        "criterion": "time since diagnosis",
+                        "requirement": {
+                            "requirement_type": "time since diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 15,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 75 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* morbid obesity (BMI >40kg/m²) or underweight (BMI <18kg/m²)",
+                "criterions": [
+                    {
+                        "exact_snippets": "morbid obesity (BMI >40kg/m²)",
+                        "criterion": "BMI",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 40,
+                                "unit": "kg/m²"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "underweight (BMI <18kg/m²)",
+                        "criterion": "BMI",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "kg/m²"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "morbid obesity (BMI >40kg/m²)",
+                        "criterion": "BMI",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 40,
+                                "unit": "kg/m²"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "underweight (BMI <18kg/m²)",
+                        "criterion": "BMI",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "kg/m²"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* ischemic heart disease (coronary syndrome, unstable angina or myocardial infarction) or cerebrovascular incident (ischemic or hemorrhagic) during the previous 12 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "ischemic heart disease (coronary syndrome, unstable angina or myocardial infarction)",
+                        "criterion": "ischemic heart disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cerebrovascular incident (ischemic or hemorrhagic)",
+                        "criterion": "cerebrovascular incident",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "during the previous 12 months",
+                        "criterion": "time since event",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 12,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "ischemic heart disease (coronary syndrome, unstable angina or myocardial infarction)",
+                                        "criterion": "ischemic heart disease",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "during the previous 12 months",
+                                        "criterion": "time since event",
+                                        "requirement": {
+                                            "requirement_type": "duration",
+                                            "expected_value": {
+                                                "operator": "<=",
+                                                "value": 12,
+                                                "unit": "months"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "cerebrovascular incident (ischemic or hemorrhagic)",
+                                        "criterion": "cerebrovascular incident",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "during the previous 12 months",
+                                        "criterion": "time since event",
+                                        "requirement": {
+                                            "requirement_type": "duration",
+                                            "expected_value": {
+                                                "operator": "<=",
+                                                "value": 12,
+                                                "unit": "months"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* diabetes (only if unstable - glycosylated haemoglobin >9%)",
+                "criterions": [
+                    {
+                        "exact_snippets": "diabetes (only if unstable - glycosylated haemoglobin >9%)",
+                        "criterion": "diabetes",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "unstable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diabetes (only if unstable - glycosylated haemoglobin >9%)",
+                        "criterion": "diabetes",
+                        "requirement": {
+                            "requirement_type": "glycosylated haemoglobin",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 9,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "diabetes (only if unstable - glycosylated haemoglobin >9%)",
+                    "criterion": "diabetes",
+                    "requirement": {
+                        "requirement_type": "stability",
+                        "expected_value": "unstable"
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "diabetes (only if unstable - glycosylated haemoglobin >9%)",
+                    "criterion": "diabetes",
+                    "requirement": {
+                        "requirement_type": "glycosylated haemoglobin",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 9,
+                            "unit": "%"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* current medical or surgical treatment to lose weight",
+                "criterions": [
+                    {
+                        "exact_snippets": "current medical or surgical treatment to lose weight",
+                        "criterion": "weight loss treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "current medical or surgical treatment to lose weight",
+                    "criterion": "weight loss treatment",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* mental illness that would prevent the patient from carrying out the intervention",
+                "criterions": [
+                    {
+                        "exact_snippets": "mental illness that would prevent the patient from carrying out the intervention",
+                        "criterion": "mental illness",
+                        "requirement": {
+                            "requirement_type": "impact on intervention",
+                            "expected_value": "prevents carrying out the intervention"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "mental illness that would prevent the patient from carrying out the intervention",
+                    "criterion": "mental illness",
+                    "requirement": {
+                        "requirement_type": "impact on intervention",
+                        "expected_value": "prevents carrying out the intervention"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* pregnant or planning pregnancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "pregnant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "planning pregnancy",
+                        "criterion": "pregnancy intention",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": "planning pregnancy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "pregnant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "planning pregnancy",
+                        "criterion": "pregnancy intention",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": "planning pregnancy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* logistical factors which would prevent the patient from carrying out the intervention (distance to travel, work or family commitments)",
+                "criterions": [
+                    {
+                        "exact_snippets": "logistical factors which would prevent the patient from carrying out the intervention (distance to travel, work or family commitments)",
+                        "criterion": "logistical factors",
+                        "requirement": {
+                            "requirement_type": "impact on intervention",
+                            "expected_value": "prevent the patient from carrying out the intervention"
+                        }
+                    },
+                    {
+                        "exact_snippets": "distance to travel",
+                        "criterion": "distance to travel",
+                        "requirement": {
+                            "requirement_type": "impact on intervention",
+                            "expected_value": "prevent the patient from carrying out the intervention"
+                        }
+                    },
+                    {
+                        "exact_snippets": "work or family commitments",
+                        "criterion": "work or family commitments",
+                        "requirement": {
+                            "requirement_type": "impact on intervention",
+                            "expected_value": "prevent the patient from carrying out the intervention"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "distance to travel",
+                        "criterion": "distance to travel",
+                        "requirement": {
+                            "requirement_type": "impact on intervention",
+                            "expected_value": "prevent the patient from carrying out the intervention"
+                        }
+                    },
+                    {
+                        "exact_snippets": "work or family commitments",
+                        "criterion": "work or family commitments",
+                        "requirement": {
+                            "requirement_type": "impact on intervention",
+                            "expected_value": "prevent the patient from carrying out the intervention"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,564 @@
+{
+    "info": {
+        "nct_id": "NCT05202301",
+        "official_title": "Medication Adherence and Discontinuation Among Patients With Prostate Cancer Who Initiated Second Generation Androgen Receptor Inhibitors",
+        "inclusion_criteria": "* Have at least 1 prescription claims for enzalutamide (National Drug Code [NDC]: 00469-0125-99, 00469-0625-99, 00469-0725-60), apalutamide (NDC: 59676-600-12, 59676-600-56, 59676-600-99) or darolutamide (NDC: 50419-395-01, 50419-395-72) during the index identification period.\n\n  -- The date of the earliest SGARI claim to occur during this period will be defined as the index date with the corresponding SGARI as the index treatment.\n* Have ≥1 diagnosis of prostate cancer (ICD-10 code C61.) during the overall baseline period.\n* Age ≥18 years and male gender on the index date.\n* Have continuous health plan enrollment with medical and pharmacy benefits for at least 6 months prior to the index date.\n* Have continuous health plan enrollment with medical and pharmacy benefits for at least 3 months after the index date and throughout the follow-up period.\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Since patients should not be prescribed more than one SGARI when initiating treatment, patients with more than one SGARI prescribed on the index date will be excluded from the study. This will allow each patient to be assigned to a single study cohort.\n* In order to select patients who are initiating SGARI treatment, patients with the index SGARI treatment during the 1 year baseline period will be excluded from the study.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Have at least 1 prescription claims for enzalutamide (National Drug Code [NDC]: 00469-0125-99, 00469-0625-99, 00469-0725-60), apalutamide (NDC: 59676-600-12, 59676-600-56, 59676-600-99) or darolutamide (NDC: 50419-395-01, 50419-395-72) during the index identification period.",
+                "criterions": [
+                    {
+                        "exact_snippets": "at least 1 prescription claims for enzalutamide (National Drug Code [NDC]: 00469-0125-99, 00469-0625-99, 00469-0725-60)",
+                        "criterion": "enzalutamide prescription claims",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "claims"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 1 prescription claims for ... apalutamide (NDC: 59676-600-12, 59676-600-56, 59676-600-99)",
+                        "criterion": "apalutamide prescription claims",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "claims"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 1 prescription claims for ... darolutamide (NDC: 50419-395-01, 50419-395-72)",
+                        "criterion": "darolutamide prescription claims",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "claims"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "at least 1 prescription claims for enzalutamide (National Drug Code [NDC]: 00469-0125-99, 00469-0625-99, 00469-0725-60)",
+                        "criterion": "enzalutamide prescription claims",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "claims"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 1 prescription claims for ... apalutamide (NDC: 59676-600-12, 59676-600-56, 59676-600-99)",
+                        "criterion": "apalutamide prescription claims",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "claims"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 1 prescription claims for ... darolutamide (NDC: 50419-395-01, 50419-395-72)",
+                        "criterion": "darolutamide prescription claims",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "claims"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "-- The date of the earliest SGARI claim to occur during this period will be defined as the index date with the corresponding SGARI as the index treatment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "earliest SGARI claim",
+                        "criterion": "SGARI claim",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "earliest"
+                        }
+                    },
+                    {
+                        "exact_snippets": "index treatment",
+                        "criterion": "SGARI",
+                        "requirement": {
+                            "requirement_type": "role",
+                            "expected_value": "index treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "earliest SGARI claim",
+                        "criterion": "SGARI claim",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "earliest"
+                        }
+                    },
+                    {
+                        "exact_snippets": "index treatment",
+                        "criterion": "SGARI",
+                        "requirement": {
+                            "requirement_type": "role",
+                            "expected_value": "index treatment"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have ≥1 diagnosis of prostate cancer (ICD-10 code C61.) during the overall baseline period.",
+                "criterions": [
+                    {
+                        "exact_snippets": "≥1 diagnosis of prostate cancer (ICD-10 code C61.)",
+                        "criterion": "prostate cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "diagnosis"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "≥1 diagnosis of prostate cancer (ICD-10 code C61.)",
+                        "criterion": "prostate cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "diagnosis"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age ≥18 years and male gender on the index date.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age ≥18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "male gender",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "gender",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age ≥18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "male gender",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "gender",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have continuous health plan enrollment with medical and pharmacy benefits for at least 6 months prior to the index date.",
+                "criterions": [
+                    {
+                        "exact_snippets": "continuous health plan enrollment",
+                        "criterion": "health plan enrollment",
+                        "requirement": {
+                            "requirement_type": "continuity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "medical and pharmacy benefits",
+                        "criterion": "benefits",
+                        "requirement": {
+                            "requirement_type": "types",
+                            "expected_value": [
+                                "medical",
+                                "pharmacy"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 6 months prior to the index date",
+                        "criterion": "enrollment duration",
+                        "requirement": {
+                            "requirement_type": "minimum duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "continuous health plan enrollment",
+                        "criterion": "health plan enrollment",
+                        "requirement": {
+                            "requirement_type": "continuity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "medical and pharmacy benefits",
+                        "criterion": "benefits",
+                        "requirement": {
+                            "requirement_type": "types",
+                            "expected_value": [
+                                "medical",
+                                "pharmacy"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 6 months prior to the index date",
+                        "criterion": "enrollment duration",
+                        "requirement": {
+                            "requirement_type": "minimum duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have continuous health plan enrollment with medical and pharmacy benefits for at least 3 months after the index date and throughout the follow-up period.",
+                "criterions": [
+                    {
+                        "exact_snippets": "continuous health plan enrollment with medical and pharmacy benefits",
+                        "criterion": "health plan enrollment",
+                        "requirement": {
+                            "requirement_type": "continuity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "continuous health plan enrollment with medical and pharmacy benefits",
+                        "criterion": "health plan enrollment",
+                        "requirement": {
+                            "requirement_type": "benefits",
+                            "expected_value": [
+                                "medical",
+                                "pharmacy"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 3 months after the index date",
+                        "criterion": "health plan enrollment duration",
+                        "requirement": {
+                            "requirement_type": "minimum duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "throughout the follow-up period",
+                        "criterion": "health plan enrollment duration",
+                        "requirement": {
+                            "requirement_type": "continuity",
+                            "expected_value": "throughout follow-up period"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "continuous health plan enrollment with medical and pharmacy benefits",
+                                "criterion": "health plan enrollment",
+                                "requirement": {
+                                    "requirement_type": "continuity",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "continuous health plan enrollment with medical and pharmacy benefits",
+                                "criterion": "health plan enrollment",
+                                "requirement": {
+                                    "requirement_type": "benefits",
+                                    "expected_value": [
+                                        "medical",
+                                        "pharmacy"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "at least 3 months after the index date",
+                                "criterion": "health plan enrollment duration",
+                                "requirement": {
+                                    "requirement_type": "minimum duration",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "throughout the follow-up period",
+                                "criterion": "health plan enrollment duration",
+                                "requirement": {
+                                    "requirement_type": "continuity",
+                                    "expected_value": "throughout follow-up period"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Since patients should not be prescribed more than one SGARI when initiating treatment, patients with more than one SGARI prescribed on the index date will be excluded from the study. This will allow each patient to be assigned to a single study cohort.",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients with more than one SGARI prescribed on the index date will be excluded",
+                        "criterion": "SGARI prescriptions",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "SGARI"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "patients with more than one SGARI prescribed on the index date will be excluded",
+                    "criterion": "SGARI prescriptions",
+                    "requirement": {
+                        "requirement_type": "quantity",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 1,
+                            "unit": "SGARI"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* In order to select patients who are initiating SGARI treatment, patients with the index SGARI treatment during the 1 year baseline period will be excluded from the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients who are initiating SGARI treatment",
+                        "criterion": "SGARI treatment initiation",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "initiating"
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with the index SGARI treatment during the 1 year baseline period will be excluded",
+                        "criterion": "SGARI treatment during baseline period",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "patients who are initiating SGARI treatment",
+                        "criterion": "SGARI treatment initiation",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "initiating"
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with the index SGARI treatment during the 1 year baseline period will be excluded",
+                        "criterion": "SGARI treatment during baseline period",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

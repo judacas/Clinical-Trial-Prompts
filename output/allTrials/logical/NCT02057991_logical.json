@@ -1,0 +1,366 @@
+{
+    "info": {
+        "nct_id": "NCT02057991",
+        "official_title": "A Mindfulness-Based Educational Intervention For Colorectal Cancer Patients And Caregivers",
+        "inclusion_criteria": "* Patient diagnosed with colorectal cancer\n* Patients with at least one more chemotherapy appointment at the time of enrollment\n* if patients have a caregiver, patients should agree to bring a caregiver to one of their hospital visits or have the caregiver schedule a separate study visit\n* Ability to understand and the willingness to sign a written informed consent\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 65 Years",
+        "exclusion_criteria": "* Illiterate participants\n* Deaf participants\n* Participants that do not read speak or understand either Spanish or English",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patient diagnosed with colorectal cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosed with colorectal cancer",
+                        "criterion": "colorectal cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "diagnosed with colorectal cancer",
+                        "criterion": "colorectal cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with at least one more chemotherapy appointment at the time of enrollment",
+                "criterions": [
+                    {
+                        "exact_snippets": "at least one more chemotherapy appointment",
+                        "criterion": "chemotherapy appointment",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "appointments"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "at least one more chemotherapy appointment",
+                        "criterion": "chemotherapy appointment",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "appointments"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* if patients have a caregiver, patients should agree to bring a caregiver to one of their hospital visits or have the caregiver schedule a separate study visit",
+                "criterions": [
+                    {
+                        "exact_snippets": "if patients have a caregiver",
+                        "criterion": "caregiver presence",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients should agree to bring a caregiver to one of their hospital visits",
+                        "criterion": "caregiver participation",
+                        "requirement": {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "have the caregiver schedule a separate study visit",
+                        "criterion": "caregiver scheduling",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "if patients have a caregiver",
+                    "criterion": "caregiver presence",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "or_criteria": [
+                        {
+                            "exact_snippets": "patients should agree to bring a caregiver to one of their hospital visits",
+                            "criterion": "caregiver participation",
+                            "requirement": {
+                                "requirement_type": "agreement",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "have the caregiver schedule a separate study visit",
+                            "criterion": "caregiver scheduling",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Ability to understand and the willingness to sign a written informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ability to understand",
+                        "criterion": "cognitive ability",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willingness to sign a written informed consent",
+                        "criterion": "willingness to consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ability to understand",
+                        "criterion": "cognitive ability",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willingness to sign a written informed consent",
+                        "criterion": "willingness to consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 65 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 65 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 65,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 65 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 65,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Illiterate participants",
+                "criterions": [
+                    {
+                        "exact_snippets": "Illiterate participants",
+                        "criterion": "literacy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "illiterate"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Illiterate participants",
+                        "criterion": "literacy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "illiterate"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Deaf participants",
+                "criterions": [
+                    {
+                        "exact_snippets": "Deaf participants",
+                        "criterion": "hearing ability",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "deaf"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants that do not read speak or understand either Spanish or English",
+                "criterions": [
+                    {
+                        "exact_snippets": "do not read speak or understand either Spanish or English",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "languages",
+                            "expected_value": [
+                                "Spanish",
+                                "English"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "do not read speak or understand either Spanish or English",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

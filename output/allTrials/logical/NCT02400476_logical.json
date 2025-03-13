@@ -1,0 +1,835 @@
+{
+    "info": {
+        "nct_id": "NCT02400476",
+        "official_title": "An Open-Label Study to Characterize the Incidence and Severity of Diarrhea in Patients With Early-Stage HER2+ Breast Cancer Treated With Neratinib and Loperamide",
+        "inclusion_criteria": "* Age ≥18; male or female\n* Early breast cancer (stage I-3c)\n* Documented HER2+ tumor: HER2 immunohistochemistry (IHC) 3+ or ISH+\n* Prior course of adjuvant trastuzumab given >2 weeks and ≤1 year from enrollment\n* No evidence of local/regional recurrence or metastatic disease\n* Eastern Cooperative Oncology Group (ECOG) status of 0 or 1\n* Male patients with female partners of childbearing potential must agree and commit to use a condom and women of childbearing potential must not be pregnant and must agree and commit to the use of a highly effective non-hormonal method of contraception\n* Left ventricular ejection fraction (LVEF) ≥50% measured by multiple-gated acquisition scan (MUGA) or ECHO\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Major surgery < 30 days\n* Chemotherapy, investigational agents, other cancer therapy (except hormonal therapy) < 14 days\n* Corrected QT Interval (QTc) >0.450 seconds (males) or >0.470 (females) or other active cardiac disease\n* Significant chronic GI disorder with diarrhea as a major symptom\n* Active, unresolved infections\n* Currently pregnant or breast-feeding",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Age ≥18; male or female",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age ≥18",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "male or female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "gender",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age ≥18",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "male or female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "gender",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Early breast cancer (stage I-3c)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Early breast cancer (stage I-3c)",
+                        "criterion": "breast cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "c"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Early breast cancer (stage I-3c)",
+                        "criterion": "breast cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "c"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Documented HER2+ tumor: HER2 immunohistochemistry (IHC) 3+ or ISH+",
+                "criterions": [
+                    {
+                        "exact_snippets": "Documented HER2+ tumor: HER2 immunohistochemistry (IHC) 3+",
+                        "criterion": "HER2 immunohistochemistry (IHC)",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "3+"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Documented HER2+ tumor: ... ISH+",
+                        "criterion": "ISH",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Documented HER2+ tumor: HER2 immunohistochemistry (IHC) 3+",
+                        "criterion": "HER2 immunohistochemistry (IHC)",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "3+"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Documented HER2+ tumor: ... ISH+",
+                        "criterion": "ISH",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior course of adjuvant trastuzumab given >2 weeks and ≤1 year from enrollment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior course of adjuvant trastuzumab",
+                        "criterion": "adjuvant trastuzumab",
+                        "requirement": {
+                            "requirement_type": "prior course",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "given >2 weeks and ≤1 year from enrollment",
+                        "criterion": "time since adjuvant trastuzumab",
+                        "requirement": {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 2,
+                                        "unit": "weeks"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "year"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prior course of adjuvant trastuzumab",
+                        "criterion": "adjuvant trastuzumab",
+                        "requirement": {
+                            "requirement_type": "prior course",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "given >2 weeks and ≤1 year from enrollment",
+                        "criterion": "time since adjuvant trastuzumab",
+                        "requirement": {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 2,
+                                        "unit": "weeks"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "year"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No evidence of local/regional recurrence or metastatic disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "No evidence of local/regional recurrence",
+                        "criterion": "local/regional recurrence",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No evidence of ... metastatic disease",
+                        "criterion": "metastatic disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No evidence of local/regional recurrence",
+                        "criterion": "local/regional recurrence",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No evidence of ... metastatic disease",
+                        "criterion": "metastatic disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) status of 0 or 1",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) status of 0 or 1",
+                        "criterion": "ECOG status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": [
+                                "0",
+                                "1"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) status of 0 or 1",
+                        "criterion": "ECOG status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": [
+                                "0",
+                                "1"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Left ventricular ejection fraction (LVEF) ≥50% measured by multiple-gated acquisition scan (MUGA) or ECHO",
+                "criterions": [
+                    {
+                        "exact_snippets": "Left ventricular ejection fraction (LVEF) ≥50%",
+                        "criterion": "left ventricular ejection fraction (LVEF)",
+                        "requirement": {
+                            "requirement_type": "measurement",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Left ventricular ejection fraction (LVEF) ≥50%",
+                        "criterion": "left ventricular ejection fraction (LVEF)",
+                        "requirement": {
+                            "requirement_type": "measurement",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Left ventricular ejection fraction (LVEF) ≥50%",
+                                "criterion": "measurement method",
+                                "requirement": {
+                                    "requirement_type": "method",
+                                    "expected_value": "MUGA"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Left ventricular ejection fraction (LVEF) ≥50%",
+                                "criterion": "measurement method",
+                                "requirement": {
+                                    "requirement_type": "method",
+                                    "expected_value": "ECHO"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Male patients with female partners of childbearing potential must agree and commit to use a condom and women of childbearing potential must not be pregnant and must agree and commit to the use of a highly effective non-hormonal method of contraception",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male patients with female partners of childbearing potential must agree and commit to use a condom",
+                        "criterion": "male patients with female partners of childbearing potential",
+                        "requirement": {
+                            "requirement_type": "contraception method",
+                            "expected_value": "condom"
+                        }
+                    },
+                    {
+                        "exact_snippets": "women of childbearing potential must not be pregnant",
+                        "criterion": "women of childbearing potential",
+                        "requirement": {
+                            "requirement_type": "pregnancy status",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "women of childbearing potential must agree and commit to the use of a highly effective non-hormonal method of contraception",
+                        "criterion": "women of childbearing potential",
+                        "requirement": {
+                            "requirement_type": "contraception method",
+                            "expected_value": "highly effective non-hormonal"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Male patients with female partners of childbearing potential must agree and commit to use a condom",
+                                "criterion": "male patients with female partners of childbearing potential",
+                                "requirement": {
+                                    "requirement_type": "contraception method",
+                                    "expected_value": "condom"
+                                }
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "women of childbearing potential must not be pregnant",
+                                        "criterion": "women of childbearing potential",
+                                        "requirement": {
+                                            "requirement_type": "pregnancy status",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "women of childbearing potential must agree and commit to the use of a highly effective non-hormonal method of contraception",
+                                        "criterion": "women of childbearing potential",
+                                        "requirement": {
+                                            "requirement_type": "contraception method",
+                                            "expected_value": "highly effective non-hormonal"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Major surgery < 30 days",
+                "criterions": [
+                    {
+                        "exact_snippets": "Major surgery < 30 days",
+                        "criterion": "major surgery",
+                        "requirement": {
+                            "requirement_type": "time since surgery",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 30,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Major surgery < 30 days",
+                    "criterion": "major surgery",
+                    "requirement": {
+                        "requirement_type": "time since surgery",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 30,
+                            "unit": "days"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Chemotherapy, investigational agents, other cancer therapy (except hormonal therapy) < 14 days",
+                "criterions": [
+                    {
+                        "exact_snippets": "Chemotherapy ... < 14 days",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 14,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "investigational agents ... < 14 days",
+                        "criterion": "investigational agents",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 14,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "other cancer therapy (except hormonal therapy) < 14 days",
+                        "criterion": "other cancer therapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 14,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Chemotherapy ... < 14 days",
+                                "criterion": "chemotherapy",
+                                "requirement": {
+                                    "requirement_type": "time since last treatment",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 14,
+                                        "unit": "days"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "investigational agents ... < 14 days",
+                                "criterion": "investigational agents",
+                                "requirement": {
+                                    "requirement_type": "time since last treatment",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 14,
+                                        "unit": "days"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "other cancer therapy (except hormonal therapy) < 14 days",
+                                "criterion": "other cancer therapy",
+                                "requirement": {
+                                    "requirement_type": "time since last treatment",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 14,
+                                        "unit": "days"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Significant chronic GI disorder with diarrhea as a major symptom",
+                "criterions": [
+                    {
+                        "exact_snippets": "Significant chronic GI disorder",
+                        "criterion": "chronic GI disorder",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "significant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diarrhea as a major symptom",
+                        "criterion": "diarrhea",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "major symptom"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Significant chronic GI disorder",
+                        "criterion": "chronic GI disorder",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "significant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diarrhea as a major symptom",
+                        "criterion": "diarrhea",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "major symptom"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active, unresolved infections",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active, unresolved infections",
+                        "criterion": "infections",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Active, unresolved infections",
+                        "criterion": "infections",
+                        "requirement": {
+                            "requirement_type": "resolution",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Active, unresolved infections",
+                        "criterion": "infections",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Active, unresolved infections",
+                        "criterion": "infections",
+                        "requirement": {
+                            "requirement_type": "resolution",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Currently pregnant or breast-feeding",
+                "criterions": [
+                    {
+                        "exact_snippets": "Currently pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "pregnant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast-feeding",
+                        "criterion": "breastfeeding status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "breast-feeding"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Currently pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "pregnant"
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast-feeding",
+                        "criterion": "breastfeeding status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "breast-feeding"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Corrected QT Interval (QTc) >0.450 seconds (males) or >0.470 (females) or other active cardiac disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Corrected QT Interval (QTc) >0.450 seconds (males)",
+                        "criterion": "Corrected QT Interval (QTc)",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 0.45,
+                                "unit": "seconds"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Corrected QT Interval (QTc) >0.470 (females)",
+                        "criterion": "Corrected QT Interval (QTc)",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 0.47,
+                                "unit": "seconds"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "other active cardiac disease",
+                        "criterion": "active cardiac disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Corrected QT Interval (QTc) >0.450 seconds (males)",
+                                "criterion": "Corrected QT Interval (QTc)",
+                                "requirement": {
+                                    "requirement_type": "value",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 0.45,
+                                        "unit": "seconds"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "Corrected QT Interval (QTc) >0.470 (females)",
+                                "criterion": "Corrected QT Interval (QTc)",
+                                "requirement": {
+                                    "requirement_type": "value",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 0.47,
+                                        "unit": "seconds"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "other active cardiac disease",
+                        "criterion": "active cardiac disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,651 @@
+{
+    "info": {
+        "nct_id": "NCT00475982",
+        "official_title": "Effect of Weight Loss on Prostate Cancer Pathology",
+        "inclusion_criteria": "* Subject is overweight or obese (BMI > 25 kg/m2)\n* Patient with pathologically confirmed adenocarcinoma of the prostate and has elected to undergo radical prostatectomy\n* Willing to delay radical prostatectomy for 5 to 8-weeks if randomized to the weight loss intervention group.\n* Able to adhere to physical activity intervention (able to walk for 30 minutes without rest)\n* Able to come to the VA for weight loss visits during the 5 to 8-wk study\nHealthy volunteers allowed\nMust be MALE",
+        "exclusion_criteria": "* Any one of the following: Gleason grade > 4+4, PSA > 20.\n* History of ever receiving androgen deprivation therapy, antiandrogen therapy, or finasteride\n* Prior prostate radiotherapy (external beam or brachytherapy) or prior cryotherapy\n* Diagnosis of diabetes mellitus and on insulin**\n* Current use of weight loss medications or enrolled in a diet/weight loss program\n* Current use of lycopene supplements*** Significant co-morbidities (i.e. cardiac, pulmonary, liver disease, ongoing alcohol/drug abuse) Cardiac pacemaker",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Subject is overweight or obese (BMI > 25 kg/m2)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subject is overweight or obese (BMI > 25 kg/m2)",
+                        "criterion": "BMI",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 25,
+                                "unit": "kg/m2"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Subject is overweight or obese (BMI > 25 kg/m2)",
+                        "criterion": "BMI",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 25,
+                                "unit": "kg/m2"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient with pathologically confirmed adenocarcinoma of the prostate and has elected to undergo radical prostatectomy",
+                "criterions": [
+                    {
+                        "exact_snippets": "pathologically confirmed adenocarcinoma of the prostate",
+                        "criterion": "adenocarcinoma of the prostate",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": "pathologically confirmed"
+                        }
+                    },
+                    {
+                        "exact_snippets": "elected to undergo radical prostatectomy",
+                        "criterion": "radical prostatectomy",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": "elected to undergo"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "pathologically confirmed adenocarcinoma of the prostate",
+                        "criterion": "adenocarcinoma of the prostate",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": "pathologically confirmed"
+                        }
+                    },
+                    {
+                        "exact_snippets": "elected to undergo radical prostatectomy",
+                        "criterion": "radical prostatectomy",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": "elected to undergo"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Willing to delay radical prostatectomy for 5 to 8-weeks if randomized to the weight loss intervention group.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Willing to delay radical prostatectomy",
+                        "criterion": "willingness to delay radical prostatectomy",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "5 to 8-weeks",
+                        "criterion": "delay duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 5,
+                                        "unit": "weeks"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 8,
+                                        "unit": "weeks"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "randomized to the weight loss intervention group",
+                    "criterion": "randomization group",
+                    "requirement": {
+                        "requirement_type": "group",
+                        "expected_value": "weight loss intervention"
+                    }
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Willing to delay radical prostatectomy",
+                            "criterion": "willingness to delay radical prostatectomy",
+                            "requirement": {
+                                "requirement_type": "willingness",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "5 to 8-weeks",
+                            "criterion": "delay duration",
+                            "requirement": {
+                                "requirement_type": "duration",
+                                "expected_value": {
+                                    "comparisons": [
+                                        {
+                                            "operator": ">=",
+                                            "value": 5,
+                                            "unit": "weeks"
+                                        },
+                                        {
+                                            "operator": "<=",
+                                            "value": 8,
+                                            "unit": "weeks"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able to adhere to physical activity intervention (able to walk for 30 minutes without rest)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to adhere to physical activity intervention (able to walk for 30 minutes without rest)",
+                        "criterion": "physical activity adherence",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": "able to walk for 30 minutes without rest"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able to adhere to physical activity intervention (able to walk for 30 minutes without rest)",
+                        "criterion": "physical activity adherence",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": "able to walk for 30 minutes without rest"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able to come to the VA for weight loss visits during the 5 to 8-wk study",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to come to the VA for weight loss visits",
+                        "criterion": "ability to attend visits",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "during the 5 to 8-wk study",
+                        "criterion": "study duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 5,
+                                        "unit": "wk"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 8,
+                                        "unit": "wk"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able to come to the VA for weight loss visits",
+                        "criterion": "ability to attend visits",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "during the 5 to 8-wk study",
+                        "criterion": "study duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 5,
+                                        "unit": "wk"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 8,
+                                        "unit": "wk"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Any one of the following: Gleason grade > 4+4, PSA > 20.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Gleason grade > 4+4",
+                        "criterion": "Gleason grade",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 8,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "PSA > 20",
+                        "criterion": "PSA",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 20,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Gleason grade > 4+4",
+                        "criterion": "Gleason grade",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 8,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "PSA > 20",
+                        "criterion": "PSA",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 20,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of ever receiving androgen deprivation therapy, antiandrogen therapy, or finasteride",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of ever receiving androgen deprivation therapy",
+                        "criterion": "androgen deprivation therapy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of ever receiving ... antiandrogen therapy",
+                        "criterion": "antiandrogen therapy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of ever receiving ... finasteride",
+                        "criterion": "finasteride",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "History of ever receiving androgen deprivation therapy",
+                        "criterion": "androgen deprivation therapy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of ever receiving ... antiandrogen therapy",
+                        "criterion": "antiandrogen therapy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of ever receiving ... finasteride",
+                        "criterion": "finasteride",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior prostate radiotherapy (external beam or brachytherapy) or prior cryotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior prostate radiotherapy (external beam or brachytherapy)",
+                        "criterion": "prior prostate radiotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior cryotherapy",
+                        "criterion": "prior cryotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Prior prostate radiotherapy (external beam or brachytherapy)",
+                        "criterion": "prior prostate radiotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior cryotherapy",
+                        "criterion": "prior cryotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Diagnosis of diabetes mellitus and on insulin**",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of diabetes mellitus",
+                        "criterion": "diabetes mellitus",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "on insulin",
+                        "criterion": "insulin usage",
+                        "requirement": {
+                            "requirement_type": "usage",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Diagnosis of diabetes mellitus",
+                                "criterion": "diabetes mellitus",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "on insulin",
+                                "criterion": "insulin usage",
+                                "requirement": {
+                                    "requirement_type": "usage",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Current use of weight loss medications or enrolled in a diet/weight loss program",
+                "criterions": [
+                    {
+                        "exact_snippets": "Current use of weight loss medications",
+                        "criterion": "weight loss medications",
+                        "requirement": {
+                            "requirement_type": "current use",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "enrolled in a diet/weight loss program",
+                        "criterion": "diet/weight loss program",
+                        "requirement": {
+                            "requirement_type": "enrollment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Current use of weight loss medications",
+                        "criterion": "weight loss medications",
+                        "requirement": {
+                            "requirement_type": "current use",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "enrolled in a diet/weight loss program",
+                        "criterion": "diet/weight loss program",
+                        "requirement": {
+                            "requirement_type": "enrollment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Current use of lycopene supplements*** Significant co-morbidities (i.e. cardiac, pulmonary, liver disease, ongoing alcohol/drug abuse) Cardiac pacemaker",
+                "criterions": [
+                    {
+                        "exact_snippets": "Current use of lycopene supplements",
+                        "criterion": "lycopene supplements",
+                        "requirement": {
+                            "requirement_type": "current use",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Significant co-morbidities (i.e. cardiac, pulmonary, liver disease, ongoing alcohol/drug abuse)",
+                        "criterion": "significant co-morbidities",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "cardiac disease",
+                                "pulmonary disease",
+                                "liver disease",
+                                "ongoing alcohol abuse",
+                                "ongoing drug abuse"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Cardiac pacemaker",
+                        "criterion": "cardiac pacemaker",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Significant co-morbidities (i.e. cardiac, pulmonary, liver disease, ongoing alcohol/drug abuse)",
+                                "criterion": "significant co-morbidities",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": [
+                                        "cardiac disease",
+                                        "pulmonary disease",
+                                        "liver disease",
+                                        "ongoing alcohol abuse",
+                                        "ongoing drug abuse"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "Cardiac pacemaker",
+                                "criterion": "cardiac pacemaker",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Current use of lycopene supplements",
+                        "criterion": "lycopene supplements",
+                        "requirement": {
+                            "requirement_type": "current use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

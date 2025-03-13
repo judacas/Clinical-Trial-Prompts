@@ -1,0 +1,598 @@
+{
+    "info": {
+        "nct_id": "NCT05359120",
+        "official_title": "A Nationwide Multicenter, Ambispective Real-world Study of Pyrotinib Combined With Capecitabine in Patients With HER-2 Positive Advanced Breast Cancer and Brain Metastases (Post-PERMEATE)",
+        "inclusion_criteria": "1. Pathologically diagnosed patients with HER-2 expression-positive advanced breast cancer; Note: Positive HER2 expression refers to at least one tumor cell immunohistochemical staining intensity of 3+ or fluorescence in situ hybridization [FISH] in the pathological detection/recheck of the primary or metastatic lesions performed by the pathology department of the participating central hospital confirmed positive;\n2. Brain metastases are diagnosed by MRI/enhanced CT imaging, according to RECIST 1.1 criteria, with or without measurable lesions and with or without symptoms of brain metastases;\n3. Pyrotinib combined with capecitabine in the treatment of brain metastases with non-PD evaluation at the first treatment, at least ≥ 2 continuous imaging reports or assessments\n4. For previous treatment regimens, no previous use of capecitabine or progression after capecitabine discontinuation for 6 months, or progression after discontinuation of capecitabine adjuvant therapy for one year or more;\n5. There are traceable medical history data.\nHealthy volunteers allowed",
+        "exclusion_criteria": "1. Patients enrolled in the previous PERMEATE study;\n2. The research program is receiving other anti-tumor drug treatment at the same time;\n3. The initial dose of pyrotinib is lower than the minimum dose in the instructions (240 mg), and the capecitabine is 50% lower than the standard dose;\n4. Pyrotinib combined with capecitabine in the treatment of non-brain metastases and progressive patients;\n5. The investigator believes that the patient is not suitable to enter this study.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Pathologically diagnosed patients with HER-2 expression-positive advanced breast cancer; Note: Positive HER2 expression refers to at least one tumor cell immunohistochemical staining intensity of 3+ or fluorescence in situ hybridization [FISH] in the pathological detection/recheck of the primary or metastatic lesions performed by the pathology department of the participating central hospital confirmed positive;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pathologically diagnosed patients",
+                        "criterion": "pathological diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "HER-2 expression-positive advanced breast cancer",
+                        "criterion": "HER-2 expression",
+                        "requirement": {
+                            "requirement_type": "expression",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "HER2 expression refers to at least one tumor cell immunohistochemical staining intensity of 3+",
+                        "criterion": "immunohistochemical staining intensity",
+                        "requirement": {
+                            "requirement_type": "intensity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "+"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "fluorescence in situ hybridization [FISH] in the pathological detection/recheck of the primary or metastatic lesions",
+                        "criterion": "FISH test",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Pathologically diagnosed patients",
+                                        "criterion": "pathological diagnosis",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "HER-2 expression-positive advanced breast cancer",
+                                        "criterion": "HER-2 expression",
+                                        "requirement": {
+                                            "requirement_type": "expression",
+                                            "expected_value": "positive"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "HER2 expression refers to at least one tumor cell immunohistochemical staining intensity of 3+",
+                                        "criterion": "immunohistochemical staining intensity",
+                                        "requirement": {
+                                            "requirement_type": "intensity",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 3,
+                                                "unit": "+"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "fluorescence in situ hybridization [FISH] in the pathological detection/recheck of the primary or metastatic lesions",
+                                        "criterion": "FISH test",
+                                        "requirement": {
+                                            "requirement_type": "result",
+                                            "expected_value": "positive"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Brain metastases are diagnosed by MRI/enhanced CT imaging, according to RECIST 1.1 criteria, with or without measurable lesions and with or without symptoms of brain metastases;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Brain metastases are diagnosed by MRI/enhanced CT imaging",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "diagnosis method",
+                            "expected_value": [
+                                "MRI",
+                                "enhanced CT imaging"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "according to RECIST 1.1 criteria",
+                        "criterion": "RECIST 1.1 criteria",
+                        "requirement": {
+                            "requirement_type": "compliance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "with or without measurable lesions",
+                        "criterion": "measurable lesions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "with or without"
+                        }
+                    },
+                    {
+                        "exact_snippets": "with or without symptoms of brain metastases",
+                        "criterion": "symptoms of brain metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "with or without"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "Brain metastases are diagnosed by MRI/enhanced CT imaging",
+                                                "criterion": "brain metastases",
+                                                "requirement": {
+                                                    "requirement_type": "diagnosis method",
+                                                    "expected_value": [
+                                                        "MRI",
+                                                        "enhanced CT imaging"
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "according to RECIST 1.1 criteria",
+                                                "criterion": "RECIST 1.1 criteria",
+                                                "requirement": {
+                                                    "requirement_type": "compliance",
+                                                    "expected_value": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "or_criteria": [
+                                            {
+                                                "exact_snippets": "with or without measurable lesions",
+                                                "criterion": "measurable lesions",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": "with or without"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "with or without symptoms of brain metastases",
+                                        "criterion": "symptoms of brain metastases",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": "with or without"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Pyrotinib combined with capecitabine in the treatment of brain metastases with non-PD evaluation at the first treatment, at least ≥ 2 continuous imaging reports or assessments",
+                "criterions": [
+                    {
+                        "exact_snippets": "brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-PD evaluation at the first treatment",
+                        "criterion": "non-PD evaluation at the first treatment",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "non-PD"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least ≥ 2 continuous imaging reports or assessments",
+                        "criterion": "continuous imaging reports or assessments",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-PD evaluation at the first treatment",
+                        "criterion": "non-PD evaluation at the first treatment",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "non-PD"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least ≥ 2 continuous imaging reports or assessments",
+                        "criterion": "continuous imaging reports or assessments",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. For previous treatment regimens, no previous use of capecitabine or progression after capecitabine discontinuation for 6 months, or progression after discontinuation of capecitabine adjuvant therapy for one year or more;",
+                "criterions": [
+                    {
+                        "exact_snippets": "no previous use of capecitabine",
+                        "criterion": "previous use of capecitabine",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "progression after capecitabine discontinuation for 6 months",
+                        "criterion": "progression after capecitabine discontinuation",
+                        "requirement": {
+                            "requirement_type": "time since discontinuation",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "progression after discontinuation of capecitabine adjuvant therapy for one year or more",
+                        "criterion": "progression after discontinuation of capecitabine adjuvant therapy",
+                        "requirement": {
+                            "requirement_type": "time since discontinuation",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "no previous use of capecitabine",
+                        "criterion": "previous use of capecitabine",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "progression after capecitabine discontinuation for 6 months",
+                        "criterion": "progression after capecitabine discontinuation",
+                        "requirement": {
+                            "requirement_type": "time since discontinuation",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "progression after discontinuation of capecitabine adjuvant therapy for one year or more",
+                        "criterion": "progression after discontinuation of capecitabine adjuvant therapy",
+                        "requirement": {
+                            "requirement_type": "time since discontinuation",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "3. The initial dose of pyrotinib is lower than the minimum dose in the instructions (240 mg), and the capecitabine is 50% lower than the standard dose;",
+                "criterions": [
+                    {
+                        "exact_snippets": "The initial dose of pyrotinib is lower than the minimum dose in the instructions (240 mg)",
+                        "criterion": "initial dose of pyrotinib",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 240,
+                                "unit": "mg"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "the capecitabine is 50% lower than the standard dose",
+                        "criterion": "dose of capecitabine",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": "50% lower than the standard dose"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "The initial dose of pyrotinib is lower than the minimum dose in the instructions (240 mg)",
+                        "criterion": "initial dose of pyrotinib",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 240,
+                                "unit": "mg"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "the capecitabine is 50% lower than the standard dose",
+                        "criterion": "dose of capecitabine",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": "50% lower than the standard dose"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Pyrotinib combined with capecitabine in the treatment of non-brain metastases and progressive patients;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pyrotinib combined with capecitabine",
+                        "criterion": "treatment regimen",
+                        "requirement": {
+                            "requirement_type": "components",
+                            "expected_value": [
+                                "Pyrotinib",
+                                "capecitabine"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-brain metastases",
+                        "criterion": "metastasis location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "non-brain"
+                        }
+                    },
+                    {
+                        "exact_snippets": "progressive patients",
+                        "criterion": "disease progression",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "progressive"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Pyrotinib combined with capecitabine",
+                                        "criterion": "treatment regimen",
+                                        "requirement": {
+                                            "requirement_type": "components",
+                                            "expected_value": [
+                                                "Pyrotinib",
+                                                "capecitabine"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "non-brain metastases",
+                                        "criterion": "metastasis location",
+                                        "requirement": {
+                                            "requirement_type": "location",
+                                            "expected_value": "non-brain"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "progressive patients",
+                                "criterion": "disease progression",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "progressive"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. The investigator believes that the patient is not suitable to enter this study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "The investigator believes that the patient is not suitable to enter this study.",
+                        "criterion": "suitability for study",
+                        "requirement": {
+                            "requirement_type": "investigator's belief",
+                            "expected_value": "not suitable"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "The investigator believes that the patient is not suitable to enter this study.",
+                    "criterion": "suitability for study",
+                    "requirement": {
+                        "requirement_type": "investigator's belief",
+                        "expected_value": "not suitable"
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "5. There are traceable medical history data.",
+                "criterions": [
+                    {
+                        "exact_snippets": "traceable medical history data",
+                        "criterion": "medical history data",
+                        "requirement": {
+                            "requirement_type": "traceability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "1. Patients enrolled in the previous PERMEATE study;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients enrolled in the previous PERMEATE study",
+                        "criterion": "enrollment in PERMEATE study",
+                        "requirement": {
+                            "requirement_type": "enrollment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. The research program is receiving other anti-tumor drug treatment at the same time;",
+                "criterions": [
+                    {
+                        "exact_snippets": "receiving other anti-tumor drug treatment",
+                        "criterion": "anti-tumor drug treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

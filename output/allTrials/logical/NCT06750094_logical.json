@@ -1,0 +1,892 @@
+{
+    "info": {
+        "nct_id": "NCT06750094",
+        "official_title": "A Randomized, Open-label Phase 3 Study of Amivantamab + FOLFIRI Versus Cetuximab/Bevacizumab + FOLFIRI in Participants With KRAS/NRAS and BRAF Wild-type Recurrent, Unresectable or Metastatic Colorectal Cancer Who Have Received Prior Chemotherapy",
+        "inclusion_criteria": "* Have histologically or cytologically confirmed adenocarcinoma of the colon or rectum. Participants must have recurrent, unresectable or metastatic disease\n* Be diagnosed to have KRAS, NRAS, and BRAF wild-type (WT) tumor as determined by local testing\n* Must agree to the submission of fresh or archival tumor tissue post-progression from the most recent therapy, if clinically feasible\n* Have measurable disease according to RECIST v1.1\n* Have an eastern cooperative oncology group (ECOG) performance status (PS) of 0 or 1\n* Participant must have received 1 line of systemic therapy (fluoropyrimidine-based and oxaliplatin-based) for metastatic colorectal cancer (mCRC), with documented radiographic disease progression on or after this line of therapy\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Has medical history of (noninfectious) interstitial lung disease (ILD) /pneumonitis/pulmonary fibrosis or has current ILD/pneumonitis/pulmonary fibrosis, or where suspected ILD/pneumonitis/pulmonary fibrosis cannot be ruled out by imaging at screening\n* Has known allergies, hypersensitivity, or intolerance to excipients of any of the following: amivantamab, cetuximab or bevacizumab or any component of FOLFIRI\n* Has a prior or concurrent second malignancy other than the disease under study or one whose natural history or treatment is unlikely to interfere with any study endpoints of safety or the efficacy of the study treatment(s)\n* Participant with known mismatch repair deficiency (dMMR)/ high microsatellite instability (MSI-H) status who has not received immunotherapy treatments\n* Participant with known human epidermal growth factor receptor 2 (HER2)- positive/amplified tumor\n* Has prior exposure to irinotecan, any agents that target epidermal growth factor receptor (EGFR) or mesenchymal epithelial transition (MET)",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Be diagnosed to have KRAS, NRAS, and BRAF wild-type (WT) tumor as determined by local testing",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosed to have KRAS ... wild-type (WT) tumor",
+                        "criterion": "KRAS tumor",
+                        "requirement": {
+                            "requirement_type": "mutation status",
+                            "expected_value": "wild-type"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosed to have ... NRAS ... wild-type (WT) tumor",
+                        "criterion": "NRAS tumor",
+                        "requirement": {
+                            "requirement_type": "mutation status",
+                            "expected_value": "wild-type"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosed to have ... BRAF wild-type (WT) tumor",
+                        "criterion": "BRAF tumor",
+                        "requirement": {
+                            "requirement_type": "mutation status",
+                            "expected_value": "wild-type"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "diagnosed to have KRAS ... wild-type (WT) tumor",
+                        "criterion": "KRAS tumor",
+                        "requirement": {
+                            "requirement_type": "mutation status",
+                            "expected_value": "wild-type"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosed to have ... NRAS ... wild-type (WT) tumor",
+                        "criterion": "NRAS tumor",
+                        "requirement": {
+                            "requirement_type": "mutation status",
+                            "expected_value": "wild-type"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosed to have ... BRAF wild-type (WT) tumor",
+                        "criterion": "BRAF tumor",
+                        "requirement": {
+                            "requirement_type": "mutation status",
+                            "expected_value": "wild-type"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Must agree to the submission of fresh or archival tumor tissue post-progression from the most recent therapy, if clinically feasible",
+                "criterions": [
+                    {
+                        "exact_snippets": "submission of fresh or archival tumor tissue",
+                        "criterion": "tumor tissue",
+                        "requirement": {
+                            "requirement_type": "submission",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "post-progression from the most recent therapy",
+                        "criterion": "post-progression from the most recent therapy",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "post-progression"
+                        }
+                    },
+                    {
+                        "exact_snippets": "if clinically feasible",
+                        "criterion": "clinical feasibility",
+                        "requirement": {
+                            "requirement_type": "feasibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "if clinically feasible",
+                    "criterion": "clinical feasibility",
+                    "requirement": {
+                        "requirement_type": "feasibility",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "submission of fresh or archival tumor tissue",
+                            "criterion": "tumor tissue",
+                            "requirement": {
+                                "requirement_type": "submission",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "post-progression from the most recent therapy",
+                            "criterion": "post-progression from the most recent therapy",
+                            "requirement": {
+                                "requirement_type": "timing",
+                                "expected_value": "post-progression"
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have measurable disease according to RECIST v1.1",
+                "criterions": [
+                    {
+                        "exact_snippets": "measurable disease according to RECIST v1.1",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "measurement standard",
+                            "expected_value": "RECIST v1.1"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "measurable disease according to RECIST v1.1",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "measurement standard",
+                            "expected_value": "RECIST v1.1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant must have received 1 line of systemic therapy (fluoropyrimidine-based and oxaliplatin-based) for metastatic colorectal cancer (mCRC), with documented radiographic disease progression on or after this line of therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant must have received 1 line of systemic therapy",
+                        "criterion": "systemic therapy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 1,
+                                "unit": "line"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "fluoropyrimidine-based",
+                        "criterion": "fluoropyrimidine-based therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "oxaliplatin-based",
+                        "criterion": "oxaliplatin-based therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "metastatic colorectal cancer (mCRC)",
+                        "criterion": "metastatic colorectal cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "documented radiographic disease progression on or after this line of therapy",
+                        "criterion": "radiographic disease progression",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "on or after this line of therapy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Participant must have received 1 line of systemic therapy",
+                                "criterion": "systemic therapy",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": "=",
+                                        "value": 1,
+                                        "unit": "line"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "fluoropyrimidine-based",
+                                "criterion": "fluoropyrimidine-based therapy",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "oxaliplatin-based",
+                                "criterion": "oxaliplatin-based therapy",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "metastatic colorectal cancer (mCRC)",
+                        "criterion": "metastatic colorectal cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "documented radiographic disease progression on or after this line of therapy",
+                        "criterion": "radiographic disease progression",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "on or after this line of therapy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Has medical history of (noninfectious) interstitial lung disease (ILD) /pneumonitis/pulmonary fibrosis or has current ILD/pneumonitis/pulmonary fibrosis, or where suspected ILD/pneumonitis/pulmonary fibrosis cannot be ruled out by imaging at screening",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has medical history of (noninfectious) interstitial lung disease (ILD)",
+                        "criterion": "medical history of interstitial lung disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Has medical history of ... pneumonitis",
+                        "criterion": "medical history of pneumonitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Has medical history of ... pulmonary fibrosis",
+                        "criterion": "medical history of pulmonary fibrosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "has current ILD",
+                        "criterion": "current interstitial lung disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "has current ... pneumonitis",
+                        "criterion": "current pneumonitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "has current ... pulmonary fibrosis",
+                        "criterion": "current pulmonary fibrosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "suspected ILD ... cannot be ruled out by imaging at screening",
+                        "criterion": "suspected interstitial lung disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "suspected ... pneumonitis ... cannot be ruled out by imaging at screening",
+                        "criterion": "suspected pneumonitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "suspected ... pulmonary fibrosis cannot be ruled out by imaging at screening",
+                        "criterion": "suspected pulmonary fibrosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "or_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "Has medical history of (noninfectious) interstitial lung disease (ILD)",
+                                                "criterion": "medical history of interstitial lung disease",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "Has medical history of ... pneumonitis",
+                                                "criterion": "medical history of pneumonitis",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "Has medical history of ... pulmonary fibrosis",
+                                                "criterion": "medical history of pulmonary fibrosis",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "has current ILD",
+                                                "criterion": "current interstitial lung disease",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "has current ... pneumonitis",
+                                                "criterion": "current pneumonitis",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "has current ... pulmonary fibrosis",
+                                                "criterion": "current pulmonary fibrosis",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "suspected ILD ... cannot be ruled out by imaging at screening",
+                                        "criterion": "suspected interstitial lung disease",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "suspected ... pneumonitis ... cannot be ruled out by imaging at screening",
+                                        "criterion": "suspected pneumonitis",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "suspected ... pulmonary fibrosis cannot be ruled out by imaging at screening",
+                                        "criterion": "suspected pulmonary fibrosis",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has a prior or concurrent second malignancy other than the disease under study or one whose natural history or treatment is unlikely to interfere with any study endpoints of safety or the efficacy of the study treatment(s)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has a prior or concurrent second malignancy",
+                        "criterion": "second malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "other than the disease under study",
+                        "criterion": "second malignancy",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": "disease under study"
+                        }
+                    },
+                    {
+                        "exact_snippets": "one whose natural history or treatment is unlikely to interfere with any study endpoints of safety or the efficacy of the study treatment(s)",
+                        "criterion": "second malignancy",
+                        "requirement": {
+                            "requirement_type": "interference with study endpoints",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Has a prior or concurrent second malignancy",
+                                "criterion": "second malignancy",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "other than the disease under study",
+                                "criterion": "second malignancy",
+                                "requirement": {
+                                    "requirement_type": "exclusion",
+                                    "expected_value": "disease under study"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "one whose natural history or treatment is unlikely to interfere with any study endpoints of safety or the efficacy of the study treatment(s)",
+                            "criterion": "second malignancy",
+                            "requirement": {
+                                "requirement_type": "interference with study endpoints",
+                                "expected_value": false
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant with known mismatch repair deficiency (dMMR)/ high microsatellite instability (MSI-H) status who has not received immunotherapy treatments",
+                "criterions": [
+                    {
+                        "exact_snippets": "known mismatch repair deficiency (dMMR)",
+                        "criterion": "mismatch repair deficiency",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "high microsatellite instability (MSI-H) status",
+                        "criterion": "microsatellite instability",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "high"
+                        }
+                    },
+                    {
+                        "exact_snippets": "has not received immunotherapy treatments",
+                        "criterion": "immunotherapy treatments",
+                        "requirement": {
+                            "requirement_type": "receipt",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "known mismatch repair deficiency (dMMR)",
+                                        "criterion": "mismatch repair deficiency",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "has not received immunotherapy treatments",
+                                        "criterion": "immunotherapy treatments",
+                                        "requirement": {
+                                            "requirement_type": "receipt",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "high microsatellite instability (MSI-H) status",
+                                        "criterion": "microsatellite instability",
+                                        "requirement": {
+                                            "requirement_type": "status",
+                                            "expected_value": "high"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "has not received immunotherapy treatments",
+                                        "criterion": "immunotherapy treatments",
+                                        "requirement": {
+                                            "requirement_type": "receipt",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has prior exposure to irinotecan, any agents that target epidermal growth factor receptor (EGFR) or mesenchymal epithelial transition (MET)",
+                "criterions": [
+                    {
+                        "exact_snippets": "prior exposure to irinotecan",
+                        "criterion": "irinotecan exposure",
+                        "requirement": {
+                            "requirement_type": "prior exposure",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior exposure to ... agents that target epidermal growth factor receptor (EGFR)",
+                        "criterion": "EGFR-targeting agent exposure",
+                        "requirement": {
+                            "requirement_type": "prior exposure",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior exposure to ... agents that target ... mesenchymal epithelial transition (MET)",
+                        "criterion": "MET-targeting agent exposure",
+                        "requirement": {
+                            "requirement_type": "prior exposure",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "prior exposure to irinotecan",
+                        "criterion": "irinotecan exposure",
+                        "requirement": {
+                            "requirement_type": "prior exposure",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior exposure to ... agents that target epidermal growth factor receptor (EGFR)",
+                        "criterion": "EGFR-targeting agent exposure",
+                        "requirement": {
+                            "requirement_type": "prior exposure",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior exposure to ... agents that target ... mesenchymal epithelial transition (MET)",
+                        "criterion": "MET-targeting agent exposure",
+                        "requirement": {
+                            "requirement_type": "prior exposure",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant with known human epidermal growth factor receptor 2 (HER2)- positive/amplified tumor",
+                "criterions": [
+                    {
+                        "exact_snippets": "known human epidermal growth factor receptor 2 (HER2)-positive/amplified tumor",
+                        "criterion": "HER2 status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "positive",
+                                "amplified"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "known human epidermal growth factor receptor 2 (HER2)-positive/amplified tumor",
+                    "criterion": "HER2 status",
+                    "requirement": {
+                        "requirement_type": "status",
+                        "expected_value": [
+                            "positive",
+                            "amplified"
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Have histologically or cytologically confirmed adenocarcinoma of the colon or rectum. Participants must have recurrent, unresectable or metastatic disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "histologically or cytologically confirmed adenocarcinoma of the colon or rectum",
+                        "criterion": "adenocarcinoma of the colon or rectum",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "recurrent, unresectable or metastatic disease",
+                        "criterion": "disease status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "recurrent",
+                                "unresectable",
+                                "metastatic"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "histologically or cytologically confirmed adenocarcinoma of the colon or rectum",
+                                "criterion": "adenocarcinoma of the colon or rectum",
+                                "requirement": {
+                                    "requirement_type": "confirmation method",
+                                    "expected_value": [
+                                        "histologically",
+                                        "cytologically"
+                                    ]
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "recurrent, unresectable or metastatic disease",
+                                        "criterion": "disease status",
+                                        "requirement": {
+                                            "requirement_type": "status",
+                                            "expected_value": "recurrent"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "recurrent, unresectable or metastatic disease",
+                                        "criterion": "disease status",
+                                        "requirement": {
+                                            "requirement_type": "status",
+                                            "expected_value": "unresectable"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "recurrent, unresectable or metastatic disease",
+                                        "criterion": "disease status",
+                                        "requirement": {
+                                            "requirement_type": "status",
+                                            "expected_value": "metastatic"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have an eastern cooperative oncology group (ECOG) performance status (PS) of 0 or 1",
+                "criterions": [
+                    {
+                        "exact_snippets": "eastern cooperative oncology group (ECOG) performance status (PS) of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": [
+                                "0",
+                                "1"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "eastern cooperative oncology group (ECOG) performance status (PS) of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "0"
+                        }
+                    },
+                    {
+                        "exact_snippets": "eastern cooperative oncology group (ECOG) performance status (PS) of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "1"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Has known allergies, hypersensitivity, or intolerance to excipients of any of the following: amivantamab, cetuximab or bevacizumab or any component of FOLFIRI",
+                "criterions": [
+                    {
+                        "exact_snippets": "known allergies, hypersensitivity, or intolerance to excipients of any of the following: amivantamab, cetuximab or bevacizumab or any component of FOLFIRI",
+                        "criterion": "allergies, hypersensitivity, or intolerance",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "known allergies, hypersensitivity, or intolerance to excipients of any of the following: amivantamab, cetuximab or bevacizumab or any component of FOLFIRI",
+                        "criterion": "allergies, hypersensitivity, or intolerance",
+                        "requirement": {
+                            "requirement_type": "substances",
+                            "expected_value": [
+                                "amivantamab",
+                                "cetuximab",
+                                "bevacizumab",
+                                "any component of FOLFIRI"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,949 @@
+{
+    "info": {
+        "nct_id": "NCT00869973",
+        "official_title": "Aprepitant in the Prevention of Delayed Emesis Induced by Moderately Emetogenic Chemotherapy (Cyclophosphamide Plus Anthracyclines) in Breast Cancer Patients: a Double-blind Randomized Study",
+        "inclusion_criteria": "* patients with breast cancer, receiving for the first time chemotherapy with cyclophosphamide + anthracyclines (FAC, FEC, AC, EC).\n* patients over 18 years old and those who signed informed consent\n* adequate contraception if premenopausal women\n\nEvery other anticancer drug in the first 24 hours will be administered after the end of cyclophosphamide plus anthracycline.\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* patients already submitted to chemotherapy\n* patients receiving any chemotherapy on days 2-4 after treatment\n* patients with concomitant severe diseases or with predisposition to emesis such as intestinal obstruction, active peptic ulcer, hypercalcemia and brain metastases\n* contraindications to corticosteroids (i.e., active peptic ulcer or previous bleeding from peptic ulcer\n* patients submitted to concomitant radiotherapy or submitted to radiotherapy in the 15 days before chemotherapy or planned to receive radiotherapy during the 8 days after chemotherapy\n* patients receiving other concomitant antiemetic treatments or submitted to antiemetic treatments in the 24 hours before chemotherapy\n* patients with nausea or vomiting in the 24 hours before chemotherapy\n* patients receiving concomitant steroids, except when administered at physiologic doses\n* patients receiving concomitant benzodiazepines, except when used for nocturnal sedation\n* patients with WBC count <3000/mm3 or platelet count <70000/mm3\n* patients who are pregnant or breast-feeding",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* patients with breast cancer, receiving for the first time chemotherapy with cyclophosphamide + anthracyclines (FAC, FEC, AC, EC).",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients with breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "receiving for the first time chemotherapy",
+                        "criterion": "chemotherapy history",
+                        "requirement": {
+                            "requirement_type": "first time",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "chemotherapy with cyclophosphamide + anthracyclines (FAC, FEC, AC, EC)",
+                        "criterion": "chemotherapy regimen",
+                        "requirement": {
+                            "requirement_type": "specific regimen",
+                            "expected_value": [
+                                "cyclophosphamide",
+                                "anthracyclines",
+                                "FAC",
+                                "FEC",
+                                "AC",
+                                "EC"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "patients with breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "receiving for the first time chemotherapy",
+                        "criterion": "chemotherapy history",
+                        "requirement": {
+                            "requirement_type": "first time",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "chemotherapy with cyclophosphamide + anthracyclines (FAC, FEC, AC, EC)",
+                        "criterion": "chemotherapy regimen",
+                        "requirement": {
+                            "requirement_type": "specific regimen",
+                            "expected_value": [
+                                "cyclophosphamide",
+                                "anthracyclines",
+                                "FAC",
+                                "FEC",
+                                "AC",
+                                "EC"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients over 18 years old and those who signed informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients over 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "those who signed informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "patients over 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "those who signed informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* adequate contraception if premenopausal women",
+                "criterions": [
+                    {
+                        "exact_snippets": "adequate contraception if premenopausal women",
+                        "criterion": "contraception",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adequate contraception if premenopausal women",
+                        "criterion": "menopausal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "premenopausal"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "adequate contraception if premenopausal women",
+                    "criterion": "menopausal status",
+                    "requirement": {
+                        "requirement_type": "status",
+                        "expected_value": "premenopausal"
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "adequate contraception if premenopausal women",
+                    "criterion": "contraception",
+                    "requirement": {
+                        "requirement_type": "adequacy",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Every other anticancer drug in the first 24 hours will be administered after the end of cyclophosphamide plus anthracycline.",
+                "criterions": [
+                    {
+                        "exact_snippets": "anticancer drug ... administered after the end of cyclophosphamide plus anthracycline",
+                        "criterion": "administration timing of anticancer drugs",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "after the end of cyclophosphamide plus anthracycline"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "anticancer drug ... administered after the end of cyclophosphamide plus anthracycline",
+                        "criterion": "administration timing of anticancer drugs",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "after the end of cyclophosphamide plus anthracycline"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* patients already submitted to chemotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients already submitted to chemotherapy",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": "submitted"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "patients already submitted to chemotherapy",
+                    "criterion": "chemotherapy",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": "submitted"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients receiving any chemotherapy on days 2-4 after treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients receiving any chemotherapy on days 2-4 after treatment",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "days 2-4 after treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "patients receiving any chemotherapy on days 2-4 after treatment",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "days 2-4 after treatment"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients with concomitant severe diseases or with predisposition to emesis such as intestinal obstruction, active peptic ulcer, hypercalcemia and brain metastases",
+                "criterions": [
+                    {
+                        "exact_snippets": "concomitant severe diseases",
+                        "criterion": "severe diseases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "predisposition to emesis",
+                        "criterion": "predisposition to emesis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "intestinal obstruction",
+                        "criterion": "intestinal obstruction",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "active peptic ulcer",
+                        "criterion": "active peptic ulcer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "hypercalcemia",
+                        "criterion": "hypercalcemia",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "concomitant severe diseases",
+                                "criterion": "severe diseases",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "predisposition to emesis",
+                                "criterion": "predisposition to emesis",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "intestinal obstruction",
+                                "criterion": "intestinal obstruction",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "active peptic ulcer",
+                                "criterion": "active peptic ulcer",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "hypercalcemia",
+                                "criterion": "hypercalcemia",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "brain metastases",
+                                "criterion": "brain metastases",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* contraindications to corticosteroids (i.e., active peptic ulcer or previous bleeding from peptic ulcer",
+                "criterions": [
+                    {
+                        "exact_snippets": "contraindications to corticosteroids",
+                        "criterion": "contraindications to corticosteroids",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "active peptic ulcer",
+                        "criterion": "active peptic ulcer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous bleeding from peptic ulcer",
+                        "criterion": "previous bleeding from peptic ulcer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "contraindications to corticosteroids",
+                        "criterion": "contraindications to corticosteroids",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "active peptic ulcer",
+                                "criterion": "active peptic ulcer",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "previous bleeding from peptic ulcer",
+                                "criterion": "previous bleeding from peptic ulcer",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients submitted to concomitant radiotherapy or submitted to radiotherapy in the 15 days before chemotherapy or planned to receive radiotherapy during the 8 days after chemotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients submitted to concomitant radiotherapy",
+                        "criterion": "concomitant radiotherapy",
+                        "requirement": {
+                            "requirement_type": "submission",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "submitted to radiotherapy in the 15 days before chemotherapy",
+                        "criterion": "radiotherapy before chemotherapy",
+                        "requirement": {
+                            "requirement_type": "submission",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 15,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "planned to receive radiotherapy during the 8 days after chemotherapy",
+                        "criterion": "radiotherapy after chemotherapy",
+                        "requirement": {
+                            "requirement_type": "planned submission",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 8,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "patients submitted to concomitant radiotherapy",
+                        "criterion": "concomitant radiotherapy",
+                        "requirement": {
+                            "requirement_type": "submission",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "submitted to radiotherapy in the 15 days before chemotherapy",
+                        "criterion": "radiotherapy before chemotherapy",
+                        "requirement": {
+                            "requirement_type": "submission",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 15,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "planned to receive radiotherapy during the 8 days after chemotherapy",
+                        "criterion": "radiotherapy after chemotherapy",
+                        "requirement": {
+                            "requirement_type": "planned submission",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 8,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients receiving other concomitant antiemetic treatments or submitted to antiemetic treatments in the 24 hours before chemotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients receiving other concomitant antiemetic treatments",
+                        "criterion": "concomitant antiemetic treatments",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "submitted to antiemetic treatments in the 24 hours before chemotherapy",
+                        "criterion": "antiemetic treatments in the 24 hours before chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "patients receiving other concomitant antiemetic treatments",
+                        "criterion": "concomitant antiemetic treatments",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "submitted to antiemetic treatments in the 24 hours before chemotherapy",
+                        "criterion": "antiemetic treatments in the 24 hours before chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients with nausea or vomiting in the 24 hours before chemotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients with nausea",
+                        "criterion": "nausea",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with ... vomiting",
+                        "criterion": "vomiting",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "in the 24 hours before chemotherapy",
+                        "criterion": "time before chemotherapy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 24,
+                                "unit": "hours"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "patients with nausea",
+                                        "criterion": "nausea",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "in the 24 hours before chemotherapy",
+                                        "criterion": "time before chemotherapy",
+                                        "requirement": {
+                                            "requirement_type": "duration",
+                                            "expected_value": {
+                                                "operator": "=",
+                                                "value": 24,
+                                                "unit": "hours"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "patients with ... vomiting",
+                                        "criterion": "vomiting",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "in the 24 hours before chemotherapy",
+                                        "criterion": "time before chemotherapy",
+                                        "requirement": {
+                                            "requirement_type": "duration",
+                                            "expected_value": {
+                                                "operator": "=",
+                                                "value": 24,
+                                                "unit": "hours"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "patients with nausea",
+                                "criterion": "nausea",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "patients with ... vomiting",
+                                "criterion": "vomiting",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients with WBC count <3000/mm3 or platelet count <70000/mm3",
+                "criterions": [
+                    {
+                        "exact_snippets": "WBC count <3000/mm3",
+                        "criterion": "WBC count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3000,
+                                "unit": "mm3"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "platelet count <70000/mm3",
+                        "criterion": "platelet count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 70000,
+                                "unit": "mm3"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "WBC count <3000/mm3",
+                        "criterion": "WBC count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3000,
+                                "unit": "mm3"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "platelet count <70000/mm3",
+                        "criterion": "platelet count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 70000,
+                                "unit": "mm3"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* patients receiving concomitant steroids, except when administered at physiologic doses",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients receiving concomitant steroids",
+                        "criterion": "concomitant steroid use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "except when administered at physiologic doses",
+                        "criterion": "steroid dose",
+                        "requirement": {
+                            "requirement_type": "dose",
+                            "expected_value": "physiologic"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "patients receiving concomitant steroids",
+                    "criterion": "concomitant steroid use",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "not_criteria": {
+                        "exact_snippets": "except when administered at physiologic doses",
+                        "criterion": "steroid dose",
+                        "requirement": {
+                            "requirement_type": "dose",
+                            "expected_value": "physiologic"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients receiving concomitant benzodiazepines, except when used for nocturnal sedation",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients receiving concomitant benzodiazepines",
+                        "criterion": "concomitant benzodiazepine use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "except when used for nocturnal sedation",
+                        "criterion": "benzodiazepine use for nocturnal sedation",
+                        "requirement": {
+                            "requirement_type": "purpose",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "patients receiving concomitant benzodiazepines",
+                    "criterion": "concomitant benzodiazepine use",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "not_criteria": {
+                        "exact_snippets": "except when used for nocturnal sedation",
+                        "criterion": "benzodiazepine use for nocturnal sedation",
+                        "requirement": {
+                            "requirement_type": "purpose",
+                            "expected_value": true
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patients who are pregnant or breast-feeding",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients who are pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients who are ... breast-feeding",
+                        "criterion": "breast-feeding status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "patients who are pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients who are ... breast-feeding",
+                        "criterion": "breast-feeding status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

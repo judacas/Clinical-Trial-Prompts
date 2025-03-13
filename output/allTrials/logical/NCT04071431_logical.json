@@ -1,0 +1,226 @@
+{
+    "info": {
+        "nct_id": "NCT04071431",
+        "official_title": "A Self-rating Risk Factor Questionnaire for the Improvement of Endoscopic Prediction of Gastrointestinal Cancer: a Big-data-based Diagnostic Study",
+        "inclusion_criteria": "* Patients aged more than 18 years with or without GI symptoms attending for endoscopy.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients unable to cooperated the endoscopy or unable to complete it. People with endoscopy contraindications are naturally excluded.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients aged more than 18 years with or without GI symptoms attending for endoscopy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "aged more than 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "with or without GI symptoms",
+                        "criterion": "GI symptoms",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "with or without"
+                        }
+                    },
+                    {
+                        "exact_snippets": "attending for endoscopy",
+                        "criterion": "endoscopy attendance",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "aged more than 18 years",
+                                "criterion": "age",
+                                "requirement": {
+                                    "requirement_type": "minimum age",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "attending for endoscopy",
+                                "criterion": "endoscopy attendance",
+                                "requirement": {
+                                    "requirement_type": "intention",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "with or without GI symptoms",
+                                "criterion": "GI symptoms",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": "with"
+                                }
+                            },
+                            {
+                                "exact_snippets": "with or without GI symptoms",
+                                "criterion": "GI symptoms",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": "without"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients unable to cooperated the endoscopy or unable to complete it. People with endoscopy contraindications are naturally excluded.",
+                "criterions": [
+                    {
+                        "exact_snippets": "unable to cooperated the endoscopy",
+                        "criterion": "ability to cooperate with endoscopy",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unable to complete it",
+                        "criterion": "ability to complete endoscopy",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "endoscopy contraindications",
+                        "criterion": "endoscopy contraindications",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "unable to cooperated the endoscopy",
+                                "criterion": "ability to cooperate with endoscopy",
+                                "requirement": {
+                                    "requirement_type": "ability",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "unable to complete it",
+                                "criterion": "ability to complete endoscopy",
+                                "requirement": {
+                                    "requirement_type": "ability",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "endoscopy contraindications",
+                        "criterion": "endoscopy contraindications",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

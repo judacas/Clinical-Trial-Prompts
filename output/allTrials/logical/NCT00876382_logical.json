@@ -1,0 +1,134 @@
+{
+    "info": {
+        "nct_id": "NCT00876382",
+        "official_title": "Community Oncology Setting Disease Outcomes of Sorafenib (Nexavar) Use in Advanced Renal Cell Carcinoma",
+        "inclusion_criteria": "* Eligible patient cases are those that have received Sorafenib (Nexavar) as second-line therapy after Sunitinib (Sutent) or Bevacizumab (Avastin) for first-line therapy or those patients that were treated with Sorafenib (Nexavar) as first-line therapy followed by Sunitinib (Sutent) as secondline therapy.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Eligible patient cases are those that have received Sorafenib (Nexavar) as second-line therapy after Sunitinib (Sutent) or Bevacizumab (Avastin) for first-line therapy or those patients that were treated with Sorafenib (Nexavar) as first-line therapy followed by Sunitinib (Sutent) as secondline therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "received Sorafenib (Nexavar) as second-line therapy after Sunitinib (Sutent) or Bevacizumab (Avastin) for first-line therapy",
+                        "criterion": "treatment history",
+                        "requirement": {
+                            "requirement_type": "sequence",
+                            "expected_value": [
+                                "Sunitinib (Sutent) or Bevacizumab (Avastin)",
+                                "Sorafenib (Nexavar)"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "treated with Sorafenib (Nexavar) as first-line therapy followed by Sunitinib (Sutent) as secondline therapy",
+                        "criterion": "treatment history",
+                        "requirement": {
+                            "requirement_type": "sequence",
+                            "expected_value": [
+                                "Sorafenib (Nexavar)",
+                                "Sunitinib (Sutent)"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "received Sorafenib (Nexavar) as second-line therapy after Sunitinib (Sutent) or Bevacizumab (Avastin) for first-line therapy",
+                                "criterion": "treatment history",
+                                "requirement": {
+                                    "requirement_type": "sequence",
+                                    "expected_value": [
+                                        "Sunitinib (Sutent) or Bevacizumab (Avastin)",
+                                        "Sorafenib (Nexavar)"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "treated with Sorafenib (Nexavar) as first-line therapy followed by Sunitinib (Sutent) as secondline therapy",
+                                "criterion": "treatment history",
+                                "requirement": {
+                                    "requirement_type": "sequence",
+                                    "expected_value": [
+                                        "Sorafenib (Nexavar)",
+                                        "Sunitinib (Sutent)"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

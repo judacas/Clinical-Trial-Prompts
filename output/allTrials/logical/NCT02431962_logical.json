@@ -1,0 +1,770 @@
+{
+    "info": {
+        "nct_id": "NCT02431962",
+        "official_title": "Alberta Lung Cancer Screening Program",
+        "inclusion_criteria": "* Subjects between the ages of 55 and 80 with a risk prediction model (RPM) ≥1.5% (≥ 1.5% risk of lung cancer over 6 years) OR NLST criteria (age 55-74; ≥ 30 pack-year smoking history; ongoing smoking or quit within 15 years).\n* Ability to provide informed consent and participate in study procedures.\nHealthy volunteers allowed\nMust have minimum age of 55 Years\nMust have maximum age of 80 Years",
+        "exclusion_criteria": "* Any medical condition, such as severe heart disease (e.g. unstable angina, chronic congestive heart failure), severe lung disease or lung disease requiring supplemental oxygen that in the opinion of the physician unlikely to benefit from screening due to shortened life-expectancy from the co-morbidities or inability to tolerate diagnosis and treatment of a screen detected abnormality. European Cooperative Oncology Group performance status > 2.\n* History of lung cancer.\n* Have had other cancer or treatment for cancer within the past 5 years with the exception of the following cancers: non-melanomatous skin cancer, localized prostate cancer, carcinoma in situ (CIS) of the cervix, or superficial bladder cancer. Treatment of the exceptions must have ended > 6 months before registration into this study.\n* Pregnancy.\n* Hemoptysis in past 12 months.\n* Unexplained weight loss >15 pounds / 7kg in past 12 months.\n* Unwilling to have a LDCT of chest.\n* Unwilling to sign a consent.\n* Have had a CT scan of the chest in the last 2 years.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Subjects between the ages of 55 and 80 with a risk prediction model (RPM) ≥1.5% (≥ 1.5% risk of lung cancer over 6 years) OR NLST criteria (age 55-74; ≥ 30 pack-year smoking history; ongoing smoking or quit within 15 years).",
+                "criterions": [
+                    {
+                        "exact_snippets": "ages of 55 and 80",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 55,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 80,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "risk prediction model (RPM) ≥1.5%",
+                        "criterion": "risk prediction model (RPM)",
+                        "requirement": {
+                            "requirement_type": "risk percentage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1.5,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "NLST criteria (age 55-74",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 55,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 74,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "NLST criteria ... ≥ 30 pack-year smoking history",
+                        "criterion": "pack-year smoking history",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 30,
+                                "unit": "pack-years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "NLST criteria ... ongoing smoking or quit within 15 years",
+                        "criterion": "smoking status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "ongoing smoking",
+                                "quit within 15 years"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "ages of 55 and 80",
+                                "criterion": "age",
+                                "requirement": {
+                                    "requirement_type": "range",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 55,
+                                                "unit": "years"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 80,
+                                                "unit": "years"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "risk prediction model (RPM) ≥1.5%",
+                                "criterion": "risk prediction model (RPM)",
+                                "requirement": {
+                                    "requirement_type": "risk percentage",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 1.5,
+                                        "unit": "%"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "NLST criteria (age 55-74",
+                                "criterion": "age",
+                                "requirement": {
+                                    "requirement_type": "range",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 55,
+                                                "unit": "years"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 74,
+                                                "unit": "years"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "NLST criteria ... ≥ 30 pack-year smoking history",
+                                "criterion": "pack-year smoking history",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 30,
+                                        "unit": "pack-years"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "NLST criteria ... ongoing smoking or quit within 15 years",
+                                "criterion": "smoking status",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": [
+                                        "ongoing smoking",
+                                        "quit within 15 years"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Ability to provide informed consent and participate in study procedures.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ability to provide informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Ability to ... participate in study procedures",
+                        "criterion": "participation in study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ability to provide informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Ability to ... participate in study procedures",
+                        "criterion": "participation in study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 55 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 55 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 55,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 55 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 55,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 80 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 80 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 80,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 80 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 80,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Any medical condition, such as severe heart disease (e.g. unstable angina, chronic congestive heart failure), severe lung disease or lung disease requiring supplemental oxygen that in the opinion of the physician unlikely to benefit from screening due to shortened life-expectancy from the co-morbidities or inability to tolerate diagnosis and treatment of a screen detected abnormality. European Cooperative Oncology Group performance status > 2.",
+                "criterions": [
+                    {
+                        "exact_snippets": "severe heart disease (e.g. unstable angina, chronic congestive heart failure)",
+                        "criterion": "heart disease",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe lung disease or lung disease requiring supplemental oxygen",
+                        "criterion": "lung disease",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe lung disease or lung disease requiring supplemental oxygen",
+                        "criterion": "lung disease",
+                        "requirement": {
+                            "requirement_type": "oxygen requirement",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "European Cooperative Oncology Group performance status > 2",
+                        "criterion": "European Cooperative Oncology Group performance status",
+                        "requirement": {
+                            "requirement_type": "performance status",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "severe heart disease (e.g. unstable angina, chronic congestive heart failure)",
+                                        "criterion": "heart disease",
+                                        "requirement": {
+                                            "requirement_type": "severity",
+                                            "expected_value": "severe"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "severe lung disease or lung disease requiring supplemental oxygen",
+                                        "criterion": "lung disease",
+                                        "requirement": {
+                                            "requirement_type": "severity",
+                                            "expected_value": "severe"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "severe lung disease or lung disease requiring supplemental oxygen",
+                                "criterion": "lung disease",
+                                "requirement": {
+                                    "requirement_type": "oxygen requirement",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "European Cooperative Oncology Group performance status > 2",
+                        "criterion": "European Cooperative Oncology Group performance status",
+                        "requirement": {
+                            "requirement_type": "performance status",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of lung cancer.",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of lung cancer.",
+                        "criterion": "lung cancer",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "History of lung cancer.",
+                    "criterion": "lung cancer",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have had other cancer or treatment for cancer within the past 5 years with the exception of the following cancers: non-melanomatous skin cancer, localized prostate cancer, carcinoma in situ (CIS) of the cervix, or superficial bladder cancer. Treatment of the exceptions must have ended > 6 months before registration into this study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Have had other cancer or treatment for cancer within the past 5 years",
+                        "criterion": "history of cancer or cancer treatment",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "with the exception of the following cancers: non-melanomatous skin cancer, localized prostate cancer, carcinoma in situ (CIS) of the cervix, or superficial bladder cancer",
+                        "criterion": "cancer type",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": [
+                                "non-melanomatous skin cancer",
+                                "localized prostate cancer",
+                                "carcinoma in situ (CIS) of the cervix",
+                                "superficial bladder cancer"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Treatment of the exceptions must have ended > 6 months before registration into this study",
+                        "criterion": "treatment end date for exception cancers",
+                        "requirement": {
+                            "requirement_type": "time since treatment end",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Have had other cancer or treatment for cancer within the past 5 years",
+                                    "criterion": "history of cancer or cancer treatment",
+                                    "requirement": {
+                                        "requirement_type": "time frame",
+                                        "expected_value": {
+                                            "operator": "<=",
+                                            "value": 5,
+                                            "unit": "years"
+                                        }
+                                    }
+                                },
+                                {
+                                    "not_criteria": {
+                                        "exact_snippets": "with the exception of the following cancers: non-melanomatous skin cancer, localized prostate cancer, carcinoma in situ (CIS) of the cervix, or superficial bladder cancer",
+                                        "criterion": "cancer type",
+                                        "requirement": {
+                                            "requirement_type": "exclusion",
+                                            "expected_value": [
+                                                "non-melanomatous skin cancer",
+                                                "localized prostate cancer",
+                                                "carcinoma in situ (CIS) of the cervix",
+                                                "superficial bladder cancer"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "with the exception of the following cancers: non-melanomatous skin cancer, localized prostate cancer, carcinoma in situ (CIS) of the cervix, or superficial bladder cancer",
+                                    "criterion": "cancer type",
+                                    "requirement": {
+                                        "requirement_type": "exclusion",
+                                        "expected_value": [
+                                            "non-melanomatous skin cancer",
+                                            "localized prostate cancer",
+                                            "carcinoma in situ (CIS) of the cervix",
+                                            "superficial bladder cancer"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "Treatment of the exceptions must have ended > 6 months before registration into this study",
+                                    "criterion": "treatment end date for exception cancers",
+                                    "requirement": {
+                                        "requirement_type": "time since treatment end",
+                                        "expected_value": {
+                                            "operator": ">",
+                                            "value": 6,
+                                            "unit": "months"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pregnancy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Pregnancy",
+                    "criterion": "pregnancy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Hemoptysis in past 12 months.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Hemoptysis in past 12 months",
+                        "criterion": "hemoptysis",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": "past 12 months"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Hemoptysis in past 12 months",
+                    "criterion": "hemoptysis",
+                    "requirement": {
+                        "requirement_type": "time frame",
+                        "expected_value": "past 12 months"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Unwilling to have a LDCT of chest.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unwilling to have a LDCT of chest.",
+                        "criterion": "willingness to have a LDCT of chest",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Unwilling to have a LDCT of chest.",
+                    "criterion": "willingness to have a LDCT of chest",
+                    "requirement": {
+                        "requirement_type": "willingness",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Unwilling to sign a consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unwilling to sign a consent.",
+                        "criterion": "consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Unwilling to sign a consent.",
+                    "criterion": "consent",
+                    "requirement": {
+                        "requirement_type": "willingness",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have had a CT scan of the chest in the last 2 years.",
+                "criterions": [
+                    {
+                        "exact_snippets": "CT scan of the chest in the last 2 years",
+                        "criterion": "CT scan of the chest",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": "in the last 2 years"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "CT scan of the chest in the last 2 years",
+                        "criterion": "CT scan of the chest",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": "in the last 2 years"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Unexplained weight loss >15 pounds / 7kg in past 12 months.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unexplained weight loss >15 pounds / 7kg in past 12 months.",
+                        "criterion": "unexplained weight loss",
+                        "requirement": {
+                            "requirement_type": "amount",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 15,
+                                        "unit": "pounds"
+                                    },
+                                    {
+                                        "operator": ">",
+                                        "value": 7,
+                                        "unit": "kg"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Unexplained weight loss >15 pounds / 7kg in past 12 months.",
+                        "criterion": "unexplained weight loss",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": "past 12 months"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Unexplained weight loss >15 pounds / 7kg in past 12 months.",
+                                "criterion": "unexplained weight loss",
+                                "requirement": {
+                                    "requirement_type": "amount",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">",
+                                                "value": 15,
+                                                "unit": "pounds"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "Unexplained weight loss >15 pounds / 7kg in past 12 months.",
+                                "criterion": "unexplained weight loss",
+                                "requirement": {
+                                    "requirement_type": "amount",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">",
+                                                "value": 7,
+                                                "unit": "kg"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Unexplained weight loss >15 pounds / 7kg in past 12 months.",
+                        "criterion": "unexplained weight loss",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": "past 12 months"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

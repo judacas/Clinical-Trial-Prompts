@@ -1,0 +1,544 @@
+{
+    "info": {
+        "nct_id": "NCT05399329",
+        "official_title": "Retrospective, Multicenter, Observational Study to Evaluate Real-World Effectiveness of Palbociclib Plus Endocrine Therapy in Japanese Patients With HR+/HER2- Advanced Breast Cancer in First Line or Second Line Settings",
+        "inclusion_criteria": "* Diagnosis of HR+/HER2- ABC\n* Age of 20 years or older at diagnosis of ABC\n* Patients that received palbociclib plus ET in the first line or second line\n* Patients who meet the criteria regarding the medical record below:\n* Patients with any medical records (regardless of palbociclib use) for more than 6 months from palbociclib initiation OR\n* Patients with any medical records for less than 6 months from palbociclib initiation AND who had specific events (death, disease progression, or treatment discontinuation of palbociclib due to adverse events) in the available records\nHealthy volunteers allowed\nMust have minimum age of 20 Years",
+        "exclusion_criteria": "* Patients who received chemotherapy as first line treatment.\n* Patients who have previously participated or are participating in any interventional clinical trials that include investigational or marketed products.\n\n(Interventional clinical trials for early breast cancer and later line after palbociclib will be acceptable, Besides, patients participating in other investigator-initiated research or noninterventional studies can be included as long as their standard of care is not altered by the study.)",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Diagnosis of HR+/HER2- ABC",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of HR+/HER2- ABC",
+                        "criterion": "HR+ ABC",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosis of HR+/HER2- ABC",
+                        "criterion": "HER2- ABC",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Diagnosis of HR+/HER2- ABC",
+                        "criterion": "HR+ ABC",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosis of HR+/HER2- ABC",
+                        "criterion": "HER2- ABC",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age of 20 years or older at diagnosis of ABC",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age of 20 years or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age of 20 years or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who meet the criteria regarding the medical record below:",
+                "criterions": [
+                    {
+                        "exact_snippets": "medical record",
+                        "criterion": "medical record",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "medical record",
+                        "criterion": "medical record",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with any medical records (regardless of palbociclib use) for more than 6 months from palbociclib initiation OR",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with any medical records",
+                        "criterion": "medical records",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "more than 6 months from palbociclib initiation",
+                        "criterion": "duration since palbociclib initiation",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients with any medical records",
+                                "criterion": "medical records",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "more than 6 months from palbociclib initiation",
+                                "criterion": "duration since palbociclib initiation",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 6,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with any medical records for less than 6 months from palbociclib initiation AND who had specific events (death, disease progression, or treatment discontinuation of palbociclib due to adverse events) in the available records",
+                "criterions": [
+                    {
+                        "exact_snippets": "any medical records for less than 6 months from palbociclib initiation",
+                        "criterion": "medical records duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "specific events (death, disease progression, or treatment discontinuation of palbociclib due to adverse events)",
+                        "criterion": "specific events",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "death",
+                                "disease progression",
+                                "treatment discontinuation of palbociclib due to adverse events"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "any medical records for less than 6 months from palbociclib initiation",
+                        "criterion": "medical records duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "specific events (death, disease progression, or treatment discontinuation of palbociclib due to adverse events)",
+                        "criterion": "specific events",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "death",
+                                "disease progression",
+                                "treatment discontinuation of palbociclib due to adverse events"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteers",
+                        "requirement": {
+                            "requirement_type": "allowed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteers",
+                        "requirement": {
+                            "requirement_type": "allowed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 20 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 20 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 20 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients who received chemotherapy as first line treatment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who received chemotherapy as first line treatment",
+                        "criterion": "chemotherapy as first line treatment",
+                        "requirement": {
+                            "requirement_type": "receipt",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patients who received chemotherapy as first line treatment",
+                    "criterion": "chemotherapy as first line treatment",
+                    "requirement": {
+                        "requirement_type": "receipt",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who have previously participated or are participating in any interventional clinical trials that include investigational or marketed products.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who have previously participated or are participating in any interventional clinical trials",
+                        "criterion": "participation in interventional clinical trials",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "previously participated",
+                                "currently participating"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "interventional clinical trials that include investigational or marketed products",
+                        "criterion": "type of clinical trials",
+                        "requirement": {
+                            "requirement_type": "inclusion of products",
+                            "expected_value": [
+                                "investigational",
+                                "marketed"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients who have previously participated or are participating in any interventional clinical trials",
+                                "criterion": "participation in interventional clinical trials",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": [
+                                        "previously participated",
+                                        "currently participating"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "interventional clinical trials that include investigational or marketed products",
+                                "criterion": "type of clinical trials",
+                                "requirement": {
+                                    "requirement_type": "inclusion of products",
+                                    "expected_value": [
+                                        "investigational",
+                                        "marketed"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "(Interventional clinical trials for early breast cancer and later line after palbociclib will be acceptable, Besides, patients participating in other investigator-initiated research or noninterventional studies can be included as long as their standard of care is not altered by the study.)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Interventional clinical trials for early breast cancer",
+                        "criterion": "interventional clinical trials",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "early breast cancer"
+                        }
+                    },
+                    {
+                        "exact_snippets": "later line after palbociclib",
+                        "criterion": "treatment line",
+                        "requirement": {
+                            "requirement_type": "sequence",
+                            "expected_value": "later line after palbociclib"
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients participating in other investigator-initiated research or noninterventional studies",
+                        "criterion": "participation in other studies",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "investigator-initiated research",
+                                "noninterventional studies"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "as long as their standard of care is not altered by the study",
+                        "criterion": "standard of care",
+                        "requirement": {
+                            "requirement_type": "alteration",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Interventional clinical trials for early breast cancer",
+                                        "criterion": "interventional clinical trials",
+                                        "requirement": {
+                                            "requirement_type": "condition",
+                                            "expected_value": "early breast cancer"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "later line after palbociclib",
+                                        "criterion": "treatment line",
+                                        "requirement": {
+                                            "requirement_type": "sequence",
+                                            "expected_value": "later line after palbociclib"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "patients participating in other investigator-initiated research or noninterventional studies",
+                                        "criterion": "participation in other studies",
+                                        "requirement": {
+                                            "requirement_type": "type",
+                                            "expected_value": [
+                                                "investigator-initiated research",
+                                                "noninterventional studies"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "as long as their standard of care is not altered by the study",
+                                        "criterion": "standard of care",
+                                        "requirement": {
+                                            "requirement_type": "alteration",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients that received palbociclib plus ET in the first line or second line",
+                "criterions": [
+                    {
+                        "exact_snippets": "received palbociclib plus ET",
+                        "criterion": "treatment history",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": [
+                                "palbociclib",
+                                "ET"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "first line or second line",
+                        "criterion": "line of therapy",
+                        "requirement": {
+                            "requirement_type": "line",
+                            "expected_value": [
+                                "first",
+                                "second"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "received palbociclib plus ET",
+                                "criterion": "treatment history",
+                                "requirement": {
+                                    "requirement_type": "treatment",
+                                    "expected_value": [
+                                        "palbociclib",
+                                        "ET"
+                                    ]
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "first line or second line",
+                                        "criterion": "line of therapy",
+                                        "requirement": {
+                                            "requirement_type": "line",
+                                            "expected_value": "first"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "first line or second line",
+                                        "criterion": "line of therapy",
+                                        "requirement": {
+                                            "requirement_type": "line",
+                                            "expected_value": "second"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

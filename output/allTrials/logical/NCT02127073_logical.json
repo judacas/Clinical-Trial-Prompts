@@ -1,0 +1,269 @@
+{
+    "info": {
+        "nct_id": "NCT02127073",
+        "official_title": "Identifying the miR Fingerprint in NAF, Serum, and Tissue in Patients With Ductal Carcinoma in Situ (DCIS) or Invasive Breast Cancer",
+        "inclusion_criteria": "* Clinical diagnosis of Ductal carcinoma in situ (DCIS) or invasive breast cancer\n* Candidate for breast conserving surgery or mastectomy\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Pregnant women\n* Prior Breast Cancer diagnosis\n* Adverse reaction to Oxytocin in the past",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Clinical diagnosis of Ductal carcinoma in situ (DCIS) or invasive breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinical diagnosis of Ductal carcinoma in situ (DCIS)",
+                        "criterion": "Ductal carcinoma in situ (DCIS)",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Clinical diagnosis of ... invasive breast cancer",
+                        "criterion": "invasive breast cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Clinical diagnosis of Ductal carcinoma in situ (DCIS)",
+                        "criterion": "Ductal carcinoma in situ (DCIS)",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Clinical diagnosis of ... invasive breast cancer",
+                        "criterion": "invasive breast cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Candidate for breast conserving surgery or mastectomy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Candidate for breast conserving surgery",
+                        "criterion": "breast conserving surgery candidacy",
+                        "requirement": {
+                            "requirement_type": "candidacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Candidate for ... mastectomy",
+                        "criterion": "mastectomy candidacy",
+                        "requirement": {
+                            "requirement_type": "candidacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Candidate for breast conserving surgery",
+                        "criterion": "breast conserving surgery candidacy",
+                        "requirement": {
+                            "requirement_type": "candidacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Candidate for ... mastectomy",
+                        "criterion": "mastectomy candidacy",
+                        "requirement": {
+                            "requirement_type": "candidacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Pregnant women",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant women",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Pregnant women",
+                    "criterion": "pregnancy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior Breast Cancer diagnosis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior Breast Cancer diagnosis",
+                        "criterion": "Breast Cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "prior"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prior Breast Cancer diagnosis",
+                    "criterion": "Breast Cancer diagnosis",
+                    "requirement": {
+                        "requirement_type": "timing",
+                        "expected_value": "prior"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adverse reaction to Oxytocin in the past",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adverse reaction to Oxytocin in the past",
+                        "criterion": "adverse reaction to Oxytocin",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adverse reaction to Oxytocin in the past",
+                        "criterion": "adverse reaction to Oxytocin",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

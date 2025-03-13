@@ -1,0 +1,534 @@
+{
+    "info": {
+        "nct_id": "NCT01079520",
+        "official_title": "A Prospective Trial of Endobronchial Ultrasound- Transbronchial Needle Aspiration Compared to Mediastinoscopy for Mediastinal Lymph Node Staging of Non-small Cell Lung Cancer",
+        "inclusion_criteria": "* Histology-proven non-small cell lung cancer\n* N2 or N3 lymph node invasion is suspected based on chest CT or PET/CT scans (at least one of three criteria) : 1) enlarged (1cm or more in short axis diameter) mediastinal lymph node(s), 2) FDG uptake in the mediastinal lymph node(s), or 3) FDG uptake in N1 node(s)\n* The patient is otherwise considered a candidate for a surgical treatment with the intention to cure\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Distant metastasis\n* Inoperable T4 disease\n* Confirmed supraclavicular lymph node metastasis\n* Former therapy (chemotherapy or radiotherapy or surgery) for lung cancer\n* Contraindications for bronchoscopy\n* Uncorrected coagulopathy\n* Concurrent other malignancies\n* Suspicious mediastinal lymph node metastasis which are not accessible by EBUS-TBNA or mediastinoscopy (i.e. paraaortic, aortopulmonary window, or paraesophageal lymph nodes)",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Histology-proven non-small cell lung cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histology-proven non-small cell lung cancer",
+                        "criterion": "non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histology-proven non-small cell lung cancer",
+                        "criterion": "non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "histology-proven"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Histology-proven non-small cell lung cancer",
+                        "criterion": "non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histology-proven non-small cell lung cancer",
+                        "criterion": "non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "histology-proven"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* N2 or N3 lymph node invasion is suspected based on chest CT or PET/CT scans (at least one of three criteria) : 1) enlarged (1cm or more in short axis diameter) mediastinal lymph node(s), 2) FDG uptake in the mediastinal lymph node(s), or 3) FDG uptake in N1 node(s)",
+                "criterions": [
+                    {
+                        "exact_snippets": "N2 or N3 lymph node invasion is suspected based on chest CT or PET/CT scans",
+                        "criterion": "N2 or N3 lymph node invasion",
+                        "requirement": {
+                            "requirement_type": "suspicion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "enlarged (1cm or more in short axis diameter) mediastinal lymph node(s)",
+                        "criterion": "mediastinal lymph node size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "cm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "FDG uptake in the mediastinal lymph node(s)",
+                        "criterion": "FDG uptake in mediastinal lymph node(s)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "FDG uptake in N1 node(s)",
+                        "criterion": "FDG uptake in N1 node(s)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "N2 or N3 lymph node invasion is suspected based on chest CT or PET/CT scans",
+                            "criterion": "N2 or N3 lymph node invasion",
+                            "requirement": {
+                                "requirement_type": "suspicion",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "or_criteria": [
+                        {
+                            "exact_snippets": "enlarged (1cm or more in short axis diameter) mediastinal lymph node(s)",
+                            "criterion": "mediastinal lymph node size",
+                            "requirement": {
+                                "requirement_type": "size",
+                                "expected_value": {
+                                    "operator": ">=",
+                                    "value": 1,
+                                    "unit": "cm"
+                                }
+                            }
+                        },
+                        {
+                            "exact_snippets": "FDG uptake in the mediastinal lymph node(s)",
+                            "criterion": "FDG uptake in mediastinal lymph node(s)",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "FDG uptake in N1 node(s)",
+                            "criterion": "FDG uptake in N1 node(s)",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The patient is otherwise considered a candidate for a surgical treatment with the intention to cure",
+                "criterions": [
+                    {
+                        "exact_snippets": "considered a candidate for a surgical treatment",
+                        "criterion": "surgical treatment candidacy",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": "cure"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "considered a candidate for a surgical treatment",
+                        "criterion": "surgical treatment candidacy",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": "cure"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Distant metastasis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Distant metastasis",
+                        "criterion": "distant metastasis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Distant metastasis",
+                        "criterion": "distant metastasis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Inoperable T4 disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inoperable T4 disease",
+                        "criterion": "T4 disease",
+                        "requirement": {
+                            "requirement_type": "operability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Inoperable T4 disease",
+                        "criterion": "T4 disease",
+                        "requirement": {
+                            "requirement_type": "operability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Confirmed supraclavicular lymph node metastasis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Confirmed supraclavicular lymph node metastasis",
+                        "criterion": "supraclavicular lymph node metastasis",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Confirmed supraclavicular lymph node metastasis",
+                    "criterion": "supraclavicular lymph node metastasis",
+                    "requirement": {
+                        "requirement_type": "confirmation",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Contraindications for bronchoscopy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Contraindications for bronchoscopy",
+                        "criterion": "bronchoscopy",
+                        "requirement": {
+                            "requirement_type": "contraindications",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Contraindications for bronchoscopy",
+                        "criterion": "bronchoscopy",
+                        "requirement": {
+                            "requirement_type": "contraindications",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Concurrent other malignancies",
+                "criterions": [
+                    {
+                        "exact_snippets": "Concurrent other malignancies",
+                        "criterion": "other malignancies",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Concurrent other malignancies",
+                    "criterion": "other malignancies",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Former therapy (chemotherapy or radiotherapy or surgery) for lung cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Former therapy (chemotherapy or radiotherapy or surgery) for lung cancer",
+                        "criterion": "former therapy for lung cancer",
+                        "requirement": {
+                            "requirement_type": "types",
+                            "expected_value": [
+                                "chemotherapy",
+                                "radiotherapy",
+                                "surgery"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Former therapy (chemotherapy or radiotherapy or surgery) for lung cancer",
+                                "criterion": "former therapy for lung cancer",
+                                "requirement": {
+                                    "requirement_type": "types",
+                                    "expected_value": "chemotherapy"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Former therapy (chemotherapy or radiotherapy or surgery) for lung cancer",
+                                "criterion": "former therapy for lung cancer",
+                                "requirement": {
+                                    "requirement_type": "types",
+                                    "expected_value": "radiotherapy"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Former therapy (chemotherapy or radiotherapy or surgery) for lung cancer",
+                                "criterion": "former therapy for lung cancer",
+                                "requirement": {
+                                    "requirement_type": "types",
+                                    "expected_value": "surgery"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Uncorrected coagulopathy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Uncorrected coagulopathy",
+                        "criterion": "coagulopathy",
+                        "requirement": {
+                            "requirement_type": "correction status",
+                            "expected_value": "uncorrected"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Uncorrected coagulopathy",
+                    "criterion": "coagulopathy",
+                    "requirement": {
+                        "requirement_type": "correction status",
+                        "expected_value": "corrected"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Suspicious mediastinal lymph node metastasis which are not accessible by EBUS-TBNA or mediastinoscopy (i.e. paraaortic, aortopulmonary window, or paraesophageal lymph nodes)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Suspicious mediastinal lymph node metastasis",
+                        "criterion": "mediastinal lymph node metastasis",
+                        "requirement": {
+                            "requirement_type": "suspicion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "not accessible by EBUS-TBNA or mediastinoscopy",
+                        "criterion": "accessibility by EBUS-TBNA or mediastinoscopy",
+                        "requirement": {
+                            "requirement_type": "accessibility",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "paraaortic, aortopulmonary window, or paraesophageal lymph nodes",
+                        "criterion": "lymph node location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "paraaortic",
+                                "aortopulmonary window",
+                                "paraesophageal"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Suspicious mediastinal lymph node metastasis",
+                                "criterion": "mediastinal lymph node metastasis",
+                                "requirement": {
+                                    "requirement_type": "suspicion",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "not accessible by EBUS-TBNA or mediastinoscopy",
+                                "criterion": "accessibility by EBUS-TBNA or mediastinoscopy",
+                                "requirement": {
+                                    "requirement_type": "accessibility",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "paraaortic, aortopulmonary window, or paraesophageal lymph nodes",
+                                "criterion": "lymph node location",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": "paraaortic"
+                                }
+                            },
+                            {
+                                "exact_snippets": "paraaortic, aortopulmonary window, or paraesophageal lymph nodes",
+                                "criterion": "lymph node location",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": "aortopulmonary window"
+                                }
+                            },
+                            {
+                                "exact_snippets": "paraaortic, aortopulmonary window, or paraesophageal lymph nodes",
+                                "criterion": "lymph node location",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": "paraesophageal"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,616 @@
+{
+    "info": {
+        "nct_id": "NCT05891431",
+        "official_title": "Acceptability and Preliminary Effectiveness of a Mobile Health Intervention (Untire App) for Adult Cancer Patients and Survivors With Cancer Related Fatigue: A Pilot Clinical Study",
+        "inclusion_criteria": "* Adults with cancer or cancer survivors (18 years and older).\n* Self-reported current diagnosis or previous history of treatment for cancer (cancer survivor).\n* A moderate or severe level of fatigue as measured by items 1-3 of the Brief Fatigue Inventory (BFI).\n* Access to a smart phone, tablet, or iPad (Apple or Android).\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Participants < 18 years of age\n* Non-English language speakers\n* Participants with a diagnosis of and receiving treatment for severe psychological distress (e.g. major depression, psychotic disorder, anxiety disorder, or addiction).\n* Participants with a diagnosis of chronic fatigue syndrome, myalgic encephalomyelitis, or fibromyalgia.\n* Previous or current us of the Untire app",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Adults with cancer or cancer survivors (18 years and older).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adults with cancer",
+                        "criterion": "cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cancer survivors",
+                        "criterion": "cancer survivor",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "18 years and older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Adults with cancer",
+                                "criterion": "cancer",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "18 years and older",
+                                "criterion": "age",
+                                "requirement": {
+                                    "requirement_type": "minimum",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "cancer survivors",
+                                "criterion": "cancer survivor",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "18 years and older",
+                                "criterion": "age",
+                                "requirement": {
+                                    "requirement_type": "minimum",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Self-reported current diagnosis or previous history of treatment for cancer (cancer survivor).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Self-reported current diagnosis ... cancer",
+                        "criterion": "current cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous history of treatment for cancer",
+                        "criterion": "previous cancer treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Self-reported current diagnosis ... cancer",
+                        "criterion": "current cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous history of treatment for cancer",
+                        "criterion": "previous cancer treatment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* A moderate or severe level of fatigue as measured by items 1-3 of the Brief Fatigue Inventory (BFI).",
+                "criterions": [
+                    {
+                        "exact_snippets": "moderate or severe level of fatigue",
+                        "criterion": "fatigue level",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": [
+                                "moderate",
+                                "severe"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "items 1-3 of the Brief Fatigue Inventory (BFI)",
+                        "criterion": "Brief Fatigue Inventory (BFI)",
+                        "requirement": {
+                            "requirement_type": "measurement",
+                            "expected_value": "items 1-3"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "moderate or severe level of fatigue",
+                        "criterion": "fatigue level",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": [
+                                "moderate",
+                                "severe"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "items 1-3 of the Brief Fatigue Inventory (BFI)",
+                        "criterion": "Brief Fatigue Inventory (BFI)",
+                        "requirement": {
+                            "requirement_type": "measurement",
+                            "expected_value": "items 1-3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Participants < 18 years of age",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participants < 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participants < 18 years of age",
+                    "criterion": "age",
+                    "requirement": {
+                        "requirement_type": "value",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 18,
+                            "unit": "years"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Non-English language speakers",
+                "criterions": [
+                    {
+                        "exact_snippets": "Non-English language speakers",
+                        "criterion": "language",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": "non-English"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Non-English language speakers",
+                    "criterion": "language",
+                    "requirement": {
+                        "requirement_type": "proficiency",
+                        "expected_value": "non-English"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants with a diagnosis of and receiving treatment for severe psychological distress (e.g. major depression, psychotic disorder, anxiety disorder, or addiction).",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosis of ... severe psychological distress",
+                        "criterion": "psychological distress",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "receiving treatment for severe psychological distress",
+                        "criterion": "treatment for psychological distress",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of ... major depression",
+                        "criterion": "major depression",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of ... psychotic disorder",
+                        "criterion": "psychotic disorder",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of ... anxiety disorder",
+                        "criterion": "anxiety disorder",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of ... addiction",
+                        "criterion": "addiction",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "diagnosis of ... severe psychological distress",
+                                "criterion": "psychological distress",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "severe"
+                                }
+                            },
+                            {
+                                "exact_snippets": "receiving treatment for severe psychological distress",
+                                "criterion": "treatment for psychological distress",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "diagnosis of ... major depression",
+                                "criterion": "major depression",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "diagnosis of ... psychotic disorder",
+                                "criterion": "psychotic disorder",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "diagnosis of ... anxiety disorder",
+                                "criterion": "anxiety disorder",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "diagnosis of ... addiction",
+                                "criterion": "addiction",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants with a diagnosis of chronic fatigue syndrome, myalgic encephalomyelitis, or fibromyalgia.",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosis of chronic fatigue syndrome",
+                        "criterion": "chronic fatigue syndrome",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of ... myalgic encephalomyelitis",
+                        "criterion": "myalgic encephalomyelitis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of ... fibromyalgia",
+                        "criterion": "fibromyalgia",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "diagnosis of chronic fatigue syndrome",
+                        "criterion": "chronic fatigue syndrome",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of ... myalgic encephalomyelitis",
+                        "criterion": "myalgic encephalomyelitis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of ... fibromyalgia",
+                        "criterion": "fibromyalgia",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Previous or current us of the Untire app",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous or current use of the Untire app",
+                        "criterion": "use of the Untire app",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Previous or current use of the Untire app",
+                    "criterion": "use of the Untire app",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Access to a smart phone, tablet, or iPad (Apple or Android).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Access to a smart phone, tablet, or iPad (Apple or Android).",
+                        "criterion": "access to a smart device",
+                        "requirement": {
+                            "requirement_type": "device type",
+                            "expected_value": [
+                                "smart phone",
+                                "tablet",
+                                "iPad"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Access to a smart phone, tablet, or iPad (Apple or Android).",
+                        "criterion": "access to a smart device",
+                        "requirement": {
+                            "requirement_type": "operating system",
+                            "expected_value": [
+                                "Apple",
+                                "Android"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Access to a smart phone, tablet, or iPad (Apple or Android).",
+                                "criterion": "access to a smart device",
+                                "requirement": {
+                                    "requirement_type": "device type",
+                                    "expected_value": "smart phone"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Access to a smart phone, tablet, or iPad (Apple or Android).",
+                                "criterion": "access to a smart device",
+                                "requirement": {
+                                    "requirement_type": "operating system",
+                                    "expected_value": [
+                                        "Apple",
+                                        "Android"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Access to a smart phone, tablet, or iPad (Apple or Android).",
+                                "criterion": "access to a smart device",
+                                "requirement": {
+                                    "requirement_type": "device type",
+                                    "expected_value": "tablet"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Access to a smart phone, tablet, or iPad (Apple or Android).",
+                                "criterion": "access to a smart device",
+                                "requirement": {
+                                    "requirement_type": "operating system",
+                                    "expected_value": [
+                                        "Apple",
+                                        "Android"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Access to a smart phone, tablet, or iPad (Apple or Android).",
+                                "criterion": "access to a smart device",
+                                "requirement": {
+                                    "requirement_type": "device type",
+                                    "expected_value": "iPad"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Access to a smart phone, tablet, or iPad (Apple or Android).",
+                                "criterion": "access to a smart device",
+                                "requirement": {
+                                    "requirement_type": "operating system",
+                                    "expected_value": "Apple"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,660 @@
+{
+    "info": {
+        "nct_id": "NCT04116827",
+        "official_title": "Analysis of Sleep and Activity Patterns in Pre-menopausal Breast Cancer Patients After Taking Tamoxifen Using a Wrist-worn Internet of Things Device",
+        "inclusion_criteria": "* diagnosed of unilateral breast cancer (stage 0 ~III)\n* underwent proper cancer treatment including surgery, chemotherapy, radiation therapy\n* age : 18 ~ 45\n* scheduled for applying tamoxifen and goserelin\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years\nMust have maximum age of 45 Years",
+        "exclusion_criteria": "* need CPAP device during sleep due to sleep apnea\n* under medication for restless leg syndrome\n* previous history of tamoxifen\n* irregular bedtime due to shift work\n* diagnosed of recurrent or metastatic cancer\n* have difficulty understanding and conducting surveys and verbal instructions due to severe cognitive, communication and perception problems\n* refuse to participate\n* has musculoskeletal system and neurological damage and lesions",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* diagnosed of unilateral breast cancer (stage 0 ~III)",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosed of unilateral breast cancer",
+                        "criterion": "unilateral breast cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stage 0 ~III",
+                        "criterion": "breast cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "diagnosed of unilateral breast cancer",
+                        "criterion": "unilateral breast cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stage 0 ~III",
+                        "criterion": "breast cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* underwent proper cancer treatment including surgery, chemotherapy, radiation therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "underwent proper cancer treatment including surgery",
+                        "criterion": "cancer treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "surgery"
+                        }
+                    },
+                    {
+                        "exact_snippets": "underwent proper cancer treatment including ... chemotherapy",
+                        "criterion": "cancer treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "chemotherapy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "underwent proper cancer treatment including ... radiation therapy",
+                        "criterion": "cancer treatment",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "radiation therapy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "underwent proper cancer treatment including surgery",
+                                "criterion": "cancer treatment",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "surgery"
+                                }
+                            },
+                            {
+                                "exact_snippets": "underwent proper cancer treatment including ... chemotherapy",
+                                "criterion": "cancer treatment",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "chemotherapy"
+                                }
+                            },
+                            {
+                                "exact_snippets": "underwent proper cancer treatment including ... radiation therapy",
+                                "criterion": "cancer treatment",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": "radiation therapy"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* age : 18 ~ 45",
+                "criterions": [
+                    {
+                        "exact_snippets": "age : 18 ~ 45",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 45,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "age : 18 ~ 45",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 45,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* scheduled for applying tamoxifen and goserelin",
+                "criterions": [
+                    {
+                        "exact_snippets": "scheduled for applying tamoxifen",
+                        "criterion": "tamoxifen treatment",
+                        "requirement": {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "scheduled for applying ... goserelin",
+                        "criterion": "goserelin treatment",
+                        "requirement": {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "scheduled for applying tamoxifen",
+                        "criterion": "tamoxifen treatment",
+                        "requirement": {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "scheduled for applying ... goserelin",
+                        "criterion": "goserelin treatment",
+                        "requirement": {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 45 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 45 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 45,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 45 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 45,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* need CPAP device during sleep due to sleep apnea",
+                "criterions": [
+                    {
+                        "exact_snippets": "need CPAP device during sleep",
+                        "criterion": "CPAP device usage",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "due to sleep apnea",
+                        "criterion": "sleep apnea",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "need CPAP device during sleep",
+                        "criterion": "CPAP device usage",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "due to sleep apnea",
+                        "criterion": "sleep apnea",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* under medication for restless leg syndrome",
+                "criterions": [
+                    {
+                        "exact_snippets": "under medication for restless leg syndrome",
+                        "criterion": "restless leg syndrome",
+                        "requirement": {
+                            "requirement_type": "medication status",
+                            "expected_value": "under medication"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "under medication for restless leg syndrome",
+                    "criterion": "restless leg syndrome",
+                    "requirement": {
+                        "requirement_type": "medication status",
+                        "expected_value": "under medication"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* previous history of tamoxifen",
+                "criterions": [
+                    {
+                        "exact_snippets": "previous history of tamoxifen",
+                        "criterion": "tamoxifen",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "previous history of tamoxifen",
+                    "criterion": "tamoxifen",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* irregular bedtime due to shift work",
+                "criterions": [
+                    {
+                        "exact_snippets": "irregular bedtime due to shift work",
+                        "criterion": "bedtime regularity",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": "shift work"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "irregular bedtime due to shift work",
+                    "criterion": "bedtime regularity",
+                    "requirement": {
+                        "requirement_type": "cause",
+                        "expected_value": "shift work"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* have difficulty understanding and conducting surveys and verbal instructions due to severe cognitive, communication and perception problems",
+                "criterions": [
+                    {
+                        "exact_snippets": "difficulty understanding and conducting surveys and verbal instructions",
+                        "criterion": "understanding and conducting surveys and verbal instructions",
+                        "requirement": {
+                            "requirement_type": "difficulty",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe cognitive, communication and perception problems",
+                        "criterion": "cognitive, communication and perception problems",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "severe cognitive, communication and perception problems",
+                            "criterion": "cognitive, communication and perception problems",
+                            "requirement": {
+                                "requirement_type": "severity",
+                                "expected_value": "severe"
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "difficulty understanding and conducting surveys and verbal instructions",
+                            "criterion": "understanding and conducting surveys and verbal instructions",
+                            "requirement": {
+                                "requirement_type": "difficulty",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* refuse to participate",
+                "criterions": [
+                    {
+                        "exact_snippets": "refuse to participate",
+                        "criterion": "willingness to participate",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "refuse to participate",
+                    "criterion": "willingness to participate",
+                    "requirement": {
+                        "requirement_type": "willingness",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* has musculoskeletal system and neurological damage and lesions",
+                "criterions": [
+                    {
+                        "exact_snippets": "musculoskeletal system",
+                        "criterion": "musculoskeletal system",
+                        "requirement": {
+                            "requirement_type": "damage",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "neurological damage",
+                        "criterion": "neurological system",
+                        "requirement": {
+                            "requirement_type": "damage",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "lesions",
+                        "criterion": "lesions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "musculoskeletal system",
+                        "criterion": "musculoskeletal system",
+                        "requirement": {
+                            "requirement_type": "damage",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "neurological damage",
+                        "criterion": "neurological system",
+                        "requirement": {
+                            "requirement_type": "damage",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "lesions",
+                        "criterion": "lesions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* diagnosed of recurrent or metastatic cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosed of recurrent or metastatic cancer",
+                        "criterion": "cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": [
+                                "recurrent",
+                                "metastatic"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "diagnosed of recurrent or metastatic cancer",
+                        "criterion": "cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "recurrent"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosed of recurrent or metastatic cancer",
+                        "criterion": "cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "metastatic"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

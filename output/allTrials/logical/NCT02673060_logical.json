@@ -1,0 +1,662 @@
+{
+    "info": {
+        "nct_id": "NCT02673060",
+        "official_title": "A Phase 1 Multicenter, Open-label, Dose-escalation Trial of MBC-11, an Etidronate-ara-C Conjugate in Patients With Malignant Tumors With Cancer-induced Bone Disease (CIBD)",
+        "inclusion_criteria": "* Histologically confirmed malignant tumor (breast cancer, prostate cancer etc)\n* Bone metastases, documented by radiographs, bone scan\n* No available standard chemotherapy or no indication for chemotherapy at the time of screening\n* Eastern Cooperative Oncology Group [ECOG] status 0-2\n* Adequate bone marrow function (hemoglobin ≥ 9 g/dL with or without transfusion requirement, absolute neutrophil count ≥ 1500/mm3, and platelets ≥ 75,000/mm3)\n* Adequate liver function (bilirubin ≤ 2 x Upper Limit of Normal [ULN], Alanine aminotransferase [ALT] ≤ 2.5 x ULN).\n* Adequate renal function (creatinine ≤ 1.5 x ULN) and creatinine clearance ≥ 50 mL/min [measured or calculated by nomogram]).\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Systemic chemotherapy and/or investigational therapy within the previous 4 weeks\n* Fracture ≤ 6 month prior the inclusion in the study\n* Brain metastasis\n* Serum calcium levels < 8.5 mg/dL (< 2.2 mmol/L)",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Histologically confirmed malignant tumor (breast cancer, prostate cancer etc)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologically confirmed malignant tumor",
+                        "criterion": "malignant tumor",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "histologically confirmed"
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prostate cancer",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Histologically confirmed malignant tumor",
+                                "criterion": "malignant tumor",
+                                "requirement": {
+                                    "requirement_type": "confirmation method",
+                                    "expected_value": "histologically confirmed"
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "breast cancer",
+                                        "criterion": "breast cancer",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "prostate cancer",
+                                        "criterion": "prostate cancer",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Bone metastases, documented by radiographs, bone scan",
+                "criterions": [
+                    {
+                        "exact_snippets": "Bone metastases, documented by radiographs, bone scan",
+                        "criterion": "bone metastases",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": [
+                                "radiographs",
+                                "bone scan"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Bone metastases, documented by radiographs, bone scan",
+                        "criterion": "bone metastases",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": [
+                                "radiographs",
+                                "bone scan"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No available standard chemotherapy or no indication for chemotherapy at the time of screening",
+                "criterions": [
+                    {
+                        "exact_snippets": "No available standard chemotherapy",
+                        "criterion": "standard chemotherapy",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "no indication for chemotherapy at the time of screening",
+                        "criterion": "indication for chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "No available standard chemotherapy",
+                        "criterion": "standard chemotherapy",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "no indication for chemotherapy at the time of screening",
+                        "criterion": "indication for chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group [ECOG] status 0-2",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group [ECOG] status 0-2",
+                        "criterion": "ECOG status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group [ECOG] status 0-2",
+                        "criterion": "ECOG status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adequate renal function (creatinine ≤ 1.5 x ULN) and creatinine clearance ≥ 50 mL/min [measured or calculated by nomogram]).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adequate renal function (creatinine ≤ 1.5 x ULN)",
+                        "criterion": "creatinine",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.5,
+                                "unit": "x ULN"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "creatinine clearance ≥ 50 mL/min",
+                        "criterion": "creatinine clearance",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "mL/min"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adequate renal function (creatinine ≤ 1.5 x ULN)",
+                        "criterion": "creatinine",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.5,
+                                "unit": "x ULN"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "creatinine clearance ≥ 50 mL/min",
+                        "criterion": "creatinine clearance",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "mL/min"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Systemic chemotherapy and/or investigational therapy within the previous 4 weeks",
+                "criterions": [
+                    {
+                        "exact_snippets": "Systemic chemotherapy ... within the previous 4 weeks",
+                        "criterion": "systemic chemotherapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "investigational therapy within the previous 4 weeks",
+                        "criterion": "investigational therapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Systemic chemotherapy ... within the previous 4 weeks",
+                        "criterion": "systemic chemotherapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "investigational therapy within the previous 4 weeks",
+                        "criterion": "investigational therapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Brain metastasis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Brain metastasis",
+                        "criterion": "brain metastasis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Brain metastasis",
+                    "criterion": "brain metastasis",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Serum calcium levels < 8.5 mg/dL (< 2.2 mmol/L)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Serum calcium levels < 8.5 mg/dL (< 2.2 mmol/L)",
+                        "criterion": "serum calcium levels",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<",
+                                        "value": 8.5,
+                                        "unit": "mg/dL"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 2.2,
+                                        "unit": "mmol/L"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Serum calcium levels < 8.5 mg/dL (< 2.2 mmol/L)",
+                        "criterion": "serum calcium levels",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<",
+                                        "value": 8.5,
+                                        "unit": "mg/dL"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 2.2,
+                                        "unit": "mmol/L"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Adequate bone marrow function (hemoglobin ≥ 9 g/dL with or without transfusion requirement, absolute neutrophil count ≥ 1500/mm3, and platelets ≥ 75,000/mm3)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adequate bone marrow function (hemoglobin ≥ 9 g/dL ...",
+                        "criterion": "hemoglobin",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 9,
+                                "unit": "g/dL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Adequate bone marrow function ... with or without transfusion requirement",
+                        "criterion": "transfusion requirement",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Adequate bone marrow function ... absolute neutrophil count ≥ 1500/mm3",
+                        "criterion": "absolute neutrophil count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1500,
+                                "unit": "mm3"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Adequate bone marrow function ... platelets ≥ 75,000/mm3",
+                        "criterion": "platelets",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 75000,
+                                "unit": "mm3"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Adequate bone marrow function (hemoglobin ≥ 9 g/dL ...",
+                                        "criterion": "hemoglobin",
+                                        "requirement": {
+                                            "requirement_type": "quantity",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 9,
+                                                "unit": "g/dL"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Adequate bone marrow function ... with or without transfusion requirement",
+                                        "criterion": "transfusion requirement",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "Adequate bone marrow function (hemoglobin ≥ 9 g/dL ...",
+                                "criterion": "hemoglobin",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 9,
+                                        "unit": "g/dL"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adequate liver function (bilirubin ≤ 2 x Upper Limit of Normal [ULN], Alanine aminotransferase [ALT] ≤ 2.5 x ULN).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adequate liver function (bilirubin ≤ 2 x Upper Limit of Normal [ULN]",
+                        "criterion": "bilirubin level",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "x ULN"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Alanine aminotransferase [ALT] ≤ 2.5 x ULN",
+                        "criterion": "Alanine aminotransferase (ALT) level",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.5,
+                                "unit": "x ULN"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adequate liver function (bilirubin \u0010 2 x Upper Limit of Normal [ULN]",
+                        "criterion": "bilirubin level",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "x ULN"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Alanine aminotransferase [ALT] \u0010 2.5 x ULN",
+                        "criterion": "Alanine aminotransferase (ALT) level",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.5,
+                                "unit": "x ULN"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Fracture ≤ 6 month prior the inclusion in the study",
+                "criterions": [
+                    {
+                        "exact_snippets": "Fracture ≤ 6 month prior the inclusion",
+                        "criterion": "fracture",
+                        "requirement": {
+                            "requirement_type": "time since occurrence",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "month"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Fracture \u0010 6 month prior the inclusion",
+                        "criterion": "fracture",
+                        "requirement": {
+                            "requirement_type": "time since occurrence",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "month"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

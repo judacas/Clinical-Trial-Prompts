@@ -1,0 +1,479 @@
+{
+    "info": {
+        "nct_id": "NCT00506376",
+        "official_title": "Simple Versus Radical Hysterectomy for Stage I Cervical Cancer: Preferences of Women at High-Risk for Developing Cervix Cancer vs. Women Diagnosed With Cervix Cancer",
+        "inclusion_criteria": "1. Women who are at least 18 years of age.\n2. Women who speak English\n3. Women presenting to the Colposcopy Clinic in the Gynecologic Oncology Clinic at M.D. Anderson Cancer Center OR women with an established diagnosis of either Stage IA2 or IB1 cervix cancer treated with radical hysterectomy 3-24 months prior to presenting to the Gynecologic Oncology\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "1. Women who are not 18 years of age.\n2. Women who are non-English speakers.\n3. Women with a diagnosis of any type of cancer other than cervical cancer.\n4. Women who are currently pregnant.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Women who are at least 18 years of age.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Women who speak English",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "speak English",
+                        "criterion": "language",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": "English"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "speak English",
+                        "criterion": "language",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": "English"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Women presenting to the Colposcopy Clinic in the Gynecologic Oncology Clinic at M.D. Anderson Cancer Center OR women with an established diagnosis of either Stage IA2 or IB1 cervix cancer treated with radical hysterectomy 3-24 months prior to presenting to the Gynecologic Oncology",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women presenting to the Colposcopy Clinic in the Gynecologic Oncology Clinic at M.D. Anderson Cancer Center",
+                        "criterion": "presentation location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "Colposcopy Clinic in the Gynecologic Oncology Clinic at M.D. Anderson Cancer Center"
+                        }
+                    },
+                    {
+                        "exact_snippets": "women with an established diagnosis of either Stage IA2 or IB1 cervix cancer",
+                        "criterion": "cervix cancer stage",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": [
+                                "Stage IA2",
+                                "IB1"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "treated with radical hysterectomy",
+                        "criterion": "treatment",
+                        "requirement": {
+                            "requirement_type": "procedure",
+                            "expected_value": "radical hysterectomy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "3-24 months prior to presenting to the Gynecologic Oncology",
+                        "criterion": "time since treatment",
+                        "requirement": {
+                            "requirement_type": "time since treatment",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 24,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Women presenting to the Colposcopy Clinic in the Gynecologic Oncology Clinic at M.D. Anderson Cancer Center",
+                                "criterion": "presentation location",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": "Colposcopy Clinic in the Gynecologic Oncology Clinic at M.D. Anderson Cancer Center"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "women with an established diagnosis of either Stage IA2 or IB1 cervix cancer",
+                                "criterion": "cervix cancer stage",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": [
+                                        "Stage IA2",
+                                        "IB1"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "treated with radical hysterectomy",
+                                "criterion": "treatment",
+                                "requirement": {
+                                    "requirement_type": "procedure",
+                                    "expected_value": "radical hysterectomy"
+                                }
+                            },
+                            {
+                                "exact_snippets": "3-24 months prior to presenting to the Gynecologic Oncology",
+                                "criterion": "time since treatment",
+                                "requirement": {
+                                    "requirement_type": "time since treatment",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 3,
+                                                "unit": "months"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 24,
+                                                "unit": "months"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Women who are not 18 years of age.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "not 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "!=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "not 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "!=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Women who are non-English speakers.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-English speakers",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "non-English"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-English speakers",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "non-English"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Women with a diagnosis of any type of cancer other than cervical cancer.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosis of any type of cancer other than cervical cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": "cervical cancer"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "diagnosis of any type of cancer other than cervical cancer",
+                            "criterion": "cancer diagnosis",
+                            "requirement": {
+                                "requirement_type": "exclusion",
+                                "expected_value": "cervical cancer"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Women who are currently pregnant.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women who are currently pregnant",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Women who are currently pregnant",
+                    "criterion": "pregnancy",
+                    "requirement": {
+                        "requirement_type": "status",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

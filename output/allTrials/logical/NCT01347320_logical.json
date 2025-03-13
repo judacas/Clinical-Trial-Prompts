@@ -1,0 +1,492 @@
+{
+    "info": {
+        "nct_id": "NCT01347320",
+        "official_title": "Clinical Impact of MR Imaging in Patients With Prostate Cancer",
+        "inclusion_criteria": "Healthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients who do not sign the consent paper for any reason or do not accept the study premises.\n* Patents who want to withdraw for any reason during the study.\n* Patients with contraindications to MRI (pacemaker, claustrophobia etc) and/or surgery.\n* Patients who have undergone a high quality MRI examination of the prostate at another radiological center. In this situation the MR examination is evaluated together with the surgeon but the patient is not included in the study. (In case of a low quality examinations, we will disregard the findings, and include the patient).\n* If the surgeon finds it unacceptable to perform RALP without MRI, because of various reasons (eg. patient demand, too high risk etc) the patient will not be included in the study.\n* If preoperative MRI reveals extensive tumor invasion into adjacent organ (T4) or skeletal metastases (M1), as these cancer stadiums do not benefit from RALP.",
+        "miscellaneous_criteria": "Inclusion criteria\n\n* All patients suitable for surgery.\n* Positive biopsy (Gleason grade >3).\n* Informed consent."
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients who do not sign the consent paper for any reason or do not accept the study premises.",
+                "criterions": [
+                    {
+                        "exact_snippets": "do not sign the consent paper",
+                        "criterion": "consent paper",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "do not accept the study premises",
+                        "criterion": "study premises acceptance",
+                        "requirement": {
+                            "requirement_type": "acceptance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "do not sign the consent paper",
+                            "criterion": "consent paper",
+                            "requirement": {
+                                "requirement_type": "signed",
+                                "expected_value": true
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "do not accept the study premises",
+                            "criterion": "study premises acceptance",
+                            "requirement": {
+                                "requirement_type": "acceptance",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patents who want to withdraw for any reason during the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patents who want to withdraw for any reason during the study.",
+                        "criterion": "withdrawal from study",
+                        "requirement": {
+                            "requirement_type": "desire to withdraw",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patents who want to withdraw for any reason during the study.",
+                        "criterion": "withdrawal from study",
+                        "requirement": {
+                            "requirement_type": "desire to withdraw",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who have undergone a high quality MRI examination of the prostate at another radiological center. In this situation the MR examination is evaluated together with the surgeon but the patient is not included in the study. (In case of a low quality examinations, we will disregard the findings, and include the patient).",
+                "criterions": [
+                    {
+                        "exact_snippets": "undergone a high quality MRI examination of the prostate",
+                        "criterion": "MRI examination quality",
+                        "requirement": {
+                            "requirement_type": "quality",
+                            "expected_value": "high"
+                        }
+                    },
+                    {
+                        "exact_snippets": "undergone a high quality MRI examination of the prostate",
+                        "criterion": "MRI examination location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "another radiological center"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "undergone a high quality MRI examination of the prostate",
+                            "criterion": "MRI examination quality",
+                            "requirement": {
+                                "requirement_type": "quality",
+                                "expected_value": "high"
+                            }
+                        },
+                        {
+                            "exact_snippets": "undergone a high quality MRI examination of the prostate",
+                            "criterion": "MRI examination location",
+                            "requirement": {
+                                "requirement_type": "location",
+                                "expected_value": "another radiological center"
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "exact_snippets": "undergone a high quality MRI examination of the prostate",
+                    "criterion": "study inclusion",
+                    "requirement": {
+                        "requirement_type": "inclusion",
+                        "expected_value": false
+                    }
+                },
+                "else_criteria": {
+                    "exact_snippets": "In case of a low quality examinations, we will disregard the findings, and include the patient.",
+                    "criterion": "study inclusion",
+                    "requirement": {
+                        "requirement_type": "inclusion",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* If the surgeon finds it unacceptable to perform RALP without MRI, because of various reasons (eg. patient demand, too high risk etc) the patient will not be included in the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "surgeon finds it unacceptable to perform RALP without MRI",
+                        "criterion": "surgeon's acceptance of RALP without MRI",
+                        "requirement": {
+                            "requirement_type": "acceptance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "condition": {
+                        "exact_snippets": "surgeon finds it unacceptable to perform RALP without MRI",
+                        "criterion": "surgeon's acceptance of RALP without MRI",
+                        "requirement": {
+                            "requirement_type": "acceptance",
+                            "expected_value": true
+                        }
+                    },
+                    "then_criteria": null,
+                    "else_criteria": null
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [
+        {
+            "identified_line": {
+                "line": "* All patients suitable for surgery.",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients suitable for surgery",
+                        "criterion": "suitability for surgery",
+                        "requirement": {
+                            "requirement_type": "suitability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "patients suitable for surgery",
+                        "criterion": "suitability for surgery",
+                        "requirement": {
+                            "requirement_type": "suitability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Positive biopsy (Gleason grade >3).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Positive biopsy",
+                        "criterion": "biopsy",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Gleason grade >3",
+                        "criterion": "Gleason grade",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Positive biopsy",
+                        "criterion": "biopsy",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Gleason grade >3",
+                        "criterion": "Gleason grade",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Informed consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Informed consent.",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Informed consent.",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion criteria",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients with contraindications to MRI (pacemaker, claustrophobia etc) and/or surgery.",
+                "criterions": [
+                    {
+                        "exact_snippets": "contraindications to MRI (pacemaker, claustrophobia etc)",
+                        "criterion": "contraindications to MRI",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "contraindications to ... surgery",
+                        "criterion": "contraindications to surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "contraindications to MRI (pacemaker, claustrophobia etc)",
+                                "criterion": "contraindications to MRI",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "contraindications to ... surgery",
+                                "criterion": "contraindications to surgery",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "contraindications to MRI (pacemaker, claustrophobia etc)",
+                        "criterion": "contraindications to MRI",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "contraindications to ... surgery",
+                        "criterion": "contraindications to surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* If preoperative MRI reveals extensive tumor invasion into adjacent organ (T4) or skeletal metastases (M1), as these cancer stadiums do not benefit from RALP.",
+                "criterions": [
+                    {
+                        "exact_snippets": "preoperative MRI reveals extensive tumor invasion into adjacent organ (T4)",
+                        "criterion": "tumor invasion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "preoperative MRI reveals ... skeletal metastases (M1)",
+                        "criterion": "skeletal metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "preoperative MRI reveals extensive tumor invasion into adjacent organ (T4)",
+                        "criterion": "tumor invasion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "preoperative MRI reveals ... skeletal metastases (M1)",
+                        "criterion": "skeletal metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

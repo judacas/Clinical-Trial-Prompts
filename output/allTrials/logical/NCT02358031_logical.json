@@ -1,0 +1,1708 @@
+{
+    "info": {
+        "nct_id": "NCT02358031",
+        "official_title": "A Phase 3 Clinical Trial of Pembrolizumab (MK-3475) in First Line Treatment of Recurrent/Metastatic Head and Neck Squamous Cell Carcinoma",
+        "inclusion_criteria": "* Histologically- or cytologically-confirmed recurrent or metastatic head and neck squamous cell carcinoma considered incurable by local therapies\n* No prior systemic therapy administered in the recurrent or metastatic setting (with the exception of systemic therapy completed > 6 months prior if given as part of multimodal treatment for locally advanced disease)\n* Primary tumor locations of oropharynx, oral cavity, hypopharynx, or larynx. Participants may not have a primary tumor site of nasopharynx (any histology)\n* Measurable disease\n* Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1\n* Adequate organ function\n* Can provide tissue for PD-L1 biomarker analysis from a core or excisional biopsy (fine needle aspirate is not sufficient): A newly obtained biopsy (within 90 days prior to start of study treatment) is preferred but an archival sample is acceptable.\n* Have results from testing of human papillomavirus (HPV) status for oropharyngeal cancer\n* Female participants of childbearing potential should have a negative pregnancy test and must be willing to use 2 methods of birth control or be surgically sterile, or abstain from heterosexual activity for the course of the study through 180 days after the last dose of study medication\n* Male participants must agree to use an adequate method of contraception starting with the first dose of study medication through 180 days after the last dose of study medication\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Disease suitable for local therapy administered with curative intent\n* Has progressive disease (PD) within six (6) months of completion of curatively intended systemic treatment for locoregionally advanced HNSCC\n* Radiation therapy (or other non-systemic therapy) within 2 weeks prior to randomization or not fully recovered from adverse events due to a previously administered treatment\n* Currently participating and receiving study therapy, or participated in a study of an investigational agent and received study therapy, or used an investigational device within 4 weeks of the first dose of study medication\n* Life expectancy of <3 months and/or has rapidly progressing disease\n* Diagnosis of immunodeficiency or receiving systemic steroid therapy or any other form of immunosuppressive therapy within 7 days prior to the first dose of study medication (physiologic doses of corticosteroids may be approved after consultation with the Sponsor)\n* Diagnosed and/or treated additional malignancy within 5 years prior to randomization with the exception of curatively treated basal cell carcinoma of the skin, squamous cell carcinoma of the skin and/or curatively resected in situ cervical and/or breast cancers\n* Has had an allogeneic tissue/solid organ transplant\n* Active central nervous system metastases and/or carcinomatous meningitis\n* Active autoimmune disease that has required systemic treatment in past 2 years; replacement therapy is not considered a form of systemic treatment\n* History of (non-infectious) pneumonitis that required steroids or current pneumonitis\n* Active infection requiring systemic therapy\n* Known psychiatric or substance abuse disorders that would interfere with cooperation with the requirements of the trial\n* Pregnant, breastfeeding, or expecting to conceive or father children within the projected duration of the trial, starting with the screening visit through 180 days after the last dose of study medication\n* Prior therapy with an anti-PD-1, anti-PD-L1, or anti-PD-L2 agent or previously participated in Merck MK-3475 clinical trial\n* Known history of human immunodeficiency virus (HIV)\n* Known active Hepatitis B or C\n* Received a live vaccine within 30 days of planned start of study medication",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* No prior systemic therapy administered in the recurrent or metastatic setting (with the exception of systemic therapy completed > 6 months prior if given as part of multimodal treatment for locally advanced disease)",
+                "criterions": [
+                    {
+                        "exact_snippets": "No prior systemic therapy administered in the recurrent or metastatic setting",
+                        "criterion": "prior systemic therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "systemic therapy completed > 6 months prior if given as part of multimodal treatment for locally advanced disease",
+                        "criterion": "systemic therapy",
+                        "requirement": {
+                            "requirement_type": "completion time",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "systemic therapy completed > 6 months prior if given as part of multimodal treatment for locally advanced disease",
+                        "criterion": "systemic therapy",
+                        "requirement": {
+                            "requirement_type": "treatment context",
+                            "expected_value": "multimodal treatment for locally advanced disease"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "systemic therapy completed > 6 months prior if given as part of multimodal treatment for locally advanced disease",
+                            "criterion": "systemic therapy",
+                            "requirement": {
+                                "requirement_type": "completion time",
+                                "expected_value": {
+                                    "operator": ">",
+                                    "value": 6,
+                                    "unit": "months"
+                                }
+                            }
+                        },
+                        {
+                            "exact_snippets": "systemic therapy completed > 6 months prior if given as part of multimodal treatment for locally advanced disease",
+                            "criterion": "systemic therapy",
+                            "requirement": {
+                                "requirement_type": "treatment context",
+                                "expected_value": "multimodal treatment for locally advanced disease"
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "exact_snippets": "No prior systemic therapy administered in the recurrent or metastatic setting",
+                    "criterion": "prior systemic therapy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Primary tumor locations of oropharynx, oral cavity, hypopharynx, or larynx. Participants may not have a primary tumor site of nasopharynx (any histology)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Primary tumor locations of oropharynx, oral cavity, hypopharynx, or larynx.",
+                        "criterion": "primary tumor location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "oropharynx",
+                                "oral cavity",
+                                "hypopharynx",
+                                "larynx"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participants may not have a primary tumor site of nasopharynx (any histology)",
+                        "criterion": "primary tumor site",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": "nasopharynx (any histology)"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Primary tumor locations of oropharynx, oral cavity, hypopharynx, or larynx.",
+                                "criterion": "primary tumor location",
+                                "requirement": {
+                                    "requirement_type": "location",
+                                    "expected_value": [
+                                        "oropharynx",
+                                        "oral cavity",
+                                        "hypopharynx",
+                                        "larynx"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Participants may not have a primary tumor site of nasopharynx (any histology)",
+                            "criterion": "primary tumor site",
+                            "requirement": {
+                                "requirement_type": "exclusion",
+                                "expected_value": "nasopharynx (any histology)"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Measurable disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Measurable disease",
+                        "criterion": "disease",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Measurable disease",
+                        "criterion": "disease",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adequate organ function",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adequate organ function",
+                        "criterion": "organ function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adequate organ function",
+                        "criterion": "organ function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Can provide tissue for PD-L1 biomarker analysis from a core or excisional biopsy (fine needle aspirate is not sufficient): A newly obtained biopsy (within 90 days prior to start of study treatment) is preferred but an archival sample is acceptable.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Can provide tissue for PD-L1 biomarker analysis",
+                        "criterion": "tissue for PD-L1 biomarker analysis",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "from a core or excisional biopsy (fine needle aspirate is not sufficient)",
+                        "criterion": "biopsy type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "core",
+                                "excisional"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "A newly obtained biopsy (within 90 days prior to start of study treatment) is preferred",
+                        "criterion": "biopsy timing",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "within 90 days prior to start of study treatment"
+                        }
+                    },
+                    {
+                        "exact_snippets": "an archival sample is acceptable",
+                        "criterion": "archival sample",
+                        "requirement": {
+                            "requirement_type": "acceptability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Can provide tissue for PD-L1 biomarker analysis",
+                                        "criterion": "tissue for PD-L1 biomarker analysis",
+                                        "requirement": {
+                                            "requirement_type": "availability",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "from a core or excisional biopsy (fine needle aspirate is not sufficient)",
+                                        "criterion": "biopsy type",
+                                        "requirement": {
+                                            "requirement_type": "type",
+                                            "expected_value": [
+                                                "core",
+                                                "excisional"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "A newly obtained biopsy (within 90 days prior to start of study treatment) is preferred",
+                                        "criterion": "biopsy timing",
+                                        "requirement": {
+                                            "requirement_type": "timing",
+                                            "expected_value": "within 90 days prior to start of study treatment"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "an archival sample is acceptable",
+                                        "criterion": "archival sample",
+                                        "requirement": {
+                                            "requirement_type": "acceptability",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have results from testing of human papillomavirus (HPV) status for oropharyngeal cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "results from testing of human papillomavirus (HPV) status for oropharyngeal cancer",
+                        "criterion": "HPV status for oropharyngeal cancer",
+                        "requirement": {
+                            "requirement_type": "results",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "results from testing of human papillomavirus (HPV) status for oropharyngeal cancer",
+                        "criterion": "HPV status for oropharyngeal cancer",
+                        "requirement": {
+                            "requirement_type": "results",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Female participants of childbearing potential should have a negative pregnancy test and must be willing to use 2 methods of birth control or be surgically sterile, or abstain from heterosexual activity for the course of the study through 180 days after the last dose of study medication",
+                "criterions": [
+                    {
+                        "exact_snippets": "Female participants of childbearing potential",
+                        "criterion": "gender and reproductive potential",
+                        "requirement": {
+                            "requirement_type": "gender",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Female participants of childbearing potential",
+                        "criterion": "gender and reproductive potential",
+                        "requirement": {
+                            "requirement_type": "reproductive potential",
+                            "expected_value": "childbearing potential"
+                        }
+                    },
+                    {
+                        "exact_snippets": "should have a negative pregnancy test",
+                        "criterion": "pregnancy test result",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "must be willing to use 2 methods of birth control",
+                        "criterion": "birth control methods",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": ">= 2"
+                        }
+                    },
+                    {
+                        "exact_snippets": "be surgically sterile",
+                        "criterion": "surgical sterility",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "abstain from heterosexual activity for the course of the study through 180 days after the last dose of study medication",
+                        "criterion": "abstinence from heterosexual activity",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": "course of the study through 180 days after the last dose of study medication"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Female participants of childbearing potential",
+                                "criterion": "gender and reproductive potential",
+                                "requirement": {
+                                    "requirement_type": "gender",
+                                    "expected_value": "female"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Female participants of childbearing potential",
+                                "criterion": "gender and reproductive potential",
+                                "requirement": {
+                                    "requirement_type": "reproductive potential",
+                                    "expected_value": "childbearing potential"
+                                }
+                            },
+                            {
+                                "exact_snippets": "should have a negative pregnancy test",
+                                "criterion": "pregnancy test result",
+                                "requirement": {
+                                    "requirement_type": "result",
+                                    "expected_value": "negative"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "must be willing to use 2 methods of birth control",
+                                "criterion": "birth control methods",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": ">= 2"
+                                }
+                            },
+                            {
+                                "exact_snippets": "be surgically sterile",
+                                "criterion": "surgical sterility",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "abstain from heterosexual activity for the course of the study through 180 days after the last dose of study medication",
+                                "criterion": "abstinence from heterosexual activity",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": "course of the study through 180 days after the last dose of study medication"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Male participants must agree to use an adequate method of contraception starting with the first dose of study medication through 180 days after the last dose of study medication",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male participants must agree to use an adequate method of contraception",
+                        "criterion": "contraception use",
+                        "requirement": {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "starting with the first dose of study medication through 180 days after the last dose of study medication",
+                        "criterion": "contraception use duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": "starting with the first dose of study medication through 180 days after the last dose of study medication"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Male participants must agree to use an adequate method of contraception",
+                        "criterion": "contraception use",
+                        "requirement": {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "starting with the first dose of study medication through 180 days after the last dose of study medication",
+                        "criterion": "contraception use duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": "starting with the first dose of study medication through 180 days after the last dose of study medication"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Disease suitable for local therapy administered with curative intent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Disease suitable for local therapy",
+                        "criterion": "disease suitability for local therapy",
+                        "requirement": {
+                            "requirement_type": "suitability",
+                            "expected_value": "local therapy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "curative intent",
+                        "criterion": "therapy intent",
+                        "requirement": {
+                            "requirement_type": "intent",
+                            "expected_value": "curative"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Disease suitable for local therapy",
+                                "criterion": "disease suitability for local therapy",
+                                "requirement": {
+                                    "requirement_type": "suitability",
+                                    "expected_value": "local therapy"
+                                }
+                            },
+                            {
+                                "exact_snippets": "curative intent",
+                                "criterion": "therapy intent",
+                                "requirement": {
+                                    "requirement_type": "intent",
+                                    "expected_value": "curative"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has progressive disease (PD) within six (6) months of completion of curatively intended systemic treatment for locoregionally advanced HNSCC",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has progressive disease (PD)",
+                        "criterion": "progressive disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "within six (6) months of completion of curatively intended systemic treatment",
+                        "criterion": "time since treatment completion",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "curatively intended systemic treatment for locoregionally advanced HNSCC",
+                        "criterion": "treatment type",
+                        "requirement": {
+                            "requirement_type": "intent",
+                            "expected_value": "curative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "curatively intended systemic treatment for locoregionally advanced HNSCC",
+                        "criterion": "treatment type",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "locoregionally advanced HNSCC"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Has progressive disease (PD)",
+                                        "criterion": "progressive disease",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "within six (6) months of completion of curatively intended systemic treatment",
+                                        "criterion": "time since treatment completion",
+                                        "requirement": {
+                                            "requirement_type": "duration",
+                                            "expected_value": {
+                                                "operator": "<=",
+                                                "value": 6,
+                                                "unit": "months"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "curatively intended systemic treatment for locoregionally advanced HNSCC",
+                                "criterion": "treatment type",
+                                "requirement": {
+                                    "requirement_type": "intent",
+                                    "expected_value": "curative"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "curatively intended systemic treatment for locoregionally advanced HNSCC",
+                        "criterion": "treatment type",
+                        "requirement": {
+                            "requirement_type": "condition",
+                            "expected_value": "locoregionally advanced HNSCC"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Radiation therapy (or other non-systemic therapy) within 2 weeks prior to randomization or not fully recovered from adverse events due to a previously administered treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Radiation therapy (or other non-systemic therapy) within 2 weeks prior to randomization",
+                        "criterion": "recent non-systemic therapy",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "not fully recovered from adverse events due to a previously administered treatment",
+                        "criterion": "recovery from adverse events",
+                        "requirement": {
+                            "requirement_type": "recovery status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Radiation therapy (or other non-systemic therapy) within 2 weeks prior to randomization",
+                            "criterion": "recent non-systemic therapy",
+                            "requirement": {
+                                "requirement_type": "time since last treatment",
+                                "expected_value": {
+                                    "operator": ">=",
+                                    "value": 2,
+                                    "unit": "weeks"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "not fully recovered from adverse events due to a previously administered treatment",
+                            "criterion": "recovery from adverse events",
+                            "requirement": {
+                                "requirement_type": "recovery status",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Currently participating and receiving study therapy, or participated in a study of an investigational agent and received study therapy, or used an investigational device within 4 weeks of the first dose of study medication",
+                "criterions": [
+                    {
+                        "exact_snippets": "Currently participating and receiving study therapy",
+                        "criterion": "participation in a study",
+                        "requirement": {
+                            "requirement_type": "current status",
+                            "expected_value": "participating and receiving study therapy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "participated in a study of an investigational agent and received study therapy",
+                        "criterion": "participation in a study of an investigational agent",
+                        "requirement": {
+                            "requirement_type": "past status",
+                            "expected_value": "participated and received study therapy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "used an investigational device within 4 weeks of the first dose of study medication",
+                        "criterion": "use of an investigational device",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Currently participating and receiving study therapy",
+                                "criterion": "participation in a study",
+                                "requirement": {
+                                    "requirement_type": "current status",
+                                    "expected_value": "participating and receiving study therapy"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "participated in a study of an investigational agent and received study therapy",
+                                "criterion": "participation in a study of an investigational agent",
+                                "requirement": {
+                                    "requirement_type": "past status",
+                                    "expected_value": "participated and received study therapy"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "used an investigational device within 4 weeks of the first dose of study medication",
+                                "criterion": "use of an investigational device",
+                                "requirement": {
+                                    "requirement_type": "time frame",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "weeks"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Life expectancy of <3 months and/or has rapidly progressing disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Life expectancy of <3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "rapidly progressing disease",
+                        "criterion": "disease progression",
+                        "requirement": {
+                            "requirement_type": "rate",
+                            "expected_value": "rapidly progressing"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Life expectancy of <3 months",
+                                "criterion": "life expectancy",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "rapidly progressing disease",
+                                "criterion": "disease progression",
+                                "requirement": {
+                                    "requirement_type": "rate",
+                                    "expected_value": "rapidly progressing"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Life expectancy of <3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Diagnosis of immunodeficiency or receiving systemic steroid therapy or any other form of immunosuppressive therapy within 7 days prior to the first dose of study medication (physiologic doses of corticosteroids may be approved after consultation with the Sponsor)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of immunodeficiency",
+                        "criterion": "immunodeficiency",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "receiving systemic steroid therapy",
+                        "criterion": "systemic steroid therapy",
+                        "requirement": {
+                            "requirement_type": "receiving",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any other form of immunosuppressive therapy",
+                        "criterion": "immunosuppressive therapy",
+                        "requirement": {
+                            "requirement_type": "receiving",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 7 days prior to the first dose of study medication",
+                        "criterion": "timeframe for therapy",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 7,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Diagnosis of immunodeficiency",
+                                "criterion": "immunodeficiency",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "receiving systemic steroid therapy",
+                                "criterion": "systemic steroid therapy",
+                                "requirement": {
+                                    "requirement_type": "receiving",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "within 7 days prior to the first dose of study medication",
+                                "criterion": "timeframe for therapy",
+                                "requirement": {
+                                    "requirement_type": "timeframe",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 7,
+                                        "unit": "days"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "any other form of immunosuppressive therapy",
+                                "criterion": "immunosuppressive therapy",
+                                "requirement": {
+                                    "requirement_type": "receiving",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "within 7 days prior to the first dose of study medication",
+                                "criterion": "timeframe for therapy",
+                                "requirement": {
+                                    "requirement_type": "timeframe",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 7,
+                                        "unit": "days"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Diagnosed and/or treated additional malignancy within 5 years prior to randomization with the exception of curatively treated basal cell carcinoma of the skin, squamous cell carcinoma of the skin and/or curatively resected in situ cervical and/or breast cancers",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosed and/or treated additional malignancy within 5 years prior to randomization",
+                        "criterion": "additional malignancy",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosed and/or treated additional malignancy within 5 years prior to randomization",
+                        "criterion": "additional malignancy",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosed and/or treated additional malignancy within 5 years prior to randomization",
+                        "criterion": "additional malignancy",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "curatively treated basal cell carcinoma of the skin",
+                        "criterion": "basal cell carcinoma of the skin",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "curatively treated"
+                        }
+                    },
+                    {
+                        "exact_snippets": "curatively treated ... squamous cell carcinoma of the skin",
+                        "criterion": "squamous cell carcinoma of the skin",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "curatively treated"
+                        }
+                    },
+                    {
+                        "exact_snippets": "curatively resected in situ cervical ... cancers",
+                        "criterion": "in situ cervical cancer",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "curatively resected"
+                        }
+                    },
+                    {
+                        "exact_snippets": "curatively resected ... in situ ... breast cancers",
+                        "criterion": "in situ breast cancer",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "curatively resected"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "and_criteria": [
+                                        {
+                                            "exact_snippets": "Diagnosed and/or treated additional malignancy within 5 years prior to randomization",
+                                            "criterion": "additional malignancy",
+                                            "requirement": {
+                                                "requirement_type": "diagnosis",
+                                                "expected_value": true
+                                            }
+                                        },
+                                        {
+                                            "exact_snippets": "Diagnosed and/or treated additional malignancy within 5 years prior to randomization",
+                                            "criterion": "additional malignancy",
+                                            "requirement": {
+                                                "requirement_type": "treatment",
+                                                "expected_value": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "exact_snippets": "Diagnosed and/or treated additional malignancy within 5 years prior to randomization",
+                                    "criterion": "additional malignancy",
+                                    "requirement": {
+                                        "requirement_type": "time frame",
+                                        "expected_value": {
+                                            "operator": "<=",
+                                            "value": 5,
+                                            "unit": "years"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "not_criteria": {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "curatively treated basal cell carcinoma of the skin",
+                                "criterion": "basal cell carcinoma of the skin",
+                                "requirement": {
+                                    "requirement_type": "treatment",
+                                    "expected_value": "curatively treated"
+                                }
+                            },
+                            {
+                                "exact_snippets": "curatively treated ... squamous cell carcinoma of the skin",
+                                "criterion": "squamous cell carcinoma of the skin",
+                                "requirement": {
+                                    "requirement_type": "treatment",
+                                    "expected_value": "curatively treated"
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "curatively resected in situ cervical ... cancers",
+                                        "criterion": "in situ cervical cancer",
+                                        "requirement": {
+                                            "requirement_type": "treatment",
+                                            "expected_value": "curatively resected"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "curatively resected ... in situ ... breast cancers",
+                                        "criterion": "in situ breast cancer",
+                                        "requirement": {
+                                            "requirement_type": "treatment",
+                                            "expected_value": "curatively resected"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has had an allogeneic tissue/solid organ transplant",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has had an allogeneic tissue/solid organ transplant",
+                        "criterion": "allogeneic tissue/solid organ transplant",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Has had an allogeneic tissue/solid organ transplant",
+                    "criterion": "allogeneic tissue/solid organ transplant",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active central nervous system metastases and/or carcinomatous meningitis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active central nervous system metastases",
+                        "criterion": "central nervous system metastases",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "carcinomatous meningitis",
+                        "criterion": "carcinomatous meningitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Active central nervous system metastases",
+                                "criterion": "central nervous system metastases",
+                                "requirement": {
+                                    "requirement_type": "activity",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "carcinomatous meningitis",
+                                "criterion": "carcinomatous meningitis",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active autoimmune disease that has required systemic treatment in past 2 years; replacement therapy is not considered a form of systemic treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active autoimmune disease that has required systemic treatment in past 2 years",
+                        "criterion": "active autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "treatment history",
+                            "expected_value": "systemic treatment in past 2 years"
+                        }
+                    },
+                    {
+                        "exact_snippets": "replacement therapy is not considered a form of systemic treatment",
+                        "criterion": "replacement therapy",
+                        "requirement": {
+                            "requirement_type": "treatment type",
+                            "expected_value": "not considered systemic treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Active autoimmune disease that has required systemic treatment in past 2 years",
+                                    "criterion": "active autoimmune disease",
+                                    "requirement": {
+                                        "requirement_type": "treatment history",
+                                        "expected_value": "systemic treatment in past 2 years"
+                                    }
+                                },
+                                {
+                                    "not_criteria": {
+                                        "exact_snippets": "replacement therapy is not considered a form of systemic treatment",
+                                        "criterion": "replacement therapy",
+                                        "requirement": {
+                                            "requirement_type": "treatment type",
+                                            "expected_value": "not considered systemic treatment"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of (non-infectious) pneumonitis that required steroids or current pneumonitis",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of (non-infectious) pneumonitis",
+                        "criterion": "history of non-infectious pneumonitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "pneumonitis that required steroids",
+                        "criterion": "pneumonitis requiring steroids",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "steroids"
+                        }
+                    },
+                    {
+                        "exact_snippets": "current pneumonitis",
+                        "criterion": "current pneumonitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "History of (non-infectious) pneumonitis",
+                                "criterion": "history of non-infectious pneumonitis",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "pneumonitis that required steroids",
+                                "criterion": "pneumonitis requiring steroids",
+                                "requirement": {
+                                    "requirement_type": "treatment",
+                                    "expected_value": "steroids"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "current pneumonitis",
+                        "criterion": "current pneumonitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known active Hepatitis B or C",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known active Hepatitis B",
+                        "criterion": "Hepatitis B",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known active ... C",
+                        "criterion": "Hepatitis C",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Known active Hepatitis B",
+                        "criterion": "Hepatitis B",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known active ... C",
+                        "criterion": "Hepatitis C",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Received a live vaccine within 30 days of planned start of study medication",
+                "criterions": [
+                    {
+                        "exact_snippets": "Received a live vaccine within 30 days of planned start of study medication",
+                        "criterion": "live vaccine",
+                        "requirement": {
+                            "requirement_type": "time since administration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 30,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Received a live vaccine within 30 days of planned start of study medication",
+                    "criterion": "live vaccine",
+                    "requirement": {
+                        "requirement_type": "time since administration",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 30,
+                            "unit": "days"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Histologically- or cytologically-confirmed recurrent or metastatic head and neck squamous cell carcinoma considered incurable by local therapies",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologically- or cytologically-confirmed",
+                        "criterion": "confirmation method",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "recurrent or metastatic head and neck squamous cell carcinoma",
+                        "criterion": "head and neck squamous cell carcinoma",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "recurrent",
+                                "metastatic"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "considered incurable by local therapies",
+                        "criterion": "curability by local therapies",
+                        "requirement": {
+                            "requirement_type": "curability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "Histologically- or cytologically-confirmed",
+                                        "criterion": "confirmation method",
+                                        "requirement": {
+                                            "requirement_type": "method",
+                                            "expected_value": "histologically"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Histologically- or cytologically-confirmed",
+                                        "criterion": "confirmation method",
+                                        "requirement": {
+                                            "requirement_type": "method",
+                                            "expected_value": "cytologically"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "recurrent or metastatic head and neck squamous cell carcinoma",
+                                        "criterion": "head and neck squamous cell carcinoma",
+                                        "requirement": {
+                                            "requirement_type": "status",
+                                            "expected_value": "recurrent"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "recurrent or metastatic head and neck squamous cell carcinoma",
+                                        "criterion": "head and neck squamous cell carcinoma",
+                                        "requirement": {
+                                            "requirement_type": "status",
+                                            "expected_value": "metastatic"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "considered incurable by local therapies",
+                        "criterion": "curability by local therapies",
+                        "requirement": {
+                            "requirement_type": "curability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": [
+                                "0",
+                                "1"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "0"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "1"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Active infection requiring systemic therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active infection requiring systemic therapy",
+                        "criterion": "active infection",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "systemic therapy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known psychiatric or substance abuse disorders that would interfere with cooperation with the requirements of the trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known psychiatric or substance abuse disorders",
+                        "criterion": "psychiatric disorders",
+                        "requirement": {
+                            "requirement_type": "interference with trial cooperation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known psychiatric or substance abuse disorders",
+                        "criterion": "substance abuse disorders",
+                        "requirement": {
+                            "requirement_type": "interference with trial cooperation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pregnant, breastfeeding, or expecting to conceive or father children within the projected duration of the trial, starting with the screening visit through 180 days after the last dose of study medication",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "breastfeeding",
+                        "criterion": "breastfeeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "expecting to conceive",
+                        "criterion": "expecting to conceive",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "father children",
+                        "criterion": "expecting to father children",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior therapy with an anti-PD-1, anti-PD-L1, or anti-PD-L2 agent or previously participated in Merck MK-3475 clinical trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior therapy with an anti-PD-1",
+                        "criterion": "prior therapy",
+                        "requirement": {
+                            "requirement_type": "agent",
+                            "expected_value": "anti-PD-1"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior therapy with an ... anti-PD-L1",
+                        "criterion": "prior therapy",
+                        "requirement": {
+                            "requirement_type": "agent",
+                            "expected_value": "anti-PD-L1"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior therapy with an ... anti-PD-L2",
+                        "criterion": "prior therapy",
+                        "requirement": {
+                            "requirement_type": "agent",
+                            "expected_value": "anti-PD-L2"
+                        }
+                    },
+                    {
+                        "exact_snippets": "previously participated in Merck MK-3475 clinical trial",
+                        "criterion": "participation in clinical trial",
+                        "requirement": {
+                            "requirement_type": "trial",
+                            "expected_value": "Merck MK-3475"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known history of human immunodeficiency virus (HIV)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known history of human immunodeficiency virus (HIV)",
+                        "criterion": "human immunodeficiency virus (HIV)",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

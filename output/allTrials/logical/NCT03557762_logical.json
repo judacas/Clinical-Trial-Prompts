@@ -1,0 +1,610 @@
+{
+    "info": {
+        "nct_id": "NCT03557762",
+        "official_title": "The SEAMLESS Study: A Clinical Trial Evaluation of a SmartphonE App-based MindfuLnEss Intervention for Cancer SurvivorS",
+        "inclusion_criteria": "1. Men and women over the age of 18\n2. Diagnosed with any type of cancer (stage I-III)\n3. Completed active treatment (i.e. surgery, chemotherapy, radiation therapy) at least 4 months previously (ongoing hormonal therapies, AIs, tamoxifen, herceptin are not exclusionary)\n4. Have access to a smartphone with data connection; in case patients' do not have a data plan or an insufficient data plan with their smart phone, we will pay for their data connection (up to 0.5GB/month)\n5. Willing to devote 20-30 mins of time to do the mindfulness meditations and practices every day\n6. Sufficient cognitive function to participate in the smartphone app-based intervention\n7. Ability to speak and write English sufficiently to complete questionnaires\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "1. Metastatic patients and those with ongoing chemotherapy (metastatic patients may not be stable enough to participate in the interventions and follow-up assessments).\n2. Cognitive impairment that would interfere with completing questionnaires or the intervention.\n3. Suffering from current Major Depressive Disorder, Bipolar Disorder or other psychiatric disorder that would interfere with the ability to participate.\n4. Practicing smartphone app-based mindfulness more than or equal to once a week",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Men and women over the age of 18",
+                "criterions": [
+                    {
+                        "exact_snippets": "Men and women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "over the age of 18",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Men and women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "over the age of 18",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Diagnosed with any type of cancer (stage I-III)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosed with any type of cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stage I-III",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "stage"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "stage"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Diagnosed with any type of cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stage I-III",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "stage"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "stage"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Completed active treatment (i.e. surgery, chemotherapy, radiation therapy) at least 4 months previously (ongoing hormonal therapies, AIs, tamoxifen, herceptin are not exclusionary)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Completed active treatment (i.e. surgery, chemotherapy, radiation therapy)",
+                        "criterion": "active treatment",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 4 months previously",
+                        "criterion": "time since completion of active treatment",
+                        "requirement": {
+                            "requirement_type": "time elapsed",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "ongoing hormonal therapies, AIs, tamoxifen, herceptin are not exclusionary",
+                        "criterion": "ongoing hormonal therapies",
+                        "requirement": {
+                            "requirement_type": "exclusionary status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Completed active treatment (i.e. surgery, chemotherapy, radiation therapy)",
+                                "criterion": "active treatment",
+                                "requirement": {
+                                    "requirement_type": "completion",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "at least 4 months previously",
+                                "criterion": "time since completion of active treatment",
+                                "requirement": {
+                                    "requirement_type": "time elapsed",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 4,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "ongoing hormonal therapies, AIs, tamoxifen, herceptin are not exclusionary",
+                        "criterion": "ongoing hormonal therapies",
+                        "requirement": {
+                            "requirement_type": "exclusionary status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Have access to a smartphone with data connection; in case patients' do not have a data plan or an insufficient data plan with their smart phone, we will pay for their data connection (up to 0.5GB/month)",
+                "criterions": [
+                    {
+                        "exact_snippets": "access to a smartphone",
+                        "criterion": "smartphone access",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "data connection",
+                        "criterion": "data connection",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "access to a smartphone",
+                    "criterion": "smartphone access",
+                    "requirement": {
+                        "requirement_type": "availability",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "data connection",
+                    "criterion": "data connection",
+                    "requirement": {
+                        "requirement_type": "availability",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Willing to devote 20-30 mins of time to do the mindfulness meditations and practices every day",
+                "criterions": [
+                    {
+                        "exact_snippets": "Willing to devote 20-30 mins of time to do the mindfulness meditations and practices every day",
+                        "criterion": "time commitment to mindfulness meditations and practices",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 20,
+                                        "unit": "mins"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 30,
+                                        "unit": "mins"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willing to devote 20-30 mins of time to do the mindfulness meditations and practices every day",
+                        "criterion": "time commitment to mindfulness meditations and practices",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": "every day"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Willing to devote 20-30 mins of time to do the mindfulness meditations and practices every day",
+                        "criterion": "time commitment to mindfulness meditations and practices",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 20,
+                                        "unit": "mins"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 30,
+                                        "unit": "mins"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willing to devote 20-30 mins of time to do the mindfulness meditations and practices every day",
+                        "criterion": "time commitment to mindfulness meditations and practices",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": "every day"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Sufficient cognitive function to participate in the smartphone app-based intervention",
+                "criterions": [
+                    {
+                        "exact_snippets": "Sufficient cognitive function",
+                        "criterion": "cognitive function",
+                        "requirement": {
+                            "requirement_type": "sufficiency",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Sufficient cognitive function",
+                        "criterion": "cognitive function",
+                        "requirement": {
+                            "requirement_type": "sufficiency",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. Ability to speak and write English sufficiently to complete questionnaires",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ability to speak and write English sufficiently to complete questionnaires",
+                        "criterion": "English proficiency",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": "sufficient to complete questionnaires"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ability to speak and write English sufficiently to complete questionnaires",
+                        "criterion": "English proficiency",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": "sufficient to complete questionnaires"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "2. Cognitive impairment that would interfere with completing questionnaires or the intervention.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Cognitive impairment that would interfere with completing questionnaires or the intervention.",
+                        "criterion": "cognitive impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "interfere with completing questionnaires or the intervention"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Cognitive impairment that would interfere with completing questionnaires or the intervention.",
+                        "criterion": "cognitive impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "interfere with completing questionnaires or the intervention"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Suffering from current Major Depressive Disorder, Bipolar Disorder or other psychiatric disorder that would interfere with the ability to participate.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Suffering from current Major Depressive Disorder",
+                        "criterion": "Major Depressive Disorder",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Suffering from current ... Bipolar Disorder",
+                        "criterion": "Bipolar Disorder",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Suffering from current ... other psychiatric disorder that would interfere with the ability to participate",
+                        "criterion": "psychiatric disorder",
+                        "requirement": {
+                            "requirement_type": "interference with ability to participate",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Suffering from current Major Depressive Disorder",
+                                "criterion": "Major Depressive Disorder",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Suffering from current ... Bipolar Disorder",
+                                "criterion": "Bipolar Disorder",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Suffering from current ... other psychiatric disorder that would interfere with the ability to participate",
+                                "criterion": "psychiatric disorder",
+                                "requirement": {
+                                    "requirement_type": "interference with ability to participate",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Practicing smartphone app-based mindfulness more than or equal to once a week",
+                "criterions": [
+                    {
+                        "exact_snippets": "Practicing smartphone app-based mindfulness more than or equal to once a week",
+                        "criterion": "smartphone app-based mindfulness practice",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "times per week"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Practicing smartphone app-based mindfulness more than or equal to once a week",
+                    "criterion": "smartphone app-based mindfulness practice",
+                    "requirement": {
+                        "requirement_type": "frequency",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 1,
+                            "unit": "times per week"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "1. Metastatic patients and those with ongoing chemotherapy (metastatic patients may not be stable enough to participate in the interventions and follow-up assessments).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Metastatic patients",
+                        "criterion": "metastatic status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "ongoing chemotherapy",
+                        "criterion": "ongoing chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Metastatic patients",
+                        "criterion": "metastatic status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "ongoing chemotherapy",
+                        "criterion": "ongoing chemotherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

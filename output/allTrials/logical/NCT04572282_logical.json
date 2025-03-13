@@ -1,0 +1,469 @@
+{
+    "info": {
+        "nct_id": "NCT04572282",
+        "official_title": "Single Arm Pilot Study on a Mobile App for Symptoms Monitoring in Cancer Patients on Active Treatments",
+        "inclusion_criteria": "* adults (18 years old or older)\n* with a cancer diagnosis at any stage of any primary tumor (solid or hematologic)\n* in systemic oncologic treatments of any type (including but not limited to immunotherapy, chemotherapy and targeted therapies) expected to continue for at least 4 weeks after enrolment, except when single treatment with hormone therapy for prostate cancer or breast cancer\n* fluent in written Portuguese\n* with a personal mobile smartphone (android or iphone)\n* willing to give informed consent for study participation\n\nExclusion criteria:\n\n* Cognitive impairment or disability that limits capacity to comply with study interventions and assessments as per attending physician's evaluation\n* Having a life expectancy < 3 months as determined by the attending oncologist ECOG performance status greater than 2\n* Unable to read and comprehend written portuguese language\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* adults (18 years old or older)",
+                "criterions": [
+                    {
+                        "exact_snippets": "adults (18 years old or older)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "adults (18 years old or older)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* with a cancer diagnosis at any stage of any primary tumor (solid or hematologic)",
+                "criterions": [
+                    {
+                        "exact_snippets": "cancer diagnosis",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any stage",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "any"
+                        }
+                    },
+                    {
+                        "exact_snippets": "any primary tumor (solid or hematologic)",
+                        "criterion": "primary tumor type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "solid",
+                                "hematologic"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "cancer diagnosis",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any stage",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "any"
+                        }
+                    },
+                    {
+                        "exact_snippets": "any primary tumor (solid or hematologic)",
+                        "criterion": "primary tumor type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "solid",
+                                "hematologic"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* in systemic oncologic treatments of any type (including but not limited to immunotherapy, chemotherapy and targeted therapies) expected to continue for at least 4 weeks after enrolment, except when single treatment with hormone therapy for prostate cancer or breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "systemic oncologic treatments of any type (including but not limited to immunotherapy, chemotherapy and targeted therapies)",
+                        "criterion": "systemic oncologic treatments",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "expected to continue for at least 4 weeks after enrolment",
+                        "criterion": "duration of treatment",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "single treatment with hormone therapy for prostate cancer or breast cancer",
+                        "criterion": "hormone therapy",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "systemic oncologic treatments of any type (including but not limited to immunotherapy, chemotherapy and targeted therapies)",
+                                    "criterion": "systemic oncologic treatments",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "expected to continue for at least 4 weeks after enrolment",
+                                    "criterion": "duration of treatment",
+                                    "requirement": {
+                                        "requirement_type": "duration",
+                                        "expected_value": {
+                                            "operator": ">=",
+                                            "value": 4,
+                                            "unit": "weeks"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "not_criteria": {
+                        "exact_snippets": "single treatment with hormone therapy for prostate cancer or breast cancer",
+                        "criterion": "hormone therapy",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* fluent in written Portuguese",
+                "criterions": [
+                    {
+                        "exact_snippets": "fluent in written Portuguese",
+                        "criterion": "Portuguese language proficiency",
+                        "requirement": {
+                            "requirement_type": "fluency",
+                            "expected_value": "written"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "fluent in written Portuguese",
+                        "criterion": "Portuguese language proficiency",
+                        "requirement": {
+                            "requirement_type": "fluency",
+                            "expected_value": "written"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* with a personal mobile smartphone (android or iphone)",
+                "criterions": [
+                    {
+                        "exact_snippets": "personal mobile smartphone (android or iphone)",
+                        "criterion": "personal mobile smartphone",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "android",
+                                "iphone"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "personal mobile smartphone (android or iphone)",
+                        "criterion": "personal mobile smartphone",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "android",
+                                "iphone"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* willing to give informed consent for study participation",
+                "criterions": [
+                    {
+                        "exact_snippets": "willing to give informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "willing to give informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Cognitive impairment or disability that limits capacity to comply with study interventions and assessments as per attending physician's evaluation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Cognitive impairment or disability that limits capacity to comply with study interventions and assessments",
+                        "criterion": "cognitive impairment or disability",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "limits capacity to comply with study interventions and assessments"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Cognitive impairment or disability that limits capacity to comply with study interventions and assessments",
+                        "criterion": "cognitive impairment or disability",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "limits capacity to comply with study interventions and assessments"
+                        }
+                    },
+                    {
+                        "exact_snippets": "as per attending physician's evaluation",
+                        "criterion": "attending physician's evaluation",
+                        "requirement": {
+                            "requirement_type": "approval",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Having a life expectancy < 3 months as determined by the attending oncologist ECOG performance status greater than 2",
+                "criterions": [
+                    {
+                        "exact_snippets": "life expectancy < 3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "ECOG performance status greater than 2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "life expectancy < 3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "ECOG performance status greater than 2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Unable to read and comprehend written portuguese language",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unable to read and comprehend written portuguese language",
+                        "criterion": "comprehension of written Portuguese",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Unable to read and comprehend written portuguese language",
+                    "criterion": "comprehension of written Portuguese",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion criteria:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

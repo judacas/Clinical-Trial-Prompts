@@ -1,0 +1,240 @@
+{
+    "info": {
+        "nct_id": "NCT05132101",
+        "official_title": "Analysis of the Real-world Prescription Pattern of Palbociclib Combination Therapy With Aromatase Inhibitor as a 1st Line Therapy in Metastatic Breast Cancer Patients Using the National Health Insurance Claims Data in South Korea",
+        "inclusion_criteria": "* Patients who were prescribed with palbociclib in combination with AI for at least 1 cycle during the index period\n* Patients who were diagnosed with BC during the index period\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Male\n* Prescribed with palbociclib during 12-month period preceding the index date",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients who were prescribed with palbociclib in combination with AI for at least 1 cycle during the index period",
+                "criterions": [
+                    {
+                        "exact_snippets": "prescribed with palbociclib in combination with AI",
+                        "criterion": "medication regimen",
+                        "requirement": {
+                            "requirement_type": "combination",
+                            "expected_value": [
+                                "palbociclib",
+                                "AI"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 1 cycle during the index period",
+                        "criterion": "treatment duration",
+                        "requirement": {
+                            "requirement_type": "minimum cycles",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "cycle"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "prescribed with palbociclib in combination with AI",
+                        "criterion": "medication regimen",
+                        "requirement": {
+                            "requirement_type": "combination",
+                            "expected_value": [
+                                "palbociclib",
+                                "AI"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 1 cycle during the index period",
+                        "criterion": "treatment duration",
+                        "requirement": {
+                            "requirement_type": "minimum cycles",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "cycle"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who were diagnosed with BC during the index period",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who were diagnosed with BC",
+                        "criterion": "BC diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients who were diagnosed with BC",
+                        "criterion": "BC diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Male",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Male",
+                    "criterion": "gender",
+                    "requirement": {
+                        "requirement_type": "value",
+                        "expected_value": "male"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prescribed with palbociclib during 12-month period preceding the index date",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prescribed with palbociclib during 12-month period preceding the index date",
+                        "criterion": "palbociclib prescription",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": "12-month period preceding the index date"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prescribed with palbociclib during 12-month period preceding the index date",
+                    "criterion": "palbociclib prescription",
+                    "requirement": {
+                        "requirement_type": "timeframe",
+                        "expected_value": "12-month period preceding the index date"
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

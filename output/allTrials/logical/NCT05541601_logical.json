@@ -1,0 +1,929 @@
+{
+    "info": {
+        "nct_id": "NCT05541601",
+        "official_title": "Prospective Cohort for Early Detection of Liver Cancer",
+        "inclusion_criteria": "1. Patients of all genders, age >18 years\n2. Participant is willing and able to give informed consent for participation in the study.\n3. Evidence of cirrhosis CP A or B (as defined below, cirrhosis ever diagnosed), with an underlying aetiology of at least one of the following: chronic Hepatitis B Virus (HBV) infection, chronic Hepatitis C Virus (HCV) infection, alcoholic liver disease, non-alcoholic fatty liver disease or haemochromatosis\n\nCirrhosis Diagnosis Definition\n\n1. Histological assessment (Ishak stage 5 or 6) or\n2. At least one of the following:\n\ni. Validated non-invasive marker of fibrosis including fibroscan, AST to Platelet Ratio Index (APRI) score >2 or Enhanced Liver Fibrosis (ELF) score >10.48 or Fibrotest score >0.73. Fibroscan readings should be assessed by aetiology as below:\n\n* HBV: >=10 kPa\n* HCV: >=14.5 kPa\n* Alcoholic Liver Disease (ALD): >=19.5 kPa\n* Non-alcoholic fatty liver disease (NAFLD): >=15 kPa\n* Haemochromatosis: >=12kPa ii. Evidence of varices at endoscopy or imaging in the context of a patent portal vein iii. Definitive radiological evidence of cirrhosis (i.e. nodularity of liver and splenomegaly on Ultrasound/CT)\nMust have minimum age of 18 Years\nMust have maximum age of 100 Years",
+        "exclusion_criteria": "1. Diagnosis of current OR historical hepatocellular carcinoma\n2. Liver transplant recipients or patients on active listing for liver transplantation\n3. Child-Pugh C cirrhosis\n4. In the view of the clinician, if the patient has a co-morbidity likely to lead to death within the following 12 months\n5. In the view of the clinician, if the patient was not thought to be suitable for HCC surveillance",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Patients of all genders, age >18 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients of all genders",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "inclusion",
+                            "expected_value": [
+                                "male",
+                                "female",
+                                "other"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "age >18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients of all genders",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "inclusion",
+                            "expected_value": [
+                                "male",
+                                "female",
+                                "other"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "age >18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Participant is willing and able to give informed consent for participation in the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant is willing and able to give informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participant is willing and able to give informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Participant is willing and able to give informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participant is willing and able to give informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Evidence of cirrhosis CP A or B (as defined below, cirrhosis ever diagnosed), with an underlying aetiology of at least one of the following: chronic Hepatitis B Virus (HBV) infection, chronic Hepatitis C Virus (HCV) infection, alcoholic liver disease, non-alcoholic fatty liver disease or haemochromatosis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Evidence of cirrhosis CP A or B",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": [
+                                "CP A",
+                                "CP B"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "cirrhosis ever diagnosed",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "underlying aetiology of at least one of the following: chronic Hepatitis B Virus (HBV) infection",
+                        "criterion": "underlying aetiology",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "chronic Hepatitis B Virus (HBV) infection"
+                        }
+                    },
+                    {
+                        "exact_snippets": "underlying aetiology of at least one of the following: ... chronic Hepatitis C Virus (HCV) infection",
+                        "criterion": "underlying aetiology",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "chronic Hepatitis C Virus (HCV) infection"
+                        }
+                    },
+                    {
+                        "exact_snippets": "underlying aetiology of at least one of the following: ... alcoholic liver disease",
+                        "criterion": "underlying aetiology",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "alcoholic liver disease"
+                        }
+                    },
+                    {
+                        "exact_snippets": "underlying aetiology of at least one of the following: ... non-alcoholic fatty liver disease",
+                        "criterion": "underlying aetiology",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "non-alcoholic fatty liver disease"
+                        }
+                    },
+                    {
+                        "exact_snippets": "underlying aetiology of at least one of the following: ... haemochromatosis",
+                        "criterion": "underlying aetiology",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "haemochromatosis"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Evidence of cirrhosis CP A or B",
+                                "criterion": "cirrhosis",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": [
+                                        "CP A",
+                                        "CP B"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "cirrhosis ever diagnosed",
+                                "criterion": "cirrhosis",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "underlying aetiology of at least one of the following: chronic Hepatitis B Virus (HBV) infection",
+                                "criterion": "underlying aetiology",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": "chronic Hepatitis B Virus (HBV) infection"
+                                }
+                            },
+                            {
+                                "exact_snippets": "underlying aetiology of at least one of the following: ... chronic Hepatitis C Virus (HCV) infection",
+                                "criterion": "underlying aetiology",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": "chronic Hepatitis C Virus (HCV) infection"
+                                }
+                            },
+                            {
+                                "exact_snippets": "underlying aetiology of at least one of the following: ... alcoholic liver disease",
+                                "criterion": "underlying aetiology",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": "alcoholic liver disease"
+                                }
+                            },
+                            {
+                                "exact_snippets": "underlying aetiology of at least one of the following: ... non-alcoholic fatty liver disease",
+                                "criterion": "underlying aetiology",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": "non-alcoholic fatty liver disease"
+                                }
+                            },
+                            {
+                                "exact_snippets": "underlying aetiology of at least one of the following: ... haemochromatosis",
+                                "criterion": "underlying aetiology",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": "haemochromatosis"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Cirrhosis Diagnosis Definition",
+                "criterions": [
+                    {
+                        "exact_snippets": "Cirrhosis Diagnosis",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Cirrhosis Diagnosis",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Histological assessment (Ishak stage 5 or 6) or",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histological assessment (Ishak stage 5 or 6)",
+                        "criterion": "Ishak stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "5",
+                                "6"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Histological assessment (Ishak stage 5 or 6)",
+                        "criterion": "Ishak stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "5",
+                                "6"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "i. Validated non-invasive marker of fibrosis including fibroscan, AST to Platelet Ratio Index (APRI) score >2 or Enhanced Liver Fibrosis (ELF) score >10.48 or Fibrotest score >0.73. Fibroscan readings should be assessed by aetiology as below:",
+                "criterions": [
+                    {
+                        "exact_snippets": "fibroscan",
+                        "criterion": "fibroscan",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "AST to Platelet Ratio Index (APRI) score >2",
+                        "criterion": "AST to Platelet Ratio Index (APRI) score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Enhanced Liver Fibrosis (ELF) score >10.48",
+                        "criterion": "Enhanced Liver Fibrosis (ELF) score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10.48,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Fibrotest score >0.73",
+                        "criterion": "Fibrotest score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 0.73,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "fibroscan",
+                                "criterion": "fibroscan",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "AST to Platelet Ratio Index (APRI) score >2",
+                        "criterion": "AST to Platelet Ratio Index (APRI) score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Enhanced Liver Fibrosis (ELF) score >10.48",
+                        "criterion": "Enhanced Liver Fibrosis (ELF) score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10.48,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Fibrotest score >0.73",
+                        "criterion": "Fibrotest score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 0.73,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* HBV: >=10 kPa",
+                "criterions": [
+                    {
+                        "exact_snippets": "HBV: >=10 kPa",
+                        "criterion": "HBV",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 10,
+                                "unit": "kPa"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "HBV: >=10 kPa",
+                        "criterion": "HBV",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 10,
+                                "unit": "kPa"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* HCV: >=14.5 kPa",
+                "criterions": [
+                    {
+                        "exact_snippets": "HCV: >=14.5 kPa",
+                        "criterion": "HCV",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 14.5,
+                                "unit": "kPa"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "HCV: >=14.5 kPa",
+                        "criterion": "HCV",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 14.5,
+                                "unit": "kPa"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Alcoholic Liver Disease (ALD): >=19.5 kPa",
+                "criterions": [
+                    {
+                        "exact_snippets": "Alcoholic Liver Disease (ALD): >=19.5 kPa",
+                        "criterion": "Alcoholic Liver Disease (ALD)",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 19.5,
+                                "unit": "kPa"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Alcoholic Liver Disease (ALD): >=19.5 kPa",
+                        "criterion": "Alcoholic Liver Disease (ALD)",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 19.5,
+                                "unit": "kPa"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Non-alcoholic fatty liver disease (NAFLD): >=15 kPa",
+                "criterions": [
+                    {
+                        "exact_snippets": "Non-alcoholic fatty liver disease (NAFLD): >=15 kPa",
+                        "criterion": "Non-alcoholic fatty liver disease (NAFLD)",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "kPa"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Non-alcoholic fatty liver disease (NAFLD): >=15 kPa",
+                        "criterion": "Non-alcoholic fatty liver disease (NAFLD)",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "kPa"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Haemochromatosis: >=12kPa ii. Evidence of varices at endoscopy or imaging in the context of a patent portal vein iii. Definitive radiological evidence of cirrhosis (i.e. nodularity of liver and splenomegaly on Ultrasound/CT)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Haemochromatosis: >=12kPa",
+                        "criterion": "haemochromatosis",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 12,
+                                "unit": "kPa"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Evidence of varices at endoscopy or imaging",
+                        "criterion": "varices",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "patent portal vein",
+                        "criterion": "portal vein",
+                        "requirement": {
+                            "requirement_type": "patency",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Definitive radiological evidence of cirrhosis",
+                        "criterion": "cirrhosis",
+                        "requirement": {
+                            "requirement_type": "evidence",
+                            "expected_value": "definitive radiological"
+                        }
+                    },
+                    {
+                        "exact_snippets": "nodularity of liver",
+                        "criterion": "liver nodularity",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "splenomegaly on Ultrasound/CT",
+                        "criterion": "splenomegaly",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "and_criteria": [
+                                                    {
+                                                        "exact_snippets": "Haemochromatosis: >=12kPa",
+                                                        "criterion": "haemochromatosis",
+                                                        "requirement": {
+                                                            "requirement_type": "severity",
+                                                            "expected_value": {
+                                                                "operator": ">=",
+                                                                "value": 12,
+                                                                "unit": "kPa"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "exact_snippets": "Evidence of varices at endoscopy or imaging",
+                                                        "criterion": "varices",
+                                                        "requirement": {
+                                                            "requirement_type": "presence",
+                                                            "expected_value": true
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "exact_snippets": "patent portal vein",
+                                                "criterion": "portal vein",
+                                                "requirement": {
+                                                    "requirement_type": "patency",
+                                                    "expected_value": true
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "Definitive radiological evidence of cirrhosis",
+                                        "criterion": "cirrhosis",
+                                        "requirement": {
+                                            "requirement_type": "evidence",
+                                            "expected_value": "definitive radiological"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "nodularity of liver",
+                                "criterion": "liver nodularity",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "splenomegaly on Ultrasound/CT",
+                        "criterion": "splenomegaly",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 100 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 100 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 100,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 100 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 100,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. At least one of the following:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "or_criteria": []
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Diagnosis of current OR historical hepatocellular carcinoma",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of current OR historical hepatocellular carcinoma",
+                        "criterion": "hepatocellular carcinoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": [
+                                "current",
+                                "historical"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Diagnosis of current OR historical hepatocellular carcinoma",
+                        "criterion": "hepatocellular carcinoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": [
+                                "current",
+                                "historical"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Liver transplant recipients or patients on active listing for liver transplantation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Liver transplant recipients",
+                        "criterion": "liver transplant recipient",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients on active listing for liver transplantation",
+                        "criterion": "active listing for liver transplantation",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Liver transplant recipients",
+                        "criterion": "liver transplant recipient",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients on active listing for liver transplantation",
+                        "criterion": "active listing for liver transplantation",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Child-Pugh C cirrhosis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Child-Pugh C cirrhosis",
+                        "criterion": "Child-Pugh classification",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "C"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Child-Pugh C cirrhosis",
+                    "criterion": "Child-Pugh classification",
+                    "requirement": {
+                        "requirement_type": "severity",
+                        "expected_value": "C"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. In the view of the clinician, if the patient has a co-morbidity likely to lead to death within the following 12 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "co-morbidity likely to lead to death within the following 12 months",
+                        "criterion": "co-morbidity",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "likely to lead to death within the following 12 months"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "In the view of the clinician",
+                    "criterion": "clinician's view",
+                    "requirement": {
+                        "requirement_type": "N/A",
+                        "expected_value": "In the view of the clinician"
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "co-morbidity likely to lead to death within the following 12 months",
+                    "criterion": "co-morbidity",
+                    "requirement": {
+                        "requirement_type": "severity",
+                        "expected_value": "likely to lead to death within the following 12 months"
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. In the view of the clinician, if the patient was not thought to be suitable for HCC surveillance",
+                "criterions": [
+                    {
+                        "exact_snippets": "patient was not thought to be suitable for HCC surveillance",
+                        "criterion": "suitability for HCC surveillance",
+                        "requirement": {
+                            "requirement_type": "suitability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "patient was not thought to be suitable for HCC surveillance",
+                    "criterion": "suitability for HCC surveillance",
+                    "requirement": {
+                        "requirement_type": "suitability",
+                        "expected_value": false
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

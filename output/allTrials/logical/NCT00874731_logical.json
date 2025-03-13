@@ -1,0 +1,1033 @@
+{
+    "info": {
+        "nct_id": "NCT00874731",
+        "official_title": "A Clinical Trial to Assess the Effect of Ridaforolimus (AP23573; MK-8669) on QTc Interval in Patients",
+        "inclusion_criteria": "* Participant must have metastatic or locally advanced cancer which has failed to respond to standard therapy or no therapy exists.\n* If the participant is a female, she must be postmenopausal or if she is of childbearing potential she must have blood pregnancy tests during the study and be willing to use 2 methods of contraception.\n* If the participant is male and has female partners of child-bearing potential, he must agree to use a medically acceptable method of contraception during the study and for 30 days after the last dose of study drug.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Participant has had chemotherapy, radiotherapy or biological therapy within the past 4 weeks.\n* Participant is currently receiving other anti-cancer therapy.\n* Participant is currently participating or has participated in a study with an investigation drug or device within the last 30 days.\n* Participant has a primary central nervous system tumor or active brain metastases.\n* Participant has a psychiatric disorder.\n* Participant uses illegal drugs.\n* Participant is pregnant or breastfeeding.\n* Participant is known to be human immunodeficiency virus (HIV) positive.\n* Participant has a known history of Hepatitis B or C.\n* Participant has newly diagnosed diabetes.\n* Participant has an active infection.\n* Participant is unable to swallow capsules.\n* Participant has received a blood transfusion with one week of study entry.\n* Participant has a history of cardiac problems including heart failure, myocardial infarction, unstable angina, congestive heart failure or cardiac arrhythmia.\n* Participant has a known sensitivity to the components of the study drug.\n* Participant has not adequately recovered from any prior surgical procedure.\n* Participant does not agree to refrain from use of herbal remedies and consumption of grapefruit juice for 2 weeks prior to and during the study.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Participant must have metastatic or locally advanced cancer which has failed to respond to standard therapy or no therapy exists.",
+                "criterions": [
+                    {
+                        "exact_snippets": "metastatic or locally advanced cancer",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "metastatic",
+                                "locally advanced"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "failed to respond to standard therapy",
+                        "criterion": "response to standard therapy",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "no therapy exists",
+                        "criterion": "availability of standard therapy",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "metastatic or locally advanced cancer",
+                                "criterion": "cancer stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": [
+                                        "metastatic",
+                                        "locally advanced"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "failed to respond to standard therapy",
+                                "criterion": "response to standard therapy",
+                                "requirement": {
+                                    "requirement_type": "response",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "no therapy exists",
+                                "criterion": "availability of standard therapy",
+                                "requirement": {
+                                    "requirement_type": "availability",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* If the participant is a female, she must be postmenopausal or if she is of childbearing potential she must have blood pregnancy tests during the study and be willing to use 2 methods of contraception.",
+                "criterions": [
+                    {
+                        "exact_snippets": "participant is a female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "postmenopausal",
+                        "criterion": "menopausal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "postmenopausal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "childbearing potential",
+                        "criterion": "childbearing potential",
+                        "requirement": {
+                            "requirement_type": "potential",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "blood pregnancy tests during the study",
+                        "criterion": "pregnancy tests",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": "during the study"
+                        }
+                    },
+                    {
+                        "exact_snippets": "willing to use 2 methods of contraception",
+                        "criterion": "contraception",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willing to use 2 methods of contraception",
+                        "criterion": "contraception",
+                        "requirement": {
+                            "requirement_type": "methods",
+                            "expected_value": ">= 2"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "participant is a female",
+                    "criterion": "gender",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": "female"
+                    }
+                },
+                "then_criteria": {
+                    "or_criteria": [
+                        {
+                            "exact_snippets": "postmenopausal",
+                            "criterion": "menopausal status",
+                            "requirement": {
+                                "requirement_type": "status",
+                                "expected_value": "postmenopausal"
+                            }
+                        },
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "childbearing potential",
+                                    "criterion": "childbearing potential",
+                                    "requirement": {
+                                        "requirement_type": "potential",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "blood pregnancy tests during the study",
+                                    "criterion": "pregnancy tests",
+                                    "requirement": {
+                                        "requirement_type": "frequency",
+                                        "expected_value": "during the study"
+                                    }
+                                },
+                                {
+                                    "and_criteria": [
+                                        {
+                                            "exact_snippets": "willing to use 2 methods of contraception",
+                                            "criterion": "contraception",
+                                            "requirement": {
+                                                "requirement_type": "willingness",
+                                                "expected_value": true
+                                            }
+                                        },
+                                        {
+                                            "exact_snippets": "willing to use 2 methods of contraception",
+                                            "criterion": "contraception",
+                                            "requirement": {
+                                                "requirement_type": "methods",
+                                                "expected_value": ">= 2"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* If the participant is male and has female partners of child-bearing potential, he must agree to use a medically acceptable method of contraception during the study and for 30 days after the last dose of study drug.",
+                "criterions": [
+                    {
+                        "exact_snippets": "participant is male",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    },
+                    {
+                        "exact_snippets": "female partners of child-bearing potential",
+                        "criterion": "partner's child-bearing potential",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "child-bearing potential"
+                        }
+                    },
+                    {
+                        "exact_snippets": "agree to use a medically acceptable method of contraception",
+                        "criterion": "contraception agreement",
+                        "requirement": {
+                            "requirement_type": "agreement",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "during the study and for 30 days after the last dose of study drug",
+                        "criterion": "contraception duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": "during the study and for 30 days after the last dose of study drug"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "participant is male",
+                            "criterion": "gender",
+                            "requirement": {
+                                "requirement_type": "value",
+                                "expected_value": "male"
+                            }
+                        },
+                        {
+                            "exact_snippets": "female partners of child-bearing potential",
+                            "criterion": "partner's child-bearing potential",
+                            "requirement": {
+                                "requirement_type": "value",
+                                "expected_value": "child-bearing potential"
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "agree to use a medically acceptable method of contraception",
+                            "criterion": "contraception agreement",
+                            "requirement": {
+                                "requirement_type": "agreement",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "during the study and for 30 days after the last dose of study drug",
+                            "criterion": "contraception duration",
+                            "requirement": {
+                                "requirement_type": "duration",
+                                "expected_value": "during the study and for 30 days after the last dose of study drug"
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Participant has had chemotherapy, radiotherapy or biological therapy within the past 4 weeks.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant has had chemotherapy ... within the past 4 weeks.",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participant has had ... radiotherapy ... within the past 4 weeks.",
+                        "criterion": "radiotherapy",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participant has had ... biological therapy within the past 4 weeks.",
+                        "criterion": "biological therapy",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Participant has had chemotherapy ... within the past 4 weeks.",
+                        "criterion": "chemotherapy",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participant has had ... radiotherapy ... within the past 4 weeks.",
+                        "criterion": "radiotherapy",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participant has had ... biological therapy within the past 4 weeks.",
+                        "criterion": "biological therapy",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant is currently receiving other anti-cancer therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "currently receiving other anti-cancer therapy",
+                        "criterion": "anti-cancer therapy",
+                        "requirement": {
+                            "requirement_type": "current status",
+                            "expected_value": "receiving"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "currently receiving other anti-cancer therapy",
+                    "criterion": "anti-cancer therapy",
+                    "requirement": {
+                        "requirement_type": "current status",
+                        "expected_value": "receiving"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant is currently participating or has participated in a study with an investigation drug or device within the last 30 days.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant is currently participating ... in a study with an investigation drug or device",
+                        "criterion": "current participation in a study",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "has participated in a study with an investigation drug or device within the last 30 days",
+                        "criterion": "past participation in a study",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 30,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Participant is currently participating ... in a study with an investigation drug or device",
+                        "criterion": "current participation in a study",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "has participated in a study with an investigation drug or device within the last 30 days",
+                        "criterion": "past participation in a study",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 30,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant has a primary central nervous system tumor or active brain metastases.",
+                "criterions": [
+                    {
+                        "exact_snippets": "primary central nervous system tumor",
+                        "criterion": "primary central nervous system tumor",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "active brain metastases",
+                        "criterion": "active brain metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "primary central nervous system tumor",
+                        "criterion": "primary central nervous system tumor",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "active brain metastases",
+                        "criterion": "active brain metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant has a psychiatric disorder.",
+                "criterions": [
+                    {
+                        "exact_snippets": "psychiatric disorder",
+                        "criterion": "psychiatric disorder",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "psychiatric disorder",
+                    "criterion": "psychiatric disorder",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant uses illegal drugs.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant uses illegal drugs.",
+                        "criterion": "illegal drug use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participant uses illegal drugs.",
+                    "criterion": "illegal drug use",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant is pregnant or breastfeeding.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant is pregnant",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "breastfeeding",
+                        "criterion": "breastfeeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Participant is pregnant",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "breastfeeding",
+                        "criterion": "breastfeeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant is known to be human immunodeficiency virus (HIV) positive.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant is known to be human immunodeficiency virus (HIV) positive.",
+                        "criterion": "HIV status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "positive"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participant is known to be human immunodeficiency virus (HIV) positive.",
+                    "criterion": "HIV status",
+                    "requirement": {
+                        "requirement_type": "status",
+                        "expected_value": "positive"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant has a known history of Hepatitis B or C.",
+                "criterions": [
+                    {
+                        "exact_snippets": "known history of Hepatitis B",
+                        "criterion": "Hepatitis B",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "known history of ... C",
+                        "criterion": "Hepatitis C",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "known history of Hepatitis B",
+                        "criterion": "Hepatitis B",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "known history of ... C",
+                        "criterion": "Hepatitis C",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant has newly diagnosed diabetes.",
+                "criterions": [
+                    {
+                        "exact_snippets": "newly diagnosed diabetes",
+                        "criterion": "diabetes",
+                        "requirement": {
+                            "requirement_type": "diagnosis status",
+                            "expected_value": "newly diagnosed"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "newly diagnosed diabetes",
+                        "criterion": "diabetes",
+                        "requirement": {
+                            "requirement_type": "diagnosis status",
+                            "expected_value": "newly diagnosed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant has an active infection.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant has an active infection.",
+                        "criterion": "active infection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participant has an active infection.",
+                    "criterion": "active infection",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant is unable to swallow capsules.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant is unable to swallow capsules.",
+                        "criterion": "ability to swallow capsules",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participant is unable to swallow capsules.",
+                    "criterion": "ability to swallow capsules",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant has received a blood transfusion with one week of study entry.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant has received a blood transfusion",
+                        "criterion": "blood transfusion",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "week"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participant has received a blood transfusion",
+                    "criterion": "blood transfusion",
+                    "requirement": {
+                        "requirement_type": "recency",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 1,
+                            "unit": "week"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant has a history of cardiac problems including heart failure, myocardial infarction, unstable angina, congestive heart failure or cardiac arrhythmia.",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of cardiac problems including heart failure",
+                        "criterion": "cardiac problems",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "myocardial infarction",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unstable angina",
+                        "criterion": "unstable angina",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "congestive heart failure",
+                        "criterion": "congestive heart failure",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cardiac arrhythmia",
+                        "criterion": "cardiac arrhythmia",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "history of cardiac problems including heart failure",
+                        "criterion": "cardiac problems",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "myocardial infarction",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unstable angina",
+                        "criterion": "unstable angina",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "congestive heart failure",
+                        "criterion": "congestive heart failure",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cardiac arrhythmia",
+                        "criterion": "cardiac arrhythmia",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant has a known sensitivity to the components of the study drug.",
+                "criterions": [
+                    {
+                        "exact_snippets": "known sensitivity to the components of the study drug",
+                        "criterion": "sensitivity to study drug components",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "known sensitivity to the components of the study drug",
+                    "criterion": "sensitivity to study drug components",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant has not adequately recovered from any prior surgical procedure.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant has not adequately recovered from any prior surgical procedure.",
+                        "criterion": "recovery from prior surgical procedure",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participant has not adequately recovered from any prior surgical procedure.",
+                    "criterion": "recovery from prior surgical procedure",
+                    "requirement": {
+                        "requirement_type": "adequacy",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participant does not agree to refrain from use of herbal remedies and consumption of grapefruit juice for 2 weeks prior to and during the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participant does not agree to refrain from use of herbal remedies",
+                        "criterion": "use of herbal remedies",
+                        "requirement": {
+                            "requirement_type": "agreement to refrain",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participant does not agree to refrain from ... consumption of grapefruit juice",
+                        "criterion": "consumption of grapefruit juice",
+                        "requirement": {
+                            "requirement_type": "agreement to refrain",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "for 2 weeks prior to and during the study",
+                        "criterion": "timeframe for refraining",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": "2 weeks prior to and during the study"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "Participant does not agree to refrain from use of herbal remedies",
+                                    "criterion": "use of herbal remedies",
+                                    "requirement": {
+                                        "requirement_type": "agreement to refrain",
+                                        "expected_value": true
+                                    }
+                                }
+                            },
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "Participant does not agree to refrain from ... consumption of grapefruit juice",
+                                    "criterion": "consumption of grapefruit juice",
+                                    "requirement": {
+                                        "requirement_type": "agreement to refrain",
+                                        "expected_value": true
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "for 2 weeks prior to and during the study",
+                        "criterion": "timeframe for refraining",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": "2 weeks prior to and during the study"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

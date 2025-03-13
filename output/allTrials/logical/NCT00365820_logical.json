@@ -1,0 +1,784 @@
+{
+    "info": {
+        "nct_id": "NCT00365820",
+        "official_title": "A Randomized, Double-blind, Placebo-controlled Multicenter Phase II/III Study to Evaluate the Efficacy and Safety of Tegaserod and Placebo Given Orally for 12 Weeks for the Treatment of Opioid-induced Constipation (OIC) in Patients With Chronic Non-cancer Pain",
+        "inclusion_criteria": "1. Male and female outpatients 18 years of age or older.\n2. Patients with chronic non-cancer pain that necessitates the use of non-injectable opioid analgesics. The equivalent dose of 300 mg morphine per day is the maximum opioid analgesic dose allowed. In general, patients should be using opioids on a daily basis.\n3. Chronic pain which has been present for a minimum of 3 months which needs the chronic use of opioids for pain relief.\n4. Constipation, according to the investigator's clinical judgment, that is resulting from opioid use for non-cancer chronic pain. Opioid-induced constipation (OIC) is defined as follows:\n\n   * less than 3 spontaneous bowel movements per week and at least one of the following on at least 25% of occasions:\n\n     1. hard or very hard stools\n     2. sensation of incomplete evacuation\n     3. straining while having a bowel movement\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "1. Patients who are receiving opioids for abdominal pain or connective tissue disorders.\n2. Planned discontinuation or an increase or decrease by more than 30% of the current opioid dose\n3. Patients who underwent major surgery within 3 months prior to screening.\n4. Patients with a history of prior chronic constipation (CC) that was present for more than three months and that was not related to opioid use.\n5. Patients with a current diagnosis of irritable bowel syndrome (IBS) constipation predominant or alternators.\n\nOther protocol-defined inclusion/exclusion criteria may apply.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Male and female outpatients 18 years of age or older.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male and female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "allowed_values",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "18 years of age or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Male and female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "allowed_values",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "18 years of age or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Patients with chronic non-cancer pain that necessitates the use of non-injectable opioid analgesics. The equivalent dose of 300 mg morphine per day is the maximum opioid analgesic dose allowed. In general, patients should be using opioids on a daily basis.",
+                "criterions": [
+                    {
+                        "exact_snippets": "chronic non-cancer pain",
+                        "criterion": "chronic non-cancer pain",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "necessitates the use of non-injectable opioid analgesics",
+                        "criterion": "use of non-injectable opioid analgesics",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "The equivalent dose of 300 mg morphine per day is the maximum opioid analgesic dose allowed",
+                        "criterion": "opioid analgesic dose",
+                        "requirement": {
+                            "requirement_type": "maximum dose",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 300,
+                                "unit": "mg morphine per day"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients should be using opioids on a daily basis",
+                        "criterion": "daily opioid use",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": "daily"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "chronic non-cancer pain",
+                                "criterion": "chronic non-cancer pain",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "necessitates the use of non-injectable opioid analgesics",
+                                "criterion": "use of non-injectable opioid analgesics",
+                                "requirement": {
+                                    "requirement_type": "necessity",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "The equivalent dose of 300 mg morphine per day is the maximum opioid analgesic dose allowed",
+                        "criterion": "opioid analgesic dose",
+                        "requirement": {
+                            "requirement_type": "maximum dose",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 300,
+                                "unit": "mg morphine per day"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients should be using opioids on a daily basis",
+                        "criterion": "daily opioid use",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": "daily"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Chronic pain which has been present for a minimum of 3 months which needs the chronic use of opioids for pain relief.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Chronic pain which has been present for a minimum of 3 months",
+                        "criterion": "chronic pain",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "chronic use of opioids for pain relief",
+                        "criterion": "opioid use",
+                        "requirement": {
+                            "requirement_type": "chronic use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Chronic pain which has been present for a minimum of 3 months",
+                        "criterion": "chronic pain",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "chronic use of opioids for pain relief",
+                        "criterion": "opioid use",
+                        "requirement": {
+                            "requirement_type": "chronic use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Constipation, according to the investigator's clinical judgment, that is resulting from opioid use for non-cancer chronic pain. Opioid-induced constipation (OIC) is defined as follows:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Constipation, according to the investigator's clinical judgment, that is resulting from opioid use for non-cancer chronic pain.",
+                        "criterion": "constipation",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": "opioid use for non-cancer chronic pain"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Constipation, according to the investigator's clinical judgment, that is resulting from opioid use for non-cancer chronic pain.",
+                        "criterion": "constipation",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": "opioid use for non-cancer chronic pain"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* less than 3 spontaneous bowel movements per week and at least one of the following on at least 25% of occasions:",
+                "criterions": [
+                    {
+                        "exact_snippets": "less than 3 spontaneous bowel movements per week",
+                        "criterion": "spontaneous bowel movements",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "per week"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "less than 3 spontaneous bowel movements per week",
+                        "criterion": "spontaneous bowel movements",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "per week"
+                            }
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "at least one of the following on at least 25% of occasions",
+                                "criterion": "symptom occurrence",
+                                "requirement": {
+                                    "requirement_type": "frequency",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 25,
+                                        "unit": "percent of occasions"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "at least one of the following on at least 25% of occasions",
+                                "criterion": "symptom occurrence",
+                                "requirement": {
+                                    "requirement_type": "frequency",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 25,
+                                        "unit": "percent of occasions"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. hard or very hard stools",
+                "criterions": [
+                    {
+                        "exact_snippets": "hard or very hard stools",
+                        "criterion": "stool consistency",
+                        "requirement": {
+                            "requirement_type": "consistency",
+                            "expected_value": [
+                                "hard",
+                                "very hard"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "hard or very hard stools",
+                        "criterion": "stool consistency",
+                        "requirement": {
+                            "requirement_type": "consistency",
+                            "expected_value": [
+                                "hard",
+                                "very hard"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. sensation of incomplete evacuation",
+                "criterions": [
+                    {
+                        "exact_snippets": "sensation of incomplete evacuation",
+                        "criterion": "sensation of incomplete evacuation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "sensation of incomplete evacuation",
+                        "criterion": "sensation of incomplete evacuation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. straining while having a bowel movement",
+                "criterions": [
+                    {
+                        "exact_snippets": "straining while having a bowel movement",
+                        "criterion": "straining during bowel movement",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "straining while having a bowel movement",
+                        "criterion": "straining during bowel movement",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Patients who are receiving opioids for abdominal pain or connective tissue disorders.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who are receiving opioids",
+                        "criterion": "opioid use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "abdominal pain",
+                        "criterion": "abdominal pain",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "connective tissue disorders",
+                        "criterion": "connective tissue disorders",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients who are receiving opioids",
+                                "criterion": "opioid use",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "abdominal pain",
+                                "criterion": "abdominal pain",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients who are receiving opioids",
+                                "criterion": "opioid use",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "connective tissue disorders",
+                                "criterion": "connective tissue disorders",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Planned discontinuation or an increase or decrease by more than 30% of the current opioid dose",
+                "criterions": [
+                    {
+                        "exact_snippets": "Planned discontinuation ... of the current opioid dose",
+                        "criterion": "opioid dose",
+                        "requirement": {
+                            "requirement_type": "planned discontinuation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "increase ... by more than 30% of the current opioid dose",
+                        "criterion": "opioid dose",
+                        "requirement": {
+                            "requirement_type": "change",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 30,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "decrease by more than 30% of the current opioid dose",
+                        "criterion": "opioid dose",
+                        "requirement": {
+                            "requirement_type": "change",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 30,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Planned discontinuation ... of the current opioid dose",
+                                "criterion": "opioid dose",
+                                "requirement": {
+                                    "requirement_type": "planned discontinuation",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "increase ... by more than 30% of the current opioid dose",
+                                "criterion": "opioid dose",
+                                "requirement": {
+                                    "requirement_type": "change",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 30,
+                                        "unit": "%"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "decrease by more than 30% of the current opioid dose",
+                                "criterion": "opioid dose",
+                                "requirement": {
+                                    "requirement_type": "change",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 30,
+                                        "unit": "%"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Patients who underwent major surgery within 3 months prior to screening.",
+                "criterions": [
+                    {
+                        "exact_snippets": "underwent major surgery within 3 months prior to screening",
+                        "criterion": "major surgery",
+                        "requirement": {
+                            "requirement_type": "time since surgery",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "underwent major surgery within 3 months prior to screening",
+                        "criterion": "major surgery",
+                        "requirement": {
+                            "requirement_type": "time since surgery",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Patients with a history of prior chronic constipation (CC) that was present for more than three months and that was not related to opioid use.",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of prior chronic constipation (CC)",
+                        "criterion": "chronic constipation",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "present for more than three months",
+                        "criterion": "chronic constipation duration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "not related to opioid use",
+                        "criterion": "chronic constipation cause",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": "not related to opioid use"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "history of prior chronic constipation (CC)",
+                                "criterion": "chronic constipation",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "present for more than three months",
+                                "criterion": "chronic constipation duration",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "not related to opioid use",
+                        "criterion": "chronic constipation cause",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": "not related to opioid use"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Other protocol-defined inclusion/exclusion criteria may apply.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Other protocol-defined inclusion/exclusion criteria",
+                        "criterion": "protocol-defined criteria",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Other protocol-defined inclusion/exclusion criteria",
+                    "criterion": "protocol-defined criteria",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "5. Patients with a current diagnosis of irritable bowel syndrome (IBS) constipation predominant or alternators.",
+                "criterions": [
+                    {
+                        "exact_snippets": "current diagnosis of irritable bowel syndrome (IBS)",
+                        "criterion": "irritable bowel syndrome (IBS)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "constipation predominant or alternators",
+                        "criterion": "IBS subtype",
+                        "requirement": {
+                            "requirement_type": "subtype",
+                            "expected_value": [
+                                "constipation predominant",
+                                "alternators"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "current diagnosis of irritable bowel syndrome (IBS)",
+                                "criterion": "irritable bowel syndrome (IBS)",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "constipation predominant or alternators",
+                                        "criterion": "IBS subtype",
+                                        "requirement": {
+                                            "requirement_type": "subtype",
+                                            "expected_value": "constipation predominant"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "constipation predominant or alternators",
+                                        "criterion": "IBS subtype",
+                                        "requirement": {
+                                            "requirement_type": "subtype",
+                                            "expected_value": "alternators"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

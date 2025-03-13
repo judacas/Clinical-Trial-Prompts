@@ -1,0 +1,626 @@
+{
+    "info": {
+        "nct_id": "NCT03930173",
+        "official_title": "A Prospective Pilot to Evaluate the Diagnostic Assessment of 18F-Fluciclovine Positron Emission Tomography to Distinguish Tumor Progression From Radiation Necrosis Following Stereotactic Radiosurgery for Brain Metastases",
+        "inclusion_criteria": "* Subjects must have a confirmed diagnosis of brain metastases.\n* Subjects must have received prior intracranial SRS at least once for brain metastases. Prior WBRT is allowed.\n* Subjects must have had a clinical tumor protocol MRI of the brain including a DSC-MR perfusion sequence, which is equivocal for radiation necrosis versus tumor progression within 30 days of treatment scan. \"Equivocal\" will be defined as being inconclusive for radiation necrosis versus tumor progression as determined by the study neuroradiologist.\n* Physician assessed life expectancy of ≥ 6 months.\n* Subjects must have the ability to understand and the willingness to sign a written informed consent document.\n* For women of childbearing potential, a negative serum pregnancy test within 14 days of registration is required.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Subjects who have experienced a prior anaphylaxis reaction to 18Ffluciclovine are not eligible.\n* Females pregnant at the expected time of 18F-fluciclovine administration are not eligible due to potential harm to the fetus from exposure to radiation. Women who could be pregnant require a negative pregnancy test to be eligible.\n* Women who are breast feeding at the expected time of 18F-fluciclovine administration are not eligible due to potential harm to the infant from exposure to radiation.\n* Subjects contraindicated for MRI.\n* Subjects unable or unwilling to comply with study requirements are not eligible.\n* Major medical illness or psychiatric impairments, which in the investigator's opinion, will prevent completion of protocol therapy and/or preclude informed consent.\n* Brain metastases from primary lymphoma, germ cell tumor, or small cell carcinoma.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* For women of childbearing potential, a negative serum pregnancy test within 14 days of registration is required.",
+                "criterions": [
+                    {
+                        "exact_snippets": "women of childbearing potential",
+                        "criterion": "childbearing potential",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "negative serum pregnancy test",
+                        "criterion": "serum pregnancy test",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 14 days of registration",
+                        "criterion": "timing of serum pregnancy test",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 14,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "women of childbearing potential",
+                    "criterion": "childbearing potential",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "negative serum pregnancy test",
+                            "criterion": "serum pregnancy test",
+                            "requirement": {
+                                "requirement_type": "result",
+                                "expected_value": "negative"
+                            }
+                        },
+                        {
+                            "exact_snippets": "within 14 days of registration",
+                            "criterion": "timing of serum pregnancy test",
+                            "requirement": {
+                                "requirement_type": "time frame",
+                                "expected_value": {
+                                    "operator": "<=",
+                                    "value": 14,
+                                    "unit": "days"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Subjects who have experienced a prior anaphylaxis reaction to 18Ffluciclovine are not eligible.",
+                "criterions": [
+                    {
+                        "exact_snippets": "prior anaphylaxis reaction to 18Ffluciclovine",
+                        "criterion": "anaphylaxis reaction to 18Ffluciclovine",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "prior anaphylaxis reaction to 18Ffluciclovine",
+                    "criterion": "anaphylaxis reaction to 18Ffluciclovine",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Females pregnant at the expected time of 18F-fluciclovine administration are not eligible due to potential harm to the fetus from exposure to radiation. Women who could be pregnant require a negative pregnancy test to be eligible.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Females pregnant at the expected time of 18F-fluciclovine administration",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Women who could be pregnant require a negative pregnancy test",
+                        "criterion": "pregnancy test result",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Females pregnant at the expected time of 18F-fluciclovine administration",
+                            "criterion": "pregnancy status",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": false
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "condition": {
+                                "exact_snippets": "Women who could be pregnant require a negative pregnancy test",
+                                "criterion": "pregnancy status",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            "then_criteria": {
+                                "exact_snippets": "Women who could be pregnant require a negative pregnancy test",
+                                "criterion": "pregnancy test result",
+                                "requirement": {
+                                    "requirement_type": "result",
+                                    "expected_value": "negative"
+                                }
+                            },
+                            "else_criteria": null
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects contraindicated for MRI.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subjects contraindicated for MRI",
+                        "criterion": "MRI",
+                        "requirement": {
+                            "requirement_type": "contraindication",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Subjects contraindicated for MRI",
+                    "criterion": "MRI",
+                    "requirement": {
+                        "requirement_type": "contraindication",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects unable or unwilling to comply with study requirements are not eligible.",
+                "criterions": [
+                    {
+                        "exact_snippets": "unable or unwilling to comply with study requirements",
+                        "criterion": "compliance with study requirements",
+                        "requirement": {
+                            "requirement_type": "ability and willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "unable or unwilling to comply with study requirements",
+                    "criterion": "compliance with study requirements",
+                    "requirement": {
+                        "requirement_type": "ability and willingness",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Major medical illness or psychiatric impairments, which in the investigator's opinion, will prevent completion of protocol therapy and/or preclude informed consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Major medical illness",
+                        "criterion": "major medical illness",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "psychiatric impairments",
+                        "criterion": "psychiatric impairments",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Major medical illness",
+                                        "criterion": "major medical illness",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "which in the investigator's opinion, will prevent completion of protocol therapy and/or preclude informed consent",
+                                        "criterion": "investigator's opinion on major medical illness impact",
+                                        "requirement": {
+                                            "requirement_type": "impact",
+                                            "expected_value": [
+                                                "prevent completion of protocol therapy",
+                                                "preclude informed consent"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "psychiatric impairments",
+                                        "criterion": "psychiatric impairments",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "which in the investigator's opinion, will prevent completion of protocol therapy and/or preclude informed consent",
+                                        "criterion": "investigator's opinion on psychiatric impairments impact",
+                                        "requirement": {
+                                            "requirement_type": "impact",
+                                            "expected_value": [
+                                                "prevent completion of protocol therapy",
+                                                "preclude informed consent"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Brain metastases from primary lymphoma, germ cell tumor, or small cell carcinoma.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Brain metastases from primary lymphoma",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "primary cancer type",
+                            "expected_value": "lymphoma"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Brain metastases from ... germ cell tumor",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "primary cancer type",
+                            "expected_value": "germ cell tumor"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Brain metastases from ... small cell carcinoma",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "primary cancer type",
+                            "expected_value": "small cell carcinoma"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Brain metastases from primary lymphoma",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "primary cancer type",
+                            "expected_value": "lymphoma"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Brain metastases from ... germ cell tumor",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "primary cancer type",
+                            "expected_value": "germ cell tumor"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Brain metastases from ... small cell carcinoma",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "primary cancer type",
+                            "expected_value": "small cell carcinoma"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Subjects must have a confirmed diagnosis of brain metastases.",
+                "criterions": [
+                    {
+                        "exact_snippets": "confirmed diagnosis of brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "confirmed"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects must have received prior intracranial SRS at least once for brain metastases. Prior WBRT is allowed.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subjects must have received prior intracranial SRS at least once for brain metastases.",
+                        "criterion": "prior intracranial SRS",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": "at least once"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior WBRT is allowed.",
+                        "criterion": "prior WBRT",
+                        "requirement": {
+                            "requirement_type": "allowance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects must have had a clinical tumor protocol MRI of the brain including a DSC-MR perfusion sequence, which is equivocal for radiation necrosis versus tumor progression within 30 days of treatment scan. \"Equivocal\" will be defined as being inconclusive for radiation necrosis versus tumor progression as determined by the study neuroradiologist.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subjects must have had a clinical tumor protocol MRI of the brain",
+                        "criterion": "clinical tumor protocol MRI of the brain",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "including a DSC-MR perfusion sequence",
+                        "criterion": "DSC-MR perfusion sequence",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "equivocal for radiation necrosis versus tumor progression",
+                        "criterion": "equivocal MRI result",
+                        "requirement": {
+                            "requirement_type": "definition",
+                            "expected_value": "inconclusive for radiation necrosis versus tumor progression"
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 30 days of treatment scan",
+                        "criterion": "time since treatment scan",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 30,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Physician assessed life expectancy of ≥ 6 months.",
+                "criterions": [
+                    {
+                        "exact_snippets": "life expectancy of ≥ 6 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects must have the ability to understand and the willingness to sign a written informed consent document.",
+                "criterions": [
+                    {
+                        "exact_snippets": "ability to understand",
+                        "criterion": "cognitive ability",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willingness to sign a written informed consent document",
+                        "criterion": "willingness to consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Women who are breast feeding at the expected time of 18F-fluciclovine administration are not eligible due to potential harm to the infant from exposure to radiation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Women who are breast feeding ... are not eligible",
+                        "criterion": "breastfeeding status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "potential harm to the infant from exposure to radiation",
+                        "criterion": "potential harm to infant from radiation exposure",
+                        "requirement": {
+                            "requirement_type": "risk",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Women who are breast feeding ... are not eligible",
+                        "criterion": "breastfeeding status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "potential harm to the infant from exposure to radiation",
+                        "criterion": "potential harm to infant from radiation exposure",
+                        "requirement": {
+                            "requirement_type": "risk",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

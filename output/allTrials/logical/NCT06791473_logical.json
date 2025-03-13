@@ -1,0 +1,449 @@
+{
+    "info": {
+        "nct_id": "NCT06791473",
+        "official_title": "AI-Based Cancer Diagnosis and Prediction Using Electronic Health Records",
+        "inclusion_criteria": "1、Patients with comprehensive electronic health records (EHRs), including medical history, laboratory test results, imaging data, and genetic data (if available).\n\n2. Individuals without severe cognitive impairments or conditions that would prevent them from providing informed consent or participating in the study.\n\n3. Parents or guardians must provide informed consent for minors, while adult participants must provide informed consent for themselves.\nHealthy volunteers allowed\nMust have minimum age of 0 Years\nMust have maximum age of 90 Years",
+        "exclusion_criteria": "1. Patients with incomplete or missing key electronic health record data or insufficient follow-up data.\n2. Individuals with severe cognitive disorders or other terminal illnesses that would prevent meaningful participation.\n3. Pregnant women (although pediatric cancers are being considered, pregnant women would be excluded for safety reasons).",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1、Patients with comprehensive electronic health records (EHRs), including medical history, laboratory test results, imaging data, and genetic data (if available).",
+                "criterions": [
+                    {
+                        "exact_snippets": "comprehensive electronic health records (EHRs)",
+                        "criterion": "electronic health records (EHRs)",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "medical history",
+                        "criterion": "medical history",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "laboratory test results",
+                        "criterion": "laboratory test results",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "imaging data",
+                        "criterion": "imaging data",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "genetic data (if available)",
+                        "criterion": "genetic data",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "if available"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "comprehensive electronic health records (EHRs)",
+                                "criterion": "electronic health records (EHRs)",
+                                "requirement": {
+                                    "requirement_type": "completeness",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "medical history",
+                                "criterion": "medical history",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "laboratory test results",
+                                "criterion": "laboratory test results",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "imaging data",
+                                "criterion": "imaging data",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "condition": {
+                            "exact_snippets": "genetic data (if available)",
+                            "criterion": "genetic data",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": "if available"
+                            }
+                        },
+                        "then_criteria": null,
+                        "else_criteria": null
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Individuals without severe cognitive impairments or conditions that would prevent them from providing informed consent or participating in the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "without severe cognitive impairments",
+                        "criterion": "cognitive impairments",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "not severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "conditions that would prevent them from providing informed consent",
+                        "criterion": "conditions affecting informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "conditions that would prevent them from ... participating in the study",
+                        "criterion": "conditions affecting study participation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "without severe cognitive impairments",
+                                "criterion": "cognitive impairments",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "not severe"
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "conditions that would prevent them from providing informed consent",
+                                        "criterion": "conditions affecting informed consent",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "conditions that would prevent them from ... participating in the study",
+                                        "criterion": "conditions affecting study participation",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Parents or guardians must provide informed consent for minors, while adult participants must provide informed consent for themselves.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Parents or guardians must provide informed consent for minors",
+                        "criterion": "informed consent for minors",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "adult participants must provide informed consent for themselves",
+                        "criterion": "informed consent for adults",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Parents or guardians must provide informed consent for minors",
+                                "criterion": "informed consent for minors",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "adult participants must provide informed consent for themselves",
+                                "criterion": "informed consent for adults",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 0 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 0 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 0 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 90 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 90 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 90,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 90 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 90,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "2. Individuals with severe cognitive disorders or other terminal illnesses that would prevent meaningful participation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "severe cognitive disorders",
+                        "criterion": "cognitive disorders",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    },
+                    {
+                        "exact_snippets": "other terminal illnesses",
+                        "criterion": "terminal illnesses",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "severe cognitive disorders",
+                                "criterion": "cognitive disorders",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "severe"
+                                }
+                            },
+                            {
+                                "exact_snippets": "other terminal illnesses",
+                                "criterion": "terminal illnesses",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "1. Patients with incomplete or missing key electronic health record data or insufficient follow-up data.",
+                "criterions": [
+                    {
+                        "exact_snippets": "incomplete or missing key electronic health record data",
+                        "criterion": "electronic health record data",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "insufficient follow-up data",
+                        "criterion": "follow-up data",
+                        "requirement": {
+                            "requirement_type": "sufficiency",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "incomplete or missing key electronic health record data",
+                        "criterion": "electronic health record data",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "insufficient follow-up data",
+                        "criterion": "follow-up data",
+                        "requirement": {
+                            "requirement_type": "sufficiency",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Pregnant women (although pediatric cancers are being considered, pregnant women would be excluded for safety reasons).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant women ... pregnant women would be excluded",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Pregnant women ... pregnant women would be excluded",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

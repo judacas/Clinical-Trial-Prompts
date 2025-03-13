@@ -1,0 +1,304 @@
+{
+    "info": {
+        "nct_id": "NCT04452162",
+        "official_title": "Physiologic MR Imaging in Distinguishing Benign from Malignant Salivary Gland Tumors",
+        "inclusion_criteria": "* Possess a salivary gland lesion of 1cm3 size\n* Have no prior history of treatment for salivary gland lesion\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Has any prior history of cancer other than SGT\n* Has any MRI contra-indications\n* Has a history of known renal disease.\n* Has history of prior radiation to head and neck region\n* Is pregnant",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Possess a salivary gland lesion of 1cm3 size",
+                "criterions": [
+                    {
+                        "exact_snippets": "salivary gland lesion",
+                        "criterion": "salivary gland lesion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "1cm3 size",
+                        "criterion": "lesion size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 1,
+                                "unit": "cm3"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "salivary gland lesion",
+                        "criterion": "salivary gland lesion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "1cm3 size",
+                        "criterion": "lesion size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 1,
+                                "unit": "cm3"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have no prior history of treatment for salivary gland lesion",
+                "criterions": [
+                    {
+                        "exact_snippets": "no prior history of treatment for salivary gland lesion",
+                        "criterion": "treatment history for salivary gland lesion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "no prior history of treatment for salivary gland lesion",
+                        "criterion": "treatment history for salivary gland lesion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Has any prior history of cancer other than SGT",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has any prior history of cancer other than SGT",
+                        "criterion": "prior history of cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Has any prior history of cancer other than SGT",
+                        "criterion": "prior history of cancer",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": "SGT"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Has any prior history of cancer other than SGT",
+                        "criterion": "prior history of cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Has any prior history of cancer other than SGT",
+                        "criterion": "prior history of cancer",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": "SGT"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has any MRI contra-indications",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has any MRI contra-indications",
+                        "criterion": "MRI contra-indications",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Has any MRI contra-indications",
+                    "criterion": "MRI contra-indications",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has a history of known renal disease.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has a history of known renal disease.",
+                        "criterion": "renal disease",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Has a history of known renal disease.",
+                        "criterion": "renal disease",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has history of prior radiation to head and neck region",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of prior radiation to head and neck region",
+                        "criterion": "prior radiation to head and neck region",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "history of prior radiation to head and neck region",
+                        "criterion": "prior radiation to head and neck region",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Is pregnant",
+                "criterions": [
+                    {
+                        "exact_snippets": "Is pregnant",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Is pregnant",
+                    "criterion": "pregnancy",
+                    "requirement": {
+                        "requirement_type": "status",
+                        "expected_value": false
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

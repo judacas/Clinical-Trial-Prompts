@@ -1,0 +1,304 @@
+{
+    "info": {
+        "nct_id": "NCT05762731",
+        "official_title": "Screening for Lung Cancer in Subjects With Family History of Lung Cancer",
+        "inclusion_criteria": "* Age 50-75, men or women, smokers or non-smokers\n* Being first degree relatives (Siblings, children, and parents) of lung cancer subjects\n* Having no known lung cancer before\nMust have minimum age of 50 Years\nMust have maximum age of 75 Years",
+        "exclusion_criteria": "* Non-Chinese\n* Mentally incompetent to give informed consent",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Age 50-75, men or women, smokers or non-smokers",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age 50-75",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 50,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 75,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "men or women",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "inclusion",
+                            "expected_value": [
+                                "men",
+                                "women"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "smokers or non-smokers",
+                        "criterion": "smoking status",
+                        "requirement": {
+                            "requirement_type": "inclusion",
+                            "expected_value": [
+                                "smokers",
+                                "non-smokers"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age 50-75",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 50,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 75,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "men or women",
+                                "criterion": "gender",
+                                "requirement": {
+                                    "requirement_type": "inclusion",
+                                    "expected_value": [
+                                        "men",
+                                        "women"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "smokers or non-smokers",
+                                "criterion": "smoking status",
+                                "requirement": {
+                                    "requirement_type": "inclusion",
+                                    "expected_value": [
+                                        "smokers",
+                                        "non-smokers"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Being first degree relatives (Siblings, children, and parents) of lung cancer subjects",
+                "criterions": [
+                    {
+                        "exact_snippets": "first degree relatives (Siblings, children, and parents)",
+                        "criterion": "relationship to lung cancer subjects",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "siblings",
+                                "children",
+                                "parents"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "first degree relatives (Siblings, children, and parents)",
+                        "criterion": "relationship to lung cancer subjects",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "siblings",
+                                "children",
+                                "parents"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Having no known lung cancer before",
+                "criterions": [
+                    {
+                        "exact_snippets": "no known lung cancer before",
+                        "criterion": "lung cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "no known lung cancer before",
+                        "criterion": "lung cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 50 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 50 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 50 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 75 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Non-Chinese",
+                "criterions": [
+                    {
+                        "exact_snippets": "Non-Chinese",
+                        "criterion": "ethnicity",
+                        "requirement": {
+                            "requirement_type": "specific ethnicity",
+                            "expected_value": "Non-Chinese"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Non-Chinese",
+                    "criterion": "ethnicity",
+                    "requirement": {
+                        "requirement_type": "specific ethnicity",
+                        "expected_value": "Non-Chinese"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Mentally incompetent to give informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Mentally incompetent",
+                        "criterion": "mental competence",
+                        "requirement": {
+                            "requirement_type": "competence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Mentally incompetent",
+                    "criterion": "mental competence",
+                    "requirement": {
+                        "requirement_type": "competence",
+                        "expected_value": false
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

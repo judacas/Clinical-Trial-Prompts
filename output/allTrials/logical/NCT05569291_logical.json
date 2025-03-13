@@ -1,0 +1,501 @@
+{
+    "info": {
+        "nct_id": "NCT05569291",
+        "official_title": "Investigating the Feasibility of a Physical Activity (tele)coachingv Intervention in Patients with Non-small Cell Lung Cancer: an Explorative Study",
+        "inclusion_criteria": "* Three to nine months after a lung resection surgery for non-small cell lung cancer\n* If patients received adjuvant chemotherapy, the inclusion window will be three months to nine months after the end of adjuvant chemotherapy\n* Adults (+18 year)\nHealthy volunteers allowed\nMust have minimum age of 45 Years",
+        "exclusion_criteria": "* Progressive or recurrent lung cancer\n* Who had other malignancies in the last 2 years\n* Psychiatric disorders\n* Other ongoing treatments\n* Involved in or planned to start a multidisciplinary rehabilitation program\n* Unable to learn to work with a new electronic device (e.g. smartphone)\n* Not understanding and speaking Dutch\n* Patients with comorbidities precluding them from participation in a physical activity intervention",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Three to nine months after a lung resection surgery for non-small cell lung cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Three to nine months after a lung resection surgery",
+                        "criterion": "time since lung resection surgery",
+                        "requirement": {
+                            "requirement_type": "time since surgery",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 9,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "lung resection surgery",
+                        "criterion": "lung resection surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-small cell lung cancer",
+                        "criterion": "non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Three to nine months after a lung resection surgery",
+                                "criterion": "time since lung resection surgery",
+                                "requirement": {
+                                    "requirement_type": "time since surgery",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 3,
+                                                "unit": "months"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 9,
+                                                "unit": "months"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "lung resection surgery",
+                                "criterion": "lung resection surgery",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "non-small cell lung cancer",
+                        "criterion": "non-small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* If patients received adjuvant chemotherapy, the inclusion window will be three months to nine months after the end of adjuvant chemotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients received adjuvant chemotherapy",
+                        "criterion": "adjuvant chemotherapy",
+                        "requirement": {
+                            "requirement_type": "receipt",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "three months to nine months after the end of adjuvant chemotherapy",
+                        "criterion": "inclusion window",
+                        "requirement": {
+                            "requirement_type": "time since end of adjuvant chemotherapy",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 9,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "patients received adjuvant chemotherapy",
+                    "criterion": "adjuvant chemotherapy",
+                    "requirement": {
+                        "requirement_type": "receipt",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "three months to nine months after the end of adjuvant chemotherapy",
+                    "criterion": "inclusion window",
+                    "requirement": {
+                        "requirement_type": "time since end of adjuvant chemotherapy",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": ">=",
+                                    "value": 3,
+                                    "unit": "months"
+                                },
+                                {
+                                    "operator": "<=",
+                                    "value": 9,
+                                    "unit": "months"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adults (+18 year)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adults (+18 year)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adults (+18 year)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 45 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 45 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 45,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 45 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 45,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Progressive or recurrent lung cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Progressive or recurrent lung cancer",
+                        "criterion": "lung cancer",
+                        "requirement": {
+                            "requirement_type": "progression",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Progressive or recurrent lung cancer",
+                        "criterion": "lung cancer",
+                        "requirement": {
+                            "requirement_type": "recurrence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Progressive or recurrent lung cancer",
+                        "criterion": "lung cancer",
+                        "requirement": {
+                            "requirement_type": "progression",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Progressive or recurrent lung cancer",
+                        "criterion": "lung cancer",
+                        "requirement": {
+                            "requirement_type": "recurrence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Who had other malignancies in the last 2 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "other malignancies in the last 2 years",
+                        "criterion": "other malignancies",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "other malignancies in the last 2 years",
+                    "criterion": "other malignancies",
+                    "requirement": {
+                        "requirement_type": "time frame",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 2,
+                            "unit": "years"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Psychiatric disorders",
+                "criterions": [
+                    {
+                        "exact_snippets": "Psychiatric disorders",
+                        "criterion": "psychiatric disorders",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Psychiatric disorders",
+                    "criterion": "psychiatric disorders",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Other ongoing treatments",
+                "criterions": [
+                    {
+                        "exact_snippets": "Other ongoing treatments",
+                        "criterion": "ongoing treatments",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Other ongoing treatments",
+                    "criterion": "ongoing treatments",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Involved in or planned to start a multidisciplinary rehabilitation program",
+                "criterions": [
+                    {
+                        "exact_snippets": "Involved in or planned to start a multidisciplinary rehabilitation program",
+                        "criterion": "multidisciplinary rehabilitation program",
+                        "requirement": {
+                            "requirement_type": "participation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Involved in or planned to start a multidisciplinary rehabilitation program",
+                        "criterion": "multidisciplinary rehabilitation program",
+                        "requirement": {
+                            "requirement_type": "participation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Unable to learn to work with a new electronic device (e.g. smartphone)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unable to learn to work with a new electronic device (e.g. smartphone)",
+                        "criterion": "ability to learn to work with a new electronic device",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Unable to learn to work with a new electronic device (e.g. smartphone)",
+                        "criterion": "ability to learn to work with a new electronic device",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Not understanding and speaking Dutch",
+                "criterions": [
+                    {
+                        "exact_snippets": "Not understanding and speaking Dutch",
+                        "criterion": "Dutch language proficiency",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Not understanding and speaking Dutch",
+                    "criterion": "Dutch language proficiency",
+                    "requirement": {
+                        "requirement_type": "proficiency",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with comorbidities precluding them from participation in a physical activity intervention",
+                "criterions": [
+                    {
+                        "exact_snippets": "comorbidities precluding them from participation in a physical activity intervention",
+                        "criterion": "comorbidities",
+                        "requirement": {
+                            "requirement_type": "impact on participation",
+                            "expected_value": "precluding participation in a physical activity intervention"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "comorbidities precluding them from participation in a physical activity intervention",
+                    "criterion": "comorbidities",
+                    "requirement": {
+                        "requirement_type": "impact on participation",
+                        "expected_value": "precluding participation in a physical activity intervention"
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

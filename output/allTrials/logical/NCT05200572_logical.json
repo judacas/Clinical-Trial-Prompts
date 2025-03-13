@@ -1,0 +1,668 @@
+{
+    "info": {
+        "nct_id": "NCT05200572",
+        "official_title": "Feasibility of a Dyadic Life Review Intervention for Older Patients with Advanced Cancer and Mild Cognitive Impairment (MCI) and Their Caregivers",
+        "inclusion_criteria": "* Age ≥ 65\n* Able to provide informed consent. All patients will be assessed using the University of California, San Diego Brief Assessment of Capacity to Consent (UBACC) 56 - a score >14.5 will define ability to independently provide informed consent.\n* Eligible patients have Stage III or IV cancer of any type\n* Additionally, at least 20 patients will have a will have a high likelihood of MCI based on screening score of <26 on the Montreal Cognitive Assessment (MoCA) within their eRecord chart.\n* Able to read and understand English\n\nPatient\nHealthy volunteers allowed\nMust have minimum age of 50 Years",
+        "exclusion_criteria": "* Patients scoring <14.5 on the UBACC\n* Unable to identify caregiver to participate in study\n\nCaregiver Inclusion Criteria:\n\n* One caregiver for each patient will be eligible and must be chosen by the patient. For the purposes of this study, a caregiver is defined as a valued and trusted person in a patient's life who is supportive in health care matters by providing valuable social support and/or direct assistive care.\n* Caregivers will be selected by the patient when asked if there is a \"family member, partner, friend or caregiver with whom you discuss or who can be helpful in health-related matters;\" patients who cannot identify such a person (\"caregiver\") will remain eligible for the study.\n* Age 50 or older\n* Ability to provide consent\n* Proficient in English\n\nCaregiver Exclusion Criteria\n\n* Caregivers unable to understand the consent form due to cognitive, health or sensory impairment will be excluded",
+        "miscellaneous_criteria": "Patient"
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Age ≥ 65",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age ≥ 65",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 65,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age ≥ 65",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 65,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able to provide informed consent. All patients will be assessed using the University of California, San Diego Brief Assessment of Capacity to Consent (UBACC) 56 - a score >14.5 will define ability to independently provide informed consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to provide informed consent",
+                        "criterion": "informed consent ability",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "a score >14.5 will define ability to independently provide informed consent",
+                        "criterion": "UBACC score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 14.5,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "a score >14.5 will define ability to independently provide informed consent",
+                    "criterion": "UBACC score",
+                    "requirement": {
+                        "requirement_type": "score",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 14.5,
+                            "unit": "N/A"
+                        }
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "Able to provide informed consent",
+                    "criterion": "informed consent ability",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Additionally, at least 20 patients will have a will have a high likelihood of MCI based on screening score of <26 on the Montreal Cognitive Assessment (MoCA) within their eRecord chart.",
+                "criterions": [
+                    {
+                        "exact_snippets": "screening score of <26 on the Montreal Cognitive Assessment (MoCA)",
+                        "criterion": "Montreal Cognitive Assessment (MoCA) score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 26,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "screening score of <26 on the Montreal Cognitive Assessment (MoCA)",
+                        "criterion": "Montreal Cognitive Assessment (MoCA) score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 26,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able to read and understand English",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to read and understand English",
+                        "criterion": "English language proficiency",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able to read and understand English",
+                        "criterion": "English language proficiency",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 50 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 50 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 50 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Patient",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients scoring <14.5 on the UBACC",
+                "criterions": [
+                    {
+                        "exact_snippets": "scoring <14.5 on the UBACC",
+                        "criterion": "UBACC score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 14.5,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "scoring <14.5 on the UBACC",
+                    "criterion": "UBACC score",
+                    "requirement": {
+                        "requirement_type": "value",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 14.5,
+                            "unit": "N/A"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Unable to identify caregiver to participate in study",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unable to identify caregiver to participate in study",
+                        "criterion": "caregiver identification",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Unable to identify caregiver to participate in study",
+                    "criterion": "caregiver identification",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* One caregiver for each patient will be eligible and must be chosen by the patient. For the purposes of this study, a caregiver is defined as a valued and trusted person in a patient's life who is supportive in health care matters by providing valuable social support and/or direct assistive care.",
+                "criterions": [
+                    {
+                        "exact_snippets": "One caregiver for each patient will be eligible",
+                        "criterion": "caregiver eligibility",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "must be chosen by the patient",
+                        "criterion": "caregiver selection",
+                        "requirement": {
+                            "requirement_type": "selection",
+                            "expected_value": "chosen by the patient"
+                        }
+                    },
+                    {
+                        "exact_snippets": "a caregiver is defined as a valued and trusted person in a patient's life",
+                        "criterion": "caregiver definition",
+                        "requirement": {
+                            "requirement_type": "attributes",
+                            "expected_value": [
+                                "valued",
+                                "trusted"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "supportive in health care matters by providing valuable social support and/or direct assistive care",
+                        "criterion": "caregiver role",
+                        "requirement": {
+                            "requirement_type": "role",
+                            "expected_value": [
+                                "social support",
+                                "direct assistive care"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "One caregiver for each patient will be eligible",
+                                "criterion": "caregiver eligibility",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "must be chosen by the patient",
+                                "criterion": "caregiver selection",
+                                "requirement": {
+                                    "requirement_type": "selection",
+                                    "expected_value": "chosen by the patient"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "a caregiver is defined as a valued and trusted person in a patient's life",
+                        "criterion": "caregiver definition",
+                        "requirement": {
+                            "requirement_type": "attributes",
+                            "expected_value": [
+                                "valued",
+                                "trusted"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "supportive in health care matters by providing valuable social support and/or direct assistive care",
+                        "criterion": "caregiver role",
+                        "requirement": {
+                            "requirement_type": "role",
+                            "expected_value": [
+                                "social support",
+                                "direct assistive care"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Caregivers will be selected by the patient when asked if there is a \"family member, partner, friend or caregiver with whom you discuss or who can be helpful in health-related matters;\" patients who cannot identify such a person (\"caregiver\") will remain eligible for the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Caregivers will be selected by the patient ... patients who cannot identify such a person (\"caregiver\") will remain eligible",
+                        "criterion": "caregiver identification",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Caregivers will be selected by the patient ... patients who cannot identify such a person (\"caregiver\") will remain eligible",
+                    "criterion": "caregiver identification",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age 50 or older",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age 50 or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age 50 or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Ability to provide consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ability to provide consent",
+                        "criterion": "consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Ability to provide consent",
+                    "criterion": "consent",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Proficient in English",
+                "criterions": [
+                    {
+                        "exact_snippets": "Proficient in English",
+                        "criterion": "English proficiency",
+                        "requirement": {
+                            "requirement_type": "proficiency",
+                            "expected_value": "proficient"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Proficient in English",
+                    "criterion": "English proficiency",
+                    "requirement": {
+                        "requirement_type": "proficiency",
+                        "expected_value": "proficient"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Caregiver Exclusion Criteria",
+                "criterions": [
+                    {
+                        "exact_snippets": "Caregiver Exclusion Criteria",
+                        "criterion": "caregiver",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Caregiver Exclusion Criteria",
+                    "criterion": "caregiver",
+                    "requirement": {
+                        "requirement_type": "exclusion",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Caregivers unable to understand the consent form due to cognitive, health or sensory impairment will be excluded",
+                "criterions": [
+                    {
+                        "exact_snippets": "Caregivers unable to understand the consent form due to cognitive ... impairment will be excluded",
+                        "criterion": "cognitive impairment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Caregivers unable to understand the consent form due to ... health ... impairment will be excluded",
+                        "criterion": "health impairment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Caregivers unable to understand the consent form due to ... sensory impairment will be excluded",
+                        "criterion": "sensory impairment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Caregivers unable to understand the consent form due to cognitive ... impairment will be excluded",
+                                "criterion": "cognitive impairment",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Caregivers unable to understand the consent form due to ... health ... impairment will be excluded",
+                                "criterion": "health impairment",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Caregivers unable to understand the consent form due to ... sensory impairment will be excluded",
+                                "criterion": "sensory impairment",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Caregiver Inclusion Criteria:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "miscellaneous_lines": [
+        {
+            "identified_line": {
+                "line": "Patient",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Eligible patients have Stage III or IV cancer of any type",
+                "criterions": [
+                    {
+                        "exact_snippets": "Stage III or IV cancer",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "III",
+                                "IV"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "cancer of any type",
+                        "criterion": "cancer type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "any"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Stage III or IV cancer",
+                                "criterion": "cancer stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": "III"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Stage III or IV cancer",
+                                "criterion": "cancer stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": "IV"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "cancer of any type",
+                        "criterion": "cancer type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "any"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

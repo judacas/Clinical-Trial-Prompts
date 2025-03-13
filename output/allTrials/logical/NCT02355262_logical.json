@@ -1,0 +1,362 @@
+{
+    "info": {
+        "nct_id": "NCT02355262",
+        "official_title": "Community-Based HIT Tools for Cancer Screening and Health Insurance Promotion (CATCH-UP)",
+        "inclusion_criteria": "* Established patients at CHC sites\n* Low-income\n* Ethnically diverse populations with lower rates of cancer screening compared to national rates\n* Uninsured patients\n* Patients 18 to 64 years of age\n* Clinics must be primary care sites, with greater than 1,000 adult patients in the past year, be located in a state that expanded Medicaid, and have implemented the OCHIN EHR prior to January 1, 2012\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Established patients at CHC sites",
+                "criterions": [
+                    {
+                        "exact_snippets": "Established patients",
+                        "criterion": "patient status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "established"
+                        }
+                    },
+                    {
+                        "exact_snippets": "CHC sites",
+                        "criterion": "location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "CHC sites"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Established patients",
+                        "criterion": "patient status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "established"
+                        }
+                    },
+                    {
+                        "exact_snippets": "CHC sites",
+                        "criterion": "location",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "CHC sites"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Low-income",
+                "criterions": [
+                    {
+                        "exact_snippets": "Low-income",
+                        "criterion": "income",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": "low"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Low-income",
+                        "criterion": "income",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": "low"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Ethnically diverse populations with lower rates of cancer screening compared to national rates",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ethnically diverse populations",
+                        "criterion": "ethnicity",
+                        "requirement": {
+                            "requirement_type": "diversity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "lower rates of cancer screening compared to national rates",
+                        "criterion": "cancer screening rate",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": "lower than national rates"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ethnically diverse populations",
+                        "criterion": "ethnicity",
+                        "requirement": {
+                            "requirement_type": "diversity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "lower rates of cancer screening compared to national rates",
+                        "criterion": "cancer screening rate",
+                        "requirement": {
+                            "requirement_type": "comparison",
+                            "expected_value": "lower than national rates"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Uninsured patients",
+                "criterions": [
+                    {
+                        "exact_snippets": "Uninsured patients",
+                        "criterion": "insurance status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "uninsured"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Uninsured patients",
+                        "criterion": "insurance status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "uninsured"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients 18 to 64 years of age",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients 18 to 64 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 64,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients 18 to 64 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 64,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Clinics must be primary care sites, with greater than 1,000 adult patients in the past year, be located in a state that expanded Medicaid, and have implemented the OCHIN EHR prior to January 1, 2012",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinics must be primary care sites",
+                        "criterion": "clinic type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "primary care"
+                        }
+                    },
+                    {
+                        "exact_snippets": "greater than 1,000 adult patients in the past year",
+                        "criterion": "adult patient count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1000,
+                                "unit": "patients"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "be located in a state that expanded Medicaid",
+                        "criterion": "state Medicaid expansion",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "expanded"
+                        }
+                    },
+                    {
+                        "exact_snippets": "have implemented the OCHIN EHR prior to January 1, 2012",
+                        "criterion": "OCHIN EHR implementation date",
+                        "requirement": {
+                            "requirement_type": "date",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2012,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Clinics must be primary care sites",
+                        "criterion": "clinic type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "primary care"
+                        }
+                    },
+                    {
+                        "exact_snippets": "greater than 1,000 adult patients in the past year",
+                        "criterion": "adult patient count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1000,
+                                "unit": "patients"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "be located in a state that expanded Medicaid",
+                        "criterion": "state Medicaid expansion",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "expanded"
+                        }
+                    },
+                    {
+                        "exact_snippets": "have implemented the OCHIN EHR prior to January 1, 2012",
+                        "criterion": "OCHIN EHR implementation date",
+                        "requirement": {
+                            "requirement_type": "date",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2012,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

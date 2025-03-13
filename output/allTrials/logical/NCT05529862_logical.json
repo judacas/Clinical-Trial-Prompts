@@ -1,0 +1,607 @@
+{
+    "info": {
+        "nct_id": "NCT05529862",
+        "official_title": "Trans-RosaLEE Study: a Biomarker-directed, Translational Study of High-throughput Molecular Profiling of HR+/HER2- Metastatic Breast Cancer Treated With Endocrine Therapy and Ribociclib.",
+        "inclusion_criteria": "1. Patients included in the RosaLEE study.\n2. Patients having read and signed the ICF relative to Trans-RosaLEE.\n3. Tumour material: primary and/or metastatic tumour sample, either available as frozen and collected within 3 months before V0, or newly collected before ribociclib + ET treatment initiation.\n\n   Brain metastases and non-osteolytic bone metastases will be considered as non-collectable/biopsable.\n4. Patient affiliated to the national \"Social Security\" regimen or beneficiary of this regimen.\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "1. Not enrolled in RosaLEE.\n2. Brain metastasis and non-osteolytic bone metastases as only metastatic sites, if no available frozen tumour sample already collected within 3 months before V0.\n3. Tumour material not collected before ribociclib + ET initiation.\n4. Person subject to a legal protection measure (adult under guardianship, curatorship or safeguard of justice), or unable to give their consent.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Patients included in the RosaLEE study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients included in the RosaLEE study",
+                        "criterion": "RosaLEE study inclusion",
+                        "requirement": {
+                            "requirement_type": "inclusion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients included in the RosaLEE study",
+                        "criterion": "RosaLEE study inclusion",
+                        "requirement": {
+                            "requirement_type": "inclusion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Patients having read and signed the ICF relative to Trans-RosaLEE.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients having read and signed the ICF",
+                        "criterion": "informed consent form (ICF)",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients having read and signed the ICF",
+                        "criterion": "informed consent form (ICF)",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Tumour material: primary and/or metastatic tumour sample, either available as frozen and collected within 3 months before V0, or newly collected before ribociclib + ET treatment initiation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Tumour material: primary and/or metastatic tumour sample",
+                        "criterion": "tumour material",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "primary",
+                                "metastatic"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "either available as frozen",
+                        "criterion": "tumour material",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "either available as frozen",
+                        "criterion": "tumour material",
+                        "requirement": {
+                            "requirement_type": "state",
+                            "expected_value": "frozen"
+                        }
+                    },
+                    {
+                        "exact_snippets": "collected within 3 months before V0",
+                        "criterion": "tumour material",
+                        "requirement": {
+                            "requirement_type": "collection time",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "newly collected before ribociclib + ET treatment initiation",
+                        "criterion": "tumour material",
+                        "requirement": {
+                            "requirement_type": "collection time",
+                            "expected_value": "before ribociclib + ET treatment initiation"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Tumour material: primary and/or metastatic tumour sample",
+                                        "criterion": "tumour material",
+                                        "requirement": {
+                                            "requirement_type": "type",
+                                            "expected_value": [
+                                                "primary",
+                                                "metastatic"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "either available as frozen",
+                                        "criterion": "tumour material",
+                                        "requirement": {
+                                            "requirement_type": "availability",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "either available as frozen",
+                                        "criterion": "tumour material",
+                                        "requirement": {
+                                            "requirement_type": "state",
+                                            "expected_value": "frozen"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "collected within 3 months before V0",
+                                "criterion": "tumour material",
+                                "requirement": {
+                                    "requirement_type": "collection time",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Tumour material: primary and/or metastatic tumour sample",
+                                "criterion": "tumour material",
+                                "requirement": {
+                                    "requirement_type": "type",
+                                    "expected_value": [
+                                        "primary",
+                                        "metastatic"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "newly collected before ribociclib + ET treatment initiation",
+                                "criterion": "tumour material",
+                                "requirement": {
+                                    "requirement_type": "collection time",
+                                    "expected_value": "before ribociclib + ET treatment initiation"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Brain metastases and non-osteolytic bone metastases will be considered as non-collectable/biopsable.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "collectability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "biopsability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-osteolytic bone metastases",
+                        "criterion": "non-osteolytic bone metastases",
+                        "requirement": {
+                            "requirement_type": "collectability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-osteolytic bone metastases",
+                        "criterion": "non-osteolytic bone metastases",
+                        "requirement": {
+                            "requirement_type": "biopsability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Brain metastases",
+                                "criterion": "brain metastases",
+                                "requirement": {
+                                    "requirement_type": "collectability",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "Brain metastases",
+                                "criterion": "brain metastases",
+                                "requirement": {
+                                    "requirement_type": "biopsability",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "non-osteolytic bone metastases",
+                                "criterion": "non-osteolytic bone metastases",
+                                "requirement": {
+                                    "requirement_type": "collectability",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "non-osteolytic bone metastases",
+                                "criterion": "non-osteolytic bone metastases",
+                                "requirement": {
+                                    "requirement_type": "biopsability",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Patient affiliated to the national \"Social Security\" regimen or beneficiary of this regimen.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient affiliated to the national \"Social Security\" regimen",
+                        "criterion": "affiliation to national \"Social Security\" regimen",
+                        "requirement": {
+                            "requirement_type": "affiliation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "beneficiary of this regimen",
+                        "criterion": "beneficiary of national \"Social Security\" regimen",
+                        "requirement": {
+                            "requirement_type": "beneficiary status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Patient affiliated to the national \"Social Security\" regimen",
+                        "criterion": "affiliation to national \"Social Security\" regimen",
+                        "requirement": {
+                            "requirement_type": "affiliation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "beneficiary of this regimen",
+                        "criterion": "beneficiary of national \"Social Security\" regimen",
+                        "requirement": {
+                            "requirement_type": "beneficiary status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "1. Not enrolled in RosaLEE.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Not enrolled in RosaLEE.",
+                        "criterion": "enrollment in RosaLEE",
+                        "requirement": {
+                            "requirement_type": "enrollment status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Not enrolled in RosaLEE.",
+                        "criterion": "enrollment in RosaLEE",
+                        "requirement": {
+                            "requirement_type": "enrollment status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Brain metastasis and non-osteolytic bone metastases as only metastatic sites, if no available frozen tumour sample already collected within 3 months before V0.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Brain metastasis",
+                        "criterion": "brain metastasis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-osteolytic bone metastases",
+                        "criterion": "non-osteolytic bone metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "no available frozen tumour sample",
+                        "criterion": "frozen tumour sample",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "collected within 3 months before V0",
+                        "criterion": "frozen tumour sample collection time",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Brain metastasis",
+                                    "criterion": "brain metastasis",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "non-osteolytic bone metastases",
+                                    "criterion": "non-osteolytic bone metastases",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "exact_snippets": "no available frozen tumour sample",
+                            "criterion": "frozen tumour sample",
+                            "requirement": {
+                                "requirement_type": "availability",
+                                "expected_value": false
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "exact_snippets": "collected within 3 months before V0",
+                    "criterion": "frozen tumour sample collection time",
+                    "requirement": {
+                        "requirement_type": "time frame",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 3,
+                            "unit": "months"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Tumour material not collected before ribociclib + ET initiation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Tumour material not collected before ribociclib + ET initiation.",
+                        "criterion": "tumour material collection",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "not before ribociclib + ET initiation"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Tumour material not collected before ribociclib + ET initiation.",
+                    "criterion": "tumour material collection",
+                    "requirement": {
+                        "requirement_type": "timing",
+                        "expected_value": "not before ribociclib + ET initiation"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Person subject to a legal protection measure (adult under guardianship, curatorship or safeguard of justice), or unable to give their consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Person subject to a legal protection measure (adult under guardianship, curatorship or safeguard of justice)",
+                        "criterion": "legal protection measure",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unable to give their consent",
+                        "criterion": "ability to give consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Person subject to a legal protection measure (adult under guardianship, curatorship or safeguard of justice)",
+                                "criterion": "legal protection measure",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "unable to give their consent",
+                                "criterion": "ability to give consent",
+                                "requirement": {
+                                    "requirement_type": "ability",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

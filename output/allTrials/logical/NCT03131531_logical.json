@@ -1,0 +1,285 @@
+{
+    "info": {
+        "nct_id": "NCT03131531",
+        "official_title": "Bergamo Lymphoid Cancer Registry",
+        "inclusion_criteria": "* Male or female patients 18 years or older\n* Written informed consent\n* Confirmed diagnosis of Hodgkin disease, non-Hodgkin lymphomas or myeloma\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "- Unconfirmed diagnosis of Hodgkin disease, non-Hodgkin lymphomas or myeloma",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Male or female patients 18 years or older",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male or female patients",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "18 years or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Male or female patients",
+                                "criterion": "gender",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": [
+                                        "male",
+                                        "female"
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "18 years or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Written informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Confirmed diagnosis of Hodgkin disease, non-Hodgkin lymphomas or myeloma",
+                "criterions": [
+                    {
+                        "exact_snippets": "Confirmed diagnosis of Hodgkin disease",
+                        "criterion": "Hodgkin disease",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Confirmed diagnosis of ... non-Hodgkin lymphomas",
+                        "criterion": "non-Hodgkin lymphomas",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Confirmed diagnosis of ... myeloma",
+                        "criterion": "myeloma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Confirmed diagnosis of Hodgkin disease",
+                        "criterion": "Hodgkin disease",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Confirmed diagnosis of ... non-Hodgkin lymphomas",
+                        "criterion": "non-Hodgkin lymphomas",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Confirmed diagnosis of ... myeloma",
+                        "criterion": "myeloma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "- Unconfirmed diagnosis of Hodgkin disease, non-Hodgkin lymphomas or myeloma",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unconfirmed diagnosis of Hodgkin disease",
+                        "criterion": "Hodgkin disease",
+                        "requirement": {
+                            "requirement_type": "diagnosis confirmation",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Unconfirmed diagnosis of ... non-Hodgkin lymphomas",
+                        "criterion": "non-Hodgkin lymphomas",
+                        "requirement": {
+                            "requirement_type": "diagnosis confirmation",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Unconfirmed diagnosis of ... myeloma",
+                        "criterion": "myeloma",
+                        "requirement": {
+                            "requirement_type": "diagnosis confirmation",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Unconfirmed diagnosis of Hodgkin disease",
+                        "criterion": "Hodgkin disease",
+                        "requirement": {
+                            "requirement_type": "diagnosis confirmation",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Unconfirmed diagnosis of ... non-Hodgkin lymphomas",
+                        "criterion": "non-Hodgkin lymphomas",
+                        "requirement": {
+                            "requirement_type": "diagnosis confirmation",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Unconfirmed diagnosis of ... myeloma",
+                        "criterion": "myeloma",
+                        "requirement": {
+                            "requirement_type": "diagnosis confirmation",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

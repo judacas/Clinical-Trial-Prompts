@@ -1,0 +1,506 @@
+{
+    "info": {
+        "nct_id": "NCT00467220",
+        "official_title": "Effect of Daily Calorie Restriction or Alternate-day Reductions in Calorie Intake on Risk for Cardiovascular Disease and Cancer",
+        "inclusion_criteria": "* Male and female; body mass index (BMI) between 20-30 kg/m2;\n* Age between 35-65 years; sedentary (light exercise less than 1h per week) or moderately active (1 to 2h per week);\n* Weight stable for >3 months prior to the beginning of the study;\n* Able to give written informed consent;\n* Female subjects must be post-menopausal for at least 2 years and can not be on hormone replacement therapy (HRT).\nHealthy volunteers allowed\nMust have minimum age of 35 Years\nMust have maximum age of 65 Years",
+        "exclusion_criteria": "* Diabetic;\n* History of cardiovascular disease, i.e. myocardial infarction or stroke;\n* History of cancer;\n* Taking glucose lowering medication;\n* Taking weight loss medication",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Male and female; body mass index (BMI) between 20-30 kg/m2;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male and female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "allowed_values",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "body mass index (BMI) between 20-30 kg/m2",
+                        "criterion": "body mass index (BMI)",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 20,
+                                        "unit": "kg/m2"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 30,
+                                        "unit": "kg/m2"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Male and female",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "allowed_values",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "body mass index (BMI) between 20-30 kg/m2",
+                        "criterion": "body mass index (BMI)",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 20,
+                                        "unit": "kg/m2"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 30,
+                                        "unit": "kg/m2"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Female subjects must be post-menopausal for at least 2 years and can not be on hormone replacement therapy (HRT).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Female subjects must be post-menopausal for at least 2 years",
+                        "criterion": "menopausal status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "post-menopausal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Female subjects must be post-menopausal for at least 2 years",
+                        "criterion": "menopausal status",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "can not be on hormone replacement therapy (HRT)",
+                        "criterion": "hormone replacement therapy",
+                        "requirement": {
+                            "requirement_type": "usage",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Female subjects must be post-menopausal for at least 2 years",
+                                "criterion": "menopausal status",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "post-menopausal"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Female subjects must be post-menopausal for at least 2 years",
+                                "criterion": "menopausal status",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "years"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "can not be on hormone replacement therapy (HRT)",
+                        "criterion": "hormone replacement therapy",
+                        "requirement": {
+                            "requirement_type": "usage",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 35 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 35 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 35,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 35 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 35,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 65 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 65 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 65,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 65 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 65,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Diabetic;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diabetic",
+                        "criterion": "diabetes",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Diabetic",
+                    "criterion": "diabetes",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of cardiovascular disease, i.e. myocardial infarction or stroke;",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of cardiovascular disease, i.e. myocardial infarction",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of cardiovascular disease, i.e. ... stroke",
+                        "criterion": "stroke",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "History of cardiovascular disease, i.e. myocardial infarction",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of cardiovascular disease, i.e. ... stroke",
+                        "criterion": "stroke",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of cancer;",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of cancer",
+                        "criterion": "cancer history",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "History of cancer",
+                    "criterion": "cancer history",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Taking glucose lowering medication;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Taking glucose lowering medication",
+                        "criterion": "glucose lowering medication",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Taking glucose lowering medication",
+                    "criterion": "glucose lowering medication",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Taking weight loss medication",
+                "criterions": [
+                    {
+                        "exact_snippets": "Taking weight loss medication",
+                        "criterion": "weight loss medication",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Taking weight loss medication",
+                    "criterion": "weight loss medication",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Age between 35-65 years; sedentary (light exercise less than 1h per week) or moderately active (1 to 2h per week);",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age between 35-65 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 35,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 65,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "sedentary (light exercise less than 1h per week)",
+                        "criterion": "physical activity level",
+                        "requirement": {
+                            "requirement_type": "activity level",
+                            "expected_value": "sedentary"
+                        }
+                    },
+                    {
+                        "exact_snippets": "moderately active (1 to 2h per week)",
+                        "criterion": "physical activity level",
+                        "requirement": {
+                            "requirement_type": "activity level",
+                            "expected_value": "moderately active"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Weight stable for >3 months prior to the beginning of the study;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Weight stable for >3 months",
+                        "criterion": "weight stability",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able to give written informed consent;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to give written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

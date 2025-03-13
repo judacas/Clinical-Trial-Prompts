@@ -1,0 +1,264 @@
+{
+    "info": {
+        "nct_id": "NCT06712901",
+        "official_title": "Social Media and Cancer Screening Information",
+        "inclusion_criteria": "* Identify as white/Caucasian or Black/African American.\nHealthy volunteers allowed\nMust have minimum age of 45 Years\nMust have maximum age of 75 Years",
+        "exclusion_criteria": "* Do not identify as white/Caucasian or Black/African American.\n* Previously diagnosed with colorectal cancer\n* Non-English speakers",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Identify as white/Caucasian or Black/African American.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Identify as white/Caucasian",
+                        "criterion": "race",
+                        "requirement": {
+                            "requirement_type": "identity",
+                            "expected_value": "white/Caucasian"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Identify as ... Black/African American",
+                        "criterion": "race",
+                        "requirement": {
+                            "requirement_type": "identity",
+                            "expected_value": "Black/African American"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Identify as white/Caucasian",
+                        "criterion": "race",
+                        "requirement": {
+                            "requirement_type": "identity",
+                            "expected_value": "white/Caucasian"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Identify as ... Black/African American",
+                        "criterion": "race",
+                        "requirement": {
+                            "requirement_type": "identity",
+                            "expected_value": "Black/African American"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 45 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 45 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 45,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 45 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 45,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 75 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 75 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Do not identify as white/Caucasian or Black/African American.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Do not identify as white/Caucasian",
+                        "criterion": "racial identity",
+                        "requirement": {
+                            "requirement_type": "identity",
+                            "expected_value": [
+                                "not white",
+                                "not Caucasian"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Do not identify as ... Black/African American",
+                        "criterion": "racial identity",
+                        "requirement": {
+                            "requirement_type": "identity",
+                            "expected_value": [
+                                "not Black",
+                                "not African American"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Do not identify as white/Caucasian",
+                        "criterion": "racial identity",
+                        "requirement": {
+                            "requirement_type": "identity",
+                            "expected_value": [
+                                "not white",
+                                "not Caucasian"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Do not identify as ... Black/African American",
+                        "criterion": "racial identity",
+                        "requirement": {
+                            "requirement_type": "identity",
+                            "expected_value": [
+                                "not Black",
+                                "not African American"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Previously diagnosed with colorectal cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previously diagnosed with colorectal cancer",
+                        "criterion": "colorectal cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Previously diagnosed with colorectal cancer",
+                    "criterion": "colorectal cancer",
+                    "requirement": {
+                        "requirement_type": "diagnosis",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Non-English speakers",
+                "criterions": [
+                    {
+                        "exact_snippets": "Non-English speakers",
+                        "criterion": "language",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "non-English"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Non-English speakers",
+                        "criterion": "language",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "non-English"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

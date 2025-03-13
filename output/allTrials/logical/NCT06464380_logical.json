@@ -1,0 +1,371 @@
+{
+    "info": {
+        "nct_id": "NCT06464380",
+        "official_title": "Anti Cancer Potential of Saffron in Hepatocellular Carcinoma",
+        "inclusion_criteria": "* Adult male and female patients above 18 years\n* Patients with end-stage HCC not candidate for curative, loco regional treatment and /or systemic chemotherapy\n* Patients with available baseline laboratory parameters and contrast- enhancing images after given written consent for research participation.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients who are candidate for curative and/or loco-regional or combination treatment for HCC\n* Patients with concomitant malignancies other than HCC",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Adult male and female patients above 18 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adult male and female patients",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "above 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adult male and female patients",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "above 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with end-stage HCC not candidate for curative, loco regional treatment and /or systemic chemotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "end-stage HCC",
+                        "criterion": "HCC stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "end-stage"
+                        }
+                    },
+                    {
+                        "exact_snippets": "not candidate for curative, loco regional treatment",
+                        "criterion": "treatment candidacy",
+                        "requirement": {
+                            "requirement_type": "candidacy",
+                            "expected_value": [
+                                "curative treatment",
+                                "loco regional treatment"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "not candidate for ... systemic chemotherapy",
+                        "criterion": "chemotherapy candidacy",
+                        "requirement": {
+                            "requirement_type": "candidacy",
+                            "expected_value": "systemic chemotherapy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "end-stage HCC",
+                                "criterion": "HCC stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": "end-stage"
+                                }
+                            },
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "not candidate for curative, loco regional treatment",
+                                    "criterion": "treatment candidacy",
+                                    "requirement": {
+                                        "requirement_type": "candidacy",
+                                        "expected_value": [
+                                            "curative treatment",
+                                            "loco regional treatment"
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "not candidate for ... systemic chemotherapy",
+                            "criterion": "chemotherapy candidacy",
+                            "requirement": {
+                                "requirement_type": "candidacy",
+                                "expected_value": "systemic chemotherapy"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with available baseline laboratory parameters and contrast- enhancing images after given written consent for research participation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "available baseline laboratory parameters",
+                        "criterion": "baseline laboratory parameters",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "contrast-enhancing images",
+                        "criterion": "contrast-enhancing images",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "given written consent for research participation",
+                        "criterion": "written consent for research participation",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "available baseline laboratory parameters",
+                                "criterion": "baseline laboratory parameters",
+                                "requirement": {
+                                    "requirement_type": "availability",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "contrast-enhancing images",
+                                "criterion": "contrast-enhancing images",
+                                "requirement": {
+                                    "requirement_type": "availability",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "given written consent for research participation",
+                        "criterion": "written consent for research participation",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with concomitant malignancies other than HCC",
+                "criterions": [
+                    {
+                        "exact_snippets": "concomitant malignancies other than HCC",
+                        "criterion": "concomitant malignancies",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": "HCC"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "concomitant malignancies other than HCC",
+                        "criterion": "concomitant malignancies",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": "HCC"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients who are candidate for curative and/or loco-regional or combination treatment for HCC",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who are candidate for curative and/or loco-regional or combination treatment for HCC",
+                        "criterion": "treatment candidacy",
+                        "requirement": {
+                            "requirement_type": "treatment type",
+                            "expected_value": [
+                                "curative",
+                                "loco-regional",
+                                "combination"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "HCC",
+                        "criterion": "condition",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "Patients who are candidate for curative and/or loco-regional or combination treatment for HCC",
+                                        "criterion": "treatment candidacy",
+                                        "requirement": {
+                                            "requirement_type": "treatment type",
+                                            "expected_value": "curative"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Patients who are candidate for curative and/or loco-regional or combination treatment for HCC",
+                                        "criterion": "treatment candidacy",
+                                        "requirement": {
+                                            "requirement_type": "treatment type",
+                                            "expected_value": "loco-regional"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Patients who are candidate for curative and/or loco-regional or combination treatment for HCC",
+                                        "criterion": "treatment candidacy",
+                                        "requirement": {
+                                            "requirement_type": "treatment type",
+                                            "expected_value": "combination"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "HCC",
+                                "criterion": "condition",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

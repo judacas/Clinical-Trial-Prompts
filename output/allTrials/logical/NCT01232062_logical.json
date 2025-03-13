@@ -1,0 +1,659 @@
+{
+    "info": {
+        "nct_id": "NCT01232062",
+        "official_title": "Study of High-dose Chemotherapy Combined With Adoptive Cellular Therapy With Dentritic and Cytokine-induced Killer Cells in Triple Negative Breast Cancer Patients",
+        "inclusion_criteria": "* Failure to anthracycline and/or taxol chemotherapy;\n* metastatic tumor is histologically confirmed by immunohistochemical staining to be ER-negative and PR-negative. FISH testing for her-2-negative;\n* Metastatic tumor can not be removed through surgery procedure;\n* Metastatic tumor measured by PET-CT scan is at least 1cm;\n* An Eastern Cooperative Oncology Group (ECOG) performance status of 0-2;\n* Normal cardiac, hepatic, renal and bone marrow functions;\n* Life expectancy ≥3 months.\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years\nMust have maximum age of 45 Years",
+        "exclusion_criteria": "* Do not finish twice PET-CT scan;\n* Central nervous system metastases;\n* Serious or uncontrolled concurrent medical illness;\n* History of other malignancies;\n* Having been enrolled in some other clinal trials within a month;",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Failure to anthracycline and/or taxol chemotherapy;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Failure to anthracycline",
+                        "criterion": "anthracycline chemotherapy",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": "failure"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Failure to ... taxol chemotherapy",
+                        "criterion": "taxol chemotherapy",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": "failure"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Failure to anthracycline",
+                        "criterion": "anthracycline chemotherapy",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": "failure"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Failure to ... taxol chemotherapy",
+                        "criterion": "taxol chemotherapy",
+                        "requirement": {
+                            "requirement_type": "response",
+                            "expected_value": "failure"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* metastatic tumor is histologically confirmed by immunohistochemical staining to be ER-negative and PR-negative. FISH testing for her-2-negative;",
+                "criterions": [
+                    {
+                        "exact_snippets": "metastatic tumor is histologically confirmed",
+                        "criterion": "metastatic tumor",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "histologically confirmed"
+                        }
+                    },
+                    {
+                        "exact_snippets": "immunohistochemical staining to be ER-negative",
+                        "criterion": "ER status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "immunohistochemical staining to be ... PR-negative",
+                        "criterion": "PR status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "FISH testing for her-2-negative",
+                        "criterion": "HER-2 status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "negative"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "metastatic tumor is histologically confirmed",
+                                "criterion": "metastatic tumor",
+                                "requirement": {
+                                    "requirement_type": "confirmation method",
+                                    "expected_value": "histologically confirmed"
+                                }
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "immunohistochemical staining to be ER-negative",
+                                        "criterion": "ER status",
+                                        "requirement": {
+                                            "requirement_type": "status",
+                                            "expected_value": "negative"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "immunohistochemical staining to be ... PR-negative",
+                                        "criterion": "PR status",
+                                        "requirement": {
+                                            "requirement_type": "status",
+                                            "expected_value": "negative"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "FISH testing for her-2-negative",
+                        "criterion": "HER-2 status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "negative"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Metastatic tumor can not be removed through surgery procedure;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Metastatic tumor can not be removed through surgery procedure",
+                        "criterion": "metastatic tumor",
+                        "requirement": {
+                            "requirement_type": "removability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Metastatic tumor can not be removed through surgery procedure",
+                        "criterion": "metastatic tumor",
+                        "requirement": {
+                            "requirement_type": "removability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Metastatic tumor measured by PET-CT scan is at least 1cm;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Metastatic tumor measured by PET-CT scan is at least 1cm",
+                        "criterion": "metastatic tumor size",
+                        "requirement": {
+                            "requirement_type": "measurement",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Metastatic tumor measured by PET-CT scan is at least 1cm",
+                        "criterion": "metastatic tumor size",
+                        "requirement": {
+                            "requirement_type": "measurement",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* An Eastern Cooperative Oncology Group (ECOG) performance status of 0-2;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status of 0-2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Normal cardiac, hepatic, renal and bone marrow functions;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Normal cardiac ... functions",
+                        "criterion": "cardiac function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Normal ... hepatic ... functions",
+                        "criterion": "hepatic function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Normal ... renal ... functions",
+                        "criterion": "renal function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Normal ... bone marrow functions",
+                        "criterion": "bone marrow function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Normal cardiac ... functions",
+                        "criterion": "cardiac function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Normal ... hepatic ... functions",
+                        "criterion": "hepatic function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Normal ... renal ... functions",
+                        "criterion": "renal function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Normal ... bone marrow functions",
+                        "criterion": "bone marrow function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Life expectancy ≥3 months.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Life expectancy ≥3 months.",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Life expectancy ≥3 months.",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 45 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 45 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 45,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 45 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 45,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Do not finish twice PET-CT scan;",
+                "criterions": [
+                    {
+                        "exact_snippets": "finish twice PET-CT scan",
+                        "criterion": "PET-CT scan",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "times"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "finish twice PET-CT scan",
+                    "criterion": "PET-CT scan",
+                    "requirement": {
+                        "requirement_type": "frequency",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 1,
+                            "unit": "times"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Central nervous system metastases;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Central nervous system metastases",
+                        "criterion": "central nervous system metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Central nervous system metastases",
+                    "criterion": "central nervous system metastases",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Serious or uncontrolled concurrent medical illness;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Serious or uncontrolled concurrent medical illness",
+                        "criterion": "concurrent medical illness",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Serious or uncontrolled concurrent medical illness",
+                        "criterion": "concurrent medical illness",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Serious or uncontrolled concurrent medical illness",
+                        "criterion": "concurrent medical illness",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Serious or uncontrolled concurrent medical illness",
+                        "criterion": "concurrent medical illness",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of other malignancies;",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of other malignancies",
+                        "criterion": "other malignancies",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "History of other malignancies",
+                    "criterion": "other malignancies",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Having been enrolled in some other clinal trials within a month;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Having been enrolled in some other clinical trials within a month",
+                        "criterion": "enrollment in other clinical trials",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "month"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Having been enrolled in some other clinical trials within a month",
+                    "criterion": "enrollment in other clinical trials",
+                    "requirement": {
+                        "requirement_type": "time frame",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": "<=",
+                                    "value": 1,
+                                    "unit": "month"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

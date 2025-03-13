@@ -1,0 +1,910 @@
+{
+    "info": {
+        "nct_id": "NCT06312176",
+        "official_title": "An Open-label, Randomized Phase 3 Study of MK-2870 as a Single Agent and in Combination With Pembrolizumab Versus Treatment of Physician's Choice in Participants With HR+/HER2- Unresectable Locally Advanced or Metastatic Breast Cancer",
+        "inclusion_criteria": "* Has unresectable locally advanced or metastatic centrally-confirmed hormone receptor positive (HR+)/human epidermal growth factor receptor 2 negative (HER2-) breast cancer\n* Has radiographic disease progression on one or more lines of endocrine therapy for unresectable locally advanced/metastatic HR+/HER2- breast cancer, with one in combination with a CDK4/6 inhibitor\n* Is a chemotherapy candidate\n* Has an eastern cooperative oncology group (ECOG) performance status of 0 to 1 assessed within 7 days before randomization\n* Has adequate organ function\n* Human immunodeficiency virus (HIV)-infected participants must have well controlled HIV on antiretroviral therapy\n* Participants who are Hepatitis B surface antigen (HBsAg) positive are eligible if they have received HBV antiviral therapy for at least 4 weeks, and have undetectable HBV viral load\n* Participants with a history of Hepatitis C virus (HCV) infection are eligible if HCV viral load is undetectable\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Has breast cancer amenable to treatment with curative intent\n* Has experienced an early recurrence (<6 months after completing adjuvant/neoadjuvant chemotherapy) and therefore is eligible to receive second-line (2L) treatment\n* Has symptomatic advanced/metastatic visceral spread at risk of rapidly evolving into life-threatening complications\n* Has received prior chemotherapy for unresectable locally advanced or metastatic breast cancer\n* Active autoimmune disease that has required systemic treatment in the past 2 years\n* History of (noninfectious) pneumonitis/interstitial lung disease that requires steroids, or has current pneumonitis/interstitial lung disease\n* Has an active infection requiring systemic therapy",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Has radiographic disease progression on one or more lines of endocrine therapy for unresectable locally advanced/metastatic HR+/HER2- breast cancer, with one in combination with a CDK4/6 inhibitor",
+                "criterions": [
+                    {
+                        "exact_snippets": "radiographic disease progression",
+                        "criterion": "radiographic disease progression",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "one or more lines of endocrine therapy",
+                        "criterion": "lines of endocrine therapy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "lines"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "unresectable locally advanced/metastatic HR+/HER2- breast cancer",
+                        "criterion": "breast cancer type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "unresectable locally advanced/metastatic HR+/HER2-"
+                        }
+                    },
+                    {
+                        "exact_snippets": "one in combination with a CDK4/6 inhibitor",
+                        "criterion": "CDK4/6 inhibitor combination",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "radiographic disease progression",
+                                                "criterion": "radiographic disease progression",
+                                                "requirement": {
+                                                    "requirement_type": "presence",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "one or more lines of endocrine therapy",
+                                                "criterion": "lines of endocrine therapy",
+                                                "requirement": {
+                                                    "requirement_type": "quantity",
+                                                    "expected_value": {
+                                                        "operator": ">=",
+                                                        "value": 1,
+                                                        "unit": "lines"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "unresectable locally advanced/metastatic HR+/HER2- breast cancer",
+                                        "criterion": "breast cancer type",
+                                        "requirement": {
+                                            "requirement_type": "type",
+                                            "expected_value": "unresectable locally advanced/metastatic HR+/HER2-"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "one in combination with a CDK4/6 inhibitor",
+                                "criterion": "CDK4/6 inhibitor combination",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Is a chemotherapy candidate",
+                "criterions": [
+                    {
+                        "exact_snippets": "Is a chemotherapy candidate",
+                        "criterion": "chemotherapy candidacy",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Is a chemotherapy candidate",
+                        "criterion": "chemotherapy candidacy",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has an eastern cooperative oncology group (ECOG) performance status of 0 to 1 assessed within 7 days before randomization",
+                "criterions": [
+                    {
+                        "exact_snippets": "eastern cooperative oncology group (ECOG) performance status of 0 to 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "assessed within 7 days before randomization",
+                        "criterion": "ECOG performance status assessment timing",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "within 7 days before randomization"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "eastern cooperative oncology group (ECOG) performance status of 0 to 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "assessed within 7 days before randomization",
+                        "criterion": "ECOG performance status assessment timing",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "within 7 days before randomization"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has adequate organ function",
+                "criterions": [
+                    {
+                        "exact_snippets": "adequate organ function",
+                        "criterion": "organ function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "adequate organ function",
+                        "criterion": "organ function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Human immunodeficiency virus (HIV)-infected participants must have well controlled HIV on antiretroviral therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Human immunodeficiency virus (HIV)-infected participants",
+                        "criterion": "HIV infection",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "well controlled HIV on antiretroviral therapy",
+                        "criterion": "HIV control",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "well controlled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "antiretroviral therapy",
+                        "criterion": "antiretroviral therapy",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Human immunodeficiency virus (HIV)-infected participants",
+                                "criterion": "HIV infection",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "well controlled HIV on antiretroviral therapy",
+                                "criterion": "HIV control",
+                                "requirement": {
+                                    "requirement_type": "control status",
+                                    "expected_value": "well controlled"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "antiretroviral therapy",
+                        "criterion": "antiretroviral therapy",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants who are Hepatitis B surface antigen (HBsAg) positive are eligible if they have received HBV antiviral therapy for at least 4 weeks, and have undetectable HBV viral load",
+                "criterions": [
+                    {
+                        "exact_snippets": "Hepatitis B surface antigen (HBsAg) positive",
+                        "criterion": "Hepatitis B surface antigen (HBsAg)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "received HBV antiviral therapy for at least 4 weeks",
+                        "criterion": "HBV antiviral therapy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "undetectable HBV viral load",
+                        "criterion": "HBV viral load",
+                        "requirement": {
+                            "requirement_type": "detectability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Hepatitis B surface antigen (HBsAg) positive",
+                                "criterion": "Hepatitis B surface antigen (HBsAg)",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "received HBV antiviral therapy for at least 4 weeks",
+                                "criterion": "HBV antiviral therapy",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 4,
+                                        "unit": "weeks"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "undetectable HBV viral load",
+                        "criterion": "HBV viral load",
+                        "requirement": {
+                            "requirement_type": "detectability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants with a history of Hepatitis C virus (HCV) infection are eligible if HCV viral load is undetectable",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of Hepatitis C virus (HCV) infection",
+                        "criterion": "Hepatitis C virus (HCV) infection",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "HCV viral load is undetectable",
+                        "criterion": "HCV viral load",
+                        "requirement": {
+                            "requirement_type": "detectability",
+                            "expected_value": "undetectable"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "history of Hepatitis C virus (HCV) infection",
+                    "criterion": "Hepatitis C virus (HCV) infection",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "HCV viral load is undetectable",
+                    "criterion": "HCV viral load",
+                    "requirement": {
+                        "requirement_type": "detectability",
+                        "expected_value": "undetectable"
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Has breast cancer amenable to treatment with curative intent",
+                "criterions": [
+                    {
+                        "exact_snippets": "breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "amenable to treatment with curative intent",
+                        "criterion": "treatment intent",
+                        "requirement": {
+                            "requirement_type": "intent",
+                            "expected_value": "curative"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "amenable to treatment with curative intent",
+                        "criterion": "treatment intent",
+                        "requirement": {
+                            "requirement_type": "intent",
+                            "expected_value": "curative"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has experienced an early recurrence (<6 months after completing adjuvant/neoadjuvant chemotherapy) and therefore is eligible to receive second-line (2L) treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has experienced an early recurrence (<6 months after completing adjuvant/neoadjuvant chemotherapy)",
+                        "criterion": "early recurrence",
+                        "requirement": {
+                            "requirement_type": "time since chemotherapy",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "therefore is eligible to receive second-line (2L) treatment",
+                        "criterion": "eligibility for second-line treatment",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Has experienced an early recurrence (<6 months after completing adjuvant/neoadjuvant chemotherapy)",
+                    "criterion": "early recurrence",
+                    "requirement": {
+                        "requirement_type": "time since chemotherapy",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 6,
+                            "unit": "months"
+                        }
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "therefore is eligible to receive second-line (2L) treatment",
+                    "criterion": "eligibility for second-line treatment",
+                    "requirement": {
+                        "requirement_type": "eligibility",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has symptomatic advanced/metastatic visceral spread at risk of rapidly evolving into life-threatening complications",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has symptomatic advanced/metastatic visceral spread",
+                        "criterion": "visceral spread",
+                        "requirement": {
+                            "requirement_type": "symptomatic",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Has symptomatic advanced/metastatic visceral spread",
+                        "criterion": "visceral spread",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "advanced/metastatic"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at risk of rapidly evolving into life-threatening complications",
+                        "criterion": "risk of life-threatening complications",
+                        "requirement": {
+                            "requirement_type": "risk level",
+                            "expected_value": "rapidly evolving"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Has symptomatic advanced/metastatic visceral spread",
+                                "criterion": "visceral spread",
+                                "requirement": {
+                                    "requirement_type": "symptomatic",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Has symptomatic advanced/metastatic visceral spread",
+                                "criterion": "visceral spread",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": "advanced/metastatic"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "at risk of rapidly evolving into life-threatening complications",
+                        "criterion": "risk of life-threatening complications",
+                        "requirement": {
+                            "requirement_type": "risk level",
+                            "expected_value": "rapidly evolving"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has received prior chemotherapy for unresectable locally advanced or metastatic breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has received prior chemotherapy",
+                        "criterion": "prior chemotherapy",
+                        "requirement": {
+                            "requirement_type": "receipt",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unresectable locally advanced or metastatic breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "unresectable locally advanced",
+                                "metastatic"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Has received prior chemotherapy",
+                                "criterion": "prior chemotherapy",
+                                "requirement": {
+                                    "requirement_type": "receipt",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "unresectable locally advanced or metastatic breast cancer",
+                                "criterion": "breast cancer",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": [
+                                        "unresectable locally advanced",
+                                        "metastatic"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active autoimmune disease that has required systemic treatment in the past 2 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active autoimmune disease",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "required systemic treatment in the past 2 years",
+                        "criterion": "systemic treatment for autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Active autoimmune disease",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "required systemic treatment in the past 2 years",
+                        "criterion": "systemic treatment for autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of (noninfectious) pneumonitis/interstitial lung disease that requires steroids, or has current pneumonitis/interstitial lung disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of (noninfectious) pneumonitis/interstitial lung disease that requires steroids",
+                        "criterion": "history of noninfectious pneumonitis/interstitial lung disease",
+                        "requirement": {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": "steroids"
+                        }
+                    },
+                    {
+                        "exact_snippets": "current pneumonitis/interstitial lung disease",
+                        "criterion": "current pneumonitis/interstitial lung disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "History of (noninfectious) pneumonitis/interstitial lung disease that requires steroids",
+                                "criterion": "history of noninfectious pneumonitis/interstitial lung disease",
+                                "requirement": {
+                                    "requirement_type": "treatment requirement",
+                                    "expected_value": "steroids"
+                                }
+                            },
+                            {
+                                "exact_snippets": "current pneumonitis/interstitial lung disease",
+                                "criterion": "current pneumonitis/interstitial lung disease",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "current pneumonitis/interstitial lung disease",
+                        "criterion": "current pneumonitis/interstitial lung disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Has an active infection requiring systemic therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "active infection requiring systemic therapy",
+                        "criterion": "active infection",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "systemic therapy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "active infection requiring systemic therapy",
+                        "criterion": "active infection",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": "systemic therapy"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Has unresectable locally advanced or metastatic centrally-confirmed hormone receptor positive (HR+)/human epidermal growth factor receptor 2 negative (HER2-) breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "unresectable locally advanced or metastatic",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "unresectable locally advanced",
+                                "metastatic"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "centrally-confirmed hormone receptor positive (HR+)",
+                        "criterion": "hormone receptor status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "human epidermal growth factor receptor 2 negative (HER2-)",
+                        "criterion": "HER2 status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast cancer",
+                        "criterion": "cancer type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "breast"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "unresectable locally advanced or metastatic",
+                                        "criterion": "cancer stage",
+                                        "requirement": {
+                                            "requirement_type": "stage",
+                                            "expected_value": "unresectable locally advanced"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "unresectable locally advanced or metastatic",
+                                        "criterion": "cancer stage",
+                                        "requirement": {
+                                            "requirement_type": "stage",
+                                            "expected_value": "metastatic"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "centrally-confirmed hormone receptor positive (HR+)",
+                                "criterion": "hormone receptor status",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "positive"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "human epidermal growth factor receptor 2 negative (HER2-)",
+                        "criterion": "HER2 status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "breast cancer",
+                        "criterion": "cancer type",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": "breast"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

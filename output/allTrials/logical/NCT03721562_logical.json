@@ -1,0 +1,259 @@
+{
+    "info": {
+        "nct_id": "NCT03721562",
+        "official_title": "Antibiotic Resistance in Global Pediatric Oncology Centers",
+        "inclusion_criteria": "* Pediatric (0-18 years of age) patients having a bacteria isolated from a sterile site (blood, cerebrospinal fluid, body fluid) or urine positive for a Gram-negative bacteria nonsusceptible to at least 1 of the following: third generation cephalosporin, fourth generation cephalosporin or carbapenem OR screening positive for carbapenemase or extended spectrum beta lactamase (ESBL) production.\nHealthy volunteers allowed\nMust have maximum age of 18 Years",
+        "exclusion_criteria": "* Repeated isolation of the same organism from the same patient within the study period.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Pediatric (0-18 years of age) patients having a bacteria isolated from a sterile site (blood, cerebrospinal fluid, body fluid) or urine positive for a Gram-negative bacteria nonsusceptible to at least 1 of the following: third generation cephalosporin, fourth generation cephalosporin or carbapenem OR screening positive for carbapenemase or extended spectrum beta lactamase (ESBL) production.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pediatric (0-18 years of age)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "bacteria isolated from a sterile site (blood, cerebrospinal fluid, body fluid)",
+                        "criterion": "bacteria isolation from sterile site",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "urine positive for a Gram-negative bacteria",
+                        "criterion": "Gram-negative bacteria in urine",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "nonsusceptible to at least 1 of the following: third generation cephalosporin, fourth generation cephalosporin or carbapenem",
+                        "criterion": "antibiotic nonsusceptibility",
+                        "requirement": {
+                            "requirement_type": "nonsusceptibility",
+                            "expected_value": [
+                                "third generation cephalosporin",
+                                "fourth generation cephalosporin",
+                                "carbapenem"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "screening positive for carbapenemase",
+                        "criterion": "carbapenemase production",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "screening positive for ... extended spectrum beta lactamase (ESBL) production",
+                        "criterion": "extended spectrum beta lactamase (ESBL) production",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Pediatric (0-18 years of age)",
+                                "criterion": "age",
+                                "requirement": {
+                                    "requirement_type": "range",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 0,
+                                                "unit": "years"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 18,
+                                                "unit": "years"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "bacteria isolated from a sterile site (blood, cerebrospinal fluid, body fluid)",
+                                        "criterion": "bacteria isolation from sterile site",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "urine positive for a Gram-negative bacteria",
+                                        "criterion": "Gram-negative bacteria in urine",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "nonsusceptible to at least 1 of the following: third generation cephalosporin, fourth generation cephalosporin or carbapenem",
+                                "criterion": "antibiotic nonsusceptibility",
+                                "requirement": {
+                                    "requirement_type": "nonsusceptibility",
+                                    "expected_value": [
+                                        "third generation cephalosporin",
+                                        "fourth generation cephalosporin",
+                                        "carbapenem"
+                                    ]
+                                }
+                            },
+                            {
+                                "exact_snippets": "screening positive for carbapenemase",
+                                "criterion": "carbapenemase production",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "screening positive for ... extended spectrum beta lactamase (ESBL) production",
+                                "criterion": "extended spectrum beta lactamase (ESBL) production",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Repeated isolation of the same organism from the same patient within the study period.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Repeated isolation of the same organism from the same patient",
+                        "criterion": "isolation of the same organism",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": "repeated"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Repeated isolation of the same organism from the same patient",
+                        "criterion": "isolation of the same organism",
+                        "requirement": {
+                            "requirement_type": "frequency",
+                            "expected_value": "repeated"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

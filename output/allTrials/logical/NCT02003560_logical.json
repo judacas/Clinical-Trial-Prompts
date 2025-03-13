@@ -1,0 +1,876 @@
+{
+    "info": {
+        "nct_id": "NCT02003560",
+        "official_title": "Accelerated Partial Breast Irradiation After Breast Conserving Surgery for Low-risk Invasive Breast Cancer: 3D Conformal Radiotherapy (3D-CRT) and Intensity Modulated Radiotherapy (IMRT) - Prospective Phase II Study",
+        "inclusion_criteria": "* previous breast conserving surgery within 12 weeks (in case of adjuvant chemotherapy within 28 days after completion of chemotherapy)\n* patient age > 40 years\n* ECOG performance status: 0-1\n* life expectancy >5 years\n* invasive ductal, papillary, mucinous, medullary or tubular carcinoma\n* unifocal tumor\n* pathological tumor size < or = 30 mm\n* pathological negative axillary nodal status with axillary dissection or sentinel lymph node biopsy\n* surgical clips in the tumor bed\n* pathological surgical free margins of at least 2 mm\n* written informed consent of patients\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 40 Years",
+        "exclusion_criteria": "* Stage III-IV\n* multifocal tumor\n* extensive intraductal component (EIC)\n* ductal or lobular carcinoma in situ (DCIS or LCIS)\n* invasive lobular cancer (ILC)\n* lymph-vascular invasion (LVI)\n* contralateral breast cancer\n* history of treatment for previous breast cancer\n* lactation or breast feeding women\n* Paget-disease of the nipple\n* psychiatric disorder\n* increased radiosensitivity (e.g. collagen vascular disease)",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* previous breast conserving surgery within 12 weeks (in case of adjuvant chemotherapy within 28 days after completion of chemotherapy)",
+                "criterions": [
+                    {
+                        "exact_snippets": "previous breast conserving surgery within 12 weeks",
+                        "criterion": "breast conserving surgery",
+                        "requirement": {
+                            "requirement_type": "time since surgery",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 12,
+                                "unit": "weeks"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "adjuvant chemotherapy within 28 days after completion of chemotherapy",
+                        "criterion": "adjuvant chemotherapy",
+                        "requirement": {
+                            "requirement_type": "time since chemotherapy completion",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 28,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "previous breast conserving surgery within 12 weeks",
+                    "criterion": "breast conserving surgery",
+                    "requirement": {
+                        "requirement_type": "time since surgery",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 12,
+                            "unit": "weeks"
+                        }
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "adjuvant chemotherapy within 28 days after completion of chemotherapy",
+                    "criterion": "adjuvant chemotherapy",
+                    "requirement": {
+                        "requirement_type": "time since chemotherapy completion",
+                        "expected_value": {
+                            "operator": "<=",
+                            "value": 28,
+                            "unit": "days"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* patient age > 40 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "patient age > 40 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 40,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "patient age > 40 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 40,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* ECOG performance status: 0-1",
+                "criterions": [
+                    {
+                        "exact_snippets": "ECOG performance status: 0-1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "ECOG performance status: 0-1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* life expectancy >5 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "life expectancy >5 years",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "life expectancy >5 years",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* invasive ductal, papillary, mucinous, medullary or tubular carcinoma",
+                "criterions": [
+                    {
+                        "exact_snippets": "invasive ductal",
+                        "criterion": "invasive ductal carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "papillary",
+                        "criterion": "papillary carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "mucinous",
+                        "criterion": "mucinous carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "medullary",
+                        "criterion": "medullary carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "tubular",
+                        "criterion": "tubular carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "invasive ductal",
+                        "criterion": "invasive ductal carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "papillary",
+                        "criterion": "papillary carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "mucinous",
+                        "criterion": "mucinous carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "medullary",
+                        "criterion": "medullary carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "tubular",
+                        "criterion": "tubular carcinoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* unifocal tumor",
+                "criterions": [
+                    {
+                        "exact_snippets": "unifocal tumor",
+                        "criterion": "tumor",
+                        "requirement": {
+                            "requirement_type": "focality",
+                            "expected_value": "unifocal"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "unifocal tumor",
+                        "criterion": "tumor",
+                        "requirement": {
+                            "requirement_type": "focality",
+                            "expected_value": "unifocal"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* pathological tumor size < or = 30 mm",
+                "criterions": [
+                    {
+                        "exact_snippets": "pathological tumor size < or = 30 mm",
+                        "criterion": "pathological tumor size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 30,
+                                "unit": "mm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "pathological tumor size < or = 30 mm",
+                        "criterion": "pathological tumor size",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 30,
+                                "unit": "mm"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* surgical clips in the tumor bed",
+                "criterions": [
+                    {
+                        "exact_snippets": "surgical clips in the tumor bed",
+                        "criterion": "surgical clips",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "surgical clips in the tumor bed",
+                        "criterion": "surgical clips",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* pathological surgical free margins of at least 2 mm",
+                "criterions": [
+                    {
+                        "exact_snippets": "pathological surgical free margins of at least 2 mm",
+                        "criterion": "surgical free margins",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "mm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "pathological surgical free margins of at least 2 mm",
+                        "criterion": "surgical free margins",
+                        "requirement": {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "mm"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* written informed consent of patients",
+                "criterions": [
+                    {
+                        "exact_snippets": "written informed consent of patients",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "form",
+                            "expected_value": "written"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "written informed consent of patients",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "form",
+                            "expected_value": "written"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* pathological negative axillary nodal status with axillary dissection or sentinel lymph node biopsy",
+                "criterions": [
+                    {
+                        "exact_snippets": "pathological negative axillary nodal status",
+                        "criterion": "axillary nodal status",
+                        "requirement": {
+                            "requirement_type": "pathological status",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "axillary dissection or sentinel lymph node biopsy",
+                        "criterion": "axillary nodal evaluation method",
+                        "requirement": {
+                            "requirement_type": "method",
+                            "expected_value": [
+                                "axillary dissection",
+                                "sentinel lymph node biopsy"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "pathological negative axillary nodal status",
+                                "criterion": "axillary nodal status",
+                                "requirement": {
+                                    "requirement_type": "pathological status",
+                                    "expected_value": "negative"
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "axillary dissection or sentinel lymph node biopsy",
+                                        "criterion": "axillary nodal evaluation method",
+                                        "requirement": {
+                                            "requirement_type": "method",
+                                            "expected_value": "axillary dissection"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "axillary dissection or sentinel lymph node biopsy",
+                                        "criterion": "axillary nodal evaluation method",
+                                        "requirement": {
+                                            "requirement_type": "method",
+                                            "expected_value": "sentinel lymph node biopsy"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be FEMALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be FEMALE",
+                        "criterion": "gender",
+                        "requirement": {
+                            "requirement_type": "expected_value",
+                            "expected_value": "female"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 40 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 40 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 40,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Stage III-IV",
+                "criterions": [
+                    {
+                        "exact_snippets": "Stage III-IV",
+                        "criterion": "cancer stage",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* multifocal tumor",
+                "criterions": [
+                    {
+                        "exact_snippets": "multifocal tumor",
+                        "criterion": "tumor",
+                        "requirement": {
+                            "requirement_type": "focality",
+                            "expected_value": "multifocal"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* extensive intraductal component (EIC)",
+                "criterions": [
+                    {
+                        "exact_snippets": "extensive intraductal component (EIC)",
+                        "criterion": "extensive intraductal component",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* ductal or lobular carcinoma in situ (DCIS or LCIS)",
+                "criterions": [
+                    {
+                        "exact_snippets": "ductal or lobular carcinoma in situ (DCIS or LCIS)",
+                        "criterion": "carcinoma in situ",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "ductal",
+                                "lobular"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* invasive lobular cancer (ILC)",
+                "criterions": [
+                    {
+                        "exact_snippets": "invasive lobular cancer (ILC)",
+                        "criterion": "invasive lobular cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* lymph-vascular invasion (LVI)",
+                "criterions": [
+                    {
+                        "exact_snippets": "lymph-vascular invasion (LVI)",
+                        "criterion": "lymph-vascular invasion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* contralateral breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "contralateral breast cancer",
+                        "criterion": "contralateral breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* history of treatment for previous breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of treatment for previous breast cancer",
+                        "criterion": "treatment history for previous breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* lactation or breast feeding women",
+                "criterions": [
+                    {
+                        "exact_snippets": "lactation or breast feeding women",
+                        "criterion": "lactation or breast feeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Paget-disease of the nipple",
+                "criterions": [
+                    {
+                        "exact_snippets": "Paget-disease of the nipple",
+                        "criterion": "Paget-disease of the nipple",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* psychiatric disorder",
+                "criterions": [
+                    {
+                        "exact_snippets": "psychiatric disorder",
+                        "criterion": "psychiatric disorder",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* increased radiosensitivity (e.g. collagen vascular disease)",
+                "criterions": [
+                    {
+                        "exact_snippets": "increased radiosensitivity",
+                        "criterion": "radiosensitivity",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "increased"
+                        }
+                    },
+                    {
+                        "exact_snippets": "collagen vascular disease",
+                        "criterion": "collagen vascular disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

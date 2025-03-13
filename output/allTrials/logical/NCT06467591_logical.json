@@ -1,0 +1,617 @@
+{
+    "info": {
+        "nct_id": "NCT06467591",
+        "official_title": "Prediction of Long-term Survival and Chemotherapy Benefit in Elderly Advanced Gastric Cancer Patients Based on the mCNS Model of Nutritional Control State Score and Sarcopenia.",
+        "inclusion_criteria": "* Confirmed as primary gastric adenocarcinoma by preoperative gastric endoscopy pathology;\n* Underwent R0 laparoscopic radical gastrectomy for gastric cancer;\n* Pathological stage T2-4a-N+;\n* Age ≥ 65 years.\nHealthy volunteers allowed\nMust have minimum age of 65 Years",
+        "exclusion_criteria": "* Pathological stage T1 and T2N0;\n* Age < 65 years;\n* Presence of peritoneal or distant metastasis confirmed before or during surgery;\n* Received neoadjuvant chemotherapy before surgery;\n* Remnant gastric cancer;\n* Emergency surgery or palliative exploratory surgery;\n* Preoperative abdominal CT scan not available or preoperative examination time > 1 month;\n* Survival time less than 1 month;\n* Incomplete clinical and pathological data.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Confirmed as primary gastric adenocarcinoma by preoperative gastric endoscopy pathology;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Confirmed as primary gastric adenocarcinoma",
+                        "criterion": "primary gastric adenocarcinoma",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "preoperative gastric endoscopy pathology",
+                        "criterion": "gastric endoscopy pathology",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "preoperative"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Confirmed as primary gastric adenocarcinoma",
+                        "criterion": "primary gastric adenocarcinoma",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "preoperative gastric endoscopy pathology",
+                        "criterion": "gastric endoscopy pathology",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "preoperative"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Underwent R0 laparoscopic radical gastrectomy for gastric cancer;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Underwent R0 laparoscopic radical gastrectomy",
+                        "criterion": "laparoscopic radical gastrectomy",
+                        "requirement": {
+                            "requirement_type": "procedure",
+                            "expected_value": "R0"
+                        }
+                    },
+                    {
+                        "exact_snippets": "gastric cancer",
+                        "criterion": "gastric cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Underwent R0 laparoscopic radical gastrectomy",
+                        "criterion": "laparoscopic radical gastrectomy",
+                        "requirement": {
+                            "requirement_type": "procedure",
+                            "expected_value": "R0"
+                        }
+                    },
+                    {
+                        "exact_snippets": "gastric cancer",
+                        "criterion": "gastric cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pathological stage T2-4a-N+;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pathological stage T2-4a",
+                        "criterion": "pathological stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "T"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "a"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "N+",
+                        "criterion": "nodal involvement",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Pathological stage T2-4a",
+                        "criterion": "pathological stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "T"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "a"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "N+",
+                        "criterion": "nodal involvement",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age ≥ 65 years.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age ≥ 65 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 65,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age ≥ 65 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 65,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 65 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 65 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 65,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 65 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 65,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Pathological stage T1 and T2N0;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pathological stage T1",
+                        "criterion": "pathological stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "T1"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Pathological stage ... T2",
+                        "criterion": "pathological stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "T2"
+                        }
+                    },
+                    {
+                        "exact_snippets": "N0",
+                        "criterion": "nodal involvement",
+                        "requirement": {
+                            "requirement_type": "nodal status",
+                            "expected_value": "N0"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Pathological stage T1",
+                                "criterion": "pathological stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": "T1"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Pathological stage ... T2",
+                                "criterion": "pathological stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": "T2"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "N0",
+                        "criterion": "nodal involvement",
+                        "requirement": {
+                            "requirement_type": "nodal status",
+                            "expected_value": "N0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age < 65 years;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age < 65 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 65,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age < 65 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 65,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Presence of peritoneal or distant metastasis confirmed before or during surgery;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Presence of peritoneal or distant metastasis",
+                        "criterion": "peritoneal or distant metastasis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Presence of peritoneal or distant metastasis",
+                        "criterion": "peritoneal or distant metastasis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Received neoadjuvant chemotherapy before surgery;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Received neoadjuvant chemotherapy before surgery",
+                        "criterion": "neoadjuvant chemotherapy",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "before surgery"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Received neoadjuvant chemotherapy before surgery",
+                    "criterion": "neoadjuvant chemotherapy",
+                    "requirement": {
+                        "requirement_type": "timing",
+                        "expected_value": "before surgery"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Remnant gastric cancer;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Remnant gastric cancer",
+                        "criterion": "remnant gastric cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Remnant gastric cancer",
+                    "criterion": "remnant gastric cancer",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Emergency surgery or palliative exploratory surgery;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Emergency surgery",
+                        "criterion": "emergency surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "palliative exploratory surgery",
+                        "criterion": "palliative exploratory surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Emergency surgery",
+                        "criterion": "emergency surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "palliative exploratory surgery",
+                        "criterion": "palliative exploratory surgery",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Preoperative abdominal CT scan not available or preoperative examination time > 1 month;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Preoperative abdominal CT scan not available",
+                        "criterion": "preoperative abdominal CT scan",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "preoperative examination time > 1 month",
+                        "criterion": "preoperative examination time",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "month"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Preoperative abdominal CT scan not available",
+                        "criterion": "preoperative abdominal CT scan",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "preoperative examination time > 1 month",
+                        "criterion": "preoperative examination time",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "month"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Survival time less than 1 month;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Survival time less than 1 month",
+                        "criterion": "survival time",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1,
+                                "unit": "month"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Survival time less than 1 month",
+                        "criterion": "survival time",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1,
+                                "unit": "month"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Incomplete clinical and pathological data.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Incomplete clinical and pathological data",
+                        "criterion": "clinical data",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Incomplete clinical and pathological data",
+                        "criterion": "pathological data",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Incomplete clinical and pathological data",
+                        "criterion": "clinical data",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Incomplete clinical and pathological data",
+                        "criterion": "pathological data",
+                        "requirement": {
+                            "requirement_type": "completeness",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

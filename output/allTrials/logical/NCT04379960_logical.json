@@ -1,0 +1,618 @@
+{
+    "info": {
+        "nct_id": "NCT04379960",
+        "official_title": "Identification of Immunogenic Neo-epitopes for the Development of Personalised Pancreatic Cancer Vaccines",
+        "inclusion_criteria": "* fit and healthy;\n* weigh over 7 stone 12 lbs or 50kg;\n* are aged between 17 and 66 (or 70 if you have given blood before);\n* are over 70 and have given blood in the last two years.\nHealthy volunteers allowed\nMust have minimum age of 17 Years\nMust have maximum age of 70 Years",
+        "exclusion_criteria": "* receiving treatment;\n* taking medication;\n* travelling outside of the UK;\n* tattoos;\n* pregnancy;\n* illness;\n* cancer;\n* received blood, blood products or organs.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* fit and healthy;",
+                "criterions": [
+                    {
+                        "exact_snippets": "fit",
+                        "criterion": "fitness",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "healthy",
+                        "criterion": "health",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "fit",
+                        "criterion": "fitness",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "healthy",
+                        "criterion": "health",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* are aged between 17 and 66 (or 70 if you have given blood before);",
+                "criterions": [
+                    {
+                        "exact_snippets": "aged between 17 and 66 (or 70 if you have given blood before)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 17,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 66,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "aged between 17 and 66 (or 70 if you have given blood before)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 17,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 70,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "aged between 17 and 66 (or 70 if you have given blood before)",
+                    "criterion": "blood donation history",
+                    "requirement": {
+                        "requirement_type": "has donated blood before",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "aged between 17 and 66 (or 70 if you have given blood before)",
+                    "criterion": "age",
+                    "requirement": {
+                        "requirement_type": "range",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": ">=",
+                                    "value": 17,
+                                    "unit": "years"
+                                },
+                                {
+                                    "operator": "<=",
+                                    "value": 70,
+                                    "unit": "years"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "else_criteria": {
+                    "exact_snippets": "aged between 17 and 66 (or 70 if you have given blood before)",
+                    "criterion": "age",
+                    "requirement": {
+                        "requirement_type": "range",
+                        "expected_value": {
+                            "comparisons": [
+                                {
+                                    "operator": ">=",
+                                    "value": 17,
+                                    "unit": "years"
+                                },
+                                {
+                                    "operator": "<=",
+                                    "value": 66,
+                                    "unit": "years"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* are over 70 and have given blood in the last two years.",
+                "criterions": [
+                    {
+                        "exact_snippets": "are over 70",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 70,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "have given blood in the last two years",
+                        "criterion": "blood donation",
+                        "requirement": {
+                            "requirement_type": "time since last donation",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "are over 70",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 70,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "have given blood in the last two years",
+                        "criterion": "blood donation",
+                        "requirement": {
+                            "requirement_type": "time since last donation",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 17 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 17 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 17,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 17 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 17,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 70 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 70 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 70,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 70 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 70,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* receiving treatment;",
+                "criterions": [
+                    {
+                        "exact_snippets": "receiving treatment",
+                        "criterion": "treatment status",
+                        "requirement": {
+                            "requirement_type": "receiving",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "receiving treatment",
+                    "criterion": "treatment status",
+                    "requirement": {
+                        "requirement_type": "receiving",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* taking medication;",
+                "criterions": [
+                    {
+                        "exact_snippets": "taking medication",
+                        "criterion": "medication",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "taking medication",
+                    "criterion": "medication",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* travelling outside of the UK;",
+                "criterions": [
+                    {
+                        "exact_snippets": "travelling outside of the UK",
+                        "criterion": "travel history",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": "outside of the UK"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "travelling outside of the UK",
+                    "criterion": "travel history",
+                    "requirement": {
+                        "requirement_type": "location",
+                        "expected_value": "outside of the UK"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* tattoos;",
+                "criterions": [
+                    {
+                        "exact_snippets": "tattoos",
+                        "criterion": "tattoos",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "tattoos",
+                    "criterion": "tattoos",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* pregnancy;",
+                "criterions": [
+                    {
+                        "exact_snippets": "pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "pregnancy",
+                    "criterion": "pregnancy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* illness;",
+                "criterions": [
+                    {
+                        "exact_snippets": "illness",
+                        "criterion": "illness",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "illness",
+                    "criterion": "illness",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* cancer;",
+                "criterions": [
+                    {
+                        "exact_snippets": "cancer",
+                        "criterion": "cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "cancer",
+                        "criterion": "cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* received blood, blood products or organs.",
+                "criterions": [
+                    {
+                        "exact_snippets": "received blood",
+                        "criterion": "blood transfusion",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "received ... blood products",
+                        "criterion": "blood product transfusion",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "received ... organs",
+                        "criterion": "organ transplant",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "received blood",
+                        "criterion": "blood transfusion",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "received ... blood products",
+                        "criterion": "blood product transfusion",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "received ... organs",
+                        "criterion": "organ transplant",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* weigh over 7 stone 12 lbs or 50kg;",
+                "criterions": [
+                    {
+                        "exact_snippets": "weigh over 7 stone 12 lbs or 50kg",
+                        "criterion": "weight",
+                        "requirement": {
+                            "requirement_type": "minimum weight",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 7.857,
+                                        "unit": "stone"
+                                    },
+                                    {
+                                        "operator": ">",
+                                        "value": 50,
+                                        "unit": "kg"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "weigh over 7 stone 12 lbs or 50kg",
+                        "criterion": "weight",
+                        "requirement": {
+                            "requirement_type": "minimum weight",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 7.857,
+                                        "unit": "stone"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "weigh over 7 stone 12 lbs or 50kg",
+                        "criterion": "weight",
+                        "requirement": {
+                            "requirement_type": "minimum weight",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 50,
+                                        "unit": "kg"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}
