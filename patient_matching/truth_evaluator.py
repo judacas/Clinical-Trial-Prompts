@@ -38,18 +38,19 @@ class llmEvaluation(BaseModel):
 
 def update_truth_table_with_user_response(
     user_response: ParsedCriterion, agg_table: AggregatedTruthTable
-) -> AggregatedTruthTable:
+) -> set[str]:
     """
     Given a single parsed user response (ParsedCriterion) and the current aggregated truth table,
     uses direct dictionary lookups to locate matching groups and update their truth values by calling
     evaluate_value_with_llm().
 
-    Returns the updated AggregatedTruthTable.
+    Returns a set of trial IDs that were modified.
     """
+    modified_trial_ids: set = set()
     norm_crit = user_response.criterion.strip().lower()
     if norm_crit not in agg_table.criteria:
         logger.warning("Criterion '%s' not found in aggregated truth table.", norm_crit)
-        return agg_table
+        return modified_trial_ids
 
     agg_criterion = agg_table.criteria[norm_crit]
 
@@ -66,11 +67,13 @@ def update_truth_table_with_user_response(
         agg_requirement = agg_criterion.requirements[norm_req]
         # Iterate over each group in the requirement mapping
         for key, group in agg_requirement.groups.items():
-            # Evaluate the group’s expected value against the user value
+            # Evaluate the group's expected value against the user value
             eval_obj = evaluate_expected_value(
                 str(group.expected_value), str(response.user_value), norm_req, norm_crit
             )
             group.truth_value = eval_obj.evaluation
+            # Add all trial IDs in this group to the modified set
+            modified_trial_ids.update(group.trial_ids)
             logger.info(
                 "Updated group for '%s' (%s) with expected value '%s': %s (Explanation: %s)",
                 norm_crit,
@@ -79,7 +82,7 @@ def update_truth_table_with_user_response(
                 eval_obj.evaluation,
                 eval_obj.explanation,
             )
-    return agg_table
+    return modified_trial_ids
 
 
 def evaluate_expected_value(

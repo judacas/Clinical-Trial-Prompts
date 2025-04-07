@@ -142,4 +142,15 @@ def aggregate_identified_trials(trials: List[IdentifiedTrial]) -> AggregatedTrut
                     elif trial_id not in groups[key].trial_ids:
                         groups[key].trial_ids.append(trial_id)
 
+    # After creating the aggregator
+    criterion_count = len(agg_table.criteria)
+    total_requirements = sum(
+        len(crit.requirements) for crit in agg_table.criteria.values()
+    )
+    logging.info(
+        "Aggregator contains %d criteria and %d requirements",
+        criterion_count,
+        total_requirements,
+    )
+
     return agg_table
