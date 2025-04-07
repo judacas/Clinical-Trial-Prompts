@@ -84,7 +84,7 @@
                     "criterion": "age",
                     "requirements": [
                         {
-                            "requirement_type": "value",
+                            "requirement_type": "minimum age",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 16,
@@ -98,18 +98,29 @@
                     "criterion": "performance status",
                     "requirements": [
                         {
-                            "requirement_type": "value",
+                            "requirement_type": "scale",
                             "expected_value": [
-                                "ECOG 0",
-                                "ECOG 1",
-                                "ECOG 2",
-                                "ZUBROD 0",
-                                "ZUBROD 1",
-                                "ZUBROD 2",
-                                "WHO 0",
-                                "WHO 1",
-                                "WHO 2"
+                                "ECOG",
+                                "ZUBROD",
+                                "WHO"
                             ]
+                        },
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
                         }
                     ]
                 },
@@ -118,7 +129,7 @@
                     "criterion": "life expectancy",
                     "requirements": [
                         {
-                            "requirement_type": "duration",
+                            "requirement_type": "minimum duration",
                             "expected_value": {
                                 "operator": ">=",
                                 "value": 8,
@@ -129,28 +140,28 @@
                 },
                 {
                     "exact_snippets": "Hematopoietic: WBC greater than 4,000",
-                    "criterion": "WBC",
+                    "criterion": "white blood cell count",
                     "requirements": [
                         {
-                            "requirement_type": "count",
+                            "requirement_type": "minimum count",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 4000,
-                                "unit": "cells/µL"
+                                "unit": "N/A"
                             }
                         }
                     ]
                 },
                 {
                     "exact_snippets": "Platelets greater than 100,000",
-                    "criterion": "platelets",
+                    "criterion": "platelet count",
                     "requirements": [
                         {
-                            "requirement_type": "count",
+                            "requirement_type": "minimum count",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 100000,
-                                "unit": "cells/µL"
+                                "unit": "N/A"
                             }
                         }
                     ]
@@ -160,7 +171,7 @@
                     "criterion": "hematocrit",
                     "requirements": [
                         {
-                            "requirement_type": "percentage",
+                            "requirement_type": "minimum percentage",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 30,
@@ -171,10 +182,10 @@
                 },
                 {
                     "exact_snippets": "Hepatic: Bilirubin less than 2 mg/dl",
-                    "criterion": "bilirubin",
+                    "criterion": "bilirubin level",
                     "requirements": [
                         {
-                            "requirement_type": "concentration",
+                            "requirement_type": "maximum level",
                             "expected_value": {
                                 "operator": "<",
                                 "value": 2,
@@ -185,10 +196,10 @@
                 },
                 {
                     "exact_snippets": "Renal: Creatinine less than 1.5 mg/dl",
-                    "criterion": "creatinine",
+                    "criterion": "creatinine level",
                     "requirements": [
                         {
-                            "requirement_type": "concentration",
+                            "requirement_type": "maximum level",
                             "expected_value": {
                                 "operator": "<",
                                 "value": 1.5,
@@ -202,7 +213,7 @@
                     "criterion": "creatinine clearance",
                     "requirements": [
                         {
-                            "requirement_type": "rate",
+                            "requirement_type": "minimum clearance",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 70,
@@ -213,10 +224,10 @@
                 },
                 {
                     "exact_snippets": "BUN less than 40 mg/dl",
-                    "criterion": "BUN",
+                    "criterion": "blood urea nitrogen level",
                     "requirements": [
                         {
-                            "requirement_type": "concentration",
+                            "requirement_type": "maximum level",
                             "expected_value": {
                                 "operator": "<",
                                 "value": 40,
@@ -245,7 +256,7 @@
                     "criterion": "anticancer drugs",
                     "requirements": [
                         {
-                            "requirement_type": "presence",
+                            "requirement_type": "usage",
                             "expected_value": false
                         }
                     ]
@@ -255,7 +266,7 @@
                     "criterion": "steroids",
                     "requirements": [
                         {
-                            "requirement_type": "presence",
+                            "requirement_type": "usage",
                             "expected_value": false
                         }
                     ]

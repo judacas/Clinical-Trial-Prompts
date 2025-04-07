@@ -42,7 +42,7 @@
                         "exact_snippets": "Must be FEMALE",
                         "criterion": "gender",
                         "requirement": {
-                            "requirement_type": "expected_value",
+                            "requirement_type": "expected gender",
                             "expected_value": "female"
                         }
                     }
@@ -54,7 +54,7 @@
                         "exact_snippets": "Must be FEMALE",
                         "criterion": "gender",
                         "requirement": {
-                            "requirement_type": "expected_value",
+                            "requirement_type": "expected gender",
                             "expected_value": "female"
                         }
                     }
@@ -144,68 +144,6 @@
         },
         {
             "identified_line": {
-                "line": "* Are at least 13 years old. (Need consent of parent or guardian if under 18.)",
-                "criterions": [
-                    {
-                        "exact_snippets": "Are at least 13 years old.",
-                        "criterion": "age",
-                        "requirement": {
-                            "requirement_type": "minimum age",
-                            "expected_value": {
-                                "operator": ">=",
-                                "value": 13,
-                                "unit": "years"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "Need consent of parent or guardian if under 18.",
-                        "criterion": "age",
-                        "requirement": {
-                            "requirement_type": "parental consent",
-                            "expected_value": {
-                                "operator": "<",
-                                "value": 18,
-                                "unit": "years"
-                            }
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "condition": {
-                    "exact_snippets": "Are at least 13 years old.",
-                    "criterion": "age",
-                    "requirement": {
-                        "requirement_type": "minimum age",
-                        "expected_value": {
-                            "operator": ">=",
-                            "value": 13,
-                            "unit": "years"
-                        }
-                    }
-                },
-                "then_criteria": null,
-                "else_criteria": {
-                    "and_criteria": [
-                        {
-                            "exact_snippets": "Need consent of parent or guardian if under 18.",
-                            "criterion": "age",
-                            "requirement": {
-                                "requirement_type": "parental consent",
-                                "expected_value": {
-                                    "operator": "<",
-                                    "value": 18,
-                                    "unit": "years"
-                                }
-                            }
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            "identified_line": {
                 "line": "* Have cervical tumors, as determined by a biopsy performed by a doctor.",
                 "criterions": [
                     {
@@ -242,39 +180,6 @@
                         "requirement": {
                             "requirement_type": "determination method",
                             "expected_value": "biopsy"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "* Agree to use both condoms and the pill during the study.",
-                "criterions": [
-                    {
-                        "exact_snippets": "use both condoms and the pill during the study",
-                        "criterion": "contraceptive use",
-                        "requirement": {
-                            "requirement_type": "methods",
-                            "expected_value": [
-                                "condoms",
-                                "the pill"
-                            ]
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "exact_snippets": "use both condoms and the pill during the study",
-                        "criterion": "contraceptive use",
-                        "requirement": {
-                            "requirement_type": "methods",
-                            "expected_value": [
-                                "condoms",
-                                "the pill"
-                            ]
                         }
                     }
                 ]
@@ -333,13 +238,9 @@
                         "requirement": {
                             "requirement_type": "time since procedure",
                             "expected_value": {
-                                "comparisons": [
-                                    {
-                                        "operator": "<=",
-                                        "value": 4,
-                                        "unit": "months"
-                                    }
-                                ]
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "months"
                             }
                         }
                     }
@@ -353,13 +254,9 @@
                         "requirement": {
                             "requirement_type": "time since procedure",
                             "expected_value": {
-                                "comparisons": [
-                                    {
-                                        "operator": "<=",
-                                        "value": 4,
-                                        "unit": "months"
-                                    }
-                                ]
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "months"
                             }
                         }
                     }
@@ -432,30 +329,23 @@
                 ]
             },
             "logical_structure": {
-                "and_criteria": [
-                    {
-                        "not_criteria": {
-                            "exact_snippets": "Have taken certain medications.",
-                            "criterion": "medication history",
-                            "requirement": {
-                                "requirement_type": "presence",
-                                "expected_value": true
-                            }
-                        }
-                    },
-                    {
-                        "or_criteria": [
-                            {
-                                "exact_snippets": "Approved anti-HIV drugs and medications to prevent AIDS-related opportunistic infections are okay.",
-                                "criterion": "anti-HIV drugs and medications to prevent AIDS-related opportunistic infections",
-                                "requirement": {
-                                    "requirement_type": "approval",
-                                    "expected_value": true
-                                }
-                            }
-                        ]
+                "condition": {
+                    "exact_snippets": "Have taken certain medications.",
+                    "criterion": "medication history",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
                     }
-                ]
+                },
+                "then_criteria": {
+                    "exact_snippets": "Approved anti-HIV drugs and medications to prevent AIDS-related opportunistic infections are okay.",
+                    "criterion": "anti-HIV drugs and medications to prevent AIDS-related opportunistic infections",
+                    "requirement": {
+                        "requirement_type": "approval",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
             }
         },
         {
@@ -518,13 +408,104 @@
                 "criterions": []
             },
             "logical_structure": {
-                "not_criteria": {
-                    "and_criteria": []
-                }
+                "and_criteria": []
             }
         }
     ],
     "failed_inclusion": [],
     "failed_exclusion": [],
-    "failed_miscellaneous": []
+    "failed_miscellaneous": [
+        {
+            "identified_line": {
+                "line": "* Are at least 13 years old. (Need consent of parent or guardian if under 18.)",
+                "criterions": [
+                    {
+                        "exact_snippets": "at least 13 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 13,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Need consent of parent or guardian if under 18",
+                        "criterion": "parental consent",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": "required if under 18"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "at least 13 years old",
+                            "criterion": "age",
+                            "requirement": {
+                                "requirement_type": "minimum age",
+                                "expected_value": {
+                                    "operator": ">=",
+                                    "value": 13,
+                                    "unit": "years"
+                                }
+                            }
+                        },
+                        {
+                            "exact_snippets": "Need consent of parent or guardian if under 18",
+                            "criterion": "age",
+                            "requirement": {
+                                "requirement_type": "maximum age",
+                                "expected_value": {
+                                    "operator": "<",
+                                    "value": 18,
+                                    "unit": "years"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "exact_snippets": "Need consent of parent or guardian if under 18",
+                    "criterion": "parental consent",
+                    "requirement": {
+                        "requirement_type": "requirement",
+                        "expected_value": "required if under 18"
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Agree to use both condoms and the pill during the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "use both condoms and the pill during the study",
+                        "criterion": "contraceptive use",
+                        "requirement": {
+                            "requirement_type": "methods",
+                            "expected_value": [
+                                "condoms",
+                                "the pill"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ]
 }
