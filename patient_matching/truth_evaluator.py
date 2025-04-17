@@ -16,6 +16,7 @@ from patient_matching.aggregated_trial_truth import (
 )
 from patient_matching.user_answer_parser import ParsedCriterion
 from pydantic import BaseModel, Field
+from rapidfuzz import fuzz, process
 
 from src.models.identified_criteria import ExpectedValueType
 from src.utils.config import TEMPERATURE, TIMEOUT
@@ -36,52 +37,77 @@ class llmEvaluation(BaseModel):
     )
 
 
+def get_all_matches(
+    query: str, choices: list[str], score_cutoff: int = 75
+) -> list[str]:
+    """
+    Returns a list of matching strings from choices using fuzzy matching.
+    Only includes matches with a score >= score_cutoff.
+    """
+    matches = process.extract(
+        query, choices, scorer=fuzz.token_sort_ratio, score_cutoff=score_cutoff
+    )
+    return [match for match, score, _ in matches]
+
+
 def update_truth_table_with_user_response(
     user_response: ParsedCriterion, agg_table: AggregatedTruthTable
 ) -> set[str]:
-    """
-    Given a single parsed user response (ParsedCriterion) and the current aggregated truth table,
-    uses direct dictionary lookups to locate matching groups and update their truth values by calling
-    evaluate_value_with_llm().
-
-    Returns a set of trial IDs that were modified.
-    """
     modified_trial_ids: set = set()
-    norm_crit = user_response.criterion.strip().lower()
-    if norm_crit not in agg_table.criteria:
-        logger.warning("Criterion '%s' not found in aggregated truth table.", norm_crit)
-        return modified_trial_ids
-
-    agg_criterion = agg_table.criteria[norm_crit]
-
+    # For each response in the user input
     for response in user_response.responses:
+        norm_crit = user_response.criterion.strip().lower()
         norm_req = response.requirement_type.strip().lower()
-        if norm_req not in agg_criterion.requirements:
+        combo = norm_crit + " " + norm_req
+
+        candidate_criteria = set()
+
+        # Stage 1: Fuzzy match criterion alone.
+        candidates1 = get_all_matches(norm_crit, list(agg_table.criteria.keys()))
+        candidate_criteria.update(candidates1)
+
+        # Stage 2: Fuzzy match combined (criterion + requirement) against criteria names.
+        for crit_key in agg_table.criteria.keys():
+            if fuzz.token_sort_ratio(combo, crit_key) >= 75:
+                candidate_criteria.add(crit_key)
+
+        # Stage 3: Fuzzy match combined (criterion + requirement) against each "criterion key + requirement key".
+        for crit_key, crit_obj in agg_table.criteria.items():
+            for req_key in crit_obj.requirements.keys():
+                comb_str = crit_key + " " + req_key
+                if fuzz.token_sort_ratio(combo, comb_str) >= 75:
+                    candidate_criteria.add(crit_key)
+
+        if not candidate_criteria:
             logger.warning(
-                "Requirement type '%s' for criterion '%s' not found.",
-                norm_req,
+                "No matching aggregated criterion for response with criterion '%s' and requirement '%s'.",
                 norm_crit,
+                norm_req,
             )
             continue
 
-        agg_requirement = agg_criterion.requirements[norm_req]
-        # Iterate over each group in the requirement mapping
-        for key, group in agg_requirement.groups.items():
-            # Evaluate the group's expected value against the user value
-            eval_obj = evaluate_expected_value(
-                str(group.expected_value), str(response.user_value), norm_req, norm_crit
-            )
-            group.truth_value = eval_obj.evaluation
-            # Add all trial IDs in this group to the modified set
-            modified_trial_ids.update(group.trial_ids)
-            logger.info(
-                "Updated group for '%s' (%s) with expected value '%s': %s (Explanation: %s)",
-                norm_crit,
-                norm_req,
-                key,
-                eval_obj.evaluation,
-                eval_obj.explanation,
-            )
+        # For each candidate aggregated criterion, process all its requirement groups.
+        for crit_key in candidate_criteria:
+            agg_criterion = agg_table.criteria[crit_key]
+            # Instead of fuzzy matching requirement, just consider every requirement in this criterion.
+            for req_key, agg_requirement in agg_criterion.requirements.items():
+                for key, group in agg_requirement.groups.items():
+                    eval_obj = evaluate_expected_value(
+                        str(group.expected_value),
+                        str(response.user_value),
+                        req_key,
+                        crit_key,
+                    )
+                    group.truth_value = eval_obj.evaluation
+                    modified_trial_ids.update(group.trial_ids)
+                    logger.info(
+                        "Updated group for '%s' (%s) with expected value '%s': %s (Explanation: %s)",
+                        crit_key,
+                        req_key,
+                        key,
+                        eval_obj.evaluation,
+                        eval_obj.explanation,
+                    )
     return modified_trial_ids
 
 
