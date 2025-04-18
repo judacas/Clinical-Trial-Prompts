@@ -92,205 +92,67 @@
         },
         {
             "identified_line": {
-                "line": "Acute lymphoblastic leukemia, any of these categories: Adults (greater than 18 years) in any remission with high-risk features (presenting leukocyte count greater than 100,000/cu mm, Karyotypes t9; 22, t4, t19, t11, biphenotypic leukemia). All second remissions, primary induction failure including partial remission, partially responding or untreated relapse.",
+                "line": "Chronic myelogenous leukemia, any of these categories: accelerated phase or blast transformation.",
                 "criterions": [
                     {
-                        "exact_snippets": "Acute lymphoblastic leukemia",
-                        "criterion": "acute lymphoblastic leukemia",
+                        "exact_snippets": "Chronic myelogenous leukemia",
+                        "criterion": "chronic myelogenous leukemia",
                         "requirement": {
                             "requirement_type": "presence",
                             "expected_value": true
                         }
                     },
                     {
-                        "exact_snippets": "Adults (greater than 18 years)",
-                        "criterion": "age",
+                        "exact_snippets": "any of these categories: accelerated phase",
+                        "criterion": "leukemia phase",
                         "requirement": {
-                            "requirement_type": "minimum age",
-                            "expected_value": {
-                                "operator": ">",
-                                "value": 18,
-                                "unit": "years"
-                            }
+                            "requirement_type": "category",
+                            "expected_value": "accelerated phase"
                         }
                     },
                     {
-                        "exact_snippets": "high-risk features (presenting leukocyte count greater than 100,000/cu mm",
-                        "criterion": "leukocyte count",
+                        "exact_snippets": "any of these categories: ... blast transformation",
+                        "criterion": "leukemia phase",
                         "requirement": {
-                            "requirement_type": "minimum count",
-                            "expected_value": {
-                                "operator": ">",
-                                "value": 100000,
-                                "unit": "cu mm"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "Karyotypes t9; 22, t4, t19, t11",
-                        "criterion": "karyotypes",
-                        "requirement": {
-                            "requirement_type": "specific karyotypes",
-                            "expected_value": [
-                                "t9; 22",
-                                "t4",
-                                "t19",
-                                "t11"
-                            ]
-                        }
-                    },
-                    {
-                        "exact_snippets": "biphenotypic leukemia",
-                        "criterion": "biphenotypic leukemia",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "All second remissions",
-                        "criterion": "remission status",
-                        "requirement": {
-                            "requirement_type": "remission type",
-                            "expected_value": "second remission"
-                        }
-                    },
-                    {
-                        "exact_snippets": "primary induction failure",
-                        "criterion": "primary induction failure",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "partial remission",
-                        "criterion": "partial remission",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "partially responding",
-                        "criterion": "response status",
-                        "requirement": {
-                            "requirement_type": "response type",
-                            "expected_value": "partially responding"
-                        }
-                    },
-                    {
-                        "exact_snippets": "untreated relapse",
-                        "criterion": "relapse status",
-                        "requirement": {
-                            "requirement_type": "treatment status",
-                            "expected_value": "untreated"
+                            "requirement_type": "category",
+                            "expected_value": "blast transformation"
                         }
                     }
                 ]
             },
             "logical_structure": {
-                "or_criteria": [
+                "and_criteria": [
                     {
                         "and_criteria": [
                             {
-                                "exact_snippets": "Acute lymphoblastic leukemia",
-                                "criterion": "acute lymphoblastic leukemia",
+                                "exact_snippets": "Chronic myelogenous leukemia",
+                                "criterion": "chronic myelogenous leukemia",
                                 "requirement": {
                                     "requirement_type": "presence",
                                     "expected_value": true
                                 }
                             },
                             {
-                                "exact_snippets": "Adults (greater than 18 years)",
-                                "criterion": "age",
-                                "requirement": {
-                                    "requirement_type": "minimum age",
-                                    "expected_value": {
-                                        "operator": ">",
-                                        "value": 18,
-                                        "unit": "years"
-                                    }
-                                }
-                            },
-                            {
                                 "or_criteria": [
                                     {
-                                        "exact_snippets": "high-risk features (presenting leukocyte count greater than 100,000/cu mm",
-                                        "criterion": "leukocyte count",
+                                        "exact_snippets": "any of these categories: accelerated phase",
+                                        "criterion": "leukemia phase",
                                         "requirement": {
-                                            "requirement_type": "minimum count",
-                                            "expected_value": {
-                                                "operator": ">",
-                                                "value": 100000,
-                                                "unit": "cu mm"
-                                            }
+                                            "requirement_type": "category",
+                                            "expected_value": "accelerated phase"
                                         }
                                     },
                                     {
-                                        "exact_snippets": "Karyotypes t9; 22, t4, t19, t11",
-                                        "criterion": "karyotypes",
+                                        "exact_snippets": "any of these categories: ... blast transformation",
+                                        "criterion": "leukemia phase",
                                         "requirement": {
-                                            "requirement_type": "specific karyotypes",
-                                            "expected_value": [
-                                                "t9; 22",
-                                                "t4",
-                                                "t19",
-                                                "t11"
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "exact_snippets": "biphenotypic leukemia",
-                                        "criterion": "biphenotypic leukemia",
-                                        "requirement": {
-                                            "requirement_type": "presence",
-                                            "expected_value": true
+                                            "requirement_type": "category",
+                                            "expected_value": "blast transformation"
                                         }
                                     }
                                 ]
                             }
                         ]
-                    },
-                    {
-                        "exact_snippets": "All second remissions",
-                        "criterion": "remission status",
-                        "requirement": {
-                            "requirement_type": "remission type",
-                            "expected_value": "second remission"
-                        }
-                    },
-                    {
-                        "exact_snippets": "primary induction failure",
-                        "criterion": "primary induction failure",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "partial remission",
-                        "criterion": "partial remission",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "partially responding",
-                        "criterion": "response status",
-                        "requirement": {
-                            "requirement_type": "response type",
-                            "expected_value": "partially responding"
-                        }
-                    },
-                    {
-                        "exact_snippets": "untreated relapse",
-                        "criterion": "relapse status",
-                        "requirement": {
-                            "requirement_type": "treatment status",
-                            "expected_value": "untreated"
-                        }
                     }
                 ]
             }
@@ -388,81 +250,10 @@
         },
         {
             "identified_line": {
-                "line": "Myelodysplastic syndromes, any of these categories: refractory anemia with excess of blasts, transformation to acute leukemia, chronic myelomonocytic leukemia.",
-                "criterions": [
-                    {
-                        "exact_snippets": "Myelodysplastic syndromes, any of these categories: refractory anemia with excess of blasts",
-                        "criterion": "myelodysplastic syndromes",
-                        "requirement": {
-                            "requirement_type": "categories",
-                            "expected_value": [
-                                "refractory anemia with excess of blasts"
-                            ]
-                        }
-                    },
-                    {
-                        "exact_snippets": "Myelodysplastic syndromes, any of these categories: ... transformation to acute leukemia",
-                        "criterion": "myelodysplastic syndromes",
-                        "requirement": {
-                            "requirement_type": "categories",
-                            "expected_value": [
-                                "transformation to acute leukemia"
-                            ]
-                        }
-                    },
-                    {
-                        "exact_snippets": "Myelodysplastic syndromes, any of these categories: ... chronic myelomonocytic leukemia",
-                        "criterion": "myelodysplastic syndromes",
-                        "requirement": {
-                            "requirement_type": "categories",
-                            "expected_value": [
-                                "chronic myelomonocytic leukemia"
-                            ]
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "or_criteria": [
-                    {
-                        "exact_snippets": "Myelodysplastic syndromes, any of these categories: refractory anemia with excess of blasts",
-                        "criterion": "myelodysplastic syndromes",
-                        "requirement": {
-                            "requirement_type": "categories",
-                            "expected_value": [
-                                "refractory anemia with excess of blasts"
-                            ]
-                        }
-                    },
-                    {
-                        "exact_snippets": "Myelodysplastic syndromes, any of these categories: ... transformation to acute leukemia",
-                        "criterion": "myelodysplastic syndromes",
-                        "requirement": {
-                            "requirement_type": "categories",
-                            "expected_value": [
-                                "transformation to acute leukemia"
-                            ]
-                        }
-                    },
-                    {
-                        "exact_snippets": "Myelodysplastic syndromes, any of these categories: ... chronic myelomonocytic leukemia",
-                        "criterion": "myelodysplastic syndromes",
-                        "requirement": {
-                            "requirement_type": "categories",
-                            "expected_value": [
-                                "chronic myelomonocytic leukemia"
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
                 "line": "Myeloproliferative disorders undergoing transformation to terminal stages.",
                 "criterions": [
                     {
-                        "exact_snippets": "Myeloproliferative disorders undergoing transformation to terminal stages.",
+                        "exact_snippets": "Myeloproliferative disorders undergoing transformation to terminal stages",
                         "criterion": "myeloproliferative disorders",
                         "requirement": {
                             "requirement_type": "transformation stage",
@@ -474,7 +265,7 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "exact_snippets": "Myeloproliferative disorders undergoing transformation to terminal stages.",
+                        "exact_snippets": "Myeloproliferative disorders undergoing transformation to terminal stages",
                         "criterion": "myeloproliferative disorders",
                         "requirement": {
                             "requirement_type": "transformation stage",
@@ -533,10 +324,10 @@
                 "criterions": [
                     {
                         "exact_snippets": "High-grade lymphoma",
-                        "criterion": "lymphoma grade",
+                        "criterion": "lymphoma",
                         "requirement": {
-                            "requirement_type": "severity",
-                            "expected_value": "high-grade"
+                            "requirement_type": "grade",
+                            "expected_value": "high"
                         }
                     },
                     {
@@ -549,9 +340,9 @@
                     },
                     {
                         "exact_snippets": "mantle cell lymphoma",
-                        "criterion": "lymphoma type",
+                        "criterion": "lymphoma subtype",
                         "requirement": {
-                            "requirement_type": "type",
+                            "requirement_type": "subtype",
                             "expected_value": "mantle cell"
                         }
                     }
@@ -562,30 +353,34 @@
                     {
                         "and_criteria": [
                             {
-                                "exact_snippets": "High-grade lymphoma",
-                                "criterion": "lymphoma grade",
-                                "requirement": {
-                                    "requirement_type": "severity",
-                                    "expected_value": "high-grade"
-                                }
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "High-grade lymphoma",
+                                        "criterion": "lymphoma",
+                                        "requirement": {
+                                            "requirement_type": "grade",
+                                            "expected_value": "high"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "refractory to standard treatment approaches",
+                                        "criterion": "treatment response",
+                                        "requirement": {
+                                            "requirement_type": "response",
+                                            "expected_value": "refractory"
+                                        }
+                                    }
+                                ]
                             },
                             {
-                                "exact_snippets": "refractory to standard treatment approaches",
-                                "criterion": "treatment response",
+                                "exact_snippets": "mantle cell lymphoma",
+                                "criterion": "lymphoma subtype",
                                 "requirement": {
-                                    "requirement_type": "response",
-                                    "expected_value": "refractory"
+                                    "requirement_type": "subtype",
+                                    "expected_value": "mantle cell"
                                 }
                             }
                         ]
-                    },
-                    {
-                        "exact_snippets": "mantle cell lymphoma",
-                        "criterion": "lymphoma type",
-                        "requirement": {
-                            "requirement_type": "type",
-                            "expected_value": "mantle cell"
-                        }
                     }
                 ]
             }
@@ -604,10 +399,10 @@
                     },
                     {
                         "exact_snippets": "precluding transplantation",
-                        "criterion": "ability to undergo transplantation",
+                        "criterion": "transplantation",
                         "requirement": {
-                            "requirement_type": "ability",
-                            "expected_value": true
+                            "requirement_type": "preclusion",
+                            "expected_value": false
                         }
                     }
                 ]
@@ -615,20 +410,24 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "exact_snippets": "No major organ dysfunction",
-                        "criterion": "major organ dysfunction",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "precluding transplantation",
-                        "criterion": "ability to undergo transplantation",
-                        "requirement": {
-                            "requirement_type": "ability",
-                            "expected_value": true
-                        }
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "No major organ dysfunction",
+                                "criterion": "major organ dysfunction",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "precluding transplantation",
+                                "criterion": "transplantation",
+                                "requirement": {
+                                    "requirement_type": "preclusion",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
                     }
                 ]
             }
@@ -717,7 +516,7 @@
                     },
                     {
                         "exact_snippets": "Informed consent from parents for minors.",
-                        "criterion": "informed consent from parents for minors",
+                        "criterion": "informed consent from parents",
                         "requirement": {
                             "requirement_type": "presence",
                             "expected_value": true
@@ -740,7 +539,7 @@
                             {
                                 "not_criteria": {
                                     "exact_snippets": "Informed consent from parents for minors.",
-                                    "criterion": "informed consent from parents for minors",
+                                    "criterion": "informed consent from parents",
                                     "requirement": {
                                         "requirement_type": "presence",
                                         "expected_value": true
@@ -753,7 +552,37 @@
                         "and_criteria": [
                             {
                                 "exact_snippets": "Informed consent from parents for minors.",
-                                "criterion": "informed consent from parents for minors",
+                                "criterion": "informed consent from parents",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "Informed consent given.",
+                                    "criterion": "informed consent",
+                                    "requirement": {
+                                        "requirement_type": "presence",
+                                        "expected_value": true
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Informed consent given.",
+                                "criterion": "informed consent",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Informed consent from parents for minors.",
+                                "criterion": "informed consent from parents",
                                 "requirement": {
                                     "requirement_type": "presence",
                                     "expected_value": true
@@ -786,9 +615,9 @@
                     },
                     {
                         "exact_snippets": "negative pregnancy test",
-                        "criterion": "pregnancy status",
+                        "criterion": "pregnancy test result",
                         "requirement": {
-                            "requirement_type": "test result",
+                            "requirement_type": "result",
                             "expected_value": "negative"
                         }
                     }
@@ -798,31 +627,36 @@
                 "condition": {
                     "and_criteria": [
                         {
-                            "exact_snippets": "Women of childbearing age",
-                            "criterion": "gender and reproductive status",
-                            "requirement": {
-                                "requirement_type": "gender",
-                                "expected_value": "female"
-                            }
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Women of childbearing age",
+                                    "criterion": "gender and reproductive status",
+                                    "requirement": {
+                                        "requirement_type": "gender",
+                                        "expected_value": "female"
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "Women of childbearing age",
+                                    "criterion": "gender and reproductive status",
+                                    "requirement": {
+                                        "requirement_type": "reproductive status",
+                                        "expected_value": "childbearing age"
+                                    }
+                                }
+                            ]
                         },
                         {
-                            "exact_snippets": "Women of childbearing age",
-                            "criterion": "gender and reproductive status",
+                            "exact_snippets": "negative pregnancy test",
+                            "criterion": "pregnancy test result",
                             "requirement": {
-                                "requirement_type": "reproductive status",
-                                "expected_value": "childbearing age"
+                                "requirement_type": "result",
+                                "expected_value": "negative"
                             }
                         }
                     ]
                 },
-                "then_criteria": {
-                    "exact_snippets": "negative pregnancy test",
-                    "criterion": "pregnancy status",
-                    "requirement": {
-                        "requirement_type": "test result",
-                        "expected_value": "negative"
-                    }
-                },
+                "then_criteria": null,
                 "else_criteria": null
             }
         },
@@ -922,7 +756,7 @@
                         "exact_snippets": "give peripheral blood stem cells",
                         "criterion": "peripheral blood stem cell donation",
                         "requirement": {
-                            "requirement_type": "ability",
+                            "requirement_type": "fitness",
                             "expected_value": true
                         }
                     },
@@ -961,50 +795,54 @@
                                     {
                                         "and_criteria": [
                                             {
-                                                "exact_snippets": "Fit to receive G-CSF",
-                                                "criterion": "G-CSF administration",
-                                                "requirement": {
-                                                    "requirement_type": "fitness",
-                                                    "expected_value": true
-                                                }
+                                                "and_criteria": [
+                                                    {
+                                                        "exact_snippets": "Fit to receive G-CSF",
+                                                        "criterion": "G-CSF administration",
+                                                        "requirement": {
+                                                            "requirement_type": "fitness",
+                                                            "expected_value": true
+                                                        }
+                                                    },
+                                                    {
+                                                        "exact_snippets": "give peripheral blood stem cells",
+                                                        "criterion": "peripheral blood stem cell donation",
+                                                        "requirement": {
+                                                            "requirement_type": "fitness",
+                                                            "expected_value": true
+                                                        }
+                                                    }
+                                                ]
                                             },
                                             {
-                                                "exact_snippets": "give peripheral blood stem cells",
-                                                "criterion": "peripheral blood stem cell donation",
+                                                "exact_snippets": "normal blood count",
+                                                "criterion": "blood count",
                                                 "requirement": {
-                                                    "requirement_type": "ability",
-                                                    "expected_value": true
+                                                    "requirement_type": "status",
+                                                    "expected_value": "normal"
                                                 }
                                             }
                                         ]
                                     },
                                     {
-                                        "exact_snippets": "normal blood count",
-                                        "criterion": "blood count",
+                                        "exact_snippets": "normotensive",
+                                        "criterion": "blood pressure",
                                         "requirement": {
                                             "requirement_type": "status",
-                                            "expected_value": "normal"
+                                            "expected_value": "normotensive"
                                         }
                                     }
                                 ]
                             },
                             {
-                                "exact_snippets": "normotensive",
-                                "criterion": "blood pressure",
+                                "exact_snippets": "no history of stroke",
+                                "criterion": "history of stroke",
                                 "requirement": {
-                                    "requirement_type": "status",
-                                    "expected_value": "normotensive"
+                                    "requirement_type": "presence",
+                                    "expected_value": false
                                 }
                             }
                         ]
-                    },
-                    {
-                        "exact_snippets": "no history of stroke",
-                        "criterion": "history of stroke",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
                     }
                 ]
             }
@@ -1014,7 +852,7 @@
                 "line": "Informed consent given.",
                 "criterions": [
                     {
-                        "exact_snippets": "Informed consent given.",
+                        "exact_snippets": "Informed consent given",
                         "criterion": "informed consent",
                         "requirement": {
                             "requirement_type": "given",
@@ -1026,7 +864,7 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "exact_snippets": "Informed consent given.",
+                        "exact_snippets": "Informed consent given",
                         "criterion": "informed consent",
                         "requirement": {
                             "requirement_type": "given",
@@ -1042,7 +880,7 @@
                 "criterions": [
                     {
                         "exact_snippets": "Patients or donors must not be pregnant",
-                        "criterion": "pregnancy",
+                        "criterion": "pregnancy status",
                         "requirement": {
                             "requirement_type": "status",
                             "expected_value": false
@@ -1050,7 +888,7 @@
                     },
                     {
                         "exact_snippets": "Patients or donors must not be ... nursing",
-                        "criterion": "nursing",
+                        "criterion": "nursing status",
                         "requirement": {
                             "requirement_type": "status",
                             "expected_value": false
@@ -1059,46 +897,26 @@
                 ]
             },
             "logical_structure": {
-                "or_criteria": [
+                "and_criteria": [
                     {
-                        "and_criteria": [
-                            {
-                                "exact_snippets": "Patients or donors must not be pregnant",
-                                "criterion": "pregnancy",
-                                "requirement": {
-                                    "requirement_type": "status",
-                                    "expected_value": false
-                                }
-                            },
-                            {
-                                "exact_snippets": "Patients or donors must not be ... nursing",
-                                "criterion": "nursing",
-                                "requirement": {
-                                    "requirement_type": "status",
-                                    "expected_value": false
-                                }
+                        "not_criteria": {
+                            "exact_snippets": "Patients or donors must not be pregnant",
+                            "criterion": "pregnancy status",
+                            "requirement": {
+                                "requirement_type": "status",
+                                "expected_value": false
                             }
-                        ]
+                        }
                     },
                     {
-                        "and_criteria": [
-                            {
-                                "exact_snippets": "Patients or donors must not be pregnant",
-                                "criterion": "pregnancy",
-                                "requirement": {
-                                    "requirement_type": "status",
-                                    "expected_value": false
-                                }
-                            },
-                            {
-                                "exact_snippets": "Patients or donors must not be ... nursing",
-                                "criterion": "nursing",
-                                "requirement": {
-                                    "requirement_type": "status",
-                                    "expected_value": false
-                                }
+                        "not_criteria": {
+                            "exact_snippets": "Patients or donors must not be ... nursing",
+                            "criterion": "nursing status",
+                            "requirement": {
+                                "requirement_type": "status",
+                                "expected_value": false
                             }
-                        ]
+                        }
                     }
                 ]
             }
@@ -1108,7 +926,7 @@
                 "line": "Must not have ECOG performance status of 2 or more.",
                 "criterions": [
                     {
-                        "exact_snippets": "ECOG performance status ... 2 or more",
+                        "exact_snippets": "ECOG performance status of 2 or more",
                         "criterion": "ECOG performance status",
                         "requirement": {
                             "requirement_type": "severity",
@@ -1124,7 +942,7 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "exact_snippets": "ECOG performance status ... 2 or more",
+                        "exact_snippets": "ECOG performance status of 2 or more",
                         "criterion": "ECOG performance status",
                         "requirement": {
                             "requirement_type": "severity",
@@ -1144,7 +962,7 @@
                 "criterions": [
                     {
                         "exact_snippets": "No severe psychiatric illness in patient",
-                        "criterion": "psychiatric illness in patient",
+                        "criterion": "psychiatric illness",
                         "requirement": {
                             "requirement_type": "severity",
                             "expected_value": "not severe"
@@ -1171,7 +989,7 @@
                         "criterion": "mental deficiency",
                         "requirement": {
                             "requirement_type": "severity",
-                            "expected_value": "sufficiently severe to make informed consent impossible"
+                            "expected_value": "making informed consent impossible"
                         }
                     }
                 ]
@@ -1181,42 +999,50 @@
                     {
                         "and_criteria": [
                             {
-                                "exact_snippets": "No severe psychiatric illness in patient",
-                                "criterion": "psychiatric illness in patient",
-                                "requirement": {
-                                    "requirement_type": "severity",
-                                    "expected_value": "not severe"
-                                }
+                                "and_criteria": [
+                                    {
+                                        "not_criteria": {
+                                            "exact_snippets": "No severe psychiatric illness in patient",
+                                            "criterion": "psychiatric illness",
+                                            "requirement": {
+                                                "requirement_type": "severity",
+                                                "expected_value": "not severe"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "not_criteria": {
+                                            "exact_snippets": "Mental deficiency sufficiently severe as to make compliance with the BMT treatment unlikely",
+                                            "criterion": "mental deficiency",
+                                            "requirement": {
+                                                "requirement_type": "severity",
+                                                "expected_value": "sufficiently severe to make compliance with the BMT treatment unlikely"
+                                            }
+                                        }
+                                    }
+                                ]
                             },
                             {
-                                "exact_snippets": "No severe psychiatric illness in ... donor",
-                                "criterion": "psychiatric illness in donor",
-                                "requirement": {
-                                    "requirement_type": "severity",
-                                    "expected_value": "not severe"
+                                "not_criteria": {
+                                    "exact_snippets": "Mental deficiency ... making informed consent impossible",
+                                    "criterion": "mental deficiency",
+                                    "requirement": {
+                                        "requirement_type": "severity",
+                                        "expected_value": "making informed consent impossible"
+                                    }
                                 }
                             }
                         ]
                     },
                     {
-                        "or_criteria": [
-                            {
-                                "exact_snippets": "Mental deficiency sufficiently severe as to make compliance with the BMT treatment unlikely",
-                                "criterion": "mental deficiency",
-                                "requirement": {
-                                    "requirement_type": "severity",
-                                    "expected_value": "sufficiently severe to make compliance with the BMT treatment unlikely"
-                                }
-                            },
-                            {
-                                "exact_snippets": "Mental deficiency ... making informed consent impossible",
-                                "criterion": "mental deficiency",
-                                "requirement": {
-                                    "requirement_type": "severity",
-                                    "expected_value": "sufficiently severe to make informed consent impossible"
-                                }
+                        "not_criteria": {
+                            "exact_snippets": "No severe psychiatric illness in ... donor",
+                            "criterion": "psychiatric illness in donor",
+                            "requirement": {
+                                "requirement_type": "severity",
+                                "expected_value": "not severe"
                             }
-                        ]
+                        }
                     }
                 ]
             }
@@ -1272,11 +1098,11 @@
                         "exact_snippets": "DLCO must not be less than 65% predicted.",
                         "criterion": "DLCO",
                         "requirement": {
-                            "requirement_type": "quantity",
+                            "requirement_type": "predicted percentage",
                             "expected_value": {
                                 "operator": ">=",
                                 "value": 65,
-                                "unit": "% predicted"
+                                "unit": "%"
                             }
                         }
                     }
@@ -1288,11 +1114,11 @@
                         "exact_snippets": "DLCO must not be less than 65% predicted.",
                         "criterion": "DLCO",
                         "requirement": {
-                            "requirement_type": "quantity",
+                            "requirement_type": "predicted percentage",
                             "expected_value": {
                                 "operator": ">=",
                                 "value": 65,
-                                "unit": "% predicted"
+                                "unit": "%"
                             }
                         }
                     }
@@ -1330,6 +1156,41 @@
                         }
                     }
                 }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must not have serum creatinine greater than 3 mg/dl.",
+                "criterions": [
+                    {
+                        "exact_snippets": "serum creatinine greater than 3 mg/dl",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "mg/dl"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "serum creatinine greater than 3 mg/dl",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "mg/dl"
+                            }
+                        }
+                    }
+                ]
             }
         },
         {
@@ -1420,6 +1281,90 @@
         },
         {
             "identified_line": {
+                "line": "Must not have history of other malignancies except basal cell or squamous carcinoma of the skin, positive PAP smear and subsequent negative follow up.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must not have history of other malignancies",
+                        "criterion": "history of other malignancies",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "except basal cell or squamous carcinoma of the skin",
+                        "criterion": "basal cell or squamous carcinoma of the skin",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "positive PAP smear",
+                        "criterion": "positive PAP smear",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "subsequent negative follow up",
+                        "criterion": "negative follow up after positive PAP smear",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "not_criteria": {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Must not have history of other malignancies",
+                                "criterion": "history of other malignancies",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "except basal cell or squamous carcinoma of the skin",
+                                "criterion": "basal cell or squamous carcinoma of the skin",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "positive PAP smear",
+                            "criterion": "positive PAP smear",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        },
+                        {
+                            "exact_snippets": "subsequent negative follow up",
+                            "criterion": "negative follow up after positive PAP smear",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
                 "line": "Donor must be fit to receive G-CSF and undergo apheresis.",
                 "criterions": [
                     {
@@ -1466,7 +1411,7 @@
                 "line": "Must not fail to mobilize adequate numbers of CD34+ cells after two cycles of G-CSF.",
                 "criterions": [
                     {
-                        "exact_snippets": "fail to mobilize adequate numbers of CD34+ cells",
+                        "exact_snippets": "Must not fail to mobilize adequate numbers of CD34+ cells",
                         "criterion": "CD34+ cell mobilization",
                         "requirement": {
                             "requirement_type": "adequacy",
@@ -1474,11 +1419,15 @@
                         }
                     },
                     {
-                        "exact_snippets": "two cycles of G-CSF",
+                        "exact_snippets": "after two cycles of G-CSF",
                         "criterion": "G-CSF cycles",
                         "requirement": {
                             "requirement_type": "quantity",
-                            "expected_value": true
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 2,
+                                "unit": "cycles"
+                            }
                         }
                     }
                 ]
@@ -1486,26 +1435,36 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "not_criteria": {
-                            "and_criteria": [
-                                {
-                                    "exact_snippets": "fail to mobilize adequate numbers of CD34+ cells",
-                                    "criterion": "CD34+ cell mobilization",
-                                    "requirement": {
-                                        "requirement_type": "adequacy",
-                                        "expected_value": true
-                                    }
-                                },
-                                {
-                                    "exact_snippets": "two cycles of G-CSF",
-                                    "criterion": "G-CSF cycles",
-                                    "requirement": {
-                                        "requirement_type": "quantity",
-                                        "expected_value": true
+                        "and_criteria": [
+                            {
+                                "not_criteria": {
+                                    "not_criteria": {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "Must not fail to mobilize adequate numbers of CD34+ cells",
+                                                "criterion": "CD34+ cell mobilization",
+                                                "requirement": {
+                                                    "requirement_type": "adequacy",
+                                                    "expected_value": true
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "after two cycles of G-CSF",
+                                                "criterion": "G-CSF cycles",
+                                                "requirement": {
+                                                    "requirement_type": "quantity",
+                                                    "expected_value": {
+                                                        "operator": "=",
+                                                        "value": 2,
+                                                        "unit": "cycles"
+                                                    }
+                                                }
+                                            }
+                                        ]
                                     }
                                 }
-                            ]
-                        }
+                            }
+                        ]
                     }
                 ]
             }
@@ -1525,60 +1484,171 @@
     "failed_miscellaneous": [
         {
             "identified_line": {
-                "line": "Chronic myelogenous leukemia, any of these categories: accelerated phase or blast transformation.",
+                "line": "Acute lymphoblastic leukemia, any of these categories: Adults (greater than 18 years) in any remission with high-risk features (presenting leukocyte count greater than 100,000/cu mm, Karyotypes t9; 22, t4, t19, t11, biphenotypic leukemia). All second remissions, primary induction failure including partial remission, partially responding or untreated relapse.",
                 "criterions": [
                     {
-                        "exact_snippets": "Chronic myelogenous leukemia",
-                        "criterion": "chronic myelogenous leukemia",
+                        "exact_snippets": "Acute lymphoblastic leukemia",
+                        "criterion": "acute lymphoblastic leukemia",
                         "requirement": {
                             "requirement_type": "presence",
                             "expected_value": true
                         }
                     },
                     {
-                        "exact_snippets": "any of these categories: accelerated phase or blast transformation",
-                        "criterion": "leukemia phase",
+                        "exact_snippets": "Adults (greater than 18 years)",
+                        "criterion": "age",
                         "requirement": {
-                            "requirement_type": "category",
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "in any remission",
+                        "criterion": "remission status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "any remission"
+                        }
+                    },
+                    {
+                        "exact_snippets": "high-risk features",
+                        "criterion": "high-risk features",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "presenting leukocyte count greater than 100,000/cu mm",
+                        "criterion": "leukocyte count",
+                        "requirement": {
+                            "requirement_type": "count",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 100000,
+                                "unit": "cu mm"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Karyotypes t9; 22, t4, t19, t11",
+                        "criterion": "karyotypes",
+                        "requirement": {
+                            "requirement_type": "specific karyotypes",
                             "expected_value": [
-                                "accelerated phase",
-                                "blast transformation"
+                                "t9; 22",
+                                "t4",
+                                "t19",
+                                "t11"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "biphenotypic leukemia",
+                        "criterion": "biphenotypic leukemia",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "All second remissions",
+                        "criterion": "second remission",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "all"
+                        }
+                    },
+                    {
+                        "exact_snippets": "primary induction failure",
+                        "criterion": "primary induction failure",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "partial remission",
+                        "criterion": "partial remission",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "partially responding",
+                        "criterion": "response status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "partially responding"
+                        }
+                    },
+                    {
+                        "exact_snippets": "untreated relapse",
+                        "criterion": "untreated relapse",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Myelodysplastic syndromes, any of these categories: refractory anemia with excess of blasts, transformation to acute leukemia, chronic myelomonocytic leukemia.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Myelodysplastic syndromes, any of these categories: refractory anemia with excess of blasts",
+                        "criterion": "myelodysplastic syndromes",
+                        "requirement": {
+                            "requirement_type": "categories",
+                            "expected_value": [
+                                "refractory anemia with excess of blasts"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Myelodysplastic syndromes, any of these categories: ... transformation to acute leukemia",
+                        "criterion": "myelodysplastic syndromes",
+                        "requirement": {
+                            "requirement_type": "categories",
+                            "expected_value": [
+                                "transformation to acute leukemia"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Myelodysplastic syndromes, any of these categories: ... chronic myelomonocytic leukemia",
+                        "criterion": "myelodysplastic syndromes",
+                        "requirement": {
+                            "requirement_type": "categories",
+                            "expected_value": [
+                                "chronic myelomonocytic leukemia"
                             ]
                         }
                     }
                 ]
             },
             "logical_structure": {
-                "and_criteria": [
-                    {
-                        "exact_snippets": "Chronic myelogenous leukemia",
-                        "criterion": "chronic myelogenous leukemia",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "or_criteria": [
-                            {
-                                "exact_snippets": "any of these categories: accelerated phase or blast transformation",
-                                "criterion": "leukemia phase",
-                                "requirement": {
-                                    "requirement_type": "category",
-                                    "expected_value": "accelerated phase"
-                                }
-                            },
-                            {
-                                "exact_snippets": "any of these categories: accelerated phase or blast transformation",
-                                "criterion": "leukemia phase",
-                                "requirement": {
-                                    "requirement_type": "category",
-                                    "expected_value": "blast transformation"
-                                }
-                            }
-                        ]
-                    }
-                ]
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
             }
         },
         {
@@ -1599,144 +1669,12 @@
                 ]
             },
             "logical_structure": {
-                "or_criteria": [
-                    {
-                        "exact_snippets": "ECOG performance status of 0 or 1.",
-                        "criterion": "ECOG performance status",
-                        "requirement": {
-                            "requirement_type": "value",
-                            "expected_value": "0"
-                        }
-                    },
-                    {
-                        "exact_snippets": "ECOG performance status of 0 or 1.",
-                        "criterion": "ECOG performance status",
-                        "requirement": {
-                            "requirement_type": "value",
-                            "expected_value": "1"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "Must not have serum creatinine greater than 3 mg/dl.",
-                "criterions": [
-                    {
-                        "exact_snippets": "serum creatinine greater than 3 mg/dl",
-                        "criterion": "serum creatinine",
-                        "requirement": {
-                            "requirement_type": "level",
-                            "expected_value": {
-                                "operator": "<=",
-                                "value": 3,
-                                "unit": "mg/dl"
-                            }
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "not_criteria": {
-                    "exact_snippets": "serum creatinine greater than 3 mg/dl",
-                    "criterion": "serum creatinine",
-                    "requirement": {
-                        "requirement_type": "level",
-                        "expected_value": {
-                            "operator": ">",
-                            "value": 3,
-                            "unit": "mg/dl"
-                        }
-                    }
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
                 }
-            }
-        },
-        {
-            "identified_line": {
-                "line": "Must not have history of other malignancies except basal cell or squamous carcinoma of the skin, positive PAP smear and subsequent negative follow up.",
-                "criterions": [
-                    {
-                        "exact_snippets": "Must not have history of other malignancies",
-                        "criterion": "history of other malignancies",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "except basal cell or squamous carcinoma of the skin",
-                        "criterion": "basal cell or squamous carcinoma of the skin",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "positive PAP smear",
-                        "criterion": "positive PAP smear",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    },
-                    {
-                        "exact_snippets": "subsequent negative follow up",
-                        "criterion": "subsequent negative follow up",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "not_criteria": {
-                            "and_criteria": [
-                                {
-                                    "exact_snippets": "Must not have history of other malignancies",
-                                    "criterion": "history of other malignancies",
-                                    "requirement": {
-                                        "requirement_type": "presence",
-                                        "expected_value": true
-                                    }
-                                },
-                                {
-                                    "not_criteria": {
-                                        "exact_snippets": "except basal cell or squamous carcinoma of the skin",
-                                        "criterion": "basal cell or squamous carcinoma of the skin",
-                                        "requirement": {
-                                            "requirement_type": "presence",
-                                            "expected_value": true
-                                        }
-                                    }
-                                },
-                                {
-                                    "not_criteria": {
-                                        "exact_snippets": "positive PAP smear",
-                                        "criterion": "positive PAP smear",
-                                        "requirement": {
-                                            "requirement_type": "presence",
-                                            "expected_value": true
-                                        }
-                                    }
-                                },
-                                {
-                                    "not_criteria": {
-                                        "exact_snippets": "subsequent negative follow up",
-                                        "criterion": "subsequent negative follow up",
-                                        "requirement": {
-                                            "requirement_type": "presence",
-                                            "expected_value": true
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                ]
             }
         }
     ]

@@ -48,3 +48,32 @@ def curl_with_status_check(url: str) -> dict:
 
     # Return the parsed JSON response
     return response.json()
+
+
+def get_non_empty_input(
+    prompt: str, empty_message: str = "Input cannot be empty. Please try again."
+) -> str:
+    """
+    Repeatedly prompts the user for input until a non-empty response is provided.
+
+    This function displays a prompt to the user and collects their input. If the user
+    provides an empty string (or just whitespace), it displays the specified empty_message
+    and prompts again. This continues until a non-empty response is received.
+
+    Args:
+        prompt (str): The question or prompt to display to the user.
+        empty_message (str): The message to display if the user provides an empty response.
+                            Defaults to "Input cannot be empty. Please try again."
+
+    Returns:
+        str: The non-empty user input (with leading/trailing whitespace removed).
+    """
+    while True:
+        if user_input := input(prompt).strip():
+            if user_input.lower() in ["quit", "exit"]:
+                print("Exiting program.")
+                import sys
+
+                sys.exit(0)
+            return user_input.strip()
+        print(empty_message)

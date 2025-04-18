@@ -108,8 +108,8 @@
                         "exact_snippets": "Prior malignancy allowed provided the treating clinician considers the patient cured",
                         "criterion": "prior malignancy",
                         "requirement": {
-                            "requirement_type": "status",
-                            "expected_value": "cured"
+                            "requirement_type": "cured status",
+                            "expected_value": true
                         }
                     }
                 ]
@@ -148,20 +148,20 @@
                                                 "requirement_type": "willingness",
                                                 "expected_value": true
                                             }
-                                        },
-                                        {
-                                            "exact_snippets": "Prior malignancy allowed provided the treating clinician considers the patient cured",
-                                            "criterion": "prior malignancy",
-                                            "requirement": {
-                                                "requirement_type": "status",
-                                                "expected_value": "cured"
-                                            }
                                         }
                                     ]
                                 },
                                 "else_criteria": null
                             }
                         ]
+                    },
+                    {
+                        "exact_snippets": "Prior malignancy allowed provided the treating clinician considers the patient cured",
+                        "criterion": "prior malignancy",
+                        "requirement": {
+                            "requirement_type": "cured status",
+                            "expected_value": true
+                        }
                     }
                 ]
             }
@@ -215,36 +215,48 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "exact_snippets": "Biologic therapy: No prior therapy",
-                        "criterion": "biologic therapy",
-                        "requirement": {
-                            "requirement_type": "prior therapy",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "Chemotherapy: No prior therapy",
-                        "criterion": "chemotherapy",
-                        "requirement": {
-                            "requirement_type": "prior therapy",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "Endocrine therapy: No prior therapy",
-                        "criterion": "endocrine therapy",
-                        "requirement": {
-                            "requirement_type": "prior therapy",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "Radiotherapy: No prior therapy",
-                        "criterion": "radiotherapy",
-                        "requirement": {
-                            "requirement_type": "prior therapy",
-                            "expected_value": false
-                        }
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "Biologic therapy: No prior therapy",
+                                                "criterion": "biologic therapy",
+                                                "requirement": {
+                                                    "requirement_type": "prior therapy",
+                                                    "expected_value": false
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "Chemotherapy: No prior therapy",
+                                                "criterion": "chemotherapy",
+                                                "requirement": {
+                                                    "requirement_type": "prior therapy",
+                                                    "expected_value": false
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "Endocrine therapy: No prior therapy",
+                                        "criterion": "endocrine therapy",
+                                        "requirement": {
+                                            "requirement_type": "prior therapy",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "Radiotherapy: No prior therapy",
+                                "criterion": "radiotherapy",
+                                "requirement": {
+                                    "requirement_type": "prior therapy",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
                     },
                     {
                         "exact_snippets": "Surgery: Prior biopsy or excision allowed",
@@ -275,7 +287,7 @@
                     },
                     {
                         "exact_snippets": "suitable for treatment with radiotherapy",
-                        "criterion": "suitability for radiotherapy",
+                        "criterion": "suitability for treatment with radiotherapy",
                         "requirement": {
                             "requirement_type": "suitability",
                             "expected_value": true
@@ -359,15 +371,15 @@
                     },
                     {
                         "exact_snippets": "Patients with tumors of the oral cavity or oropharynx may additionally elect randomization to nodal irradiation vs. no further therapy provided there is no second primary",
-                        "criterion": "oral cavity or oropharynx tumors",
+                        "criterion": "tumors of the oral cavity or oropharynx",
                         "requirement": {
-                            "requirement_type": "randomization",
+                            "requirement_type": "randomization option",
                             "expected_value": "nodal irradiation vs. no further therapy"
                         }
                     },
                     {
                         "exact_snippets": "Patients with tumors of the oral cavity or oropharynx may additionally elect randomization to nodal irradiation vs. no further therapy provided there is no second primary",
-                        "criterion": "oral cavity or oropharynx tumors",
+                        "criterion": "tumors of the oral cavity or oropharynx",
                         "requirement": {
                             "requirement_type": "condition",
                             "expected_value": "no second primary"

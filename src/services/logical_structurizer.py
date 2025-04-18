@@ -105,7 +105,8 @@ def logically_structurize_line(
     # Define the system prompt for the LLM
     prompt = (
         "You are an expert in clinical trial eligibility criteria.\n"
-        "Given the following line from an Oncological Clinical Trial Eligibility Criteria and its individual criteria, structurize the criteria into logical relationships.\n"
+        "Given the following line from an Oncological Clinical Trial Eligibility Criteria and its individual atomic criteria, structurize the criteria into logical relationships.\n"
+        "You may only use the atomic criteria provided, do not add any new criteria. Instead you are to \n"
     )
 
     # Add context about how this criteria type affects qualification
@@ -166,16 +167,29 @@ def confirm_criteria_presence(logical_line: LogicalLine) -> None:
     logger.info("Logical criteria: %s", logical_criteria)
     logger.info("Checking for missing criteria...")
 
-    # Check if any criteria are missing
+    # Check if criteria sets match exactly (no missing, no extras)
+    identified_set = set(identified_criteria)
+    logical_set = set(logical_criteria)
 
-    if missing_criteria := any(
-        identified_criterion not in logical_criteria
-        for identified_criterion in identified_criteria
-    ):
-        logger.error("Missing criteria in logical structure: %s", missing_criteria)
-        raise ValueError(f"Missing criteria in logical structure: {missing_criteria}")
+    if identified_set != logical_set:
+        identifyDifference(identified_set, logical_set)
     else:
-        logger.info("All criteria present in logical structure.")
+        logger.info("Criteria sets match exactly - no missing or extra criteria.")
+
+
+# TODO Rename this here and in `confirm_criteria_presence`
+def identifyDifference(identified_set, logical_set):
+    missing = identified_set - logical_set
+    extra = logical_set - identified_set
+
+    error_msg = ""
+    if missing:
+        error_msg += f"Missing criteria in logical structure: {missing}. "
+    if extra:
+        error_msg += f"Extra criteria in logical structure: {extra}. "
+
+    logger.error(error_msg)
+    raise ValueError(error_msg)
 
 
 def extract_criteria_from_logical_structure(
