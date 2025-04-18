@@ -50,6 +50,53 @@ def get_all_matches(
     return [match for match, score, _ in matches]
 
 
+def find_candidate_criteria(
+    norm_crit: str,
+    norm_req: str,
+    agg_table: AggregatedTruthTable,
+    score_cutoff: int = 75,
+) -> set[str]:
+    """
+    Finds candidate criterion keys for a given user criterion and requirement by:
+    1. Exact match on criterion (C-C).
+    2. Exact match on combined criterion + requirement (CRT-CRT).
+    3. Fuzzy match combinations: C-C, CRT-C, CRT-CRT, C-CRT.
+    """
+    criteria_keys = list(agg_table.criteria.keys())
+    # Map composite strings ("criterion requirement") to criterion keys
+    comb_map = {
+        f"{crit_key} {req_key}": crit_key
+        for crit_key in criteria_keys
+        for req_key in agg_table.criteria[crit_key].requirements.keys()
+    }
+    composite_keys = list(comb_map.keys())
+
+    candidates: set[str] = set()
+    # Exact C-C
+    if norm_crit in agg_table.criteria:
+        candidates.add(norm_crit)
+    # Exact CRT-CRT
+    combined = f"{norm_crit} {norm_req}"
+    if combined in comb_map:
+        candidates.add(comb_map[combined])
+    # If exact match found, return immediately
+    if candidates:
+        return candidates
+
+    # Fuzzy C-C
+    candidates.update(get_all_matches(norm_crit, criteria_keys, score_cutoff))
+    # Fuzzy CRT-C
+    candidates.update(get_all_matches(combined, criteria_keys, score_cutoff))
+    # Fuzzy CRT-CRT
+    matched_composite = get_all_matches(combined, composite_keys, score_cutoff)
+    candidates.update(comb_map[comp] for comp in matched_composite)
+    # Fuzzy C-CRT
+    matched_composite2 = get_all_matches(norm_crit, composite_keys, score_cutoff)
+    candidates.update(comb_map[comp] for comp in matched_composite2)
+
+    return candidates
+
+
 def update_truth_table_with_user_response(
     user_response: ParsedCriterion, agg_table: AggregatedTruthTable
 ) -> set[str]:
@@ -58,26 +105,9 @@ def update_truth_table_with_user_response(
     for response in user_response.responses:
         norm_crit = user_response.criterion.strip().lower()
         norm_req = response.requirement_type.strip().lower()
-        combo = norm_crit + " " + norm_req
 
-        candidate_criteria = set()
-
-        # Stage 1: Fuzzy match criterion alone.
-        candidates1 = get_all_matches(norm_crit, list(agg_table.criteria.keys()))
-        candidate_criteria.update(candidates1)
-
-        # Stage 2: Fuzzy match combined (criterion + requirement) against criteria names.
-        for crit_key in agg_table.criteria.keys():
-            if fuzz.token_sort_ratio(combo, crit_key) >= 75:
-                candidate_criteria.add(crit_key)
-
-        # Stage 3: Fuzzy match combined (criterion + requirement) against each "criterion key + requirement key".
-        for crit_key, crit_obj in agg_table.criteria.items():
-            for req_key in crit_obj.requirements.keys():
-                comb_str = crit_key + " " + req_key
-                if fuzz.token_sort_ratio(combo, comb_str) >= 75:
-                    candidate_criteria.add(crit_key)
-
+        # Determine matching aggregated criteria (exact first, then fuzzy on C-C, CRT-C, CRT-CRT, C-CRT)
+        candidate_criteria = find_candidate_criteria(norm_crit, norm_req, agg_table)
         if not candidate_criteria:
             logger.warning(
                 "No matching aggregated criterion for response with criterion '%s' and requirement '%s'.",
