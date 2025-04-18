@@ -1,10 +1,11 @@
 # patient_matching/user_answer_parser.py
 import logging
 from datetime import datetime
-from typing import List, Union
+from typing import List
 
 from pydantic import BaseModel, Field
 
+from src.models.identified_criteria import ExpectedValueType
 from src.repositories.trial_repository import export_pydantic_to_json
 from src.utils.config import TEMPERATURE, TIMEOUT
 from src.utils.openai_client import get_openai_client
@@ -20,7 +21,7 @@ class RequirementResponse(BaseModel):
     requirement_type: str = Field(
         ..., description="The type of requirement (e.g., 'minimum', 'status')."
     )
-    user_value: Union[str, int, float, bool] = Field(
+    user_value: ExpectedValueType = Field(
         ..., description="The value provided by the user."
     )
 

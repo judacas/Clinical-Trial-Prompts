@@ -26,7 +26,7 @@ from src.repositories.trial_repository import (
 from src.utils.config import DEFAULT_OUTPUT_DIR, setup_logging
 from src.utils.helpers import get_non_empty_input
 
-setup_logging(log_to_file=True, log_level=logging.INFO)
+setup_logging(log_to_file=True, log_level=logging.DEBUG)
 
 
 def get_trial_limit() -> int:

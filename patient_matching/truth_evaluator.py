@@ -8,7 +8,6 @@ The LLM returns a structured response (llmEvaluation), whose 'evaluation' field 
 """
 
 import logging
-from typing import Any
 
 from patient_matching.aggregated_trial_truth import (
     AggregatedTruthTable,
@@ -18,22 +17,21 @@ from patient_matching.user_answer_parser import ParsedCriterion
 from pydantic import BaseModel, Field
 from rapidfuzz import fuzz, process
 
-from src.models.identified_criteria import ExpectedValueType
+from src.models.identified_criteria import ExpectedValueType  # , LLMNumericalComparison
 from src.utils.config import TEMPERATURE, TIMEOUT
 from src.utils.openai_client import get_openai_client
 
 logger = logging.getLogger(__name__)
 
 
-class llmEvaluation(BaseModel):
+class EvaluationResult(BaseModel):
     """
-    Represents the response from the LLM evaluation.
+    Generic result for any evaluation, containing an explanation and the evaluation value.
     """
 
-    explanation: str = Field(..., description="Explanation of your thought process.")
+    explanation: str = Field(..., description="Explanation of the evaluation result.")
     evaluation: TruthValue = Field(
-        ...,
-        description="Evaluation result: true, false, or unknown. Unknown if the LLM cannot determine the truth value.",
+        ..., description="Evaluation result: true, false, or unknown."
     )
 
 
@@ -122,9 +120,17 @@ def update_truth_table_with_user_response(
             # Instead of fuzzy matching requirement, just consider every requirement in this criterion.
             for req_key, agg_requirement in agg_criterion.requirements.items():
                 for key, group in agg_requirement.groups.items():
+                    # Debug: log types and values before conversion
+                    logger.debug(
+                        "Before evaluate_expected_value: group.expected_value type=%s value=%r, response.user_value type=%s value=%r",
+                        type(group.expected_value),
+                        group.expected_value,
+                        type(response.user_value),
+                        response.user_value,
+                    )
                     eval_obj = evaluate_expected_value(
-                        str(group.expected_value),
-                        str(response.user_value),
+                        group.expected_value,
+                        response.user_value,
                         req_key,
                         crit_key,
                     )
@@ -141,17 +147,82 @@ def update_truth_table_with_user_response(
     return modified_trial_ids
 
 
+def evaluate_bool_values(
+    expected_value: bool,
+    user_value: bool,
+) -> EvaluationResult:
+    """
+    Evaluates two boolean values for equality and returns an EvaluationResult.
+    """
+    match = user_value == expected_value
+    eval_val = TruthValue.TRUE if match else TruthValue.FALSE
+    explanation = (
+        f"Boolean comparison: expected {expected_value}, "
+        f"user provided {user_value}, "
+        f"{'match' if match else 'mismatch'}."
+    )
+    return EvaluationResult(explanation=explanation, evaluation=eval_val)
+
+
+# def evaluate_numerical_comparison(
+#     expected_value: Any,
+#     user_value: Any,
+# ) -> EvaluationResult:
+#     """
+#     Evaluates two LLMNumericalComparison objects if their units match.
+#     Returns an EvaluationResult. If units do not match, returns None.
+#     """
+#     # Only handle EQUAL_TO for now, can expand as needed
+#     if expected_value.operator == user_value.operator == "=":
+#         match = user_value.value == expected_value.value
+#     elif expected_value.operator == user_value.operator == "<":
+#     eval_val = TruthValue.TRUE if match else TruthValue.FALSE
+#     explanation = (
+#         f"Numerical comparison: expected {expected_value.value} {expected_value.unit}, "
+#         f"user provided {user_value.value} {user_value.unit}, "
+#         f"{'match' if match else 'mismatch'}."
+#     )
+#     return EvaluationResult(explanation=explanation, evaluation=eval_val)
+
+
 def evaluate_expected_value(
     expected_value: ExpectedValueType,
-    user_value: Any,
+    user_value: ExpectedValueType,
     requirement_type: str,
     criterion: str,
-) -> llmEvaluation:
+) -> EvaluationResult:
+    # Debug: log types and values at entry
+    logger.debug(
+        "IN evaluate_expected_value: expected_value type=%s value=%r, user_value type=%s value=%r",
+        type(expected_value),
+        expected_value,
+        type(user_value),
+        user_value,
+    )
     """
     Evaluates whether the user_value satisfies the expected_value for the given requirement type.
-    Both expected_value and user_value are converted to strings and then provided to the LLM,
-    which returns a structured response conforming to the llmEvaluation schema.
+    Dispatches to the appropriate evaluator based on type.
     """
+
+    if isinstance(expected_value, bool) and isinstance(user_value, bool):
+        logger.debug(
+            "Directly evaluating boolean: expected_value=%s, user_value=%s",
+        )
+        return evaluate_bool_values(expected_value, user_value)
+    # elif (
+    #     isinstance(expected_value, LLMNumericalComparison)
+    #     and isinstance(user_value, LLMNumericalComparison)
+    #     and expected_value.unit.strip().lower() == user_value.unit.strip().lower()
+    # ):
+    #     logger.debug(
+    #         "Directly evaluating LLMNumericalComparison: expected_value=%r, user_value=%r",
+    #         expected_value,
+    #         user_value,
+    #     )
+    #     result = evaluate_numerical_comparison(expected_value, user_value)
+    #     if result is not None:
+    #         return result
+    # Fallback to LLM evaluation for other types or mismatched units
     expected_str = str(expected_value)
     user_str = str(user_value)
     return evaluate_value_with_llm(expected_str, user_str, requirement_type, criterion)
@@ -159,7 +230,18 @@ def evaluate_expected_value(
 
 def evaluate_value_with_llm(
     expected_str: str, user_str: str, requirement_type: str, criterion: str
-) -> llmEvaluation:
+) -> EvaluationResult:
+    # Debug: log types and values at entry
+    logger.debug(
+        "IN evaluate_value_with_llm: expected_str type=%s value=%r, user_str type=%s value=%r",
+        type(expected_str),
+        expected_str,
+        type(user_str),
+        user_str,
+    )
+    logger.debug(
+        "Evaluating with LLM: expected_str=%s, user_str=%s", expected_str, user_str
+    )
     """
     Calls an LLM to evaluate whether the user value satisfies the expected value.
     Both values are provided in their serialized form.
@@ -194,7 +276,7 @@ def evaluate_value_with_llm(
                 {"role": "user", "content": user_str},
             ],
             temperature=TEMPERATURE,
-            response_format=llmEvaluation,
+            response_format=EvaluationResult,
             timeout=TIMEOUT,
         )
         if response := completion.choices[0].message.parsed:

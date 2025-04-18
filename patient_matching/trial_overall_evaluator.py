@@ -34,25 +34,21 @@ logger = logging.getLogger(__name__)
 # Three-Valued Logic Functions for Operator Combination
 # ---------------------------------------------------------------------------
 def combine_and(values: List[TruthValue]) -> TruthValue:
-    if any(val == TruthValue.FALSE for val in values):
+    if TruthValue.FALSE in values:
         return TruthValue.FALSE
-    if any(val == TruthValue.UNKNOWN for val in values):
-        return TruthValue.UNKNOWN
-    return TruthValue.TRUE
+    return TruthValue.UNKNOWN if TruthValue.UNKNOWN in values else TruthValue.TRUE
 
 
 def combine_or(values: List[TruthValue]) -> TruthValue:
-    if any(val == TruthValue.TRUE for val in values):
+    if TruthValue.TRUE in values:
         return TruthValue.TRUE
-    if any(val == TruthValue.UNKNOWN for val in values):
-        return TruthValue.UNKNOWN
-    return TruthValue.FALSE
+    return TruthValue.UNKNOWN if TruthValue.UNKNOWN in values else TruthValue.FALSE
 
 
 def combine_xor(values: List[TruthValue]) -> TruthValue:
-    if any(val == TruthValue.UNKNOWN for val in values):
+    if TruthValue.UNKNOWN in values:
         return TruthValue.UNKNOWN
-    true_count = sum(1 for val in values if val == TruthValue.TRUE)
+    true_count = values.count(TruthValue.TRUE)
     return TruthValue.TRUE if true_count % 2 == 1 else TruthValue.FALSE
 
 
@@ -169,10 +165,9 @@ def evaluate_logical_structure_for_trial(
         key = str(structure.requirement.expected_value)
         try:
             group = agg_table.criteria[norm_crit].requirements[norm_req].groups[key]
-            if trial_id in group.trial_ids:
-                return group.truth_value
-            else:
-                return TruthValue.UNKNOWN
+            return (
+                group.truth_value if trial_id in group.trial_ids else TruthValue.UNKNOWN
+            )
         except KeyError:
             logger.warning(
                 "Aggregator lookup failed for criterion '%s', requirement '%s', key '%s' for trial %s.",
