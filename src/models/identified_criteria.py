@@ -93,6 +93,10 @@ class LLMNumericalComparison(BaseModel):
         return hash((self.operator, self.value, self.unit))
 
 
+# TODO : consider combining boolean algebra with numerical comparison to create a more complex model that can handle both must be within a certain range and must be outside a certain range
+# right now if we have something that for example must be <5 or >10, we can't implement because we assume and operator between the two comparisons
+
+
 class LLMRange(BaseModel):
     """
     Represents a range via multiple NumericalComparison objects to be used in expected value.
@@ -122,6 +126,8 @@ class LLMRange(BaseModel):
 # - Few-shot examples
 # - Reinforcement fine-tuning for this specific task
 
+ExpectedValueType = Union[bool, str, List[str], LLMNumericalComparison, LLMRange]
+
 
 class Requirement(BaseModel):
     """
@@ -132,17 +138,13 @@ class Requirement(BaseModel):
         ...,
         description="What about the criterion is being tested (e.g presence, severity, quantity, N/A if it doesn't make sense for the criterion to have an attribute (eg. age)).",
     )
-    expected_value: Union[bool, str, List[str], LLMNumericalComparison, LLMRange] = (
-        Field(
-            ...,
-            description="The expected value for the requirement. Only use string if nothing else is applicable.",
-        )
+    expected_value: ExpectedValueType = Field(
+        ...,
+        description="The expected value for the requirement. Only use string if nothing else is applicable.",
     )
 
     def __eq__(self, other):
-        if isinstance(other, Requirement):
-            return str(self) == str(other)
-        return False
+        return str(self) == str(other) if isinstance(other, Requirement) else False
 
     def __hash__(self):
         return hash((self.requirement_type, self.expected_value))

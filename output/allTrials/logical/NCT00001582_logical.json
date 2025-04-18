@@ -98,31 +98,6 @@
         },
         {
             "identified_line": {
-                "line": "Exclusion Criteria for Apheresis Alone:",
-                "criterions": [
-                    {
-                        "exact_snippets": "Exclusion Criteria for Apheresis Alone",
-                        "criterion": "apheresis",
-                        "requirement": {
-                            "requirement_type": "eligibility",
-                            "expected_value": false
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "not_criteria": {
-                    "exact_snippets": "Exclusion Criteria for Apheresis Alone",
-                    "criterion": "apheresis",
-                    "requirement": {
-                        "requirement_type": "eligibility",
-                        "expected_value": false
-                    }
-                }
-            }
-        },
-        {
-            "identified_line": {
                 "line": "Any diagnosed medical condition which may be worsened by the apheresis procedure. Specifically the participant should not have any of the following:",
                 "criterions": [
                     {
@@ -136,16 +111,14 @@
                 ]
             },
             "logical_structure": {
-                "and_criteria": [
-                    {
-                        "exact_snippets": "Any diagnosed medical condition which may be worsened by the apheresis procedure.",
-                        "criterion": "medical condition",
-                        "requirement": {
-                            "requirement_type": "worsened by apheresis",
-                            "expected_value": false
-                        }
+                "not_criteria": {
+                    "exact_snippets": "Any diagnosed medical condition which may be worsened by the apheresis procedure.",
+                    "criterion": "medical condition",
+                    "requirement": {
+                        "requirement_type": "worsened by apheresis",
+                        "expected_value": false
                     }
-                ]
+                }
             }
         },
         {
@@ -215,55 +188,80 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "and_criteria": [
-                            {
-                                "and_criteria": [
-                                    {
-                                        "and_criteria": [
-                                            {
-                                                "exact_snippets": "Severe hypotension",
-                                                "criterion": "hypotension",
-                                                "requirement": {
-                                                    "requirement_type": "severity",
-                                                    "expected_value": "severe"
-                                                }
-                                            },
-                                            {
-                                                "exact_snippets": "at the discretion of the participant's physician",
-                                                "criterion": "discretion of participant's physician",
-                                                "requirement": {
-                                                    "requirement_type": "approval",
-                                                    "expected_value": false
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "exact_snippets": "at the discretion of ... the apheresis staff",
-                                        "criterion": "discretion of apheresis staff",
-                                        "requirement": {
-                                            "requirement_type": "approval",
-                                            "expected_value": false
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "exact_snippets": "at the discretion of ... the attending physician from the Department of Transfusion Medicine (DTM)",
-                                "criterion": "discretion of attending physician from DTM",
-                                "requirement": {
-                                    "requirement_type": "approval",
-                                    "expected_value": false
-                                }
-                            }
-                        ]
+                        "exact_snippets": "Severe hypotension",
+                        "criterion": "hypotension",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Poorly controlled hypertension (average baseline blood pressure greater than 160/90)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Poorly controlled hypertension",
+                        "criterion": "hypertension",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": "poorly controlled"
+                        }
                     },
                     {
-                        "exact_snippets": "per DTM Standard Operating Policies",
-                        "criterion": "DTM Standard Operating Policies",
+                        "exact_snippets": "average baseline blood pressure greater than 160/90",
+                        "criterion": "blood pressure",
                         "requirement": {
-                            "requirement_type": "compliance",
-                            "expected_value": true
+                            "requirement_type": "average baseline",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 160,
+                                        "unit": "mmHg"
+                                    },
+                                    {
+                                        "operator": ">",
+                                        "value": 90,
+                                        "unit": "mmHg"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Poorly controlled hypertension",
+                        "criterion": "hypertension",
+                        "requirement": {
+                            "requirement_type": "control",
+                            "expected_value": "poorly controlled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "average baseline blood pressure greater than 160/90",
+                        "criterion": "blood pressure",
+                        "requirement": {
+                            "requirement_type": "average baseline",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 160,
+                                        "unit": "mmHg"
+                                    },
+                                    {
+                                        "operator": ">",
+                                        "value": 90,
+                                        "unit": "mmHg"
+                                    }
+                                ]
+                            }
                         }
                     }
                 ]
@@ -284,16 +282,14 @@
                 ]
             },
             "logical_structure": {
-                "and_criteria": [
-                    {
-                        "exact_snippets": "History of a coagulation protein disorder",
-                        "criterion": "coagulation protein disorder",
-                        "requirement": {
-                            "requirement_type": "history",
-                            "expected_value": true
-                        }
+                "not_criteria": {
+                    "exact_snippets": "History of a coagulation protein disorder",
+                    "criterion": "coagulation protein disorder",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
                     }
-                ]
+                }
             }
         },
         {
@@ -320,7 +316,7 @@
                         "exact_snippets": "will not undergo apheresis",
                         "criterion": "apheresis",
                         "requirement": {
-                            "requirement_type": "procedure",
+                            "requirement_type": "eligibility",
                             "expected_value": false
                         }
                     }
@@ -347,49 +343,31 @@
                     "exact_snippets": "will not undergo apheresis",
                     "criterion": "apheresis",
                     "requirement": {
-                        "requirement_type": "procedure",
+                        "requirement_type": "eligibility",
                         "expected_value": false
                     }
                 },
                 "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion Criteria for Apheresis Alone:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
             }
         }
     ],
     "miscellaneous_lines": [
         {
             "identified_line": {
-                "line": "Participants must meet at least one of these criteria:",
-                "criterions": [
-                    {
-                        "exact_snippets": "Participants must meet at least one of these criteria",
-                        "criterion": "eligibility criteria",
-                        "requirement": {
-                            "requirement_type": "quantity",
-                            "expected_value": ">= 1"
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "or_criteria": [
-                    {
-                        "exact_snippets": "Participants must meet at least one of these criteria",
-                        "criterion": "eligibility criteria",
-                        "requirement": {
-                            "requirement_type": "quantity",
-                            "expected_value": ">= 1"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
                 "line": "Have suspected or known disorder of the immune system or cancer",
                 "criterions": [
                     {
                         "exact_snippets": "suspected or known disorder of the immune system",
-                        "criterion": "immune system disorder",
+                        "criterion": "disorder of the immune system",
                         "requirement": {
                             "requirement_type": "presence",
                             "expected_value": true
@@ -409,7 +387,7 @@
                 "or_criteria": [
                     {
                         "exact_snippets": "suspected or known disorder of the immune system",
-                        "criterion": "immune system disorder",
+                        "criterion": "disorder of the immune system",
                         "requirement": {
                             "requirement_type": "presence",
                             "expected_value": true
@@ -726,18 +704,18 @@
                 "criterions": [
                     {
                         "exact_snippets": "Participant must be able to understand",
-                        "criterion": "cognitive ability",
+                        "criterion": "understanding ability",
                         "requirement": {
                             "requirement_type": "ability",
-                            "expected_value": "understand"
+                            "expected_value": true
                         }
                     },
                     {
                         "exact_snippets": "sign informed consent",
-                        "criterion": "ability to sign consent",
+                        "criterion": "informed consent signing",
                         "requirement": {
                             "requirement_type": "ability",
-                            "expected_value": "sign"
+                            "expected_value": true
                         }
                     }
                 ]
@@ -746,18 +724,18 @@
                 "and_criteria": [
                     {
                         "exact_snippets": "Participant must be able to understand",
-                        "criterion": "cognitive ability",
+                        "criterion": "understanding ability",
                         "requirement": {
                             "requirement_type": "ability",
-                            "expected_value": "understand"
+                            "expected_value": true
                         }
                     },
                     {
                         "exact_snippets": "sign informed consent",
-                        "criterion": "ability to sign consent",
+                        "criterion": "informed consent signing",
                         "requirement": {
                             "requirement_type": "ability",
-                            "expected_value": "sign"
+                            "expected_value": true
                         }
                     }
                 ]
@@ -765,16 +743,117 @@
         },
         {
             "identified_line": {
-                "line": "Participants who will undergo apheresis must have hematocrit greater than 28%, and platelet count greater than 50,000.",
+                "line": "Weight greater than 25 kg is necessary for apheresis.",
                 "criterions": [
                     {
-                        "exact_snippets": "Participants who will undergo apheresis",
-                        "criterion": "apheresis",
+                        "exact_snippets": "Weight greater than 25 kg",
+                        "criterion": "weight",
                         "requirement": {
-                            "requirement_type": "undergoing",
-                            "expected_value": true
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 25,
+                                "unit": "kg"
+                            }
                         }
                     },
+                    {
+                        "exact_snippets": "apheresis",
+                        "criterion": "apheresis",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Weight greater than 25 kg",
+                        "criterion": "weight",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 25,
+                                "unit": "kg"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "apheresis",
+                        "criterion": "apheresis",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Overall",
+                "criterions": [
+                    {
+                        "exact_snippets": "Overall",
+                        "criterion": "overall health",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "N/A"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Overall",
+                        "criterion": "overall health",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "N/A"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* INCLUSION CRITERIA:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Participants must meet at least one of these criteria:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "or_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "EXCLUSION CRITERIA:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": [
+        {
+            "identified_line": {
+                "line": "Participants who will undergo apheresis must have hematocrit greater than 28%, and platelet count greater than 50,000.",
+                "criterions": [
                     {
                         "exact_snippets": "hematocrit greater than 28%",
                         "criterion": "hematocrit",
@@ -791,7 +870,7 @@
                         "exact_snippets": "platelet count greater than 50,000",
                         "criterion": "platelet count",
                         "requirement": {
-                            "requirement_type": "count",
+                            "requirement_type": "level",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 50000,
@@ -806,7 +885,7 @@
                     "exact_snippets": "Participants who will undergo apheresis",
                     "criterion": "apheresis",
                     "requirement": {
-                        "requirement_type": "undergoing",
+                        "requirement_type": "intention",
                         "expected_value": true
                     }
                 },
@@ -828,7 +907,7 @@
                             "exact_snippets": "platelet count greater than 50,000",
                             "criterion": "platelet count",
                             "requirement": {
-                                "requirement_type": "count",
+                                "requirement_type": "level",
                                 "expected_value": {
                                     "operator": ">",
                                     "value": 50000,
@@ -894,156 +973,6 @@
                 },
                 "else_criteria": null
             }
-        },
-        {
-            "identified_line": {
-                "line": "Weight greater than 25 kg is necessary for apheresis.",
-                "criterions": [
-                    {
-                        "exact_snippets": "Weight greater than 25 kg",
-                        "criterion": "weight",
-                        "requirement": {
-                            "requirement_type": "quantity",
-                            "expected_value": {
-                                "operator": ">",
-                                "value": 25,
-                                "unit": "kg"
-                            }
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "exact_snippets": "Weight greater than 25 kg",
-                        "criterion": "weight",
-                        "requirement": {
-                            "requirement_type": "quantity",
-                            "expected_value": {
-                                "operator": ">",
-                                "value": 25,
-                                "unit": "kg"
-                            }
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "* INCLUSION CRITERIA:",
-                "criterions": []
-            },
-            "logical_structure": {
-                "and_criteria": []
-            }
-        },
-        {
-            "identified_line": {
-                "line": "EXCLUSION CRITERIA:",
-                "criterions": []
-            },
-            "logical_structure": {
-                "and_criteria": []
-            }
-        },
-        {
-            "identified_line": {
-                "line": "Overall",
-                "criterions": []
-            },
-            "logical_structure": {
-                "and_criteria": []
-            }
         }
-    ],
-    "failed_inclusion": [],
-    "failed_exclusion": [
-        {
-            "identified_line": {
-                "line": "4. Poorly controlled hypertension (average baseline blood pressure greater than 160/90)",
-                "criterions": [
-                    {
-                        "exact_snippets": "Poorly controlled hypertension",
-                        "criterion": "hypertension",
-                        "requirement": {
-                            "requirement_type": "control",
-                            "expected_value": "poorly controlled"
-                        }
-                    },
-                    {
-                        "exact_snippets": "average baseline blood pressure greater than 160/90",
-                        "criterion": "blood pressure",
-                        "requirement": {
-                            "requirement_type": "average baseline",
-                            "expected_value": {
-                                "comparisons": [
-                                    {
-                                        "operator": ">",
-                                        "value": 160,
-                                        "unit": "mmHg"
-                                    },
-                                    {
-                                        "operator": ">",
-                                        "value": 90,
-                                        "unit": "mmHg"
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "and_criteria": [
-                            {
-                                "exact_snippets": "Poorly controlled hypertension",
-                                "criterion": "hypertension",
-                                "requirement": {
-                                    "requirement_type": "control",
-                                    "expected_value": "poorly controlled"
-                                }
-                            },
-                            {
-                                "exact_snippets": "average baseline blood pressure greater than 160/90",
-                                "criterion": "blood pressure",
-                                "requirement": {
-                                    "requirement_type": "average baseline",
-                                    "expected_value": {
-                                        "comparisons": [
-                                            {
-                                                "operator": ">",
-                                                "value": 160,
-                                                "unit": "mmHg"
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "exact_snippets": "average baseline blood pressure greater than 160/90",
-                        "criterion": "blood pressure",
-                        "requirement": {
-                            "requirement_type": "average baseline",
-                            "expected_value": {
-                                "comparisons": [
-                                    {
-                                        "operator": ">",
-                                        "value": 90,
-                                        "unit": "mmHg"
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            }
-        }
-    ],
-    "failed_miscellaneous": []
+    ]
 }
