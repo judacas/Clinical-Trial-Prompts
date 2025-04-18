@@ -42,7 +42,7 @@
                         "exact_snippets": "Must be FEMALE",
                         "criterion": "gender",
                         "requirement": {
-                            "requirement_type": "N/A",
+                            "requirement_type": "expected_value",
                             "expected_value": "female"
                         }
                     }
@@ -54,7 +54,7 @@
                         "exact_snippets": "Must be FEMALE",
                         "criterion": "gender",
                         "requirement": {
-                            "requirement_type": "N/A",
+                            "requirement_type": "expected_value",
                             "expected_value": "female"
                         }
                     }
@@ -72,7 +72,7 @@
                         "exact_snippets": "biopsy proven ovarian cancer",
                         "criterion": "ovarian cancer",
                         "requirement": {
-                            "requirement_type": "diagnosis method",
+                            "requirement_type": "confirmation method",
                             "expected_value": "biopsy proven"
                         }
                     },
@@ -92,7 +92,7 @@
                         "exact_snippets": "biopsy proven ovarian cancer",
                         "criterion": "ovarian cancer",
                         "requirement": {
-                            "requirement_type": "diagnosis method",
+                            "requirement_type": "confirmation method",
                             "expected_value": "biopsy proven"
                         }
                     },
@@ -145,99 +145,6 @@
                         "requirement": {
                             "requirement_type": "presence",
                             "expected_value": false
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "Patients must have FIGO stage III and IV disease, or FIGO Stage IIC disease with poorly differentiated histology, and will undergo attempted surgical debulking prior to the initiation of chemotherapy.",
-                "criterions": [
-                    {
-                        "exact_snippets": "Patients must have FIGO stage III and IV disease",
-                        "criterion": "FIGO stage",
-                        "requirement": {
-                            "requirement_type": "stage",
-                            "expected_value": [
-                                "III",
-                                "IV"
-                            ]
-                        }
-                    },
-                    {
-                        "exact_snippets": "FIGO Stage IIC disease with poorly differentiated histology",
-                        "criterion": "FIGO stage",
-                        "requirement": {
-                            "requirement_type": "stage",
-                            "expected_value": "IIC"
-                        }
-                    },
-                    {
-                        "exact_snippets": "FIGO Stage IIC disease with poorly differentiated histology",
-                        "criterion": "FIGO stage",
-                        "requirement": {
-                            "requirement_type": "histology",
-                            "expected_value": "poorly differentiated"
-                        }
-                    },
-                    {
-                        "exact_snippets": "will undergo attempted surgical debulking prior to the initiation of chemotherapy",
-                        "criterion": "surgical debulking",
-                        "requirement": {
-                            "requirement_type": "timing",
-                            "expected_value": "prior to chemotherapy"
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "or_criteria": [
-                            {
-                                "and_criteria": [
-                                    {
-                                        "exact_snippets": "Patients must have FIGO stage III and IV disease",
-                                        "criterion": "FIGO stage",
-                                        "requirement": {
-                                            "requirement_type": "stage",
-                                            "expected_value": [
-                                                "III",
-                                                "IV"
-                                            ]
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "and_criteria": [
-                                    {
-                                        "exact_snippets": "FIGO Stage IIC disease with poorly differentiated histology",
-                                        "criterion": "FIGO stage",
-                                        "requirement": {
-                                            "requirement_type": "stage",
-                                            "expected_value": "IIC"
-                                        }
-                                    },
-                                    {
-                                        "exact_snippets": "FIGO Stage IIC disease with poorly differentiated histology",
-                                        "criterion": "FIGO stage",
-                                        "requirement": {
-                                            "requirement_type": "histology",
-                                            "expected_value": "poorly differentiated"
-                                        }
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "exact_snippets": "will undergo attempted surgical debulking prior to the initiation of chemotherapy",
-                        "criterion": "surgical debulking",
-                        "requirement": {
-                            "requirement_type": "timing",
-                            "expected_value": "prior to chemotherapy"
                         }
                     }
                 ]
@@ -348,8 +255,8 @@
                         "exact_snippets": "cardiac arrhythmias requiring",
                         "criterion": "cardiac arrhythmias",
                         "requirement": {
-                            "requirement_type": "severity",
-                            "expected_value": "requiring treatment"
+                            "requirement_type": "treatment",
+                            "expected_value": false
                         }
                     }
                 ]
@@ -368,8 +275,8 @@
                         "exact_snippets": "cardiac arrhythmias requiring",
                         "criterion": "cardiac arrhythmias",
                         "requirement": {
-                            "requirement_type": "severity",
-                            "expected_value": "requiring treatment"
+                            "requirement_type": "treatment",
+                            "expected_value": false
                         }
                     }
                 ]
@@ -410,105 +317,36 @@
                     {
                         "and_criteria": [
                             {
-                                "exact_snippets": "right bundle branch block",
-                                "criterion": "right bundle branch block",
-                                "requirement": {
-                                    "requirement_type": "presence",
-                                    "expected_value": true
-                                }
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "right bundle branch block",
+                                        "criterion": "right bundle branch block",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "left anterior hemiblock",
+                                        "criterion": "left anterior hemiblock",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
                             },
                             {
-                                "exact_snippets": "left anterior hemiblock",
-                                "criterion": "left anterior hemiblock",
+                                "exact_snippets": "left bundle branch block",
+                                "criterion": "left bundle branch block",
                                 "requirement": {
                                     "requirement_type": "presence",
                                     "expected_value": true
                                 }
                             }
                         ]
-                    },
-                    {
-                        "exact_snippets": "left bundle branch block",
-                        "criterion": "left bundle branch block",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
                     }
                 ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "Renal function: creatinine clearance greater than or equal to 60 cc/min; patients with ureteral obstruction must have this corrected prior to starting therapy.",
-                "criterions": [
-                    {
-                        "exact_snippets": "Renal function: creatinine clearance greater than or equal to 60 cc/min",
-                        "criterion": "creatinine clearance",
-                        "requirement": {
-                            "requirement_type": "quantity",
-                            "expected_value": {
-                                "operator": ">=",
-                                "value": 60,
-                                "unit": "cc/min"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "patients with ureteral obstruction must have this corrected prior to starting therapy",
-                        "criterion": "ureteral obstruction",
-                        "requirement": {
-                            "requirement_type": "status",
-                            "expected_value": "corrected"
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "condition": {
-                    "exact_snippets": "patients with ureteral obstruction must have this corrected prior to starting therapy",
-                    "criterion": "ureteral obstruction",
-                    "requirement": {
-                        "requirement_type": "status",
-                        "expected_value": "corrected"
-                    }
-                },
-                "then_criteria": {
-                    "and_criteria": [
-                        {
-                            "exact_snippets": "Renal function: creatinine clearance greater than or equal to 60 cc/min",
-                            "criterion": "creatinine clearance",
-                            "requirement": {
-                                "requirement_type": "quantity",
-                                "expected_value": {
-                                    "operator": ">=",
-                                    "value": 60,
-                                    "unit": "cc/min"
-                                }
-                            }
-                        },
-                        {
-                            "exact_snippets": "patients with ureteral obstruction must have this corrected prior to starting therapy",
-                            "criterion": "ureteral obstruction",
-                            "requirement": {
-                                "requirement_type": "status",
-                                "expected_value": "corrected"
-                            }
-                        }
-                    ]
-                },
-                "else_criteria": {
-                    "exact_snippets": "Renal function: creatinine clearance greater than or equal to 60 cc/min",
-                    "criterion": "creatinine clearance",
-                    "requirement": {
-                        "requirement_type": "quantity",
-                        "expected_value": {
-                            "operator": ">=",
-                            "value": 60,
-                            "unit": "cc/min"
-                        }
-                    }
-                }
             }
         },
         {
@@ -577,48 +415,22 @@
                                 "unit": "grade"
                             }
                         }
-                    },
-                    {
-                        "exact_snippets": "exclusive of mild vibratory delay",
-                        "criterion": "mild vibratory delay",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
                     }
                 ]
             },
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "and_criteria": [
-                            {
-                                "not_criteria": {
-                                    "and_criteria": [
-                                        {
-                                            "exact_snippets": "Neurologic function: no preexisting dysfunction greater than grade 1",
-                                            "criterion": "neurologic function",
-                                            "requirement": {
-                                                "requirement_type": "severity",
-                                                "expected_value": {
-                                                    "operator": "<=",
-                                                    "value": 1,
-                                                    "unit": "grade"
-                                                }
-                                            }
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "exact_snippets": "exclusive of mild vibratory delay",
-                                "criterion": "mild vibratory delay",
-                                "requirement": {
-                                    "requirement_type": "presence",
-                                    "expected_value": true
-                                }
+                        "exact_snippets": "Neurologic function: no preexisting dysfunction greater than grade 1",
+                        "criterion": "neurologic function",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "grade"
                             }
-                        ]
+                        }
                     }
                 ]
             }
@@ -629,7 +441,7 @@
                 "criterions": [
                     {
                         "exact_snippets": "No recent history of active GI bleeding.",
-                        "criterion": "GI bleeding",
+                        "criterion": "active GI bleeding",
                         "requirement": {
                             "requirement_type": "history",
                             "expected_value": false
@@ -641,7 +453,7 @@
                 "and_criteria": [
                     {
                         "exact_snippets": "No recent history of active GI bleeding.",
-                        "criterion": "GI bleeding",
+                        "criterion": "active GI bleeding",
                         "requirement": {
                             "requirement_type": "history",
                             "expected_value": false
@@ -711,53 +523,11 @@
         },
         {
             "identified_line": {
-                "line": "Patients may not have had prior history of invasive malignancy with the exception of nonmelanoma skin cancer curatively treated.",
-                "criterions": [
-                    {
-                        "exact_snippets": "prior history of invasive malignancy",
-                        "criterion": "prior history of invasive malignancy",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "nonmelanoma skin cancer curatively treated",
-                        "criterion": "nonmelanoma skin cancer",
-                        "requirement": {
-                            "requirement_type": "treatment status",
-                            "expected_value": "curatively treated"
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "condition": {
-                    "exact_snippets": "prior history of invasive malignancy",
-                    "criterion": "prior history of invasive malignancy",
-                    "requirement": {
-                        "requirement_type": "presence",
-                        "expected_value": false
-                    }
-                },
-                "then_criteria": null,
-                "else_criteria": {
-                    "exact_snippets": "nonmelanoma skin cancer curatively treated",
-                    "criterion": "nonmelanoma skin cancer",
-                    "requirement": {
-                        "requirement_type": "treatment status",
-                        "expected_value": "curatively treated"
-                    }
-                }
-            }
-        },
-        {
-            "identified_line": {
                 "line": "Patients must be able to give written informed consent and express a willingness to meet all of the expected requirements of the protocol.",
                 "criterions": [
                     {
-                        "exact_snippets": "Patients must be able to give written informed consent",
-                        "criterion": "ability to give written informed consent",
+                        "exact_snippets": "able to give written informed consent",
+                        "criterion": "informed consent",
                         "requirement": {
                             "requirement_type": "ability",
                             "expected_value": true
@@ -776,8 +546,8 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "exact_snippets": "Patients must be able to give written informed consent",
-                        "criterion": "ability to give written informed consent",
+                        "exact_snippets": "able to give written informed consent",
+                        "criterion": "informed consent",
                         "requirement": {
                             "requirement_type": "ability",
                             "expected_value": true
@@ -800,9 +570,9 @@
                 "criterions": [
                     {
                         "exact_snippets": "able to begin therapy within 8 weeks of staging laparotomy",
-                        "criterion": "therapy initiation",
+                        "criterion": "therapy initiation time",
                         "requirement": {
-                            "requirement_type": "timeframe",
+                            "requirement_type": "time frame",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 8,
@@ -824,9 +594,9 @@
                 "and_criteria": [
                     {
                         "exact_snippets": "able to begin therapy within 8 weeks of staging laparotomy",
-                        "criterion": "therapy initiation",
+                        "criterion": "therapy initiation time",
                         "requirement": {
-                            "requirement_type": "timeframe",
+                            "requirement_type": "time frame",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 8,
@@ -891,41 +661,49 @@
             "logical_structure": {
                 "and_criteria": [
                     {
-                        "exact_snippets": "All patients must be registered by calling the Orkand Corporation at 402-1732 between the hours of 8:30 AM and 5:00 PM",
-                        "criterion": "registration",
-                        "requirement": {
-                            "requirement_type": "method",
-                            "expected_value": "calling"
-                        }
-                    },
-                    {
-                        "exact_snippets": "All patients must be registered by calling the Orkand Corporation at 402-1732 between the hours of 8:30 AM and 5:00 PM",
-                        "criterion": "registration",
-                        "requirement": {
-                            "requirement_type": "contact",
-                            "expected_value": "Orkand Corporation at 402-1732"
-                        }
-                    },
-                    {
-                        "exact_snippets": "All patients must be registered by calling the Orkand Corporation at 402-1732 between the hours of 8:30 AM and 5:00 PM",
-                        "criterion": "registration",
-                        "requirement": {
-                            "requirement_type": "time",
-                            "expected_value": {
-                                "comparisons": [
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
                                     {
-                                        "operator": ">=",
-                                        "value": 8.5,
-                                        "unit": "hours"
+                                        "exact_snippets": "All patients must be registered by calling the Orkand Corporation at 402-1732 between the hours of 8:30 AM and 5:00 PM",
+                                        "criterion": "registration",
+                                        "requirement": {
+                                            "requirement_type": "method",
+                                            "expected_value": "calling"
+                                        }
                                     },
                                     {
-                                        "operator": "<=",
-                                        "value": 17,
-                                        "unit": "hours"
+                                        "exact_snippets": "All patients must be registered by calling the Orkand Corporation at 402-1732 between the hours of 8:30 AM and 5:00 PM",
+                                        "criterion": "registration",
+                                        "requirement": {
+                                            "requirement_type": "contact",
+                                            "expected_value": "Orkand Corporation at 402-1732"
+                                        }
                                     }
                                 ]
+                            },
+                            {
+                                "exact_snippets": "All patients must be registered by calling the Orkand Corporation at 402-1732 between the hours of 8:30 AM and 5:00 PM",
+                                "criterion": "registration",
+                                "requirement": {
+                                    "requirement_type": "time",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 8.5,
+                                                "unit": "hours"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 17,
+                                                "unit": "hours"
+                                            }
+                                        ]
+                                    }
+                                }
                             }
-                        }
+                        ]
                     }
                 ]
             }
@@ -976,5 +754,185 @@
     ],
     "failed_inclusion": [],
     "failed_exclusion": [],
-    "failed_miscellaneous": []
+    "failed_miscellaneous": [
+        {
+            "identified_line": {
+                "line": "Patients must have FIGO stage III and IV disease, or FIGO Stage IIC disease with poorly differentiated histology, and will undergo attempted surgical debulking prior to the initiation of chemotherapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "FIGO stage III and IV disease",
+                        "criterion": "FIGO stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "III",
+                                "IV"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "FIGO Stage IIC disease with poorly differentiated histology",
+                        "criterion": "FIGO stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "IIC"
+                        }
+                    },
+                    {
+                        "exact_snippets": "FIGO Stage IIC disease with poorly differentiated histology",
+                        "criterion": "FIGO stage",
+                        "requirement": {
+                            "requirement_type": "histology differentiation",
+                            "expected_value": "poorly differentiated"
+                        }
+                    },
+                    {
+                        "exact_snippets": "will undergo attempted surgical debulking",
+                        "criterion": "surgical debulking",
+                        "requirement": {
+                            "requirement_type": "procedure",
+                            "expected_value": "attempted"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Renal function: creatinine clearance greater than or equal to 60 cc/min; patients with ureteral obstruction must have this corrected prior to starting therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Renal function: creatinine clearance greater than or equal to 60 cc/min",
+                        "criterion": "creatinine clearance",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 60,
+                                "unit": "cc/min"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients with ureteral obstruction must have this corrected prior to starting therapy",
+                        "criterion": "ureteral obstruction",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "ureteral obstruction must have this corrected prior to starting therapy",
+                    "criterion": "ureteral obstruction",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Renal function: creatinine clearance greater than or equal to 60 cc/min",
+                            "criterion": "creatinine clearance",
+                            "requirement": {
+                                "requirement_type": "quantity",
+                                "expected_value": {
+                                    "operator": ">=",
+                                    "value": 60,
+                                    "unit": "cc/min"
+                                }
+                            }
+                        },
+                        {
+                            "exact_snippets": "patients with ureteral obstruction must have this corrected prior to starting therapy",
+                            "criterion": "ureteral obstruction",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": false
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": {
+                    "exact_snippets": "Renal function: creatinine clearance greater than or equal to 60 cc/min",
+                    "criterion": "creatinine clearance",
+                    "requirement": {
+                        "requirement_type": "quantity",
+                        "expected_value": {
+                            "operator": ">=",
+                            "value": 60,
+                            "unit": "cc/min"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Patients may not have had prior history of invasive malignancy with the exception of nonmelanoma skin cancer curatively treated.",
+                "criterions": [
+                    {
+                        "exact_snippets": "prior history of invasive malignancy",
+                        "criterion": "prior history of invasive malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "nonmelanoma skin cancer curatively treated",
+                        "criterion": "nonmelanoma skin cancer",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": "curatively treated"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "not_criteria": {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "prior history of invasive malignancy",
+                                "criterion": "prior history of invasive malignancy",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "nonmelanoma skin cancer curatively treated",
+                                "criterion": "nonmelanoma skin cancer",
+                                "requirement": {
+                                    "requirement_type": "treatment status",
+                                    "expected_value": "curatively treated"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "exact_snippets": "prior history of invasive malignancy",
+                    "criterion": "prior history of invasive malignancy",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        }
+    ]
 }

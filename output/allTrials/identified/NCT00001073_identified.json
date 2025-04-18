@@ -30,7 +30,7 @@
                     "criterion": "gender",
                     "requirements": [
                         {
-                            "requirement_type": "expected_value",
+                            "requirement_type": "expected gender",
                             "expected_value": "female"
                         }
                     ]
@@ -88,7 +88,7 @@
             "line": "* Are at least 13 years old. (Need consent of parent or guardian if under 18.)",
             "criterions": [
                 {
-                    "exact_snippets": "Are at least 13 years old.",
+                    "exact_snippets": "at least 13 years old",
                     "criterion": "age",
                     "requirements": [
                         {
@@ -102,16 +102,12 @@
                     ]
                 },
                 {
-                    "exact_snippets": "Need consent of parent or guardian if under 18.",
-                    "criterion": "age",
+                    "exact_snippets": "Need consent of parent or guardian if under 18",
+                    "criterion": "parental consent",
                     "requirements": [
                         {
-                            "requirement_type": "parental consent",
-                            "expected_value": {
-                                "operator": "<",
-                                "value": 18,
-                                "unit": "years"
-                            }
+                            "requirement_type": "requirement",
+                            "expected_value": "required if under 18"
                         }
                     ]
                 }
@@ -187,13 +183,9 @@
                         {
                             "requirement_type": "time since procedure",
                             "expected_value": {
-                                "comparisons": [
-                                    {
-                                        "operator": "<=",
-                                        "value": 4,
-                                        "unit": "months"
-                                    }
-                                ]
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "months"
                             }
                         }
                     ]

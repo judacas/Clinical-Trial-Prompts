@@ -74,6 +74,53 @@
     "miscellaneous_lines": [
         {
             "identified_line": {
+                "line": "PRIOR CONCURRENT THERAPY: No anticancer drugs between surgery and protocol treatment No steroids after 10 days following surgery (may be resumed occasionally during radiotherapy)",
+                "criterions": [
+                    {
+                        "exact_snippets": "No anticancer drugs between surgery and protocol treatment",
+                        "criterion": "anticancer drugs",
+                        "requirement": {
+                            "requirement_type": "usage",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No steroids after 10 days following surgery",
+                        "criterion": "steroids",
+                        "requirement": {
+                            "requirement_type": "usage",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No anticancer drugs between surgery and protocol treatment",
+                        "criterion": "anticancer drugs",
+                        "requirement": {
+                            "requirement_type": "usage",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No steroids after 10 days following surgery",
+                        "criterion": "steroids",
+                        "requirement": {
+                            "requirement_type": "usage",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": [
+        {
+            "identified_line": {
                 "line": "DISEASE CHARACTERISTICS: Histologically confirmed anaplastic astrocytoma Standard maximum resection or stereotactic biopsy required within 4 weeks prior to therapy",
                 "criterions": [
                     {
@@ -106,43 +153,12 @@
                 ]
             },
             "logical_structure": {
-                "and_criteria": [
-                    {
-                        "exact_snippets": "Histologically confirmed anaplastic astrocytoma",
-                        "criterion": "anaplastic astrocytoma",
-                        "requirement": {
-                            "requirement_type": "confirmation",
-                            "expected_value": "histologically confirmed"
-                        }
-                    },
-                    {
-                        "and_criteria": [
-                            {
-                                "or_criteria": [
-                                    {
-                                        "exact_snippets": "Standard maximum resection or stereotactic biopsy required within 4 weeks prior to therapy",
-                                        "criterion": "surgical procedure",
-                                        "requirement": {
-                                            "requirement_type": "type",
-                                            "expected_value": [
-                                                "standard maximum resection",
-                                                "stereotactic biopsy"
-                                            ]
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "exact_snippets": "Standard maximum resection or stereotactic biopsy required within 4 weeks prior to therapy",
-                                "criterion": "surgical procedure",
-                                "requirement": {
-                                    "requirement_type": "timing",
-                                    "expected_value": "within 4 weeks prior to therapy"
-                                }
-                            }
-                        ]
-                    }
-                ]
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
             }
         },
         {
@@ -153,7 +169,7 @@
                         "exact_snippets": "Age: Over 16",
                         "criterion": "age",
                         "requirement": {
-                            "requirement_type": "value",
+                            "requirement_type": "minimum age",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 16,
@@ -165,25 +181,40 @@
                         "exact_snippets": "Performance status: ECOG/ZUBROD/WHO 0-2",
                         "criterion": "performance status",
                         "requirement": {
-                            "requirement_type": "value",
+                            "requirement_type": "scale",
                             "expected_value": [
-                                "ECOG 0",
-                                "ECOG 1",
-                                "ECOG 2",
-                                "ZUBROD 0",
-                                "ZUBROD 1",
-                                "ZUBROD 2",
-                                "WHO 0",
-                                "WHO 1",
-                                "WHO 2"
+                                "ECOG",
+                                "ZUBROD",
+                                "WHO"
                             ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Performance status: ECOG/ZUBROD/WHO 0-2",
+                        "criterion": "performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
                         }
                     },
                     {
                         "exact_snippets": "Life expectancy: At least 8 weeks",
                         "criterion": "life expectancy",
                         "requirement": {
-                            "requirement_type": "duration",
+                            "requirement_type": "minimum duration",
                             "expected_value": {
                                 "operator": ">=",
                                 "value": 8,
@@ -193,25 +224,25 @@
                     },
                     {
                         "exact_snippets": "Hematopoietic: WBC greater than 4,000",
-                        "criterion": "WBC",
+                        "criterion": "white blood cell count",
                         "requirement": {
-                            "requirement_type": "count",
+                            "requirement_type": "minimum count",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 4000,
-                                "unit": "cells/µL"
+                                "unit": "N/A"
                             }
                         }
                     },
                     {
                         "exact_snippets": "Platelets greater than 100,000",
-                        "criterion": "platelets",
+                        "criterion": "platelet count",
                         "requirement": {
-                            "requirement_type": "count",
+                            "requirement_type": "minimum count",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 100000,
-                                "unit": "cells/µL"
+                                "unit": "N/A"
                             }
                         }
                     },
@@ -219,7 +250,7 @@
                         "exact_snippets": "Hematocrit greater than 30%",
                         "criterion": "hematocrit",
                         "requirement": {
-                            "requirement_type": "percentage",
+                            "requirement_type": "minimum percentage",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 30,
@@ -229,9 +260,9 @@
                     },
                     {
                         "exact_snippets": "Hepatic: Bilirubin less than 2 mg/dl",
-                        "criterion": "bilirubin",
+                        "criterion": "bilirubin level",
                         "requirement": {
-                            "requirement_type": "concentration",
+                            "requirement_type": "maximum level",
                             "expected_value": {
                                 "operator": "<",
                                 "value": 2,
@@ -241,9 +272,9 @@
                     },
                     {
                         "exact_snippets": "Renal: Creatinine less than 1.5 mg/dl",
-                        "criterion": "creatinine",
+                        "criterion": "creatinine level",
                         "requirement": {
-                            "requirement_type": "concentration",
+                            "requirement_type": "maximum level",
                             "expected_value": {
                                 "operator": "<",
                                 "value": 1.5,
@@ -255,7 +286,7 @@
                         "exact_snippets": "Creatinine clearance greater than 70 ml/min",
                         "criterion": "creatinine clearance",
                         "requirement": {
-                            "requirement_type": "rate",
+                            "requirement_type": "minimum clearance",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 70,
@@ -265,9 +296,9 @@
                     },
                     {
                         "exact_snippets": "BUN less than 40 mg/dl",
-                        "criterion": "BUN",
+                        "criterion": "blood urea nitrogen level",
                         "requirement": {
-                            "requirement_type": "concentration",
+                            "requirement_type": "maximum level",
                             "expected_value": {
                                 "operator": "<",
                                 "value": 40,
@@ -286,189 +317,13 @@
                 ]
             },
             "logical_structure": {
-                "and_criteria": [
-                    {
-                        "exact_snippets": "Age: Over 16",
-                        "criterion": "age",
-                        "requirement": {
-                            "requirement_type": "value",
-                            "expected_value": {
-                                "operator": ">",
-                                "value": 16,
-                                "unit": "years"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "Performance status: ECOG/ZUBROD/WHO 0-2",
-                        "criterion": "performance status",
-                        "requirement": {
-                            "requirement_type": "value",
-                            "expected_value": [
-                                "ECOG 0",
-                                "ECOG 1",
-                                "ECOG 2",
-                                "ZUBROD 0",
-                                "ZUBROD 1",
-                                "ZUBROD 2",
-                                "WHO 0",
-                                "WHO 1",
-                                "WHO 2"
-                            ]
-                        }
-                    },
-                    {
-                        "exact_snippets": "Life expectancy: At least 8 weeks",
-                        "criterion": "life expectancy",
-                        "requirement": {
-                            "requirement_type": "duration",
-                            "expected_value": {
-                                "operator": ">=",
-                                "value": 8,
-                                "unit": "weeks"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "Hematopoietic: WBC greater than 4,000",
-                        "criterion": "WBC",
-                        "requirement": {
-                            "requirement_type": "count",
-                            "expected_value": {
-                                "operator": ">",
-                                "value": 4000,
-                                "unit": "cells/µL"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "Platelets greater than 100,000",
-                        "criterion": "platelets",
-                        "requirement": {
-                            "requirement_type": "count",
-                            "expected_value": {
-                                "operator": ">",
-                                "value": 100000,
-                                "unit": "cells/µL"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "Hematocrit greater than 30%",
-                        "criterion": "hematocrit",
-                        "requirement": {
-                            "requirement_type": "percentage",
-                            "expected_value": {
-                                "operator": ">",
-                                "value": 30,
-                                "unit": "%"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "Hepatic: Bilirubin less than 2 mg/dl",
-                        "criterion": "bilirubin",
-                        "requirement": {
-                            "requirement_type": "concentration",
-                            "expected_value": {
-                                "operator": "<",
-                                "value": 2,
-                                "unit": "mg/dl"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "Renal: Creatinine less than 1.5 mg/dl",
-                        "criterion": "creatinine",
-                        "requirement": {
-                            "requirement_type": "concentration",
-                            "expected_value": {
-                                "operator": "<",
-                                "value": 1.5,
-                                "unit": "mg/dl"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "Creatinine clearance greater than 70 ml/min",
-                        "criterion": "creatinine clearance",
-                        "requirement": {
-                            "requirement_type": "rate",
-                            "expected_value": {
-                                "operator": ">",
-                                "value": 70,
-                                "unit": "ml/min"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "BUN less than 40 mg/dl",
-                        "criterion": "BUN",
-                        "requirement": {
-                            "requirement_type": "concentration",
-                            "expected_value": {
-                                "operator": "<",
-                                "value": 40,
-                                "unit": "mg/dl"
-                            }
-                        }
-                    },
-                    {
-                        "exact_snippets": "Other: No major medical illness",
-                        "criterion": "major medical illness",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "identified_line": {
-                "line": "PRIOR CONCURRENT THERAPY: No anticancer drugs between surgery and protocol treatment No steroids after 10 days following surgery (may be resumed occasionally during radiotherapy)",
-                "criterions": [
-                    {
-                        "exact_snippets": "No anticancer drugs between surgery and protocol treatment",
-                        "criterion": "anticancer drugs",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "No steroids after 10 days following surgery",
-                        "criterion": "steroids",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    }
-                ]
-            },
-            "logical_structure": {
-                "and_criteria": [
-                    {
-                        "exact_snippets": "No anticancer drugs between surgery and protocol treatment",
-                        "criterion": "anticancer drugs",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    },
-                    {
-                        "exact_snippets": "No steroids after 10 days following surgery",
-                        "criterion": "steroids",
-                        "requirement": {
-                            "requirement_type": "presence",
-                            "expected_value": false
-                        }
-                    }
-                ]
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
             }
         }
-    ],
-    "failed_inclusion": [],
-    "failed_exclusion": [],
-    "failed_miscellaneous": []
+    ]
 }

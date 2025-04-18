@@ -59,21 +59,6 @@
             ]
         },
         {
-            "line": "Exclusion Criteria for Apheresis Alone:",
-            "criterions": [
-                {
-                    "exact_snippets": "Exclusion Criteria for Apheresis Alone",
-                    "criterion": "apheresis",
-                    "requirements": [
-                        {
-                            "requirement_type": "eligibility",
-                            "expected_value": false
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "line": "Any diagnosed medical condition which may be worsened by the apheresis procedure. Specifically the participant should not have any of the following:",
             "criterions": [
                 {
@@ -212,7 +197,7 @@
                     "criterion": "apheresis",
                     "requirements": [
                         {
-                            "requirement_type": "procedure",
+                            "requirement_type": "eligibility",
                             "expected_value": false
                         }
                     ]
@@ -222,26 +207,11 @@
     ],
     "miscellaneous_lines": [
         {
-            "line": "Participants must meet at least one of these criteria:",
-            "criterions": [
-                {
-                    "exact_snippets": "Participants must meet at least one of these criteria",
-                    "criterion": "eligibility criteria",
-                    "requirements": [
-                        {
-                            "requirement_type": "quantity",
-                            "expected_value": ">= 1"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "line": "Have suspected or known disorder of the immune system or cancer",
             "criterions": [
                 {
                     "exact_snippets": "suspected or known disorder of the immune system",
-                    "criterion": "immune system disorder",
+                    "criterion": "disorder of the immune system",
                     "requirements": [
                         {
                             "requirement_type": "presence",
@@ -430,21 +400,21 @@
             "criterions": [
                 {
                     "exact_snippets": "Participant must be able to understand",
-                    "criterion": "cognitive ability",
+                    "criterion": "understanding ability",
                     "requirements": [
                         {
                             "requirement_type": "ability",
-                            "expected_value": "understand"
+                            "expected_value": true
                         }
                     ]
                 },
                 {
                     "exact_snippets": "sign informed consent",
-                    "criterion": "ability to sign consent",
+                    "criterion": "informed consent signing",
                     "requirements": [
                         {
                             "requirement_type": "ability",
-                            "expected_value": "sign"
+                            "expected_value": true
                         }
                     ]
                 }
@@ -453,16 +423,6 @@
         {
             "line": "Participants who will undergo apheresis must have hematocrit greater than 28%, and platelet count greater than 50,000.",
             "criterions": [
-                {
-                    "exact_snippets": "Participants who will undergo apheresis",
-                    "criterion": "apheresis",
-                    "requirements": [
-                        {
-                            "requirement_type": "undergoing",
-                            "expected_value": true
-                        }
-                    ]
-                },
                 {
                     "exact_snippets": "hematocrit greater than 28%",
                     "criterion": "hematocrit",
@@ -482,7 +442,7 @@
                     "criterion": "platelet count",
                     "requirements": [
                         {
-                            "requirement_type": "count",
+                            "requirement_type": "level",
                             "expected_value": {
                                 "operator": ">",
                                 "value": 50000,
@@ -534,23 +494,53 @@
                             }
                         }
                     ]
+                },
+                {
+                    "exact_snippets": "apheresis",
+                    "criterion": "apheresis",
+                    "requirements": [
+                        {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Overall",
+            "criterions": [
+                {
+                    "exact_snippets": "Overall",
+                    "criterion": "overall health",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "N/A"
+                        }
+                    ]
                 }
             ]
         }
     ],
     "failed_inclusion": [],
-    "failed_exclusion": [],
+    "failed_exclusion": [
+        {
+            "line": "Exclusion Criteria for Apheresis Alone:",
+            "criterions": []
+        }
+    ],
     "failed_miscellaneous": [
         {
             "line": "* INCLUSION CRITERIA:",
             "criterions": []
         },
         {
-            "line": "EXCLUSION CRITERIA:",
+            "line": "Participants must meet at least one of these criteria:",
             "criterions": []
         },
         {
-            "line": "Overall",
+            "line": "EXCLUSION CRITERIA:",
             "criterions": []
         }
     ]

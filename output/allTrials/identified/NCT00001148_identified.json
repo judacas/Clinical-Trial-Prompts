@@ -58,23 +58,14 @@
                 },
                 {
                     "exact_snippets": "WHO grade III and IV, WHO classification of glial tumors",
-                    "criterion": "tumor grade",
+                    "criterion": "WHO grade",
                     "requirements": [
                         {
                             "requirement_type": "classification",
-                            "expected_value": {
-                                "operator": "=",
-                                "value": 3,
-                                "unit": "WHO grade"
-                            }
-                        },
-                        {
-                            "requirement_type": "classification",
-                            "expected_value": {
-                                "operator": "=",
-                                "value": 4,
-                                "unit": "WHO grade"
-                            }
+                            "expected_value": [
+                                "III",
+                                "IV"
+                            ]
                         }
                     ]
                 }
@@ -268,7 +259,7 @@
                     "requirements": [
                         {
                             "requirement_type": "level",
-                            "expected_value": "> 3 times the upper limit of normal"
+                            "expected_value": "greater than 3 times the upper limit of normal"
                         }
                     ]
                 }
@@ -292,7 +283,7 @@
                     ]
                 },
                 {
-                    "exact_snippets": "Coagulopathy ... activated partial thromboplastin time [APTT] > 1.5 times control)",
+                    "exact_snippets": "Coagulopathy ... activated partial thromboplastin time [APTT] > 1.5 times control",
                     "criterion": "activated partial thromboplastin time (APTT)",
                     "requirements": [
                         {
@@ -349,7 +340,7 @@
             "line": "Acute infection.",
             "criterions": [
                 {
-                    "exact_snippets": "Acute infection.",
+                    "exact_snippets": "Acute infection",
                     "criterion": "acute infection",
                     "requirements": [
                         {
@@ -364,7 +355,7 @@
             "line": "Acute medical problems.",
             "criterions": [
                 {
-                    "exact_snippets": "Acute medical problems.",
+                    "exact_snippets": "Acute medical problems",
                     "criterion": "acute medical problems",
                     "requirements": [
                         {
@@ -413,7 +404,7 @@
             "line": "Allergy to CT contrast agents.",
             "criterions": [
                 {
-                    "exact_snippets": "Allergy to CT contrast agents",
+                    "exact_snippets": "Allergy to CT contrast agents.",
                     "criterion": "allergy",
                     "requirements": [
                         {
@@ -428,37 +419,12 @@
             "line": "Absence of tumor-specific gene mutation.",
             "criterions": [
                 {
-                    "exact_snippets": "Absence of tumor-specific gene mutation",
+                    "exact_snippets": "Absence of tumor-specific gene mutation.",
                     "criterion": "tumor-specific gene mutation",
                     "requirements": [
                         {
                             "requirement_type": "presence",
                             "expected_value": false
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "line": "Pregnant women. Women of child-bearing potential will undergo a urine and/or serum pregnancy test. Women who are pregnant will not be allowed to participate in this study.",
-            "criterions": [
-                {
-                    "exact_snippets": "Pregnant women ... Women who are pregnant will not be allowed to participate",
-                    "criterion": "pregnancy",
-                    "requirements": [
-                        {
-                            "requirement_type": "status",
-                            "expected_value": false
-                        }
-                    ]
-                },
-                {
-                    "exact_snippets": "Women of child-bearing potential",
-                    "criterion": "child-bearing potential",
-                    "requirements": [
-                        {
-                            "requirement_type": "status",
-                            "expected_value": true
                         }
                     ]
                 }
@@ -475,6 +441,44 @@
         {
             "line": "EXCLUSION CRITERIA:",
             "criterions": []
+        },
+        {
+            "line": "Pregnant women. Women of child-bearing potential will undergo a urine and/or serum pregnancy test. Women who are pregnant will not be allowed to participate in this study.",
+            "criterions": [
+                {
+                    "exact_snippets": "Pregnant women. Women who are pregnant will not be allowed to participate",
+                    "criterion": "pregnancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Women of child-bearing potential",
+                    "criterion": "child-bearing potential",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "urine and/or serum pregnancy test",
+                    "criterion": "pregnancy test",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "urine",
+                                "serum"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
