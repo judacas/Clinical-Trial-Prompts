@@ -30,7 +30,7 @@
                     "criterion": "gender",
                     "requirements": [
                         {
-                            "requirement_type": "N/A",
+                            "requirement_type": "expected_value",
                             "expected_value": "female"
                         }
                     ]
@@ -48,7 +48,7 @@
                     "criterion": "ovarian cancer",
                     "requirements": [
                         {
-                            "requirement_type": "diagnosis method",
+                            "requirement_type": "confirmation method",
                             "expected_value": "biopsy proven"
                         }
                     ]
@@ -94,7 +94,7 @@
             "line": "Patients must have FIGO stage III and IV disease, or FIGO Stage IIC disease with poorly differentiated histology, and will undergo attempted surgical debulking prior to the initiation of chemotherapy.",
             "criterions": [
                 {
-                    "exact_snippets": "Patients must have FIGO stage III and IV disease",
+                    "exact_snippets": "FIGO stage III and IV disease",
                     "criterion": "FIGO stage",
                     "requirements": [
                         {
@@ -115,18 +115,18 @@
                             "expected_value": "IIC"
                         },
                         {
-                            "requirement_type": "histology",
+                            "requirement_type": "histology differentiation",
                             "expected_value": "poorly differentiated"
                         }
                     ]
                 },
                 {
-                    "exact_snippets": "will undergo attempted surgical debulking prior to the initiation of chemotherapy",
+                    "exact_snippets": "will undergo attempted surgical debulking",
                     "criterion": "surgical debulking",
                     "requirements": [
                         {
-                            "requirement_type": "timing",
-                            "expected_value": "prior to chemotherapy"
+                            "requirement_type": "procedure",
+                            "expected_value": "attempted"
                         }
                     ]
                 }
@@ -199,8 +199,8 @@
                     "criterion": "cardiac arrhythmias",
                     "requirements": [
                         {
-                            "requirement_type": "severity",
-                            "expected_value": "requiring treatment"
+                            "requirement_type": "treatment",
+                            "expected_value": false
                         }
                     ]
                 }
@@ -263,8 +263,8 @@
                     "criterion": "ureteral obstruction",
                     "requirements": [
                         {
-                            "requirement_type": "status",
-                            "expected_value": "corrected"
+                            "requirement_type": "presence",
+                            "expected_value": false
                         }
                     ]
                 }
@@ -315,16 +315,6 @@
                             }
                         }
                     ]
-                },
-                {
-                    "exact_snippets": "exclusive of mild vibratory delay",
-                    "criterion": "mild vibratory delay",
-                    "requirements": [
-                        {
-                            "requirement_type": "presence",
-                            "expected_value": true
-                        }
-                    ]
                 }
             ]
         },
@@ -333,7 +323,7 @@
             "criterions": [
                 {
                     "exact_snippets": "No recent history of active GI bleeding.",
-                    "criterion": "GI bleeding",
+                    "criterion": "active GI bleeding",
                     "requirements": [
                         {
                             "requirement_type": "history",
@@ -405,8 +395,8 @@
             "line": "Patients must be able to give written informed consent and express a willingness to meet all of the expected requirements of the protocol.",
             "criterions": [
                 {
-                    "exact_snippets": "Patients must be able to give written informed consent",
-                    "criterion": "ability to give written informed consent",
+                    "exact_snippets": "able to give written informed consent",
+                    "criterion": "informed consent",
                     "requirements": [
                         {
                             "requirement_type": "ability",
@@ -431,10 +421,10 @@
             "criterions": [
                 {
                     "exact_snippets": "able to begin therapy within 8 weeks of staging laparotomy",
-                    "criterion": "therapy initiation",
+                    "criterion": "therapy initiation time",
                     "requirements": [
                         {
-                            "requirement_type": "timeframe",
+                            "requirement_type": "time frame",
                             "expected_value": {
                                 "operator": "<=",
                                 "value": 8,
