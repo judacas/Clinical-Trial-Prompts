@@ -35,6 +35,7 @@ class ParsedCriterion(BaseModel):
     )
 
 
+# ? Does the LLM need to return the question or how will that be handled?
 class LLMResponse(BaseModel):
     """
     The format that the LLM will return, without any timestamp fields.
@@ -106,27 +107,9 @@ def parse_user_response(user_input: str, question: str) -> UserAnswerHistory:
     prompt = (
         "You are an expert in parsing patient responses for clinical trial eligibility. "
         "Given the following question and the user's response, extract all the criteria mentioned "
-        "along with their requirement types and provided values. The output should be valid JSON corresponding "
-        "to a list of objects with the following format:\n\n"
-        "{\n"
-        '  "criterion": "<criterion_name>",\n'
-        '  "responses": [\n'
-        '      { "requirement_type": "<type>", "user_value": <value> },\n'
-        "      ...\n"
-        "  ]\n"
-        "}\n\n"
-        "Now, use this format to build a JSON object that also includes the original question. "
-        "The final JSON should have the following structure:\n\n"
-        "{\n"
-        '  "question": "<the question>",\n'
-        '  "parsed_answers": [\n'
-        '      { "criterion": "...", "responses": [ { "requirement_type": "...", "user_value": ... }, ... ] },\n'
-        "      ...\n"
-        "  ]\n"
-        "}\n\n"
+        "along with their requirement types and provided values.\n\n"
         "Question: " + question + "\n"
         "User Response: " + user_input + "\n\n"
-        "Provide your answer in valid JSON."
     )
 
     try:

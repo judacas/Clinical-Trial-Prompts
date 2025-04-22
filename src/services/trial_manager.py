@@ -122,6 +122,67 @@ def convert_std_ages_to_numerical_ages(std_ages: list, criteria: list[str]) -> N
         criteria.append(f"Must be {max_age} or younger")
 
 
+def parse_study_to_raw_trial(study: dict) -> RawTrialData:
+    """
+    Parse a ClinicalTrials.gov API study JSON into a RawTrialData object.
+
+    Args:
+        study (dict): The study JSON object from the API.
+
+    Returns:
+        RawTrialData: Structured raw trial data.
+    """
+    nct_id = study.get("identificationModule", {}).get("nctId") or study.get("NCTId")
+    if not nct_id:
+        logger.error("No NCTId found in study: %s", study)
+        raise ValueError(
+            "No NCTId found in study, something is wrong good luck debugging LMAO"
+        )
+    official_title = study.get("identificationModule", {}).get("officialTitle", "")
+    eligibility_module = study.get("eligibilityModule", {})
+    eligibility = remove_pesky_slash(eligibility_module.get("eligibilityCriteria", ""))
+    extra_criteria = "\n".join(get_extra_criteria(eligibility_module))
+
+    inclusion_pos = eligibility.find("Inclusion Criteria:")
+    exclusion_pos = eligibility.find("Exclusion Criteria:")
+
+    if inclusion_pos != -1 and exclusion_pos != -1:
+        inclusion_text = eligibility[
+            inclusion_pos + len("Inclusion Criteria:") : exclusion_pos
+        ].strip()
+        exclusion_text = eligibility[
+            exclusion_pos + len("Exclusion Criteria:") :
+        ].strip()
+        miscellaneous_text = eligibility[:inclusion_pos].strip()
+    elif inclusion_pos != -1:
+        inclusion_text = eligibility[
+            inclusion_pos + len("Inclusion Criteria:") :
+        ].strip()
+        exclusion_text = ""
+        miscellaneous_text = eligibility[:inclusion_pos].strip()
+    elif exclusion_pos != -1:
+        inclusion_text = ""
+        exclusion_text = eligibility[
+            exclusion_pos + len("Exclusion Criteria:") :
+        ].strip()
+        miscellaneous_text = eligibility[:exclusion_pos].strip()
+    else:
+        inclusion_text = eligibility.strip()
+        exclusion_text = ""
+        miscellaneous_text = ""
+
+    # Add extra criteria to inclusion criteria
+    inclusion_text = (inclusion_text + "\n" + extra_criteria).strip()
+
+    return RawTrialData(
+        nct_id=nct_id,
+        official_title=official_title,
+        inclusion_criteria=inclusion_text,
+        exclusion_criteria=exclusion_text,
+        miscellaneous_criteria=miscellaneous_text,
+    )
+
+
 def get_trial_data(nct_id: str) -> RawTrialData:
     """
     Retrieve trial data from ClinicalTrials.gov API and format it for processing.
@@ -150,56 +211,8 @@ def get_trial_data(nct_id: str) -> RawTrialData:
                 logger.debug("Response data: %s", data)
                 raise ValueError(f"No data found for NCT ID: {nct_id}")
 
-        # Extract key fields from the study data
-        official_title = study.get("identificationModule", {}).get("officialTitle", "")
-        eligibility_module = study.get("eligibilityModule", {})
-        eligibility = remove_pesky_slash(
-            eligibility_module.get("eligibilityCriteria", "")
-        )
-        extra_criteria = "\n".join(get_extra_criteria(eligibility_module))
-
-        # Split the eligibility text into sections
-        inclusion_pos = eligibility.find("Inclusion Criteria:")
-        exclusion_pos = eligibility.find("Exclusion Criteria:")
-
-        # Process the eligibility text based on the presence of section markers
-        if inclusion_pos != -1 and exclusion_pos != -1:
-            inclusion_text = eligibility[
-                inclusion_pos + len("Inclusion Criteria:") : exclusion_pos
-            ].strip()
-            exclusion_text = eligibility[
-                exclusion_pos + len("Exclusion Criteria:") :
-            ].strip()
-            miscellaneous_text = eligibility[:inclusion_pos].strip()
-
-        elif inclusion_pos != -1:
-            inclusion_text = eligibility[
-                inclusion_pos + len("Inclusion Criteria:") :
-            ].strip()
-            exclusion_text = ""
-            miscellaneous_text = eligibility[:inclusion_pos].strip()
-        elif exclusion_pos != -1:
-            inclusion_text = ""
-            exclusion_text = eligibility[
-                exclusion_pos + len("Exclusion Criteria:") :
-            ].strip()
-            miscellaneous_text = eligibility[:exclusion_pos].strip()
-        else:
-            inclusion_text = ""
-            exclusion_text = ""
-            miscellaneous_text = eligibility.strip()
-
-        # Add extra criteria to inclusion criteria
-        inclusion_text = (inclusion_text + "\n" + extra_criteria).strip()
-
-        # Create the raw trial data object
-        raw_data = RawTrialData(
-            nct_id=nct_id,
-            official_title=official_title,
-            inclusion_criteria=inclusion_text,
-            exclusion_criteria=exclusion_text,
-            miscellaneous_criteria=miscellaneous_text,
-        )
+        # Use the new parser function
+        raw_data = parse_study_to_raw_trial(study)
 
         logger.info("Successfully retrieved trial data.")
         logger.debug("Fully raw input: %s", data)
