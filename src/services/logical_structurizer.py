@@ -116,7 +116,7 @@ def logically_structurize_line(
     try:
         # Send the line to the LLM for logical structurizing
         completion = tracked_openai_completion_call(
-            model="gpt-4o",
+            model="gpt-4.1",
             messages=[
                 {"role": "system", "content": prompt},
                 {"role": "user", "content": str(line)},
