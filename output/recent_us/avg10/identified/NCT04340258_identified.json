@@ -1,0 +1,224 @@
+{
+    "info": {
+        "nct_id": "NCT04340258",
+        "official_title": "Phase 1b/II Trial Combining PD1 Inhibition (Pembrolizumab) and Cesium 131 Brachytherapy With Salvage Surgery to Enhance Immunogenicity and Improve Local Control in Head and Neck Cancer",
+        "inclusion_criteria": "* locally recurrent HNSCC and be eligible for salvage surgery\n* If patient received radiation therapy in the past, they should have recovered from the acute toxicity to <grade 1\n* tumor needs to be deemed resectable\nHealthy volunteers allowed\nMust have minimum age of 19 Years\nMust have maximum age of 90 Years",
+        "exclusion_criteria": "* Exposed carotid artery preoperatively requiring sacrifice or bypass intra-operatively\n* Patients with active pharyngo-cutaneous\n* Patients with more than one site of distant metastatic disease\n* Prior immune-based anticancer therapy within last six months",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* tumor needs to be deemed resectable",
+            "criterions": [
+                {
+                    "exact_snippets": "tumor needs to be deemed resectable",
+                    "criterion": "tumor",
+                    "requirements": [
+                        {
+                            "requirement_type": "resectability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* If patient received radiation therapy in the past, they should have recovered from the acute toxicity to <grade 1",
+            "criterions": [
+                {
+                    "exact_snippets": "received radiation therapy in the past",
+                    "criterion": "radiation therapy history",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "recovered from the acute toxicity to <grade 1",
+                    "criterion": "acute toxicity recovery",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1,
+                                "unit": "grade"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "volunteer health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 90 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 90 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 90,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 19 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 19 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 19,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* locally recurrent HNSCC and be eligible for salvage surgery",
+            "criterions": [
+                {
+                    "exact_snippets": "locally recurrent HNSCC",
+                    "criterion": "locally recurrent HNSCC",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "eligible for salvage surgery",
+                    "criterion": "eligibility for salvage surgery",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Patients with more than one site of distant metastatic disease",
+            "criterions": [
+                {
+                    "exact_snippets": "more than one site of distant metastatic disease",
+                    "criterion": "distant metastatic disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "site"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients with active pharyngo-cutaneous",
+            "criterions": [
+                {
+                    "exact_snippets": "active pharyngo-cutaneous",
+                    "criterion": "pharyngo-cutaneous condition",
+                    "requirements": [
+                        {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior immune-based anticancer therapy within last six months",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior immune-based anticancer therapy within last six months",
+                    "criterion": "immune-based anticancer therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Exposed carotid artery preoperatively requiring sacrifice or bypass intra-operatively",
+            "criterions": [
+                {
+                    "exact_snippets": "Exposed carotid artery preoperatively",
+                    "criterion": "carotid artery exposure",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "preoperatively"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "requiring sacrifice or bypass intra-operatively",
+                    "criterion": "carotid artery management",
+                    "requirements": [
+                        {
+                            "requirement_type": "procedure",
+                            "expected_value": [
+                                "sacrifice",
+                                "bypass"
+                            ]
+                        },
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "intra-operatively"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

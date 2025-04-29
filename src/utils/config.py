@@ -34,6 +34,9 @@ DEFAULT_OUTPUT_DIR = os.path.join(PROJECT_ROOT, "output")
 TIMEOUT = 30
 TEMPERATURE = 0.0
 
+# Maximum number of concurrent OpenAI calls
+MAX_CONCURRENT_OPENAI_CALLS = 100
+
 
 class ColoredFormatter(logging.Formatter):
     """

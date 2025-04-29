@@ -1,0 +1,891 @@
+{
+    "info": {
+        "nct_id": "NCT05564377",
+        "official_title": "Molecular Analysis for Combination Therapy Choice (ComboMATCH)",
+        "inclusion_criteria": "* Patient must have measurable disease\n* Patient must have an Eastern Cooperative Oncology Group (ECOG) performance status between 0-2 OR patient must have Lansky performance status of >= 50% or Karnofsky performance status of >= 50%\n* Patient must be deemed potentially eligible for a ComboMATCH Treatment Trial as assessed by the enrolling provider\n* All patients must have sequencing results available from a National Cancer Institute (NCI) credentialed Designated Laboratory (DL)\n* Patients must have locally advanced or advanced histologically documented solid tumors requiring therapy and meet one of the following criteria:\n\n  * Patients must have progressed on at least one line of standard systemic therapy OR\n  * Patients whose disease has no standard treatment that has been shown to prolong overall survival\n* Patient must meet one of the following requirements:\n\n  * Patients 18 years and older who have tumor amenable to minimal risk image-guided or direct vision biopsy and must be willing and able to undergo a tumor biopsy to obtain samples for research if the patient is to enroll in a ComboMATCH treatment trial OR\n  * Patients 18 years and older who do not have disease that is biopsiable at minimal risk to the patient must confirm availability of an archival tumor tissue specimen for submission for research if the patient enrolls to a ComboMATCH Treatment Trial. This tumor tissue must meet the following criteria:\n\n    * Tissue must have been collected within 12 months prior to registration to the EAY191 Registration Trial\n    * Patient must not have had a Response Evaluation Criteria in Solid Tumors (RECIST) response (complete response [CR] or partial response [PR]) to any intervening therapy after collection of the tissue\n    * Formalin-fixed paraffin-embedded tumor tissue block(s) or slides must be available OR\n  * Patients under 18 years old must confirm availability of an archival tumor tissue specimen for submission for research if patient enrolls to a ComboMATCH Treatment Trial. This tumor tissue must meet the following criteria:\n\n    * Formalin-fixed paraffin-embedded tumor tissue block(s) or slides must be available\n  * NOTE: See specific ComboMATCH Treatment Trial protocol for tissue collection and management instructions. Performance of the mandatory research biopsy or submission of pre-trial formalin-fixed paraffin-embedded (FFPE) and collection and submission of the blood specimens for the integrated studies will be performed under the consent authority of the specific treatment trial protocol to which the patient is registered. No procedures to collect specimens for research only are to be performed for patients registered to the EAY191 Registration Trial only\n* NOTE: Each ComboMATCH Treatment Trial contains specific eligibility criteria. If patient is found to not be eligible for the assigned ComboMATCH Treatment Trial, indication of ineligibility will trigger re-evaluation and potential assignment to another Treatment Trial\nHealthy volunteers allowed",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patient must have measurable disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "measurable disease",
+                        "criterion": "disease",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "measurable disease",
+                        "criterion": "disease",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must have progressed on at least one line of standard systemic therapy OR",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must have progressed on at least one line of standard systemic therapy",
+                        "criterion": "progression on standard systemic therapy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "line"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Patients must have progressed on at least one line of standard systemic therapy",
+                        "criterion": "progression on standard systemic therapy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "line"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Tissue must have been collected within 12 months prior to registration to the EAY191 Registration Trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "Tissue must have been collected within 12 months prior to registration",
+                        "criterion": "tissue collection date",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Tissue must have been collected within 12 months prior to registration",
+                        "criterion": "tissue collection date",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* NOTE: Each ComboMATCH Treatment Trial contains specific eligibility criteria. If patient is found to not be eligible for the assigned ComboMATCH Treatment Trial, indication of ineligibility will trigger re-evaluation and potential assignment to another Treatment Trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "patient is found to not be eligible for the assigned ComboMATCH Treatment Trial",
+                        "criterion": "eligibility for ComboMATCH Treatment Trial",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "patient is found to not be eligible for the assigned ComboMATCH Treatment Trial",
+                    "criterion": "eligibility for ComboMATCH Treatment Trial",
+                    "requirement": {
+                        "requirement_type": "eligibility",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Formalin-fixed paraffin-embedded tumor tissue block(s) or slides must be available",
+                "criterions": [
+                    {
+                        "exact_snippets": "Formalin-fixed paraffin-embedded tumor tissue block(s) or slides must be available",
+                        "criterion": "formalin-fixed paraffin-embedded tumor tissue",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Formalin-fixed paraffin-embedded tumor tissue block(s) or slides must be available",
+                        "criterion": "formalin-fixed paraffin-embedded tumor tissue",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient must meet one of the following requirements:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient must meet one of the following requirements",
+                        "criterion": "eligibility requirements",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Patient must meet one of the following requirements",
+                        "criterion": "eligibility requirements",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient must have an Eastern Cooperative Oncology Group (ECOG) performance status between 0-2 OR patient must have Lansky performance status of >= 50% or Karnofsky performance status of >= 50%",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status between 0-2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Lansky performance status of >= 50%",
+                        "criterion": "Lansky performance status",
+                        "requirement": {
+                            "requirement_type": "threshold",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Lansky performance status of >= 50%",
+                        "criterion": "Lansky performance status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Karnofsky performance status of >= 50%",
+                        "criterion": "Karnofsky performance status",
+                        "requirement": {
+                            "requirement_type": "threshold",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Karnofsky performance status of >= 50%",
+                        "criterion": "Karnofsky performance status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status between 0-2",
+                                "criterion": "ECOG performance status",
+                                "requirement": {
+                                    "requirement_type": "range",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 0,
+                                                "unit": "N/A"
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 2,
+                                                "unit": "N/A"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Lansky performance status of >= 50%",
+                                        "criterion": "Lansky performance status",
+                                        "requirement": {
+                                            "requirement_type": "threshold",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 50,
+                                                "unit": "%"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Lansky performance status of >= 50%",
+                                        "criterion": "Lansky performance status",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Karnofsky performance status of >= 50%",
+                                        "criterion": "Karnofsky performance status",
+                                        "requirement": {
+                                            "requirement_type": "threshold",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 50,
+                                                "unit": "%"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Karnofsky performance status of >= 50%",
+                                        "criterion": "Karnofsky performance status",
+                                        "requirement": {
+                                            "requirement_type": "presence",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient must be deemed potentially eligible for a ComboMATCH Treatment Trial as assessed by the enrolling provider",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient must be deemed potentially eligible for a ComboMATCH Treatment Trial",
+                        "criterion": "potential eligibility for ComboMATCH Treatment Trial",
+                        "requirement": {
+                            "requirement_type": "assessment",
+                            "expected_value": "enrolling provider"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patient must be deemed potentially eligible for a ComboMATCH Treatment Trial",
+                        "criterion": "potential eligibility for ComboMATCH Treatment Trial",
+                        "requirement": {
+                            "requirement_type": "assessment",
+                            "expected_value": "enrolling provider"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients under 18 years old must confirm availability of an archival tumor tissue specimen for submission for research if patient enrolls to a ComboMATCH Treatment Trial. This tumor tissue must meet the following criteria:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients under 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "confirm availability of an archival tumor tissue specimen",
+                        "criterion": "archival tumor tissue specimen",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "if patient enrolls to a ComboMATCH Treatment Trial",
+                        "criterion": "enrollment in ComboMATCH Treatment Trial",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Patients under 18 years old",
+                                    "criterion": "age",
+                                    "requirement": {
+                                        "requirement_type": "N/A",
+                                        "expected_value": {
+                                            "operator": "<",
+                                            "value": 18,
+                                            "unit": "years"
+                                        }
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "if patient enrolls to a ComboMATCH Treatment Trial",
+                                    "criterion": "enrollment in ComboMATCH Treatment Trial",
+                                    "requirement": {
+                                        "requirement_type": "N/A",
+                                        "expected_value": true
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "exact_snippets": "confirm availability of an archival tumor tissue specimen",
+                    "criterion": "archival tumor tissue specimen",
+                    "requirement": {
+                        "requirement_type": "availability",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* All patients must have sequencing results available from a National Cancer Institute (NCI) credentialed Designated Laboratory (DL)",
+                "criterions": [
+                    {
+                        "exact_snippets": "sequencing results available",
+                        "criterion": "sequencing results",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "National Cancer Institute (NCI) credentialed Designated Laboratory (DL)",
+                        "criterion": "laboratory credential",
+                        "requirement": {
+                            "requirement_type": "credential",
+                            "expected_value": "National Cancer Institute (NCI)"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "sequencing results available",
+                        "criterion": "sequencing results",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "National Cancer Institute (NCI) credentialed Designated Laboratory (DL)",
+                        "criterion": "laboratory credential",
+                        "requirement": {
+                            "requirement_type": "credential",
+                            "expected_value": "National Cancer Institute (NCI)"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Formalin-fixed paraffin-embedded tumor tissue block(s) or slides must be available OR",
+                "criterions": [
+                    {
+                        "exact_snippets": "Formalin-fixed paraffin-embedded tumor tissue block(s) or slides must be available",
+                        "criterion": "formalin-fixed paraffin-embedded tumor tissue",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Formalin-fixed paraffin-embedded tumor tissue block(s) or slides must be available",
+                        "criterion": "formalin-fixed paraffin-embedded tumor tissue",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients 18 years and older who do not have disease that is biopsiable at minimal risk to the patient must confirm availability of an archival tumor tissue specimen for submission for research if the patient enrolls to a ComboMATCH Treatment Trial. This tumor tissue must meet the following criteria:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients 18 years and older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "do not have disease that is biopsiable at minimal risk to the patient",
+                        "criterion": "biopsiable disease",
+                        "requirement": {
+                            "requirement_type": "risk",
+                            "expected_value": "minimal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "availability of an archival tumor tissue specimen",
+                        "criterion": "archival tumor tissue specimen",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "Patients 18 years and older",
+                                    "criterion": "age",
+                                    "requirement": {
+                                        "requirement_type": "minimum age",
+                                        "expected_value": {
+                                            "operator": ">=",
+                                            "value": 18,
+                                            "unit": "years"
+                                        }
+                                    }
+                                },
+                                {
+                                    "not_criteria": {
+                                        "exact_snippets": "do not have disease that is biopsiable at minimal risk to the patient",
+                                        "criterion": "biopsiable disease",
+                                        "requirement": {
+                                            "requirement_type": "risk",
+                                            "expected_value": "minimal"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "exact_snippets": "availability of an archival tumor tissue specimen",
+                    "criterion": "archival tumor tissue specimen",
+                    "requirement": {
+                        "requirement_type": "availability",
+                        "expected_value": true
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients whose disease has no standard treatment that has been shown to prolong overall survival",
+                "criterions": [
+                    {
+                        "exact_snippets": "disease has no standard treatment that has been shown to prolong overall survival",
+                        "criterion": "disease standard treatment",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "disease has no standard treatment that has been shown to prolong overall survival",
+                        "criterion": "disease standard treatment",
+                        "requirement": {
+                            "requirement_type": "effectiveness",
+                            "expected_value": "not shown to prolong overall survival"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "disease has no standard treatment that has been shown to prolong overall survival",
+                        "criterion": "disease standard treatment",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "disease has no standard treatment that has been shown to prolong overall survival",
+                        "criterion": "disease standard treatment",
+                        "requirement": {
+                            "requirement_type": "effectiveness",
+                            "expected_value": "not shown to prolong overall survival"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* NOTE: See specific ComboMATCH Treatment Trial protocol for tissue collection and management instructions. Performance of the mandatory research biopsy or submission of pre-trial formalin-fixed paraffin-embedded (FFPE) and collection and submission of the blood specimens for the integrated studies will be performed under the consent authority of the specific treatment trial protocol to which the patient is registered. No procedures to collect specimens for research only are to be performed for patients registered to the EAY191 Registration Trial only",
+                "criterions": [
+                    {
+                        "exact_snippets": "Performance of the mandatory research biopsy",
+                        "criterion": "research biopsy",
+                        "requirement": {
+                            "requirement_type": "performance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "submission of pre-trial formalin-fixed paraffin-embedded (FFPE)",
+                        "criterion": "pre-trial FFPE",
+                        "requirement": {
+                            "requirement_type": "submission",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "collection and submission of the blood specimens",
+                        "criterion": "blood specimens",
+                        "requirement": {
+                            "requirement_type": "collection and submission",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Performance of the mandatory research biopsy",
+                        "criterion": "research biopsy",
+                        "requirement": {
+                            "requirement_type": "performance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "submission of pre-trial formalin-fixed paraffin-embedded (FFPE)",
+                        "criterion": "pre-trial FFPE",
+                        "requirement": {
+                            "requirement_type": "submission",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "collection and submission of the blood specimens",
+                        "criterion": "blood specimens",
+                        "requirement": {
+                            "requirement_type": "collection and submission",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients 18 years and older who have tumor amenable to minimal risk image-guided or direct vision biopsy and must be willing and able to undergo a tumor biopsy to obtain samples for research if the patient is to enroll in a ComboMATCH treatment trial OR",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients 18 years and older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "tumor amenable to minimal risk image-guided or direct vision biopsy",
+                        "criterion": "tumor biopsy feasibility",
+                        "requirement": {
+                            "requirement_type": "amenability",
+                            "expected_value": "minimal risk image-guided or direct vision biopsy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "must be willing and able to undergo a tumor biopsy",
+                        "criterion": "willingness and ability to undergo tumor biopsy",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "must be willing and able to undergo a tumor biopsy",
+                        "criterion": "willingness and ability to undergo tumor biopsy",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "and_criteria": [
+                                            {
+                                                "exact_snippets": "Patients 18 years and older",
+                                                "criterion": "age",
+                                                "requirement": {
+                                                    "requirement_type": "N/A",
+                                                    "expected_value": {
+                                                        "operator": ">=",
+                                                        "value": 18,
+                                                        "unit": "years"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "exact_snippets": "tumor amenable to minimal risk image-guided or direct vision biopsy",
+                                                "criterion": "tumor biopsy feasibility",
+                                                "requirement": {
+                                                    "requirement_type": "amenability",
+                                                    "expected_value": "minimal risk image-guided or direct vision biopsy"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "exact_snippets": "must be willing and able to undergo a tumor biopsy",
+                                        "criterion": "willingness and ability to undergo tumor biopsy",
+                                        "requirement": {
+                                            "requirement_type": "willingness",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "must be willing and able to undergo a tumor biopsy",
+                                "criterion": "willingness and ability to undergo tumor biopsy",
+                                "requirement": {
+                                    "requirement_type": "ability",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Patient must not have had a Response Evaluation Criteria in Solid Tumors (RECIST) response (complete response [CR] or partial response [PR]) to any intervening therapy after collection of the tissue",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient must not have had a Response Evaluation Criteria in Solid Tumors (RECIST) response (complete response [CR] or partial response [PR])",
+                        "criterion": "RECIST response",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "to any intervening therapy after collection of the tissue",
+                        "criterion": "intervening therapy after collection of the tissue",
+                        "requirement": {
+                            "requirement_type": "RECIST response",
+                            "expected_value": [
+                                "complete response [CR]",
+                                "partial response [PR]"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must have locally advanced or advanced histologically documented solid tumors requiring therapy and meet one of the following criteria:",
+                "criterions": [
+                    {
+                        "exact_snippets": "locally advanced or advanced histologically documented solid tumors",
+                        "criterion": "solid tumors",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "locally advanced",
+                                "advanced"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "locally advanced or advanced histologically documented solid tumors",
+                        "criterion": "solid tumors",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "histologically"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

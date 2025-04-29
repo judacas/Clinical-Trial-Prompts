@@ -16,11 +16,16 @@ Functions:
     get_openai_client: Initialize and return a configured OpenAI client.
 """
 
+import json
 import logging
 import os
+import threading
+from datetime import datetime
 
 from dotenv import load_dotenv
 from openai import OpenAI
+
+from .config import MAX_CONCURRENT_OPENAI_CALLS
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -54,3 +59,80 @@ def get_openai_client() -> OpenAI:
 
     # Create and return the OpenAI client
     return OpenAI(api_key=api_key)
+
+
+openAI_client = get_openai_client()
+
+
+openai_token_usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+openai_token_usage_lock = threading.Lock()
+openai_concurrency_semaphore = threading.Semaphore(MAX_CONCURRENT_OPENAI_CALLS)
+
+
+def tracked_openai_completion_call(
+    *, model, messages, temperature, response_format, timeout
+):
+    """
+    Wrapper for OpenAI completion calls that tracks and prints running token usage,
+    including cached input tokens if available.
+    """
+    with openai_concurrency_semaphore:
+        completion = openAI_client.beta.chat.completions.parse(
+            model=model,
+            messages=messages,
+            temperature=temperature,
+            response_format=response_format,
+            timeout=timeout,
+        )
+        if usage := getattr(completion, "usage", None):
+            with openai_token_usage_lock:
+                openai_token_usage["prompt_tokens"] += getattr(
+                    usage, "prompt_tokens", 0
+                )
+                openai_token_usage["completion_tokens"] += getattr(
+                    usage, "completion_tokens", 0
+                )
+                openai_token_usage["total_tokens"] += getattr(usage, "total_tokens", 0)
+                # Check for cached tokens
+                cached_tokens = None
+                prompt_tokens_details = getattr(usage, "prompt_tokens_details", None)
+                if prompt_tokens_details:
+                    if hasattr(prompt_tokens_details, "cached_tokens"):
+                        cached_tokens = getattr(
+                            prompt_tokens_details, "cached_tokens", None
+                        )
+                    elif isinstance(prompt_tokens_details, dict):
+                        cached_tokens = prompt_tokens_details.get("cached_tokens")
+                if cached_tokens is not None:
+                    openai_token_usage["cached_prompt_tokens"] = (
+                        openai_token_usage.get("cached_prompt_tokens", 0)
+                        + cached_tokens
+                    )
+                    logger.info(
+                        f"[OpenAI Token Usage] Prompt: {openai_token_usage['prompt_tokens']} | "
+                        f"Completion: {openai_token_usage['completion_tokens']} | "
+                        f"Total: {openai_token_usage['total_tokens']} | "
+                        f"Cached Prompt: {openai_token_usage['cached_prompt_tokens']}"
+                    )
+                else:
+                    logger.info(
+                        f"[OpenAI Token Usage] Prompt: {openai_token_usage['prompt_tokens']} | "
+                        f"Completion: {openai_token_usage['completion_tokens']} | "
+                        f"Total: {openai_token_usage['total_tokens']}"
+                    )
+        else:
+            logger.warning("No token usage information available in the response.")
+        return completion
+
+
+def save_openai_token_usage(output_dir: str):
+    """
+    Save the OpenAI token usage statistics to a JSON file in output/tokens/ with a timestamped filename.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    filename = f"openai_token_usage_{timestamp}.json"
+    filepath = os.path.join(output_dir, filename)
+    with open(filepath, "w") as f:
+        json.dump(openai_token_usage, f, indent=2)
+    logger.info(f"OpenAI token usage saved to {filepath}")

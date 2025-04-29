@@ -1,0 +1,147 @@
+{
+    "info": {
+        "nct_id": "NCT06118502",
+        "official_title": "A Clinical Trial of Adaptive Treatment for Early Smoking Cessation Relapse",
+        "inclusion_criteria": "* Smokers who want to quit\nHealthy volunteers allowed\nMust have minimum age of 21 Years",
+        "exclusion_criteria": "* Non-smokers",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "volunteer health status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "healthy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Smokers who want to quit",
+                "criterions": [
+                    {
+                        "exact_snippets": "Smokers",
+                        "criterion": "smoking status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "smoker"
+                        }
+                    },
+                    {
+                        "exact_snippets": "want to quit",
+                        "criterion": "desire to quit smoking",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Smokers",
+                        "criterion": "smoking status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "smoker"
+                        }
+                    },
+                    {
+                        "exact_snippets": "want to quit",
+                        "criterion": "desire to quit smoking",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 21 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 21 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 21,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 21 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 21,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Non-smokers",
+                "criterions": [
+                    {
+                        "exact_snippets": "Non-smokers",
+                        "criterion": "smoking status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "non-smoker"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Non-smokers",
+                    "criterion": "smoking status",
+                    "requirement": {
+                        "requirement_type": "status",
+                        "expected_value": "non-smoker"
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

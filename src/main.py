@@ -18,11 +18,17 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Generator
 
 from src.services.trial_manager import process_trial
-from src.utils.config import DEFAULT_OUTPUT_DIR, setup_logging
+from src.utils.config import (
+    DEFAULT_OUTPUT_DIR,
+    MAX_CONCURRENT_OPENAI_CALLS,
+    setup_logging,
+)
 from src.utils.helpers import curl_with_status_check
+from src.utils.openai_client import save_openai_token_usage
 
 # Configure application logging
-setup_logging(log_to_file=True, log_level=logging.DEBUG)
+setup_logging(log_to_file=True, log_level=logging.INFO)
+output_dir = os.path.join(DEFAULT_OUTPUT_DIR, "recent_us", "avg10")
 
 
 def getChiaCancerTrials() -> list[str]:
@@ -132,7 +138,7 @@ def get_trials(n: int = 100) -> list[str] | Generator[str] | None:
             print("Invalid choice. Please try again.")
 
 
-def process_trial_wrapper(nct_id: str):
+def process_trial_wrapper(nct_id: str, folder: str):
     """
     Wrapper function to process a trial and handle exceptions.
 
@@ -141,7 +147,7 @@ def process_trial_wrapper(nct_id: str):
     """
     logger = logging.getLogger(__name__)
     try:
-        process_trial(nct_id, os.path.join(DEFAULT_OUTPUT_DIR, "allTrials"))
+        process_trial(nct_id, folder)
         logger.info(f"Successfully processed trial {nct_id}")
     except Exception as e:
         logger.error(f"Failed to process trial {nct_id}: {str(e)}")
@@ -153,9 +159,8 @@ def main():
     """
     logger = logging.getLogger(__name__)
     logger.info("Application started...")
-    parallelMultiplier = 100
 
-    trials = get_trials(parallelMultiplier)
+    trials = get_trials(100)
     if not trials:
         logger.info("No trials selected, exiting...")
         return
@@ -163,12 +168,12 @@ def main():
     if isinstance(trials, list):
         logger.info(f"Selected {len(trials)} trials for processing")
         logger.info("These are the trials selected: %s", trials)
-        parallelMultiplier = min(parallelMultiplier, len(trials))
 
     # Process each trial in parallel using ThreadPoolExecutor
-    with ThreadPoolExecutor(max_workers=parallelMultiplier) as executor:
+    with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_OPENAI_CALLS) as executor:
         future_to_nct_id = {
-            executor.submit(process_trial_wrapper, nct_id): nct_id for nct_id in trials
+            executor.submit(process_trial_wrapper, nct_id, output_dir): nct_id
+            for nct_id in trials
         }
         for future in as_completed(future_to_nct_id):
             nct_id = future_to_nct_id[future]
@@ -182,3 +187,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    save_openai_token_usage(output_dir)

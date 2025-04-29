@@ -20,6 +20,7 @@ Functions:
 """
 
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from enum import Enum
 from typing import List, Union
 
@@ -37,7 +38,7 @@ from src.models.logical_criteria import (
     SingleRequirementCriterion,
 )
 from src.utils.config import TEMPERATURE, TIMEOUT
-from src.utils.openai_client import get_openai_client
+from src.utils.openai_client import get_openai_client, tracked_openai_completion_call
 
 logger = logging.getLogger(__name__)
 
@@ -114,7 +115,7 @@ def logically_structurize_line(
 
     try:
         # Send the line to the LLM for logical structurizing
-        completion = client.beta.chat.completions.parse(
+        completion = tracked_openai_completion_call(
             model="gpt-4o",
             messages=[
                 {"role": "system", "content": prompt},
@@ -249,52 +250,46 @@ def extract_criteria_from_logical_structure(
 def process_criteria_lines(
     lines: list[IdentifiedLine], criteria_type: CriteriaType
 ) -> tuple[list[LogicalLine], list[LogicalLine]]:
-    """
-    Process a list of criteria lines into logical structures.
-
-    Args:
-        lines (list[IdentifiedLine]): The list of identified lines to process.
-        criteria_type (CriteriaType): The type of criteria (inclusion, exclusion, miscellaneous).
-
-    Returns:
-        tuple: A tuple containing:
-            - List of successfully structured logical lines
-            - List of lines that failed to be structured
-    """
     successful_lines = []
     failed_lines = []
 
-    for line in lines:
+    def process_line(line):
         unrolled_line = UnrollLine(line)
         try:
-            # Attempt to structurize the line
             logical_line = logically_structurize_line(unrolled_line, criteria_type)
             try:
-                # Verify criteria completeness
                 confirm_criteria_presence(logical_line)
-                successful_lines.append(logical_line)
+                return logical_line, None
             except ValueError as validation_error:
                 logger.error(
                     "Validation failed for %s line: %s", criteria_type.value, line
                 )
                 logger.error("Validation error: %s", validation_error)
-                failed_lines.append(logical_line)
+                return None, logical_line
         except Exception as e:
             logger.error("Failed to structurize %s line: %s", criteria_type.value, line)
             logger.error("Error: %s", e)
             # Create a placeholder for failed lines
-            failed_lines.append(
-                LogicalLine(
-                    identified_line=unrolled_line,
-                    logical_structure=SingleRequirementCriterion(
-                        exact_snippets="failed",
-                        criterion="failed",
-                        requirement=Requirement(
-                            requirement_type="failed", expected_value="failed"
-                        ),
+            failed_logical_line = LogicalLine(
+                identified_line=unrolled_line,
+                logical_structure=SingleRequirementCriterion(
+                    exact_snippets="failed",
+                    criterion="failed",
+                    requirement=Requirement(
+                        requirement_type="failed", expected_value="failed"
                     ),
-                )
+                ),
             )
+            return None, failed_logical_line
+
+    with ThreadPoolExecutor() as executor:
+        futures = {executor.submit(process_line, line): line for line in lines}
+        for future in as_completed(futures):
+            success, fail = future.result()
+            if success:
+                successful_lines.append(success)
+            if fail:
+                failed_lines.append(fail)
 
     return successful_lines, failed_lines
 

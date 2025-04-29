@@ -11,14 +11,14 @@ CSV_PATH = os.path.join(os.path.dirname(__file__), "us_trials_nct_numbers.csv")
 RAW_OUTPUT_DIR = os.path.join(DEFAULT_OUTPUT_DIR, "recent_us", "raw")
 os.makedirs(RAW_OUTPUT_DIR, exist_ok=True)
 
-BATCH_SIZE = 100
+BATCH_SIZE = 100  # don't exceed 1000, or we gotta start doing pagination, actually don't exceed who knows what the limit is due to too large uri but 100 works fine
 FAILED_FILE = os.path.join(RAW_OUTPUT_DIR, "failed_trials.txt")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def main():
+def importTrials():
     with open(CSV_PATH, newline="") as csv_file:
         reader = csv.reader(csv_file)
         nct_ids = [row[0].strip() for row in reader if row and row[0].strip()]
@@ -31,9 +31,22 @@ def main():
         logger.info(f"Fetching batch {i//BATCH_SIZE+1}: {len(batch)} trials")
         try:
             ids_param = "%2c".join(batch)
-            url = f"https://clinicaltrials.gov/api/v2/studies?format=json&query.cond={ids_param}&fields=NCTId%7CEligibilityModule%7COfficialTitle"
+            url = f"https://clinicaltrials.gov/api/v2/studies?format=json&query.cond={ids_param}&fields=NCTId%7CEligibilityModule%7COfficialTitle&pageSize={BATCH_SIZE}"
+            # ids_param = ",".join(batch)
+            # url = f"https://clinicaltrials.gov/api/v2/studies?ids={ids_param}&fields=NCTId,EligibilityModule,OfficialTitle"
             data = curl_with_status_check(url)
             studies = data.get("studies", [])
+            # Check for missing NCT IDs in the response
+            returned_ids = {
+                study.get("protocolSection", {})
+                .get("identificationModule", {})
+                .get("nctId", None)
+                or study.get("NCTId", None)
+                for study in studies
+            }
+            if missing_ids := set(batch) - returned_ids:
+                logger.warning(f"Missing NCT IDs in response: {missing_ids}")
+                failed_nct_ids.extend(missing_ids)
             for j, study in enumerate(studies):
                 nct_id = batch[j] if j < len(batch) else "UNKNOWN"
                 try:
@@ -63,4 +76,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    importTrials()

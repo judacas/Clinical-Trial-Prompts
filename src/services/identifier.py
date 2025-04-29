@@ -21,6 +21,7 @@ Functions:
 
 import logging
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Tuple
 
 import rich
@@ -32,13 +33,10 @@ from src.models.identified_criteria import (
     LLMMultiRequirementCriterion,
     RawTrialData,
 )
-from src.utils.config import TEMPERATURE, TIMEOUT
-from src.utils.openai_client import get_openai_client
+from src.utils.config import MAX_CONCURRENT_OPENAI_CALLS, TEMPERATURE, TIMEOUT
+from src.utils.openai_client import tracked_openai_completion_call
 
 logger = logging.getLogger(__name__)
-
-# Initialize OpenAI client
-client = get_openai_client()
 
 
 def identify_criterions_from_rawTrial(trial: RawTrialData) -> IdentifiedTrial:
@@ -118,26 +116,38 @@ def process_lines(
     identified_criteria_lines: List[IdentifiedLine] = []
     failed: List[IdentifiedLine] = []
 
-    for index, line in enumerate(lines):
-        logger.debug("Processing line %d: %s", index + 1, line)
+    def process_line(line):
+        logger.debug("Processing line: %s", line)
+        try:
+            extracted_response = extract_atomic_criteria_from_line(line)
+            extracted_criteria = extracted_response.atomic_criteria
+            if extracted_criteria:
+                try:
+                    verify(line, extracted_criteria)
+                    return (
+                        IdentifiedLine(line=line, criterions=extracted_criteria),
+                        None,
+                    )
+                except ValueError as e:
+                    logger.error("Error validating line: %s", e)
+                    return None, IdentifiedLine(
+                        line=line, criterions=extracted_criteria
+                    )
+            else:
+                logger.warning("Failed to extract criteria from line.")
+                return None, IdentifiedLine(line=line, criterions=[])
+        except Exception as e:
+            logger.error("Exception processing line: %s", e)
+            return None, IdentifiedLine(line=line, criterions=[])
 
-        # Extract atomic criteria from the line
-        extracted_response = extract_atomic_criteria_from_line(line)
-        extracted_criteria = extracted_response.atomic_criteria
-
-        if extracted_criteria:
-            try:
-                # Verify that criteria match the source text
-                verify(line, extracted_criteria)
-                identified_criteria_lines.append(
-                    IdentifiedLine(line=line, criterions=extracted_criteria)
-                )
-            except ValueError as e:
-                logger.error("Error validating line %d: %s", index + 1, e)
-                failed.append(IdentifiedLine(line=line, criterions=extracted_criteria))
-        else:
-            logger.warning("Failed to extract criteria from line %d.", index + 1)
-            failed.append(IdentifiedLine(line=line, criterions=[]))
+    with ThreadPoolExecutor(max_workers=MAX_CONCURRENT_OPENAI_CALLS) as executor:
+        futures = {executor.submit(process_line, line): line for line in lines}
+        for future in as_completed(futures):
+            success, fail = future.result()
+            if success:
+                identified_criteria_lines.append(success)
+            if fail:
+                failed.append(fail)
 
     return identified_criteria_lines, failed
 
@@ -167,9 +177,9 @@ def extract_atomic_criteria_from_line(line: str) -> LLMIdentifiedLineResponse:
     )
 
     try:
-        # Send the line to the LLM for processing
-        completion = client.beta.chat.completions.parse(
-            model="gpt-4o",
+        # Send the line to the LLM for processing using the tracked wrapper
+        completion = tracked_openai_completion_call(
+            model="gpt-4.1",
             messages=[
                 {"role": "system", "content": prompt},
                 {"role": "user", "content": line},
@@ -178,6 +188,7 @@ def extract_atomic_criteria_from_line(line: str) -> LLMIdentifiedLineResponse:
             response_format=LLMIdentifiedLineResponse,
             timeout=TIMEOUT,
         )
+        print(completion)
 
         if response := completion.choices[0].message.parsed:
             logger.debug("Successfully extracted atomic criteria from line: %s", line)
