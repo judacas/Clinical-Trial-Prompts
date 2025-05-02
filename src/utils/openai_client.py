@@ -84,6 +84,7 @@ def tracked_openai_completion_call(
             response_format=response_format,
             timeout=timeout,
         )
+        logger.debug(f"OpenAI Completion: {completion}")
         if usage := getattr(completion, "usage", None):
             with openai_token_usage_lock:
                 openai_token_usage["prompt_tokens"] += getattr(

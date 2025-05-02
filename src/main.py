@@ -28,7 +28,8 @@ from src.utils.openai_client import save_openai_token_usage
 
 # Configure application logging
 setup_logging(log_to_file=True, log_level=logging.INFO)
-output_dir = os.path.join(DEFAULT_OUTPUT_DIR, "recent_us", "avg10")
+# output_dir = os.path.join(DEFAULT_OUTPUT_DIR, "recent_us", "200AnnotatedTrials")
+output_dir = os.path.join(DEFAULT_OUTPUT_DIR, "test")
 
 
 def getChiaCancerTrials() -> list[str]:

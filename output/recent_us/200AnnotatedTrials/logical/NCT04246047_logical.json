@@ -1,0 +1,910 @@
+{
+    "info": {
+        "nct_id": "NCT04246047",
+        "official_title": "DREAMM 7: A Multicenter, Open-Label, Randomized Phase III Study to Evaluate the Efficacy and Safety of the Combination of Belantamab Mafodotin, Bortezomib, and Dexamethasone (B-Vd) Compared With the Combination of Daratumumab, Bortezomib and Dexamethasone (D-Vd) in Participants With Relapsed/Refractory Multiple Myeloma",
+        "inclusion_criteria": "* Confirmed diagnosis of multiple myeloma as defined by the International Myeloma Working Group (IMWG) criteria.\n* Previously treated with at least 1 prior line of multiple myeloma (MM) therapy, and must have documented disease progression during or after their most recent therapy.\n* Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2.\n* Must have at least 1 aspect of measurable disease, defined as one of the following;\n\n  1. Urine M-protein excretion >=200 mg per 24-hour, or\n  2. Serum M-protein concentration >=0.5 grams per deciliter (g/dL), or\n  3. Serum free light chain (FLC) assay: involved FLC level >=10 mg per dL (>=100 mg per liter) and an abnormal serum free light chain ratio (<0.26 or >1.65).\n* All prior treatment-related toxicities (defined by National Cancer Institute Common Toxicity Criteria for Adverse Events [NCI-CTCAE] version 5.0) must be <=Grade 1 at the time of enrollment, except for alopecia.\n* Adequate organ function\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Intolerant to daratumumab.\n* Refractory to daratumumab or any other anti-CD38 therapy (defined as progressive disease during treatment with anti-CD38 therapy, or within 60 days of completing that treatment).\n* Intolerant to bortezomib, or refractory to bortezomib (defined as progressive disease during treatment with a bortezomib-containing regimen of 1.3 mg/m^2 twice weekly, or within 60 days of completing that treatment). Note: participants with progressive disease during treatment with a weekly bortezomib regimen are allowed.\n* Ongoing Grade 2 or higher peripheral neuropathy or neuropathic pain.\n* Prior treatment with anti-B-cell maturation antigen (anti-BCMA) therapy.\n* Prior allogenic stem cell transplant.\n* Any serious and/or unstable pre-existing medical, psychiatric disorder or other conditions, including renal, liver, cardiovascular, or certain prior malignancies.\n* Corneal epithelial disease.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* All prior treatment-related toxicities (defined by National Cancer Institute Common Toxicity Criteria for Adverse Events [NCI-CTCAE] version 5.0) must be <=Grade 1 at the time of enrollment, except for alopecia.",
+                "criterions": [
+                    {
+                        "exact_snippets": "All prior treatment-related toxicities ... must be <=Grade 1 at the time of enrollment, except for alopecia.",
+                        "criterion": "prior treatment-related toxicities (NCI-CTCAE v5.0)",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "Grade"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "except for alopecia",
+                        "criterion": "alopecia",
+                        "requirement": {
+                            "requirement_type": "exception to toxicity severity requirement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "not_criteria": {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "All prior treatment-related toxicities ... must be <=Grade 1 at the time of enrollment, except for alopecia.",
+                                        "criterion": "prior treatment-related toxicities (NCI-CTCAE v5.0)",
+                                        "requirement": {
+                                            "requirement_type": "severity",
+                                            "expected_value": {
+                                                "operator": "<=",
+                                                "value": 1,
+                                                "unit": "Grade"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "except for alopecia",
+                                        "criterion": "alopecia",
+                                        "requirement": {
+                                            "requirement_type": "exception to toxicity severity requirement",
+                                            "expected_value": true
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "All prior treatment-related toxicities ... must be <=Grade 1 at the time of enrollment, except for alopecia.",
+                                        "criterion": "prior treatment-related toxicities (NCI-CTCAE v5.0)",
+                                        "requirement": {
+                                            "requirement_type": "severity",
+                                            "expected_value": {
+                                                "operator": "<=",
+                                                "value": 1,
+                                                "unit": "Grade"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "except for alopecia",
+                                "criterion": "alopecia",
+                                "requirement": {
+                                    "requirement_type": "exception to toxicity severity requirement",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Serum free light chain (FLC) assay: involved FLC level >=10 mg per dL (>=100 mg per liter) and an abnormal serum free light chain ratio (<0.26 or >1.65).",
+                "criterions": [
+                    {
+                        "exact_snippets": "involved FLC level >=10 mg per dL (>=100 mg per liter)",
+                        "criterion": "involved serum free light chain (FLC) level",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 10,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "involved FLC level >=10 mg per dL (>=100 mg per liter)",
+                        "criterion": "involved serum free light chain (FLC) level",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 100,
+                                "unit": "mg/L"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "an abnormal serum free light chain ratio (<0.26 or >1.65)",
+                        "criterion": "serum free light chain ratio",
+                        "requirement": {
+                            "requirement_type": "abnormality",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "an abnormal serum free light chain ratio (<0.26 or >1.65)",
+                        "criterion": "serum free light chain ratio",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<",
+                                        "value": 0.26,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": ">",
+                                        "value": 1.65,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "involved FLC level >=10 mg per dL (>=100 mg per liter)",
+                                "criterion": "involved serum free light chain (FLC) level",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "mg/dL"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "involved FLC level >=10 mg per dL (>=100 mg per liter)",
+                                "criterion": "involved serum free light chain (FLC) level",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 100,
+                                        "unit": "mg/L"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "an abnormal serum free light chain ratio (<0.26 or >1.65)",
+                                "criterion": "serum free light chain ratio",
+                                "requirement": {
+                                    "requirement_type": "abnormality",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "an abnormal serum free light chain ratio (<0.26 or >1.65)",
+                                "criterion": "serum free light chain ratio",
+                                "requirement": {
+                                    "requirement_type": "range",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": "<",
+                                                "value": 0.26,
+                                                "unit": ""
+                                            },
+                                            {
+                                                "operator": ">",
+                                                "value": 1.65,
+                                                "unit": ""
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Must have at least 1 aspect of measurable disease, defined as one of the following;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must have at least 1 aspect of measurable disease",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "aspect"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must have at least 1 aspect of measurable disease",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "aspect"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Serum M-protein concentration >=0.5 grams per deciliter (g/dL), or",
+                "criterions": [
+                    {
+                        "exact_snippets": "Serum M-protein concentration >=0.5 grams per deciliter (g/dL)",
+                        "criterion": "serum M-protein concentration",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0.5,
+                                "unit": "g/dL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Serum M-protein concentration >=0.5 grams per deciliter (g/dL)",
+                        "criterion": "serum M-protein concentration",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0.5,
+                                "unit": "g/dL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adequate organ function",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adequate organ function",
+                        "criterion": "organ function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adequate organ function",
+                        "criterion": "organ function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status of 0 to 2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Confirmed diagnosis of multiple myeloma as defined by the International Myeloma Working Group (IMWG) criteria.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Confirmed diagnosis of multiple myeloma as defined by the International Myeloma Working Group (IMWG) criteria.",
+                        "criterion": "multiple myeloma diagnosis",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Confirmed diagnosis of multiple myeloma as defined by the International Myeloma Working Group (IMWG) criteria.",
+                        "criterion": "multiple myeloma diagnosis",
+                        "requirement": {
+                            "requirement_type": "diagnostic criteria",
+                            "expected_value": "International Myeloma Working Group (IMWG) criteria"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Confirmed diagnosis of multiple myeloma as defined by the International Myeloma Working Group (IMWG) criteria.",
+                        "criterion": "multiple myeloma diagnosis",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Confirmed diagnosis of multiple myeloma as defined by the International Myeloma Working Group (IMWG) criteria.",
+                        "criterion": "multiple myeloma diagnosis",
+                        "requirement": {
+                            "requirement_type": "diagnostic criteria",
+                            "expected_value": "International Myeloma Working Group (IMWG) criteria"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Urine M-protein excretion >=200 mg per 24-hour, or",
+                "criterions": [
+                    {
+                        "exact_snippets": "Urine M-protein excretion >=200 mg per 24-hour",
+                        "criterion": "urine M-protein excretion",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 200,
+                                "unit": "mg/24-hour"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Urine M-protein excretion >=200 mg per 24-hour",
+                        "criterion": "urine M-protein excretion",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 200,
+                                "unit": "mg/24-hour"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Corneal epithelial disease.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Corneal epithelial disease",
+                        "criterion": "corneal epithelial disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Corneal epithelial disease",
+                    "criterion": "corneal epithelial disease",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Intolerant to daratumumab.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Intolerant to daratumumab",
+                        "criterion": "daratumumab intolerance",
+                        "requirement": {
+                            "requirement_type": "intolerance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Intolerant to daratumumab",
+                        "criterion": "daratumumab intolerance",
+                        "requirement": {
+                            "requirement_type": "intolerance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior treatment with anti-B-cell maturation antigen (anti-BCMA) therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior treatment with anti-B-cell maturation antigen (anti-BCMA) therapy.",
+                        "criterion": "prior anti-BCMA therapy",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prior treatment with anti-B-cell maturation antigen (anti-BCMA) therapy.",
+                    "criterion": "prior anti-BCMA therapy",
+                    "requirement": {
+                        "requirement_type": "history of treatment",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Ongoing Grade 2 or higher peripheral neuropathy or neuropathic pain.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ongoing Grade 2 or higher peripheral neuropathy",
+                        "criterion": "peripheral neuropathy",
+                        "requirement": {
+                            "requirement_type": "severity_grade",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Ongoing Grade 2 or higher peripheral neuropathy",
+                        "criterion": "peripheral neuropathy",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "ongoing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Ongoing ... neuropathic pain",
+                        "criterion": "neuropathic pain",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "ongoing"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Ongoing Grade 2 or higher peripheral neuropathy",
+                                "criterion": "peripheral neuropathy",
+                                "requirement": {
+                                    "requirement_type": "severity_grade",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "Ongoing Grade 2 or higher peripheral neuropathy",
+                                "criterion": "peripheral neuropathy",
+                                "requirement": {
+                                    "requirement_type": "status",
+                                    "expected_value": "ongoing"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Ongoing ... neuropathic pain",
+                        "criterion": "neuropathic pain",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "ongoing"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Any serious and/or unstable pre-existing medical, psychiatric disorder or other conditions, including renal, liver, cardiovascular, or certain prior malignancies.",
+                "criterions": [
+                    {
+                        "exact_snippets": "serious and/or unstable pre-existing medical, psychiatric disorder or other conditions",
+                        "criterion": "pre-existing medical, psychiatric disorder or other conditions",
+                        "requirement": {
+                            "requirement_type": "seriousness/instability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "renal, liver, cardiovascular",
+                        "criterion": "renal condition",
+                        "requirement": {
+                            "requirement_type": "seriousness/instability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "renal, liver, cardiovascular",
+                        "criterion": "liver condition",
+                        "requirement": {
+                            "requirement_type": "seriousness/instability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "renal, liver, cardiovascular",
+                        "criterion": "cardiovascular condition",
+                        "requirement": {
+                            "requirement_type": "seriousness/instability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "certain prior malignancies",
+                        "criterion": "prior malignancies",
+                        "requirement": {
+                            "requirement_type": "seriousness/instability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "serious and/or unstable pre-existing medical, psychiatric disorder or other conditions",
+                        "criterion": "pre-existing medical, psychiatric disorder or other conditions",
+                        "requirement": {
+                            "requirement_type": "seriousness/instability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "renal, liver, cardiovascular",
+                        "criterion": "renal condition",
+                        "requirement": {
+                            "requirement_type": "seriousness/instability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "renal, liver, cardiovascular",
+                        "criterion": "liver condition",
+                        "requirement": {
+                            "requirement_type": "seriousness/instability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "renal, liver, cardiovascular",
+                        "criterion": "cardiovascular condition",
+                        "requirement": {
+                            "requirement_type": "seriousness/instability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "certain prior malignancies",
+                        "criterion": "prior malignancies",
+                        "requirement": {
+                            "requirement_type": "seriousness/instability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Previously treated with at least 1 prior line of multiple myeloma (MM) therapy, and must have documented disease progression during or after their most recent therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previously treated with at least 1 prior line of multiple myeloma (MM) therapy",
+                        "criterion": "prior lines of multiple myeloma therapy",
+                        "requirement": {
+                            "requirement_type": "number of prior lines",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "lines"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "must have documented disease progression during or after their most recent therapy",
+                        "criterion": "disease progression after most recent therapy",
+                        "requirement": {
+                            "requirement_type": "timing of progression",
+                            "expected_value": [
+                                "during most recent therapy",
+                                "after most recent therapy"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "must have documented disease progression during or after their most recent therapy",
+                        "criterion": "disease progression after most recent therapy",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Prior allogenic stem cell transplant.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior allogenic stem cell transplant.",
+                        "criterion": "allogenic stem cell transplant",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Intolerant to bortezomib, or refractory to bortezomib (defined as progressive disease during treatment with a bortezomib-containing regimen of 1.3 mg/m^2 twice weekly, or within 60 days of completing that treatment). Note: participants with progressive disease during treatment with a weekly bortezomib regimen are allowed.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Intolerant to bortezomib",
+                        "criterion": "bortezomib intolerance",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "refractory to bortezomib (defined as progressive disease during treatment with a bortezomib-containing regimen of 1.3 mg/m^2 twice weekly, or within 60 days of completing that treatment)",
+                        "criterion": "bortezomib refractoriness",
+                        "requirement": {
+                            "requirement_type": "progressive disease during treatment with a bortezomib-containing regimen of 1.3 mg/m^2 twice weekly",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "refractory to bortezomib (defined as progressive disease during treatment with a bortezomib-containing regimen of 1.3 mg/m^2 twice weekly, or within 60 days of completing that treatment)",
+                        "criterion": "bortezomib refractoriness",
+                        "requirement": {
+                            "requirement_type": "progressive disease within 60 days of completing that treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Refractory to daratumumab or any other anti-CD38 therapy (defined as progressive disease during treatment with anti-CD38 therapy, or within 60 days of completing that treatment).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Refractory to daratumumab or any other anti-CD38 therapy (defined as progressive disease during treatment with anti-CD38 therapy, or within 60 days of completing that treatment)",
+                        "criterion": "refractoriness to anti-CD38 therapy",
+                        "requirement": {
+                            "requirement_type": "refractoriness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Refractory to daratumumab or any other anti-CD38 therapy (defined as progressive disease during treatment with anti-CD38 therapy, or within 60 days of completing that treatment)",
+                        "criterion": "refractoriness to anti-CD38 therapy",
+                        "requirement": {
+                            "requirement_type": "therapy_type",
+                            "expected_value": [
+                                "daratumumab",
+                                "any other anti-CD38 therapy"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Refractory to daratumumab or any other anti-CD38 therapy (defined as progressive disease during treatment with anti-CD38 therapy, or within 60 days of completing that treatment)",
+                        "criterion": "refractoriness to anti-CD38 therapy",
+                        "requirement": {
+                            "requirement_type": "definition",
+                            "expected_value": "progressive disease during treatment with anti-CD38 therapy, or within 60 days of completing that treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,984 @@
+{
+    "info": {
+        "nct_id": "NCT06624085",
+        "official_title": "A Phase Ib Study Evaluating the Safety, Efficacy, Pharmacokinetics, and Pharmacodynamics of Glofitamab in Combination With Gemcitabine Plus Oxaliplatin in U.S. Patients With Relapsed or Refractory Diffuse Large B-Cell Lymphoma",
+        "inclusion_criteria": "* Histologically confirmed DLBCL, not otherwise specified (NOS)\n* Relapsed (disease that has recurred following a response that lasted ≥ 6 months after completion of the last line of therapy) or refractory ( disease that did not respond to or that progressed < 6 months after completion of the last line of therapy) disease\n* At least one prior line of systemic therapy\n* Participants who have failed only one prior line of therapy must not be a candidate for high-dose chemotherapy followed by autologous stem cell transplant (ASCT)\n* At least one bi-dimensionally measurable (> 1.5 cm) nodal lesion, or one bi-dimensionally measurable (> 1 cm) extranodal lesion, as measured on CT scan\n* Eastern Cooperative Oncology Group (ECOG) Performance Status of 0, 1, or 2\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Prior enrollment in Study GO41944 (STARGLO; NCT04408638)\n* Participant has failed only one prior line of therapy and is a candidate for stem cell transplantation\n* History of transformation of indolent disease to DLBCL\n* High-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements, and high-grade B-cell lymphoma NOS, as defined by 2016 WHO guidelines\n* Primary mediastinal B-cell lymphoma\n* History of severe allergic or anaphylactic reactions to humanized or murine monoclonal antibodies (or recombinant antibody-related fusion proteins) or known sensitivity or allergy to murine products\n* Prior treatment with glofitamab or other bispecific antibodies targeting both CD20 and CD3\n* Prior treatment with gemcitabine or oxaliplatin\n* Peripheral neuropathy or paresthesia assessed to be Grade >/= 2 according to NCI CTCAE v5.0 at enrollment\n* Treatment with radiotherapy, chemotherapy, immunotherapy, immunosuppressive therapy, or any investigational agent for the purposes of treating cancer within 2 weeks prior to first study treatment\n* Treatment with monoclonal antibodies for the purposes of treating cancer within 4 weeks prior to first study treatment\n* Primary or secondary CNS lymphoma at the time of recruitment or history of CNS lymphoma\n* Prior CNS involvement that has been definitively treated and confirmed via MRI or cerebrospinal fluid analysis to be in complete remission is permissible\n* Current or history of CNS disease, such as stroke, epilepsy, CNS vasculitis, or neurodegenerative disease\n* History of other primary malignancy, with exceptions defined by the protocol\n* Significant or extensive cardiovascular disease, or significant pulmonary disease\n* Known active bacterial, viral, fungal, mycobacterial, parasitic, or other infection (exclusing fungal infections of nail beds) at study enrollment or any major episode of infection within 4 weeks prior to the first study treatment\n* Documented severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection within 6 months of first study treatment, or positive SARS-CoV-2 test within 7 days prior to enrollment\n* Suspected or latent tuberculosis\n* Positive test results for hepatitis B (HBV) or hepatitis C (HCV)\n* Known or suspected chronic active Epstein-Barr viral infection\n* Known or suspected history of hemophagocytic lymphohistiocytosis (HLH)\n* Known history of progressive multifocal leukoencephalopathy\n* Prior solid organ transplantation\n* Prior allogenic stem cell transplant\n* Active autoimmune disease requiring treatment\n* Prior treatment with systemic immunosuppressive medications within 4 weeks prior to first dose of study treatment\n* Ongoing systemic corticosteroid use which, in the opinion of the investigator, puts the patient at increased risk of steroid-related iatrogenic adrenal insufficiency\n* Recent major surgery (within 4 weeks before the first study treatment) other than for diagnosis\n* Clinically significant history of cirrhotic liver disease",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Relapsed (disease that has recurred following a response that lasted ≥ 6 months after completion of the last line of therapy) or refractory ( disease that did not respond to or that progressed < 6 months after completion of the last line of therapy) disease",
+            "criterions": [
+                {
+                    "exact_snippets": "Relapsed (disease that has recurred following a response that lasted ≥ 6 months after completion of the last line of therapy)",
+                    "criterion": "relapsed disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "recurrence_after_response_duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "refractory ( disease that did not respond to or that progressed < 6 months after completion of the last line of therapy)",
+                    "criterion": "refractory disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "response",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "progression_after_completion_duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* At least one prior line of systemic therapy",
+            "criterions": [
+                {
+                    "exact_snippets": "At least one prior line of systemic therapy",
+                    "criterion": "prior lines of systemic therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "lines"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Histologically confirmed DLBCL, not otherwise specified (NOS)",
+            "criterions": [
+                {
+                    "exact_snippets": "Histologically confirmed DLBCL, not otherwise specified (NOS)",
+                    "criterion": "DLBCL (Diffuse Large B-Cell Lymphoma)",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "histologically confirmed"
+                        },
+                        {
+                            "requirement_type": "subtype",
+                            "expected_value": "not otherwise specified (NOS)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Eastern Cooperative Oncology Group (ECOG) Performance Status of 0, 1, or 2",
+            "criterions": [
+                {
+                    "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) Performance Status of 0, 1, or 2",
+                    "criterion": "ECOG Performance Status",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": [
+                                "0",
+                                "1",
+                                "2"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Participants who have failed only one prior line of therapy must not be a candidate for high-dose chemotherapy followed by autologous stem cell transplant (ASCT)",
+            "criterions": [
+                {
+                    "exact_snippets": "failed only one prior line of therapy",
+                    "criterion": "number of prior lines of therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 1,
+                                "unit": "lines"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "must not be a candidate for high-dose chemotherapy followed by autologous stem cell transplant (ASCT)",
+                    "criterion": "candidate for high-dose chemotherapy followed by autologous stem cell transplant (ASCT)",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* At least one bi-dimensionally measurable (> 1.5 cm) nodal lesion, or one bi-dimensionally measurable (> 1 cm) extranodal lesion, as measured on CT scan",
+            "criterions": [
+                {
+                    "exact_snippets": "At least one bi-dimensionally measurable (> 1.5 cm) nodal lesion",
+                    "criterion": "nodal lesion",
+                    "requirements": [
+                        {
+                            "requirement_type": "measurability",
+                            "expected_value": "bi-dimensional"
+                        },
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "lesion"
+                            }
+                        },
+                        {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1.5,
+                                "unit": "cm"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "one bi-dimensionally measurable (> 1 cm) extranodal lesion",
+                    "criterion": "extranodal lesion",
+                    "requirements": [
+                        {
+                            "requirement_type": "measurability",
+                            "expected_value": "bi-dimensional"
+                        },
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "lesion"
+                            }
+                        },
+                        {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "cm"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Primary mediastinal B-cell lymphoma",
+            "criterions": [
+                {
+                    "exact_snippets": "Primary mediastinal B-cell lymphoma",
+                    "criterion": "primary mediastinal B-cell lymphoma",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior enrollment in Study GO41944 (STARGLO; NCT04408638)",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior enrollment in Study GO41944 (STARGLO; NCT04408638)",
+                    "criterion": "prior enrollment in Study GO41944 (STARGLO; NCT04408638)",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* History of transformation of indolent disease to DLBCL",
+            "criterions": [
+                {
+                    "exact_snippets": "History of transformation of indolent disease to DLBCL",
+                    "criterion": "transformation of indolent disease to DLBCL",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* History of other primary malignancy, with exceptions defined by the protocol",
+            "criterions": [
+                {
+                    "exact_snippets": "History of other primary malignancy",
+                    "criterion": "history of other primary malignancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Participant has failed only one prior line of therapy and is a candidate for stem cell transplantation",
+            "criterions": [
+                {
+                    "exact_snippets": "failed only one prior line of therapy",
+                    "criterion": "number of prior lines of therapy failed",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 1,
+                                "unit": "lines"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "candidate for stem cell transplantation",
+                    "criterion": "eligibility for stem cell transplantation",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior treatment with gemcitabine or oxaliplatin",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior treatment with gemcitabine",
+                    "criterion": "prior treatment with gemcitabine",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Prior treatment with ... oxaliplatin",
+                    "criterion": "prior treatment with oxaliplatin",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* High-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements, and high-grade B-cell lymphoma NOS, as defined by 2016 WHO guidelines",
+            "criterions": [
+                {
+                    "exact_snippets": "High-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements",
+                    "criterion": "high-grade B-cell lymphoma",
+                    "requirements": [
+                        {
+                            "requirement_type": "genetic rearrangement",
+                            "expected_value": [
+                                "MYC",
+                                "BCL2 and/or BCL6"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "high-grade B-cell lymphoma NOS, as defined by 2016 WHO guidelines",
+                    "criterion": "high-grade B-cell lymphoma NOS",
+                    "requirements": [
+                        {
+                            "requirement_type": "definition",
+                            "expected_value": "2016 WHO guidelines"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior allogenic stem cell transplant",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior allogenic stem cell transplant",
+                    "criterion": "allogenic stem cell transplant",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Suspected or latent tuberculosis",
+            "criterions": [
+                {
+                    "exact_snippets": "Suspected or latent tuberculosis",
+                    "criterion": "tuberculosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "suspected",
+                                "latent"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior solid organ transplantation",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior solid organ transplantation",
+                    "criterion": "solid organ transplantation",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Known history of progressive multifocal leukoencephalopathy",
+            "criterions": [
+                {
+                    "exact_snippets": "Known history of progressive multifocal leukoencephalopathy",
+                    "criterion": "progressive multifocal leukoencephalopathy",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* History of severe allergic or anaphylactic reactions to humanized or murine monoclonal antibodies (or recombinant antibody-related fusion proteins) or known sensitivity or allergy to murine products",
+            "criterions": [
+                {
+                    "exact_snippets": "History of severe allergic or anaphylactic reactions to humanized or murine monoclonal antibodies (or recombinant antibody-related fusion proteins)",
+                    "criterion": "severe allergic or anaphylactic reactions to humanized or murine monoclonal antibodies or recombinant antibody-related fusion proteins",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "known sensitivity or allergy to murine products",
+                    "criterion": "sensitivity or allergy to murine products",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Known or suspected chronic active Epstein-Barr viral infection",
+            "criterions": [
+                {
+                    "exact_snippets": "Known or suspected chronic active Epstein-Barr viral infection",
+                    "criterion": "chronic active Epstein-Barr viral infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "known",
+                                "suspected"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Treatment with monoclonal antibodies for the purposes of treating cancer within 4 weeks prior to first study treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Treatment with monoclonal antibodies for the purposes of treating cancer within 4 weeks prior to first study treatment",
+                    "criterion": "treatment with monoclonal antibodies for cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks prior to first study treatment"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Known or suspected history of hemophagocytic lymphohistiocytosis (HLH)",
+            "criterions": [
+                {
+                    "exact_snippets": "Known or suspected history of hemophagocytic lymphohistiocytosis (HLH)",
+                    "criterion": "hemophagocytic lymphohistiocytosis (HLH)",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "certainty",
+                            "expected_value": [
+                                "known",
+                                "suspected"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Primary or secondary CNS lymphoma at the time of recruitment or history of CNS lymphoma",
+            "criterions": [
+                {
+                    "exact_snippets": "Primary or secondary CNS lymphoma at the time of recruitment",
+                    "criterion": "CNS lymphoma",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "primary",
+                                "secondary"
+                            ]
+                        },
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "at the time of recruitment"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "history of CNS lymphoma",
+                    "criterion": "CNS lymphoma",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Positive test results for hepatitis B (HBV) or hepatitis C (HCV)",
+            "criterions": [
+                {
+                    "exact_snippets": "Positive test results for hepatitis B (HBV)",
+                    "criterion": "hepatitis B (HBV) infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "test result",
+                            "expected_value": "positive"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Positive test results for ... hepatitis C (HCV)",
+                    "criterion": "hepatitis C (HCV) infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "test result",
+                            "expected_value": "positive"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Peripheral neuropathy or paresthesia assessed to be Grade >/= 2 according to NCI CTCAE v5.0 at enrollment",
+            "criterions": [
+                {
+                    "exact_snippets": "Peripheral neuropathy ... Grade >/= 2 according to NCI CTCAE v5.0 at enrollment",
+                    "criterion": "peripheral neuropathy",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity_grade",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "NCI CTCAE v5.0"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "paresthesia ... Grade >/= 2 according to NCI CTCAE v5.0 at enrollment",
+                    "criterion": "paresthesia",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity_grade",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "NCI CTCAE v5.0"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Ongoing systemic corticosteroid use which, in the opinion of the investigator, puts the patient at increased risk of steroid-related iatrogenic adrenal insufficiency",
+            "criterions": [
+                {
+                    "exact_snippets": "Ongoing systemic corticosteroid use",
+                    "criterion": "systemic corticosteroid use",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "ongoing"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "puts the patient at increased risk of steroid-related iatrogenic adrenal insufficiency",
+                    "criterion": "risk of steroid-related iatrogenic adrenal insufficiency",
+                    "requirements": [
+                        {
+                            "requirement_type": "risk",
+                            "expected_value": "increased"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Significant or extensive cardiovascular disease, or significant pulmonary disease",
+            "criterions": [
+                {
+                    "exact_snippets": "Significant or extensive cardiovascular disease",
+                    "criterion": "cardiovascular disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": [
+                                "significant",
+                                "extensive"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "significant pulmonary disease",
+                    "criterion": "pulmonary disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": "significant"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Recent major surgery (within 4 weeks before the first study treatment) other than for diagnosis",
+            "criterions": [
+                {
+                    "exact_snippets": "Recent major surgery (within 4 weeks before the first study treatment)",
+                    "criterion": "major surgery",
+                    "requirements": [
+                        {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        },
+                        {
+                            "requirement_type": "purpose",
+                            "expected_value": {
+                                "operator": "!=",
+                                "value": 1,
+                                "unit": "diagnosis"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Active autoimmune disease requiring treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Active autoimmune disease requiring treatment",
+                    "criterion": "autoimmune disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "activity status",
+                            "expected_value": "active"
+                        },
+                        {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Clinically significant history of cirrhotic liver disease",
+            "criterions": [
+                {
+                    "exact_snippets": "Clinically significant history of cirrhotic liver disease",
+                    "criterion": "cirrhotic liver disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "clinical significance",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior treatment with glofitamab or other bispecific antibodies targeting both CD20 and CD3",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior treatment with glofitamab",
+                    "criterion": "prior treatment with glofitamab",
+                    "requirements": [
+                        {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "other bispecific antibodies targeting both CD20 and CD3",
+                    "criterion": "prior treatment with bispecific antibodies targeting both CD20 and CD3",
+                    "requirements": [
+                        {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Documented severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection within 6 months of first study treatment, or positive SARS-CoV-2 test within 7 days prior to enrollment",
+            "criterions": [
+                {
+                    "exact_snippets": "Documented severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection within 6 months of first study treatment",
+                    "criterion": "SARS-CoV-2 infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "time since infection",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "positive SARS-CoV-2 test within 7 days prior to enrollment",
+                    "criterion": "SARS-CoV-2 test result",
+                    "requirements": [
+                        {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        },
+                        {
+                            "requirement_type": "time since test",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 7,
+                                "unit": "days"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior CNS involvement that has been definitively treated and confirmed via MRI or cerebrospinal fluid analysis to be in complete remission is permissible",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior CNS involvement that has been definitively treated and confirmed via MRI or cerebrospinal fluid analysis to be in complete remission is permissible",
+                    "criterion": "CNS involvement",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "treatment_status",
+                            "expected_value": "definitively treated"
+                        },
+                        {
+                            "requirement_type": "remission_status",
+                            "expected_value": "complete remission"
+                        },
+                        {
+                            "requirement_type": "confirmation_method",
+                            "expected_value": [
+                                "MRI",
+                                "cerebrospinal fluid analysis"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Current or history of CNS disease, such as stroke, epilepsy, CNS vasculitis, or neurodegenerative disease",
+            "criterions": [
+                {
+                    "exact_snippets": "Current or history of CNS disease",
+                    "criterion": "CNS disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence or history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "stroke",
+                    "criterion": "stroke",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence or history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "epilepsy",
+                    "criterion": "epilepsy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence or history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "CNS vasculitis",
+                    "criterion": "CNS vasculitis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence or history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "neurodegenerative disease",
+                    "criterion": "neurodegenerative disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence or history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior treatment with systemic immunosuppressive medications within 4 weeks prior to first dose of study treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior treatment with systemic immunosuppressive medications within 4 weeks prior to first dose of study treatment",
+                    "criterion": "prior treatment with systemic immunosuppressive medications",
+                    "requirements": [
+                        {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks prior to first dose of study treatment"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Treatment with radiotherapy, chemotherapy, immunotherapy, immunosuppressive therapy, or any investigational agent for the purposes of treating cancer within 2 weeks prior to first study treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Treatment with radiotherapy, chemotherapy, immunotherapy, immunosuppressive therapy, or any investigational agent for the purposes of treating cancer within 2 weeks prior to first study treatment",
+                    "criterion": "prior cancer treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment type",
+                            "expected_value": [
+                                "radiotherapy",
+                                "chemotherapy",
+                                "immunotherapy",
+                                "immunosuppressive therapy",
+                                "investigational agent"
+                            ]
+                        },
+                        {
+                            "requirement_type": "purpose",
+                            "expected_value": "treating cancer"
+                        },
+                        {
+                            "requirement_type": "time since last treatment",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "line": "* Known active bacterial, viral, fungal, mycobacterial, parasitic, or other infection (exclusing fungal infections of nail beds) at study enrollment or any major episode of infection within 4 weeks prior to the first study treatment",
+            "criterions": [
+                {
+                    "exact_snippets": "Known active bacterial, viral, fungal, mycobacterial, parasitic, or other infection (excluding fungal infections of nail beds) at study enrollment",
+                    "criterion": "active infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "infection_types",
+                            "expected_value": [
+                                "bacterial",
+                                "viral",
+                                "fungal",
+                                "mycobacterial",
+                                "parasitic",
+                                "other"
+                            ]
+                        },
+                        {
+                            "requirement_type": "exclusion",
+                            "expected_value": "fungal infections of nail beds"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "any major episode of infection within 4 weeks prior to the first study treatment",
+                    "criterion": "major episode of infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        },
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "failed_miscellaneous": []
+}

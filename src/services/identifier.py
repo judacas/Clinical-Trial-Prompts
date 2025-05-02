@@ -188,7 +188,7 @@ def extract_atomic_criteria_from_line(line: str) -> LLMIdentifiedLineResponse:
             response_format=LLMIdentifiedLineResponse,
             timeout=TIMEOUT,
         )
-        print(completion)
+        logger.debug(completion)
 
         if response := completion.choices[0].message.parsed:
             logger.debug("Successfully extracted atomic criteria from line: %s", line)
