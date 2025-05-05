@@ -133,6 +133,7 @@ def setup_file_logging(log_dir, logging, file_formatter, root_logger):
     # Set up file handler with the configured formatter
     file_handler = logging.FileHandler(log_file)
     file_handler.setFormatter(file_formatter)
+    file_handler.setLevel(logging.DEBUG)  # Set file handler to DEBUG level
     root_logger.addHandler(file_handler)
 
     root_logger.info(f"Logging to file: {log_file}")

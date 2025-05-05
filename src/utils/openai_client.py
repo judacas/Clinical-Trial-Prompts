@@ -6,7 +6,7 @@ import time
 from collections import deque
 from datetime import datetime
 from pathlib import Path
-from typing import Deque, Dict, Optional, Tuple
+from typing import Deque, Dict, Optional
 
 import tiktoken
 from dotenv import load_dotenv
@@ -40,37 +40,54 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # -------------------------  RATE LIMIT BUCKETS  ----------------------------
 # ---------------------------------------------------------------------------
+class _TokenHandle:
+    __slots__ = ("ts", "cost")
+
+    def __init__(self, ts: float, cost: int):
+        self.ts = ts
+        self.cost = cost
+
+    def __iter__(self):
+        yield self.ts
+        yield self.cost
+
+
 class _RollingBucket:
-    """60‑second sliding‑window counter for tokens or requests."""
+    """60‑second sliding‑window counter; race‑safe commit."""
 
     def __init__(self, capacity: int, name: str):
         self.capacity = capacity
         self.name = name
-        self._records: Deque[Tuple[float, int]] = deque()
+        self._records: Deque[_TokenHandle] = deque()
         self._cond = threading.Condition()
 
-    def _trim(self) -> int:
+    def _trim(self):
         now = time.time()
-        while self._records and now - self._records[0][0] >= 60:
+        while self._records and now - self._records[0].ts >= 60:
             self._records.popleft()
-        return sum(cost for _, cost in self._records)
 
-    def wait(self, cost: int):
+    def wait(self, cost: int) -> _TokenHandle:
         with self._cond:
             while True:
-                used = self._trim()
+                self._trim()
+                used = sum(h.cost for h in self._records)
                 if used + cost <= self.capacity:
-                    self._records.append((time.time(), cost))
-                    return
-                oldest_ts = self._records[0][0]
+                    handle = _TokenHandle(time.time(), cost)
+                    self._records.append(handle)
+                    return handle  # give caller its handle
+                oldest_ts = self._records[0].ts
                 sleep_for = max(0.05, 60 - (time.time() - oldest_ts))
                 self._cond.wait(timeout=sleep_for)
 
-    def commit(self, actual: int):
+    def commit(self, handle: _TokenHandle, actual: int):
         with self._cond:
-            if self._records:
-                self._records.pop()
-            self._records.append((time.time(), actual))
+            try:
+                idx = self._records.index(handle)
+                self._records[idx].ts = time.time()
+                self._records[idx].cost = actual
+            except ValueError:
+                # handle trimmed (very long call) – just append actual
+                self._records.append(_TokenHandle(time.time(), actual))
             self._cond.notify_all()
 
 
@@ -218,8 +235,8 @@ def tracked_openai_completion_call(
 
     _wait_if_paused()
 
-    token_bucket.wait(cost_pred)
-    request_bucket.wait(1)
+    token_handle = token_bucket.wait(cost_pred)
+    request_handle = request_bucket.wait(1)
 
     start_time = time.perf_counter()
     for attempt in range(1, MAX_RETRIES + 1):
@@ -234,8 +251,8 @@ def tracked_openai_completion_call(
                 )
                 break
             except RateLimitError:
-                token_bucket.commit(0)
-                request_bucket.commit(0)
+                token_bucket.commit(token_handle, 0)
+                request_bucket.commit(request_handle, 0)
                 _record_error(
                     "RateLimitError",
                     retry=attempt - 1,
@@ -248,12 +265,12 @@ def tracked_openai_completion_call(
                 if attempt == MAX_RETRIES:
                     raise
                 _wait_if_paused()
-                token_bucket.wait(cost_pred)
-                request_bucket.wait(1)
+                token_handle = token_bucket.wait(cost_pred)
+                request_handle = request_bucket.wait(1)
                 continue
             except OpenAIError as e:
-                token_bucket.commit(0)
-                request_bucket.commit(0)
+                token_bucket.commit(token_handle, 0)
+                request_bucket.commit(request_handle, 0)
                 _record_error(
                     type(e).__name__,
                     retry=attempt - 1,
@@ -264,6 +281,16 @@ def tracked_openai_completion_call(
                 )
                 raise e
     else:
+        token_bucket.commit(token_handle, 0)
+        request_bucket.commit(request_handle, 0)
+        _record_error(
+            "MaxRetriesExceeded",
+            retry=MAX_RETRIES,
+            prompt_tokens=prompt_tokens,
+            schema_tokens=schema_tokens,
+            pred_completion=pred_completion,
+            completion_tokens=0,
+        )
         raise RuntimeError("Max retries exhausted")
 
     latency_ms = (time.perf_counter() - start_time) * 1000.0
@@ -281,8 +308,9 @@ def tracked_openai_completion_call(
         completion_tokens = 0
         total_tokens = 0
         prompt_cached = 0
-    token_bucket.commit(total_tokens)
-    request_bucket.commit(1)
+
+    token_bucket.commit(token_handle, total_tokens)
+    # note that committing the request handle is not necessary here, as we had alr said 1 in the wait() call
 
     # per‑call log
     _log_call(
@@ -297,6 +325,8 @@ def tracked_openai_completion_call(
         lat_ms=round(latency_ms, 1),
         sem_capacity=MAX_CONCURRENT_OPENAI_CALLS,
         error=None,
+        bucket_tokens=sum(h.cost for h in token_bucket._records),
+        bucket_requests=len(request_bucket._records),
     )
     logger.info(
         "OpenAI call OK | tokens=%d (+schema %d) completion=%d latency=%.1fms",

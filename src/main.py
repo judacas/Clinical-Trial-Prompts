@@ -26,7 +26,7 @@ from src.utils.config import (
 from src.utils.helpers import curl_with_status_check
 
 # Configure application logging
-setup_logging(log_to_file=True, log_level=logging.INFO)
+setup_logging(log_to_file=True, log_level=logging.WARNING)
 output_dir = os.path.join(DEFAULT_OUTPUT_DIR, "recent_us", "200AnnotatedTrialsV2")
 # output_dir = os.path.join(DEFAULT_OUTPUT_DIR, "test")
 
