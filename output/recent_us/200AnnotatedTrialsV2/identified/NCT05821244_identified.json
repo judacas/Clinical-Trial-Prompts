@@ -1,0 +1,204 @@
+{
+    "info": {
+        "nct_id": "NCT05821244",
+        "official_title": "Feasibility of Manipulating Exercise Timing in Breast Cancer Survivors on Chemotherapy",
+        "inclusion_criteria": "* Stage I-III Breast Cancer patients with plans to start chemotherapy or just started chemotherapy. Just started chemotherapy is defined as already receiving one cycle of chemotherapy.\n* ECOG 0, 1, 2\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Stage IV Breast cancer patients\n* ECOG >/= 3\n* Stage I-III Breast Cancer patients who do not have plans to start chemotherapy or who have received more than one cycle of breast cancer chemotherapy.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* ECOG 0, 1, 2",
+            "criterions": [
+                {
+                    "exact_snippets": "ECOG 0, 1, 2",
+                    "criterion": "ECOG performance status",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": [
+                                "0",
+                                "1",
+                                "2"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be FEMALE",
+            "criterions": [
+                {
+                    "exact_snippets": "Must be FEMALE",
+                    "criterion": "sex",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Stage I-III Breast Cancer patients with plans to start chemotherapy or just started chemotherapy. Just started chemotherapy is defined as already receiving one cycle of chemotherapy.",
+            "criterions": [
+                {
+                    "exact_snippets": "Stage I-III Breast Cancer patients",
+                    "criterion": "breast cancer stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "I",
+                                "II",
+                                "III"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "plans to start chemotherapy or just started chemotherapy. Just started chemotherapy is defined as already receiving one cycle of chemotherapy.",
+                    "criterion": "chemotherapy status",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment status",
+                            "expected_value": [
+                                "plans to start chemotherapy",
+                                "already receiving one cycle of chemotherapy"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* ECOG >/= 3",
+            "criterions": [
+                {
+                    "exact_snippets": "ECOG >/= 3",
+                    "criterion": "ECOG performance status",
+                    "requirements": [
+                        {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Stage IV Breast cancer patients",
+            "criterions": [
+                {
+                    "exact_snippets": "Stage IV Breast cancer patients",
+                    "criterion": "breast cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Stage IV Breast cancer patients",
+                    "criterion": "cancer stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": "IV"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Stage I-III Breast Cancer patients who do not have plans to start chemotherapy or who have received more than one cycle of breast cancer chemotherapy.",
+            "criterions": [
+                {
+                    "exact_snippets": "Stage I-III Breast Cancer patients",
+                    "criterion": "breast cancer stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "I",
+                                "II",
+                                "III"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "do not have plans to start chemotherapy",
+                    "criterion": "plans to start chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "intention",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "have received more than one cycle of breast cancer chemotherapy",
+                    "criterion": "number of cycles of breast cancer chemotherapy received",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "cycle"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

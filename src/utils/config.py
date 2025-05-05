@@ -35,7 +35,7 @@ TIMEOUT = 60
 TEMPERATURE = 0.0
 
 # Maximum number of concurrent OpenAI calls
-MAX_CONCURRENT_OPENAI_CALLS = 1
+MAX_CONCURRENT_OPENAI_CALLS = 100
 
 
 class ColoredFormatter(logging.Formatter):
