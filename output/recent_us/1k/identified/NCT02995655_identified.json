@@ -1,0 +1,901 @@
+{
+    "info": {
+        "nct_id": "NCT02995655",
+        "official_title": "A Pilot Study of CX-01 Combined With Azacitidine in the Treatment of Relapsed or Refractory Myelodysplastic Syndrome and Acute Myeloid Leukemia",
+        "inclusion_criteria": "* One of the following diagnoses:\n\n  * MDS with International Prostate Symptom Score (IPSS) score of INT-1 or higher and one of the following:\n\n    * Symptomatic anemia with either hemoglobin < 10.0 g/dL or requiring red blood cell (RBC) transfusion\n    * Thrombocytopenia with a history of two or more platelet counts < 50,000/µL or a significant hemorrhage requiring platelet transfusions\n    * Neutropenia with two or more absolute neutrophil count (ANC) < 1,000/µL\n  * Non-M3 AML\n* Prior treatment with ≥ 4 cycles of a hypomethylating agent (decitabine or azacitidine) without response OR documented disease progression on or after hypomethylating agent therapy\n* Age ≥ 18 years old\n* Adequate renal and hepatic function defined as all of the following:\n\n  * total bilirubin ≤ 1.5 x upper limit of normal (ULN), except in cases of Gilbert's disease\n  * aspartate aminotransferase (AST) and alanine aminotransferase (ALT) ≤ 2.5 x ULN\n  * serum creatinine < 2.0 x ULN\n* Peripheral blood blast count < 10,000/ µL.\n* Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2\n* Females must be surgically or biologically sterile or postmenopausal or, if of childbearing potential, must agree to use an adequate method of contraception during the study until 30 days after the last treatment. Males must be surgically or biologically sterile or agree to use an adequate method of contraception during the study until 30 days after the last treatment.\n* Ability to understand and willingness to sign an IRB approved written informed consent document (or that of legally authorized representative, if applicable).\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Prior allogeneic stem cell transplant\n* Central nervous system (CNS) leukemia\n* Diagnosed with AML and eligible for standard induction chemotherapy or stem cell transplantation.\n* At an increased risk of hemorrhage.\n* Known allergies, hypersensitivity, or intolerance to any form of heparin or azacitidine\n* Presence of significant active bleeding or condition requiring maintenance of a platelet count > 50,000/µL\n* Presence of any condition requiring any form of anticoagulant therapy (heparin flushes for IV catheter are permitted)\n* Receiving concomitant chemotherapy, radiation therapy, or immunotherapy during the duration of treatment on protocol, or within 21 days prior to enrollment\n* Known seropositivity for or active viral infection with human immunodeficiency virus (HIV), hepatitis B virus (HBV), or hepatitis C virus (HCV). Patients who are seropositive because of hepatitis B virus vaccine are eligible.\n* Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure, unstable angina pectoris, or cardiac arrhythmia\n* Pregnant and/or breastfeeding. Women of childbearing potential must have a negative pregnancy test within 28 days of study entry.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* MDS with International Prostate Symptom Score (IPSS) score of INT-1 or higher and one of the following:",
+            "criterions": [
+                {
+                    "exact_snippets": "MDS with International Prostate Symptom Score (IPSS) score of INT-1 or higher",
+                    "criterion": "International Prostate Symptom Score (IPSS)",
+                    "requirements": [
+                        {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "INT"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Symptomatic anemia with either hemoglobin < 10.0 g/dL or requiring red blood cell (RBC) transfusion",
+            "criterions": [
+                {
+                    "exact_snippets": "Symptomatic anemia",
+                    "criterion": "anemia",
+                    "requirements": [
+                        {
+                            "requirement_type": "symptomatic",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "hemoglobin < 10.0 g/dL",
+                    "criterion": "hemoglobin",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 10.0,
+                                "unit": "g/dL"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "requiring red blood cell (RBC) transfusion",
+                    "criterion": "red blood cell transfusion",
+                    "requirements": [
+                        {
+                            "requirement_type": "requirement",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Thrombocytopenia with a history of two or more platelet counts < 50,000/µL or a significant hemorrhage requiring platelet transfusions",
+            "criterions": [
+                {
+                    "exact_snippets": "Thrombocytopenia with a history of two or more platelet counts < 50,000/µL",
+                    "criterion": "platelet count",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 50000,
+                                "unit": "µL"
+                            }
+                        },
+                        {
+                            "requirement_type": "frequency",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "counts"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "significant hemorrhage requiring platelet transfusions",
+                    "criterion": "hemorrhage",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": "significant"
+                        },
+                        {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": "platelet transfusions"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Neutropenia with two or more absolute neutrophil count (ANC) < 1,000/µL",
+            "criterions": [
+                {
+                    "exact_snippets": "Neutropenia with two or more absolute neutrophil count (ANC) < 1,000/µL",
+                    "criterion": "absolute neutrophil count (ANC)",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1000,
+                                "unit": "µL"
+                            }
+                        },
+                        {
+                            "requirement_type": "count",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Non-M3 AML",
+            "criterions": [
+                {
+                    "exact_snippets": "Non-M3 AML",
+                    "criterion": "acute myeloid leukemia (AML) subtype",
+                    "requirements": [
+                        {
+                            "requirement_type": "subtype",
+                            "expected_value": "non-M3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior treatment with ≥ 4 cycles of a hypomethylating agent (decitabine or azacitidine) without response OR documented disease progression on or after hypomethylating agent therapy",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior treatment with ≥ 4 cycles of a hypomethylating agent (decitabine or azacitidine)",
+                    "criterion": "prior hypomethylating agent treatment",
+                    "requirements": [
+                        {
+                            "requirement_type": "number of cycles",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": "cycles"
+                            }
+                        },
+                        {
+                            "requirement_type": "agent type",
+                            "expected_value": [
+                                "decitabine",
+                                "azacitidine"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "without response",
+                    "criterion": "response to hypomethylating agent",
+                    "requirements": [
+                        {
+                            "requirement_type": "response",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "documented disease progression on or after hypomethylating agent therapy",
+                    "criterion": "disease progression after hypomethylating agent therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "progression",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Age ≥ 18 years old",
+            "criterions": [
+                {
+                    "exact_snippets": "Age ≥ 18 years old",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Adequate renal and hepatic function defined as all of the following:",
+            "criterions": [
+                {
+                    "exact_snippets": "Adequate renal ... function",
+                    "criterion": "renal function",
+                    "requirements": [
+                        {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Adequate ... hepatic function",
+                    "criterion": "hepatic function",
+                    "requirements": [
+                        {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* total bilirubin ≤ 1.5 x upper limit of normal (ULN), except in cases of Gilbert's disease",
+            "criterions": [
+                {
+                    "exact_snippets": "total bilirubin ≤ 1.5 x upper limit of normal (ULN)",
+                    "criterion": "total bilirubin",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.5,
+                                "unit": "x ULN"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "except in cases of Gilbert's disease",
+                    "criterion": "Gilbert's disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "exception",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* aspartate aminotransferase (AST) and alanine aminotransferase (ALT) ≤ 2.5 x ULN",
+            "criterions": [
+                {
+                    "exact_snippets": "aspartate aminotransferase (AST) ... ≤ 2.5 x ULN",
+                    "criterion": "aspartate aminotransferase (AST) level",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.5,
+                                "unit": "x ULN"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "alanine aminotransferase (ALT) ≤ 2.5 x ULN",
+                    "criterion": "alanine aminotransferase (ALT) level",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.5,
+                                "unit": "x ULN"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* serum creatinine < 2.0 x ULN",
+            "criterions": [
+                {
+                    "exact_snippets": "serum creatinine < 2.0 x ULN",
+                    "criterion": "serum creatinine",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2.0,
+                                "unit": "x ULN"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Peripheral blood blast count < 10,000/ µL.",
+            "criterions": [
+                {
+                    "exact_snippets": "Peripheral blood blast count < 10,000/ µL",
+                    "criterion": "peripheral blood blast count",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 10000,
+                                "unit": "/ µL"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* One of the following diagnoses:",
+            "criterions": [
+                {
+                    "exact_snippets": "One of the following diagnoses",
+                    "criterion": "diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": "one of a specified list"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2",
+            "criterions": [
+                {
+                    "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status ≤ 2",
+                    "criterion": "ECOG performance status",
+                    "requirements": [
+                        {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Ability to understand and willingness to sign an IRB approved written informed consent document (or that of legally authorized representative, if applicable).",
+            "criterions": [
+                {
+                    "exact_snippets": "Ability to understand",
+                    "criterion": "cognitive ability to understand informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "willingness to sign an IRB approved written informed consent document (or that of legally authorized representative, if applicable)",
+                    "criterion": "willingness to sign informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "document type",
+                            "expected_value": "IRB approved written informed consent document or that of legally authorized representative"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Females must be surgically or biologically sterile or postmenopausal or, if of childbearing potential, must agree to use an adequate method of contraception during the study until 30 days after the last treatment. Males must be surgically or biologically sterile or agree to use an adequate method of contraception during the study until 30 days after the last treatment.",
+            "criterions": [
+                {
+                    "exact_snippets": "Females must be surgically or biologically sterile",
+                    "criterion": "female sterilization status",
+                    "requirements": [
+                        {
+                            "requirement_type": "sterility",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Females must be ... postmenopausal",
+                    "criterion": "female menopausal status",
+                    "requirements": [
+                        {
+                            "requirement_type": "menopausal status",
+                            "expected_value": "postmenopausal"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Females ... if of childbearing potential, must agree to use an adequate method of contraception during the study until 30 days after the last treatment",
+                    "criterion": "female contraception agreement (childbearing potential)",
+                    "requirements": [
+                        {
+                            "requirement_type": "childbearing potential",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "contraception agreement",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "contraception duration",
+                            "expected_value": "during the study until 30 days after the last treatment"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Males must be surgically or biologically sterile",
+                    "criterion": "male sterilization status",
+                    "requirements": [
+                        {
+                            "requirement_type": "sterility",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Males must ... agree to use an adequate method of contraception during the study until 30 days after the last treatment",
+                    "criterion": "male contraception agreement",
+                    "requirements": [
+                        {
+                            "requirement_type": "contraception agreement",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "contraception duration",
+                            "expected_value": "during the study until 30 days after the last treatment"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* At an increased risk of hemorrhage.",
+            "criterions": [
+                {
+                    "exact_snippets": "At an increased risk of hemorrhage",
+                    "criterion": "risk of hemorrhage",
+                    "requirements": [
+                        {
+                            "requirement_type": "risk level",
+                            "expected_value": "increased"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Receiving concomitant chemotherapy, radiation therapy, or immunotherapy during the duration of treatment on protocol, or within 21 days prior to enrollment",
+            "criterions": [
+                {
+                    "exact_snippets": "Receiving concomitant chemotherapy ... during the duration of treatment on protocol, or within 21 days prior to enrollment",
+                    "criterion": "concomitant chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "receipt",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": [
+                                "during the duration of treatment on protocol",
+                                "within 21 days prior to enrollment"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Receiving concomitant ... radiation therapy ... during the duration of treatment on protocol, or within 21 days prior to enrollment",
+                    "criterion": "concomitant radiation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "receipt",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": [
+                                "during the duration of treatment on protocol",
+                                "within 21 days prior to enrollment"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Receiving concomitant ... immunotherapy ... during the duration of treatment on protocol, or within 21 days prior to enrollment",
+                    "criterion": "concomitant immunotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "receipt",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": [
+                                "during the duration of treatment on protocol",
+                                "within 21 days prior to enrollment"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Uncontrolled intercurrent illness including, but not limited to, ongoing or active infection, symptomatic congestive heart failure, unstable angina pectoris, or cardiac arrhythmia",
+            "criterions": [
+                {
+                    "exact_snippets": "Uncontrolled intercurrent illness",
+                    "criterion": "intercurrent illness",
+                    "requirements": [
+                        {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "ongoing or active infection",
+                    "criterion": "infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "ongoing",
+                                "active"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "symptomatic congestive heart failure",
+                    "criterion": "congestive heart failure",
+                    "requirements": [
+                        {
+                            "requirement_type": "symptom status",
+                            "expected_value": "symptomatic"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "unstable angina pectoris",
+                    "criterion": "angina pectoris",
+                    "requirements": [
+                        {
+                            "requirement_type": "stability",
+                            "expected_value": "unstable"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "cardiac arrhythmia",
+                    "criterion": "cardiac arrhythmia",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Known allergies, hypersensitivity, or intolerance to any form of heparin or azacitidine",
+            "criterions": [
+                {
+                    "exact_snippets": "Known allergies ... to any form of heparin",
+                    "criterion": "allergy to heparin",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "hypersensitivity ... to any form of heparin",
+                    "criterion": "hypersensitivity to heparin",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "intolerance to any form of heparin",
+                    "criterion": "intolerance to heparin",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Known allergies ... to ... azacitidine",
+                    "criterion": "allergy to azacitidine",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "hypersensitivity ... to ... azacitidine",
+                    "criterion": "hypersensitivity to azacitidine",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "intolerance to ... azacitidine",
+                    "criterion": "intolerance to azacitidine",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Known seropositivity for or active viral infection with human immunodeficiency virus (HIV), hepatitis B virus (HBV), or hepatitis C virus (HCV). Patients who are seropositive because of hepatitis B virus vaccine are eligible.",
+            "criterions": [
+                {
+                    "exact_snippets": "Known seropositivity for ... human immunodeficiency virus (HIV)",
+                    "criterion": "HIV infection or seropositivity",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Known seropositivity for ... hepatitis B virus (HBV)",
+                    "criterion": "HBV infection or seropositivity",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Known seropositivity for ... hepatitis C virus (HCV)",
+                    "criterion": "HCV infection or seropositivity",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Patients who are seropositive because of hepatitis B virus vaccine are eligible.",
+                    "criterion": "HBV seropositivity due to vaccination",
+                    "requirements": [
+                        {
+                            "requirement_type": "cause",
+                            "expected_value": "hepatitis B virus vaccine"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior allogeneic stem cell transplant",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior allogeneic stem cell transplant",
+                    "criterion": "allogeneic stem cell transplant",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Presence of any condition requiring any form of anticoagulant therapy (heparin flushes for IV catheter are permitted)",
+            "criterions": [
+                {
+                    "exact_snippets": "Presence of any condition requiring any form of anticoagulant therapy",
+                    "criterion": "condition requiring anticoagulant therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Central nervous system (CNS) leukemia",
+            "criterions": [
+                {
+                    "exact_snippets": "Central nervous system (CNS) leukemia",
+                    "criterion": "central nervous system (CNS) leukemia",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Pregnant and/or breastfeeding. Women of childbearing potential must have a negative pregnancy test within 28 days of study entry.",
+            "criterions": [
+                {
+                    "exact_snippets": "Pregnant",
+                    "criterion": "pregnancy status",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "breastfeeding",
+                    "criterion": "breastfeeding status",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Women of childbearing potential must have a negative pregnancy test within 28 days of study entry",
+                    "criterion": "pregnancy test result (women of childbearing potential)",
+                    "requirements": [
+                        {
+                            "requirement_type": "test result",
+                            "expected_value": "negative"
+                        },
+                        {
+                            "requirement_type": "test timing",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 28,
+                                "unit": "days before study entry"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Presence of significant active bleeding or condition requiring maintenance of a platelet count > 50,000/µL",
+            "criterions": [
+                {
+                    "exact_snippets": "Presence of significant active bleeding",
+                    "criterion": "active bleeding",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": "significant"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "condition requiring maintenance of a platelet count > 50,000/µL",
+                    "criterion": "platelet count",
+                    "requirements": [
+                        {
+                            "requirement_type": "maintenance requirement",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 50000,
+                                "unit": "/µL"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Diagnosed with AML and eligible for standard induction chemotherapy or stem cell transplantation.",
+            "criterions": [
+                {
+                    "exact_snippets": "Diagnosed with AML",
+                    "criterion": "acute myeloid leukemia (AML) diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "eligible for standard induction chemotherapy or stem cell transplantation",
+                    "criterion": "eligibility for standard induction chemotherapy or stem cell transplantation",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

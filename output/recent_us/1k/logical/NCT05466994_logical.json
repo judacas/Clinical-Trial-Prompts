@@ -1,0 +1,728 @@
+{
+    "info": {
+        "nct_id": "NCT05466994",
+        "official_title": "A Phase II Randomized Controlled Trial to Determine the Efficacy of an auGmented reAlity gaMe in pediatrIc caNcer Patients Who Are Opioid Naïve Undergoing Surgery to Reduce Postoperative Opioid Use (GAMING-ON Study)",
+        "inclusion_criteria": "1. Ages 5-15\n2. English and Spanish-speaking parents/legal guardians and patients\n3. Undergoing major surgery for cancer requiring postoperative hospitalization is defined as ≥2 hours of duration of surgery and requiring postoperative hospital admission of at least one night\n4. Expected to be prescribed postoperative inpatient opioids\n5. Have never taken opioids or have had no daily opioid use within the last 30 days before surgery\n6. Sufficient cognitive capacity to comprehend and interact with the game. This is defined as the ability to utilize mobile technology (use iPad with or without assistance) and activate and respond to AR experiences within the app as determined by the clinician.\n7. Both the child and a legal guardian are willing and able to provide informed consent.\n\n   * The range from 5-to 15 is based on a recent pilot RCT in which the PI found that older adolescents (>15 years of age) were disinterested in the interactive game.\nHealthy volunteers allowed\nMust have minimum age of 5 Years\nMust have maximum age of 15 Years",
+        "exclusion_criteria": "1. Patients with any daily opioid use within 30 days before surgery.\n2. History of documented peripheral neuropathy secondary to cancer treatment\n3. Inability to demonstrate an understanding of the game from English instructions\n4. Any additional concerns based on the study physicians' assessments",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 5 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 5 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 5 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Ages 5-15",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ages 5-15",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 15,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ages 5-15",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 15,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Have never taken opioids or have had no daily opioid use within the last 30 days before surgery",
+                "criterions": [
+                    {
+                        "exact_snippets": "Have never taken opioids",
+                        "criterion": "opioid use history",
+                        "requirement": {
+                            "requirement_type": "history of use",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "have had no daily opioid use within the last 30 days before surgery",
+                        "criterion": "daily opioid use in last 30 days before surgery",
+                        "requirement": {
+                            "requirement_type": "daily use",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "have had no daily opioid use within the last 30 days before surgery",
+                        "criterion": "daily opioid use in last 30 days before surgery",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": "within the last 30 days before surgery"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Have never taken opioids",
+                        "criterion": "opioid use history",
+                        "requirement": {
+                            "requirement_type": "history of use",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "have had no daily opioid use within the last 30 days before surgery",
+                                "criterion": "daily opioid use in last 30 days before surgery",
+                                "requirement": {
+                                    "requirement_type": "daily use",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "have had no daily opioid use within the last 30 days before surgery",
+                                "criterion": "daily opioid use in last 30 days before surgery",
+                                "requirement": {
+                                    "requirement_type": "time frame",
+                                    "expected_value": "within the last 30 days before surgery"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 15 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 15 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 15,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 15 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 15,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. Both the child and a legal guardian are willing and able to provide informed consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "the child ... willing and able to provide informed consent",
+                        "criterion": "child's informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "the child ... willing and able to provide informed consent",
+                        "criterion": "child's informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "a legal guardian ... willing and able to provide informed consent",
+                        "criterion": "legal guardian's informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "a legal guardian ... willing and able to provide informed consent",
+                        "criterion": "legal guardian's informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "the child ... willing and able to provide informed consent",
+                        "criterion": "child's informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "the child ... willing and able to provide informed consent",
+                        "criterion": "child's informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "a legal guardian ... willing and able to provide informed consent",
+                        "criterion": "legal guardian's informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "a legal guardian ... willing and able to provide informed consent",
+                        "criterion": "legal guardian's informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The range from 5-to 15 is based on a recent pilot RCT in which the PI found that older adolescents (>15 years of age) were disinterested in the interactive game.",
+                "criterions": [
+                    {
+                        "exact_snippets": "The range from 5-to 15 ... older adolescents (>15 years of age)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 15,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "The range from 5-to 15 ... older adolescents (>15 years of age)",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 15,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Expected to be prescribed postoperative inpatient opioids",
+                "criterions": [
+                    {
+                        "exact_snippets": "Expected to be prescribed postoperative inpatient opioids",
+                        "criterion": "postoperative inpatient opioid prescription",
+                        "requirement": {
+                            "requirement_type": "expectation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Expected to be prescribed postoperative inpatient opioids",
+                        "criterion": "postoperative inpatient opioid prescription",
+                        "requirement": {
+                            "requirement_type": "expectation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Sufficient cognitive capacity to comprehend and interact with the game. This is defined as the ability to utilize mobile technology (use iPad with or without assistance) and activate and respond to AR experiences within the app as determined by the clinician.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Sufficient cognitive capacity to comprehend and interact with the game.",
+                        "criterion": "cognitive capacity",
+                        "requirement": {
+                            "requirement_type": "sufficiency",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "ability to utilize mobile technology (use iPad with or without assistance)",
+                        "criterion": "ability to utilize mobile technology",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "activate and respond to AR experiences within the app",
+                        "criterion": "ability to activate and respond to AR experiences",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "as determined by the clinician",
+                        "criterion": "clinician determination of abilities",
+                        "requirement": {
+                            "requirement_type": "determination",
+                            "expected_value": "clinician"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "ability to utilize mobile technology (use iPad with or without assistance)",
+                                "criterion": "ability to utilize mobile technology",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "activate and respond to AR experiences within the app",
+                                "criterion": "ability to activate and respond to AR experiences",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Sufficient cognitive capacity to comprehend and interact with the game.",
+                        "criterion": "cognitive capacity",
+                        "requirement": {
+                            "requirement_type": "sufficiency",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "as determined by the clinician",
+                        "criterion": "clinician determination of abilities",
+                        "requirement": {
+                            "requirement_type": "determination",
+                            "expected_value": "clinician"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "3. Inability to demonstrate an understanding of the game from English instructions",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inability to demonstrate an understanding of the game from English instructions",
+                        "criterion": "understanding of the game from English instructions",
+                        "requirement": {
+                            "requirement_type": "ability to demonstrate understanding",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Inability to demonstrate an understanding of the game from English instructions",
+                    "criterion": "understanding of the game from English instructions",
+                    "requirement": {
+                        "requirement_type": "ability to demonstrate understanding",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. History of documented peripheral neuropathy secondary to cancer treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of documented peripheral neuropathy secondary to cancer treatment",
+                        "criterion": "peripheral neuropathy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of documented peripheral neuropathy secondary to cancer treatment",
+                        "criterion": "peripheral neuropathy",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of documented peripheral neuropathy secondary to cancer treatment",
+                        "criterion": "peripheral neuropathy",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": "secondary to cancer treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "History of documented peripheral neuropathy secondary to cancer treatment",
+                        "criterion": "peripheral neuropathy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of documented peripheral neuropathy secondary to cancer treatment",
+                        "criterion": "peripheral neuropathy",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of documented peripheral neuropathy secondary to cancer treatment",
+                        "criterion": "peripheral neuropathy",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": "secondary to cancer treatment"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Any additional concerns based on the study physicians' assessments",
+                "criterions": [
+                    {
+                        "exact_snippets": "Any additional concerns based on the study physicians' assessments",
+                        "criterion": "additional concerns (as assessed by study physicians)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Any additional concerns based on the study physicians' assessments",
+                        "criterion": "additional concerns (as assessed by study physicians)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Patients with any daily opioid use within 30 days before surgery.",
+                "criterions": [
+                    {
+                        "exact_snippets": "any daily opioid use within 30 days before surgery",
+                        "criterion": "daily opioid use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any daily opioid use within 30 days before surgery",
+                        "criterion": "daily opioid use",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 30,
+                                "unit": "days before surgery"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "any daily opioid use within 30 days before surgery",
+                        "criterion": "daily opioid use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any daily opioid use within 30 days before surgery",
+                        "criterion": "daily opioid use",
+                        "requirement": {
+                            "requirement_type": "time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 30,
+                                "unit": "days before surgery"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "3. Undergoing major surgery for cancer requiring postoperative hospitalization is defined as ≥2 hours of duration of surgery and requiring postoperative hospital admission of at least one night",
+                "criterions": [
+                    {
+                        "exact_snippets": "Undergoing major surgery for cancer",
+                        "criterion": "major surgery for cancer",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "undergoing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "duration of surgery ... ≥2 hours",
+                        "criterion": "duration of surgery",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "hours"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "requiring postoperative hospital admission of at least one night",
+                        "criterion": "postoperative hospital admission",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "night"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Undergoing major surgery for cancer",
+                        "criterion": "major surgery for cancer",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "undergoing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "duration of surgery ... \u001e2 hours",
+                        "criterion": "duration of surgery",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "hours"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "requiring postoperative hospital admission of at least one night",
+                        "criterion": "postoperative hospital admission",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "night"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. English and Spanish-speaking parents/legal guardians and patients",
+                "criterions": [
+                    {
+                        "exact_snippets": "English and Spanish-speaking parents/legal guardians and patients",
+                        "criterion": "language spoken",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": [
+                                "English",
+                                "Spanish"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

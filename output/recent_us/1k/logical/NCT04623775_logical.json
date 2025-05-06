@@ -1,0 +1,608 @@
+{
+    "info": {
+        "nct_id": "NCT04623775",
+        "official_title": "A Phase 2 Randomized Study of Relatlimab Plus Nivolumab in Combination With Chemotherapy vs. Nivolumab in Combination With Chemotherapy as First Line Treatment for Participants With Stage IV or Recurrent Non-small Cell Lung Cancer (NSCLC)",
+        "inclusion_criteria": "Inclusion Criteria\n\n* Histologically confirmed metastatic non-small cell lung cancer (NSCLC) of squamous (SQ) or non-squamous (NSQ) histology with Stage IV A/B (as defined by the 8th International Association for the Study of Lung Cancer Classification) or recurrent disease following multi-modal therapy for locally advanced disease.\n* Eastern Cooperative Oncology Group (ECOG) performance status (PS) of less than or equal to 1 at screening and confirmed prior to randomization.\n* Measurable disease by computed tomography (CT) or magnetic resonance resources (MRI) per response evaluation criteria in solid tumor version 1.1 (RECIST 1.1) criteria.\n* No prior systemic anti-cancer treatment (including epidermal growth factor receptor (EGFR) and anaplastic lymphoma kinase (ALK) inhibitors) given as primary therapy for advanced or metastatic disease.\n\nExclusion Criteria\n\n* Participants with EGFR, ALK, ROS-1, or known B-rapidly accelerated fibrosarcoma proto-oncogene (BRAF V600E) mutations that are sensitive to available targeted therapy.\n* Untreated CNS metastases.\n* Leptomeningeal metastases (carcinomatous meningitis).\n* Concurrent malignancy requiring treatment or history of prior malignancy active within 2 years prior to randomization (ie, participants with a history of prior malignancy are eligible if treatment was completed at least 2 years before randomization and the participant has no evidence of disease).\n* Prior treatment with an anti-programmed cell death protein 1 (PD-1), anti-programmed death-ligand 1 (PD-L1), anti-programmed death-ligand 2 (PD-L2), or anti-cytotoxic T-lymphocyte-associated protein 4 (CTLA-4) antibody, or any other antibody or drug specifically targeting T-cell co-stimulation or checkpoint pathways.\n* Other protocol-defined Inclusion/Exclusion criteria apply.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No prior systemic anti-cancer treatment (including epidermal growth factor receptor (EGFR) and anaplastic lymphoma kinase (ALK) inhibitors) given as primary therapy for advanced or metastatic disease.",
+                "criterions": [
+                    {
+                        "exact_snippets": "No prior systemic anti-cancer treatment (including epidermal growth factor receptor (EGFR) and anaplastic lymphoma kinase (ALK) inhibitors) given as primary therapy for advanced or metastatic disease.",
+                        "criterion": "prior systemic anti-cancer treatment for advanced or metastatic disease",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No prior systemic anti-cancer treatment (including epidermal growth factor receptor (EGFR) and anaplastic lymphoma kinase (ALK) inhibitors) given as primary therapy for advanced or metastatic disease.",
+                        "criterion": "prior systemic anti-cancer treatment for advanced or metastatic disease",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Concurrent malignancy requiring treatment or history of prior malignancy active within 2 years prior to randomization (ie, participants with a history of prior malignancy are eligible if treatment was completed at least 2 years before randomization and the participant has no evidence of disease).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Concurrent malignancy requiring treatment",
+                        "criterion": "concurrent malignancy",
+                        "requirement": {
+                            "requirement_type": "requiring treatment",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of prior malignancy active within 2 years prior to randomization",
+                        "criterion": "history of prior malignancy",
+                        "requirement": {
+                            "requirement_type": "active within years prior to randomization",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "participants with a history of prior malignancy are eligible if treatment was completed at least 2 years before randomization and the participant has no evidence of disease",
+                        "criterion": "history of prior malignancy",
+                        "requirement": {
+                            "requirement_type": "treatment completed before randomization",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "participants with a history of prior malignancy are eligible if treatment was completed at least 2 years before randomization and the participant has no evidence of disease",
+                        "criterion": "history of prior malignancy",
+                        "requirement": {
+                            "requirement_type": "evidence of disease",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Concurrent malignancy requiring treatment",
+                        "criterion": "concurrent malignancy",
+                        "requirement": {
+                            "requirement_type": "requiring treatment",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "history of prior malignancy active within 2 years prior to randomization",
+                                "criterion": "history of prior malignancy",
+                                "requirement": {
+                                    "requirement_type": "active within years prior to randomization",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 2,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "participants with a history of prior malignancy are eligible if treatment was completed at least 2 years before randomization and the participant has no evidence of disease",
+                                        "criterion": "history of prior malignancy",
+                                        "requirement": {
+                                            "requirement_type": "treatment completed before randomization",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 2,
+                                                "unit": "years"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "participants with a history of prior malignancy are eligible if treatment was completed at least 2 years before randomization and the participant has no evidence of disease",
+                                        "criterion": "history of prior malignancy",
+                                        "requirement": {
+                                            "requirement_type": "evidence of disease",
+                                            "expected_value": false
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Leptomeningeal metastases (carcinomatous meningitis).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Leptomeningeal metastases (carcinomatous meningitis)",
+                        "criterion": "leptomeningeal metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Leptomeningeal metastases (carcinomatous meningitis)",
+                        "criterion": "carcinomatous meningitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Leptomeningeal metastases (carcinomatous meningitis)",
+                        "criterion": "leptomeningeal metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Leptomeningeal metastases (carcinomatous meningitis)",
+                        "criterion": "carcinomatous meningitis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion Criteria",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants with EGFR, ALK, ROS-1, or known B-rapidly accelerated fibrosarcoma proto-oncogene (BRAF V600E) mutations that are sensitive to available targeted therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "EGFR, ALK, ROS-1, or known B-rapidly accelerated fibrosarcoma proto-oncogene (BRAF V600E) mutations that are sensitive to available targeted therapy",
+                        "criterion": "gene mutations (EGFR, ALK, ROS-1, BRAF V600E)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "EGFR, ALK, ROS-1, or known B-rapidly accelerated fibrosarcoma proto-oncogene (BRAF V600E) mutations that are sensitive to available targeted therapy",
+                        "criterion": "gene mutations (EGFR, ALK, ROS-1, BRAF V600E)",
+                        "requirement": {
+                            "requirement_type": "sensitivity to available targeted therapy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "EGFR, ALK, ROS-1, or known B-rapidly accelerated fibrosarcoma proto-oncogene (BRAF V600E) mutations that are sensitive to available targeted therapy",
+                        "criterion": "gene mutations (EGFR, ALK, ROS-1, BRAF V600E)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "EGFR, ALK, ROS-1, or known B-rapidly accelerated fibrosarcoma proto-oncogene (BRAF V600E) mutations that are sensitive to available targeted therapy",
+                        "criterion": "gene mutations (EGFR, ALK, ROS-1, BRAF V600E)",
+                        "requirement": {
+                            "requirement_type": "sensitivity to available targeted therapy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion Criteria",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior treatment with an anti-programmed cell death protein 1 (PD-1), anti-programmed death-ligand 1 (PD-L1), anti-programmed death-ligand 2 (PD-L2), or anti-cytotoxic T-lymphocyte-associated protein 4 (CTLA-4) antibody, or any other antibody or drug specifically targeting T-cell co-stimulation or checkpoint pathways.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior treatment with an anti-programmed cell death protein 1 (PD-1)",
+                        "criterion": "prior treatment with anti-PD-1 antibody",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... anti-programmed death-ligand 1 (PD-L1)",
+                        "criterion": "prior treatment with anti-PD-L1 antibody",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... anti-programmed death-ligand 2 (PD-L2)",
+                        "criterion": "prior treatment with anti-PD-L2 antibody",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... anti-cytotoxic T-lymphocyte-associated protein 4 (CTLA-4) antibody",
+                        "criterion": "prior treatment with anti-CTLA-4 antibody",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... any other antibody or drug specifically targeting T-cell co-stimulation or checkpoint pathways",
+                        "criterion": "prior treatment with antibody or drug targeting T-cell co-stimulation or checkpoint pathways",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Prior treatment with an anti-programmed cell death protein 1 (PD-1)",
+                        "criterion": "prior treatment with anti-PD-1 antibody",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... anti-programmed death-ligand 1 (PD-L1)",
+                        "criterion": "prior treatment with anti-PD-L1 antibody",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... anti-programmed death-ligand 2 (PD-L2)",
+                        "criterion": "prior treatment with anti-PD-L2 antibody",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... anti-cytotoxic T-lymphocyte-associated protein 4 (CTLA-4) antibody",
+                        "criterion": "prior treatment with anti-CTLA-4 antibody",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment with ... any other antibody or drug specifically targeting T-cell co-stimulation or checkpoint pathways",
+                        "criterion": "prior treatment with antibody or drug targeting T-cell co-stimulation or checkpoint pathways",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Other protocol-defined Inclusion/Exclusion criteria apply.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Other protocol-defined Inclusion/Exclusion criteria apply.",
+                        "criterion": "other protocol-defined inclusion/exclusion criteria",
+                        "requirement": {
+                            "requirement_type": "applicability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Other protocol-defined Inclusion/Exclusion criteria apply.",
+                        "criterion": "other protocol-defined inclusion/exclusion criteria",
+                        "requirement": {
+                            "requirement_type": "applicability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Untreated CNS metastases.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Untreated CNS metastases",
+                        "criterion": "CNS metastases",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": "untreated"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Untreated CNS metastases",
+                        "criterion": "CNS metastases",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": "untreated"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) performance status (PS) of less than or equal to 1 at screening and confirmed prior to randomization.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) of less than or equal to 1 at screening and confirmed prior to randomization.",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value at screening",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) of less than or equal to 1 at screening and confirmed prior to randomization.",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "confirmation prior to randomization",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) of less than or equal to 1 at screening and confirmed prior to randomization.",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value at screening",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status (PS) of less than or equal to 1 at screening and confirmed prior to randomization.",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "confirmation prior to randomization",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Measurable disease by computed tomography (CT) or magnetic resonance resources (MRI) per response evaluation criteria in solid tumor version 1.1 (RECIST 1.1) criteria.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Measurable disease by computed tomography (CT) or magnetic resonance resources (MRI) per response evaluation criteria in solid tumor version 1.1 (RECIST 1.1) criteria.",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Measurable disease by computed tomography (CT) or magnetic resonance resources (MRI) per response evaluation criteria in solid tumor version 1.1 (RECIST 1.1) criteria.",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "assessment_method",
+                            "expected_value": [
+                                "computed tomography (CT)",
+                                "magnetic resonance resources (MRI)"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Measurable disease by computed tomography (CT) or magnetic resonance resources (MRI) per response evaluation criteria in solid tumor version 1.1 (RECIST 1.1) criteria.",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "assessment_criteria",
+                            "expected_value": "RECIST 1.1"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Histologically confirmed metastatic non-small cell lung cancer (NSCLC) of squamous (SQ) or non-squamous (NSQ) histology with Stage IV A/B (as defined by the 8th International Association for the Study of Lung Cancer Classification) or recurrent disease following multi-modal therapy for locally advanced disease.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologically confirmed metastatic non-small cell lung cancer (NSCLC)",
+                        "criterion": "non-small cell lung cancer (NSCLC)",
+                        "requirement": {
+                            "requirement_type": "histological confirmation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histologically confirmed metastatic non-small cell lung cancer (NSCLC)",
+                        "criterion": "non-small cell lung cancer (NSCLC)",
+                        "requirement": {
+                            "requirement_type": "metastatic",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "squamous (SQ) or non-squamous (NSQ) histology",
+                        "criterion": "NSCLC histology subtype",
+                        "requirement": {
+                            "requirement_type": "subtype",
+                            "expected_value": [
+                                "squamous",
+                                "non-squamous"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Stage IV A/B (as defined by the 8th International Association for the Study of Lung Cancer Classification)",
+                        "criterion": "NSCLC stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "IV A",
+                                "IV B"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "recurrent disease following multi-modal therapy for locally advanced disease",
+                        "criterion": "recurrent NSCLC after multi-modal therapy for locally advanced disease",
+                        "requirement": {
+                            "requirement_type": "recurrence after multi-modal therapy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

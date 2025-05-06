@@ -1,0 +1,735 @@
+{
+    "info": {
+        "nct_id": "NCT03309111",
+        "official_title": "A Phase 1, First-in-Human, Multicenter, Open-Label, Two-Part Dose-Escalation and Cohort Expansion Study of Single-Agent ISB 1342 in Subjects With Previously Treated Multiple Myeloma",
+        "inclusion_criteria": "* Documented diagnosis of multiple myeloma with measurable disease (serum, urine, or free light chain) per International Myeloma Working Group (IMWG) criteria, including non-secretory or oligo-secretory multiple myeloma which has relapsed after or is refractory to prior therapies, including proteasome inhibitors (PIs), immunomodulators (IMiDs) and anti-CD38 targeted therapies (daratumumab, isatuximab).\n* Eastern Cooperative Oncology Group (ECOG) performance-status score of 2 or less and 1 or less (for France).\n* Adequate hematologic, renal, and hepatic functions\n* Seronegative for hepatitis B antigen; positive hepatitis B tests can be further evaluated by confirmatory tests, and if viral load is negative, the subject can be enrolled.\n* Seronegative for hepatitis C antibody; if positive, then further test for the presence of antigen by hepatitis C virus polymerase chain reaction (HCV PCR). If HCV antigen tests are negative, then the subject can be enrolled.\n* Oxygen saturation level ≥92% on room air.\n* Left ventricular ejection fraction (LVEF) ≥50% and no pericardial or pleural effusion at Screening\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Active central nervous system involvement\n* Exposure to daratumumab or isatuximab within 2 months prior to the start of study treatment\n* Active plasma cell leukemia\n* Active infectious disease\n* Clinically significant cardiovascular and respiratory conditions\n* History of HIV infection\n* Subjects requiring prohibited concomitant medications",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Seronegative for hepatitis B antigen; positive hepatitis B tests can be further evaluated by confirmatory tests, and if viral load is negative, the subject can be enrolled.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Seronegative for hepatitis B antigen",
+                        "criterion": "hepatitis B antigen serostatus",
+                        "requirement": {
+                            "requirement_type": "serostatus",
+                            "expected_value": "seronegative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "positive hepatitis B tests ... if viral load is negative, the subject can be enrolled",
+                        "criterion": "hepatitis B viral load",
+                        "requirement": {
+                            "requirement_type": "viral load",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 0,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "Seronegative for hepatitis B antigen",
+                    "criterion": "hepatitis B antigen serostatus",
+                    "requirement": {
+                        "requirement_type": "serostatus",
+                        "expected_value": "seronegative"
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "exact_snippets": "positive hepatitis B tests ... if viral load is negative, the subject can be enrolled",
+                    "criterion": "hepatitis B viral load",
+                    "requirement": {
+                        "requirement_type": "viral load",
+                        "expected_value": {
+                            "operator": "=",
+                            "value": 0,
+                            "unit": "N/A"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adequate hematologic, renal, and hepatic functions",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adequate hematologic ... functions",
+                        "criterion": "hematologic function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Adequate ... renal ... functions",
+                        "criterion": "renal function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Adequate ... hepatic functions",
+                        "criterion": "hepatic function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adequate hematologic ... functions",
+                        "criterion": "hematologic function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Adequate ... renal ... functions",
+                        "criterion": "renal function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Adequate ... hepatic functions",
+                        "criterion": "hepatic function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) performance-status score of 2 or less and 1 or less (for France).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance-status score of 2 or less",
+                        "criterion": "ECOG performance-status score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "1 or less (for France)",
+                        "criterion": "ECOG performance-status score (France)",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance-status score of 2 or less",
+                                "criterion": "ECOG performance-status score",
+                                "requirement": {
+                                    "requirement_type": "score",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "1 or less (for France)",
+                                "criterion": "ECOG performance-status score (France)",
+                                "requirement": {
+                                    "requirement_type": "score",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* History of HIV infection",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of HIV infection",
+                        "criterion": "HIV infection",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "History of HIV infection",
+                    "criterion": "HIV infection",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active central nervous system involvement",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active central nervous system involvement",
+                        "criterion": "central nervous system involvement",
+                        "requirement": {
+                            "requirement_type": "activity status",
+                            "expected_value": "active"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Active central nervous system involvement",
+                    "criterion": "central nervous system involvement",
+                    "requirement": {
+                        "requirement_type": "activity status",
+                        "expected_value": "active"
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Subjects requiring prohibited concomitant medications",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subjects requiring prohibited concomitant medications",
+                        "criterion": "requirement for prohibited concomitant medications",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Subjects requiring prohibited concomitant medications",
+                        "criterion": "requirement for prohibited concomitant medications",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Clinically significant cardiovascular and respiratory conditions",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinically significant cardiovascular ... conditions",
+                        "criterion": "cardiovascular conditions",
+                        "requirement": {
+                            "requirement_type": "clinical significance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Clinically significant ... respiratory conditions",
+                        "criterion": "respiratory conditions",
+                        "requirement": {
+                            "requirement_type": "clinical significance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Clinically significant cardiovascular ... conditions",
+                        "criterion": "cardiovascular conditions",
+                        "requirement": {
+                            "requirement_type": "clinical significance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Clinically significant ... respiratory conditions",
+                        "criterion": "respiratory conditions",
+                        "requirement": {
+                            "requirement_type": "clinical significance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active infectious disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active infectious disease",
+                        "criterion": "infectious disease",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Active infectious disease",
+                    "criterion": "infectious disease",
+                    "requirement": {
+                        "requirement_type": "activity",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Exposure to daratumumab or isatuximab within 2 months prior to the start of study treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Exposure to daratumumab or isatuximab within 2 months prior to the start of study treatment",
+                        "criterion": "exposure to daratumumab",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "months prior to the start of study treatment"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Exposure to daratumumab or isatuximab within 2 months prior to the start of study treatment",
+                        "criterion": "exposure to isatuximab",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "months prior to the start of study treatment"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Exposure to daratumumab or isatuximab within 2 months prior to the start of study treatment",
+                        "criterion": "exposure to daratumumab",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "months prior to the start of study treatment"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Exposure to daratumumab or isatuximab within 2 months prior to the start of study treatment",
+                        "criterion": "exposure to isatuximab",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "months prior to the start of study treatment"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active plasma cell leukemia",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active plasma cell leukemia",
+                        "criterion": "plasma cell leukemia",
+                        "requirement": {
+                            "requirement_type": "activity status",
+                            "expected_value": "active"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Active plasma cell leukemia",
+                    "criterion": "plasma cell leukemia",
+                    "requirement": {
+                        "requirement_type": "activity status",
+                        "expected_value": "active"
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Left ventricular ejection fraction (LVEF) ≥50% and no pericardial or pleural effusion at Screening",
+                "criterions": [
+                    {
+                        "exact_snippets": "Left ventricular ejection fraction (LVEF) ≥50%",
+                        "criterion": "left ventricular ejection fraction (LVEF)",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "no pericardial or pleural effusion at Screening",
+                        "criterion": "pericardial effusion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "no pericardial or pleural effusion at Screening",
+                        "criterion": "pleural effusion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Left ventricular ejection fraction (LVEF) \u001e50%",
+                        "criterion": "left ventricular ejection fraction (LVEF)",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "no pericardial or pleural effusion at Screening",
+                                "criterion": "pericardial effusion",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "no pericardial or pleural effusion at Screening",
+                                "criterion": "pleural effusion",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Documented diagnosis of multiple myeloma with measurable disease (serum, urine, or free light chain) per International Myeloma Working Group (IMWG) criteria, including non-secretory or oligo-secretory multiple myeloma which has relapsed after or is refractory to prior therapies, including proteasome inhibitors (PIs), immunomodulators (IMiDs) and anti-CD38 targeted therapies (daratumumab, isatuximab).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Documented diagnosis of multiple myeloma",
+                        "criterion": "multiple myeloma diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Documented diagnosis of multiple myeloma",
+                        "criterion": "multiple myeloma diagnosis",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "measurable disease (serum, urine, or free light chain) per International Myeloma Working Group (IMWG) criteria",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "measurable disease (serum, urine, or free light chain) per International Myeloma Working Group (IMWG) criteria",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "measurement_method",
+                            "expected_value": [
+                                "serum",
+                                "urine",
+                                "free light chain"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "measurable disease (serum, urine, or free light chain) per International Myeloma Working Group (IMWG) criteria",
+                        "criterion": "measurable disease",
+                        "requirement": {
+                            "requirement_type": "diagnostic_criteria",
+                            "expected_value": "IMWG"
+                        }
+                    },
+                    {
+                        "exact_snippets": "including non-secretory or oligo-secretory multiple myeloma",
+                        "criterion": "non-secretory or oligo-secretory multiple myeloma",
+                        "requirement": {
+                            "requirement_type": "subtype",
+                            "expected_value": [
+                                "non-secretory",
+                                "oligo-secretory"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "which has relapsed after or is refractory to prior therapies, including proteasome inhibitors (PIs), immunomodulators (IMiDs) and anti-CD38 targeted therapies (daratumumab, isatuximab)",
+                        "criterion": "response to prior therapies",
+                        "requirement": {
+                            "requirement_type": "relapsed_or_refractory",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "which has relapsed after or is refractory to prior therapies, including proteasome inhibitors (PIs), immunomodulators (IMiDs) and anti-CD38 targeted therapies (daratumumab, isatuximab)",
+                        "criterion": "response to prior therapies",
+                        "requirement": {
+                            "requirement_type": "prior_therapies",
+                            "expected_value": [
+                                "proteasome inhibitors (PIs)",
+                                "immunomodulators (IMiDs)",
+                                "anti-CD38 targeted therapies (daratumumab, isatuximab)"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Oxygen saturation level ≥92% on room air.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Oxygen saturation level ≥92% on room air",
+                        "criterion": "oxygen saturation level",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 92,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Oxygen saturation level \u001e92% on room air",
+                        "criterion": "oxygen saturation level",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 92,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Seronegative for hepatitis C antibody; if positive, then further test for the presence of antigen by hepatitis C virus polymerase chain reaction (HCV PCR). If HCV antigen tests are negative, then the subject can be enrolled.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Seronegative for hepatitis C antibody",
+                        "criterion": "hepatitis C antibody",
+                        "requirement": {
+                            "requirement_type": "serostatus",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "if positive, then further test for the presence of antigen by hepatitis C virus polymerase chain reaction (HCV PCR). If HCV antigen tests are negative, then the subject can be enrolled.",
+                        "criterion": "hepatitis C virus antigen (by HCV PCR)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Seronegative for hepatitis C antibody",
+                        "criterion": "hepatitis C antibody",
+                        "requirement": {
+                            "requirement_type": "serostatus",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "condition": {
+                            "exact_snippets": "Seronegative for hepatitis C antibody",
+                            "criterion": "hepatitis C antibody",
+                            "requirement": {
+                                "requirement_type": "serostatus",
+                                "expected_value": "positive"
+                            }
+                        },
+                        "then_criteria": {
+                            "exact_snippets": "if positive, then further test for the presence of antigen by hepatitis C virus polymerase chain reaction (HCV PCR). If HCV antigen tests are negative, then the subject can be enrolled.",
+                            "criterion": "hepatitis C virus antigen (by HCV PCR)",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": false
+                            }
+                        },
+                        "else_criteria": null
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

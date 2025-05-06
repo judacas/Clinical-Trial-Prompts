@@ -1,0 +1,837 @@
+{
+    "info": {
+        "nct_id": "NCT04960709",
+        "official_title": "A Phase III Randomized, Open-Label, Multicenter Study to Determine the Efficacy and Safety of Durvalumab in Combination With Tremelimumab and Enfortumab Vedotin or Durvalumab in Combination With Enfortumab Vedotin for Perioperative Treatment in Patients Ineligible for Cisplatin or Who Refuse Cisplatin Undergoing Radical Cystectomy for Muscle Invasive Bladder Cancer (VOLGA)",
+        "inclusion_criteria": "* Histologically or cytologically documented muscle-invasive UC of the bladder.\n* Participants with transitional cell and mixed transitional/non-transitional cell histologies;\n* Participants with MIBC clinical tumor (T) stage T2-T4aN0/1M0 or UC of the bladder with clinical state T1N1M0 (participants with T1 stage are allowed only with N1 disease)\n* Participants should also have not received prior systemic chemotherapy or immunotherapy for the treatment of MIBC or bladder UC.\n* Medically fit for cystectomy and able to receive neoadjuvant therapy;\n* Patients who have not received prior systemic chemotherapy or immunotherapy for treatment of MIBC;\n* ECOG performance status of 0,1,2 at enrollment.\n* Availability of tumor sample prior to study entry;\n* Must have a life expectancy of at least 12 weeks at randomization.\n* Cisplatin-ineligible, following criteria based on Galsky et al 2011 OR Refuse cisplatin based chemotherapy (must be documented in the medical records)\n\nExclusion criteria:\n\n* Evidence of lymph node (N2+) or metastatic TCC/UC disease at the time of screening.\n* Active infection\n* Uncontrolled intercurrent illness\n* Prior exposure to immune-mediated therapy (with exclusion of Bacillus-Calmette Guerin [BCG]), including but not limited to other anti-CTLA-4, anti--PD-1, anti PD-L1, or anti-PD-L2 antibodies.\n* Current or prior use of immunosuppressive medication within 14 days before the first dose of IPs.\nHealthy volunteers allowed\nMust have minimum age of 18 Years\nMust have maximum age of 130 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 130 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must have maximum age of 130 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 130,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must have maximum age of 130 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 130,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants should also have not received prior systemic chemotherapy or immunotherapy for the treatment of MIBC or bladder UC.",
+                "criterions": [
+                    {
+                        "exact_snippets": "not received prior systemic chemotherapy ... for the treatment of MIBC or bladder UC",
+                        "criterion": "prior systemic chemotherapy for MIBC or bladder UC",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "not received prior ... immunotherapy for the treatment of MIBC or bladder UC",
+                        "criterion": "prior immunotherapy for MIBC or bladder UC",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "not received prior systemic chemotherapy ... for the treatment of MIBC or bladder UC",
+                        "criterion": "prior systemic chemotherapy for MIBC or bladder UC",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "not received prior ... immunotherapy for the treatment of MIBC or bladder UC",
+                        "criterion": "prior immunotherapy for MIBC or bladder UC",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Cisplatin-ineligible, following criteria based on Galsky et al 2011 OR Refuse cisplatin based chemotherapy (must be documented in the medical records)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Cisplatin-ineligible, following criteria based on Galsky et al 2011",
+                        "criterion": "cisplatin eligibility",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Cisplatin-ineligible, following criteria based on Galsky et al 2011",
+                        "criterion": "cisplatin eligibility",
+                        "requirement": {
+                            "requirement_type": "criteria_reference",
+                            "expected_value": "Galsky et al 2011"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Refuse cisplatin based chemotherapy (must be documented in the medical records)",
+                        "criterion": "refusal of cisplatin based chemotherapy",
+                        "requirement": {
+                            "requirement_type": "refusal",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Refuse cisplatin based chemotherapy (must be documented in the medical records)",
+                        "criterion": "refusal of cisplatin based chemotherapy",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "must be documented in the medical records"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Cisplatin-ineligible, following criteria based on Galsky et al 2011",
+                                "criterion": "cisplatin eligibility",
+                                "requirement": {
+                                    "requirement_type": "eligibility",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "Cisplatin-ineligible, following criteria based on Galsky et al 2011",
+                                "criterion": "cisplatin eligibility",
+                                "requirement": {
+                                    "requirement_type": "criteria_reference",
+                                    "expected_value": "Galsky et al 2011"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Refuse cisplatin based chemotherapy (must be documented in the medical records)",
+                                "criterion": "refusal of cisplatin based chemotherapy",
+                                "requirement": {
+                                    "requirement_type": "refusal",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Refuse cisplatin based chemotherapy (must be documented in the medical records)",
+                                "criterion": "refusal of cisplatin based chemotherapy",
+                                "requirement": {
+                                    "requirement_type": "documentation",
+                                    "expected_value": "must be documented in the medical records"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Uncontrolled intercurrent illness",
+                "criterions": [
+                    {
+                        "exact_snippets": "Uncontrolled intercurrent illness",
+                        "criterion": "intercurrent illness",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Uncontrolled intercurrent illness",
+                        "criterion": "intercurrent illness",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Medically fit for cystectomy and able to receive neoadjuvant therapy;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Medically fit for cystectomy",
+                        "criterion": "medical fitness for cystectomy",
+                        "requirement": {
+                            "requirement_type": "fitness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "able to receive neoadjuvant therapy",
+                        "criterion": "ability to receive neoadjuvant therapy",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Medically fit for cystectomy",
+                        "criterion": "medical fitness for cystectomy",
+                        "requirement": {
+                            "requirement_type": "fitness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "able to receive neoadjuvant therapy",
+                        "criterion": "ability to receive neoadjuvant therapy",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* ECOG performance status of 0,1,2 at enrollment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "ECOG performance status of 0,1,2 at enrollment",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "ECOG performance status of 0,1,2 at enrollment",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Evidence of lymph node (N2+) or metastatic TCC/UC disease at the time of screening.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Evidence of lymph node (N2+) ... at the time of screening.",
+                        "criterion": "lymph node involvement (N2+)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Evidence of lymph node (N2+) ... at the time of screening.",
+                        "criterion": "lymph node involvement (N2+)",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "at the time of screening"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Evidence of ... metastatic TCC/UC disease at the time of screening.",
+                        "criterion": "metastatic TCC/UC disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Evidence of ... metastatic TCC/UC disease at the time of screening.",
+                        "criterion": "metastatic TCC/UC disease",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "at the time of screening"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Evidence of lymph node (N2+) ... at the time of screening.",
+                                "criterion": "lymph node involvement (N2+)",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Evidence of lymph node (N2+) ... at the time of screening.",
+                                "criterion": "lymph node involvement (N2+)",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": "at the time of screening"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Evidence of ... metastatic TCC/UC disease at the time of screening.",
+                                "criterion": "metastatic TCC/UC disease",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Evidence of ... metastatic TCC/UC disease at the time of screening.",
+                                "criterion": "metastatic TCC/UC disease",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": "at the time of screening"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active infection",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Active infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who have not received prior systemic chemotherapy or immunotherapy for treatment of MIBC;",
+                "criterions": [
+                    {
+                        "exact_snippets": "have not received prior systemic chemotherapy ... for treatment of MIBC",
+                        "criterion": "prior systemic chemotherapy for MIBC",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "have not received prior ... immunotherapy for treatment of MIBC",
+                        "criterion": "prior immunotherapy for MIBC",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "have not received prior systemic chemotherapy ... for treatment of MIBC",
+                        "criterion": "prior systemic chemotherapy for MIBC",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "have not received prior ... immunotherapy for treatment of MIBC",
+                        "criterion": "prior immunotherapy for MIBC",
+                        "requirement": {
+                            "requirement_type": "history of treatment",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion criteria:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Must have a life expectancy of at least 12 weeks at randomization.",
+                "criterions": [
+                    {
+                        "exact_snippets": "life expectancy of at least 12 weeks at randomization",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 12,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "life expectancy of at least 12 weeks at randomization",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 12,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants with transitional cell and mixed transitional/non-transitional cell histologies;",
+                "criterions": [
+                    {
+                        "exact_snippets": "transitional cell",
+                        "criterion": "histology type",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "transitional cell"
+                        }
+                    },
+                    {
+                        "exact_snippets": "mixed transitional/non-transitional cell histologies",
+                        "criterion": "histology type",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "mixed transitional/non-transitional cell"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "transitional cell",
+                        "criterion": "histology type",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "transitional cell"
+                        }
+                    },
+                    {
+                        "exact_snippets": "mixed transitional/non-transitional cell histologies",
+                        "criterion": "histology type",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": "mixed transitional/non-transitional cell"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Availability of tumor sample prior to study entry;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Availability of tumor sample prior to study entry",
+                        "criterion": "tumor sample",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Availability of tumor sample prior to study entry",
+                        "criterion": "tumor sample",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Current or prior use of immunosuppressive medication within 14 days before the first dose of IPs.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Current or prior use of immunosuppressive medication within 14 days before the first dose of IPs.",
+                        "criterion": "immunosuppressive medication use",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 14,
+                                        "unit": "days before first dose of IPs"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Current or prior use of immunosuppressive medication within 14 days before the first dose of IPs.",
+                        "criterion": "immunosuppressive medication use",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "current",
+                                "prior"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Histologically or cytologically documented muscle-invasive UC of the bladder.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologically or cytologically documented",
+                        "criterion": "urothelial carcinoma documentation method",
+                        "requirement": {
+                            "requirement_type": "documentation method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "muscle-invasive UC of the bladder",
+                        "criterion": "urothelial carcinoma of the bladder",
+                        "requirement": {
+                            "requirement_type": "muscle invasiveness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior exposure to immune-mediated therapy (with exclusion of Bacillus-Calmette Guerin [BCG]), including but not limited to other anti-CTLA-4, anti--PD-1, anti PD-L1, or anti-PD-L2 antibodies.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior exposure to immune-mediated therapy (with exclusion of Bacillus-Calmette Guerin [BCG])",
+                        "criterion": "prior exposure to immune-mediated therapy",
+                        "requirement": {
+                            "requirement_type": "exposure",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior exposure to immune-mediated therapy (with exclusion of Bacillus-Calmette Guerin [BCG])",
+                        "criterion": "prior exposure to immune-mediated therapy",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": "Bacillus-Calmette Guerin [BCG]"
+                        }
+                    },
+                    {
+                        "exact_snippets": "including but not limited to other anti-CTLA-4, anti--PD-1, anti PD-L1, or anti-PD-L2 antibodies",
+                        "criterion": "prior exposure to specific immune checkpoint inhibitors",
+                        "requirement": {
+                            "requirement_type": "exposure",
+                            "expected_value": [
+                                "anti-CTLA-4 antibody",
+                                "anti-PD-1 antibody",
+                                "anti-PD-L1 antibody",
+                                "anti-PD-L2 antibody"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants with MIBC clinical tumor (T) stage T2-T4aN0/1M0 or UC of the bladder with clinical state T1N1M0 (participants with T1 stage are allowed only with N1 disease)",
+                "criterions": [
+                    {
+                        "exact_snippets": "MIBC clinical tumor (T) stage T2-T4aN0/1M0",
+                        "criterion": "clinical tumor stage (MIBC)",
+                        "requirement": {
+                            "requirement_type": "T stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "MIBC clinical tumor (T) stage T2-T4aN0/1M0",
+                        "criterion": "clinical tumor stage (MIBC)",
+                        "requirement": {
+                            "requirement_type": "T stage subtype",
+                            "expected_value": "a"
+                        }
+                    },
+                    {
+                        "exact_snippets": "MIBC clinical tumor (T) stage T2-T4aN0/1M0",
+                        "criterion": "clinical tumor stage (MIBC)",
+                        "requirement": {
+                            "requirement_type": "N stage",
+                            "expected_value": [
+                                "N0",
+                                "N1"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "MIBC clinical tumor (T) stage T2-T4aN0/1M0",
+                        "criterion": "clinical tumor stage (MIBC)",
+                        "requirement": {
+                            "requirement_type": "M stage",
+                            "expected_value": "M0"
+                        }
+                    },
+                    {
+                        "exact_snippets": "UC of the bladder with clinical state T1N1M0",
+                        "criterion": "clinical tumor stage (UC of the bladder)",
+                        "requirement": {
+                            "requirement_type": "T stage",
+                            "expected_value": "T1"
+                        }
+                    },
+                    {
+                        "exact_snippets": "UC of the bladder with clinical state T1N1M0",
+                        "criterion": "clinical tumor stage (UC of the bladder)",
+                        "requirement": {
+                            "requirement_type": "N stage",
+                            "expected_value": "N1"
+                        }
+                    },
+                    {
+                        "exact_snippets": "UC of the bladder with clinical state T1N1M0",
+                        "criterion": "clinical tumor stage (UC of the bladder)",
+                        "requirement": {
+                            "requirement_type": "M stage",
+                            "expected_value": "M0"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

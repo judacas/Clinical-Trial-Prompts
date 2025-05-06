@@ -1,0 +1,409 @@
+{
+    "info": {
+        "nct_id": "NCT03178617",
+        "official_title": "Improving Learning and School Functioning in Latino Children With Cancer",
+        "inclusion_criteria": "* PARENT/CAREGIVER: Adult primary caregiver of children treated for leukemia or lymphoblastic lymphoma (LL) and daily contact with the child\n* PARENT/CAREGIVER: One or both parents self-identify as Hispanic/Latino and the primary participating parent/caregiver is monolingual or bilingual Spanish speaking\n* CHILD: Children treated for acute leukemia (e.g. acute lymphoblastic leukemia [ALL], acute myeloid leukemia [AML]), LL, or other types of leukemia (if treated intensively) aged 5-12 years and their parents/caregivers\n* CHILD: Child has completed cancer treatment and is up to 10 years post-treatment\n* CHILD: Child understands English and is enrolled in school (but can be bilingual)\nHealthy volunteers allowed\nMust have minimum age of 5 Years",
+        "exclusion_criteria": "* History of major psychiatric condition (e.g. psychosis) in parent or child; severe neurodevelopmental disorder in child (e.g. Down's syndrome)\n* Recent or current participation in educational/behavioral intervention study with similar focus",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* CHILD: Child understands English and is enrolled in school (but can be bilingual)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Child understands English",
+                        "criterion": "English language comprehension",
+                        "requirement": {
+                            "requirement_type": "comprehension",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "enrolled in school",
+                        "criterion": "school enrollment",
+                        "requirement": {
+                            "requirement_type": "enrollment status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Child understands English",
+                        "criterion": "English language comprehension",
+                        "requirement": {
+                            "requirement_type": "comprehension",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "enrolled in school",
+                        "criterion": "school enrollment",
+                        "requirement": {
+                            "requirement_type": "enrollment status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* CHILD: Child has completed cancer treatment and is up to 10 years post-treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Child has completed cancer treatment",
+                        "criterion": "cancer treatment",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "up to 10 years post-treatment",
+                        "criterion": "time since cancer treatment completion",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Child has completed cancer treatment",
+                        "criterion": "cancer treatment",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "up to 10 years post-treatment",
+                        "criterion": "time since cancer treatment completion",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 5 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 5 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 5 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* History of major psychiatric condition (e.g. psychosis) in parent or child; severe neurodevelopmental disorder in child (e.g. Down's syndrome)",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of major psychiatric condition (e.g. psychosis) in parent or child",
+                        "criterion": "major psychiatric condition in parent or child",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe neurodevelopmental disorder in child (e.g. Down's syndrome)",
+                        "criterion": "severe neurodevelopmental disorder in child",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "History of major psychiatric condition (e.g. psychosis) in parent or child",
+                        "criterion": "major psychiatric condition in parent or child",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe neurodevelopmental disorder in child (e.g. Down's syndrome)",
+                        "criterion": "severe neurodevelopmental disorder in child",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* PARENT/CAREGIVER: One or both parents self-identify as Hispanic/Latino and the primary participating parent/caregiver is monolingual or bilingual Spanish speaking",
+                "criterions": [
+                    {
+                        "exact_snippets": "One or both parents self-identify as Hispanic/Latino",
+                        "criterion": "parental ethnicity",
+                        "requirement": {
+                            "requirement_type": "self-identification",
+                            "expected_value": "Hispanic/Latino"
+                        }
+                    },
+                    {
+                        "exact_snippets": "One or both parents self-identify as Hispanic/Latino",
+                        "criterion": "parental ethnicity",
+                        "requirement": {
+                            "requirement_type": "number of parents",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "parent"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "the primary participating parent/caregiver is monolingual or bilingual Spanish speaking",
+                        "criterion": "primary participating parent/caregiver language ability",
+                        "requirement": {
+                            "requirement_type": "Spanish language ability",
+                            "expected_value": [
+                                "monolingual Spanish speaking",
+                                "bilingual Spanish speaking"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* CHILD: Children treated for acute leukemia (e.g. acute lymphoblastic leukemia [ALL], acute myeloid leukemia [AML]), LL, or other types of leukemia (if treated intensively) aged 5-12 years and their parents/caregivers",
+                "criterions": [
+                    {
+                        "exact_snippets": "Children treated for acute leukemia (e.g. acute lymphoblastic leukemia [ALL], acute myeloid leukemia [AML]), LL, or other types of leukemia (if treated intensively)",
+                        "criterion": "leukemia diagnosis and treatment",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": [
+                                "acute leukemia",
+                                "acute lymphoblastic leukemia (ALL)",
+                                "acute myeloid leukemia (AML)",
+                                "LL",
+                                "other types of leukemia"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Children treated for acute leukemia (e.g. acute lymphoblastic leukemia [ALL], acute myeloid leukemia [AML]), LL, or other types of leukemia (if treated intensively)",
+                        "criterion": "leukemia diagnosis and treatment",
+                        "requirement": {
+                            "requirement_type": "treatment_intensity",
+                            "expected_value": "treated intensively"
+                        }
+                    },
+                    {
+                        "exact_snippets": "aged 5-12 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 5,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "their parents/caregivers",
+                        "criterion": "parent/caregiver status",
+                        "requirement": {
+                            "requirement_type": "relationship_to_child",
+                            "expected_value": [
+                                "parent",
+                                "caregiver"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* PARENT/CAREGIVER: Adult primary caregiver of children treated for leukemia or lymphoblastic lymphoma (LL) and daily contact with the child",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adult primary caregiver",
+                        "criterion": "primary caregiver age",
+                        "requirement": {
+                            "requirement_type": "age group",
+                            "expected_value": "adult"
+                        }
+                    },
+                    {
+                        "exact_snippets": "primary caregiver of children treated for leukemia or lymphoblastic lymphoma (LL)",
+                        "criterion": "caregiver relationship to patient",
+                        "requirement": {
+                            "requirement_type": "relationship",
+                            "expected_value": "primary caregiver"
+                        }
+                    },
+                    {
+                        "exact_snippets": "primary caregiver of children treated for leukemia or lymphoblastic lymphoma (LL)",
+                        "criterion": "caregiver relationship to patient",
+                        "requirement": {
+                            "requirement_type": "patient diagnosis",
+                            "expected_value": [
+                                "leukemia",
+                                "lymphoblastic lymphoma"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "daily contact with the child",
+                        "criterion": "caregiver contact frequency",
+                        "requirement": {
+                            "requirement_type": "contact frequency",
+                            "expected_value": "daily"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Recent or current participation in educational/behavioral intervention study with similar focus",
+                "criterions": [
+                    {
+                        "exact_snippets": "Recent or current participation in educational/behavioral intervention study with similar focus",
+                        "criterion": "participation in educational/behavioral intervention study with similar focus",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": [
+                                "recent",
+                                "current"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

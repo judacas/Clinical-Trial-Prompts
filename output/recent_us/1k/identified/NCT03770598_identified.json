@@ -1,0 +1,201 @@
+{
+    "info": {
+        "nct_id": "NCT03770598",
+        "official_title": "Team Based Psychosocial Care to Promote, Maintain and Restore Wellness of Breast Cancer Patients",
+        "inclusion_criteria": "* Diagnosis of breast cancer within last three years\n* Able to communicate in English or with the help of an interpreter.\n* Access to a device with internet connection\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Breast cancer patients who are considered for hospice or expected survival of less than six months.\n* Presence of active suicidal ideations.\n* Presence of active psychosis.\n* Presence of dementia",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Diagnosis of breast cancer within last three years",
+            "criterions": [
+                {
+                    "exact_snippets": "Diagnosis of breast cancer",
+                    "criterion": "breast cancer diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "within last three years",
+                    "criterion": "time since breast cancer diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Able to communicate in English or with the help of an interpreter.",
+            "criterions": [
+                {
+                    "exact_snippets": "Able to communicate in English or with the help of an interpreter.",
+                    "criterion": "communication ability",
+                    "requirements": [
+                        {
+                            "requirement_type": "language",
+                            "expected_value": [
+                                "English",
+                                "with the help of an interpreter"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Access to a device with internet connection",
+            "criterions": [
+                {
+                    "exact_snippets": "Access to a device with internet connection",
+                    "criterion": "device with internet connection",
+                    "requirements": [
+                        {
+                            "requirement_type": "access",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Presence of active suicidal ideations.",
+            "criterions": [
+                {
+                    "exact_snippets": "Presence of active suicidal ideations",
+                    "criterion": "active suicidal ideations",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Presence of active psychosis.",
+            "criterions": [
+                {
+                    "exact_snippets": "Presence of active psychosis",
+                    "criterion": "psychosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "activity_status",
+                            "expected_value": "active"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Breast cancer patients who are considered for hospice or expected survival of less than six months.",
+            "criterions": [
+                {
+                    "exact_snippets": "Breast cancer patients",
+                    "criterion": "breast cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "considered for hospice",
+                    "criterion": "hospice care consideration",
+                    "requirements": [
+                        {
+                            "requirement_type": "consideration",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "expected survival of less than six months",
+                    "criterion": "expected survival",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Presence of dementia",
+            "criterions": [
+                {
+                    "exact_snippets": "Presence of dementia",
+                    "criterion": "dementia",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

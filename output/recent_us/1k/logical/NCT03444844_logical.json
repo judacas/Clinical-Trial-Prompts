@@ -1,0 +1,820 @@
+{
+    "info": {
+        "nct_id": "NCT03444844",
+        "official_title": "Biodistribution and Dosimetry of Ga-68 P16-093 in Prostate Cancer Patients With Intermediate/High Risk Primary Disease or Biochemical Recurrence After Treatment",
+        "inclusion_criteria": "Inclusion Criteria (Cohort 1):\n\n* Male ≥ 18 years of age\n* Prostate cancer patients presenting with rising PSA after radical prostatectomy for treatment if primary disease.\n* PSA ≥ 0.2 ng/mL\n* Patients must give informed consent for the research study, and agree to allow investigator access to clinical results following treatment plan implementation such as description of the treatment plan and PSA values following implementation of treatment plan as part of standard care, typically determined 3-4 months after treatment.\n\nInclusion Criteria (Cohort 2):\n\n* Male ≥ 18 years of age\n* Histologically confirmed prostate cancer with following Gleason scoring at biopsy:\n\n  * Gleason ≥ 4+3 OR\n  * Gleason 3+4 with >30% pattern 4 or ≥3 cores positive\n* Scheduled for radical prostatectomy (expected to occur within 60-days of scanning)\n* Patients must give informed consent for the research study, and agree to allow investigator access to the clinical results such as SOC imaging (mpMRI, e.g.) for surgical planning if done, or biopsy data following prostatectomy including lymph node dissection biopsy data, if available.\n\nExclusion Criteria (Cohorts 1& 2):\n\n* Inability to give informed consent.\n* Patient is unable to tolerate remaining still on the bed of the PET camera, due to physical limitations or claustrophobia.\n* Significant acute or chronic medical, neurologic, or illness in the subject that, in the judgment of the Clinical Investigators, could compromise subject safety, limit the ability to complete the study, and/or compromise the objectives of the study\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Exclusion Criteria (Cohorts 1& 2):",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Scheduled for radical prostatectomy (expected to occur within 60-days of scanning)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Scheduled for radical prostatectomy",
+                        "criterion": "radical prostatectomy",
+                        "requirement": {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "expected to occur within 60-days of scanning",
+                        "criterion": "radical prostatectomy",
+                        "requirement": {
+                            "requirement_type": "time from scanning to surgery",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 60,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Scheduled for radical prostatectomy",
+                        "criterion": "radical prostatectomy",
+                        "requirement": {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "expected to occur within 60-days of scanning",
+                        "criterion": "radical prostatectomy",
+                        "requirement": {
+                            "requirement_type": "time from scanning to surgery",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 60,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must give informed consent for the research study, and agree to allow investigator access to the clinical results such as SOC imaging (mpMRI, e.g.) for surgical planning if done, or biopsy data following prostatectomy including lymph node dissection biopsy data, if available.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must give informed consent for the research study",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "provided",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "agree to allow investigator access to the clinical results such as SOC imaging (mpMRI, e.g.) for surgical planning if done",
+                        "criterion": "access to SOC imaging results",
+                        "requirement": {
+                            "requirement_type": "permission_granted",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "agree to allow investigator access to the clinical results such as ... biopsy data following prostatectomy including lymph node dissection biopsy data, if available",
+                        "criterion": "access to biopsy data following prostatectomy (including lymph node dissection biopsy data)",
+                        "requirement": {
+                            "requirement_type": "permission_granted",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients must give informed consent for the research study",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "provided",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "agree to allow investigator access to the clinical results such as SOC imaging (mpMRI, e.g.) for surgical planning if done",
+                                "criterion": "access to SOC imaging results",
+                                "requirement": {
+                                    "requirement_type": "permission_granted",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "agree to allow investigator access to the clinical results such as ... biopsy data following prostatectomy including lymph node dissection biopsy data, if available",
+                                "criterion": "access to biopsy data following prostatectomy (including lymph node dissection biopsy data)",
+                                "requirement": {
+                                    "requirement_type": "permission_granted",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion Criteria (Cohort 1):",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Significant acute or chronic medical, neurologic, or illness in the subject that, in the judgment of the Clinical Investigators, could compromise subject safety, limit the ability to complete the study, and/or compromise the objectives of the study",
+                "criterions": [
+                    {
+                        "exact_snippets": "Significant acute or chronic medical, neurologic, or illness in the subject that, in the judgment of the Clinical Investigators, could compromise subject safety, limit the ability to complete the study, and/or compromise the objectives of the study",
+                        "criterion": "significant acute or chronic medical, neurologic, or other illness",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Significant acute or chronic medical, neurologic, or illness in the subject that, in the judgment of the Clinical Investigators, could compromise subject safety, limit the ability to complete the study, and/or compromise the objectives of the study",
+                        "criterion": "significant acute or chronic medical, neurologic, or other illness",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must give informed consent for the research study, and agree to allow investigator access to clinical results following treatment plan implementation such as description of the treatment plan and PSA values following implementation of treatment plan as part of standard care, typically determined 3-4 months after treatment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients must give informed consent for the research study",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "provided",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "agree to allow investigator access to clinical results following treatment plan implementation",
+                        "criterion": "investigator access to clinical results",
+                        "requirement": {
+                            "requirement_type": "permission",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "description of the treatment plan and PSA values following implementation of treatment plan as part of standard care, typically determined 3-4 months after treatment",
+                        "criterion": "PSA values following implementation of treatment plan",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "description of the treatment plan and PSA values following implementation of treatment plan as part of standard care, typically determined 3-4 months after treatment",
+                        "criterion": "PSA values following implementation of treatment plan",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "description of the treatment plan and PSA values following implementation of treatment plan as part of standard care, typically determined 3-4 months after treatment",
+                        "criterion": "PSA values following implementation of treatment plan",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients must give informed consent for the research study",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "provided",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "agree to allow investigator access to clinical results following treatment plan implementation",
+                        "criterion": "investigator access to clinical results",
+                        "requirement": {
+                            "requirement_type": "permission",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "description of the treatment plan and PSA values following implementation of treatment plan as part of standard care, typically determined 3-4 months after treatment",
+                                "criterion": "PSA values following implementation of treatment plan",
+                                "requirement": {
+                                    "requirement_type": "availability",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "description of the treatment plan and PSA values following implementation of treatment plan as part of standard care, typically determined 3-4 months after treatment",
+                                "criterion": "PSA values following implementation of treatment plan",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "description of the treatment plan and PSA values following implementation of treatment plan as part of standard care, typically determined 3-4 months after treatment",
+                                "criterion": "PSA values following implementation of treatment plan",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion Criteria (Cohort 2):",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Inability to give informed consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inability to give informed consent",
+                        "criterion": "ability to give informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Inability to give informed consent",
+                        "criterion": "ability to give informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prostate cancer patients presenting with rising PSA after radical prostatectomy for treatment if primary disease.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prostate cancer patients",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "presenting with rising PSA",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "trend",
+                            "expected_value": "rising"
+                        }
+                    },
+                    {
+                        "exact_snippets": "after radical prostatectomy for treatment if primary disease",
+                        "criterion": "history of radical prostatectomy for primary disease",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prostate cancer patients",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "presenting with rising PSA",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "trend",
+                            "expected_value": "rising"
+                        }
+                    },
+                    {
+                        "exact_snippets": "after radical prostatectomy for treatment if primary disease",
+                        "criterion": "history of radical prostatectomy for primary disease",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Histologically confirmed prostate cancer with following Gleason scoring at biopsy:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologically confirmed prostate cancer",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "histologically confirmed"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Gleason scoring at biopsy",
+                        "criterion": "Gleason score at biopsy",
+                        "requirement": {
+                            "requirement_type": "assessment method",
+                            "expected_value": "biopsy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Histologically confirmed prostate cancer",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "histologically confirmed"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Gleason scoring at biopsy",
+                        "criterion": "Gleason score at biopsy",
+                        "requirement": {
+                            "requirement_type": "assessment method",
+                            "expected_value": "biopsy"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient is unable to tolerate remaining still on the bed of the PET camera, due to physical limitations or claustrophobia.",
+                "criterions": [
+                    {
+                        "exact_snippets": "unable to tolerate remaining still on the bed of the PET camera",
+                        "criterion": "ability to remain still on PET camera bed",
+                        "requirement": {
+                            "requirement_type": "tolerance",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "due to physical limitations",
+                        "criterion": "physical limitations",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "due to ... claustrophobia",
+                        "criterion": "claustrophobia",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "unable to tolerate remaining still on the bed of the PET camera",
+                                "criterion": "ability to remain still on PET camera bed",
+                                "requirement": {
+                                    "requirement_type": "tolerance",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "due to physical limitations",
+                                "criterion": "physical limitations",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "unable to tolerate remaining still on the bed of the PET camera",
+                                "criterion": "ability to remain still on PET camera bed",
+                                "requirement": {
+                                    "requirement_type": "tolerance",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "due to ... claustrophobia",
+                                "criterion": "claustrophobia",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* PSA ≥ 0.2 ng/mL",
+                "criterions": [
+                    {
+                        "exact_snippets": "PSA ≥ 0.2 ng/mL",
+                        "criterion": "PSA",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0.2,
+                                "unit": "ng/mL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "PSA  0.2 ng/mL",
+                        "criterion": "PSA",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0.2,
+                                "unit": "ng/mL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Gleason 3+4 with >30% pattern 4 or ≥3 cores positive",
+                "criterions": [
+                    {
+                        "exact_snippets": "Gleason 3+4 with >30% pattern 4",
+                        "criterion": "Gleason score pattern 4 percentage",
+                        "requirement": {
+                            "requirement_type": "percentage",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 30,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "≥3 cores positive",
+                        "criterion": "number of positive biopsy cores",
+                        "requirement": {
+                            "requirement_type": "count",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "cores"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Gleason 3+4 with >30% pattern 4",
+                        "criterion": "Gleason score pattern 4 percentage",
+                        "requirement": {
+                            "requirement_type": "percentage",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 30,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "\u00193 cores positive",
+                        "criterion": "number of positive biopsy cores",
+                        "requirement": {
+                            "requirement_type": "count",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "cores"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Male ≥ 18 years of age",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    },
+                    {
+                        "exact_snippets": "≥ 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Male",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    },
+                    {
+                        "exact_snippets": "\u001e 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Male ≥ 18 years of age",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    },
+                    {
+                        "exact_snippets": "≥ 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Male",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    },
+                    {
+                        "exact_snippets": "\u001e 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Gleason ≥ 4+3 OR",
+                "criterions": [
+                    {
+                        "exact_snippets": "Gleason ≥ 4+3",
+                        "criterion": "Gleason score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4.3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Gleason \u001e 4+3",
+                        "criterion": "Gleason score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4.3,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

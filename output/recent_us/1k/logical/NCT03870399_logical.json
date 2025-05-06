@@ -1,0 +1,1377 @@
+{
+    "info": {
+        "nct_id": "NCT03870399",
+        "official_title": "Phase II Study of Hormone Therapy With Tamoxifen in Patients With Well Differentiated Neuroendocrine Tumors and Hormone Receptor Positive Expression",
+        "inclusion_criteria": "* Age greater than or equal to 18 years\n* Histological diagnosis of well differentiated NET (typical and atypical lung carcinoids, NET G1, NET G2 of all gastroenteropancreatic sites and pancreatic NET G3 according to WHO 2017 classification) 20 advanced / metastatic, inoperable, with no possibility of curative treatment\n* Immunohistochemical expression ≥ 1 percent for estrogen and / or progesterone receptor\n* Disease with radiological progression (at least 10 percent tumor volume growth) in the last 12 months before day 1 cycle 1.\n* No possibility of established treatments due to lack of access, risk of toxicities or without clinical indication. Patients who meet criteria for watchful waiting (low-dose disease and non-functioning NET) may be included.\n* Measurable disease\n* ECOG performance scale 0 to 2.\n* Adequate organic function as defined by the following criteria:\n\n  * serum aspartate aminotransferase (AST), serum alanine aminotransferase (ALT) ≤ 2.5 times the upper limit of local laboratory normality (LSN-LL);\n  * Total serum bilirubin ≤ 2.0 x ULN-LL;\n  * Absolute neutrophil count ≥ 1,500 / mm^3;\n  * Platelet count ≥ 80,000 / mm^3;\n  * Hemoglobin ≥ 9.0 g / dL;\n  * Estimated creatinine clearance by the MDRD equation ≥ 30ml / min\n* Albumin ≥ 3.5 g / dL;\n* INR ≤ 1.5\n* Term of free and informed consent signed by the patient or legal representative.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients already on tamoxifen, but other prior treatment are allowed\n* Patients with aggressive disease requiring cytotoxic therapy or locoregional therapies (eg hepatic embolization)\n* A history of serious clinical or psychiatric illness that, by clinical judgment, may involve participation risk in this study\n* Patients participating in other protocols with experimental drugs.\n* Patients with oral food difficulties.\n* Patients who underwent major recent surgery less than 4 weeks previously.\n* Patients receiving chemotherapy or other oncologic therapy for less than 3 weeks.\n* Patients who use oral anticoagulation\n* Previous history of deep vein thrombosis or pulmonary embolism in the last 12 months.\n* Pregnant or lactating patients.\n* Patients with postmenopausal vaginal bleeding with no defined etiology.\n* Patients with breast cancer who need to use tamoxifen for this neoplasm\n* Another synchronous neoplasm that requires systemic treatment",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Disease with radiological progression (at least 10 percent tumor volume growth) in the last 12 months before day 1 cycle 1.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Disease with radiological progression",
+                        "criterion": "radiological progression of disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 10 percent tumor volume growth",
+                        "criterion": "tumor volume growth",
+                        "requirement": {
+                            "requirement_type": "growth percentage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 10,
+                                "unit": "percent"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "in the last 12 months before day 1 cycle 1",
+                        "criterion": "tumor volume growth timing",
+                        "requirement": {
+                            "requirement_type": "time window",
+                            "expected_value": "within the last 12 months before day 1 cycle 1"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Disease with radiological progression",
+                        "criterion": "radiological progression of disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "at least 10 percent tumor volume growth",
+                        "criterion": "tumor volume growth",
+                        "requirement": {
+                            "requirement_type": "growth percentage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 10,
+                                "unit": "percent"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "in the last 12 months before day 1 cycle 1",
+                        "criterion": "tumor volume growth timing",
+                        "requirement": {
+                            "requirement_type": "time window",
+                            "expected_value": "within the last 12 months before day 1 cycle 1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No possibility of established treatments due to lack of access, risk of toxicities or without clinical indication. Patients who meet criteria for watchful waiting (low-dose disease and non-functioning NET) may be included.",
+                "criterions": [
+                    {
+                        "exact_snippets": "No possibility of established treatments due to lack of access, risk of toxicities or without clinical indication.",
+                        "criterion": "possibility of established treatments",
+                        "requirement": {
+                            "requirement_type": "possibility",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients who meet criteria for watchful waiting (low-dose disease and non-functioning NET) may be included.",
+                        "criterion": "criteria for watchful waiting",
+                        "requirement": {
+                            "requirement_type": "meets criteria",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "low-dose disease",
+                        "criterion": "disease dose",
+                        "requirement": {
+                            "requirement_type": "dose",
+                            "expected_value": "low"
+                        }
+                    },
+                    {
+                        "exact_snippets": "non-functioning NET",
+                        "criterion": "NET functioning status",
+                        "requirement": {
+                            "requirement_type": "functioning status",
+                            "expected_value": "non-functioning"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "No possibility of established treatments due to lack of access, risk of toxicities or without clinical indication.",
+                                "criterion": "possibility of established treatments",
+                                "requirement": {
+                                    "requirement_type": "possibility",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients who meet criteria for watchful waiting (low-dose disease and non-functioning NET) may be included.",
+                                "criterion": "criteria for watchful waiting",
+                                "requirement": {
+                                    "requirement_type": "meets criteria",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "low-dose disease",
+                                "criterion": "disease dose",
+                                "requirement": {
+                                    "requirement_type": "dose",
+                                    "expected_value": "low"
+                                }
+                            },
+                            {
+                                "exact_snippets": "non-functioning NET",
+                                "criterion": "NET functioning status",
+                                "requirement": {
+                                    "requirement_type": "functioning status",
+                                    "expected_value": "non-functioning"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Hemoglobin ≥ 9.0 g / dL;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Hemoglobin ≥ 9.0 g / dL",
+                        "criterion": "hemoglobin",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 9.0,
+                                "unit": "g/dL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Hemoglobin ≥ 9.0 g / dL",
+                        "criterion": "hemoglobin",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 9.0,
+                                "unit": "g/dL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age greater than or equal to 18 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age greater than or equal to 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age greater than or equal to 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* ECOG performance scale 0 to 2.",
+                "criterions": [
+                    {
+                        "exact_snippets": "ECOG performance scale 0 to 2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "ECOG performance scale 0 to 2",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adequate organic function as defined by the following criteria:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adequate organic function",
+                        "criterion": "organic function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adequate organic function",
+                        "criterion": "organic function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Measurable disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Measurable disease",
+                        "criterion": "disease",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Measurable disease",
+                        "criterion": "disease",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Total serum bilirubin ≤ 2.0 x ULN-LL;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Total serum bilirubin ≤ 2.0 x ULN-LL",
+                        "criterion": "total serum bilirubin",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.0,
+                                "unit": "x ULN-LL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Total serum bilirubin ≤ 2.0 x ULN-LL",
+                        "criterion": "total serum bilirubin",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.0,
+                                "unit": "x ULN-LL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Term of free and informed consent signed by the patient or legal representative.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Term of free and informed consent signed by the patient or legal representative.",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Term of free and informed consent signed by the patient or legal representative.",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* INR ≤ 1.5",
+                "criterions": [
+                    {
+                        "exact_snippets": "INR ≤ 1.5",
+                        "criterion": "INR",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.5,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "INR ≤ 1.5",
+                        "criterion": "INR",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.5,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with postmenopausal vaginal bleeding with no defined etiology.",
+                "criterions": [
+                    {
+                        "exact_snippets": "postmenopausal vaginal bleeding",
+                        "criterion": "postmenopausal vaginal bleeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "no defined etiology",
+                        "criterion": "etiology of vaginal bleeding",
+                        "requirement": {
+                            "requirement_type": "defined etiology",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "postmenopausal vaginal bleeding",
+                        "criterion": "postmenopausal vaginal bleeding",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "no defined etiology",
+                        "criterion": "etiology of vaginal bleeding",
+                        "requirement": {
+                            "requirement_type": "defined etiology",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with oral food difficulties.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with oral food difficulties",
+                        "criterion": "oral food difficulties",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patients with oral food difficulties",
+                    "criterion": "oral food difficulties",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with aggressive disease requiring cytotoxic therapy or locoregional therapies (eg hepatic embolization)",
+                "criterions": [
+                    {
+                        "exact_snippets": "aggressive disease",
+                        "criterion": "disease aggressiveness",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "aggressive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "requiring cytotoxic therapy",
+                        "criterion": "need for cytotoxic therapy",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "requiring ... locoregional therapies (eg hepatic embolization)",
+                        "criterion": "need for locoregional therapies",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "aggressive disease",
+                                "criterion": "disease aggressiveness",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "aggressive"
+                                }
+                            },
+                            {
+                                "exact_snippets": "requiring cytotoxic therapy",
+                                "criterion": "need for cytotoxic therapy",
+                                "requirement": {
+                                    "requirement_type": "necessity",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "aggressive disease",
+                                "criterion": "disease aggressiveness",
+                                "requirement": {
+                                    "requirement_type": "severity",
+                                    "expected_value": "aggressive"
+                                }
+                            },
+                            {
+                                "exact_snippets": "requiring ... locoregional therapies (eg hepatic embolization)",
+                                "criterion": "need for locoregional therapies",
+                                "requirement": {
+                                    "requirement_type": "necessity",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients already on tamoxifen, but other prior treatment are allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients already on tamoxifen",
+                        "criterion": "current tamoxifen use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "other prior treatment are allowed",
+                        "criterion": "prior treatment (other than tamoxifen)",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients already on tamoxifen",
+                        "criterion": "current tamoxifen use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "other prior treatment are allowed",
+                        "criterion": "prior treatment (other than tamoxifen)",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients participating in other protocols with experimental drugs.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients participating in other protocols with experimental drugs",
+                        "criterion": "participation in other protocols with experimental drugs",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patients participating in other protocols with experimental drugs",
+                    "criterion": "participation in other protocols with experimental drugs",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Previous history of deep vein thrombosis or pulmonary embolism in the last 12 months.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous history of deep vein thrombosis ... in the last 12 months",
+                        "criterion": "deep vein thrombosis",
+                        "requirement": {
+                            "requirement_type": "history_within_timeframe",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Previous history of ... pulmonary embolism in the last 12 months",
+                        "criterion": "pulmonary embolism",
+                        "requirement": {
+                            "requirement_type": "history_within_timeframe",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Previous history of deep vein thrombosis ... in the last 12 months",
+                        "criterion": "deep vein thrombosis",
+                        "requirement": {
+                            "requirement_type": "history_within_timeframe",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Previous history of ... pulmonary embolism in the last 12 months",
+                        "criterion": "pulmonary embolism",
+                        "requirement": {
+                            "requirement_type": "history_within_timeframe",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 12,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pregnant or lactating patients.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "lactating",
+                        "criterion": "lactation status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "lactating",
+                        "criterion": "lactation status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Another synchronous neoplasm that requires systemic treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Another synchronous neoplasm that requires systemic treatment",
+                        "criterion": "synchronous neoplasm",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Another synchronous neoplasm that requires systemic treatment",
+                        "criterion": "synchronous neoplasm",
+                        "requirement": {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": "requires systemic treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Another synchronous neoplasm that requires systemic treatment",
+                        "criterion": "synchronous neoplasm",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Another synchronous neoplasm that requires systemic treatment",
+                        "criterion": "synchronous neoplasm",
+                        "requirement": {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": "requires systemic treatment"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who use oral anticoagulation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who use oral anticoagulation",
+                        "criterion": "oral anticoagulation use",
+                        "requirement": {
+                            "requirement_type": "use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patients who use oral anticoagulation",
+                    "criterion": "oral anticoagulation use",
+                    "requirement": {
+                        "requirement_type": "use",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who underwent major recent surgery less than 4 weeks previously.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who underwent major recent surgery less than 4 weeks previously",
+                        "criterion": "major recent surgery",
+                        "requirement": {
+                            "requirement_type": "time since surgery",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients who underwent major recent surgery less than 4 weeks previously",
+                        "criterion": "major recent surgery",
+                        "requirement": {
+                            "requirement_type": "time since surgery",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients receiving chemotherapy or other oncologic therapy for less than 3 weeks.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients receiving chemotherapy or other oncologic therapy for less than 3 weeks",
+                        "criterion": "receipt of chemotherapy or other oncologic therapy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patients receiving chemotherapy or other oncologic therapy for less than 3 weeks",
+                    "criterion": "receipt of chemotherapy or other oncologic therapy",
+                    "requirement": {
+                        "requirement_type": "duration",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 3,
+                            "unit": "weeks"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with breast cancer who need to use tamoxifen for this neoplasm",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "need to use tamoxifen for this neoplasm",
+                        "criterion": "tamoxifen use for breast cancer",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients with breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "need to use tamoxifen for this neoplasm",
+                        "criterion": "tamoxifen use for breast cancer",
+                        "requirement": {
+                            "requirement_type": "necessity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* A history of serious clinical or psychiatric illness that, by clinical judgment, may involve participation risk in this study",
+                "criterions": [
+                    {
+                        "exact_snippets": "A history of serious clinical or psychiatric illness",
+                        "criterion": "serious clinical or psychiatric illness",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "A history of serious clinical or psychiatric illness",
+                        "criterion": "serious clinical or psychiatric illness",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Platelet count ≥ 80,000 / mm^3;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Platelet count ≥ 80,000 / mm^3",
+                        "criterion": "platelet count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 80000,
+                                "unit": "/ mm^3"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Platelet count \u00130 80,000 / mm^3",
+                        "criterion": "platelet count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 80000,
+                                "unit": "/ mm^3"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Estimated creatinine clearance by the MDRD equation ≥ 30ml / min",
+                "criterions": [
+                    {
+                        "exact_snippets": "Estimated creatinine clearance by the MDRD equation ≥ 30ml / min",
+                        "criterion": "estimated creatinine clearance (by MDRD equation)",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 30,
+                                "unit": "ml/min"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Estimated creatinine clearance by the MDRD equation \u001e 30ml / min",
+                        "criterion": "estimated creatinine clearance (by MDRD equation)",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 30,
+                                "unit": "ml/min"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Immunohistochemical expression ≥ 1 percent for estrogen and / or progesterone receptor",
+                "criterions": [
+                    {
+                        "exact_snippets": "Immunohistochemical expression ≥ 1 percent for estrogen ... receptor",
+                        "criterion": "estrogen receptor immunohistochemical expression",
+                        "requirement": {
+                            "requirement_type": "expression percentage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "percent"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Immunohistochemical expression ≥ 1 percent for ... progesterone receptor",
+                        "criterion": "progesterone receptor immunohistochemical expression",
+                        "requirement": {
+                            "requirement_type": "expression percentage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "percent"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Immunohistochemical expression  1 percent for estrogen ... receptor",
+                        "criterion": "estrogen receptor immunohistochemical expression",
+                        "requirement": {
+                            "requirement_type": "expression percentage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "percent"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Immunohistochemical expression  1 percent for ... progesterone receptor",
+                        "criterion": "progesterone receptor immunohistochemical expression",
+                        "requirement": {
+                            "requirement_type": "expression percentage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "percent"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Absolute neutrophil count ≥ 1,500 / mm^3;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Absolute neutrophil count ≥ 1,500 / mm^3",
+                        "criterion": "absolute neutrophil count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1500,
+                                "unit": "mm^3"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Absolute neutrophil count \u001e 1,500 / mm^3",
+                        "criterion": "absolute neutrophil count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1500,
+                                "unit": "mm^3"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Albumin ≥ 3.5 g / dL;",
+                "criterions": [
+                    {
+                        "exact_snippets": "Albumin ≥ 3.5 g / dL",
+                        "criterion": "albumin level",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3.5,
+                                "unit": "g/dL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Albumin \u0013e 3.5 g / dL",
+                        "criterion": "albumin level",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3.5,
+                                "unit": "g/dL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* serum aspartate aminotransferase (AST), serum alanine aminotransferase (ALT) ≤ 2.5 times the upper limit of local laboratory normality (LSN-LL);",
+                "criterions": [
+                    {
+                        "exact_snippets": "serum aspartate aminotransferase (AST) ... ≤ 2.5 times the upper limit of local laboratory normality (LSN-LL)",
+                        "criterion": "serum aspartate aminotransferase (AST)",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.5,
+                                "unit": "times the upper limit of local laboratory normality (LSN-LL)"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "serum alanine aminotransferase (ALT) ≤ 2.5 times the upper limit of local laboratory normality (LSN-LL)",
+                        "criterion": "serum alanine aminotransferase (ALT)",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.5,
+                                "unit": "times the upper limit of local laboratory normality (LSN-LL)"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "serum aspartate aminotransferase (AST) ... \u0010 2.5 times the upper limit of local laboratory normality (LSN-LL)",
+                        "criterion": "serum aspartate aminotransferase (AST)",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.5,
+                                "unit": "times the upper limit of local laboratory normality (LSN-LL)"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "serum alanine aminotransferase (ALT) \u0010 2.5 times the upper limit of local laboratory normality (LSN-LL)",
+                        "criterion": "serum alanine aminotransferase (ALT)",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.5,
+                                "unit": "times the upper limit of local laboratory normality (LSN-LL)"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Histological diagnosis of well differentiated NET (typical and atypical lung carcinoids, NET G1, NET G2 of all gastroenteropancreatic sites and pancreatic NET G3 according to WHO 2017 classification) 20 advanced / metastatic, inoperable, with no possibility of curative treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histological diagnosis of well differentiated NET (typical and atypical lung carcinoids, NET G1, NET G2 of all gastroenteropancreatic sites and pancreatic NET G3 according to WHO 2017 classification)",
+                        "criterion": "well differentiated neuroendocrine tumor (NET) diagnosis",
+                        "requirement": {
+                            "requirement_type": "histological diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histological diagnosis of well differentiated NET (typical and atypical lung carcinoids, NET G1, NET G2 of all gastroenteropancreatic sites and pancreatic NET G3 according to WHO 2017 classification)",
+                        "criterion": "well differentiated neuroendocrine tumor (NET) diagnosis",
+                        "requirement": {
+                            "requirement_type": "differentiation",
+                            "expected_value": "well differentiated"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histological diagnosis of well differentiated NET (typical and atypical lung carcinoids, NET G1, NET G2 of all gastroenteropancreatic sites and pancreatic NET G3 according to WHO 2017 classification)",
+                        "criterion": "well differentiated neuroendocrine tumor (NET) diagnosis",
+                        "requirement": {
+                            "requirement_type": "subtype",
+                            "expected_value": [
+                                "typical lung carcinoid",
+                                "atypical lung carcinoid",
+                                "NET G1",
+                                "NET G2 of all gastroenteropancreatic sites",
+                                "pancreatic NET G3"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Histological diagnosis of well differentiated NET (typical and atypical lung carcinoids, NET G1, NET G2 of all gastroenteropancreatic sites and pancreatic NET G3 according to WHO 2017 classification)",
+                        "criterion": "well differentiated neuroendocrine tumor (NET) diagnosis",
+                        "requirement": {
+                            "requirement_type": "classification_system",
+                            "expected_value": "WHO 2017"
+                        }
+                    },
+                    {
+                        "exact_snippets": "advanced / metastatic, inoperable, with no possibility of curative treatment",
+                        "criterion": "disease status",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "advanced",
+                                "metastatic"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "advanced / metastatic, inoperable, with no possibility of curative treatment",
+                        "criterion": "disease status",
+                        "requirement": {
+                            "requirement_type": "operability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "advanced / metastatic, inoperable, with no possibility of curative treatment",
+                        "criterion": "disease status",
+                        "requirement": {
+                            "requirement_type": "curative treatment possibility",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

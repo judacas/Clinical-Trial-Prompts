@@ -1,0 +1,790 @@
+{
+    "info": {
+        "nct_id": "NCT05865535",
+        "official_title": "A Phase 1B Dose Escalation Study of AV-380 in Combination With Standard of Care Chemotherapy in Metastatic Cancer Patients With Cachexia and Elevated GDF-15 Levels",
+        "inclusion_criteria": "1. Patient must be ≥ 18 years of age at the time of signing the informed consent.\n2. Patients with histologically confirmed solid tumor cancer who are actively receiving SoC therapy for this cancer.\n3. Patients with cachexia as defined by Fearon criteria:\n\n   1. Weight loss > 5% over past 6 months (in absence of simple starvation), or\n   2. BMI < 20 kg/m2 and any degree of weight loss > 2%, or\n   3. Sarcopenia and any degree of weight loss > 2%\n4. Patients with life expectancy ≥ 3 months\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "1. History of allergic or anaphylactic reaction to any monoclonal antibody (IgG protein) or molecules made of components of monoclonal antibody\n2. Known brain metastases or cranial epidural disease unless adequately treated with radiotherapy and/or surgery (including radiosurgery) and stable for at least 2 weeks before first dose of study treatment.\n3. Myocardial infarction or heart failure of New York Heart Association Grade 3-4 within 3 months prior to start of protocol therapy\n4. Uncontrolled pericardial effusion, or ascites requiring recurrent drainage procedures (once monthly or more frequently)\n5. Cachexia is caused by other reasons (e.g., severe chronic obstructive pulmonary disease, heart failure, or HIV/AIDS), or the patient has uncontrolled reversible causes of reduced oral food intake, including, but not limited to, oral mucositis, nausea/vomiting, diarrhea, and/or obstruction, impairing the patient's ability to eat as determined by the Investigator.\n6. Patients receiving tube feedings or parenteral nutrition at the time of Screening.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "2. Patients with histologically confirmed solid tumor cancer who are actively receiving SoC therapy for this cancer.",
+                "criterions": [
+                    {
+                        "exact_snippets": "histologically confirmed solid tumor cancer",
+                        "criterion": "solid tumor cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "histological"
+                        }
+                    },
+                    {
+                        "exact_snippets": "actively receiving SoC therapy for this cancer",
+                        "criterion": "standard of care therapy for cancer",
+                        "requirement": {
+                            "requirement_type": "current treatment status",
+                            "expected_value": "actively receiving"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "histologically confirmed solid tumor cancer",
+                        "criterion": "solid tumor cancer",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "histological"
+                        }
+                    },
+                    {
+                        "exact_snippets": "actively receiving SoC therapy for this cancer",
+                        "criterion": "standard of care therapy for cancer",
+                        "requirement": {
+                            "requirement_type": "current treatment status",
+                            "expected_value": "actively receiving"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. BMI < 20 kg/m2 and any degree of weight loss > 2%, or",
+                "criterions": [
+                    {
+                        "exact_snippets": "BMI < 20 kg/m2",
+                        "criterion": "BMI",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 20,
+                                "unit": "kg/m2"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "any degree of weight loss > 2%",
+                        "criterion": "weight loss",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "BMI < 20 kg/m2",
+                                "criterion": "BMI",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 20,
+                                        "unit": "kg/m2"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "any degree of weight loss > 2%",
+                                "criterion": "weight loss",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 2,
+                                        "unit": "%"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Sarcopenia and any degree of weight loss > 2%",
+                "criterions": [
+                    {
+                        "exact_snippets": "Sarcopenia",
+                        "criterion": "sarcopenia",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any degree of weight loss > 2%",
+                        "criterion": "weight loss",
+                        "requirement": {
+                            "requirement_type": "amount",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Sarcopenia",
+                        "criterion": "sarcopenia",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "any degree of weight loss > 2%",
+                        "criterion": "weight loss",
+                        "requirement": {
+                            "requirement_type": "amount",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Weight loss > 5% over past 6 months (in absence of simple starvation), or",
+                "criterions": [
+                    {
+                        "exact_snippets": "Weight loss > 5% over past 6 months",
+                        "criterion": "weight loss",
+                        "requirement": {
+                            "requirement_type": "amount",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 5,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Weight loss > 5% over past 6 months",
+                        "criterion": "weight loss",
+                        "requirement": {
+                            "requirement_type": "time period",
+                            "expected_value": "past 6 months"
+                        }
+                    },
+                    {
+                        "exact_snippets": "in absence of simple starvation",
+                        "criterion": "simple starvation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Weight loss > 5% over past 6 months",
+                                "criterion": "weight loss",
+                                "requirement": {
+                                    "requirement_type": "amount",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 5,
+                                        "unit": "%"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "Weight loss > 5% over past 6 months",
+                                "criterion": "weight loss",
+                                "requirement": {
+                                    "requirement_type": "time period",
+                                    "expected_value": "past 6 months"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "in absence of simple starvation",
+                        "criterion": "simple starvation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Patients with cachexia as defined by Fearon criteria:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with cachexia as defined by Fearon criteria",
+                        "criterion": "cachexia (as defined by Fearon criteria)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients with cachexia as defined by Fearon criteria",
+                        "criterion": "cachexia (as defined by Fearon criteria)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "4. Uncontrolled pericardial effusion, or ascites requiring recurrent drainage procedures (once monthly or more frequently)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Uncontrolled pericardial effusion",
+                        "criterion": "pericardial effusion",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "ascites requiring recurrent drainage procedures (once monthly or more frequently)",
+                        "criterion": "ascites",
+                        "requirement": {
+                            "requirement_type": "drainage frequency",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "per month"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Uncontrolled pericardial effusion",
+                        "criterion": "pericardial effusion",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "ascites requiring recurrent drainage procedures (once monthly or more frequently)",
+                        "criterion": "ascites",
+                        "requirement": {
+                            "requirement_type": "drainage frequency",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "per month"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Patients receiving tube feedings or parenteral nutrition at the time of Screening.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients receiving tube feedings ... at the time of Screening.",
+                        "criterion": "tube feedings",
+                        "requirement": {
+                            "requirement_type": "receiving at time of screening",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients receiving ... parenteral nutrition at the time of Screening.",
+                        "criterion": "parenteral nutrition",
+                        "requirement": {
+                            "requirement_type": "receiving at time of screening",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Patients receiving tube feedings ... at the time of Screening.",
+                        "criterion": "tube feedings",
+                        "requirement": {
+                            "requirement_type": "receiving at time of screening",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients receiving ... parenteral nutrition at the time of Screening.",
+                        "criterion": "parenteral nutrition",
+                        "requirement": {
+                            "requirement_type": "receiving at time of screening",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Myocardial infarction or heart failure of New York Heart Association Grade 3-4 within 3 months prior to start of protocol therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Myocardial infarction ... within 3 months prior to start of protocol therapy",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "occurrence_within_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months prior to start of protocol therapy"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "heart failure of New York Heart Association Grade 3-4 within 3 months prior to start of protocol therapy",
+                        "criterion": "heart failure (NYHA Grade 3-4)",
+                        "requirement": {
+                            "requirement_type": "NYHA_grade",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": ""
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "heart failure of New York Heart Association Grade 3-4 within 3 months prior to start of protocol therapy",
+                        "criterion": "heart failure (NYHA Grade 3-4)",
+                        "requirement": {
+                            "requirement_type": "NYHA_grade",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 4,
+                                "unit": ""
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "heart failure of New York Heart Association Grade 3-4 within 3 months prior to start of protocol therapy",
+                        "criterion": "heart failure (NYHA Grade 3-4)",
+                        "requirement": {
+                            "requirement_type": "occurrence_within_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months prior to start of protocol therapy"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Myocardial infarction ... within 3 months prior to start of protocol therapy",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "occurrence_within_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months prior to start of protocol therapy"
+                            }
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "heart failure of New York Heart Association Grade 3-4 within 3 months prior to start of protocol therapy",
+                                "criterion": "heart failure (NYHA Grade 3-4)",
+                                "requirement": {
+                                    "requirement_type": "NYHA_grade",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": ""
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "heart failure of New York Heart Association Grade 3-4 within 3 months prior to start of protocol therapy",
+                                "criterion": "heart failure (NYHA Grade 3-4)",
+                                "requirement": {
+                                    "requirement_type": "NYHA_grade",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": ""
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "heart failure of New York Heart Association Grade 3-4 within 3 months prior to start of protocol therapy",
+                                "criterion": "heart failure (NYHA Grade 3-4)",
+                                "requirement": {
+                                    "requirement_type": "occurrence_within_timeframe",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "months prior to start of protocol therapy"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. History of allergic or anaphylactic reaction to any monoclonal antibody (IgG protein) or molecules made of components of monoclonal antibody",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of allergic or anaphylactic reaction to any monoclonal antibody (IgG protein)",
+                        "criterion": "allergic or anaphylactic reaction to monoclonal antibody",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of allergic or anaphylactic reaction to ... molecules made of components of monoclonal antibody",
+                        "criterion": "allergic or anaphylactic reaction to molecules made of components of monoclonal antibody",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "History of allergic or anaphylactic reaction to any monoclonal antibody (IgG protein)",
+                        "criterion": "allergic or anaphylactic reaction to monoclonal antibody",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of allergic or anaphylactic reaction to ... molecules made of components of monoclonal antibody",
+                        "criterion": "allergic or anaphylactic reaction to molecules made of components of monoclonal antibody",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "4. Patients with life expectancy ≥ 3 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "life expectancy ≥ 3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "life expectancy \u0013e 3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Patient must be ≥ 18 years of age at the time of signing the informed consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient must be ≥ 18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patient must be  18 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "2. Known brain metastases or cranial epidural disease unless adequately treated with radiotherapy and/or surgery (including radiosurgery) and stable for at least 2 weeks before first dose of study treatment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "cranial epidural disease",
+                        "criterion": "cranial epidural disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "unless adequately treated with radiotherapy and/or surgery (including radiosurgery)",
+                        "criterion": "brain metastases or cranial epidural disease treatment",
+                        "requirement": {
+                            "requirement_type": "treatment",
+                            "expected_value": [
+                                "radiotherapy",
+                                "surgery",
+                                "radiosurgery"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "unless adequately treated with radiotherapy and/or surgery (including radiosurgery)",
+                        "criterion": "brain metastases or cranial epidural disease treatment",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stable for at least 2 weeks before first dose of study treatment",
+                        "criterion": "disease stability after treatment",
+                        "requirement": {
+                            "requirement_type": "duration of stability",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Cachexia is caused by other reasons (e.g., severe chronic obstructive pulmonary disease, heart failure, or HIV/AIDS), or the patient has uncontrolled reversible causes of reduced oral food intake, including, but not limited to, oral mucositis, nausea/vomiting, diarrhea, and/or obstruction, impairing the patient's ability to eat as determined by the Investigator.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Cachexia is caused by other reasons (e.g., severe chronic obstructive pulmonary disease, heart failure, or HIV/AIDS)",
+                        "criterion": "cachexia etiology",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": [
+                                "severe chronic obstructive pulmonary disease",
+                                "heart failure",
+                                "HIV/AIDS",
+                                "other reasons"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "the patient has uncontrolled reversible causes of reduced oral food intake, including, but not limited to, oral mucositis, nausea/vomiting, diarrhea, and/or obstruction",
+                        "criterion": "reversible causes of reduced oral food intake",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "the patient has uncontrolled reversible causes of reduced oral food intake, including, but not limited to, oral mucositis, nausea/vomiting, diarrhea, and/or obstruction",
+                        "criterion": "reversible causes of reduced oral food intake",
+                        "requirement": {
+                            "requirement_type": "reversibility",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "the patient has uncontrolled reversible causes of reduced oral food intake, including, but not limited to, oral mucositis, nausea/vomiting, diarrhea, and/or obstruction",
+                        "criterion": "reversible causes of reduced oral food intake",
+                        "requirement": {
+                            "requirement_type": "examples",
+                            "expected_value": [
+                                "oral mucositis",
+                                "nausea/vomiting",
+                                "diarrhea",
+                                "obstruction"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "impairing the patient's ability to eat as determined by the Investigator",
+                        "criterion": "ability to eat",
+                        "requirement": {
+                            "requirement_type": "impairment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "impairing the patient's ability to eat as determined by the Investigator",
+                        "criterion": "ability to eat",
+                        "requirement": {
+                            "requirement_type": "determined by",
+                            "expected_value": "Investigator"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

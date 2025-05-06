@@ -1,0 +1,939 @@
+{
+    "info": {
+        "nct_id": "NCT05281731",
+        "official_title": "Sonobiopsy for Noninvasive and Sensitive Detection of Glioblastoma",
+        "inclusion_criteria": "* Must be newly diagnosed with a lesion in the brain with imaging characteristics consistent with glioblastoma multiforme. Scan must have occurred no more than 28 days prior to enrollment.\n* Lesion must be > 3 cm in maximal dimension on MRI.\n* Lesion must be in the supratentorial space within 5 cm of the cortical surface.\n* Lesion must be gadolinium enhancing.\n* Low grade tumors and metastatic tumors\n* Recurrent brain tumors and/or radiation necrosis\n* Must be planning to undergo surgical resection of the tumor.\n* Must be at least 18 years old.\n* Patients with recurrent GBM who are planning to undergo surgical resection or laser ablation of the recurrent tumor. Recurrence must be confirmed on MRI performed no more than 28 days prior to enrollment.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Contraindication to MRI.\n* Previous cranial surgery.\n* Previous history of cancer and/or cancer treatments.\n* Coagulopathy within 14 days of enrollment defined as PT/PTT outside of normal parameters and platelets < 100,000/mcL.\n* Physical skull defect of any kind.\n* Ferrous material in the scalp or skull.\n* Scalp or skin disease that limits contact with the ultrasound probe.\n* Enrolled in another clinical trial where intervention is administered prior to surgery.\n* Known hypersensitivity to polyethylene glycol.\n* Known unstable cardiopulmonary condition (e.g. acute myocardial infarction, acute coronary artery syndromes, worsening or unstable congestive heart failure, serious ventricular arrhythmias).",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Lesion must be gadolinium enhancing.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lesion must be gadolinium enhancing.",
+                        "criterion": "lesion",
+                        "requirement": {
+                            "requirement_type": "gadolinium enhancement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Lesion must be gadolinium enhancing.",
+                        "criterion": "lesion",
+                        "requirement": {
+                            "requirement_type": "gadolinium enhancement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lesion must be in the supratentorial space within 5 cm of the cortical surface.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lesion must be in the supratentorial space",
+                        "criterion": "lesion location",
+                        "requirement": {
+                            "requirement_type": "anatomical location",
+                            "expected_value": "supratentorial space"
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 5 cm of the cortical surface",
+                        "criterion": "lesion location",
+                        "requirement": {
+                            "requirement_type": "distance from cortical surface",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Lesion must be in the supratentorial space",
+                        "criterion": "lesion location",
+                        "requirement": {
+                            "requirement_type": "anatomical location",
+                            "expected_value": "supratentorial space"
+                        }
+                    },
+                    {
+                        "exact_snippets": "within 5 cm of the cortical surface",
+                        "criterion": "lesion location",
+                        "requirement": {
+                            "requirement_type": "distance from cortical surface",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Must be planning to undergo surgical resection of the tumor.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be planning to undergo surgical resection of the tumor.",
+                        "criterion": "planned surgical resection of the tumor",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be planning to undergo surgical resection of the tumor.",
+                        "criterion": "planned surgical resection of the tumor",
+                        "requirement": {
+                            "requirement_type": "intention",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Must be newly diagnosed with a lesion in the brain with imaging characteristics consistent with glioblastoma multiforme. Scan must have occurred no more than 28 days prior to enrollment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be newly diagnosed with a lesion in the brain",
+                        "criterion": "brain lesion",
+                        "requirement": {
+                            "requirement_type": "diagnosis status",
+                            "expected_value": "newly diagnosed"
+                        }
+                    },
+                    {
+                        "exact_snippets": "imaging characteristics consistent with glioblastoma multiforme",
+                        "criterion": "imaging characteristics",
+                        "requirement": {
+                            "requirement_type": "consistency with diagnosis",
+                            "expected_value": "glioblastoma multiforme"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Scan must have occurred no more than 28 days prior to enrollment",
+                        "criterion": "imaging scan timing",
+                        "requirement": {
+                            "requirement_type": "time since scan",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 28,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be newly diagnosed with a lesion in the brain",
+                        "criterion": "brain lesion",
+                        "requirement": {
+                            "requirement_type": "diagnosis status",
+                            "expected_value": "newly diagnosed"
+                        }
+                    },
+                    {
+                        "exact_snippets": "imaging characteristics consistent with glioblastoma multiforme",
+                        "criterion": "imaging characteristics",
+                        "requirement": {
+                            "requirement_type": "consistency with diagnosis",
+                            "expected_value": "glioblastoma multiforme"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Scan must have occurred no more than 28 days prior to enrollment",
+                        "criterion": "imaging scan timing",
+                        "requirement": {
+                            "requirement_type": "time since scan",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 28,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Must be at least 18 years old.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be at least 18 years old.",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be at least 18 years old.",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Recurrent brain tumors and/or radiation necrosis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Recurrent brain tumors",
+                        "criterion": "brain tumors",
+                        "requirement": {
+                            "requirement_type": "recurrence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "radiation necrosis",
+                        "criterion": "radiation necrosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Recurrent brain tumors",
+                        "criterion": "brain tumors",
+                        "requirement": {
+                            "requirement_type": "recurrence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "radiation necrosis",
+                        "criterion": "radiation necrosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Low grade tumors and metastatic tumors",
+                "criterions": [
+                    {
+                        "exact_snippets": "Low grade tumors",
+                        "criterion": "tumor grade",
+                        "requirement": {
+                            "requirement_type": "grade",
+                            "expected_value": "low"
+                        }
+                    },
+                    {
+                        "exact_snippets": "metastatic tumors",
+                        "criterion": "tumor metastatic status",
+                        "requirement": {
+                            "requirement_type": "metastatic",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Low grade tumors",
+                        "criterion": "tumor grade",
+                        "requirement": {
+                            "requirement_type": "grade",
+                            "expected_value": "low"
+                        }
+                    },
+                    {
+                        "exact_snippets": "metastatic tumors",
+                        "criterion": "tumor metastatic status",
+                        "requirement": {
+                            "requirement_type": "metastatic",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lesion must be > 3 cm in maximal dimension on MRI.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lesion must be > 3 cm in maximal dimension on MRI.",
+                        "criterion": "lesion",
+                        "requirement": {
+                            "requirement_type": "size (maximal dimension on MRI)",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Lesion must be > 3 cm in maximal dimension on MRI.",
+                        "criterion": "lesion",
+                        "requirement": {
+                            "requirement_type": "size (maximal dimension on MRI)",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "cm"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Previous history of cancer and/or cancer treatments.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous history of cancer",
+                        "criterion": "history of cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Previous history of ... cancer treatments",
+                        "criterion": "history of cancer treatments",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Previous history of cancer",
+                        "criterion": "history of cancer",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Previous history of ... cancer treatments",
+                        "criterion": "history of cancer treatments",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Scalp or skin disease that limits contact with the ultrasound probe.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Scalp or skin disease that limits contact with the ultrasound probe",
+                        "criterion": "scalp or skin disease",
+                        "requirement": {
+                            "requirement_type": "effect on ultrasound probe contact",
+                            "expected_value": "limits contact"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Scalp or skin disease that limits contact with the ultrasound probe",
+                        "criterion": "scalp or skin disease",
+                        "requirement": {
+                            "requirement_type": "effect on ultrasound probe contact",
+                            "expected_value": "limits contact"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Previous cranial surgery.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Previous cranial surgery.",
+                        "criterion": "cranial surgery",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Previous cranial surgery.",
+                    "criterion": "cranial surgery",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Physical skull defect of any kind.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Physical skull defect of any kind.",
+                        "criterion": "physical skull defect",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Physical skull defect of any kind.",
+                        "criterion": "physical skull defect",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known unstable cardiopulmonary condition (e.g. acute myocardial infarction, acute coronary artery syndromes, worsening or unstable congestive heart failure, serious ventricular arrhythmias).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known unstable cardiopulmonary condition",
+                        "criterion": "cardiopulmonary condition",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "unstable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Known unstable cardiopulmonary condition",
+                        "criterion": "cardiopulmonary condition",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "acute myocardial infarction",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "acuteness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "acute coronary artery syndromes",
+                        "criterion": "coronary artery syndromes",
+                        "requirement": {
+                            "requirement_type": "acuteness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "worsening or unstable congestive heart failure",
+                        "criterion": "congestive heart failure",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "unstable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "worsening or unstable congestive heart failure",
+                        "criterion": "congestive heart failure",
+                        "requirement": {
+                            "requirement_type": "progression",
+                            "expected_value": "worsening"
+                        }
+                    },
+                    {
+                        "exact_snippets": "serious ventricular arrhythmias",
+                        "criterion": "ventricular arrhythmias",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Known unstable cardiopulmonary condition",
+                                "criterion": "cardiopulmonary condition",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Known unstable cardiopulmonary condition",
+                                "criterion": "cardiopulmonary condition",
+                                "requirement": {
+                                    "requirement_type": "stability",
+                                    "expected_value": "unstable"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "acute myocardial infarction",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "acuteness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "acute coronary artery syndromes",
+                        "criterion": "coronary artery syndromes",
+                        "requirement": {
+                            "requirement_type": "acuteness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "worsening or unstable congestive heart failure",
+                                "criterion": "congestive heart failure",
+                                "requirement": {
+                                    "requirement_type": "stability",
+                                    "expected_value": "unstable"
+                                }
+                            },
+                            {
+                                "exact_snippets": "worsening or unstable congestive heart failure",
+                                "criterion": "congestive heart failure",
+                                "requirement": {
+                                    "requirement_type": "progression",
+                                    "expected_value": "worsening"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "serious ventricular arrhythmias",
+                        "criterion": "ventricular arrhythmias",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Enrolled in another clinical trial where intervention is administered prior to surgery.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Enrolled in another clinical trial",
+                        "criterion": "enrollment in another clinical trial",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "intervention is administered prior to surgery",
+                        "criterion": "intervention administration timing",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "prior to surgery"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Enrolled in another clinical trial",
+                        "criterion": "enrollment in another clinical trial",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "intervention is administered prior to surgery",
+                        "criterion": "intervention administration timing",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "prior to surgery"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Contraindication to MRI.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Contraindication to MRI",
+                        "criterion": "contraindication to MRI",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Contraindication to MRI",
+                        "criterion": "contraindication to MRI",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Known hypersensitivity to polyethylene glycol.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known hypersensitivity to polyethylene glycol",
+                        "criterion": "hypersensitivity to polyethylene glycol",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Known hypersensitivity to polyethylene glycol",
+                        "criterion": "hypersensitivity to polyethylene glycol",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Ferrous material in the scalp or skull.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ferrous material in the scalp or skull",
+                        "criterion": "ferrous material in the scalp or skull",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ferrous material in the scalp or skull",
+                        "criterion": "ferrous material in the scalp or skull",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients with recurrent GBM who are planning to undergo surgical resection or laser ablation of the recurrent tumor. Recurrence must be confirmed on MRI performed no more than 28 days prior to enrollment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with recurrent GBM",
+                        "criterion": "recurrent glioblastoma (GBM)",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "planning to undergo surgical resection or laser ablation of the recurrent tumor",
+                        "criterion": "planned intervention for recurrent tumor",
+                        "requirement": {
+                            "requirement_type": "intervention type",
+                            "expected_value": [
+                                "surgical resection",
+                                "laser ablation"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Recurrence must be confirmed on MRI performed no more than 28 days prior to enrollment",
+                        "criterion": "recurrence confirmation on MRI",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "MRI"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Recurrence must be confirmed on MRI performed no more than 28 days prior to enrollment",
+                        "criterion": "recurrence confirmation on MRI",
+                        "requirement": {
+                            "requirement_type": "time since MRI",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 28,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Coagulopathy within 14 days of enrollment defined as PT/PTT outside of normal parameters and platelets < 100,000/mcL.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Coagulopathy within 14 days of enrollment",
+                        "criterion": "coagulopathy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Coagulopathy within 14 days of enrollment",
+                        "criterion": "coagulopathy",
+                        "requirement": {
+                            "requirement_type": "time window",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 14,
+                                "unit": "days before enrollment"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "PT/PTT outside of normal parameters",
+                        "criterion": "PT/PTT",
+                        "requirement": {
+                            "requirement_type": "within normal parameters",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "platelets < 100,000/mcL",
+                        "criterion": "platelet count",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 100000,
+                                "unit": "mcL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "coagulopathy within 14 days of enrollment",
+                                "criterion": "coagulopathy",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "coagulopathy within 14 days of enrollment",
+                                "criterion": "coagulopathy",
+                                "requirement": {
+                                    "requirement_type": "time window",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 14,
+                                        "unit": "days before enrollment"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "PT/PTT outside of normal parameters",
+                                "criterion": "PT/PTT",
+                                "requirement": {
+                                    "requirement_type": "within normal parameters",
+                                    "expected_value": false
+                                }
+                            },
+                            {
+                                "exact_snippets": "platelets < 100,000/mcL",
+                                "criterion": "platelet count",
+                                "requirement": {
+                                    "requirement_type": "quantity",
+                                    "expected_value": {
+                                        "operator": "<",
+                                        "value": 100000,
+                                        "unit": "mcL"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

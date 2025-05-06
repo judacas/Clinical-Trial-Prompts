@@ -1,0 +1,310 @@
+{
+    "info": {
+        "nct_id": "NCT06166758",
+        "official_title": "Pilot Feasibility Study: Educational Genetic Test Video",
+        "inclusion_criteria": "* Prostate cancer patients who have been prescribed germline genetic testing by their provider\n* Understand written and spoken English\n* Have not received germline genetic testing for hereditary cancer risk in the past\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Adults unable to consent\n* Individuals who are not yet adults (infants, children, teenagers)\n* Pregnant individuals\n* Prisoners",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Have not received germline genetic testing for hereditary cancer risk in the past",
+                "criterions": [
+                    {
+                        "exact_snippets": "Have not received germline genetic testing for hereditary cancer risk in the past",
+                        "criterion": "germline genetic testing for hereditary cancer risk",
+                        "requirement": {
+                            "requirement_type": "history of testing",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Have not received germline genetic testing for hereditary cancer risk in the past",
+                        "criterion": "germline genetic testing for hereditary cancer risk",
+                        "requirement": {
+                            "requirement_type": "history of testing",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prostate cancer patients who have been prescribed germline genetic testing by their provider",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prostate cancer patients",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "have been prescribed germline genetic testing by their provider",
+                        "criterion": "germline genetic testing prescription",
+                        "requirement": {
+                            "requirement_type": "prescribed_by_provider",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prostate cancer patients",
+                        "criterion": "prostate cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "have been prescribed germline genetic testing by their provider",
+                        "criterion": "germline genetic testing prescription",
+                        "requirement": {
+                            "requirement_type": "prescribed_by_provider",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Pregnant individuals",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant individuals",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Pregnant individuals",
+                    "criterion": "pregnancy status",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adults unable to consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adults unable to consent",
+                        "criterion": "ability to provide consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adults unable to consent",
+                        "criterion": "ability to provide consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prisoners",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prisoners",
+                        "criterion": "prisoner status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "prisoner"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prisoners",
+                        "criterion": "prisoner status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "prisoner"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Understand written and spoken English",
+                "criterions": [
+                    {
+                        "exact_snippets": "Understand written and spoken English",
+                        "criterion": "English language comprehension",
+                        "requirement": {
+                            "requirement_type": "comprehension",
+                            "expected_value": [
+                                "written English",
+                                "spoken English"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Individuals who are not yet adults (infants, children, teenagers)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Individuals who are not yet adults (infants, children, teenagers)",
+                        "criterion": "age group",
+                        "requirement": {
+                            "requirement_type": "category",
+                            "expected_value": [
+                                "infant",
+                                "child",
+                                "teenager"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

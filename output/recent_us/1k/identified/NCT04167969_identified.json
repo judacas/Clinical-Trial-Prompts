@@ -1,0 +1,617 @@
+{
+    "info": {
+        "nct_id": "NCT04167969",
+        "official_title": "Molecular Phenotyping and Image-Guided Surgical Treatment of Prostate Cancer Using Ultrasmall Silica Nanoparticles",
+        "inclusion_criteria": "Primary RP + PLND\n\n* Age ≥18 years\n* Patients meeting one of the following criteria:\n\n  * Tumor clinical stage T3a or higher\n  * Gleason score 8-10, or\n  * PSA level > 20 ng/mL\n* Patients deemed fit for surgery on the basis of preoperative evaluation at the physician's discretion\n* Patient is scheduled for standard of care laparoscopic radical prostatectomy (with or without robotic assistance) Salvage PLND\n* Age ≥18 years\n* Patients with presence of suspicious lymph node on CT or MRI (of a pelvic node => 10mm in short axis or a node with abnormal morphology such as roundness irregularity or loss of fatty hilum, or PSMA-avid on PSMA PET imaging\n* Patients deemed fit for surgery on the basis of preoperative evaluation at the physician's discretion\n* Patient is scheduled for standard of care salvage pelvic lymph node dissection (with or without robotic assistance)\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Contraindications to standard-of-care MR imaging (e.g., metal implants, claustrophobia)\n* Prior androgen-deprivation therapy for prostate cancer (N/A for Salvage PLND)\n* Prior pelvic radiotherapy (N/A for Salvage PLND )\n* Medical illness unrelated to the tumor that, in the opinion of the attending physician and principal investigator, will preclude administration of the tracer\n\n  °This includes patients with uncontrolled infection, chronic renal insufficiency (EGFR < 60 mL/min/1.73m2), myocardial infarction within the past 6 months, unstable angina, cardiac arrhythmias other than chronic atrial fibrillation and chronic active or persistent hepatitis, or New York Heart Association Classification III or IV heart disease\n* Weight greater than the 400-lb weight limit of the PET scanner\n* Unmanageable claustrophobia\n* Inability to lie in the scanner for 30 min",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients with presence of suspicious lymph node on CT or MRI (of a pelvic node => 10mm in short axis or a node with abnormal morphology such as roundness irregularity or loss of fatty hilum, or PSMA-avid on PSMA PET imaging",
+            "criterions": [
+                {
+                    "exact_snippets": "presence of suspicious lymph node on CT or MRI",
+                    "criterion": "suspicious lymph node",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "detection modality",
+                            "expected_value": [
+                                "CT",
+                                "MRI"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "pelvic node => 10mm in short axis",
+                    "criterion": "pelvic lymph node short axis diameter",
+                    "requirements": [
+                        {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 10,
+                                "unit": "mm"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "node with abnormal morphology such as roundness irregularity or loss of fatty hilum",
+                    "criterion": "lymph node morphology",
+                    "requirements": [
+                        {
+                            "requirement_type": "morphology",
+                            "expected_value": [
+                                "roundness",
+                                "irregularity",
+                                "loss of fatty hilum"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "PSMA-avid on PSMA PET imaging",
+                    "criterion": "PSMA avidity on PET imaging",
+                    "requirements": [
+                        {
+                            "requirement_type": "PSMA avidity",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "detection modality",
+                            "expected_value": "PSMA PET"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients meeting one of the following criteria:",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients meeting one of the following criteria",
+                    "criterion": "eligibility for at least one criterion",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Tumor clinical stage T3a or higher",
+            "criterions": [
+                {
+                    "exact_snippets": "Tumor clinical stage T3a or higher",
+                    "criterion": "tumor clinical stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "T"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be MALE",
+            "criterions": [
+                {
+                    "exact_snippets": "Must be MALE",
+                    "criterion": "sex",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Gleason score 8-10, or",
+            "criterions": [
+                {
+                    "exact_snippets": "Gleason score 8-10",
+                    "criterion": "Gleason score",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 8,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 10,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient is scheduled for standard of care salvage pelvic lymph node dissection (with or without robotic assistance)",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient is scheduled for standard of care salvage pelvic lymph node dissection",
+                    "criterion": "scheduled for salvage pelvic lymph node dissection",
+                    "requirements": [
+                        {
+                            "requirement_type": "scheduled",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "procedure_type",
+                            "expected_value": "salvage pelvic lymph node dissection"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "(with or without robotic assistance)",
+                    "criterion": "robotic assistance for pelvic lymph node dissection",
+                    "requirements": [
+                        {
+                            "requirement_type": "robotic assistance",
+                            "expected_value": [
+                                "with",
+                                "without"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Age ≥18 years",
+            "criterions": [
+                {
+                    "exact_snippets": "Age ≥18 years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients deemed fit for surgery on the basis of preoperative evaluation at the physician's discretion",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients deemed fit for surgery on the basis of preoperative evaluation at the physician's discretion",
+                    "criterion": "fitness for surgery",
+                    "requirements": [
+                        {
+                            "requirement_type": "assessment",
+                            "expected_value": "fit for surgery"
+                        },
+                        {
+                            "requirement_type": "assessment_basis",
+                            "expected_value": "preoperative evaluation"
+                        },
+                        {
+                            "requirement_type": "assessor",
+                            "expected_value": "physician's discretion"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* PSA level > 20 ng/mL",
+            "criterions": [
+                {
+                    "exact_snippets": "PSA level > 20 ng/mL",
+                    "criterion": "PSA level",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 20,
+                                "unit": "ng/mL"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Primary RP + PLND",
+            "criterions": [
+                {
+                    "exact_snippets": "Primary RP + PLND",
+                    "criterion": "surgical history",
+                    "requirements": [
+                        {
+                            "requirement_type": "procedure",
+                            "expected_value": [
+                                "radical prostatectomy (RP)",
+                                "pelvic lymph node dissection (PLND)"
+                            ]
+                        },
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "primary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients deemed fit for surgery on the basis of preoperative evaluation at the physician's discretion",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients deemed fit for surgery on the basis of preoperative evaluation at the physician's discretion",
+                    "criterion": "fitness for surgery",
+                    "requirements": [
+                        {
+                            "requirement_type": "assessment",
+                            "expected_value": "fit for surgery"
+                        },
+                        {
+                            "requirement_type": "basis",
+                            "expected_value": "preoperative evaluation"
+                        },
+                        {
+                            "requirement_type": "assessor",
+                            "expected_value": "physician's discretion"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Age ≥18 years",
+            "criterions": [
+                {
+                    "exact_snippets": "Age ≥18 years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient is scheduled for standard of care laparoscopic radical prostatectomy (with or without robotic assistance) Salvage PLND",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient is scheduled for standard of care laparoscopic radical prostatectomy (with or without robotic assistance)",
+                    "criterion": "scheduled procedure",
+                    "requirements": [
+                        {
+                            "requirement_type": "procedure_type",
+                            "expected_value": "standard of care laparoscopic radical prostatectomy"
+                        },
+                        {
+                            "requirement_type": "robotic_assistance",
+                            "expected_value": [
+                                "with",
+                                "without"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Salvage PLND",
+                    "criterion": "scheduled procedure",
+                    "requirements": [
+                        {
+                            "requirement_type": "procedure_type",
+                            "expected_value": "Salvage PLND"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Unmanageable claustrophobia",
+            "criterions": [
+                {
+                    "exact_snippets": "Unmanageable claustrophobia",
+                    "criterion": "claustrophobia",
+                    "requirements": [
+                        {
+                            "requirement_type": "manageability",
+                            "expected_value": "unmanageable"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior pelvic radiotherapy (N/A for Salvage PLND )",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior pelvic radiotherapy",
+                    "criterion": "prior pelvic radiotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Medical illness unrelated to the tumor that, in the opinion of the attending physician and principal investigator, will preclude administration of the tracer",
+            "criterions": [
+                {
+                    "exact_snippets": "Medical illness unrelated to the tumor ... will preclude administration of the tracer",
+                    "criterion": "medical illness unrelated to the tumor",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "impact on tracer administration",
+                            "expected_value": "will preclude administration of the tracer"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Inability to lie in the scanner for 30 min",
+            "criterions": [
+                {
+                    "exact_snippets": "Inability to lie in the scanner for 30 min",
+                    "criterion": "ability to lie in the scanner",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 30,
+                                "unit": "min"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "°This includes patients with uncontrolled infection, chronic renal insufficiency (EGFR < 60 mL/min/1.73m2), myocardial infarction within the past 6 months, unstable angina, cardiac arrhythmias other than chronic atrial fibrillation and chronic active or persistent hepatitis, or New York Heart Association Classification III or IV heart disease",
+            "criterions": [
+                {
+                    "exact_snippets": "uncontrolled infection",
+                    "criterion": "infection",
+                    "requirements": [
+                        {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "chronic renal insufficiency (EGFR < 60 mL/min/1.73m2)",
+                    "criterion": "renal function (EGFR)",
+                    "requirements": [
+                        {
+                            "requirement_type": "EGFR",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 60,
+                                "unit": "mL/min/1.73m2"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "myocardial infarction within the past 6 months",
+                    "criterion": "myocardial infarction",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since event",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "unstable angina",
+                    "criterion": "angina",
+                    "requirements": [
+                        {
+                            "requirement_type": "stability",
+                            "expected_value": "unstable"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "cardiac arrhythmias other than chronic atrial fibrillation",
+                    "criterion": "cardiac arrhythmias",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": "other than chronic atrial fibrillation"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "chronic active or persistent hepatitis",
+                    "criterion": "hepatitis",
+                    "requirements": [
+                        {
+                            "requirement_type": "activity",
+                            "expected_value": [
+                                "chronic active",
+                                "persistent"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "New York Heart Association Classification III or IV heart disease",
+                    "criterion": "New York Heart Association Classification heart disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "classification",
+                            "expected_value": [
+                                "III",
+                                "IV"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Contraindications to standard-of-care MR imaging (e.g., metal implants, claustrophobia)",
+            "criterions": [
+                {
+                    "exact_snippets": "Contraindications to standard-of-care MR imaging",
+                    "criterion": "contraindications to MR imaging",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "metal implants",
+                    "criterion": "metal implants",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "claustrophobia",
+                    "criterion": "claustrophobia",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior androgen-deprivation therapy for prostate cancer (N/A for Salvage PLND)",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior androgen-deprivation therapy for prostate cancer",
+                    "criterion": "androgen-deprivation therapy for prostate cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "N/A for Salvage PLND",
+                    "criterion": "Salvage PLND",
+                    "requirements": [
+                        {
+                            "requirement_type": "applicability",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Weight greater than the 400-lb weight limit of the PET scanner",
+            "criterions": [
+                {
+                    "exact_snippets": "Weight greater than the 400-lb weight limit of the PET scanner",
+                    "criterion": "weight",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 400,
+                                "unit": "lb"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

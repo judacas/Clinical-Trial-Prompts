@@ -1,0 +1,985 @@
+{
+    "info": {
+        "nct_id": "NCT03980041",
+        "official_title": "A Phase 2, Multicenter, Randomized, Double-Blind, Active-Control Study to Evaluate the Efficacy and Safety of Nivolumab Administered in Combination With IPI-549 Compared to Nivolumab Monotherapy in the Treatment of Patients With Immune Therapy-Naïve, Advanced Urothelial Carcinoma",
+        "inclusion_criteria": "* Histologically or cytologically confirmed urothelial carcinoma of the renal pelvis, ureter, bladder, or urethra\n* Measurable disease by CT or MRI as defined by RECIST v1.1\n* Disease progression or recurrence after treatment:\n* i) With at least 1 platinum-based chemotherapy regimen for the treatment of metastatic (Stage IV) or locally advanced unresectable disease; or\n* ii) With disease recurrence within 1 year of completing a platinum-based neoadjuvant or adjuvant therapy\n* Subject that have received more than 2 prior lines of chemotherapy must not have liver metastases\n* Tumor tissues (archived or new biopsy) must be provided for biomarker analysis\n* Eastern Cooperative Oncology Group (ECOG) performance status ≤1\n* Blood sample must be provided for mMDSC levels for randomization into the study\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Active brain metastases or leptomeningeal metastases\n* Any serious or uncontrolled medical disorder that may interfere with study treatment/interpretation\n* Prior malignancy active within the previous 3 years except for local or organ confined early stage cancer that has been apparently cured\n* Active, known, or suspected autoimmune disease\n* A condition requiring systemic treatment with either corticosteroids (>10 mg daily prednisone equivalents) or other immunosuppressive medications within 14 day of study drug administration\n* Prior therapy with anti-tumor vaccines, any T cell co-stimulation or checkpoint pathways, or IPI-549\n* Prior surgery or gastrointestinal dysfunction that may affect drug absorption\n* Past medical history of interstitial lung disease\n* History of stroke, unstable angina, myocardial infarction, or ventricular arrhythmia requiring medication or mechanical control\n* Positive test for hepatitis B, C or HIV\n* Dependent on continuous supplemental oxygen",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Subject that have received more than 2 prior lines of chemotherapy must not have liver metastases",
+                "criterions": [
+                    {
+                        "exact_snippets": "received more than 2 prior lines of chemotherapy",
+                        "criterion": "number of prior lines of chemotherapy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "lines"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "must not have liver metastases",
+                        "criterion": "liver metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "received more than 2 prior lines of chemotherapy",
+                    "criterion": "number of prior lines of chemotherapy",
+                    "requirement": {
+                        "requirement_type": "quantity",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 2,
+                            "unit": "lines"
+                        }
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "must not have liver metastases",
+                    "criterion": "liver metastases",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Disease progression or recurrence after treatment:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Disease progression or recurrence after treatment",
+                        "criterion": "disease progression or recurrence",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "after treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Disease progression or recurrence after treatment",
+                        "criterion": "disease progression or recurrence",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "after treatment"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Blood sample must be provided for mMDSC levels for randomization into the study",
+                "criterions": [
+                    {
+                        "exact_snippets": "Blood sample must be provided",
+                        "criterion": "blood sample",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "for mMDSC levels for randomization into the study",
+                        "criterion": "mMDSC levels",
+                        "requirement": {
+                            "requirement_type": "measurement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Blood sample must be provided",
+                        "criterion": "blood sample",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "for mMDSC levels for randomization into the study",
+                        "criterion": "mMDSC levels",
+                        "requirement": {
+                            "requirement_type": "measurement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Tumor tissues (archived or new biopsy) must be provided for biomarker analysis",
+                "criterions": [
+                    {
+                        "exact_snippets": "Tumor tissues (archived or new biopsy) must be provided for biomarker analysis",
+                        "criterion": "tumor tissue",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Tumor tissues (archived or new biopsy) must be provided for biomarker analysis",
+                        "criterion": "tumor tissue",
+                        "requirement": {
+                            "requirement_type": "purpose",
+                            "expected_value": "biomarker analysis"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Tumor tissues (archived or new biopsy) must be provided for biomarker analysis",
+                        "criterion": "tumor tissue",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Tumor tissues (archived or new biopsy) must be provided for biomarker analysis",
+                        "criterion": "tumor tissue",
+                        "requirement": {
+                            "requirement_type": "purpose",
+                            "expected_value": "biomarker analysis"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* ii) With disease recurrence within 1 year of completing a platinum-based neoadjuvant or adjuvant therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "disease recurrence within 1 year of completing a platinum-based neoadjuvant or adjuvant therapy",
+                        "criterion": "disease recurrence",
+                        "requirement": {
+                            "requirement_type": "time from completion of platinum-based neoadjuvant or adjuvant therapy to recurrence",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "platinum-based neoadjuvant or adjuvant therapy",
+                        "criterion": "prior platinum-based neoadjuvant or adjuvant therapy",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "disease recurrence within 1 year of completing a platinum-based neoadjuvant or adjuvant therapy",
+                        "criterion": "disease recurrence",
+                        "requirement": {
+                            "requirement_type": "time from completion of platinum-based neoadjuvant or adjuvant therapy to recurrence",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "platinum-based neoadjuvant or adjuvant therapy",
+                        "criterion": "prior platinum-based neoadjuvant or adjuvant therapy",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Any serious or uncontrolled medical disorder that may interfere with study treatment/interpretation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Any serious or uncontrolled medical disorder",
+                        "criterion": "medical disorder",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Any serious or uncontrolled medical disorder",
+                        "criterion": "medical disorder",
+                        "requirement": {
+                            "requirement_type": "control_status",
+                            "expected_value": "uncontrolled"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Any serious or uncontrolled medical disorder",
+                        "criterion": "medical disorder",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "serious"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Any serious or uncontrolled medical disorder",
+                        "criterion": "medical disorder",
+                        "requirement": {
+                            "requirement_type": "control_status",
+                            "expected_value": "uncontrolled"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Positive test for hepatitis B, C or HIV",
+                "criterions": [
+                    {
+                        "exact_snippets": "Positive test for hepatitis B",
+                        "criterion": "hepatitis B infection",
+                        "requirement": {
+                            "requirement_type": "test result",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Positive test for hepatitis C",
+                        "criterion": "hepatitis C infection",
+                        "requirement": {
+                            "requirement_type": "test result",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Positive test for ... HIV",
+                        "criterion": "HIV infection",
+                        "requirement": {
+                            "requirement_type": "test result",
+                            "expected_value": "positive"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Positive test for hepatitis B",
+                        "criterion": "hepatitis B infection",
+                        "requirement": {
+                            "requirement_type": "test result",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Positive test for hepatitis C",
+                        "criterion": "hepatitis C infection",
+                        "requirement": {
+                            "requirement_type": "test result",
+                            "expected_value": "positive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Positive test for ... HIV",
+                        "criterion": "HIV infection",
+                        "requirement": {
+                            "requirement_type": "test result",
+                            "expected_value": "positive"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior therapy with anti-tumor vaccines, any T cell co-stimulation or checkpoint pathways, or IPI-549",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior therapy with anti-tumor vaccines",
+                        "criterion": "prior therapy with anti-tumor vaccines",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior therapy with ... any T cell co-stimulation or checkpoint pathways",
+                        "criterion": "prior therapy with T cell co-stimulation or checkpoint pathway agents",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior therapy with ... IPI-549",
+                        "criterion": "prior therapy with IPI-549",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Prior therapy with anti-tumor vaccines",
+                        "criterion": "prior therapy with anti-tumor vaccines",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior therapy with ... any T cell co-stimulation or checkpoint pathways",
+                        "criterion": "prior therapy with T cell co-stimulation or checkpoint pathway agents",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior therapy with ... IPI-549",
+                        "criterion": "prior therapy with IPI-549",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior malignancy active within the previous 3 years except for local or organ confined early stage cancer that has been apparently cured",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior malignancy active within the previous 3 years",
+                        "criterion": "prior malignancy",
+                        "requirement": {
+                            "requirement_type": "activity_within_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "except for local or organ confined early stage cancer that has been apparently cured",
+                        "criterion": "local or organ confined early stage cancer",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "apparently cured"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Prior malignancy active within the previous 3 years",
+                                "criterion": "prior malignancy",
+                                "requirement": {
+                                    "requirement_type": "activity_within_timeframe",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            {
+                                "not_criteria": {
+                                    "exact_snippets": "except for local or organ confined early stage cancer that has been apparently cured",
+                                    "criterion": "local or organ confined early stage cancer",
+                                    "requirement": {
+                                        "requirement_type": "status",
+                                        "expected_value": "apparently cured"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* A condition requiring systemic treatment with either corticosteroids (>10 mg daily prednisone equivalents) or other immunosuppressive medications within 14 day of study drug administration",
+                "criterions": [
+                    {
+                        "exact_snippets": "A condition requiring systemic treatment with either corticosteroids (>10 mg daily prednisone equivalents) or other immunosuppressive medications within 14 day of study drug administration",
+                        "criterion": "systemic treatment with corticosteroids",
+                        "requirement": {
+                            "requirement_type": "dose",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "mg daily prednisone equivalents"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "A condition requiring systemic treatment with either corticosteroids (>10 mg daily prednisone equivalents) or other immunosuppressive medications within 14 day of study drug administration",
+                        "criterion": "systemic treatment with corticosteroids",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 14,
+                                "unit": "days before study drug administration"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "A condition requiring systemic treatment with ... other immunosuppressive medications within 14 day of study drug administration",
+                        "criterion": "systemic treatment with other immunosuppressive medications",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 14,
+                                "unit": "days before study drug administration"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "A condition requiring systemic treatment with either corticosteroids (>10 mg daily prednisone equivalents) or other immunosuppressive medications within 14 day of study drug administration",
+                                "criterion": "systemic treatment with corticosteroids",
+                                "requirement": {
+                                    "requirement_type": "dose",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 10,
+                                        "unit": "mg daily prednisone equivalents"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "A condition requiring systemic treatment with either corticosteroids (>10 mg daily prednisone equivalents) or other immunosuppressive medications within 14 day of study drug administration",
+                                "criterion": "systemic treatment with corticosteroids",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 14,
+                                        "unit": "days before study drug administration"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "A condition requiring systemic treatment with ... other immunosuppressive medications within 14 day of study drug administration",
+                        "criterion": "systemic treatment with other immunosuppressive medications",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 14,
+                                "unit": "days before study drug administration"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior surgery or gastrointestinal dysfunction that may affect drug absorption",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior surgery",
+                        "criterion": "prior surgery",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "gastrointestinal dysfunction that may affect drug absorption",
+                        "criterion": "gastrointestinal dysfunction",
+                        "requirement": {
+                            "requirement_type": "effect on drug absorption",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Prior surgery",
+                        "criterion": "prior surgery",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "gastrointestinal dysfunction that may affect drug absorption",
+                        "criterion": "gastrointestinal dysfunction",
+                        "requirement": {
+                            "requirement_type": "effect on drug absorption",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active brain metastases or leptomeningeal metastases",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "leptomeningeal metastases",
+                        "criterion": "leptomeningeal metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Active brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "leptomeningeal metastases",
+                        "criterion": "leptomeningeal metastases",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Dependent on continuous supplemental oxygen",
+                "criterions": [
+                    {
+                        "exact_snippets": "Dependent on continuous supplemental oxygen",
+                        "criterion": "supplemental oxygen dependence",
+                        "requirement": {
+                            "requirement_type": "dependence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Dependent on continuous supplemental oxygen",
+                        "criterion": "supplemental oxygen dependence",
+                        "requirement": {
+                            "requirement_type": "supplemental_oxygen_type",
+                            "expected_value": "continuous"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Dependent on continuous supplemental oxygen",
+                        "criterion": "supplemental oxygen dependence",
+                        "requirement": {
+                            "requirement_type": "dependence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Dependent on continuous supplemental oxygen",
+                        "criterion": "supplemental oxygen dependence",
+                        "requirement": {
+                            "requirement_type": "supplemental_oxygen_type",
+                            "expected_value": "continuous"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Past medical history of interstitial lung disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Past medical history of interstitial lung disease",
+                        "criterion": "interstitial lung disease",
+                        "requirement": {
+                            "requirement_type": "past medical history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Past medical history of interstitial lung disease",
+                    "criterion": "interstitial lung disease",
+                    "requirement": {
+                        "requirement_type": "past medical history",
+                        "expected_value": true
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* i) With at least 1 platinum-based chemotherapy regimen for the treatment of metastatic (Stage IV) or locally advanced unresectable disease; or",
+                "criterions": [
+                    {
+                        "exact_snippets": "at least 1 platinum-based chemotherapy regimen",
+                        "criterion": "platinum-based chemotherapy regimen",
+                        "requirement": {
+                            "requirement_type": "number of regimens",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "for the treatment of metastatic (Stage IV) or locally advanced unresectable disease",
+                        "criterion": "disease stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "metastatic (Stage IV)",
+                                "locally advanced unresectable"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Measurable disease by CT or MRI as defined by RECIST v1.1",
+                "criterions": [
+                    {
+                        "exact_snippets": "Measurable disease by CT or MRI as defined by RECIST v1.1",
+                        "criterion": "disease measurability",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Measurable disease by CT or MRI as defined by RECIST v1.1",
+                        "criterion": "disease measurability",
+                        "requirement": {
+                            "requirement_type": "assessment method",
+                            "expected_value": [
+                                "CT",
+                                "MRI"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Measurable disease by CT or MRI as defined by RECIST v1.1",
+                        "criterion": "disease measurability",
+                        "requirement": {
+                            "requirement_type": "definition standard",
+                            "expected_value": "RECIST v1.1"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Histologically or cytologically confirmed urothelial carcinoma of the renal pelvis, ureter, bladder, or urethra",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologically or cytologically confirmed urothelial carcinoma",
+                        "criterion": "urothelial carcinoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis confirmation method",
+                            "expected_value": [
+                                "histologically confirmed",
+                                "cytologically confirmed"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "of the renal pelvis, ureter, bladder, or urethra",
+                        "criterion": "primary tumor site",
+                        "requirement": {
+                            "requirement_type": "anatomical location",
+                            "expected_value": [
+                                "renal pelvis",
+                                "ureter",
+                                "bladder",
+                                "urethra"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eastern Cooperative Oncology Group (ECOG) performance status ≤1",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status ≤1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eastern Cooperative Oncology Group (ECOG) performance status \u001c1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* History of stroke, unstable angina, myocardial infarction, or ventricular arrhythmia requiring medication or mechanical control",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of stroke",
+                        "criterion": "stroke",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unstable angina",
+                        "criterion": "unstable angina",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "myocardial infarction",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "ventricular arrhythmia requiring medication or mechanical control",
+                        "criterion": "ventricular arrhythmia",
+                        "requirement": {
+                            "requirement_type": "treatment requirement",
+                            "expected_value": [
+                                "medication",
+                                "mechanical control"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active, known, or suspected autoimmune disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active, known, or suspected autoimmune disease",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "active",
+                                "known",
+                                "suspected"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

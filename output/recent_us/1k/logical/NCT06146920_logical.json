@@ -1,0 +1,949 @@
+{
+    "info": {
+        "nct_id": "NCT06146920",
+        "official_title": "Pilot Study Evaluation the Use of Serial Plasma Next-generation Sequencing (NGS) as a New Efficacy Metric to Guide Immunotherapy Treatment Discontinuation",
+        "inclusion_criteria": "* Adult patients age > 18) with unresectable, metastatic melanoma (cutaneous, acral, mucosal) or NSCLC who have evidence of disease control after at least 12 months of ICI based therapy (pembrolizumab, nivolumab, nivolumab-relatimab, ipilimumab/nivolumab, atezolizumab, ipilimumab, durvalumab, cemiplimab) with or without chemotherapy in the case of NSCLC. Any line of therapy is permitted with the exception of adjuvant therapy\n* Participants must be actively receiving standard of care ICI-based therapy (ICI monotherapy or in combination)\n* At time of enrollment patients must have received at least 12months (+/- 4 weeks) from the start of anti-PD-1 therapy and have not experienced a toxicity that prevented them from continuing therapy.\n* Participants must have evidence of disease control (stable disease, partial response, or complete response) that is maintained on restaging CT scans or PET CT scans obtained at 12 months (+/- 4 weeks) from the start of initial ICI therapy\n* Prior radiation to any site is allowed\n* Available tumor tissue (archival) for baseline tissue testing with FoundationOne CDx or previous FoundationOne CDx testing results (within 2 years and prior test results must be after June 30, 2021)\n* Life expectancy of greater than 3 months\n* Participants with a prior malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment are eligible for this trial.\n* Ability to understand and the willingness to sign a written informed consent document.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Participants with clinical or radiographic evidence of progressive disease in the 3 months prior to consideration of screening and enrollment\n* Participants who are receiving an investigational agent (s)\n* Participants who have had ICI discontinued due an immune-related adverse event.\n* Patients with a history of an irAE but resumed ICI therapy and are receiving ICI at the time of screening are eligible to enroll.\n* Participants on > 10mg of oral prednisone or its equivalent for treatment of ongoing immune-related toxicity.\n* Participants who have not recovered from adverse events due to prior anti-cancer therapy (i.e., have residual toxicities > Grade 1) with the exception of alopecia, endocrine toxicity requiring chronic supplementation\n* Participants with a concurrent, active malignancy\n* Participants in whom F1CDx generation fails\n* Participants without available tumor tissue for F1CDx test result or prior F1CDx",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Life expectancy of greater than 3 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "Life expectancy of greater than 3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Life expectancy of greater than 3 months",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Ability to understand and the willingness to sign a written informed consent document.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ability to understand",
+                        "criterion": "cognitive ability to understand informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willingness to sign a written informed consent document",
+                        "criterion": "willingness to sign informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ability to understand",
+                        "criterion": "cognitive ability to understand informed consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willingness to sign a written informed consent document",
+                        "criterion": "willingness to sign informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Available tumor tissue (archival) for baseline tissue testing with FoundationOne CDx or previous FoundationOne CDx testing results (within 2 years and prior test results must be after June 30, 2021)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Available tumor tissue (archival) for baseline tissue testing",
+                        "criterion": "tumor tissue (archival)",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous FoundationOne CDx testing results (within 2 years and prior test results must be after June 30, 2021)",
+                        "criterion": "FoundationOne CDx testing results",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "previous FoundationOne CDx testing results (within 2 years and prior test results must be after June 30, 2021)",
+                        "criterion": "FoundationOne CDx testing results",
+                        "requirement": {
+                            "requirement_type": "date_of_test",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2021.5,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Available tumor tissue (archival) for baseline tissue testing",
+                        "criterion": "tumor tissue (archival)",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "previous FoundationOne CDx testing results (within 2 years and prior test results must be after June 30, 2021)",
+                                "criterion": "FoundationOne CDx testing results",
+                                "requirement": {
+                                    "requirement_type": "recency",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": "<=",
+                                                "value": 2,
+                                                "unit": "years"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "previous FoundationOne CDx testing results (within 2 years and prior test results must be after June 30, 2021)",
+                                "criterion": "FoundationOne CDx testing results",
+                                "requirement": {
+                                    "requirement_type": "date_of_test",
+                                    "expected_value": {
+                                        "operator": ">",
+                                        "value": 2021.5,
+                                        "unit": "year"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior radiation to any site is allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior radiation to any site is allowed",
+                        "criterion": "prior radiation",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Prior radiation to any site is allowed",
+                        "criterion": "prior radiation",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* At time of enrollment patients must have received at least 12months (+/- 4 weeks) from the start of anti-PD-1 therapy and have not experienced a toxicity that prevented them from continuing therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients must have received at least 12months (+/- 4 weeks) from the start of anti-PD-1 therapy",
+                        "criterion": "duration of anti-PD-1 therapy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 11,
+                                        "unit": "months"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 13,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "have not experienced a toxicity that prevented them from continuing therapy",
+                        "criterion": "toxicity from anti-PD-1 therapy",
+                        "requirement": {
+                            "requirement_type": "toxicity preventing continuation",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "patients must have received at least 12months (+/- 4 weeks) from the start of anti-PD-1 therapy",
+                        "criterion": "duration of anti-PD-1 therapy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 11,
+                                        "unit": "months"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 13,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "have not experienced a toxicity that prevented them from continuing therapy",
+                        "criterion": "toxicity from anti-PD-1 therapy",
+                        "requirement": {
+                            "requirement_type": "toxicity preventing continuation",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants with a prior malignancy whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment are eligible for this trial.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participants with a prior malignancy",
+                        "criterion": "prior malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment",
+                        "criterion": "potential for prior malignancy to interfere with safety or efficacy assessment",
+                        "requirement": {
+                            "requirement_type": "interference with safety or efficacy assessment",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Participants with a prior malignancy",
+                        "criterion": "prior malignancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "whose natural history or treatment does not have the potential to interfere with the safety or efficacy assessment",
+                        "criterion": "potential for prior malignancy to interfere with safety or efficacy assessment",
+                        "requirement": {
+                            "requirement_type": "interference with safety or efficacy assessment",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Participants who are receiving an investigational agent (s)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participants who are receiving an investigational agent (s)",
+                        "criterion": "receipt of investigational agent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participants who are receiving an investigational agent (s)",
+                    "criterion": "receipt of investigational agent",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants without available tumor tissue for F1CDx test result or prior F1CDx",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participants without available tumor tissue for F1CDx test result",
+                        "criterion": "tumor tissue for F1CDx test result",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior F1CDx",
+                        "criterion": "prior F1CDx",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Participants without available tumor tissue for F1CDx test result",
+                        "criterion": "tumor tissue for F1CDx test result",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior F1CDx",
+                        "criterion": "prior F1CDx",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with a history of an irAE but resumed ICI therapy and are receiving ICI at the time of screening are eligible to enroll.",
+                "criterions": [
+                    {
+                        "exact_snippets": "history of an irAE",
+                        "criterion": "history of immune-related adverse event (irAE)",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "resumed ICI therapy",
+                        "criterion": "resumption of immune checkpoint inhibitor (ICI) therapy",
+                        "requirement": {
+                            "requirement_type": "resumption",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "receiving ICI at the time of screening",
+                        "criterion": "receiving immune checkpoint inhibitor (ICI) therapy at screening",
+                        "requirement": {
+                            "requirement_type": "current treatment status",
+                            "expected_value": "receiving ICI at time of screening"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "history of an irAE",
+                                    "criterion": "history of immune-related adverse event (irAE)",
+                                    "requirement": {
+                                        "requirement_type": "history",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "resumed ICI therapy",
+                                    "criterion": "resumption of immune checkpoint inhibitor (ICI) therapy",
+                                    "requirement": {
+                                        "requirement_type": "resumption",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "receiving ICI at the time of screening",
+                                    "criterion": "receiving immune checkpoint inhibitor (ICI) therapy at screening",
+                                    "requirement": {
+                                        "requirement_type": "current treatment status",
+                                        "expected_value": "receiving ICI at time of screening"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of an irAE",
+                        "criterion": "history of immune-related adverse event (irAE)",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants with a concurrent, active malignancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "concurrent, active malignancy",
+                        "criterion": "malignancy",
+                        "requirement": {
+                            "requirement_type": "activity status",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "concurrent, active malignancy",
+                        "criterion": "malignancy",
+                        "requirement": {
+                            "requirement_type": "concurrence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "concurrent, active malignancy",
+                        "criterion": "malignancy",
+                        "requirement": {
+                            "requirement_type": "activity status",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "concurrent, active malignancy",
+                        "criterion": "malignancy",
+                        "requirement": {
+                            "requirement_type": "concurrence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants who have had ICI discontinued due an immune-related adverse event.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participants who have had ICI discontinued due an immune-related adverse event",
+                        "criterion": "ICI (immune checkpoint inhibitor) treatment",
+                        "requirement": {
+                            "requirement_type": "discontinuation_due_to_immune-related_adverse_event",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Participants who have had ICI discontinued due an immune-related adverse event",
+                        "criterion": "ICI (immune checkpoint inhibitor) treatment",
+                        "requirement": {
+                            "requirement_type": "discontinuation_due_to_immune-related_adverse_event",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants on > 10mg of oral prednisone or its equivalent for treatment of ongoing immune-related toxicity.",
+                "criterions": [
+                    {
+                        "exact_snippets": "> 10mg of oral prednisone or its equivalent for treatment of ongoing immune-related toxicity",
+                        "criterion": "oral prednisone or its equivalent dosage",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "mg"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "> 10mg of oral prednisone or its equivalent for treatment of ongoing immune-related toxicity",
+                        "criterion": "oral prednisone or its equivalent dosage",
+                        "requirement": {
+                            "requirement_type": "purpose",
+                            "expected_value": "treatment of ongoing immune-related toxicity"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "> 10mg of oral prednisone or its equivalent for treatment of ongoing immune-related toxicity",
+                        "criterion": "oral prednisone or its equivalent dosage",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "mg"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "> 10mg of oral prednisone or its equivalent for treatment of ongoing immune-related toxicity",
+                        "criterion": "oral prednisone or its equivalent dosage",
+                        "requirement": {
+                            "requirement_type": "purpose",
+                            "expected_value": "treatment of ongoing immune-related toxicity"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants in whom F1CDx generation fails",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participants in whom F1CDx generation fails",
+                        "criterion": "F1CDx generation",
+                        "requirement": {
+                            "requirement_type": "success",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Participants in whom F1CDx generation fails",
+                    "criterion": "F1CDx generation",
+                    "requirement": {
+                        "requirement_type": "success",
+                        "expected_value": false
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Adult patients age > 18) with unresectable, metastatic melanoma (cutaneous, acral, mucosal) or NSCLC who have evidence of disease control after at least 12 months of ICI based therapy (pembrolizumab, nivolumab, nivolumab-relatimab, ipilimumab/nivolumab, atezolizumab, ipilimumab, durvalumab, cemiplimab) with or without chemotherapy in the case of NSCLC. Any line of therapy is permitted with the exception of adjuvant therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adult patients age > 18",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "unresectable, metastatic melanoma (cutaneous, acral, mucosal) or NSCLC",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "unresectable metastatic melanoma (cutaneous, acral, mucosal)",
+                                "NSCLC"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "evidence of disease control after at least 12 months of ICI based therapy",
+                        "criterion": "disease control after ICI therapy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 12,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "evidence of disease control after at least 12 months of ICI based therapy",
+                        "criterion": "disease control after ICI therapy",
+                        "requirement": {
+                            "requirement_type": "evidence of disease control",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "ICI based therapy (pembrolizumab, nivolumab, nivolumab-relatimab, ipilimumab/nivolumab, atezolizumab, ipilimumab, durvalumab, cemiplimab)",
+                        "criterion": "prior ICI therapy",
+                        "requirement": {
+                            "requirement_type": "agent",
+                            "expected_value": [
+                                "pembrolizumab",
+                                "nivolumab",
+                                "nivolumab-relatimab",
+                                "ipilimumab/nivolumab",
+                                "atezolizumab",
+                                "ipilimumab",
+                                "durvalumab",
+                                "cemiplimab"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "with or without chemotherapy in the case of NSCLC",
+                        "criterion": "chemotherapy for NSCLC",
+                        "requirement": {
+                            "requirement_type": "allowed",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Any line of therapy is permitted with the exception of adjuvant therapy",
+                        "criterion": "line of therapy",
+                        "requirement": {
+                            "requirement_type": "adjuvant therapy exclusion",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants must have evidence of disease control (stable disease, partial response, or complete response) that is maintained on restaging CT scans or PET CT scans obtained at 12 months (+/- 4 weeks) from the start of initial ICI therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "evidence of disease control (stable disease, partial response, or complete response)",
+                        "criterion": "disease control status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "stable disease",
+                                "partial response",
+                                "complete response"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "maintained on restaging CT scans or PET CT scans obtained at 12 months (+/- 4 weeks) from the start of initial ICI therapy",
+                        "criterion": "disease control status maintenance at 12 months",
+                        "requirement": {
+                            "requirement_type": "maintenance_duration",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 11.08,
+                                        "unit": "months"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 12.92,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants must be actively receiving standard of care ICI-based therapy (ICI monotherapy or in combination)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Participants must be actively receiving standard of care ICI-based therapy (ICI monotherapy or in combination)",
+                        "criterion": "ICI-based therapy",
+                        "requirement": {
+                            "requirement_type": "receiving",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participants must be actively receiving standard of care ICI-based therapy (ICI monotherapy or in combination)",
+                        "criterion": "ICI-based therapy",
+                        "requirement": {
+                            "requirement_type": "therapy type",
+                            "expected_value": [
+                                "ICI monotherapy",
+                                "ICI in combination"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participants must be actively receiving standard of care ICI-based therapy (ICI monotherapy or in combination)",
+                        "criterion": "ICI-based therapy",
+                        "requirement": {
+                            "requirement_type": "standard of care",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Participants must be actively receiving standard of care ICI-based therapy (ICI monotherapy or in combination)",
+                        "criterion": "ICI-based therapy",
+                        "requirement": {
+                            "requirement_type": "active",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Participants with clinical or radiographic evidence of progressive disease in the 3 months prior to consideration of screening and enrollment",
+                "criterions": [
+                    {
+                        "exact_snippets": "clinical or radiographic evidence of progressive disease in the 3 months prior to consideration of screening and enrollment",
+                        "criterion": "progressive disease",
+                        "requirement": {
+                            "requirement_type": "evidence type",
+                            "expected_value": [
+                                "clinical",
+                                "radiographic"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "clinical or radiographic evidence of progressive disease in the 3 months prior to consideration of screening and enrollment",
+                        "criterion": "progressive disease",
+                        "requirement": {
+                            "requirement_type": "progression timing",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": "<=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Participants who have not recovered from adverse events due to prior anti-cancer therapy (i.e., have residual toxicities > Grade 1) with the exception of alopecia, endocrine toxicity requiring chronic supplementation",
+                "criterions": [
+                    {
+                        "exact_snippets": "not recovered from adverse events due to prior anti-cancer therapy (i.e., have residual toxicities > Grade 1)",
+                        "criterion": "recovery from adverse events due to prior anti-cancer therapy",
+                        "requirement": {
+                            "requirement_type": "recovery_status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "not recovered from adverse events due to prior anti-cancer therapy (i.e., have residual toxicities > Grade 1)",
+                        "criterion": "recovery from adverse events due to prior anti-cancer therapy",
+                        "requirement": {
+                            "requirement_type": "residual_toxicity_grade",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "Grade"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "with the exception of alopecia, endocrine toxicity requiring chronic supplementation",
+                        "criterion": "residual toxicities (alopecia, endocrine toxicity requiring chronic supplementation)",
+                        "requirement": {
+                            "requirement_type": "allowable_residual_toxicity",
+                            "expected_value": [
+                                "alopecia",
+                                "endocrine toxicity requiring chronic supplementation"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

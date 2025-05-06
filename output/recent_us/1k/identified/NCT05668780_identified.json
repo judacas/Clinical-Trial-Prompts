@@ -1,0 +1,102 @@
+{
+    "info": {
+        "nct_id": "NCT05668780",
+        "official_title": "Integrating Addiction and Infectious Diseases Services Into Primary Care in Rural Settings",
+        "inclusion_criteria": "- Federally Qualified Health Centers (FQHCs) and Look-Alike FQHC Primary Care Clinics in West Virginia providing adult care\nHealthy volunteers allowed",
+        "exclusion_criteria": "* Clinics (private or specialty) or any clinics not in West Virginia",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "- Federally Qualified Health Centers (FQHCs) and Look-Alike FQHC Primary Care Clinics in West Virginia providing adult care",
+            "criterions": [
+                {
+                    "exact_snippets": "Federally Qualified Health Centers (FQHCs) and Look-Alike FQHC Primary Care Clinics",
+                    "criterion": "clinic type",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "Federally Qualified Health Center (FQHC)",
+                                "Look-Alike FQHC Primary Care Clinic"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "in West Virginia",
+                    "criterion": "clinic location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "West Virginia"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "providing adult care",
+                    "criterion": "care population",
+                    "requirements": [
+                        {
+                            "requirement_type": "population_served",
+                            "expected_value": "adults"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Clinics (private or specialty) or any clinics not in West Virginia",
+            "criterions": [
+                {
+                    "exact_snippets": "Clinics (private or specialty)",
+                    "criterion": "clinic type",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "private",
+                                "specialty"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "clinics not in West Virginia",
+                    "criterion": "clinic location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": {
+                                "operator": "!=",
+                                "value": 1,
+                                "unit": "West Virginia"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

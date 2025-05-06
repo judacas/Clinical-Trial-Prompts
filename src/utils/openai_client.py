@@ -279,7 +279,12 @@ def tracked_openai_completion_call(
                     pred_completion=pred_completion,
                     completion_tokens=0,
                 )
-                raise e
+                if attempt == MAX_RETRIES:
+                    raise
+                _wait_if_paused()
+                token_handle = token_bucket.wait(cost_pred)
+                request_handle = request_bucket.wait(1)
+                continue
     else:
         token_bucket.commit(token_handle, 0)
         request_bucket.commit(request_handle, 0)

@@ -1,0 +1,207 @@
+{
+    "info": {
+        "nct_id": "NCT05018156",
+        "official_title": "Pilot Implementation Study of a Default Genetics Referral Process for Patients With Young-Onset Colorectal Cancer",
+        "inclusion_criteria": "* Newly diagnosed with colon or rectal adenocarcinoma\n* Between 40-49 years old at the time of index cancer diagnosis\n* At least two visits at Penn Medicine for the evaluation or treatment of the index cancer\nHealthy volunteers allowed\nMust have minimum age of 40 Years\nMust have maximum age of 49 Years",
+        "exclusion_criteria": "* Diagnosis of in situ cancer\n* Known genetic predisposition to cancer\n* Genetic testing after index cancer diagnosis",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Newly diagnosed with colon or rectal adenocarcinoma",
+            "criterions": [
+                {
+                    "exact_snippets": "Newly diagnosed",
+                    "criterion": "diagnosis status",
+                    "requirements": [
+                        {
+                            "requirement_type": "recency",
+                            "expected_value": "newly diagnosed"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "colon or rectal adenocarcinoma",
+                    "criterion": "cancer type",
+                    "requirements": [
+                        {
+                            "requirement_type": "histology",
+                            "expected_value": [
+                                "colon adenocarcinoma",
+                                "rectal adenocarcinoma"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* At least two visits at Penn Medicine for the evaluation or treatment of the index cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "At least two visits at Penn Medicine",
+                    "criterion": "visits at Penn Medicine",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "visits"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "for the evaluation or treatment of the index cancer",
+                    "criterion": "purpose of visits",
+                    "requirements": [
+                        {
+                            "requirement_type": "purpose",
+                            "expected_value": [
+                                "evaluation of index cancer",
+                                "treatment of index cancer"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 40 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 40 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 40,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 49 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 49 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 49,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Between 40-49 years old at the time of index cancer diagnosis",
+            "criterions": [
+                {
+                    "exact_snippets": "Between 40-49 years old at the time of index cancer diagnosis",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "age at index cancer diagnosis",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 40,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 49,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Genetic testing after index cancer diagnosis",
+            "criterions": [
+                {
+                    "exact_snippets": "Genetic testing after index cancer diagnosis",
+                    "criterion": "genetic testing",
+                    "requirements": [
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "after index cancer diagnosis"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Diagnosis of in situ cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "Diagnosis of in situ cancer",
+                    "criterion": "in situ cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Known genetic predisposition to cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "Known genetic predisposition to cancer",
+                    "criterion": "genetic predisposition to cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "knowledge status",
+                            "expected_value": "known"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

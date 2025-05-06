@@ -1,0 +1,438 @@
+{
+    "info": {
+        "nct_id": "NCT04157985",
+        "official_title": "Evaluating Length of Treatment With PD-1/PD-L1 Inhibitor in Advanced Solid Tumors",
+        "inclusion_criteria": "* All patients must have an advanced solid tumor malignancy (specifically NSCLC, bladder, HNSCC, renal, melanoma, cervical, Merkel cell, MMR/MSI [colon, rectal, cholangio, esophageal, ovarian, uterine], anal, gastric and GE junction, hepatocellular, triple negative breast cancer) that is being treated with a PD-1/PD-L1 inhibitor including pembrolizumab, nivolumab, atezolizumab, durvalumab, or avelumab according to standard of care treatment.\n* Patients who initially started treatment with another agent in combination with the PD-1/PD-L1 inhibitor, i.e. chemotherapy, ipilumumab, are eligible.\n* Patients must have at least stable disease as evidenced by scans performed within 6 weeks of randomization.\n* Signed Informed consent allowing randomization to stopping immunotherapy at 1 year ± 6 weeks versus continued treatment beyond 1 year.\n* Patients can have measurable or non-measurable disease per RECIST v1.1.\n* Patients cannot be enrolled in a clinical trial.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients with documented progressive disease prior to randomization.\n* Patients with an immune-related toxicity preventing the continuation of treatment beyond 1 year at the treating physician's discretion.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must have at least stable disease as evidenced by scans performed within 6 weeks of randomization.",
+                "criterions": [
+                    {
+                        "exact_snippets": "at least stable disease as evidenced by scans",
+                        "criterion": "disease status",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0,
+                                "unit": "stable disease"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "scans performed within 6 weeks of randomization",
+                        "criterion": "scan timing",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "at least stable disease as evidenced by scans",
+                        "criterion": "disease status",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0,
+                                "unit": "stable disease"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "scans performed within 6 weeks of randomization",
+                        "criterion": "scan timing",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who initially started treatment with another agent in combination with the PD-1/PD-L1 inhibitor, i.e. chemotherapy, ipilumumab, are eligible.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who initially started treatment with another agent in combination with the PD-1/PD-L1 inhibitor, i.e. chemotherapy, ipilumumab",
+                        "criterion": "prior treatment regimen",
+                        "requirement": {
+                            "requirement_type": "combination therapy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients who initially started treatment with another agent in combination with the PD-1/PD-L1 inhibitor, i.e. chemotherapy, ipilumumab",
+                        "criterion": "prior treatment regimen",
+                        "requirement": {
+                            "requirement_type": "PD-1/PD-L1 inhibitor included",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients who initially started treatment with another agent in combination with the PD-1/PD-L1 inhibitor, i.e. chemotherapy, ipilumumab",
+                        "criterion": "prior treatment regimen",
+                        "requirement": {
+                            "requirement_type": "other agent included",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients who initially started treatment with another agent in combination with the PD-1/PD-L1 inhibitor, i.e. chemotherapy, ipilumumab",
+                        "criterion": "prior treatment regimen",
+                        "requirement": {
+                            "requirement_type": "combination therapy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients who initially started treatment with another agent in combination with the PD-1/PD-L1 inhibitor, i.e. chemotherapy, ipilumumab",
+                        "criterion": "prior treatment regimen",
+                        "requirement": {
+                            "requirement_type": "PD-1/PD-L1 inhibitor included",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients who initially started treatment with another agent in combination with the PD-1/PD-L1 inhibitor, i.e. chemotherapy, ipilumumab",
+                        "criterion": "prior treatment regimen",
+                        "requirement": {
+                            "requirement_type": "other agent included",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients cannot be enrolled in a clinical trial.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients cannot be enrolled in a clinical trial.",
+                        "criterion": "enrollment in a clinical trial",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients cannot be enrolled in a clinical trial.",
+                        "criterion": "enrollment in a clinical trial",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Signed Informed consent allowing randomization to stopping immunotherapy at 1 year ± 6 weeks versus continued treatment beyond 1 year.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Signed Informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Signed Informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with documented progressive disease prior to randomization.",
+                "criterions": [
+                    {
+                        "exact_snippets": "documented progressive disease prior to randomization",
+                        "criterion": "progressive disease",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "documented progressive disease prior to randomization",
+                        "criterion": "progressive disease",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "prior to randomization"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "documented progressive disease prior to randomization",
+                        "criterion": "progressive disease",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "documented progressive disease prior to randomization",
+                        "criterion": "progressive disease",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "prior to randomization"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with an immune-related toxicity preventing the continuation of treatment beyond 1 year at the treating physician's discretion.",
+                "criterions": [
+                    {
+                        "exact_snippets": "immune-related toxicity preventing the continuation of treatment beyond 1 year",
+                        "criterion": "immune-related toxicity",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "prevents continuation of treatment beyond 1 year"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at the treating physician's discretion",
+                        "criterion": "treating physician's discretion",
+                        "requirement": {
+                            "requirement_type": "approval",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "immune-related toxicity preventing the continuation of treatment beyond 1 year",
+                        "criterion": "immune-related toxicity",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "prevents continuation of treatment beyond 1 year"
+                        }
+                    },
+                    {
+                        "exact_snippets": "at the treating physician's discretion",
+                        "criterion": "treating physician's discretion",
+                        "requirement": {
+                            "requirement_type": "approval",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Patients can have measurable or non-measurable disease per RECIST v1.1.",
+                "criterions": [
+                    {
+                        "exact_snippets": "measurable or non-measurable disease per RECIST v1.1.",
+                        "criterion": "disease measurability (per RECIST v1.1)",
+                        "requirement": {
+                            "requirement_type": "measurability",
+                            "expected_value": [
+                                "measurable",
+                                "non-measurable"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* All patients must have an advanced solid tumor malignancy (specifically NSCLC, bladder, HNSCC, renal, melanoma, cervical, Merkel cell, MMR/MSI [colon, rectal, cholangio, esophageal, ovarian, uterine], anal, gastric and GE junction, hepatocellular, triple negative breast cancer) that is being treated with a PD-1/PD-L1 inhibitor including pembrolizumab, nivolumab, atezolizumab, durvalumab, or avelumab according to standard of care treatment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "advanced solid tumor malignancy (specifically NSCLC, bladder, HNSCC, renal, melanoma, cervical, Merkel cell, MMR/MSI [colon, rectal, cholangio, esophageal, ovarian, uterine], anal, gastric and GE junction, hepatocellular, triple negative breast cancer)",
+                        "criterion": "solid tumor malignancy",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": "advanced"
+                        }
+                    },
+                    {
+                        "exact_snippets": "advanced solid tumor malignancy (specifically NSCLC, bladder, HNSCC, renal, melanoma, cervical, Merkel cell, MMR/MSI [colon, rectal, cholangio, esophageal, ovarian, uterine], anal, gastric and GE junction, hepatocellular, triple negative breast cancer)",
+                        "criterion": "solid tumor malignancy",
+                        "requirement": {
+                            "requirement_type": "cancer_type",
+                            "expected_value": [
+                                "NSCLC",
+                                "bladder",
+                                "HNSCC",
+                                "renal",
+                                "melanoma",
+                                "cervical",
+                                "Merkel cell",
+                                "MMR/MSI (colon, rectal, cholangio, esophageal, ovarian, uterine)",
+                                "anal",
+                                "gastric and GE junction",
+                                "hepatocellular",
+                                "triple negative breast cancer"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "being treated with a PD-1/PD-L1 inhibitor including pembrolizumab, nivolumab, atezolizumab, durvalumab, or avelumab according to standard of care treatment",
+                        "criterion": "PD-1/PD-L1 inhibitor treatment",
+                        "requirement": {
+                            "requirement_type": "treatment_status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "being treated with a PD-1/PD-L1 inhibitor including pembrolizumab, nivolumab, atezolizumab, durvalumab, or avelumab according to standard of care treatment",
+                        "criterion": "PD-1/PD-L1 inhibitor treatment",
+                        "requirement": {
+                            "requirement_type": "drug_names",
+                            "expected_value": [
+                                "pembrolizumab",
+                                "nivolumab",
+                                "atezolizumab",
+                                "durvalumab",
+                                "avelumab"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "being treated with a PD-1/PD-L1 inhibitor including pembrolizumab, nivolumab, atezolizumab, durvalumab, or avelumab according to standard of care treatment",
+                        "criterion": "PD-1/PD-L1 inhibitor treatment",
+                        "requirement": {
+                            "requirement_type": "treatment_standard",
+                            "expected_value": "standard of care"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,680 @@
+{
+    "info": {
+        "nct_id": "NCT03158519",
+        "official_title": "iMETX (Individualized Metabolic RX): a Pilot Study of an Environmental Intervention to Increase Energy Expenditure Among Breast Cancer Survivors",
+        "inclusion_criteria": "Inclusion criteria\n\n1. Age ≥ 18 years\n2. Diagnosis of DCIS or stage I, II, or III breast cancer\n3. Completion of all primary therapy (with the exception of ongoing endocrine or trastuzumab therapy), including surgery, radiation, and/or chemotherapy greater than 4 weeks prior to study enrollment\n4. Body weight less than 350 lbs., as dictated by the weight limit for DXA scanner\n5. Regular access to a smart phone or computer\n\nExclusion criteria\n\n1. Any condition precluding exercise, including: NYHA class II, III, or IV congestive heart failure, uncontrolled angina, myocardial infarction in the prior 12 months, orthopedic surgery in the previous 6 months or plans for orthopedic surgery during the study period, chronic pulmonary conditions such as uncontrolled asthma (symptoms > 2 days/week) or dyspnea requiring oxygen, symptomatic peripheral vascular disease, symptomatic anemia, uncontrolled psychiatric conditions such as schizophrenia, or any other comorbidity that would interfere with the ability to complete and comply with the study protocol in the opinion of the investigator\n2. Locally recurrent or metastatic breast cancer\n3. Diagnosis of other active malignancy. Prior treated malignancies in addition to breast cancer are acceptable.\n4. Pregnancy\n5. Requirement of assistive devices (e.g., cane) for ambulation\n6. Plans for moving to a new home or workplace during, pre-, or post-intervention period\n7. Elective surgery anticipated during, pre-, or post-intervention period (e.g., breast reconstruction)\n8. Inability to comply with the study procedures\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "4. Pregnancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Pregnancy",
+                        "criterion": "pregnancy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "8. Inability to comply with the study procedures",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inability to comply with the study procedures",
+                        "criterion": "ability to comply with study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Inability to comply with the study procedures",
+                        "criterion": "ability to comply with study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Regular access to a smart phone or computer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Regular access to a smart phone or computer",
+                        "criterion": "access to a smart phone or computer",
+                        "requirement": {
+                            "requirement_type": "regular access",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Regular access to a smart phone or computer",
+                        "criterion": "access to a smart phone or computer",
+                        "requirement": {
+                            "requirement_type": "regular access",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Body weight less than 350 lbs., as dictated by the weight limit for DXA scanner",
+                "criterions": [
+                    {
+                        "exact_snippets": "Body weight less than 350 lbs.",
+                        "criterion": "body weight",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 350,
+                                "unit": "lbs"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "as dictated by the weight limit for DXA scanner",
+                        "criterion": "DXA scanner weight limit",
+                        "requirement": {
+                            "requirement_type": "compliance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Body weight less than 350 lbs.",
+                        "criterion": "body weight",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 350,
+                                "unit": "lbs"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "as dictated by the weight limit for DXA scanner",
+                        "criterion": "DXA scanner weight limit",
+                        "requirement": {
+                            "requirement_type": "compliance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Completion of all primary therapy (with the exception of ongoing endocrine or trastuzumab therapy), including surgery, radiation, and/or chemotherapy greater than 4 weeks prior to study enrollment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Completion of all primary therapy (with the exception of ongoing endocrine or trastuzumab therapy), including surgery, radiation, and/or chemotherapy",
+                        "criterion": "primary therapy (surgery, radiation, chemotherapy)",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "greater than 4 weeks prior to study enrollment",
+                        "criterion": "time since completion of primary therapy",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Completion of all primary therapy (with the exception of ongoing endocrine or trastuzumab therapy), including surgery, radiation, and/or chemotherapy",
+                        "criterion": "primary therapy (surgery, radiation, chemotherapy)",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "greater than 4 weeks prior to study enrollment",
+                        "criterion": "time since completion of primary therapy",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 4,
+                                "unit": "weeks"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion criteria",
+                "criterions": [
+                    {
+                        "exact_snippets": "Exclusion criteria",
+                        "criterion": "exclusion criteria",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Exclusion criteria",
+                        "criterion": "exclusion criteria",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion criteria",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Diagnosis of other active malignancy. Prior treated malignancies in addition to breast cancer are acceptable.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of other active malignancy.",
+                        "criterion": "other active malignancy",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Diagnosis of other active malignancy.",
+                            "criterion": "other active malignancy",
+                            "requirement": {
+                                "requirement_type": "diagnosis",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Requirement of assistive devices (e.g., cane) for ambulation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Requirement of assistive devices (e.g., cane) for ambulation",
+                        "criterion": "assistive device use for ambulation",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Requirement of assistive devices (e.g., cane) for ambulation",
+                        "criterion": "assistive device use for ambulation",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Locally recurrent or metastatic breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Locally recurrent ... breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "recurrence status",
+                            "expected_value": "locally recurrent"
+                        }
+                    },
+                    {
+                        "exact_snippets": "metastatic breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "metastatic status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Locally recurrent ... breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "recurrence status",
+                            "expected_value": "locally recurrent"
+                        }
+                    },
+                    {
+                        "exact_snippets": "metastatic breast cancer",
+                        "criterion": "breast cancer",
+                        "requirement": {
+                            "requirement_type": "metastatic status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "1. Any condition precluding exercise, including: NYHA class II, III, or IV congestive heart failure, uncontrolled angina, myocardial infarction in the prior 12 months, orthopedic surgery in the previous 6 months or plans for orthopedic surgery during the study period, chronic pulmonary conditions such as uncontrolled asthma (symptoms > 2 days/week) or dyspnea requiring oxygen, symptomatic peripheral vascular disease, symptomatic anemia, uncontrolled psychiatric conditions such as schizophrenia, or any other comorbidity that would interfere with the ability to complete and comply with the study protocol in the opinion of the investigator",
+                "criterions": [
+                    {
+                        "exact_snippets": "NYHA class II, III, or IV congestive heart failure",
+                        "criterion": "congestive heart failure",
+                        "requirement": {
+                            "requirement_type": "NYHA class",
+                            "expected_value": [
+                                "II",
+                                "III",
+                                "IV"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "uncontrolled angina",
+                        "criterion": "angina",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "myocardial infarction in the prior 12 months",
+                        "criterion": "myocardial infarction",
+                        "requirement": {
+                            "requirement_type": "time since event",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 12,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "orthopedic surgery in the previous 6 months",
+                        "criterion": "orthopedic surgery",
+                        "requirement": {
+                            "requirement_type": "time since event",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "plans for orthopedic surgery during the study period",
+                        "criterion": "planned orthopedic surgery",
+                        "requirement": {
+                            "requirement_type": "planned during study",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "chronic pulmonary conditions such as uncontrolled asthma (symptoms > 2 days/week) or dyspnea requiring oxygen",
+                        "criterion": "chronic pulmonary conditions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "uncontrolled asthma (symptoms > 2 days/week)",
+                        "criterion": "asthma",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "uncontrolled asthma (symptoms > 2 days/week)",
+                        "criterion": "asthma",
+                        "requirement": {
+                            "requirement_type": "symptom frequency",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 2,
+                                "unit": "days/week"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "dyspnea requiring oxygen",
+                        "criterion": "dyspnea",
+                        "requirement": {
+                            "requirement_type": "requires oxygen",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "symptomatic peripheral vascular disease",
+                        "criterion": "peripheral vascular disease",
+                        "requirement": {
+                            "requirement_type": "symptomatic",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "symptomatic anemia",
+                        "criterion": "anemia",
+                        "requirement": {
+                            "requirement_type": "symptomatic",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "uncontrolled psychiatric conditions such as schizophrenia",
+                        "criterion": "psychiatric conditions",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "any other comorbidity that would interfere with the ability to complete and comply with the study protocol in the opinion of the investigator",
+                        "criterion": "other comorbidity interfering with study participation",
+                        "requirement": {
+                            "requirement_type": "interferes with study participation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Diagnosis of DCIS or stage I, II, or III breast cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Diagnosis of DCIS",
+                        "criterion": "diagnosis of DCIS",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosis of ... stage I, II, or III breast cancer",
+                        "criterion": "diagnosis of stage I, II, or III breast cancer",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "I",
+                                "II",
+                                "III"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Diagnosis of ... stage I, II, or III breast cancer",
+                        "criterion": "diagnosis of stage I, II, or III breast cancer",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "breast cancer"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Plans for moving to a new home or workplace during, pre-, or post-intervention period",
+                "criterions": [
+                    {
+                        "exact_snippets": "Plans for moving to a new home or workplace during, pre-, or post-intervention period",
+                        "criterion": "plans for moving residence or workplace",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Plans for moving to a new home or workplace during, pre-, or post-intervention period",
+                        "criterion": "plans for moving residence or workplace",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": [
+                                "during intervention period",
+                                "pre-intervention period",
+                                "post-intervention period"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. Elective surgery anticipated during, pre-, or post-intervention period (e.g., breast reconstruction)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Elective surgery anticipated during, pre-, or post-intervention period (e.g., breast reconstruction)",
+                        "criterion": "elective surgery",
+                        "requirement": {
+                            "requirement_type": "anticipation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Elective surgery anticipated during, pre-, or post-intervention period (e.g., breast reconstruction)",
+                        "criterion": "elective surgery",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": [
+                                "during intervention period",
+                                "pre-intervention period",
+                                "post-intervention period"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Age ≥ 18 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age ≥ 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age  18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

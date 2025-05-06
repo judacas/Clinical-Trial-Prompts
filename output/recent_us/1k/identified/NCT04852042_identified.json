@@ -1,0 +1,538 @@
+{
+    "info": {
+        "nct_id": "NCT04852042",
+        "official_title": "Digital Health Supported Weight Management Intervention Delivered by Community Health Workers Among Public Housing Residents",
+        "inclusion_criteria": "* Current resident of Boston public housing development\n* No plans to move within the next 6 months and no plan on leaving the country for more than 2 months over the next year\n* Able to read and speak in English or Spanish\n* Has cell phone with a plan that allows for unlimited text messages\n* Willing to wear a device to track physical activity during assessment periods\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Currently enrolled in a comprehensive weight loss program or a research study about weight that is incompatible with study participation\n* Currently on a medically prescribed diet or fast that is incompatible with study participation\n* Currently has a diagnosis of bipolar disorder, mania, manic-depressive disorder, schizophrenia, or psychosis and is not on any medications to treat the condition\n* Precontemplation stage of change for making healthy eating or physical activity changes\n* Pregnancy\n* Medical contraindications to physical activity. Self-reported presence of any of the following:\n\n  * Can not walk without help from someone else\n  * Regularly needs to use the following special equipment to walk or get around: wheelchair, scooter, walker, or extra oxygen\n  * Gets short of breath even when using special equipment at a very low level of physical activity such as walking around the home, making a bed, or taking a bath\n  * Advised by a healthcare professional not to exercise and or if diagnosed with a bone or joint problem, it could get worse.\n  * Frequently gets pains in the heart or chest\n  * Had a heart attack in the past 6 months\n  * Often feels faint or has spells of severe dizziness\n  * Has very high blood pressure that is often over 175 or the bottom blood pressure number is often over 110\n  * Has a good physical reason not to follow an activity program even if they wanted to",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Able to read and speak in English or Spanish",
+            "criterions": [
+                {
+                    "exact_snippets": "Able to read ... English or Spanish",
+                    "criterion": "language reading ability",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "English",
+                                "Spanish"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Able to ... speak in English or Spanish",
+                    "criterion": "language speaking ability",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "English",
+                                "Spanish"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Current resident of Boston public housing development",
+            "criterions": [
+                {
+                    "exact_snippets": "Current resident of Boston public housing development",
+                    "criterion": "residence in Boston public housing development",
+                    "requirements": [
+                        {
+                            "requirement_type": "current residency",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Willing to wear a device to track physical activity during assessment periods",
+            "criterions": [
+                {
+                    "exact_snippets": "Willing to wear a device to track physical activity during assessment periods",
+                    "criterion": "willingness to wear a device to track physical activity",
+                    "requirements": [
+                        {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Has cell phone with a plan that allows for unlimited text messages",
+            "criterions": [
+                {
+                    "exact_snippets": "Has cell phone",
+                    "criterion": "cell phone",
+                    "requirements": [
+                        {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "plan that allows for unlimited text messages",
+                    "criterion": "cell phone plan text messaging",
+                    "requirements": [
+                        {
+                            "requirement_type": "text messaging limit",
+                            "expected_value": "unlimited"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* No plans to move within the next 6 months and no plan on leaving the country for more than 2 months over the next year",
+            "criterions": [
+                {
+                    "exact_snippets": "No plans to move within the next 6 months",
+                    "criterion": "plans to move residence",
+                    "requirements": [
+                        {
+                            "requirement_type": "absence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "no plan on leaving the country for more than 2 months over the next year",
+                    "criterion": "plans to leave the country",
+                    "requirements": [
+                        {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "months"
+                            }
+                        },
+                        {
+                            "requirement_type": "timeframe",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Frequently gets pains in the heart or chest",
+            "criterions": [
+                {
+                    "exact_snippets": "Frequently gets pains in the heart or chest",
+                    "criterion": "heart or chest pain",
+                    "requirements": [
+                        {
+                            "requirement_type": "frequency",
+                            "expected_value": "frequently"
+                        },
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Can not walk without help from someone else",
+            "criterions": [
+                {
+                    "exact_snippets": "Can not walk without help from someone else",
+                    "criterion": "ability to walk unassisted",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Pregnancy",
+            "criterions": [
+                {
+                    "exact_snippets": "Pregnancy",
+                    "criterion": "pregnancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Gets short of breath even when using special equipment at a very low level of physical activity such as walking around the home, making a bed, or taking a bath",
+            "criterions": [
+                {
+                    "exact_snippets": "Gets short of breath even when using special equipment at a very low level of physical activity such as walking around the home, making a bed, or taking a bath",
+                    "criterion": "shortness of breath",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": "present even with special equipment at a very low level of physical activity (e.g., walking around the home, making a bed, or taking a bath)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Currently has a diagnosis of bipolar disorder, mania, manic-depressive disorder, schizophrenia, or psychosis and is not on any medications to treat the condition",
+            "criterions": [
+                {
+                    "exact_snippets": "Currently has a diagnosis of bipolar disorder, mania, manic-depressive disorder, schizophrenia, or psychosis",
+                    "criterion": "psychiatric diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "bipolar disorder",
+                                "mania",
+                                "manic-depressive disorder",
+                                "schizophrenia",
+                                "psychosis"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "is not on any medications to treat the condition",
+                    "criterion": "psychiatric medication use",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment status",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Has a good physical reason not to follow an activity program even if they wanted to",
+            "criterions": [
+                {
+                    "exact_snippets": "Has a good physical reason not to follow an activity program",
+                    "criterion": "physical reason preventing activity program participation",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Regularly needs to use the following special equipment to walk or get around: wheelchair, scooter, walker, or extra oxygen",
+            "criterions": [
+                {
+                    "exact_snippets": "Regularly needs to use the following special equipment to walk or get around: wheelchair",
+                    "criterion": "use of wheelchair",
+                    "requirements": [
+                        {
+                            "requirement_type": "regular use",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Regularly needs to use the following special equipment to walk or get around: ... scooter",
+                    "criterion": "use of scooter",
+                    "requirements": [
+                        {
+                            "requirement_type": "regular use",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Regularly needs to use the following special equipment to walk or get around: ... walker",
+                    "criterion": "use of walker",
+                    "requirements": [
+                        {
+                            "requirement_type": "regular use",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Regularly needs to use the following special equipment to walk or get around: ... extra oxygen",
+                    "criterion": "use of extra oxygen",
+                    "requirements": [
+                        {
+                            "requirement_type": "regular use",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Has very high blood pressure that is often over 175 or the bottom blood pressure number is often over 110",
+            "criterions": [
+                {
+                    "exact_snippets": "very high blood pressure that is often over 175",
+                    "criterion": "systolic blood pressure",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 175,
+                                "unit": "mmHg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "the bottom blood pressure number is often over 110",
+                    "criterion": "diastolic blood pressure",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 110,
+                                "unit": "mmHg"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Advised by a healthcare professional not to exercise and or if diagnosed with a bone or joint problem, it could get worse.",
+            "criterions": [
+                {
+                    "exact_snippets": "Advised by a healthcare professional not to exercise",
+                    "criterion": "exercise advice from healthcare professional",
+                    "requirements": [
+                        {
+                            "requirement_type": "advised not to exercise",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "diagnosed with a bone or joint problem, it could get worse",
+                    "criterion": "bone or joint problem",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "potential to worsen with exercise",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Had a heart attack in the past 6 months",
+            "criterions": [
+                {
+                    "exact_snippets": "Had a heart attack in the past 6 months",
+                    "criterion": "heart attack",
+                    "requirements": [
+                        {
+                            "requirement_type": "history within time frame",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Precontemplation stage of change for making healthy eating or physical activity changes",
+            "criterions": [
+                {
+                    "exact_snippets": "Precontemplation stage of change for making healthy eating",
+                    "criterion": "stage of change for healthy eating",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": "precontemplation"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Precontemplation stage of change for making ... physical activity changes",
+                    "criterion": "stage of change for physical activity",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": "precontemplation"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Medical contraindications to physical activity. Self-reported presence of any of the following:",
+            "criterions": [
+                {
+                    "exact_snippets": "Medical contraindications to physical activity",
+                    "criterion": "medical contraindications to physical activity",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Self-reported presence of any of the following",
+                    "criterion": "self-reported presence of listed conditions",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Often feels faint or has spells of severe dizziness",
+            "criterions": [
+                {
+                    "exact_snippets": "Often feels faint",
+                    "criterion": "faintness",
+                    "requirements": [
+                        {
+                            "requirement_type": "frequency",
+                            "expected_value": "often"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "spells of severe dizziness",
+                    "criterion": "dizziness",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": "severe"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Currently on a medically prescribed diet or fast that is incompatible with study participation",
+            "criterions": [
+                {
+                    "exact_snippets": "Currently on a medically prescribed diet or fast that is incompatible with study participation",
+                    "criterion": "medically prescribed diet or fast",
+                    "requirements": [
+                        {
+                            "requirement_type": "compatibility with study participation",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "line": "* Currently enrolled in a comprehensive weight loss program or a research study about weight that is incompatible with study participation",
+            "criterions": [
+                {
+                    "exact_snippets": "Currently enrolled in a comprehensive weight loss program",
+                    "criterion": "enrollment in a comprehensive weight loss program",
+                    "requirements": [
+                        {
+                            "requirement_type": "enrollment status",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "currently enrolled in ... a research study about weight that is incompatible with study participation",
+                    "criterion": "enrollment in a research study about weight that is incompatible with study participation",
+                    "requirements": [
+                        {
+                            "requirement_type": "enrollment status",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "compatibility with study participation",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "failed_miscellaneous": []
+}

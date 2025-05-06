@@ -1,0 +1,481 @@
+{
+    "info": {
+        "nct_id": "NCT03016156",
+        "official_title": "Determination of the Sensitivity and Specificity of a Smartphone Application to Detect Retinoblastoma",
+        "inclusion_criteria": "Inclusion Criteria - Stratum I:\n\n* Patient has been diagnosed with congenital or infantile cataracts, congenital glaucoma, or retinoblastoma, and is scheduled for a visit with an ophthalmologist at St. Jude Children's Research Hospital or University of Tennessee Hamilton Eye Institute.\n* Patient with retinoblastoma is newly diagnosed, or has received < 2 cycles of chemoreductive therapy, and has not undergone enucleation.\n* Patient with cataracts or glaucoma has not received any prior therapy.\n\nInclusion Criteria - Stratum II:\n\n* Patient without prior diagnosis has been referred for ophthalmological evaluation, including leukocoria or other conditions.\n\nInclusion Criteria - Stratum III:\n\n* Patient with retinoblastoma undergoing ocular salvage treatment.\n\nExclusion Criteria\n\n* Prior treatment for cataracts or glaucoma\n* Inability or unwillingness of research participant or legal guardian to consent.\nHealthy volunteers allowed\nMust have maximum age of 7 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patient with cataracts or glaucoma has not received any prior therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient with cataracts or glaucoma",
+                        "criterion": "cataracts or glaucoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "has not received any prior therapy",
+                        "criterion": "prior therapy",
+                        "requirement": {
+                            "requirement_type": "history of therapy",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Patient with cataracts or glaucoma",
+                            "criterion": "cataracts or glaucoma",
+                            "requirement": {
+                                "requirement_type": "presence",
+                                "expected_value": true
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "has not received any prior therapy",
+                            "criterion": "prior therapy",
+                            "requirement": {
+                                "requirement_type": "history of therapy",
+                                "expected_value": false
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior treatment for cataracts or glaucoma",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior treatment for cataracts",
+                        "criterion": "cataracts",
+                        "requirement": {
+                            "requirement_type": "prior treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment for...glaucoma",
+                        "criterion": "glaucoma",
+                        "requirement": {
+                            "requirement_type": "prior treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Prior treatment for cataracts",
+                        "criterion": "cataracts",
+                        "requirement": {
+                            "requirement_type": "prior treatment",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Prior treatment for...glaucoma",
+                        "criterion": "glaucoma",
+                        "requirement": {
+                            "requirement_type": "prior treatment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion Criteria",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion Criteria - Stratum III:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Inability or unwillingness of research participant or legal guardian to consent.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inability ... to consent",
+                        "criterion": "ability to consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unwillingness ... to consent",
+                        "criterion": "willingness to consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Inability ... to consent",
+                        "criterion": "ability to consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unwillingness ... to consent",
+                        "criterion": "willingness to consent",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 7 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 7 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 7,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 7 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 7,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient with retinoblastoma undergoing ocular salvage treatment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient with retinoblastoma",
+                        "criterion": "retinoblastoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "undergoing ocular salvage treatment",
+                        "criterion": "ocular salvage treatment",
+                        "requirement": {
+                            "requirement_type": "current treatment",
+                            "expected_value": "ocular salvage treatment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patient with retinoblastoma",
+                        "criterion": "retinoblastoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "undergoing ocular salvage treatment",
+                        "criterion": "ocular salvage treatment",
+                        "requirement": {
+                            "requirement_type": "current treatment",
+                            "expected_value": "ocular salvage treatment"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion Criteria - Stratum I:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inclusion Criteria - Stratum I:",
+                        "criterion": "stratum assignment",
+                        "requirement": {
+                            "requirement_type": "stratum",
+                            "expected_value": "I"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Inclusion Criteria - Stratum I:",
+                        "criterion": "stratum assignment",
+                        "requirement": {
+                            "requirement_type": "stratum",
+                            "expected_value": "I"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion Criteria - Stratum II:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inclusion Criteria - Stratum II:",
+                        "criterion": "stratum",
+                        "requirement": {
+                            "requirement_type": "inclusion group",
+                            "expected_value": "Stratum II"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Inclusion Criteria - Stratum II:",
+                        "criterion": "stratum",
+                        "requirement": {
+                            "requirement_type": "inclusion group",
+                            "expected_value": "Stratum II"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient without prior diagnosis has been referred for ophthalmological evaluation, including leukocoria or other conditions.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient without prior diagnosis",
+                        "criterion": "prior diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "referred for ophthalmological evaluation",
+                        "criterion": "referral for ophthalmological evaluation",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "including leukocoria or other conditions",
+                        "criterion": "leukocoria or other ophthalmological conditions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patient without prior diagnosis",
+                        "criterion": "prior diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "referred for ophthalmological evaluation",
+                        "criterion": "referral for ophthalmological evaluation",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "including leukocoria or other conditions",
+                        "criterion": "leukocoria or other ophthalmological conditions",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Patient has been diagnosed with congenital or infantile cataracts, congenital glaucoma, or retinoblastoma, and is scheduled for a visit with an ophthalmologist at St. Jude Children's Research Hospital or University of Tennessee Hamilton Eye Institute.",
+                "criterions": [
+                    {
+                        "exact_snippets": "diagnosed with congenital or infantile cataracts",
+                        "criterion": "congenital or infantile cataracts",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosed with ... congenital glaucoma",
+                        "criterion": "congenital glaucoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "diagnosed with ... retinoblastoma",
+                        "criterion": "retinoblastoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "scheduled for a visit with an ophthalmologist at St. Jude Children's Research Hospital or University of Tennessee Hamilton Eye Institute",
+                        "criterion": "ophthalmologist visit at specified institutions",
+                        "requirement": {
+                            "requirement_type": "scheduled_visit_location",
+                            "expected_value": [
+                                "St. Jude Children's Research Hospital",
+                                "University of Tennessee Hamilton Eye Institute"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patient with retinoblastoma is newly diagnosed, or has received < 2 cycles of chemoreductive therapy, and has not undergone enucleation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient with retinoblastoma",
+                        "criterion": "retinoblastoma",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "newly diagnosed, or has received < 2 cycles of chemoreductive therapy",
+                        "criterion": "retinoblastoma treatment history",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": [
+                                "newly diagnosed",
+                                "received < 2 cycles of chemoreductive therapy"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "has not undergone enucleation",
+                        "criterion": "enucleation",
+                        "requirement": {
+                            "requirement_type": "history of enucleation",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

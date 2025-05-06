@@ -1,0 +1,907 @@
+{
+    "info": {
+        "nct_id": "NCT05053867",
+        "official_title": "A Randomized Controlled Trial of Inhaled Tranexamic Acid for the Treatment of Pulmonary Hemorrhage in Cancer Patients",
+        "inclusion_criteria": "1. Age > 18 years old\n2. Have a diagnosed hematological malignancy\n3. Are actively receiving mechanical ventilation\n4. Have evidence of pulmonary hemorrhage as defined by either\n\n   1. Persistently bloody secretions upon endotracheal tube suctioning, or\n   2. Evidence of diffuse alveolar hemorrhage by bronchoscopic examination\n5. Signed informed consent by patient or if the subject lacks decision-making capacity, the subject's legally authorized representative\n\n2.3.2 Exclusion Criteria\n\nPatients excluded from participation in the study if any of the following criteria are met:\n\n1. Presence of a Do Not Resuscitate (DNR), no escalation of care or comfort care order at the time of screening\n2. Expected survival < 48 hours\n3. Evidence of nasal or oral spillage likely to be the cause of bloody secretions\n4. Patients requiring 100% FIO2\n5. Known hypersensitivity to tranexamic acid\n6. Treatment with inhaled tranexamic acid prior to screening\n7. Acquired defective color vision\n8. Subarachnoid hemorrhage\n9. Deep Venous or arterial thrombus diagnosed within the previous 3 months\n10. Seizure disorder on active anti-epileptic therapies\n11. Hypersensitivity to tranexamic acid or any of the ingredients\n12. Pregnant women will not be eligible and have a negative pregnancy test prior to entering study\n13. Patient receiving concurrent anti-fibrinolytic therapy\n14. Confirmed active COVID-19 infection\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "11. Hypersensitivity to tranexamic acid or any of the ingredients",
+                "criterions": [
+                    {
+                        "exact_snippets": "Hypersensitivity to tranexamic acid",
+                        "criterion": "hypersensitivity to tranexamic acid",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Hypersensitivity to ... any of the ingredients",
+                        "criterion": "hypersensitivity to any of the ingredients",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Hypersensitivity to tranexamic acid",
+                        "criterion": "hypersensitivity to tranexamic acid",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Hypersensitivity to ... any of the ingredients",
+                        "criterion": "hypersensitivity to any of the ingredients",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "12. Pregnant women will not be eligible and have a negative pregnancy test prior to entering study",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant women will not be eligible",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "have a negative pregnancy test prior to entering study",
+                        "criterion": "pregnancy test result",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Pregnant women will not be eligible",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "have a negative pregnancy test prior to entering study",
+                        "criterion": "pregnancy test result",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "9. Deep Venous or arterial thrombus diagnosed within the previous 3 months",
+                "criterions": [
+                    {
+                        "exact_snippets": "Deep Venous or arterial thrombus diagnosed within the previous 3 months",
+                        "criterion": "deep venous thrombus",
+                        "requirement": {
+                            "requirement_type": "diagnosis_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Deep Venous or arterial thrombus diagnosed within the previous 3 months",
+                        "criterion": "arterial thrombus",
+                        "requirement": {
+                            "requirement_type": "diagnosis_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Deep Venous or arterial thrombus diagnosed within the previous 3 months",
+                        "criterion": "deep venous thrombus",
+                        "requirement": {
+                            "requirement_type": "diagnosis_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Deep Venous or arterial thrombus diagnosed within the previous 3 months",
+                        "criterion": "arterial thrombus",
+                        "requirement": {
+                            "requirement_type": "diagnosis_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Signed informed consent by patient or if the subject lacks decision-making capacity, the subject's legally authorized representative",
+                "criterions": [
+                    {
+                        "exact_snippets": "Signed informed consent by patient",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed by patient",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "if the subject lacks decision-making capacity, the subject's legally authorized representative",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed by legally authorized representative if subject lacks decision-making capacity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Signed informed consent by patient",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed by patient",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "if the subject lacks decision-making capacity, the subject's legally authorized representative",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed by legally authorized representative if subject lacks decision-making capacity",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Expected survival < 48 hours",
+                "criterions": [
+                    {
+                        "exact_snippets": "Expected survival < 48 hours",
+                        "criterion": "expected survival",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 48,
+                                "unit": "hours"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Expected survival < 48 hours",
+                        "criterion": "expected survival",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 48,
+                                "unit": "hours"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2.3.2 Exclusion Criteria",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Have a diagnosed hematological malignancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Have a diagnosed hematological malignancy",
+                        "criterion": "hematological malignancy",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Have a diagnosed hematological malignancy",
+                        "criterion": "hematological malignancy",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Known hypersensitivity to tranexamic acid",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known hypersensitivity to tranexamic acid",
+                        "criterion": "hypersensitivity to tranexamic acid",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Known hypersensitivity to tranexamic acid",
+                        "criterion": "hypersensitivity to tranexamic acid",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Patients requiring 100% FIO2",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients requiring 100% FIO2",
+                        "criterion": "FIO2 requirement",
+                        "requirement": {
+                            "requirement_type": "fraction of inspired oxygen (FIO2)",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 100,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients requiring 100% FIO2",
+                        "criterion": "FIO2 requirement",
+                        "requirement": {
+                            "requirement_type": "fraction of inspired oxygen (FIO2)",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 100,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "6. Treatment with inhaled tranexamic acid prior to screening",
+                "criterions": [
+                    {
+                        "exact_snippets": "Treatment with inhaled tranexamic acid prior to screening",
+                        "criterion": "treatment with inhaled tranexamic acid",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "prior to screening"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Treatment with inhaled tranexamic acid prior to screening",
+                        "criterion": "treatment with inhaled tranexamic acid",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "prior to screening"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "4. Have evidence of pulmonary hemorrhage as defined by either",
+                "criterions": [
+                    {
+                        "exact_snippets": "evidence of pulmonary hemorrhage",
+                        "criterion": "pulmonary hemorrhage",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "evidence of pulmonary hemorrhage",
+                        "criterion": "pulmonary hemorrhage",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Age > 18 years old",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age > 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age > 18 years old",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "13. Patient receiving concurrent anti-fibrinolytic therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patient receiving concurrent anti-fibrinolytic therapy",
+                        "criterion": "anti-fibrinolytic therapy",
+                        "requirement": {
+                            "requirement_type": "concurrent use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patient receiving concurrent anti-fibrinolytic therapy",
+                        "criterion": "anti-fibrinolytic therapy",
+                        "requirement": {
+                            "requirement_type": "concurrent use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. Acquired defective color vision",
+                "criterions": [
+                    {
+                        "exact_snippets": "Acquired defective color vision",
+                        "criterion": "color vision",
+                        "requirement": {
+                            "requirement_type": "defect (acquired)",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Acquired defective color vision",
+                        "criterion": "color vision",
+                        "requirement": {
+                            "requirement_type": "defect (acquired)",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "8. Subarachnoid hemorrhage",
+                "criterions": [
+                    {
+                        "exact_snippets": "Subarachnoid hemorrhage",
+                        "criterion": "subarachnoid hemorrhage",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Subarachnoid hemorrhage",
+                        "criterion": "subarachnoid hemorrhage",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Persistently bloody secretions upon endotracheal tube suctioning, or",
+                "criterions": [
+                    {
+                        "exact_snippets": "Persistently bloody secretions upon endotracheal tube suctioning",
+                        "criterion": "bloody secretions upon endotracheal tube suctioning",
+                        "requirement": {
+                            "requirement_type": "persistence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Persistently bloody secretions upon endotracheal tube suctioning",
+                        "criterion": "bloody secretions upon endotracheal tube suctioning",
+                        "requirement": {
+                            "requirement_type": "persistence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Patients excluded from participation in the study if any of the following criteria are met:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "14. Confirmed active COVID-19 infection",
+                "criterions": [
+                    {
+                        "exact_snippets": "Confirmed active COVID-19 infection",
+                        "criterion": "COVID-19 infection",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Confirmed active COVID-19 infection",
+                        "criterion": "COVID-19 infection",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Confirmed active COVID-19 infection",
+                        "criterion": "COVID-19 infection",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Confirmed active COVID-19 infection",
+                        "criterion": "COVID-19 infection",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "10. Seizure disorder on active anti-epileptic therapies",
+                "criterions": [
+                    {
+                        "exact_snippets": "Seizure disorder",
+                        "criterion": "seizure disorder",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "on active anti-epileptic therapies",
+                        "criterion": "anti-epileptic therapy",
+                        "requirement": {
+                            "requirement_type": "current use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Seizure disorder",
+                        "criterion": "seizure disorder",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "on active anti-epileptic therapies",
+                        "criterion": "anti-epileptic therapy",
+                        "requirement": {
+                            "requirement_type": "current use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Evidence of nasal or oral spillage likely to be the cause of bloody secretions",
+                "criterions": [
+                    {
+                        "exact_snippets": "Evidence of nasal or oral spillage likely to be the cause of bloody secretions",
+                        "criterion": "nasal or oral spillage",
+                        "requirement": {
+                            "requirement_type": "evidence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Evidence of nasal or oral spillage likely to be the cause of bloody secretions",
+                        "criterion": "nasal or oral spillage",
+                        "requirement": {
+                            "requirement_type": "causality",
+                            "expected_value": "likely to be the cause of bloody secretions"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Evidence of nasal or oral spillage likely to be the cause of bloody secretions",
+                        "criterion": "nasal or oral spillage",
+                        "requirement": {
+                            "requirement_type": "evidence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Evidence of nasal or oral spillage likely to be the cause of bloody secretions",
+                        "criterion": "nasal or oral spillage",
+                        "requirement": {
+                            "requirement_type": "causality",
+                            "expected_value": "likely to be the cause of bloody secretions"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Evidence of diffuse alveolar hemorrhage by bronchoscopic examination",
+                "criterions": [
+                    {
+                        "exact_snippets": "Evidence of diffuse alveolar hemorrhage by bronchoscopic examination",
+                        "criterion": "diffuse alveolar hemorrhage",
+                        "requirement": {
+                            "requirement_type": "evidence by bronchoscopic examination",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Evidence of diffuse alveolar hemorrhage by bronchoscopic examination",
+                        "criterion": "diffuse alveolar hemorrhage",
+                        "requirement": {
+                            "requirement_type": "evidence by bronchoscopic examination",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Presence of a Do Not Resuscitate (DNR), no escalation of care or comfort care order at the time of screening",
+                "criterions": [
+                    {
+                        "exact_snippets": "Presence of a Do Not Resuscitate (DNR) ... at the time of screening",
+                        "criterion": "Do Not Resuscitate (DNR) order",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Presence of a Do Not Resuscitate (DNR) ... at the time of screening",
+                        "criterion": "Do Not Resuscitate (DNR) order",
+                        "requirement": {
+                            "requirement_type": "time",
+                            "expected_value": "at the time of screening"
+                        }
+                    },
+                    {
+                        "exact_snippets": "no escalation of care ... at the time of screening",
+                        "criterion": "no escalation of care order",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "no escalation of care ... at the time of screening",
+                        "criterion": "no escalation of care order",
+                        "requirement": {
+                            "requirement_type": "time",
+                            "expected_value": "at the time of screening"
+                        }
+                    },
+                    {
+                        "exact_snippets": "comfort care order at the time of screening",
+                        "criterion": "comfort care order",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "comfort care order at the time of screening",
+                        "criterion": "comfort care order",
+                        "requirement": {
+                            "requirement_type": "time",
+                            "expected_value": "at the time of screening"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Presence of a Do Not Resuscitate (DNR) ... at the time of screening",
+                                "criterion": "Do Not Resuscitate (DNR) order",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Presence of a Do Not Resuscitate (DNR) ... at the time of screening",
+                                "criterion": "Do Not Resuscitate (DNR) order",
+                                "requirement": {
+                                    "requirement_type": "time",
+                                    "expected_value": "at the time of screening"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "no escalation of care ... at the time of screening",
+                                "criterion": "no escalation of care order",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "no escalation of care ... at the time of screening",
+                                "criterion": "no escalation of care order",
+                                "requirement": {
+                                    "requirement_type": "time",
+                                    "expected_value": "at the time of screening"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "comfort care order at the time of screening",
+                                "criterion": "comfort care order",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "comfort care order at the time of screening",
+                                "criterion": "comfort care order",
+                                "requirement": {
+                                    "requirement_type": "time",
+                                    "expected_value": "at the time of screening"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Are actively receiving mechanical ventilation",
+                "criterions": [
+                    {
+                        "exact_snippets": "actively receiving mechanical ventilation",
+                        "criterion": "mechanical ventilation",
+                        "requirement": {
+                            "requirement_type": "current use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "actively receiving mechanical ventilation",
+                        "criterion": "mechanical ventilation",
+                        "requirement": {
+                            "requirement_type": "current use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

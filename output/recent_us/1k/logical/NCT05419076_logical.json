@@ -1,0 +1,621 @@
+{
+    "info": {
+        "nct_id": "NCT05419076",
+        "official_title": "A Single Arm Phase II Study Assessing Efficacy of Stereotactic Radiosurgery (SRS) for Brain Metastasis (BM) From Small Cell Lung Cancer (SCLC)",
+        "inclusion_criteria": "* Histologic diagnosis of small cell lung cancer\n* Radiographic diagnosis of up to 10 brain metastases on contrast-enhanced MRI\n* Age 18 and above\n* Performance status KPS 60-100/ECOG 0-2\n* Female patients must be of non-reproductive potential or have a negative serum pregnancy test at the time of enrollment\n* The patient or legally authorized representative is able to provide informed consent\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Unable to undergo contrast-enhanced MRI brain or spine\n* Leptomeningeal disease confirmed on lumbar puncture, MRI brain, or MRI spine\n* Pregnant or lactating women\n* Prior brain-directed radiotherapy\n* Uncontrolled systemic disease without reasonable systemic therapy options felt likely to result in death as observed on CT or PET/CT imaging, no more than 3 months before study enrollment",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Age 18 and above",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age 18 and above",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age 18 and above",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Radiographic diagnosis of up to 10 brain metastases on contrast-enhanced MRI",
+                "criterions": [
+                    {
+                        "exact_snippets": "Radiographic diagnosis ... brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "diagnosis_method",
+                            "expected_value": "radiographic"
+                        }
+                    },
+                    {
+                        "exact_snippets": "up to 10 brain metastases",
+                        "criterion": "number of brain metastases",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "count"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "contrast-enhanced MRI",
+                        "criterion": "imaging modality",
+                        "requirement": {
+                            "requirement_type": "modality",
+                            "expected_value": "contrast-enhanced MRI"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Radiographic diagnosis ... brain metastases",
+                        "criterion": "brain metastases",
+                        "requirement": {
+                            "requirement_type": "diagnosis_method",
+                            "expected_value": "radiographic"
+                        }
+                    },
+                    {
+                        "exact_snippets": "up to 10 brain metastases",
+                        "criterion": "number of brain metastases",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 10,
+                                "unit": "count"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "contrast-enhanced MRI",
+                        "criterion": "imaging modality",
+                        "requirement": {
+                            "requirement_type": "modality",
+                            "expected_value": "contrast-enhanced MRI"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Female patients must be of non-reproductive potential or have a negative serum pregnancy test at the time of enrollment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Female patients must be of non-reproductive potential",
+                        "criterion": "reproductive potential",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "non-reproductive"
+                        }
+                    },
+                    {
+                        "exact_snippets": "have a negative serum pregnancy test at the time of enrollment",
+                        "criterion": "serum pregnancy test",
+                        "requirement": {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    },
+                    {
+                        "exact_snippets": "have a negative serum pregnancy test at the time of enrollment",
+                        "criterion": "serum pregnancy test",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "at the time of enrollment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Female patients must be of non-reproductive potential",
+                        "criterion": "reproductive potential",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "non-reproductive"
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "have a negative serum pregnancy test at the time of enrollment",
+                                "criterion": "serum pregnancy test",
+                                "requirement": {
+                                    "requirement_type": "result",
+                                    "expected_value": "negative"
+                                }
+                            },
+                            {
+                                "exact_snippets": "have a negative serum pregnancy test at the time of enrollment",
+                                "criterion": "serum pregnancy test",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": "at the time of enrollment"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Performance status KPS 60-100/ECOG 0-2",
+                "criterions": [
+                    {
+                        "exact_snippets": "Performance status KPS 60-100",
+                        "criterion": "Karnofsky Performance Status (KPS)",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 60,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 100,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "ECOG 0-2",
+                        "criterion": "ECOG Performance Status",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Performance status KPS 60-100",
+                        "criterion": "Karnofsky Performance Status (KPS)",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 60,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 100,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "ECOG 0-2",
+                        "criterion": "ECOG Performance Status",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* The patient or legally authorized representative is able to provide informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "The patient or legally authorized representative is able to provide informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability to provide",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "The patient or legally authorized representative is able to provide informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "ability to provide",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Histologic diagnosis of small cell lung cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologic diagnosis of small cell lung cancer",
+                        "criterion": "small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "histologic diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Histologic diagnosis of small cell lung cancer",
+                        "criterion": "small cell lung cancer",
+                        "requirement": {
+                            "requirement_type": "histologic diagnosis",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Pregnant or lactating women",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant ... women",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "lactating women",
+                        "criterion": "lactation status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Pregnant ... women",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "lactating women",
+                        "criterion": "lactation status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Unable to undergo contrast-enhanced MRI brain or spine",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unable to undergo contrast-enhanced MRI brain or spine",
+                        "criterion": "ability to undergo contrast-enhanced MRI of brain or spine",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Unable to undergo contrast-enhanced MRI brain or spine",
+                    "criterion": "ability to undergo contrast-enhanced MRI of brain or spine",
+                    "requirement": {
+                        "requirement_type": "ability",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior brain-directed radiotherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior brain-directed radiotherapy",
+                        "criterion": "brain-directed radiotherapy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prior brain-directed radiotherapy",
+                    "criterion": "brain-directed radiotherapy",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Uncontrolled systemic disease without reasonable systemic therapy options felt likely to result in death as observed on CT or PET/CT imaging, no more than 3 months before study enrollment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Uncontrolled systemic disease",
+                        "criterion": "systemic disease",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "without reasonable systemic therapy options",
+                        "criterion": "systemic therapy options",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "felt likely to result in death",
+                        "criterion": "risk of death",
+                        "requirement": {
+                            "requirement_type": "likelihood",
+                            "expected_value": "likely"
+                        }
+                    },
+                    {
+                        "exact_snippets": "as observed on CT or PET/CT imaging",
+                        "criterion": "observation on CT or PET/CT imaging",
+                        "requirement": {
+                            "requirement_type": "observation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "no more than 3 months before study enrollment",
+                        "criterion": "time since imaging",
+                        "requirement": {
+                            "requirement_type": "maximum time before enrollment",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Uncontrolled systemic disease",
+                        "criterion": "systemic disease",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    },
+                    {
+                        "exact_snippets": "without reasonable systemic therapy options",
+                        "criterion": "systemic therapy options",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "felt likely to result in death",
+                        "criterion": "risk of death",
+                        "requirement": {
+                            "requirement_type": "likelihood",
+                            "expected_value": "likely"
+                        }
+                    },
+                    {
+                        "exact_snippets": "as observed on CT or PET/CT imaging",
+                        "criterion": "observation on CT or PET/CT imaging",
+                        "requirement": {
+                            "requirement_type": "observation",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "no more than 3 months before study enrollment",
+                        "criterion": "time since imaging",
+                        "requirement": {
+                            "requirement_type": "maximum time before enrollment",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Leptomeningeal disease confirmed on lumbar puncture, MRI brain, or MRI spine",
+                "criterions": [
+                    {
+                        "exact_snippets": "Leptomeningeal disease confirmed",
+                        "criterion": "leptomeningeal disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Leptomeningeal disease confirmed",
+                        "criterion": "leptomeningeal disease",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": [
+                                "lumbar puncture",
+                                "MRI brain",
+                                "MRI spine"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

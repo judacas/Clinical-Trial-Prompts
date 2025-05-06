@@ -1,0 +1,2390 @@
+{
+    "info": {
+        "nct_id": "NCT06533748",
+        "official_title": "SJALL23H: Combination Antigen-Directed Induction Therapy for Newly Diagnosed Patients With B-Cell Precursor Acute Lymphoblastic Leukemia and Lymphoma",
+        "inclusion_criteria": "* Enrollment on INITIALL.\n* Age 1-18.99 years at the time of enrollment on INITIALL.\n* B-Acute lymphoblastic leukemia or lymphoblastic lymphoma.\n* No prior chemotherapy excluding therapy given on or allowed by INITIALL.\n* NCI high-risk (age 10 years or greater or presenting WBC count ≥50,000 cells/microL) or NCI standard-risk and a HR clinical feature as listed below:\n\n  * CNS3 disease (≥5 WBC/microL CSF with blasts present)\n  * Testicular involvement of leukemia\n  * Steroid pretreatment defined as >24 hours of therapy in the 14 days prior to enrollment on INITIALL if a preceding WBC to define NCI risk is unavailable\n* For lymphoblastic lymphoma, Stage 3-4 disease OR Stage 1-2 disease in patient ages ≥10 years OR HR clinical feature as defined above.\n* Adequate liver function defined as:\n\n  * Direct bilirubin ≤ 1.5x the upper limit of normal for age and alanine transaminase (ALT) ≤ 5x the upper limit of normal for age.\n  * Patients with ALT or aspartate transferase (AST) 2.5-5x the upper limit of normal for age are ineligible unless the increase is attributable to hemolysis.\n* Adequate renal function defined as:\n\n  * Calculated glomerular filtration rate (GFR) ≥ 50 mL/min/1.73m^2 using the Bedside Schwartz equation OR creatinine below or equal to the maximum defined below:\n\n    * Age: 1 to <2 years; maximum serum creatinine (mg/dL): 0.6 (male and female)\n    * Age: 2 to <6 years; maximum serum creatinine (mg/dL): 0.8 (male and female)\n    * Age: 6 to <10 years; maximum serum creatinine (mg/dL): 1.0 (male and female)\n    * Age: 10 to <13 years; maximum serum creatinine (mg/dL): 1.2 (male and female)\n    * Age: 13 to <16 years; maximum serum creatinine (mg/dL): 1.5 (male); 1.4 (female)\n    * Age: ≥16 years; maximum serum creatinine (mg/dL): 1.7 (male); 1.4 (female)\n* Eligibility for inclusion post-induction requires meeting the first 4 Inclusion criteria above AND:\n\n  * Treatment on SJALL23H for Induction OR\n  * Lymphoblastic lymphoma, initially treated on an SJALL protocol OR standard (non-protocol) therapy, without a complete response at the end of induction OR\n  * NCI-SR ALL at diagnosis and treated with an SJALL protocol OR standard (non-protocol) therapy who have\n\n    * Slow response to therapy (≥0.1% MRD at end of induction for patients with hyperdiploid ALL or ≥0.01% MRD at end of induction for others with ALL) OR\n    * HR genetics as defined in the protocol.\nHealthy volunteers allowed\nMust have minimum age of 1 Year\nMust have maximum age of 18 Years",
+        "exclusion_criteria": "* Presence of ETV6::RUNX1 fusion unless also having a HR clinical feature OR slow response to induction therapy.\n* History or presence of clinically relevant central nervous system (CNS) pathology or event such as epilepsy, childhood or adult non-febrile seizure, paresis, aphasia, stroke, severe brain injuries, dementia, Parkinson's disease, cerebellar disease, organic brain syndrome, or psychosis. History of simple febrile seizure during childhood and presence of CNS leukemia at diagnosis are not exclusions to participation.\n* Active uncontrolled infection.\n* Current active autoimmune disease or history of autoimmune disease with the potential for CNS involvement.\n* History of venoocclusive disease/ sinusoidal obstructive syndrome.\n* Unstable cardiac disease including QTc >500msec.\n* Inability or unwillingness to give informed consent/ assent as applicable.\n* Pregnant or lactating.\n* For patients of reproductive potential, unwillingness to use effective contraception for the duration of protocol therapy.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* No prior chemotherapy excluding therapy given on or allowed by INITIALL.",
+                "criterions": [
+                    {
+                        "exact_snippets": "No prior chemotherapy excluding therapy given on or allowed by INITIALL.",
+                        "criterion": "prior chemotherapy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No prior chemotherapy excluding therapy given on or allowed by INITIALL.",
+                        "criterion": "prior chemotherapy",
+                        "requirement": {
+                            "requirement_type": "exception",
+                            "expected_value": "therapy given on or allowed by INITIALL"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "No prior chemotherapy excluding therapy given on or allowed by INITIALL.",
+                    "criterion": "prior chemotherapy",
+                    "requirement": {
+                        "requirement_type": "exception",
+                        "expected_value": "therapy given on or allowed by INITIALL"
+                    }
+                },
+                "then_criteria": null,
+                "else_criteria": {
+                    "exact_snippets": "No prior chemotherapy excluding therapy given on or allowed by INITIALL.",
+                    "criterion": "prior chemotherapy",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Steroid pretreatment defined as >24 hours of therapy in the 14 days prior to enrollment on INITIALL if a preceding WBC to define NCI risk is unavailable",
+                "criterions": [
+                    {
+                        "exact_snippets": "Steroid pretreatment defined as >24 hours of therapy in the 14 days prior to enrollment on INITIALL",
+                        "criterion": "steroid pretreatment",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 24,
+                                "unit": "hours"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Steroid pretreatment defined as >24 hours of therapy in the 14 days prior to enrollment on INITIALL",
+                        "criterion": "steroid pretreatment",
+                        "requirement": {
+                            "requirement_type": "time window prior to enrollment",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 14,
+                                "unit": "days"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "if a preceding WBC to define NCI risk is unavailable",
+                        "criterion": "preceding WBC to define NCI risk",
+                        "requirement": {
+                            "requirement_type": "availability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "if a preceding WBC to define NCI risk is unavailable",
+                    "criterion": "preceding WBC to define NCI risk",
+                    "requirement": {
+                        "requirement_type": "availability",
+                        "expected_value": false
+                    }
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "Steroid pretreatment defined as >24 hours of therapy in the 14 days prior to enrollment on INITIALL",
+                            "criterion": "steroid pretreatment",
+                            "requirement": {
+                                "requirement_type": "duration",
+                                "expected_value": {
+                                    "operator": ">",
+                                    "value": 24,
+                                    "unit": "hours"
+                                }
+                            }
+                        },
+                        {
+                            "exact_snippets": "Steroid pretreatment defined as >24 hours of therapy in the 14 days prior to enrollment on INITIALL",
+                            "criterion": "steroid pretreatment",
+                            "requirement": {
+                                "requirement_type": "time window prior to enrollment",
+                                "expected_value": {
+                                    "operator": "<=",
+                                    "value": 14,
+                                    "unit": "days"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Treatment on SJALL23H for Induction OR",
+                "criterions": [
+                    {
+                        "exact_snippets": "Treatment on SJALL23H for Induction",
+                        "criterion": "treatment on SJALL23H for Induction",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Treatment on SJALL23H for Induction",
+                        "criterion": "treatment on SJALL23H for Induction",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adequate liver function defined as:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adequate liver function",
+                        "criterion": "liver function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adequate liver function",
+                        "criterion": "liver function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age: 2 to <6 years; maximum serum creatinine (mg/dL): 0.8 (male and female)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age: 2 to <6 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 6,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): 0.8 (male and female)",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 0.8,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age: 2 to <6 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 6,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): 0.8 (male and female)",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 0.8,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients with ALT or aspartate transferase (AST) 2.5-5x the upper limit of normal for age are ineligible unless the increase is attributable to hemolysis.",
+                "criterions": [
+                    {
+                        "exact_snippets": "ALT or aspartate transferase (AST) 2.5-5x the upper limit of normal for age",
+                        "criterion": "ALT or AST level",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 2.5,
+                                        "unit": "x ULN for age"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 5,
+                                        "unit": "x ULN for age"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "increase is attributable to hemolysis",
+                        "criterion": "cause of elevated ALT or AST",
+                        "requirement": {
+                            "requirement_type": "attributable cause",
+                            "expected_value": "hemolysis"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "ALT or aspartate transferase (AST) 2.5-5x the upper limit of normal for age",
+                            "criterion": "ALT or AST level",
+                            "requirement": {
+                                "requirement_type": "quantity",
+                                "expected_value": {
+                                    "comparisons": [
+                                        {
+                                            "operator": ">=",
+                                            "value": 2.5,
+                                            "unit": "x ULN for age"
+                                        },
+                                        {
+                                            "operator": "<=",
+                                            "value": 5,
+                                            "unit": "x ULN for age"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "then_criteria": {
+                    "exact_snippets": "increase is attributable to hemolysis",
+                    "criterion": "cause of elevated ALT or AST",
+                    "requirement": {
+                        "requirement_type": "attributable cause",
+                        "expected_value": "hemolysis"
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Adequate renal function defined as:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adequate renal function",
+                        "criterion": "renal function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Adequate renal function",
+                        "criterion": "renal function",
+                        "requirement": {
+                            "requirement_type": "adequacy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Enrollment on INITIALL.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Enrollment on INITIALL.",
+                        "criterion": "enrollment on INITIALL",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Enrollment on INITIALL.",
+                        "criterion": "enrollment on INITIALL",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 1 Year",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 1 Year",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "Year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 1 Year",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "Year"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age 1-18.99 years at the time of enrollment on INITIALL.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age 1-18.99 years at the time of enrollment",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 18.99,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age 1-18.99 years at the time of enrollment",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 18.99,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Testicular involvement of leukemia",
+                "criterions": [
+                    {
+                        "exact_snippets": "Testicular involvement of leukemia",
+                        "criterion": "testicular involvement of leukemia",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Testicular involvement of leukemia",
+                        "criterion": "testicular involvement of leukemia",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age: 1 to <2 years; maximum serum creatinine (mg/dL): 0.6 (male and female)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age: 1 to <2 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 2,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): 0.6 (male and female)",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 0.6,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age: 1 to <2 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 2,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): 0.6 (male and female)",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 0.6,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* NCI high-risk (age 10 years or greater or presenting WBC count ≥50,000 cells/microL) or NCI standard-risk and a HR clinical feature as listed below:",
+                "criterions": [
+                    {
+                        "exact_snippets": "age 10 years or greater",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "presenting WBC count ≥50,000 cells/microL",
+                        "criterion": "white blood cell count",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50000,
+                                "unit": "cells/microL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "NCI standard-risk and a HR clinical feature as listed below",
+                        "criterion": "NCI risk group and HR clinical feature",
+                        "requirement": {
+                            "requirement_type": "NCI risk group",
+                            "expected_value": "standard-risk"
+                        }
+                    },
+                    {
+                        "exact_snippets": "NCI standard-risk and a HR clinical feature as listed below",
+                        "criterion": "NCI risk group and HR clinical feature",
+                        "requirement": {
+                            "requirement_type": "HR clinical feature",
+                            "expected_value": "present"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "age 10 years or greater",
+                                "criterion": "age",
+                                "requirement": {
+                                    "requirement_type": "value",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "presenting WBC count ≥50,000 cells/microL",
+                                "criterion": "white blood cell count",
+                                "requirement": {
+                                    "requirement_type": "value",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 50000,
+                                        "unit": "cells/microL"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "NCI standard-risk and a HR clinical feature as listed below",
+                                "criterion": "NCI risk group and HR clinical feature",
+                                "requirement": {
+                                    "requirement_type": "NCI risk group",
+                                    "expected_value": "standard-risk"
+                                }
+                            },
+                            {
+                                "exact_snippets": "NCI standard-risk and a HR clinical feature as listed below",
+                                "criterion": "NCI risk group and HR clinical feature",
+                                "requirement": {
+                                    "requirement_type": "HR clinical feature",
+                                    "expected_value": "present"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age: 10 to <13 years; maximum serum creatinine (mg/dL): 1.2 (male and female)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age: 10 to <13 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 13,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): 1.2 (male and female)",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.2,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age: 10 to <13 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 13,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): 1.2 (male and female)",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.2,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Direct bilirubin ≤ 1.5x the upper limit of normal for age and alanine transaminase (ALT) ≤ 5x the upper limit of normal for age.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Direct bilirubin ≤ 1.5x the upper limit of normal for age",
+                        "criterion": "direct bilirubin",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.5,
+                                "unit": "x upper limit of normal for age"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "alanine transaminase (ALT) ≤ 5x the upper limit of normal for age",
+                        "criterion": "alanine transaminase (ALT)",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "x upper limit of normal for age"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Direct bilirubin ≤ 1.5x the upper limit of normal for age",
+                        "criterion": "direct bilirubin",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.5,
+                                "unit": "x upper limit of normal for age"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "alanine transaminase (ALT) ≤ 5x the upper limit of normal for age",
+                        "criterion": "alanine transaminase (ALT)",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "x upper limit of normal for age"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age: 6 to <10 years; maximum serum creatinine (mg/dL): 1.0 (male and female)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age: 6 to <10 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 6,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 10,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): 1.0 (male and female)",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.0,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age: 6 to <10 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 6,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 10,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): 1.0 (male and female)",
+                        "criterion": "serum creatinine",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.0,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age: 13 to <16 years; maximum serum creatinine (mg/dL): 1.5 (male); 1.4 (female)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age: 13 to <16 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 13,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 16,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): 1.5 (male)",
+                        "criterion": "serum creatinine (male)",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.5,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): ... 1.4 (female)",
+                        "criterion": "serum creatinine (female)",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.4,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age: 13 to <16 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 13,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 16,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "maximum serum creatinine (mg/dL): 1.5 (male)",
+                                "criterion": "serum creatinine (male)",
+                                "requirement": {
+                                    "requirement_type": "maximum value",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 1.5,
+                                        "unit": "mg/dL"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "maximum serum creatinine (mg/dL): ... 1.4 (female)",
+                                "criterion": "serum creatinine (female)",
+                                "requirement": {
+                                    "requirement_type": "maximum value",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 1.4,
+                                        "unit": "mg/dL"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Eligibility for inclusion post-induction requires meeting the first 4 Inclusion criteria above AND:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Eligibility for inclusion post-induction requires meeting the first 4 Inclusion criteria above",
+                        "criterion": "first 4 Inclusion criteria",
+                        "requirement": {
+                            "requirement_type": "fulfillment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Eligibility for inclusion post-induction requires meeting the first 4 Inclusion criteria above",
+                        "criterion": "first 4 Inclusion criteria",
+                        "requirement": {
+                            "requirement_type": "fulfillment",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* HR genetics as defined in the protocol.",
+                "criterions": [
+                    {
+                        "exact_snippets": "HR genetics as defined in the protocol",
+                        "criterion": "HR genetics",
+                        "requirement": {
+                            "requirement_type": "definition",
+                            "expected_value": "as defined in the protocol"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "HR genetics as defined in the protocol",
+                        "criterion": "HR genetics",
+                        "requirement": {
+                            "requirement_type": "definition",
+                            "expected_value": "as defined in the protocol"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Pregnant or lactating.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "lactating",
+                        "criterion": "lactation status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "lactating",
+                        "criterion": "lactation status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Active uncontrolled infection.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active uncontrolled infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Active uncontrolled infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "control_status",
+                            "expected_value": "uncontrolled"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Active uncontrolled infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "activity",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Active uncontrolled infection",
+                        "criterion": "infection",
+                        "requirement": {
+                            "requirement_type": "control_status",
+                            "expected_value": "uncontrolled"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Inability or unwillingness to give informed consent/ assent as applicable.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inability ... to give informed consent/ assent",
+                        "criterion": "ability to give informed consent/assent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unwillingness to give informed consent/ assent",
+                        "criterion": "willingness to give informed consent/assent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Inability ... to give informed consent/ assent",
+                            "criterion": "ability to give informed consent/assent",
+                            "requirement": {
+                                "requirement_type": "ability",
+                                "expected_value": true
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "unwillingness to give informed consent/ assent",
+                            "criterion": "willingness to give informed consent/assent",
+                            "requirement": {
+                                "requirement_type": "willingness",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Presence of ETV6::RUNX1 fusion unless also having a HR clinical feature OR slow response to induction therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Presence of ETV6::RUNX1 fusion",
+                        "criterion": "ETV6::RUNX1 fusion",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unless also having a HR clinical feature",
+                        "criterion": "HR clinical feature",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "slow response to induction therapy",
+                        "criterion": "response to induction therapy",
+                        "requirement": {
+                            "requirement_type": "speed",
+                            "expected_value": "slow"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Presence of ETV6::RUNX1 fusion",
+                                "criterion": "ETV6::RUNX1 fusion",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "not_criteria": {
+                                    "or_criteria": [
+                                        {
+                                            "exact_snippets": "unless also having a HR clinical feature",
+                                            "criterion": "HR clinical feature",
+                                            "requirement": {
+                                                "requirement_type": "presence",
+                                                "expected_value": true
+                                            }
+                                        },
+                                        {
+                                            "exact_snippets": "slow response to induction therapy",
+                                            "criterion": "response to induction therapy",
+                                            "requirement": {
+                                                "requirement_type": "speed",
+                                                "expected_value": "slow"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Unstable cardiac disease including QTc >500msec.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unstable cardiac disease",
+                        "criterion": "cardiac disease",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "unstable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "QTc >500msec",
+                        "criterion": "QTc interval",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 500,
+                                "unit": "msec"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Unstable cardiac disease",
+                        "criterion": "cardiac disease",
+                        "requirement": {
+                            "requirement_type": "stability",
+                            "expected_value": "unstable"
+                        }
+                    },
+                    {
+                        "exact_snippets": "QTc >500msec",
+                        "criterion": "QTc interval",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 500,
+                                "unit": "msec"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Current active autoimmune disease or history of autoimmune disease with the potential for CNS involvement.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Current active autoimmune disease",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "activity status",
+                            "expected_value": "current active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of autoimmune disease with the potential for CNS involvement",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "history of autoimmune disease with the potential for CNS involvement",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "potential for CNS involvement",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "history of autoimmune disease with the potential for CNS involvement",
+                                "criterion": "autoimmune disease",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "history of autoimmune disease with the potential for CNS involvement",
+                                "criterion": "autoimmune disease",
+                                "requirement": {
+                                    "requirement_type": "potential for CNS involvement",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "Current active autoimmune disease",
+                        "criterion": "autoimmune disease",
+                        "requirement": {
+                            "requirement_type": "activity status",
+                            "expected_value": "current active"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History or presence of clinically relevant central nervous system (CNS) pathology or event such as epilepsy, childhood or adult non-febrile seizure, paresis, aphasia, stroke, severe brain injuries, dementia, Parkinson's disease, cerebellar disease, organic brain syndrome, or psychosis. History of simple febrile seizure during childhood and presence of CNS leukemia at diagnosis are not exclusions to participation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "History or presence of clinically relevant central nervous system (CNS) pathology or event",
+                        "criterion": "central nervous system (CNS) pathology or event",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History or presence of clinically relevant central nervous system (CNS) pathology or event",
+                        "criterion": "central nervous system (CNS) pathology or event",
+                        "requirement": {
+                            "requirement_type": "clinical relevance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "epilepsy",
+                        "criterion": "epilepsy",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "childhood or adult non-febrile seizure",
+                        "criterion": "non-febrile seizure",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "paresis",
+                        "criterion": "paresis",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "aphasia",
+                        "criterion": "aphasia",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stroke",
+                        "criterion": "stroke",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe brain injuries",
+                        "criterion": "severe brain injuries",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "dementia",
+                        "criterion": "dementia",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Parkinson's disease",
+                        "criterion": "Parkinson's disease",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cerebellar disease",
+                        "criterion": "cerebellar disease",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "organic brain syndrome",
+                        "criterion": "organic brain syndrome",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "psychosis",
+                        "criterion": "psychosis",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "History or presence of clinically relevant central nervous system (CNS) pathology or event",
+                                "criterion": "central nervous system (CNS) pathology or event",
+                                "requirement": {
+                                    "requirement_type": "history or presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "History or presence of clinically relevant central nervous system (CNS) pathology or event",
+                                "criterion": "central nervous system (CNS) pathology or event",
+                                "requirement": {
+                                    "requirement_type": "clinical relevance",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "epilepsy",
+                        "criterion": "epilepsy",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "childhood or adult non-febrile seizure",
+                        "criterion": "non-febrile seizure",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "paresis",
+                        "criterion": "paresis",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "aphasia",
+                        "criterion": "aphasia",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "stroke",
+                        "criterion": "stroke",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "severe brain injuries",
+                        "criterion": "severe brain injuries",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "dementia",
+                        "criterion": "dementia",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Parkinson's disease",
+                        "criterion": "Parkinson's disease",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "cerebellar disease",
+                        "criterion": "cerebellar disease",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "organic brain syndrome",
+                        "criterion": "organic brain syndrome",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "psychosis",
+                        "criterion": "psychosis",
+                        "requirement": {
+                            "requirement_type": "history or presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* History of venoocclusive disease/ sinusoidal obstructive syndrome.",
+                "criterions": [
+                    {
+                        "exact_snippets": "History of venoocclusive disease/ sinusoidal obstructive syndrome.",
+                        "criterion": "venoocclusive disease",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of venoocclusive disease/ sinusoidal obstructive syndrome.",
+                        "criterion": "sinusoidal obstructive syndrome",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "History of venoocclusive disease/ sinusoidal obstructive syndrome.",
+                        "criterion": "venoocclusive disease",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "History of venoocclusive disease/ sinusoidal obstructive syndrome.",
+                        "criterion": "sinusoidal obstructive syndrome",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* NCI-SR ALL at diagnosis and treated with an SJALL protocol OR standard (non-protocol) therapy who have",
+                "criterions": [
+                    {
+                        "exact_snippets": "NCI-SR ALL at diagnosis",
+                        "criterion": "NCI-SR ALL",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "treated with an SJALL protocol OR standard (non-protocol) therapy",
+                        "criterion": "treatment regimen",
+                        "requirement": {
+                            "requirement_type": "treatment type",
+                            "expected_value": [
+                                "SJALL protocol",
+                                "standard (non-protocol) therapy"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* CNS3 disease (≥5 WBC/microL CSF with blasts present)",
+                "criterions": [
+                    {
+                        "exact_snippets": "CNS3 disease (≥5 WBC/microL CSF with blasts present)",
+                        "criterion": "CNS3 disease",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "≥5 WBC/microL CSF",
+                        "criterion": "white blood cell count in cerebrospinal fluid",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "WBC/microL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "blasts present",
+                        "criterion": "blasts in cerebrospinal fluid",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "CNS3 disease (\u00185 WBC/microL CSF with blasts present)",
+                        "criterion": "CNS3 disease",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "\u00185 WBC/microL CSF",
+                        "criterion": "white blood cell count in cerebrospinal fluid",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 5,
+                                "unit": "WBC/microL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "blasts present",
+                        "criterion": "blasts in cerebrospinal fluid",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Calculated glomerular filtration rate (GFR) ≥ 50 mL/min/1.73m^2 using the Bedside Schwartz equation OR creatinine below or equal to the maximum defined below:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Calculated glomerular filtration rate (GFR) ≥ 50 mL/min/1.73m^2 using the Bedside Schwartz equation",
+                        "criterion": "glomerular filtration rate (GFR)",
+                        "requirement": {
+                            "requirement_type": "calculation method",
+                            "expected_value": "Bedside Schwartz equation"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Calculated glomerular filtration rate (GFR) ≥ 50 mL/min/1.73m^2 using the Bedside Schwartz equation",
+                        "criterion": "glomerular filtration rate (GFR)",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "mL/min/1.73m^2"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "creatinine below or equal to the maximum defined below",
+                        "criterion": "creatinine",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 0,
+                                "unit": "maximum defined below"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Calculated glomerular filtration rate (GFR) \u001e 50 mL/min/1.73m^2 using the Bedside Schwartz equation",
+                                "criterion": "glomerular filtration rate (GFR)",
+                                "requirement": {
+                                    "requirement_type": "calculation method",
+                                    "expected_value": "Bedside Schwartz equation"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Calculated glomerular filtration rate (GFR) \u001e 50 mL/min/1.73m^2 using the Bedside Schwartz equation",
+                                "criterion": "glomerular filtration rate (GFR)",
+                                "requirement": {
+                                    "requirement_type": "value",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 50,
+                                        "unit": "mL/min/1.73m^2"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "creatinine below or equal to the maximum defined below",
+                        "criterion": "creatinine",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 0,
+                                "unit": "maximum defined below"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* B-Acute lymphoblastic leukemia or lymphoblastic lymphoma.",
+                "criterions": [
+                    {
+                        "exact_snippets": "B-Acute lymphoblastic leukemia or lymphoblastic lymphoma",
+                        "criterion": "diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": [
+                                "B-Acute lymphoblastic leukemia",
+                                "lymphoblastic lymphoma"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* For lymphoblastic lymphoma, Stage 3-4 disease OR Stage 1-2 disease in patient ages ≥10 years OR HR clinical feature as defined above.",
+                "criterions": [
+                    {
+                        "exact_snippets": "lymphoblastic lymphoma",
+                        "criterion": "lymphoblastic lymphoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Stage 3-4 disease",
+                        "criterion": "disease stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 4,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Stage 1-2 disease in patient ages ≥10 years",
+                        "criterion": "disease stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 1,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Stage 1-2 disease in patient ages ≥10 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "HR clinical feature as defined above",
+                        "criterion": "HR clinical feature",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "lymphoblastic lymphoma",
+                        "criterion": "lymphoblastic lymphoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "Stage 3-4 disease",
+                                "criterion": "disease stage",
+                                "requirement": {
+                                    "requirement_type": "stage",
+                                    "expected_value": {
+                                        "comparisons": [
+                                            {
+                                                "operator": ">=",
+                                                "value": 3,
+                                                "unit": ""
+                                            },
+                                            {
+                                                "operator": "<=",
+                                                "value": 4,
+                                                "unit": ""
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "Stage 1-2 disease in patient ages \u001010 years",
+                                        "criterion": "disease stage",
+                                        "requirement": {
+                                            "requirement_type": "stage",
+                                            "expected_value": {
+                                                "comparisons": [
+                                                    {
+                                                        "operator": ">=",
+                                                        "value": 1,
+                                                        "unit": ""
+                                                    },
+                                                    {
+                                                        "operator": "<=",
+                                                        "value": 2,
+                                                        "unit": ""
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "Stage 1-2 disease in patient ages \u001010 years",
+                                        "criterion": "age",
+                                        "requirement": {
+                                            "requirement_type": "age",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 10,
+                                                "unit": "years"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "HR clinical feature as defined above",
+                                "criterion": "HR clinical feature",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Lymphoblastic lymphoma, initially treated on an SJALL protocol OR standard (non-protocol) therapy, without a complete response at the end of induction OR",
+                "criterions": [
+                    {
+                        "exact_snippets": "Lymphoblastic lymphoma",
+                        "criterion": "lymphoblastic lymphoma",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "initially treated on an SJALL protocol OR standard (non-protocol) therapy",
+                        "criterion": "initial treatment regimen",
+                        "requirement": {
+                            "requirement_type": "regimen type",
+                            "expected_value": [
+                                "SJALL protocol",
+                                "standard (non-protocol) therapy"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "without a complete response at the end of induction",
+                        "criterion": "response at end of induction",
+                        "requirement": {
+                            "requirement_type": "complete response",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Slow response to therapy (≥0.1% MRD at end of induction for patients with hyperdiploid ALL or ≥0.01% MRD at end of induction for others with ALL) OR",
+                "criterions": [
+                    {
+                        "exact_snippets": "Slow response to therapy (≥0.1% MRD at end of induction for patients with hyperdiploid ALL",
+                        "criterion": "minimal residual disease (MRD) at end of induction",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "hyperdiploid ALL"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Slow response to therapy (≥0.1% MRD at end of induction for patients with hyperdiploid ALL",
+                        "criterion": "minimal residual disease (MRD) at end of induction",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0.1,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Slow response to therapy (≥0.1% MRD at end of induction for patients with hyperdiploid ALL",
+                        "criterion": "minimal residual disease (MRD) at end of induction",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "end of induction"
+                        }
+                    },
+                    {
+                        "exact_snippets": "≥0.01% MRD at end of induction for others with ALL",
+                        "criterion": "minimal residual disease (MRD) at end of induction",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "ALL (not hyperdiploid)"
+                        }
+                    },
+                    {
+                        "exact_snippets": "≥0.01% MRD at end of induction for others with ALL",
+                        "criterion": "minimal residual disease (MRD) at end of induction",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 0.01,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "≥0.01% MRD at end of induction for others with ALL",
+                        "criterion": "minimal residual disease (MRD) at end of induction",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "end of induction"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Slow response to therapy (\u001e0.1% MRD at end of induction for patients with hyperdiploid ALL",
+                                "criterion": "minimal residual disease (MRD) at end of induction",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": "hyperdiploid ALL"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Slow response to therapy (\u001e0.1% MRD at end of induction for patients with hyperdiploid ALL",
+                                "criterion": "minimal residual disease (MRD) at end of induction",
+                                "requirement": {
+                                    "requirement_type": "value",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 0.1,
+                                        "unit": "%"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "Slow response to therapy (\u001e0.1% MRD at end of induction for patients with hyperdiploid ALL",
+                                "criterion": "minimal residual disease (MRD) at end of induction",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": "end of induction"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "\u001e0.01% MRD at end of induction for others with ALL",
+                                "criterion": "minimal residual disease (MRD) at end of induction",
+                                "requirement": {
+                                    "requirement_type": "diagnosis",
+                                    "expected_value": "ALL (not hyperdiploid)"
+                                }
+                            },
+                            {
+                                "exact_snippets": "\u001e0.01% MRD at end of induction for others with ALL",
+                                "criterion": "minimal residual disease (MRD) at end of induction",
+                                "requirement": {
+                                    "requirement_type": "value",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": 0.01,
+                                        "unit": "%"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "\u001e0.01% MRD at end of induction for others with ALL",
+                                "criterion": "minimal residual disease (MRD) at end of induction",
+                                "requirement": {
+                                    "requirement_type": "timing",
+                                    "expected_value": "end of induction"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age: ≥16 years; maximum serum creatinine (mg/dL): 1.7 (male); 1.4 (female)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age: ≥16 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 16,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): 1.7 (male)",
+                        "criterion": "serum creatinine (male)",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.7,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "maximum serum creatinine (mg/dL): ... 1.4 (female)",
+                        "criterion": "serum creatinine (female)",
+                        "requirement": {
+                            "requirement_type": "maximum value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1.4,
+                                "unit": "mg/dL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age: \u001e16 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 16,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "maximum serum creatinine (mg/dL): 1.7 (male)",
+                                "criterion": "serum creatinine (male)",
+                                "requirement": {
+                                    "requirement_type": "maximum value",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 1.7,
+                                        "unit": "mg/dL"
+                                    }
+                                }
+                            },
+                            {
+                                "exact_snippets": "maximum serum creatinine (mg/dL): ... 1.4 (female)",
+                                "criterion": "serum creatinine (female)",
+                                "requirement": {
+                                    "requirement_type": "maximum value",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 1.4,
+                                        "unit": "mg/dL"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* For patients of reproductive potential, unwillingness to use effective contraception for the duration of protocol therapy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients of reproductive potential",
+                        "criterion": "reproductive potential",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unwillingness to use effective contraception for the duration of protocol therapy",
+                        "criterion": "contraception use",
+                        "requirement": {
+                            "requirement_type": "willingness to use effective contraception",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "unwillingness to use effective contraception for the duration of protocol therapy",
+                        "criterion": "contraception use",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": "for the duration of protocol therapy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "patients of reproductive potential",
+                    "criterion": "reproductive potential",
+                    "requirement": {
+                        "requirement_type": "status",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "and_criteria": [
+                        {
+                            "exact_snippets": "unwillingness to use effective contraception for the duration of protocol therapy",
+                            "criterion": "contraception use",
+                            "requirement": {
+                                "requirement_type": "willingness to use effective contraception",
+                                "expected_value": false
+                            }
+                        },
+                        {
+                            "exact_snippets": "unwillingness to use effective contraception for the duration of protocol therapy",
+                            "criterion": "contraception use",
+                            "requirement": {
+                                "requirement_type": "duration",
+                                "expected_value": "for the duration of protocol therapy"
+                            }
+                        }
+                    ]
+                },
+                "else_criteria": null
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

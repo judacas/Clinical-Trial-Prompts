@@ -1,0 +1,364 @@
+{
+    "info": {
+        "nct_id": "NCT03396874",
+        "official_title": "Gallium-68 PSMA-11 PET in Patients With Biochemical Recurrence",
+        "inclusion_criteria": "1. Histopathological proven prostate adenocarcinoma.\n2. Rising prostate specific antigen (PSA) after definitive therapy with prostatectomy or radiation therapy (external beam or brachytherapy).\n\n   1. Post radical prostatectomy (RP) - according to American Urological Association (AUA) recommendation criteria: PSA greater than 0.2 ng/mL measured more than 6 weeks after RP and confirmatory persistent PSA greater than 0.2 ng/mL.\n   2. Post-radiation therapy - according to ASTRO-Phoenix consensus definition: Nadir + greater than or equal to 2 ng/mL rise in PSA.\n3. Karnofsky performance status of ≥ 50.\n4. Age ≥ 18.\n5. Ability to understand a written informed consent document, and the willingness to sign it.\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "1. Current investigational therapy for prostate cancer.\n2. Unable to lie flat, still or tolerate a PET/CT scan.\n3. Prior history of a malignancy within the last 2 years, except skin basal cell or cutaneous superficial squamous cell carcinoma that has not metastasized, and except superficial bladder cancer.\n4. Prisoner.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "Must be MALE",
+            "criterions": [
+                {
+                    "exact_snippets": "Must be MALE",
+                    "criterion": "sex",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. Rising prostate specific antigen (PSA) after definitive therapy with prostatectomy or radiation therapy (external beam or brachytherapy).",
+            "criterions": [
+                {
+                    "exact_snippets": "Rising prostate specific antigen (PSA)",
+                    "criterion": "prostate specific antigen (PSA)",
+                    "requirements": [
+                        {
+                            "requirement_type": "trend",
+                            "expected_value": "rising"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "after definitive therapy with prostatectomy or radiation therapy (external beam or brachytherapy)",
+                    "criterion": "prior definitive therapy for prostate cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment_history",
+                            "expected_value": [
+                                "prostatectomy",
+                                "radiation therapy (external beam or brachytherapy)"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "1. Post radical prostatectomy (RP) - according to American Urological Association (AUA) recommendation criteria: PSA greater than 0.2 ng/mL measured more than 6 weeks after RP and confirmatory persistent PSA greater than 0.2 ng/mL.",
+            "criterions": [
+                {
+                    "exact_snippets": "Post radical prostatectomy (RP)",
+                    "criterion": "radical prostatectomy",
+                    "requirements": [
+                        {
+                            "requirement_type": "history of procedure",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "PSA greater than 0.2 ng/mL measured more than 6 weeks after RP",
+                    "criterion": "prostate-specific antigen (PSA) level after RP",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since RP",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 6,
+                                "unit": "weeks"
+                            }
+                        },
+                        {
+                            "requirement_type": "PSA level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 0.2,
+                                "unit": "ng/mL"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "confirmatory persistent PSA greater than 0.2 ng/mL",
+                    "criterion": "confirmatory persistent PSA level",
+                    "requirements": [
+                        {
+                            "requirement_type": "PSA level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 0.2,
+                                "unit": "ng/mL"
+                            }
+                        },
+                        {
+                            "requirement_type": "persistence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. Post-radiation therapy - according to ASTRO-Phoenix consensus definition: Nadir + greater than or equal to 2 ng/mL rise in PSA.",
+            "criterions": [
+                {
+                    "exact_snippets": "Post-radiation therapy",
+                    "criterion": "prior radiation therapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "according to ASTRO-Phoenix consensus definition: Nadir + greater than or equal to 2 ng/mL rise in PSA",
+                    "criterion": "PSA rise after nadir",
+                    "requirements": [
+                        {
+                            "requirement_type": "increase from nadir",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "ng/mL"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "5. Ability to understand a written informed consent document, and the willingness to sign it.",
+            "criterions": [
+                {
+                    "exact_snippets": "Ability to understand a written informed consent document",
+                    "criterion": "ability to understand written informed consent document",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "willingness to sign it",
+                    "criterion": "willingness to sign informed consent document",
+                    "requirements": [
+                        {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "4. Age ≥ 18.",
+            "criterions": [
+                {
+                    "exact_snippets": "Age ≥ 18",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "N/A",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "3. Karnofsky performance status of ≥ 50.",
+            "criterions": [
+                {
+                    "exact_snippets": "Karnofsky performance status of ≥ 50",
+                    "criterion": "Karnofsky performance status",
+                    "requirements": [
+                        {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "1. Histopathological proven prostate adenocarcinoma.",
+            "criterions": [
+                {
+                    "exact_snippets": "Histopathological proven prostate adenocarcinoma",
+                    "criterion": "prostate adenocarcinoma",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "confirmation_method",
+                            "expected_value": "histopathological"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "4. Prisoner.",
+            "criterions": [
+                {
+                    "exact_snippets": "Prisoner.",
+                    "criterion": "prisoner status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "1. Current investigational therapy for prostate cancer.",
+            "criterions": [
+                {
+                    "exact_snippets": "Current investigational therapy for prostate cancer",
+                    "criterion": "investigational therapy for prostate cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "current use",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. Unable to lie flat, still or tolerate a PET/CT scan.",
+            "criterions": [
+                {
+                    "exact_snippets": "Unable to lie flat",
+                    "criterion": "ability to lie flat",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Unable to ... still",
+                    "criterion": "ability to remain still",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Unable to ... tolerate a PET/CT scan",
+                    "criterion": "ability to tolerate a PET/CT scan",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "3. Prior history of a malignancy within the last 2 years, except skin basal cell or cutaneous superficial squamous cell carcinoma that has not metastasized, and except superficial bladder cancer.",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior history of a malignancy within the last 2 years",
+                    "criterion": "prior malignancy",
+                    "requirements": [
+                        {
+                            "requirement_type": "history_within_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "except skin basal cell or cutaneous superficial squamous cell carcinoma that has not metastasized",
+                    "criterion": "skin basal cell carcinoma or cutaneous superficial squamous cell carcinoma",
+                    "requirements": [
+                        {
+                            "requirement_type": "metastasis",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "except superficial bladder cancer",
+                    "criterion": "superficial bladder cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

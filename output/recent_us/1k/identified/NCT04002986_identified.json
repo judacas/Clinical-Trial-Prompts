@@ -1,0 +1,255 @@
+{
+    "info": {
+        "nct_id": "NCT04002986",
+        "official_title": "Comprehensive Genetic Assessment, Risk and Education in a Mammography Pilot",
+        "inclusion_criteria": "* Women participating in IRB:18-010601\n* Aged 35 and over with a negative routine mammogram within 3 months.\n* Qualifies as intermediate or high-risk (>15% lifetime risk of breast cancer as defined by IBIS version 8).\n* Have an active email address for survey completion\nHealthy volunteers allowed\nMust be FEMALE\nMust have minimum age of 35 Years",
+        "exclusion_criteria": "* Not participating in the Mayo Clinic CEDM pilot (IRB: 18-010601)\n* Known genetic cancer syndrome with test results available for review in Mayo EMR\n* Known breast cancer\n* Unable to understand or sign informed consent",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Women participating in IRB:18-010601",
+            "criterions": [
+                {
+                    "exact_snippets": "Women",
+                    "criterion": "sex",
+                    "requirements": [
+                        {
+                            "requirement_type": "sex",
+                            "expected_value": "female"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "participating in IRB:18-010601",
+                    "criterion": "study participation",
+                    "requirements": [
+                        {
+                            "requirement_type": "participation",
+                            "expected_value": "IRB:18-010601"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must be FEMALE",
+            "criterions": [
+                {
+                    "exact_snippets": "Must be FEMALE",
+                    "criterion": "sex",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": "female"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 35 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 35 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 35,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Have an active email address for survey completion",
+            "criterions": [
+                {
+                    "exact_snippets": "Have an active email address for survey completion",
+                    "criterion": "email address",
+                    "requirements": [
+                        {
+                            "requirement_type": "activity status",
+                            "expected_value": "active"
+                        },
+                        {
+                            "requirement_type": "purpose",
+                            "expected_value": "survey completion"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Qualifies as intermediate or high-risk (>15% lifetime risk of breast cancer as defined by IBIS version 8).",
+            "criterions": [
+                {
+                    "exact_snippets": "Qualifies as intermediate or high-risk (>15% lifetime risk of breast cancer as defined by IBIS version 8)",
+                    "criterion": "breast cancer risk",
+                    "requirements": [
+                        {
+                            "requirement_type": "risk category",
+                            "expected_value": [
+                                "intermediate",
+                                "high"
+                            ]
+                        },
+                        {
+                            "requirement_type": "lifetime risk percentage",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 15,
+                                "unit": "%"
+                            }
+                        },
+                        {
+                            "requirement_type": "risk assessment tool",
+                            "expected_value": "IBIS version 8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Aged 35 and over with a negative routine mammogram within 3 months.",
+            "criterions": [
+                {
+                    "exact_snippets": "Aged 35 and over",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 35,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "negative routine mammogram within 3 months",
+                    "criterion": "routine mammogram",
+                    "requirements": [
+                        {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        },
+                        {
+                            "requirement_type": "time since mammogram",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Known breast cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "Known breast cancer",
+                    "criterion": "breast cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis_status",
+                            "expected_value": "known"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Known genetic cancer syndrome with test results available for review in Mayo EMR",
+            "criterions": [
+                {
+                    "exact_snippets": "Known genetic cancer syndrome",
+                    "criterion": "genetic cancer syndrome",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "test results available for review in Mayo EMR",
+                    "criterion": "genetic cancer syndrome test results",
+                    "requirements": [
+                        {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "Mayo EMR"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Unable to understand or sign informed consent",
+            "criterions": [
+                {
+                    "exact_snippets": "Unable to understand or sign informed consent",
+                    "criterion": "informed consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "ability to understand",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "ability to sign",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Not participating in the Mayo Clinic CEDM pilot (IRB: 18-010601)",
+            "criterions": [
+                {
+                    "exact_snippets": "Not participating in the Mayo Clinic CEDM pilot (IRB: 18-010601)",
+                    "criterion": "participation in the Mayo Clinic CEDM pilot (IRB: 18-010601)",
+                    "requirements": [
+                        {
+                            "requirement_type": "participation",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

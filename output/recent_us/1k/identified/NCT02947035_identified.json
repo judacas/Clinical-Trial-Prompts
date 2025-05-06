@@ -1,0 +1,186 @@
+{
+    "info": {
+        "nct_id": "NCT02947035",
+        "official_title": "Molecular Testing to Direct Extent of Initial Thyroid Surgery",
+        "inclusion_criteria": "* Thyroid nodule is >1.5 cm\n* Preoperative FNA biopsy that is positive for papillary thyroid cancer or suspicious for papillary thyroid cancer\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Prior thyroid/parathyroid surgery\n* Clinical indications for total thyroidectomy including hypothyroidism, history of head or neck radiation when <18 years old\n* Recurrent laryngeal nerve dysfunction\n* Diagnosis of concurrent primary hyperparathyroidism",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Preoperative FNA biopsy that is positive for papillary thyroid cancer or suspicious for papillary thyroid cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "Preoperative FNA biopsy",
+                    "criterion": "preoperative FNA biopsy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "positive for papillary thyroid cancer or suspicious for papillary thyroid cancer",
+                    "criterion": "FNA biopsy result",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": [
+                                "positive for papillary thyroid cancer",
+                                "suspicious for papillary thyroid cancer"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Thyroid nodule is >1.5 cm",
+            "criterions": [
+                {
+                    "exact_snippets": "Thyroid nodule is >1.5 cm",
+                    "criterion": "thyroid nodule",
+                    "requirements": [
+                        {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1.5,
+                                "unit": "cm"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Recurrent laryngeal nerve dysfunction",
+            "criterions": [
+                {
+                    "exact_snippets": "Recurrent laryngeal nerve dysfunction",
+                    "criterion": "recurrent laryngeal nerve dysfunction",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Diagnosis of concurrent primary hyperparathyroidism",
+            "criterions": [
+                {
+                    "exact_snippets": "Diagnosis of concurrent primary hyperparathyroidism",
+                    "criterion": "primary hyperparathyroidism",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "concurrent",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prior thyroid/parathyroid surgery",
+            "criterions": [
+                {
+                    "exact_snippets": "Prior thyroid/parathyroid surgery",
+                    "criterion": "history of thyroid or parathyroid surgery",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Clinical indications for total thyroidectomy including hypothyroidism, history of head or neck radiation when <18 years old",
+            "criterions": [
+                {
+                    "exact_snippets": "Clinical indications for total thyroidectomy",
+                    "criterion": "clinical indications for total thyroidectomy",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "hypothyroidism",
+                    "criterion": "hypothyroidism",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "history of head or neck radiation when <18 years old",
+                    "criterion": "history of head or neck radiation",
+                    "requirements": [
+                        {
+                            "requirement_type": "age at exposure",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

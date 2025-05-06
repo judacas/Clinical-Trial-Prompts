@@ -1,0 +1,253 @@
+{
+    "info": {
+        "nct_id": "NCT06858202",
+        "official_title": "Quality Improvement Project to Address Post Operative Distress and Pain for Patients Undergoing Surgery for Intra-Abdominal Malignancies",
+        "inclusion_criteria": "* English-speaking males or females 18 or older within the University of Utah Hospital system being treated for an intrabdominal malignancy.\n* Patients undergoing surgical treatment of cancer within the abdominal cavity.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Altered mental status due to delirium or pharmacological sedation as determined by a clinical assessment conducted by a study staff.\n* Non-English speaking.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients undergoing surgical treatment of cancer within the abdominal cavity.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients undergoing surgical treatment of cancer",
+                        "criterion": "surgical treatment of cancer",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "undergoing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "within the abdominal cavity",
+                        "criterion": "cancer location",
+                        "requirement": {
+                            "requirement_type": "anatomical location",
+                            "expected_value": "abdominal cavity"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients undergoing surgical treatment of cancer",
+                        "criterion": "surgical treatment of cancer",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "undergoing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "within the abdominal cavity",
+                        "criterion": "cancer location",
+                        "requirement": {
+                            "requirement_type": "anatomical location",
+                            "expected_value": "abdominal cavity"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Non-English speaking.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Non-English speaking.",
+                        "criterion": "language proficiency",
+                        "requirement": {
+                            "requirement_type": "English proficiency",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Non-English speaking.",
+                    "criterion": "language proficiency",
+                    "requirement": {
+                        "requirement_type": "English proficiency",
+                        "expected_value": false
+                    }
+                }
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* English-speaking males or females 18 or older within the University of Utah Hospital system being treated for an intrabdominal malignancy.",
+                "criterions": [
+                    {
+                        "exact_snippets": "English-speaking",
+                        "criterion": "language ability",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": "English"
+                        }
+                    },
+                    {
+                        "exact_snippets": "males or females",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "sex",
+                            "expected_value": [
+                                "male",
+                                "female"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "18 or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "within the University of Utah Hospital system",
+                        "criterion": "hospital system affiliation",
+                        "requirement": {
+                            "requirement_type": "affiliation",
+                            "expected_value": "University of Utah Hospital system"
+                        }
+                    },
+                    {
+                        "exact_snippets": "being treated for an intrabdominal malignancy",
+                        "criterion": "treatment for intraabdominal malignancy",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "being treated for an intrabdominal malignancy",
+                        "criterion": "treatment for intraabdominal malignancy",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "intraabdominal malignancy"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Altered mental status due to delirium or pharmacological sedation as determined by a clinical assessment conducted by a study staff.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Altered mental status due to delirium or pharmacological sedation",
+                        "criterion": "altered mental status",
+                        "requirement": {
+                            "requirement_type": "cause",
+                            "expected_value": [
+                                "delirium",
+                                "pharmacological sedation"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "as determined by a clinical assessment conducted by a study staff",
+                        "criterion": "clinical assessment by study staff",
+                        "requirement": {
+                            "requirement_type": "assessment",
+                            "expected_value": "conducted by study staff"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

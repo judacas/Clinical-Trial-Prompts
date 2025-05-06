@@ -1,0 +1,179 @@
+{
+    "info": {
+        "nct_id": "NCT03867409",
+        "official_title": "The United States Healthy Living Study",
+        "inclusion_criteria": "* reside within the United States but outside of Florida\n* speak English\n* are of either black or white racial background.\n* are out-of-guidelines for colorectal cancer screening (>10 years for colonoscopy, >3 years for Cologuard, > 1 year for fecal immunochemical test)\nHealthy volunteers allowed\nMust have minimum age of 50 Years\nMust have maximum age of 73 Years",
+        "exclusion_criteria": "* does not meet the above criteria",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* reside within the United States but outside of Florida",
+            "criterions": [
+                {
+                    "exact_snippets": "reside within the United States",
+                    "criterion": "residence location",
+                    "requirements": [
+                        {
+                            "requirement_type": "country",
+                            "expected_value": "United States"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "outside of Florida",
+                    "criterion": "residence location",
+                    "requirements": [
+                        {
+                            "requirement_type": "state_exclusion",
+                            "expected_value": "Florida"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* speak English",
+            "criterions": [
+                {
+                    "exact_snippets": "speak English",
+                    "criterion": "English language proficiency",
+                    "requirements": [
+                        {
+                            "requirement_type": "proficiency",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* are of either black or white racial background.",
+            "criterions": [
+                {
+                    "exact_snippets": "are of either black or white racial background",
+                    "criterion": "racial background",
+                    "requirements": [
+                        {
+                            "requirement_type": "allowed values",
+                            "expected_value": [
+                                "black",
+                                "white"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* are out-of-guidelines for colorectal cancer screening (>10 years for colonoscopy, >3 years for Cologuard, > 1 year for fecal immunochemical test)",
+            "criterions": [
+                {
+                    "exact_snippets": "out-of-guidelines for colorectal cancer screening (>10 years for colonoscopy",
+                    "criterion": "colonoscopy",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last procedure",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 10,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "out-of-guidelines for colorectal cancer screening ... >3 years for Cologuard",
+                    "criterion": "Cologuard test",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last procedure",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 3,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "out-of-guidelines for colorectal cancer screening ... > 1 year for fecal immunochemical test",
+                    "criterion": "fecal immunochemical test",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last procedure",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 50 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 50 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 73 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 73 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 73,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "line": "* does not meet the above criteria",
+            "criterions": []
+        }
+    ],
+    "failed_miscellaneous": []
+}

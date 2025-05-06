@@ -1,0 +1,243 @@
+{
+    "info": {
+        "nct_id": "NCT03255291",
+        "official_title": "Communicating Multiple Disease Risks: A Translation of Risk Prediction Science",
+        "inclusion_criteria": "* 30-64 years of age\n* Less than (3) relevant comorbidities (diabetes, heart disease, stroke, and cancer, where cancer counts as (2) comorbidities for women but (1) for men)\n* Having a SMS capable mobile phone that is not shared with anyone else\nHealthy volunteers allowed\nMust have minimum age of 30 Years\nMust have maximum age of 64 Years",
+        "exclusion_criteria": "* Not meeting national guidelines for aerobic physical activity (i.e., at least 150 minutes per week of moderate intensity aerobic physical activity)\n* Participants from HRPO# 201501028 will be ineligible for this study\n* Uses text messaging less than once per month",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "Must have maximum age of 64 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 64 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 64,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Having a SMS capable mobile phone that is not shared with anyone else",
+            "criterions": [
+                {
+                    "exact_snippets": "Having a SMS capable mobile phone",
+                    "criterion": "mobile phone SMS capability",
+                    "requirements": [
+                        {
+                            "requirement_type": "capability",
+                            "expected_value": "SMS"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "mobile phone that is not shared with anyone else",
+                    "criterion": "mobile phone ownership",
+                    "requirements": [
+                        {
+                            "requirement_type": "shared_with_others",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Less than (3) relevant comorbidities (diabetes, heart disease, stroke, and cancer, where cancer counts as (2) comorbidities for women but (1) for men)",
+            "criterions": [
+                {
+                    "exact_snippets": "Less than (3) relevant comorbidities (diabetes, heart disease, stroke, and cancer, where cancer counts as (2) comorbidities for women but (1) for men)",
+                    "criterion": "relevant comorbidities",
+                    "requirements": [
+                        {
+                            "requirement_type": "count",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 3,
+                                "unit": "N/A"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "diabetes",
+                    "criterion": "diabetes",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "heart disease",
+                    "criterion": "heart disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "stroke",
+                    "criterion": "stroke",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "cancer, where cancer counts as (2) comorbidities for women but (1) for men",
+                    "criterion": "cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "comorbidity_counting_rule",
+                            "expected_value": "cancer counts as 2 for women, 1 for men"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 30 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 30 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 30,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* 30-64 years of age",
+            "criterions": [
+                {
+                    "exact_snippets": "30-64 years of age",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 30,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 64,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Uses text messaging less than once per month",
+            "criterions": [
+                {
+                    "exact_snippets": "Uses text messaging less than once per month",
+                    "criterion": "text messaging use frequency",
+                    "requirements": [
+                        {
+                            "requirement_type": "frequency",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1,
+                                "unit": "per month"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Participants from HRPO# 201501028 will be ineligible for this study",
+            "criterions": [
+                {
+                    "exact_snippets": "Participants from HRPO# 201501028 will be ineligible for this study",
+                    "criterion": "prior participation in HRPO# 201501028",
+                    "requirements": [
+                        {
+                            "requirement_type": "exclusion",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Not meeting national guidelines for aerobic physical activity (i.e., at least 150 minutes per week of moderate intensity aerobic physical activity)",
+            "criterions": [
+                {
+                    "exact_snippets": "Not meeting national guidelines for aerobic physical activity (i.e., at least 150 minutes per week of moderate intensity aerobic physical activity)",
+                    "criterion": "aerobic physical activity",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 150,
+                                "unit": "minutes per week"
+                            }
+                        },
+                        {
+                            "requirement_type": "intensity",
+                            "expected_value": "moderate"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

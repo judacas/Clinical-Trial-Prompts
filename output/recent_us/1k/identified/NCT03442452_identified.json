@@ -1,0 +1,232 @@
+{
+    "info": {
+        "nct_id": "NCT03442452",
+        "official_title": "A Pilot Feasibility and Preliminary Efficacy Study of an Electronic Decision Aid for Patients With Acute Myeloid Leukemia (AML)",
+        "inclusion_criteria": "* At least age 18\n* Capacity to give consent\n* Diagnosis of acute myeloid leukemia (AML)\n* Fluent in English\n* Receiving care at Duke, and fits into one of the following scenarios:\n\n  * has not yet made a treatment decision (in the DCI clinics or on the inpatient wards),\n  * have recently made a decision (in the last 6 weeks), and are admitted for chemotherapy on 9100 or in the oncology treatment center to receive outpatient therapy,\n  * or, during remission, while receiving consolidation chemotherapy in the hospital\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Patients too sick to participate per clinician discretion",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Diagnosis of acute myeloid leukemia (AML)",
+            "criterions": [
+                {
+                    "exact_snippets": "Diagnosis of acute myeloid leukemia (AML)",
+                    "criterion": "acute myeloid leukemia (AML) diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* have recently made a decision (in the last 6 weeks), and are admitted for chemotherapy on 9100 or in the oncology treatment center to receive outpatient therapy,",
+            "criterions": [
+                {
+                    "exact_snippets": "have recently made a decision (in the last 6 weeks)",
+                    "criterion": "decision timing",
+                    "requirements": [
+                        {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "weeks"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "are admitted for chemotherapy on 9100",
+                    "criterion": "admission for chemotherapy on 9100",
+                    "requirements": [
+                        {
+                            "requirement_type": "admission_status",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "in the oncology treatment center to receive outpatient therapy",
+                    "criterion": "receiving outpatient therapy in oncology treatment center",
+                    "requirements": [
+                        {
+                            "requirement_type": "receiving_outpatient_therapy",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Fluent in English",
+            "criterions": [
+                {
+                    "exact_snippets": "Fluent in English",
+                    "criterion": "English language fluency",
+                    "requirements": [
+                        {
+                            "requirement_type": "fluency",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* has not yet made a treatment decision (in the DCI clinics or on the inpatient wards),",
+            "criterions": [
+                {
+                    "exact_snippets": "has not yet made a treatment decision (in the DCI clinics or on the inpatient wards)",
+                    "criterion": "treatment decision",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "not yet made"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* or, during remission, while receiving consolidation chemotherapy in the hospital",
+            "criterions": [
+                {
+                    "exact_snippets": "during remission",
+                    "criterion": "remission status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "remission"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "while receiving consolidation chemotherapy in the hospital",
+                    "criterion": "consolidation chemotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "receiving",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "in the hospital"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* At least age 18",
+            "criterions": [
+                {
+                    "exact_snippets": "At least age 18",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Receiving care at Duke, and fits into one of the following scenarios:",
+            "criterions": [
+                {
+                    "exact_snippets": "Receiving care at Duke",
+                    "criterion": "care location",
+                    "requirements": [
+                        {
+                            "requirement_type": "location",
+                            "expected_value": "Duke"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Capacity to give consent",
+            "criterions": [
+                {
+                    "exact_snippets": "Capacity to give consent",
+                    "criterion": "capacity to give consent",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Patients too sick to participate per clinician discretion",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients too sick to participate per clinician discretion",
+                    "criterion": "patient health status",
+                    "requirements": [
+                        {
+                            "requirement_type": "suitability for participation",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "clinician discretion",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

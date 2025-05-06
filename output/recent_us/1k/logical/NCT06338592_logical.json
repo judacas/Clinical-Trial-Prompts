@@ -1,0 +1,748 @@
+{
+    "info": {
+        "nct_id": "NCT06338592",
+        "official_title": "The MyLungHealth Study Protocol: A Pragmatic Patient-Randomized Controlled Trial to Evaluate a Patient-Centered, Electronic Health Record-Integrated Intervention to Enhance Lung Cancer Screening in Primary Care",
+        "inclusion_criteria": "Inclusion criteria for both study 1 and study 2:\n\n* aged 50-79\n* a history of smoking (e.g., current or former tobacco use)\n* seen in a study primary care clinic in the 12 months preceding the start of the trial\n\nExclusion criteria for both study 1 and study 2:\n\n* >0 but < 10 pack-year smoking history or quit more than 15 years ago\n* No use of the patient portal at least once in the year preceding the start of the study\n* A lung cancer diagnosis at the start of the study\n* LDCT completed in the past 3 years\n* Another chest CT completed in the past year\n* Structured EHR data indicating LCS SDM was provided in the past 3 years\n* Exposed to the intervention during the pilot phase\n\nInclusion criteria for study 1:\n\n* a 10-19 pack-year smoking history, an unknown pack-year history, unknown quit date for patients who quit smoking, or a 0 pack-year smoking history\n\nInclusion criteria for study 2:\n\n* at least a 20 pack-year smoking history and are a current smoker or have quit within the last 15 years\nHealthy volunteers allowed\nMust have minimum age of 50 Years\nMust have maximum age of 79 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Inclusion criteria for study 1:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Another chest CT completed in the past year",
+                "criterions": [
+                    {
+                        "exact_snippets": "Another chest CT completed in the past year",
+                        "criterion": "chest CT",
+                        "requirement": {
+                            "requirement_type": "completion_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Another chest CT completed in the past year",
+                        "criterion": "chest CT",
+                        "requirement": {
+                            "requirement_type": "completion_timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Structured EHR data indicating LCS SDM was provided in the past 3 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Structured EHR data indicating LCS SDM was provided in the past 3 years",
+                        "criterion": "LCS SDM (Lung Cancer Screening Shared Decision Making)",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "structured EHR data indicating LCS SDM was provided"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Structured EHR data indicating LCS SDM was provided in the past 3 years",
+                        "criterion": "LCS SDM (Lung Cancer Screening Shared Decision Making)",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Structured EHR data indicating LCS SDM was provided in the past 3 years",
+                        "criterion": "LCS SDM (Lung Cancer Screening Shared Decision Making)",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "structured EHR data indicating LCS SDM was provided"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Structured EHR data indicating LCS SDM was provided in the past 3 years",
+                        "criterion": "LCS SDM (Lung Cancer Screening Shared Decision Making)",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No use of the patient portal at least once in the year preceding the start of the study",
+                "criterions": [
+                    {
+                        "exact_snippets": "No use of the patient portal at least once in the year preceding the start of the study",
+                        "criterion": "patient portal use",
+                        "requirement": {
+                            "requirement_type": "usage frequency",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1,
+                                "unit": "time(s) in the year preceding the start of the study"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No use of the patient portal at least once in the year preceding the start of the study",
+                        "criterion": "patient portal use",
+                        "requirement": {
+                            "requirement_type": "usage frequency",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 1,
+                                "unit": "time(s) in the year preceding the start of the study"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* a history of smoking (e.g., current or former tobacco use)",
+                "criterions": [
+                    {
+                        "exact_snippets": "a history of smoking (e.g., current or former tobacco use)",
+                        "criterion": "smoking history",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "a history of smoking (e.g., current or former tobacco use)",
+                        "criterion": "smoking history",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 50 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 50 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 50 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* aged 50-79",
+                "criterions": [
+                    {
+                        "exact_snippets": "aged 50-79",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 50,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 79,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "aged 50-79",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 50,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 79,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* A lung cancer diagnosis at the start of the study",
+                "criterions": [
+                    {
+                        "exact_snippets": "A lung cancer diagnosis at the start of the study",
+                        "criterion": "lung cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "A lung cancer diagnosis at the start of the study",
+                        "criterion": "lung cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "at the start of the study"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "A lung cancer diagnosis at the start of the study",
+                        "criterion": "lung cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "A lung cancer diagnosis at the start of the study",
+                        "criterion": "lung cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "at the start of the study"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* >0 but < 10 pack-year smoking history or quit more than 15 years ago",
+                "criterions": [
+                    {
+                        "exact_snippets": ">0 but < 10 pack-year smoking history",
+                        "criterion": "pack-year smoking history",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 0,
+                                        "unit": "pack-year"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 10,
+                                        "unit": "pack-year"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "quit more than 15 years ago",
+                        "criterion": "time since quitting smoking",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 15,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": ">0 but < 10 pack-year smoking history",
+                        "criterion": "pack-year smoking history",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">",
+                                        "value": 0,
+                                        "unit": "pack-year"
+                                    },
+                                    {
+                                        "operator": "<",
+                                        "value": 10,
+                                        "unit": "pack-year"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "quit more than 15 years ago",
+                        "criterion": "time since quitting smoking",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 15,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 79 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 79 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 79,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 79 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 79,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* seen in a study primary care clinic in the 12 months preceding the start of the trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "seen in a study primary care clinic in the 12 months preceding the start of the trial",
+                        "criterion": "visit to study primary care clinic",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 12,
+                                "unit": "months before trial start"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "seen in a study primary care clinic in the 12 months preceding the start of the trial",
+                        "criterion": "visit to study primary care clinic",
+                        "requirement": {
+                            "requirement_type": "timeframe",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 12,
+                                "unit": "months before trial start"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Exclusion criteria for both study 1 and study 2:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* LDCT completed in the past 3 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "LDCT completed in the past 3 years",
+                        "criterion": "LDCT (Low Dose Computed Tomography)",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "LDCT completed in the past 3 years",
+                        "criterion": "LDCT (Low Dose Computed Tomography)",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "LDCT completed in the past 3 years",
+                        "criterion": "LDCT (Low Dose Computed Tomography)",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "LDCT completed in the past 3 years",
+                        "criterion": "LDCT (Low Dose Computed Tomography)",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* a 10-19 pack-year smoking history, an unknown pack-year history, unknown quit date for patients who quit smoking, or a 0 pack-year smoking history",
+                "criterions": [
+                    {
+                        "exact_snippets": "10-19 pack-year smoking history",
+                        "criterion": "smoking history",
+                        "requirement": {
+                            "requirement_type": "pack-year range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "pack-year"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 19,
+                                        "unit": "pack-year"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "unknown pack-year history",
+                        "criterion": "smoking history",
+                        "requirement": {
+                            "requirement_type": "pack-year history known",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "unknown quit date for patients who quit smoking",
+                        "criterion": "smoking quit date",
+                        "requirement": {
+                            "requirement_type": "quit date known",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "0 pack-year smoking history",
+                        "criterion": "smoking history",
+                        "requirement": {
+                            "requirement_type": "pack-year",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 0,
+                                "unit": "pack-year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "10-19 pack-year smoking history",
+                        "criterion": "smoking history",
+                        "requirement": {
+                            "requirement_type": "pack-year range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 10,
+                                        "unit": "pack-year"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 19,
+                                        "unit": "pack-year"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "unknown pack-year history",
+                        "criterion": "smoking history",
+                        "requirement": {
+                            "requirement_type": "pack-year history known",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "unknown quit date for patients who quit smoking",
+                        "criterion": "smoking quit date",
+                        "requirement": {
+                            "requirement_type": "quit date known",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "0 pack-year smoking history",
+                        "criterion": "smoking history",
+                        "requirement": {
+                            "requirement_type": "pack-year",
+                            "expected_value": {
+                                "operator": "=",
+                                "value": 0,
+                                "unit": "pack-year"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Exposed to the intervention during the pilot phase",
+                "criterions": [
+                    {
+                        "exact_snippets": "Exposed to the intervention during the pilot phase",
+                        "criterion": "exposure to the intervention during the pilot phase",
+                        "requirement": {
+                            "requirement_type": "exposure",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Exposed to the intervention during the pilot phase",
+                        "criterion": "exposure to the intervention during the pilot phase",
+                        "requirement": {
+                            "requirement_type": "exposure",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion criteria for study 2:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* at least a 20 pack-year smoking history and are a current smoker or have quit within the last 15 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "at least a 20 pack-year smoking history",
+                        "criterion": "smoking history (pack-years)",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 20,
+                                "unit": "pack-years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "are a current smoker or have quit within the last 15 years",
+                        "criterion": "smoking status",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": [
+                                "current smoker",
+                                "former smoker (quit within last 15 years)"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Inclusion criteria for both study 1 and study 2:",
+                "criterions": [
+                    {
+                        "exact_snippets": "Inclusion criteria for both study 1 and study 2",
+                        "criterion": "study inclusion",
+                        "requirement": {
+                            "requirement_type": "study",
+                            "expected_value": [
+                                "study 1",
+                                "study 2"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

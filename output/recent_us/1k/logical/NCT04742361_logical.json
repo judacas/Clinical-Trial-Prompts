@@ -1,0 +1,871 @@
+{
+    "info": {
+        "nct_id": "NCT04742361",
+        "official_title": "Phase III Study of [18F]PSMA-1007 Positron Emission Tomography for the Detection of Prostate Cancer Lesions in Patients With Biochemical Recurrence After Previous Definitive Treatment for Localized Prostate Cancer",
+        "inclusion_criteria": "* Male with original diagnosis of adenocarcinoma of the prostate with prior definitive therapy\n* Suspicion of recurrence or persistence\n\n  * after radiotherapy or cryotherapy: 3 consecutive PSA rises and/or PSA rise by 2.0 ng/mL or more above nadir (ASTRO-Phoenix)\n  * after prostatectomy, PSA > 0.2 ng/mL on 2 or more determinations (recurrence), or failure of PSA to fall to undetectable levels post-prostatectomy (persistence) (American Urological Association)\n* For patients who previously had radical prostatectomy, salvage radiotherapy is one likely treatment plan; for patients who initially underwent radiotherapy (including brachytherapy), confirmation of low volume disease is needed to define (local) treatment.\n* Life expectancy of 6 months or more as judged by the investigator\n* Willing and able to undergo all study procedures\n* Informed consent in writing\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Age: less than18 years\n* Contraindications to any of the ingredients of [18F]PSMA-1007\n* Close affiliation with the investigational site\n* At the time of enrolment into this study, participating in another therapeutic clinical trial or has completed study participation in another therapeutic clinical trial within 5 days of enrolment into this trial\n* Having been previously enrolled in this clinical trial\n* Mental conditions rendering the subject incapable to understand the nature, scope, and consequences of the trial\n* Being clinically unstable or requiring emergency treatment\n* Patients who are unwilling to consider a biopsy if clinically recommended\n* Patients who are unable to undergo a PET/CT scan\n* Patients for whom systemic therapy is the most likely course regardless of PET findings.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Male with original diagnosis of adenocarcinoma of the prostate with prior definitive therapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Male",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    },
+                    {
+                        "exact_snippets": "original diagnosis of adenocarcinoma of the prostate",
+                        "criterion": "prostate adenocarcinoma diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "original diagnosis of adenocarcinoma of the prostate",
+                        "criterion": "prostate adenocarcinoma diagnosis",
+                        "requirement": {
+                            "requirement_type": "original diagnosis",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "prior definitive therapy",
+                        "criterion": "definitive therapy",
+                        "requirement": {
+                            "requirement_type": "prior therapy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Male",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "original diagnosis of adenocarcinoma of the prostate",
+                                "criterion": "prostate adenocarcinoma diagnosis",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "original diagnosis of adenocarcinoma of the prostate",
+                                "criterion": "prostate adenocarcinoma diagnosis",
+                                "requirement": {
+                                    "requirement_type": "original diagnosis",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "prior definitive therapy",
+                        "criterion": "definitive therapy",
+                        "requirement": {
+                            "requirement_type": "prior therapy",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* after prostatectomy, PSA > 0.2 ng/mL on 2 or more determinations (recurrence), or failure of PSA to fall to undetectable levels post-prostatectomy (persistence) (American Urological Association)",
+                "criterions": [
+                    {
+                        "exact_snippets": "after prostatectomy",
+                        "criterion": "history of prostatectomy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "PSA > 0.2 ng/mL on 2 or more determinations (recurrence)",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 0.2,
+                                "unit": "ng/mL"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "PSA > 0.2 ng/mL on 2 or more determinations (recurrence)",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "number of determinations",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "determinations"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "failure of PSA to fall to undetectable levels post-prostatectomy (persistence)",
+                        "criterion": "PSA level post-prostatectomy",
+                        "requirement": {
+                            "requirement_type": "detectability",
+                            "expected_value": "detectable"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "after prostatectomy",
+                        "criterion": "history of prostatectomy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "and_criteria": [
+                                    {
+                                        "exact_snippets": "PSA > 0.2 ng/mL on 2 or more determinations (recurrence)",
+                                        "criterion": "PSA level",
+                                        "requirement": {
+                                            "requirement_type": "quantity",
+                                            "expected_value": {
+                                                "operator": ">",
+                                                "value": 0.2,
+                                                "unit": "ng/mL"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "PSA > 0.2 ng/mL on 2 or more determinations (recurrence)",
+                                        "criterion": "PSA level",
+                                        "requirement": {
+                                            "requirement_type": "number of determinations",
+                                            "expected_value": {
+                                                "operator": ">=",
+                                                "value": 2,
+                                                "unit": "determinations"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "exact_snippets": "failure of PSA to fall to undetectable levels post-prostatectomy (persistence)",
+                                "criterion": "PSA level post-prostatectomy",
+                                "requirement": {
+                                    "requirement_type": "detectability",
+                                    "expected_value": "detectable"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Informed consent in writing",
+                "criterions": [
+                    {
+                        "exact_snippets": "Informed consent in writing",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "in writing"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Informed consent in writing",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "documentation",
+                            "expected_value": "in writing"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* For patients who previously had radical prostatectomy, salvage radiotherapy is one likely treatment plan; for patients who initially underwent radiotherapy (including brachytherapy), confirmation of low volume disease is needed to define (local) treatment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients who previously had radical prostatectomy",
+                        "criterion": "history of radical prostatectomy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients who initially underwent radiotherapy (including brachytherapy)",
+                        "criterion": "history of radiotherapy (including brachytherapy)",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "confirmation of low volume disease is needed",
+                        "criterion": "low volume disease",
+                        "requirement": {
+                            "requirement_type": "confirmation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "patients who previously had radical prostatectomy",
+                        "criterion": "history of radical prostatectomy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "patients who initially underwent radiotherapy (including brachytherapy)",
+                                "criterion": "history of radiotherapy (including brachytherapy)",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "confirmation of low volume disease is needed",
+                                "criterion": "low volume disease",
+                                "requirement": {
+                                    "requirement_type": "confirmation",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Suspicion of recurrence or persistence",
+                "criterions": [
+                    {
+                        "exact_snippets": "Suspicion of recurrence",
+                        "criterion": "recurrence",
+                        "requirement": {
+                            "requirement_type": "suspicion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Suspicion of ... persistence",
+                        "criterion": "persistence",
+                        "requirement": {
+                            "requirement_type": "suspicion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Suspicion of recurrence",
+                        "criterion": "recurrence",
+                        "requirement": {
+                            "requirement_type": "suspicion",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Suspicion of ... persistence",
+                        "criterion": "persistence",
+                        "requirement": {
+                            "requirement_type": "suspicion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Willing and able to undergo all study procedures",
+                "criterions": [
+                    {
+                        "exact_snippets": "Willing and able to undergo all study procedures",
+                        "criterion": "willingness to undergo study procedures",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willing and able to undergo all study procedures",
+                        "criterion": "ability to undergo study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Willing and able to undergo all study procedures",
+                        "criterion": "willingness to undergo study procedures",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willing and able to undergo all study procedures",
+                        "criterion": "ability to undergo study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Life expectancy of 6 months or more as judged by the investigator",
+                "criterions": [
+                    {
+                        "exact_snippets": "Life expectancy of 6 months or more",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "as judged by the investigator",
+                        "criterion": "investigator judgment of life expectancy",
+                        "requirement": {
+                            "requirement_type": "assessment",
+                            "expected_value": "investigator judgment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Life expectancy of 6 months or more",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "as judged by the investigator",
+                        "criterion": "investigator judgment of life expectancy",
+                        "requirement": {
+                            "requirement_type": "assessment",
+                            "expected_value": "investigator judgment"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients who are unwilling to consider a biopsy if clinically recommended",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who are unwilling to consider a biopsy if clinically recommended",
+                        "criterion": "willingness to consider biopsy",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patients who are unwilling to consider a biopsy if clinically recommended",
+                    "criterion": "willingness to consider biopsy",
+                    "requirement": {
+                        "requirement_type": "willingness",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who are unable to undergo a PET/CT scan",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who are unable to undergo a PET/CT scan",
+                        "criterion": "ability to undergo PET/CT scan",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients who are unable to undergo a PET/CT scan",
+                        "criterion": "ability to undergo PET/CT scan",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Close affiliation with the investigational site",
+                "criterions": [
+                    {
+                        "exact_snippets": "Close affiliation with the investigational site",
+                        "criterion": "affiliation with the investigational site",
+                        "requirement": {
+                            "requirement_type": "closeness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Close affiliation with the investigational site",
+                    "criterion": "affiliation with the investigational site",
+                    "requirement": {
+                        "requirement_type": "closeness",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Having been previously enrolled in this clinical trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "Having been previously enrolled in this clinical trial",
+                        "criterion": "prior enrollment in this clinical trial",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Having been previously enrolled in this clinical trial",
+                    "criterion": "prior enrollment in this clinical trial",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Contraindications to any of the ingredients of [18F]PSMA-1007",
+                "criterions": [
+                    {
+                        "exact_snippets": "Contraindications to any of the ingredients of [18F]PSMA-1007",
+                        "criterion": "contraindications to ingredients of [18F]PSMA-1007",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Contraindications to any of the ingredients of [18F]PSMA-1007",
+                    "criterion": "contraindications to ingredients of [18F]PSMA-1007",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Mental conditions rendering the subject incapable to understand the nature, scope, and consequences of the trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "Mental conditions rendering the subject incapable to understand the nature, scope, and consequences of the trial",
+                        "criterion": "mental condition",
+                        "requirement": {
+                            "requirement_type": "capacity to understand trial",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Mental conditions rendering the subject incapable to understand the nature, scope, and consequences of the trial",
+                    "criterion": "mental condition",
+                    "requirement": {
+                        "requirement_type": "capacity to understand trial",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Being clinically unstable or requiring emergency treatment",
+                "criterions": [
+                    {
+                        "exact_snippets": "Being clinically unstable",
+                        "criterion": "clinical stability",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "requiring emergency treatment",
+                        "criterion": "emergency treatment requirement",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Being clinically unstable",
+                        "criterion": "clinical stability",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "requiring emergency treatment",
+                        "criterion": "emergency treatment requirement",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age: less than18 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age: less than18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age: less than18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients for whom systemic therapy is the most likely course regardless of PET findings.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients for whom systemic therapy is the most likely course regardless of PET findings.",
+                        "criterion": "likelihood of systemic therapy",
+                        "requirement": {
+                            "requirement_type": "likelihood",
+                            "expected_value": "systemic therapy is the most likely course"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Patients for whom systemic therapy is the most likely course regardless of PET findings.",
+                        "criterion": "likelihood of systemic therapy",
+                        "requirement": {
+                            "requirement_type": "likelihood",
+                            "expected_value": "systemic therapy is the most likely course"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* after radiotherapy or cryotherapy: 3 consecutive PSA rises and/or PSA rise by 2.0 ng/mL or more above nadir (ASTRO-Phoenix)",
+                "criterions": [
+                    {
+                        "exact_snippets": "after radiotherapy or cryotherapy",
+                        "criterion": "prior treatment",
+                        "requirement": {
+                            "requirement_type": "treatment type",
+                            "expected_value": [
+                                "radiotherapy",
+                                "cryotherapy"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "3 consecutive PSA rises",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "consecutive rises",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "consecutive rises"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "PSA rise by 2.0 ng/mL or more above nadir",
+                        "criterion": "PSA level",
+                        "requirement": {
+                            "requirement_type": "increase above nadir",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2.0,
+                                "unit": "ng/mL"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* At the time of enrolment into this study, participating in another therapeutic clinical trial or has completed study participation in another therapeutic clinical trial within 5 days of enrolment into this trial",
+                "criterions": [
+                    {
+                        "exact_snippets": "At the time of enrolment into this study, participating in another therapeutic clinical trial",
+                        "criterion": "participation in another therapeutic clinical trial",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "has completed study participation in another therapeutic clinical trial within 5 days of enrolment into this trial",
+                        "criterion": "completion of another therapeutic clinical trial",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "At the time of enrolment into this study, participating in another therapeutic clinical trial",
+                        "criterion": "participation in another therapeutic clinical trial",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "has completed study participation in another therapeutic clinical trial within 5 days of enrolment into this trial",
+                        "criterion": "completion of another therapeutic clinical trial",
+                        "requirement": {
+                            "requirement_type": "time since completion",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 5,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}

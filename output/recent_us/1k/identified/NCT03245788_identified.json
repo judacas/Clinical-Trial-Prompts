@@ -1,0 +1,254 @@
+{
+    "info": {
+        "nct_id": "NCT03245788",
+        "official_title": "Pilot Project to Better Understand Non-Clinical Needs of Cancer Patients",
+        "inclusion_criteria": "* New patient to eligible Cancer Care Program (CCP)\n* Biopsy positive\n* Plan to receive at least one treatment modality at Stanford: surgery, chemotherapy and/or radiation therapy\n* Cancer that is treated by any of the following CCPs: Breast, Gynecologic oncology, Head/neck, Cutaneous (melanoma only), Thoracic, Gastrointestinal\n* Patient has even numbered MRN\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Anyone with odd numbered MRN\n* Anyone in other cancer programs that are not included\n* Biopsy negative\n* No treatment modality received\n* Patients with already established care/treatment i.e. not new patients",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* New patient to eligible Cancer Care Program (CCP)",
+            "criterions": [
+                {
+                    "exact_snippets": "New patient",
+                    "criterion": "patient status",
+                    "requirements": [
+                        {
+                            "requirement_type": "new patient",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "eligible Cancer Care Program (CCP)",
+                    "criterion": "Cancer Care Program eligibility",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Cancer that is treated by any of the following CCPs: Breast, Gynecologic oncology, Head/neck, Cutaneous (melanoma only), Thoracic, Gastrointestinal",
+            "criterions": [
+                {
+                    "exact_snippets": "Cancer that is treated by any of the following CCPs: Breast, Gynecologic oncology, Head/neck, Cutaneous (melanoma only), Thoracic, Gastrointestinal",
+                    "criterion": "cancer type",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "Breast",
+                                "Gynecologic oncology",
+                                "Head/neck",
+                                "Cutaneous (melanoma only)",
+                                "Thoracic",
+                                "Gastrointestinal"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Cancer that is treated by any of the following CCPs",
+                    "criterion": "treatment by CCP",
+                    "requirements": [
+                        {
+                            "requirement_type": "treated by CCP",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patient has even numbered MRN",
+            "criterions": [
+                {
+                    "exact_snippets": "Patient has even numbered MRN",
+                    "criterion": "MRN (Medical Record Number)",
+                    "requirements": [
+                        {
+                            "requirement_type": "parity",
+                            "expected_value": "even"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Biopsy positive",
+            "criterions": [
+                {
+                    "exact_snippets": "Biopsy positive",
+                    "criterion": "biopsy",
+                    "requirements": [
+                        {
+                            "requirement_type": "result",
+                            "expected_value": "positive"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Plan to receive at least one treatment modality at Stanford: surgery, chemotherapy and/or radiation therapy",
+            "criterions": [
+                {
+                    "exact_snippets": "Plan to receive at least one treatment modality at Stanford: surgery, chemotherapy and/or radiation therapy",
+                    "criterion": "treatment modality at Stanford",
+                    "requirements": [
+                        {
+                            "requirement_type": "planned receipt",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "number of modalities",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "treatment modality"
+                            }
+                        },
+                        {
+                            "requirement_type": "modality type",
+                            "expected_value": [
+                                "surgery",
+                                "chemotherapy",
+                                "radiation therapy"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Anyone in other cancer programs that are not included",
+            "criterions": [
+                {
+                    "exact_snippets": "Anyone in other cancer programs that are not included",
+                    "criterion": "participation in other cancer programs",
+                    "requirements": [
+                        {
+                            "requirement_type": "program inclusion",
+                            "expected_value": "not included"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* No treatment modality received",
+            "criterions": [
+                {
+                    "exact_snippets": "No treatment modality received",
+                    "criterion": "treatment modality",
+                    "requirements": [
+                        {
+                            "requirement_type": "received",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Biopsy negative",
+            "criterions": [
+                {
+                    "exact_snippets": "Biopsy negative",
+                    "criterion": "biopsy",
+                    "requirements": [
+                        {
+                            "requirement_type": "result",
+                            "expected_value": "negative"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Patients with already established care/treatment i.e. not new patients",
+            "criterions": [
+                {
+                    "exact_snippets": "Patients with already established care/treatment",
+                    "criterion": "established care/treatment status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "already established"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "not new patients",
+                    "criterion": "new patient status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Anyone with odd numbered MRN",
+            "criterions": [
+                {
+                    "exact_snippets": "Anyone with odd numbered MRN",
+                    "criterion": "medical record number (MRN)",
+                    "requirements": [
+                        {
+                            "requirement_type": "parity",
+                            "expected_value": "odd"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

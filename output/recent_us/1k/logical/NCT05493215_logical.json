@@ -1,0 +1,607 @@
+{
+    "info": {
+        "nct_id": "NCT05493215",
+        "official_title": "A Phase 2 Study of Imatinib Therapeutic Drug Monitoring in Gastrointestinal Stromal Tumor",
+        "inclusion_criteria": "* Histologically or cytologically confirmed GIST with KIT mutation or PDGFRA mutation (non-D842V)\n* Currently receiving imatinib initiated within the last 3 months or to be started in the next 1 month\n* Prior systemic chemotherapy for other malignancy is allowed as long as it was completed within the past 6 months and there is no evidence of disease\n* Age ≥18 years\n* ECOG performance status of 0 or 1\n* Normal organ function\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Presence of PDGFRA D842V mutation\n* Known allergy to imatinib or allergic reactions to compounds of similar chemical or biologic composition to the study drug\n* Concomitant anticoagulation with oral warfarin.\n* Use of strong inhibitors or inducers of CYP3A or CYP3A4, drugs metabolized by CYP3A4 or CYP2D6\n* Uncontrolled intercurrent illness\n* Concurrent malignancy",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Prior systemic chemotherapy for other malignancy is allowed as long as it was completed within the past 6 months and there is no evidence of disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior systemic chemotherapy for other malignancy is allowed",
+                        "criterion": "prior systemic chemotherapy for other malignancy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "as long as it was completed within the past 6 months",
+                        "criterion": "prior systemic chemotherapy for other malignancy",
+                        "requirement": {
+                            "requirement_type": "completion time",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "there is no evidence of disease",
+                        "criterion": "evidence of disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Prior systemic chemotherapy for other malignancy is allowed",
+                                "criterion": "prior systemic chemotherapy for other malignancy",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "as long as it was completed within the past 6 months",
+                                "criterion": "prior systemic chemotherapy for other malignancy",
+                                "requirement": {
+                                    "requirement_type": "completion time",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 6,
+                                        "unit": "months"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "there is no evidence of disease",
+                        "criterion": "evidence of disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* ECOG performance status of 0 or 1",
+                "criterions": [
+                    {
+                        "exact_snippets": "ECOG performance status of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "ECOG performance status of 0 or 1",
+                        "criterion": "ECOG performance status",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": "N/A"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "N/A"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Age ≥18 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age ≥18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age ≥18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Normal organ function",
+                "criterions": [
+                    {
+                        "exact_snippets": "Normal organ function",
+                        "criterion": "organ function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Normal organ function",
+                        "criterion": "organ function",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "normal"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Currently receiving imatinib initiated within the last 3 months or to be started in the next 1 month",
+                "criterions": [
+                    {
+                        "exact_snippets": "Currently receiving imatinib initiated within the last 3 months",
+                        "criterion": "imatinib treatment",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": "currently receiving"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Currently receiving imatinib initiated within the last 3 months",
+                        "criterion": "imatinib treatment",
+                        "requirement": {
+                            "requirement_type": "initiation time",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": -3,
+                                "unit": "months from now"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "to be started in the next 1 month",
+                        "criterion": "imatinib treatment",
+                        "requirement": {
+                            "requirement_type": "treatment status",
+                            "expected_value": "to be started"
+                        }
+                    },
+                    {
+                        "exact_snippets": "to be started in the next 1 month",
+                        "criterion": "imatinib treatment",
+                        "requirement": {
+                            "requirement_type": "initiation time",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "months from now"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Currently receiving imatinib initiated within the last 3 months",
+                                "criterion": "imatinib treatment",
+                                "requirement": {
+                                    "requirement_type": "treatment status",
+                                    "expected_value": "currently receiving"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Currently receiving imatinib initiated within the last 3 months",
+                                "criterion": "imatinib treatment",
+                                "requirement": {
+                                    "requirement_type": "initiation time",
+                                    "expected_value": {
+                                        "operator": ">=",
+                                        "value": -3,
+                                        "unit": "months from now"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "to be started in the next 1 month",
+                                "criterion": "imatinib treatment",
+                                "requirement": {
+                                    "requirement_type": "treatment status",
+                                    "expected_value": "to be started"
+                                }
+                            },
+                            {
+                                "exact_snippets": "to be started in the next 1 month",
+                                "criterion": "imatinib treatment",
+                                "requirement": {
+                                    "requirement_type": "initiation time",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 1,
+                                        "unit": "months from now"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Known allergy to imatinib or allergic reactions to compounds of similar chemical or biologic composition to the study drug",
+                "criterions": [
+                    {
+                        "exact_snippets": "Known allergy to imatinib",
+                        "criterion": "allergy to imatinib",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "allergic reactions to compounds of similar chemical or biologic composition to the study drug",
+                        "criterion": "allergic reactions to compounds of similar chemical or biologic composition to the study drug",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Known allergy to imatinib",
+                        "criterion": "allergy to imatinib",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "allergic reactions to compounds of similar chemical or biologic composition to the study drug",
+                        "criterion": "allergic reactions to compounds of similar chemical or biologic composition to the study drug",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Concurrent malignancy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Concurrent malignancy",
+                        "criterion": "malignancy",
+                        "requirement": {
+                            "requirement_type": "concurrence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Concurrent malignancy",
+                        "criterion": "malignancy",
+                        "requirement": {
+                            "requirement_type": "concurrence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Presence of PDGFRA D842V mutation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Presence of PDGFRA D842V mutation",
+                        "criterion": "PDGFRA D842V mutation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Presence of PDGFRA D842V mutation",
+                    "criterion": "PDGFRA D842V mutation",
+                    "requirement": {
+                        "requirement_type": "presence",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Use of strong inhibitors or inducers of CYP3A or CYP3A4, drugs metabolized by CYP3A4 or CYP2D6",
+                "criterions": [
+                    {
+                        "exact_snippets": "Use of strong inhibitors or inducers of CYP3A or CYP3A4",
+                        "criterion": "use of strong inhibitors or inducers of CYP3A or CYP3A4",
+                        "requirement": {
+                            "requirement_type": "use",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "drugs metabolized by CYP3A4 or CYP2D6",
+                        "criterion": "use of drugs metabolized by CYP3A4 or CYP2D6",
+                        "requirement": {
+                            "requirement_type": "use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Use of strong inhibitors or inducers of CYP3A or CYP3A4",
+                        "criterion": "use of strong inhibitors or inducers of CYP3A or CYP3A4",
+                        "requirement": {
+                            "requirement_type": "use",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "drugs metabolized by CYP3A4 or CYP2D6",
+                        "criterion": "use of drugs metabolized by CYP3A4 or CYP2D6",
+                        "requirement": {
+                            "requirement_type": "use",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Concomitant anticoagulation with oral warfarin.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Concomitant anticoagulation with oral warfarin",
+                        "criterion": "concomitant anticoagulation with oral warfarin",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Concomitant anticoagulation with oral warfarin",
+                        "criterion": "concomitant anticoagulation with oral warfarin",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Uncontrolled intercurrent illness",
+                "criterions": [
+                    {
+                        "exact_snippets": "Uncontrolled intercurrent illness",
+                        "criterion": "intercurrent illness",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Uncontrolled intercurrent illness",
+                        "criterion": "intercurrent illness",
+                        "requirement": {
+                            "requirement_type": "control status",
+                            "expected_value": "uncontrolled"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Histologically or cytologically confirmed GIST with KIT mutation or PDGFRA mutation (non-D842V)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Histologically or cytologically confirmed GIST",
+                        "criterion": "gastrointestinal stromal tumor (GIST)",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": [
+                                "histologically",
+                                "cytologically"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "KIT mutation",
+                        "criterion": "KIT mutation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "PDGFRA mutation (non-D842V)",
+                        "criterion": "PDGFRA mutation",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "PDGFRA mutation (non-D842V)",
+                        "criterion": "PDGFRA mutation",
+                        "requirement": {
+                            "requirement_type": "exclusion",
+                            "expected_value": "D842V"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

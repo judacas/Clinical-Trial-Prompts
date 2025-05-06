@@ -1,0 +1,264 @@
+{
+    "info": {
+        "nct_id": "NCT03494166",
+        "official_title": "Post-chemotherapy Symptom Management: Testing Intervention Sequences in a SMART Design",
+        "inclusion_criteria": "* Survivors must have a new diagnosis or localized recurrence of solid tumor cancer\n* Be finishing curative intent adjuvant chemotherapy or chemoradiation, and do not have any subsequent cancer treatments planned, except for radiation therapy, hormonal therapy or trastuzumab for breast cancer.\n* 18 years of age or older\n* Have access to a telephone\n* Understand English or Spanish\n* Are not currently receiving counseling and/or psychotherapy\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Diagnosis of a psychotic disorder in medical record verified by the recruiter\n* Nursing home resident\n* Bedridden\n* Currently receiving counseling and/or psychotherapy.",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Be finishing curative intent adjuvant chemotherapy or chemoradiation, and do not have any subsequent cancer treatments planned, except for radiation therapy, hormonal therapy or trastuzumab for breast cancer.",
+            "criterions": [
+                {
+                    "exact_snippets": "Be finishing curative intent adjuvant chemotherapy or chemoradiation",
+                    "criterion": "adjuvant chemotherapy or chemoradiation",
+                    "requirements": [
+                        {
+                            "requirement_type": "treatment status",
+                            "expected_value": "finishing"
+                        },
+                        {
+                            "requirement_type": "intent",
+                            "expected_value": "curative"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "do not have any subsequent cancer treatments planned, except for radiation therapy, hormonal therapy or trastuzumab for breast cancer",
+                    "criterion": "subsequent cancer treatments planned",
+                    "requirements": [
+                        {
+                            "requirement_type": "planned",
+                            "expected_value": false
+                        },
+                        {
+                            "requirement_type": "exceptions",
+                            "expected_value": [
+                                "radiation therapy",
+                                "hormonal therapy",
+                                "trastuzumab for breast cancer"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Understand English or Spanish",
+            "criterions": [
+                {
+                    "exact_snippets": "Understand English or Spanish",
+                    "criterion": "language comprehension",
+                    "requirements": [
+                        {
+                            "requirement_type": "comprehension",
+                            "expected_value": [
+                                "English",
+                                "Spanish"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Are not currently receiving counseling and/or psychotherapy",
+            "criterions": [
+                {
+                    "exact_snippets": "Are not currently receiving counseling and/or psychotherapy",
+                    "criterion": "counseling and/or psychotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "current receipt",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Have access to a telephone",
+            "criterions": [
+                {
+                    "exact_snippets": "Have access to a telephone",
+                    "criterion": "telephone access",
+                    "requirements": [
+                        {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* 18 years of age or older",
+            "criterions": [
+                {
+                    "exact_snippets": "18 years of age or older",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Survivors must have a new diagnosis or localized recurrence of solid tumor cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "new diagnosis ... solid tumor cancer",
+                    "criterion": "solid tumor cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis_status",
+                            "expected_value": "new diagnosis"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "localized recurrence of solid tumor cancer",
+                    "criterion": "solid tumor cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "recurrence_status",
+                            "expected_value": "localized recurrence"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Nursing home resident",
+            "criterions": [
+                {
+                    "exact_snippets": "Nursing home resident",
+                    "criterion": "nursing home residency",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Bedridden",
+            "criterions": [
+                {
+                    "exact_snippets": "Bedridden",
+                    "criterion": "bedridden status",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Currently receiving counseling and/or psychotherapy.",
+            "criterions": [
+                {
+                    "exact_snippets": "Currently receiving counseling and/or psychotherapy.",
+                    "criterion": "counseling",
+                    "requirements": [
+                        {
+                            "requirement_type": "current participation",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Currently receiving counseling and/or psychotherapy.",
+                    "criterion": "psychotherapy",
+                    "requirements": [
+                        {
+                            "requirement_type": "current participation",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Diagnosis of a psychotic disorder in medical record verified by the recruiter",
+            "criterions": [
+                {
+                    "exact_snippets": "Diagnosis of a psychotic disorder in medical record",
+                    "criterion": "psychotic disorder diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "documentation",
+                            "expected_value": "in medical record"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "verified by the recruiter",
+                    "criterion": "diagnosis verification",
+                    "requirements": [
+                        {
+                            "requirement_type": "verifier",
+                            "expected_value": "recruiter"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

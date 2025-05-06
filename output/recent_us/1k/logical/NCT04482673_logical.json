@@ -1,0 +1,315 @@
+{
+    "info": {
+        "nct_id": "NCT04482673",
+        "official_title": "The Role of Vitamin D in Mitigating COVID-19 Infection Severity: Focusing on Reducing Health Disparities in South Carolina",
+        "inclusion_criteria": "Healthy volunteers allowed\nMust have minimum age of 50 Years",
+        "exclusion_criteria": "* Hospitalization at the time of study recruitment.\n* Any individual less than 50 years of age. The reason that the participants ≥50 years are being excluded from this study is because those who are ≥50 years have a higher risk of being symptomatic with COVID-19 and have the potential for the greatest benefit. The disease appears to manifest differently in children and its occurrence is quite rare.\n* Only those patients tested for COVID-19 initially will be eligible to participate; therefore, anyone wanting to participate in the trial must have had a COVID-19 test prior to enrollment/participation in the study.\n* Any individual who is not capable of making independent decisions and who is considered cognitively impaired.",
+        "miscellaneous_criteria": "Entry Criteria:\n\n---Adults aged 50 years of age or older who presents to MUSC or its affiliate hospitals (or associated testing centers) for COVID-19 testing during the recruitment period is eligible for participation."
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 50 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 50 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 50 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Any individual less than 50 years of age. The reason that the participants ≥50 years are being excluded from this study is because those who are ≥50 years have a higher risk of being symptomatic with COVID-19 and have the potential for the greatest benefit. The disease appears to manifest differently in children and its occurrence is quite rare.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Any individual less than 50 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 50,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Any individual less than 50 years of age",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 50,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Only those patients tested for COVID-19 initially will be eligible to participate; therefore, anyone wanting to participate in the trial must have had a COVID-19 test prior to enrollment/participation in the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients tested for COVID-19 initially ... must have had a COVID-19 test prior to enrollment/participation in the study",
+                        "criterion": "COVID-19 test",
+                        "requirement": {
+                            "requirement_type": "history of testing",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "patients tested for COVID-19 initially ... must have had a COVID-19 test prior to enrollment/participation in the study",
+                        "criterion": "COVID-19 test",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "prior to enrollment/participation"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "and_criteria": [
+                                {
+                                    "exact_snippets": "patients tested for COVID-19 initially ... must have had a COVID-19 test prior to enrollment/participation in the study",
+                                    "criterion": "COVID-19 test",
+                                    "requirement": {
+                                        "requirement_type": "history of testing",
+                                        "expected_value": true
+                                    }
+                                },
+                                {
+                                    "exact_snippets": "patients tested for COVID-19 initially ... must have had a COVID-19 test prior to enrollment/participation in the study",
+                                    "criterion": "COVID-19 test",
+                                    "requirement": {
+                                        "requirement_type": "timing",
+                                        "expected_value": "prior to enrollment/participation"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Any individual who is not capable of making independent decisions and who is considered cognitively impaired.",
+                "criterions": [
+                    {
+                        "exact_snippets": "not capable of making independent decisions",
+                        "criterion": "decision-making capacity",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "considered cognitively impaired",
+                        "criterion": "cognitive impairment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "not capable of making independent decisions",
+                        "criterion": "decision-making capacity",
+                        "requirement": {
+                            "requirement_type": "capability",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "considered cognitively impaired",
+                        "criterion": "cognitive impairment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Hospitalization at the time of study recruitment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Hospitalization at the time of study recruitment",
+                        "criterion": "hospitalization status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Hospitalization at the time of study recruitment",
+                        "criterion": "hospitalization status",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "at the time of study recruitment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Hospitalization at the time of study recruitment",
+                        "criterion": "hospitalization status",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Hospitalization at the time of study recruitment",
+                        "criterion": "hospitalization status",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "at the time of study recruitment"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [
+        {
+            "identified_line": {
+                "line": "Entry Criteria:",
+                "criterions": []
+            },
+            "logical_structure": {
+                "and_criteria": []
+            }
+        }
+    ],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": [
+        {
+            "identified_line": {
+                "line": "---Adults aged 50 years of age or older who presents to MUSC or its affiliate hospitals (or associated testing centers) for COVID-19 testing during the recruitment period is eligible for participation.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Adults aged 50 years of age or older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "presents to MUSC or its affiliate hospitals (or associated testing centers) for COVID-19 testing during the recruitment period",
+                        "criterion": "testing location and timing",
+                        "requirement": {
+                            "requirement_type": "location",
+                            "expected_value": [
+                                "MUSC",
+                                "affiliate hospitals",
+                                "associated testing centers"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "presents to MUSC or its affiliate hospitals (or associated testing centers) for COVID-19 testing during the recruitment period",
+                        "criterion": "testing location and timing",
+                        "requirement": {
+                            "requirement_type": "testing purpose",
+                            "expected_value": "COVID-19 testing"
+                        }
+                    },
+                    {
+                        "exact_snippets": "presents to MUSC or its affiliate hospitals (or associated testing centers) for COVID-19 testing during the recruitment period",
+                        "criterion": "testing location and timing",
+                        "requirement": {
+                            "requirement_type": "timing",
+                            "expected_value": "during the recruitment period"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,555 @@
+{
+    "info": {
+        "nct_id": "NCT05829824",
+        "official_title": "Connect Cancer Patients to Tobacco Cessation Care by Automated Interactive Outreach",
+        "inclusion_criteria": "1. Age 18 years and older.\n2. Able to understand study procedures and to comply with them for the entire length of the study.\n3. Ability of individual or legal guardian/representative to understand a written informed consent document, and the willingness to sign it.\n4. English, Spanish, Cantonese, or Mandarin speaking.\n5. Self-reported current use of tobacco, including e-cigarette on EHR.\n6. Has a diagnosis of cancer.\n7. Has been seen by a prescribing provider within a UCSF Cancer Center-affiliated clinical department within the past 3 months.\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "1. Contraindication to any study-related procedure or assessment.\n2. No valid contact telephone number.\n3. Currently hospitalized or having been discharged from inpatient setting within the past month (according to EHR).",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "6. Has a diagnosis of cancer.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has a diagnosis of cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Has a diagnosis of cancer",
+                        "criterion": "cancer diagnosis",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. Able to understand study procedures and to comply with them for the entire length of the study.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to understand study procedures",
+                        "criterion": "understanding of study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "to comply with them for the entire length of the study",
+                        "criterion": "compliance with study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "to comply with them for the entire length of the study",
+                        "criterion": "compliance with study procedures",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": "entire length of the study"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able to understand study procedures",
+                        "criterion": "understanding of study procedures",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "to comply with them for the entire length of the study",
+                                "criterion": "compliance with study procedures",
+                                "requirement": {
+                                    "requirement_type": "ability",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "to comply with them for the entire length of the study",
+                                "criterion": "compliance with study procedures",
+                                "requirement": {
+                                    "requirement_type": "duration",
+                                    "expected_value": "entire length of the study"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "7. Has been seen by a prescribing provider within a UCSF Cancer Center-affiliated clinical department within the past 3 months.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Has been seen by a prescribing provider within a UCSF Cancer Center-affiliated clinical department within the past 3 months",
+                        "criterion": "visit with prescribing provider in UCSF Cancer Center-affiliated clinical department",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Has been seen by a prescribing provider within a UCSF Cancer Center-affiliated clinical department within the past 3 months",
+                        "criterion": "visit with prescribing provider in UCSF Cancer Center-affiliated clinical department",
+                        "requirement": {
+                            "requirement_type": "provider_type",
+                            "expected_value": "prescribing provider"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Has been seen by a prescribing provider within a UCSF Cancer Center-affiliated clinical department within the past 3 months",
+                        "criterion": "visit with prescribing provider in UCSF Cancer Center-affiliated clinical department",
+                        "requirement": {
+                            "requirement_type": "location_affiliation",
+                            "expected_value": "UCSF Cancer Center-affiliated clinical department"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Has been seen by a prescribing provider within a UCSF Cancer Center-affiliated clinical department within the past 3 months",
+                        "criterion": "visit with prescribing provider in UCSF Cancer Center-affiliated clinical department",
+                        "requirement": {
+                            "requirement_type": "recency",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "months"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Has been seen by a prescribing provider within a UCSF Cancer Center-affiliated clinical department within the past 3 months",
+                        "criterion": "visit with prescribing provider in UCSF Cancer Center-affiliated clinical department",
+                        "requirement": {
+                            "requirement_type": "provider_type",
+                            "expected_value": "prescribing provider"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Has been seen by a prescribing provider within a UCSF Cancer Center-affiliated clinical department within the past 3 months",
+                        "criterion": "visit with prescribing provider in UCSF Cancer Center-affiliated clinical department",
+                        "requirement": {
+                            "requirement_type": "location_affiliation",
+                            "expected_value": "UCSF Cancer Center-affiliated clinical department"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "3. Ability of individual or legal guardian/representative to understand a written informed consent document, and the willingness to sign it.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ability of individual or legal guardian/representative to understand a written informed consent document",
+                        "criterion": "understanding of written informed consent document",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willingness to sign it",
+                        "criterion": "willingness to sign informed consent document",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ability of individual or legal guardian/representative to understand a written informed consent document",
+                        "criterion": "understanding of written informed consent document",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "willingness to sign it",
+                        "criterion": "willingness to sign informed consent document",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Age 18 years and older.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age 18 years and older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age 18 years and older",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 18,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "5. Self-reported current use of tobacco, including e-cigarette on EHR.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Self-reported current use of tobacco",
+                        "criterion": "current tobacco use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Self-reported current use of tobacco",
+                        "criterion": "current tobacco use",
+                        "requirement": {
+                            "requirement_type": "reporting method",
+                            "expected_value": "self-reported"
+                        }
+                    },
+                    {
+                        "exact_snippets": "including e-cigarette",
+                        "criterion": "current e-cigarette use",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "including e-cigarette",
+                        "criterion": "current e-cigarette use",
+                        "requirement": {
+                            "requirement_type": "reporting method",
+                            "expected_value": "self-reported"
+                        }
+                    },
+                    {
+                        "exact_snippets": "on EHR",
+                        "criterion": "documentation in EHR",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Self-reported current use of tobacco",
+                                "criterion": "current tobacco use",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Self-reported current use of tobacco",
+                                "criterion": "current tobacco use",
+                                "requirement": {
+                                    "requirement_type": "reporting method",
+                                    "expected_value": "self-reported"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "including e-cigarette",
+                                "criterion": "current e-cigarette use",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "including e-cigarette",
+                                "criterion": "current e-cigarette use",
+                                "requirement": {
+                                    "requirement_type": "reporting method",
+                                    "expected_value": "self-reported"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "exact_snippets": "on EHR",
+                        "criterion": "documentation in EHR",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "3. Currently hospitalized or having been discharged from inpatient setting within the past month (according to EHR).",
+                "criterions": [
+                    {
+                        "exact_snippets": "Currently hospitalized",
+                        "criterion": "hospitalization status",
+                        "requirement": {
+                            "requirement_type": "current hospitalization",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "having been discharged from inpatient setting within the past month",
+                        "criterion": "recent inpatient discharge",
+                        "requirement": {
+                            "requirement_type": "time since discharge",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "month"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Currently hospitalized",
+                        "criterion": "hospitalization status",
+                        "requirement": {
+                            "requirement_type": "current hospitalization",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "having been discharged from inpatient setting within the past month",
+                        "criterion": "recent inpatient discharge",
+                        "requirement": {
+                            "requirement_type": "time since discharge",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 1,
+                                "unit": "month"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "2. No valid contact telephone number.",
+                "criterions": [
+                    {
+                        "exact_snippets": "No valid contact telephone number",
+                        "criterion": "contact telephone number",
+                        "requirement": {
+                            "requirement_type": "validity",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No valid contact telephone number",
+                        "criterion": "contact telephone number",
+                        "requirement": {
+                            "requirement_type": "validity",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "1. Contraindication to any study-related procedure or assessment.",
+                "criterions": [
+                    {
+                        "exact_snippets": "Contraindication to any study-related procedure or assessment.",
+                        "criterion": "contraindication to study-related procedure or assessment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Contraindication to any study-related procedure or assessment.",
+                        "criterion": "contraindication to study-related procedure or assessment",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "4. English, Spanish, Cantonese, or Mandarin speaking.",
+                "criterions": [
+                    {
+                        "exact_snippets": "English, Spanish, Cantonese, or Mandarin speaking",
+                        "criterion": "language spoken",
+                        "requirement": {
+                            "requirement_type": "language",
+                            "expected_value": [
+                                "English",
+                                "Spanish",
+                                "Cantonese",
+                                "Mandarin"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

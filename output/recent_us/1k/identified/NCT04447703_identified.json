@@ -1,0 +1,549 @@
+{
+    "info": {
+        "nct_id": "NCT04447703",
+        "official_title": "Technology-Enhanced Acceleration of Germline Evaluation for Therapy - The TARGET Study",
+        "inclusion_criteria": "Inclusion Criteria\n\n* AIM 1: Medical oncologists, radiation oncologists and urologists spanning Veterans Affairs (VA), academic, and community settings\n* AIM 2: Any English speaking man >= 18 with PCA who has computer and web-access and meets any one of the following:\n\n  * Metastatic disease\n  * T3a or higher\n  * Prostate specific antigen (PSA) > 20\n  * Grade group 4 or higher\n  * Intraductal or cribriform histology\n  * Biochemical recurrence\n  * Ashkenazi Jewish ancestry\n  * Family history criteria (see below) ** Family history: If any one of the following levels are met, the person is eligible:\n\n    * Level 1: >= 1 close blood relative (first degree relative [FDR], second degree relative [SDR], third degree relative [TDR]) diagnosed with breast cancer =< age 50 or the following cancers at any age: pancreatic, ovarian, or metastatic or intraductal/cribriform prostate cancer\n    * Level 2: >= 2 close blood relatives (FDR, SDR, TDR) on same side of the family with breast or prostate cancer at any age\n    * Level 3: one brother, father, or >= 2 family members (close blood relatives - FDR, SDR, TDR) on the same side of the family diagnosed with prostate cancer at < 60\n    * Level 4: >= 3 cancers on the same side of the family (especially if diagnosed =< 50): bile duct, breast, colorectal, endometrial, gastric, kidney, melanoma, ovarian, pancreatic, prostate (grade groups 2-5 if known), small bowel, or urothelial\n\nExclusion Criteria\n\n* Age < 18 years\n* Mental or cognitive impairment that interferes with ability to provide informed consent\n* Non-English speaking\n* Having had prior germline genetic testing for inherited cancer risk (pertains to aim 2)\nHealthy volunteers allowed\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "* Ashkenazi Jewish ancestry",
+            "criterions": [
+                {
+                    "exact_snippets": "Ashkenazi Jewish ancestry",
+                    "criterion": "Ashkenazi Jewish ancestry",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 18 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 18 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Biochemical recurrence",
+            "criterions": [
+                {
+                    "exact_snippets": "Biochemical recurrence",
+                    "criterion": "biochemical recurrence",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Level 4: >= 3 cancers on the same side of the family (especially if diagnosed =< 50): bile duct, breast, colorectal, endometrial, gastric, kidney, melanoma, ovarian, pancreatic, prostate (grade groups 2-5 if known), small bowel, or urothelial",
+            "criterions": [
+                {
+                    "exact_snippets": "Level 4: >= 3 cancers on the same side of the family",
+                    "criterion": "number of cancers on the same side of the family",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "cancers"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "(especially if diagnosed =< 50)",
+                    "criterion": "age at cancer diagnosis in family members",
+                    "requirements": [
+                        {
+                            "requirement_type": "age at diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 50,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "bile duct, breast, colorectal, endometrial, gastric, kidney, melanoma, ovarian, pancreatic, prostate (grade groups 2-5 if known), small bowel, or urothelial",
+                    "criterion": "type of cancer in family members",
+                    "requirements": [
+                        {
+                            "requirement_type": "cancer type",
+                            "expected_value": [
+                                "bile duct",
+                                "breast",
+                                "colorectal",
+                                "endometrial",
+                                "gastric",
+                                "kidney",
+                                "melanoma",
+                                "ovarian",
+                                "pancreatic",
+                                "prostate",
+                                "small bowel",
+                                "urothelial"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Level 1: >= 1 close blood relative (first degree relative [FDR], second degree relative [SDR], third degree relative [TDR]) diagnosed with breast cancer =< age 50 or the following cancers at any age: pancreatic, ovarian, or metastatic or intraductal/cribriform prostate cancer",
+            "criterions": [
+                {
+                    "exact_snippets": "Level 1: >= 1 close blood relative (first degree relative [FDR], second degree relative [SDR], third degree relative [TDR]) diagnosed with breast cancer =< age 50",
+                    "criterion": "close blood relative diagnosed with breast cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "number of relatives",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "relative"
+                            }
+                        },
+                        {
+                            "requirement_type": "degree of relation",
+                            "expected_value": [
+                                "first degree",
+                                "second degree",
+                                "third degree"
+                            ]
+                        },
+                        {
+                            "requirement_type": "diagnosis age",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 50,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Level 1: >= 1 close blood relative (first degree relative [FDR], second degree relative [SDR], third degree relative [TDR]) diagnosed with ... pancreatic, ovarian, or metastatic or intraductal/cribriform prostate cancer",
+                    "criterion": "close blood relative diagnosed with specific cancers",
+                    "requirements": [
+                        {
+                            "requirement_type": "number of relatives",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 1,
+                                "unit": "relative"
+                            }
+                        },
+                        {
+                            "requirement_type": "degree of relation",
+                            "expected_value": [
+                                "first degree",
+                                "second degree",
+                                "third degree"
+                            ]
+                        },
+                        {
+                            "requirement_type": "cancer type",
+                            "expected_value": [
+                                "pancreatic",
+                                "ovarian",
+                                "metastatic prostate",
+                                "intraductal/cribriform prostate"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Mental or cognitive impairment that interferes with ability to provide informed consent",
+            "criterions": [
+                {
+                    "exact_snippets": "Mental or cognitive impairment that interferes with ability to provide informed consent",
+                    "criterion": "mental or cognitive impairment",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": "interferes with ability to provide informed consent"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Age < 18 years",
+            "criterions": [
+                {
+                    "exact_snippets": "Age < 18 years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Non-English speaking",
+            "criterions": [
+                {
+                    "exact_snippets": "Non-English speaking",
+                    "criterion": "language proficiency",
+                    "requirements": [
+                        {
+                            "requirement_type": "English proficiency",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Grade group 4 or higher",
+            "criterions": [
+                {
+                    "exact_snippets": "Grade group 4 or higher",
+                    "criterion": "grade group",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 4,
+                                "unit": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* T3a or higher",
+            "criterions": [
+                {
+                    "exact_snippets": "T3a or higher",
+                    "criterion": "tumor stage",
+                    "requirements": [
+                        {
+                            "requirement_type": "stage",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 3,
+                                "unit": "T"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Level 2: >= 2 close blood relatives (FDR, SDR, TDR) on same side of the family with breast or prostate cancer at any age",
+            "criterions": [
+                {
+                    "exact_snippets": ">= 2 close blood relatives (FDR, SDR, TDR) on same side of the family with breast or prostate cancer at any age",
+                    "criterion": "number of close blood relatives with breast or prostate cancer on same side of the family",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "relatives"
+                            }
+                        },
+                        {
+                            "requirement_type": "relationship_type",
+                            "expected_value": [
+                                "FDR",
+                                "SDR",
+                                "TDR"
+                            ]
+                        },
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": [
+                                "breast cancer",
+                                "prostate cancer"
+                            ]
+                        },
+                        {
+                            "requirement_type": "age_at_diagnosis",
+                            "expected_value": "any age"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Level 3: one brother, father, or >= 2 family members (close blood relatives - FDR, SDR, TDR) on the same side of the family diagnosed with prostate cancer at < 60",
+            "criterions": [
+                {
+                    "exact_snippets": "one brother, father, or >= 2 family members (close blood relatives - FDR, SDR, TDR) on the same side of the family diagnosed with prostate cancer at < 60",
+                    "criterion": "family history of prostate cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "relationship",
+                            "expected_value": [
+                                "brother",
+                                "father",
+                                "close blood relatives (FDR, SDR, TDR)"
+                            ]
+                        },
+                        {
+                            "requirement_type": "number of affected relatives",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 2,
+                                "unit": "family members"
+                            }
+                        },
+                        {
+                            "requirement_type": "side of family",
+                            "expected_value": "same side"
+                        },
+                        {
+                            "requirement_type": "diagnosis age",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 60,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Prostate specific antigen (PSA) > 20",
+            "criterions": [
+                {
+                    "exact_snippets": "Prostate specific antigen (PSA) > 20",
+                    "criterion": "prostate specific antigen (PSA)",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 20,
+                                "unit": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Metastatic disease",
+            "criterions": [
+                {
+                    "exact_snippets": "Metastatic disease",
+                    "criterion": "metastatic disease",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* AIM 2: Any English speaking man >= 18 with PCA who has computer and web-access and meets any one of the following:",
+            "criterions": [
+                {
+                    "exact_snippets": "English speaking",
+                    "criterion": "language",
+                    "requirements": [
+                        {
+                            "requirement_type": "language",
+                            "expected_value": "English"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "man",
+                    "criterion": "sex",
+                    "requirements": [
+                        {
+                            "requirement_type": "sex",
+                            "expected_value": "male"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": ">= 18",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "PCA",
+                    "criterion": "prostate cancer diagnosis",
+                    "requirements": [
+                        {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "prostate cancer"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "computer and web-access",
+                    "criterion": "computer and web-access",
+                    "requirements": [
+                        {
+                            "requirement_type": "access",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Having had prior germline genetic testing for inherited cancer risk (pertains to aim 2)",
+            "criterions": [
+                {
+                    "exact_snippets": "Having had prior germline genetic testing for inherited cancer risk",
+                    "criterion": "prior germline genetic testing for inherited cancer risk",
+                    "requirements": [
+                        {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Intraductal or cribriform histology",
+            "criterions": [
+                {
+                    "exact_snippets": "Intraductal or cribriform histology",
+                    "criterion": "histology",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": [
+                                "intraductal",
+                                "cribriform"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Family history criteria (see below) ** Family history: If any one of the following levels are met, the person is eligible:",
+            "criterions": [
+                {
+                    "exact_snippets": "Family history criteria (see below) ** Family history: If any one of the following levels are met, the person is eligible:",
+                    "criterion": "family history",
+                    "requirements": [
+                        {
+                            "requirement_type": "meets specified family history levels",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* AIM 1: Medical oncologists, radiation oncologists and urologists spanning Veterans Affairs (VA), academic, and community settings",
+            "criterions": [
+                {
+                    "exact_snippets": "Medical oncologists, radiation oncologists and urologists",
+                    "criterion": "physician specialty",
+                    "requirements": [
+                        {
+                            "requirement_type": "specialty",
+                            "expected_value": [
+                                "medical oncologist",
+                                "radiation oncologist",
+                                "urologist"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "spanning Veterans Affairs (VA), academic, and community settings",
+                    "criterion": "practice setting",
+                    "requirements": [
+                        {
+                            "requirement_type": "setting",
+                            "expected_value": [
+                                "Veterans Affairs (VA)",
+                                "academic",
+                                "community"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "line": "Inclusion Criteria",
+            "criterions": []
+        },
+        {
+            "line": "Exclusion Criteria",
+            "criterions": []
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

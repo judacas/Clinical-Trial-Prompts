@@ -1,0 +1,383 @@
+{
+    "info": {
+        "nct_id": "NCT06514248",
+        "official_title": "Evaluation of V5 Lung AI Software With A Two-Arm Comparative Reader Study",
+        "inclusion_criteria": "1. Screening chest CT taken of asymptomatic patients age 55 - 77 with history of smoking\n2. Non-screening chest CT of an adult (age 18 and older) without comorbidity\n3. Primary Lung Cancer, Biopsy-proven with radiology report\n4. <= 2.5mm slice spacing, no gaps\n5. Standard reconstruction kernels\n6. Maximum of 7 lung nodules per CT scan\n7. Nodules must be 4-30mm in size (though majority of them will be 20mm or smaller)\nHealthy volunteers allowed\nMust have minimum age of 55 Years\nMust have maximum age of 77 Years",
+        "exclusion_criteria": "1. Acute pneumothorax\n2. Incomplete inclusion of both lungs, within the field of view, including both Apices\n3. Excessive motion artifacts or beam-hardening artifacts\n4. Symptomatic patients with co-morbidities",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "6. Maximum of 7 lung nodules per CT scan",
+            "criterions": [
+                {
+                    "exact_snippets": "Maximum of 7 lung nodules per CT scan",
+                    "criterion": "lung nodules (per CT scan)",
+                    "requirements": [
+                        {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 7,
+                                "unit": "nodules"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. Non-screening chest CT of an adult (age 18 and older) without comorbidity",
+            "criterions": [
+                {
+                    "exact_snippets": "Non-screening chest CT",
+                    "criterion": "chest CT",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": "non-screening"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "of an adult (age 18 and older)",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum age",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "without comorbidity",
+                    "criterion": "comorbidity",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "1. Screening chest CT taken of asymptomatic patients age 55 - 77 with history of smoking",
+            "criterions": [
+                {
+                    "exact_snippets": "asymptomatic patients",
+                    "criterion": "symptoms",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "age 55 - 77",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "range",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 55,
+                                        "unit": "years"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 77,
+                                        "unit": "years"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "history of smoking",
+                    "criterion": "smoking history",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Screening chest CT taken",
+                    "criterion": "screening chest CT",
+                    "requirements": [
+                        {
+                            "requirement_type": "performed",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have maximum age of 77 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 77 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 77,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "5. Standard reconstruction kernels",
+            "criterions": [
+                {
+                    "exact_snippets": "Standard reconstruction kernels",
+                    "criterion": "reconstruction kernel",
+                    "requirements": [
+                        {
+                            "requirement_type": "type",
+                            "expected_value": "standard"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "3. Primary Lung Cancer, Biopsy-proven with radiology report",
+            "criterions": [
+                {
+                    "exact_snippets": "Primary Lung Cancer",
+                    "criterion": "primary lung cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Biopsy-proven",
+                    "criterion": "biopsy confirmation of cancer",
+                    "requirements": [
+                        {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "biopsy"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "radiology report",
+                    "criterion": "radiology report",
+                    "requirements": [
+                        {
+                            "requirement_type": "availability",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "4. <= 2.5mm slice spacing, no gaps",
+            "criterions": [
+                {
+                    "exact_snippets": "<= 2.5mm slice spacing",
+                    "criterion": "slice spacing",
+                    "requirements": [
+                        {
+                            "requirement_type": "spacing",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2.5,
+                                "unit": "mm"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "no gaps",
+                    "criterion": "gaps between slices",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 55 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 55 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 55,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "7. Nodules must be 4-30mm in size (though majority of them will be 20mm or smaller)",
+            "criterions": [
+                {
+                    "exact_snippets": "Nodules must be 4-30mm in size",
+                    "criterion": "nodule size",
+                    "requirements": [
+                        {
+                            "requirement_type": "size",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 4,
+                                        "unit": "mm"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 30,
+                                        "unit": "mm"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "1. Acute pneumothorax",
+            "criterions": [
+                {
+                    "exact_snippets": "Acute pneumothorax",
+                    "criterion": "acute pneumothorax",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "4. Symptomatic patients with co-morbidities",
+            "criterions": [
+                {
+                    "exact_snippets": "Symptomatic patients",
+                    "criterion": "symptoms",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "co-morbidities",
+                    "criterion": "co-morbidities",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "3. Excessive motion artifacts or beam-hardening artifacts",
+            "criterions": [
+                {
+                    "exact_snippets": "Excessive motion artifacts",
+                    "criterion": "motion artifacts",
+                    "requirements": [
+                        {
+                            "requirement_type": "severity",
+                            "expected_value": "not excessive"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "beam-hardening artifacts",
+                    "criterion": "beam-hardening artifacts",
+                    "requirements": [
+                        {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "2. Incomplete inclusion of both lungs, within the field of view, including both Apices",
+            "criterions": [
+                {
+                    "exact_snippets": "Incomplete inclusion of both lungs, within the field of view, including both Apices",
+                    "criterion": "inclusion of both lungs within the field of view",
+                    "requirements": [
+                        {
+                            "requirement_type": "completeness",
+                            "expected_value": false
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "Incomplete inclusion ... including both Apices",
+                    "criterion": "inclusion of both apices within the field of view",
+                    "requirements": [
+                        {
+                            "requirement_type": "completeness",
+                            "expected_value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

@@ -1,0 +1,951 @@
+{
+    "info": {
+        "nct_id": "NCT05100472",
+        "official_title": "Phase II Trial of Short Course Androgen Deprivation, Hypofractionated Pelvic Radiation and a Brachytherapy Boost for NCCN High-Risk Prostate Cancer With Low-Intermediate Risk Decipher Genomic Score",
+        "inclusion_criteria": "* Pathologically-proven diagnosis of prostate adenocarcinoma\n* Clinical stage T3-4 or Gleason score 8-10 or PSA >20 ng/ml\n\n  °If radiographic T3-T4 is the only high-risk factor, it must be \"consistent with\" or >90% probability of having T3-T4 disease determined by the reading radiologist.\n* Decipher genomic score ≤0.6\n* Willing and able to provide written informed consent and Authorization for Use and Release of Health and Research Study Information (HIPAA authorization)\n* Age ≥18\n* KPS ≥70 or ECOG 0-2\n* Estimated life expectancy >5 years\n* Baseline prostate volume ≤90 cc\n* Baseline IPSS ≤20\n* No contraindications to ADT, brachytherapy, or pelvic external beam radiation therapy as determined by the treating radiation oncologist per standard practice\n* Patients who have already started ADT consisting of bicalutamide 50 mg PO daily with leuprolide or an equivalent GnRH analogue are eligible if given for ≤ 60 days prior to registration\nHealthy volunteers allowed\nMust be MALE\nMust have minimum age of 18 Years",
+        "exclusion_criteria": "* Regional lymph node or metastatic disease\n* Prior pelvic radiation\n* Prior prostate surgery (including TURP or cryosurgery)\n* Prior history of inflammatory bowel disease\n* Unable to undergo anesthesia or brachytherapy\n* Active second malignancy or past history of malignancies diagnosed within the last 2 years that requires active therapy and/or in remission, with the exception of resected non-melanoma skin cancers, non-muscle invasive bladder cancer, stage I head and neck cancer, or stage I colorectal cancer",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Baseline IPSS ≤20",
+                "criterions": [
+                    {
+                        "exact_snippets": "Baseline IPSS ≤20",
+                        "criterion": "IPSS (International Prostate Symptom Score)",
+                        "requirement": {
+                            "requirement_type": "value at baseline",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 20,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Baseline IPSS ≤20",
+                        "criterion": "IPSS (International Prostate Symptom Score)",
+                        "requirement": {
+                            "requirement_type": "value at baseline",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 20,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Decipher genomic score ≤0.6",
+                "criterions": [
+                    {
+                        "exact_snippets": "Decipher genomic score ≤0.6",
+                        "criterion": "Decipher genomic score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 0.6,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Decipher genomic score ≤0.6",
+                        "criterion": "Decipher genomic score",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 0.6,
+                                "unit": "N/A"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "°If radiographic T3-T4 is the only high-risk factor, it must be \"consistent with\" or >90% probability of having T3-T4 disease determined by the reading radiologist.",
+                "criterions": [
+                    {
+                        "exact_snippets": "radiographic T3-T4 is the only high-risk factor",
+                        "criterion": "radiographic T3-T4 status",
+                        "requirement": {
+                            "requirement_type": "only high-risk factor",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "it must be \"consistent with\" or >90% probability of having T3-T4 disease determined by the reading radiologist",
+                        "criterion": "radiographic T3-T4 disease probability",
+                        "requirement": {
+                            "requirement_type": "probability",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 90,
+                                "unit": "%"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "radiographic T3-T4 is the only high-risk factor",
+                    "criterion": "radiographic T3-T4 status",
+                    "requirement": {
+                        "requirement_type": "only high-risk factor",
+                        "expected_value": true
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "it must be \"consistent with\" or >90% probability of having T3-T4 disease determined by the reading radiologist",
+                    "criterion": "radiographic T3-T4 disease probability",
+                    "requirement": {
+                        "requirement_type": "probability",
+                        "expected_value": {
+                            "operator": ">",
+                            "value": 90,
+                            "unit": "%"
+                        }
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Estimated life expectancy >5 years",
+                "criterions": [
+                    {
+                        "exact_snippets": "Estimated life expectancy >5 years",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "estimated duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Estimated life expectancy >5 years",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "estimated duration",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 5,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must be MALE",
+                "criterions": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Must be MALE",
+                        "criterion": "sex",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": "male"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 18 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 18 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Willing and able to provide written informed consent and Authorization for Use and Release of Health and Research Study Information (HIPAA authorization)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Willing ... to provide written informed consent",
+                        "criterion": "willingness to provide written informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "able to provide written informed consent",
+                        "criterion": "ability to provide written informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willing ... Authorization for Use and Release of Health and Research Study Information (HIPAA authorization)",
+                        "criterion": "willingness to provide HIPAA authorization",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "able to provide ... Authorization for Use and Release of Health and Research Study Information (HIPAA authorization)",
+                        "criterion": "ability to provide HIPAA authorization",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Willing ... to provide written informed consent",
+                        "criterion": "willingness to provide written informed consent",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "able to provide written informed consent",
+                        "criterion": "ability to provide written informed consent",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Willing ... Authorization for Use and Release of Health and Research Study Information (HIPAA authorization)",
+                        "criterion": "willingness to provide HIPAA authorization",
+                        "requirement": {
+                            "requirement_type": "willingness",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "able to provide ... Authorization for Use and Release of Health and Research Study Information (HIPAA authorization)",
+                        "criterion": "ability to provide HIPAA authorization",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No contraindications to ADT, brachytherapy, or pelvic external beam radiation therapy as determined by the treating radiation oncologist per standard practice",
+                "criterions": [
+                    {
+                        "exact_snippets": "No contraindications to ADT",
+                        "criterion": "contraindications to ADT",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No contraindications to ... brachytherapy",
+                        "criterion": "contraindications to brachytherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No contraindications to ... pelvic external beam radiation therapy",
+                        "criterion": "contraindications to pelvic external beam radiation therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No contraindications to ADT",
+                        "criterion": "contraindications to ADT",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No contraindications to ... brachytherapy",
+                        "criterion": "contraindications to brachytherapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "No contraindications to ... pelvic external beam radiation therapy",
+                        "criterion": "contraindications to pelvic external beam radiation therapy",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Pathologically-proven diagnosis of prostate adenocarcinoma",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pathologically-proven diagnosis of prostate adenocarcinoma",
+                        "criterion": "prostate adenocarcinoma diagnosis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "prostate adenocarcinoma"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Pathologically-proven diagnosis of prostate adenocarcinoma",
+                        "criterion": "prostate adenocarcinoma diagnosis",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "pathologically-proven"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Pathologically-proven diagnosis of prostate adenocarcinoma",
+                        "criterion": "prostate adenocarcinoma diagnosis",
+                        "requirement": {
+                            "requirement_type": "diagnosis",
+                            "expected_value": "prostate adenocarcinoma"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Pathologically-proven diagnosis of prostate adenocarcinoma",
+                        "criterion": "prostate adenocarcinoma diagnosis",
+                        "requirement": {
+                            "requirement_type": "confirmation method",
+                            "expected_value": "pathologically-proven"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Active second malignancy or past history of malignancies diagnosed within the last 2 years that requires active therapy and/or in remission, with the exception of resected non-melanoma skin cancers, non-muscle invasive bladder cancer, stage I head and neck cancer, or stage I colorectal cancer",
+                "criterions": [
+                    {
+                        "exact_snippets": "Active second malignancy",
+                        "criterion": "second malignancy",
+                        "requirement": {
+                            "requirement_type": "activity status",
+                            "expected_value": "active"
+                        }
+                    },
+                    {
+                        "exact_snippets": "past history of malignancies diagnosed within the last 2 years",
+                        "criterion": "history of malignancy",
+                        "requirement": {
+                            "requirement_type": "time since diagnosis",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 2,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "requires active therapy",
+                        "criterion": "malignancy therapy requirement",
+                        "requirement": {
+                            "requirement_type": "therapy requirement",
+                            "expected_value": "active therapy"
+                        }
+                    },
+                    {
+                        "exact_snippets": "in remission",
+                        "criterion": "malignancy remission status",
+                        "requirement": {
+                            "requirement_type": "remission status",
+                            "expected_value": "in remission"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Active second malignancy",
+                                "criterion": "second malignancy",
+                                "requirement": {
+                                    "requirement_type": "activity status",
+                                    "expected_value": "active"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "past history of malignancies diagnosed within the last 2 years",
+                                "criterion": "history of malignancy",
+                                "requirement": {
+                                    "requirement_type": "time since diagnosis",
+                                    "expected_value": {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": "years"
+                                    }
+                                }
+                            },
+                            {
+                                "or_criteria": [
+                                    {
+                                        "exact_snippets": "requires active therapy",
+                                        "criterion": "malignancy therapy requirement",
+                                        "requirement": {
+                                            "requirement_type": "therapy requirement",
+                                            "expected_value": "active therapy"
+                                        }
+                                    },
+                                    {
+                                        "exact_snippets": "in remission",
+                                        "criterion": "malignancy remission status",
+                                        "requirement": {
+                                            "requirement_type": "remission status",
+                                            "expected_value": "in remission"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior history of inflammatory bowel disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior history of inflammatory bowel disease",
+                        "criterion": "inflammatory bowel disease",
+                        "requirement": {
+                            "requirement_type": "prior history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prior history of inflammatory bowel disease",
+                    "criterion": "inflammatory bowel disease",
+                    "requirement": {
+                        "requirement_type": "prior history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior prostate surgery (including TURP or cryosurgery)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior prostate surgery (including TURP or cryosurgery)",
+                        "criterion": "prior prostate surgery",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prior prostate surgery (including TURP or cryosurgery)",
+                    "criterion": "prior prostate surgery",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Regional lymph node or metastatic disease",
+                "criterions": [
+                    {
+                        "exact_snippets": "Regional lymph node",
+                        "criterion": "regional lymph node disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "metastatic disease",
+                        "criterion": "metastatic disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Regional lymph node",
+                        "criterion": "regional lymph node disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "metastatic disease",
+                        "criterion": "metastatic disease",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Prior pelvic radiation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Prior pelvic radiation",
+                        "criterion": "pelvic radiation",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Prior pelvic radiation",
+                    "criterion": "pelvic radiation",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": true
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Unable to undergo anesthesia or brachytherapy",
+                "criterions": [
+                    {
+                        "exact_snippets": "Unable to undergo anesthesia",
+                        "criterion": "anesthesia",
+                        "requirement": {
+                            "requirement_type": "ability to undergo",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Unable to undergo ... brachytherapy",
+                        "criterion": "brachytherapy",
+                        "requirement": {
+                            "requirement_type": "ability to undergo",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Unable to undergo anesthesia",
+                            "criterion": "anesthesia",
+                            "requirement": {
+                                "requirement_type": "ability to undergo",
+                                "expected_value": true
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Unable to undergo ... brachytherapy",
+                            "criterion": "brachytherapy",
+                            "requirement": {
+                                "requirement_type": "ability to undergo",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [
+        {
+            "identified_line": {
+                "line": "* Age ≥18",
+                "criterions": [
+                    {
+                        "exact_snippets": "Age ≥18",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Age \u001e18",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "value",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* KPS ≥70 or ECOG 0-2",
+                "criterions": [
+                    {
+                        "exact_snippets": "KPS ≥70",
+                        "criterion": "Karnofsky Performance Status (KPS)",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 70,
+                                "unit": ""
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "ECOG 0-2",
+                        "criterion": "Eastern Cooperative Oncology Group (ECOG) performance status",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "KPS \u001e70",
+                        "criterion": "Karnofsky Performance Status (KPS)",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 70,
+                                "unit": ""
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "ECOG 0-2",
+                        "criterion": "Eastern Cooperative Oncology Group (ECOG) performance status",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 0,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 2,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients who have already started ADT consisting of bicalutamide 50 mg PO daily with leuprolide or an equivalent GnRH analogue are eligible if given for ≤ 60 days prior to registration",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients who have already started ADT consisting of bicalutamide 50 mg PO daily with leuprolide or an equivalent GnRH analogue",
+                        "criterion": "androgen deprivation therapy (ADT) regimen",
+                        "requirement": {
+                            "requirement_type": "composition",
+                            "expected_value": [
+                                "bicalutamide 50 mg PO daily",
+                                "leuprolide or an equivalent GnRH analogue"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients who have already started ADT consisting of bicalutamide 50 mg PO daily with leuprolide or an equivalent GnRH analogue",
+                        "criterion": "androgen deprivation therapy (ADT) regimen",
+                        "requirement": {
+                            "requirement_type": "status",
+                            "expected_value": "already started"
+                        }
+                    },
+                    {
+                        "exact_snippets": "if given for ≤ 60 days prior to registration",
+                        "criterion": "duration of ADT prior to registration",
+                        "requirement": {
+                            "requirement_type": "duration",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 60,
+                                "unit": "days"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Baseline prostate volume ≤90 cc",
+                "criterions": [
+                    {
+                        "exact_snippets": "Baseline prostate volume ≤90 cc",
+                        "criterion": "prostate volume",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 90,
+                                "unit": "cc"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Baseline prostate volume \u001e90 cc",
+                        "criterion": "prostate volume",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 90,
+                                "unit": "cc"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Clinical stage T3-4 or Gleason score 8-10 or PSA >20 ng/ml",
+                "criterions": [
+                    {
+                        "exact_snippets": "Clinical stage T3-4",
+                        "criterion": "clinical stage",
+                        "requirement": {
+                            "requirement_type": "stage",
+                            "expected_value": [
+                                "T3",
+                                "T4"
+                            ]
+                        }
+                    },
+                    {
+                        "exact_snippets": "Gleason score 8-10",
+                        "criterion": "Gleason score",
+                        "requirement": {
+                            "requirement_type": "score",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 8,
+                                        "unit": ""
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 10,
+                                        "unit": ""
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "PSA >20 ng/ml",
+                        "criterion": "PSA",
+                        "requirement": {
+                            "requirement_type": "level",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 20,
+                                "unit": "ng/ml"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "exact_snippets": "failed",
+                "criterion": "failed",
+                "requirement": {
+                    "requirement_type": "failed",
+                    "expected_value": "failed"
+                }
+            }
+        }
+    ],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

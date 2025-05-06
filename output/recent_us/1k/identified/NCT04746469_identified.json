@@ -1,0 +1,171 @@
+{
+    "info": {
+        "nct_id": "NCT04746469",
+        "official_title": "Impact of Automated Telephone Outreach on Colorectal Cancer Screening Uptake Among Patients Who Receive Mailed Fecal Immunochemical Tests (FIT)",
+        "inclusion_criteria": "* Overdue for average-risk colorectal cancer screening\n* Active primary care provider at UCLA seen within last 3 years\nHealthy volunteers allowed\nMust have minimum age of 50 Years\nMust have maximum age of 75 Years",
+        "exclusion_criteria": "* Inactive mychart status at time of enrollment\n* Died within follow-up period\n* Received FIT kit in prior 6 months",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "line": "Must have maximum age of 75 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "maximum age of 75 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 75,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Active primary care provider at UCLA seen within last 3 years",
+            "criterions": [
+                {
+                    "exact_snippets": "Active primary care provider at UCLA",
+                    "criterion": "primary care provider at UCLA",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "active"
+                        }
+                    ]
+                },
+                {
+                    "exact_snippets": "seen within last 3 years",
+                    "criterion": "primary care provider visit at UCLA",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since last visit",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 3,
+                                "unit": "years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Must have minimum age of 50 Years",
+            "criterions": [
+                {
+                    "exact_snippets": "minimum age of 50 Years",
+                    "criterion": "age",
+                    "requirements": [
+                        {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 50,
+                                "unit": "Years"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "Healthy volunteers allowed",
+            "criterions": [
+                {
+                    "exact_snippets": "Healthy volunteers allowed",
+                    "criterion": "healthy volunteer status",
+                    "requirements": [
+                        {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Overdue for average-risk colorectal cancer screening",
+            "criterions": [
+                {
+                    "exact_snippets": "Overdue for average-risk colorectal cancer screening",
+                    "criterion": "colorectal cancer screening status",
+                    "requirements": [
+                        {
+                            "requirement_type": "overdue",
+                            "expected_value": true
+                        },
+                        {
+                            "requirement_type": "risk level",
+                            "expected_value": "average"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "line": "* Received FIT kit in prior 6 months",
+            "criterions": [
+                {
+                    "exact_snippets": "Received FIT kit in prior 6 months",
+                    "criterion": "FIT kit receipt",
+                    "requirements": [
+                        {
+                            "requirement_type": "time since receipt",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 6,
+                                "unit": "months"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Inactive mychart status at time of enrollment",
+            "criterions": [
+                {
+                    "exact_snippets": "Inactive mychart status at time of enrollment",
+                    "criterion": "mychart status",
+                    "requirements": [
+                        {
+                            "requirement_type": "status",
+                            "expected_value": "inactive"
+                        },
+                        {
+                            "requirement_type": "timing",
+                            "expected_value": "at time of enrollment"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "line": "* Died within follow-up period",
+            "criterions": [
+                {
+                    "exact_snippets": "Died within follow-up period",
+                    "criterion": "death during follow-up period",
+                    "requirements": [
+                        {
+                            "requirement_type": "occurrence",
+                            "expected_value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [],
+    "failed_miscellaneous": []
+}

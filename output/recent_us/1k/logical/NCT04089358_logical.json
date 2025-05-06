@@ -1,0 +1,991 @@
+{
+    "info": {
+        "nct_id": "NCT04089358",
+        "official_title": "StepByStep: A Randomized Trial of a Mobile Health and Social Media Physical Activity Intervention Among Adolescent and Young Adult Childhood Cancer Survivors",
+        "inclusion_criteria": "* First diagnosis of malignant neoplasm (International Classification of Diseases for Oncology [ICD-O] behavior code of \"3\") in first and continuous remission at the time of enrollment\n* Curative cancer treatment must have included chemotherapy (including cellular therapy) and/or radiation (including radioactive iodine)\n\n  * Note: Childrens Oncology Group (COG) therapeutic trial participation is not required\n* All cancer treatment must have been completed within 3-36 calendar months prior to enrollment\n* Patients must have a life expectancy of > 1 year\n* Self-report of < 420 minutes of moderate-to-vigorous physical activity per week as assessed via the study-specific Physical Activity Worksheet\n\n  * Note: See COG Study Web Page for the Godin-Shephard Leisure Time Physical Activity Questionnaire or link to online calculator\n* Ambulatory and no known medical contraindications to increasing physical activity\n\n  * Note: Patients with amputation, rotationplasty, or other prothesis are not automatically excluded as long as they are ambulatory and have no known medical contraindications to increasing physical activity and all other eligibility criteria are satisfied\n* No known significant physical or cognitive impairment that would prevent use of the electronic devices used for the protocol intervention (e.g. Fitbit, smartphone, tablet, or computer)\n* Able to read and write English\n\n  * Note: For patients < 18 years, consenting parent/legal guardian does not have to be able to read and write English\n* All patients and/or their parents or legal guardians must sign a written informed consent\n\n  * Note: Informed consent may be obtained electronically/online if allowed by local site policy and Institutional Review Board (IRB)/Research Ethics Board (REB) of record\n* All institutional, Food and Drug Administration (FDA), and National Cancer Institute (NCI) requirements for human studies must be met\nHealthy volunteers allowed\nMust have minimum age of 15 Years\nMust have maximum age of 20 Years",
+        "exclusion_criteria": "* Post-menarchal female patients who are pregnant or planning to become pregnant in the next year are excluded\n\n  * Note: Pregnancy status can be established by clinical history with patient. Post-menarchal female patients are eligible as long as they agree to use an effective contraceptive method (including abstinence) during study participation\n* Patients with previous hematopoietic stem cell transplant (HSCT) are excluded\n\n  * Note: Patients with previous autologous HSCT, chimeric antigen receptor T-cell (CAR T-cell) therapy, and other cellular cancer therapies can participate as long as all other eligibility criteria are satisfied",
+        "miscellaneous_criteria": ""
+    },
+    "inclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Note: Informed consent may be obtained electronically/online if allowed by local site policy and Institutional Review Board (IRB)/Research Ethics Board (REB) of record",
+                "criterions": [
+                    {
+                        "exact_snippets": "Informed consent may be obtained electronically/online if allowed by local site policy and Institutional Review Board (IRB)/Research Ethics Board (REB) of record",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "obtained",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Informed consent may be obtained electronically/online if allowed by local site policy and Institutional Review Board (IRB)/Research Ethics Board (REB) of record",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "obtained",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Note: For patients < 18 years, consenting parent/legal guardian does not have to be able to read and write English",
+                "criterions": [
+                    {
+                        "exact_snippets": "patients < 18 years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 18,
+                                "unit": "years"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "consenting parent/legal guardian does not have to be able to read and write English",
+                        "criterion": "parent/legal guardian English literacy",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "condition": {
+                    "exact_snippets": "patients < 18 years",
+                    "criterion": "age",
+                    "requirement": {
+                        "requirement_type": "quantity",
+                        "expected_value": {
+                            "operator": "<",
+                            "value": 18,
+                            "unit": "years"
+                        }
+                    }
+                },
+                "then_criteria": {
+                    "exact_snippets": "consenting parent/legal guardian does not have to be able to read and write English",
+                    "criterion": "parent/legal guardian English literacy",
+                    "requirement": {
+                        "requirement_type": "requirement",
+                        "expected_value": false
+                    }
+                },
+                "else_criteria": null
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Ambulatory and no known medical contraindications to increasing physical activity",
+                "criterions": [
+                    {
+                        "exact_snippets": "Ambulatory",
+                        "criterion": "ambulation status",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "no known medical contraindications to increasing physical activity",
+                        "criterion": "medical contraindications to increasing physical activity",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Ambulatory",
+                        "criterion": "ambulation status",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "no known medical contraindications to increasing physical activity",
+                        "criterion": "medical contraindications to increasing physical activity",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Note: Childrens Oncology Group (COG) therapeutic trial participation is not required",
+                "criterions": [
+                    {
+                        "exact_snippets": "Childrens Oncology Group (COG) therapeutic trial participation is not required",
+                        "criterion": "COG therapeutic trial participation",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": "not required"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Childrens Oncology Group (COG) therapeutic trial participation is not required",
+                        "criterion": "COG therapeutic trial participation",
+                        "requirement": {
+                            "requirement_type": "requirement",
+                            "expected_value": "not required"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Note: See COG Study Web Page for the Godin-Shephard Leisure Time Physical Activity Questionnaire or link to online calculator",
+                "criterions": [
+                    {
+                        "exact_snippets": "Godin-Shephard Leisure Time Physical Activity Questionnaire",
+                        "criterion": "Godin-Shephard Leisure Time Physical Activity Questionnaire",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Godin-Shephard Leisure Time Physical Activity Questionnaire",
+                        "criterion": "Godin-Shephard Leisure Time Physical Activity Questionnaire",
+                        "requirement": {
+                            "requirement_type": "completion",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Healthy volunteers allowed",
+                "criterions": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Healthy volunteers allowed",
+                        "criterion": "healthy volunteer status",
+                        "requirement": {
+                            "requirement_type": "eligibility",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* All institutional, Food and Drug Administration (FDA), and National Cancer Institute (NCI) requirements for human studies must be met",
+                "criterions": [
+                    {
+                        "exact_snippets": "All institutional ... requirements for human studies must be met",
+                        "criterion": "institutional requirements for human studies",
+                        "requirement": {
+                            "requirement_type": "compliance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Food and Drug Administration (FDA) ... requirements for human studies must be met",
+                        "criterion": "FDA requirements for human studies",
+                        "requirement": {
+                            "requirement_type": "compliance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "National Cancer Institute (NCI) requirements for human studies must be met",
+                        "criterion": "NCI requirements for human studies",
+                        "requirement": {
+                            "requirement_type": "compliance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "All institutional ... requirements for human studies must be met",
+                        "criterion": "institutional requirements for human studies",
+                        "requirement": {
+                            "requirement_type": "compliance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Food and Drug Administration (FDA) ... requirements for human studies must be met",
+                        "criterion": "FDA requirements for human studies",
+                        "requirement": {
+                            "requirement_type": "compliance",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "National Cancer Institute (NCI) requirements for human studies must be met",
+                        "criterion": "NCI requirements for human studies",
+                        "requirement": {
+                            "requirement_type": "compliance",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Patients must have a life expectancy of > 1 year",
+                "criterions": [
+                    {
+                        "exact_snippets": "life expectancy of > 1 year",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "life expectancy of > 1 year",
+                        "criterion": "life expectancy",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": ">",
+                                "value": 1,
+                                "unit": "year"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* No known significant physical or cognitive impairment that would prevent use of the electronic devices used for the protocol intervention (e.g. Fitbit, smartphone, tablet, or computer)",
+                "criterions": [
+                    {
+                        "exact_snippets": "No known significant physical or cognitive impairment that would prevent use of the electronic devices used for the protocol intervention",
+                        "criterion": "physical impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "no known significant impairment that would prevent use of electronic devices"
+                        }
+                    },
+                    {
+                        "exact_snippets": "No known significant physical or cognitive impairment that would prevent use of the electronic devices used for the protocol intervention",
+                        "criterion": "cognitive impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "no known significant impairment that would prevent use of electronic devices"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "No known significant physical or cognitive impairment that would prevent use of the electronic devices used for the protocol intervention",
+                        "criterion": "physical impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "no known significant impairment that would prevent use of electronic devices"
+                        }
+                    },
+                    {
+                        "exact_snippets": "No known significant physical or cognitive impairment that would prevent use of the electronic devices used for the protocol intervention",
+                        "criterion": "cognitive impairment",
+                        "requirement": {
+                            "requirement_type": "severity",
+                            "expected_value": "no known significant impairment that would prevent use of electronic devices"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Self-report of < 420 minutes of moderate-to-vigorous physical activity per week as assessed via the study-specific Physical Activity Worksheet",
+                "criterions": [
+                    {
+                        "exact_snippets": "Self-report of < 420 minutes of moderate-to-vigorous physical activity per week as assessed via the study-specific Physical Activity Worksheet",
+                        "criterion": "moderate-to-vigorous physical activity per week",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 420,
+                                "unit": "minutes per week"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Self-report of < 420 minutes of moderate-to-vigorous physical activity per week as assessed via the study-specific Physical Activity Worksheet",
+                        "criterion": "moderate-to-vigorous physical activity per week",
+                        "requirement": {
+                            "requirement_type": "assessment_method",
+                            "expected_value": "study-specific Physical Activity Worksheet"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Self-report of < 420 minutes of moderate-to-vigorous physical activity per week as assessed via the study-specific Physical Activity Worksheet",
+                        "criterion": "moderate-to-vigorous physical activity per week",
+                        "requirement": {
+                            "requirement_type": "quantity",
+                            "expected_value": {
+                                "operator": "<",
+                                "value": 420,
+                                "unit": "minutes per week"
+                            }
+                        }
+                    },
+                    {
+                        "exact_snippets": "Self-report of < 420 minutes of moderate-to-vigorous physical activity per week as assessed via the study-specific Physical Activity Worksheet",
+                        "criterion": "moderate-to-vigorous physical activity per week",
+                        "requirement": {
+                            "requirement_type": "assessment_method",
+                            "expected_value": "study-specific Physical Activity Worksheet"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* All patients and/or their parents or legal guardians must sign a written informed consent",
+                "criterions": [
+                    {
+                        "exact_snippets": "All patients and/or their parents or legal guardians must sign a written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "All patients and/or their parents or legal guardians must sign a written informed consent",
+                        "criterion": "informed consent",
+                        "requirement": {
+                            "requirement_type": "signed",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have maximum age of 20 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "maximum age of 20 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "maximum age of 20 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "maximum",
+                            "expected_value": {
+                                "operator": "<=",
+                                "value": 20,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* First diagnosis of malignant neoplasm (International Classification of Diseases for Oncology [ICD-O] behavior code of \"3\") in first and continuous remission at the time of enrollment",
+                "criterions": [
+                    {
+                        "exact_snippets": "First diagnosis of malignant neoplasm (International Classification of Diseases for Oncology [ICD-O] behavior code of \"3\")",
+                        "criterion": "malignant neoplasm diagnosis",
+                        "requirement": {
+                            "requirement_type": "diagnosis_status",
+                            "expected_value": "first diagnosis"
+                        }
+                    },
+                    {
+                        "exact_snippets": "First diagnosis of malignant neoplasm (International Classification of Diseases for Oncology [ICD-O] behavior code of \"3\")",
+                        "criterion": "malignant neoplasm diagnosis",
+                        "requirement": {
+                            "requirement_type": "ICD-O behavior code",
+                            "expected_value": "3"
+                        }
+                    },
+                    {
+                        "exact_snippets": "in first and continuous remission at the time of enrollment",
+                        "criterion": "remission status",
+                        "requirement": {
+                            "requirement_type": "remission_status",
+                            "expected_value": "first and continuous remission"
+                        }
+                    },
+                    {
+                        "exact_snippets": "in first and continuous remission at the time of enrollment",
+                        "criterion": "remission status",
+                        "requirement": {
+                            "requirement_type": "timepoint",
+                            "expected_value": "at the time of enrollment"
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "First diagnosis of malignant neoplasm (International Classification of Diseases for Oncology [ICD-O] behavior code of \"3\")",
+                                "criterion": "malignant neoplasm diagnosis",
+                                "requirement": {
+                                    "requirement_type": "diagnosis_status",
+                                    "expected_value": "first diagnosis"
+                                }
+                            },
+                            {
+                                "exact_snippets": "First diagnosis of malignant neoplasm (International Classification of Diseases for Oncology [ICD-O] behavior code of \"3\")",
+                                "criterion": "malignant neoplasm diagnosis",
+                                "requirement": {
+                                    "requirement_type": "ICD-O behavior code",
+                                    "expected_value": "3"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "in first and continuous remission at the time of enrollment",
+                                "criterion": "remission status",
+                                "requirement": {
+                                    "requirement_type": "remission_status",
+                                    "expected_value": "first and continuous remission"
+                                }
+                            },
+                            {
+                                "exact_snippets": "in first and continuous remission at the time of enrollment",
+                                "criterion": "remission status",
+                                "requirement": {
+                                    "requirement_type": "timepoint",
+                                    "expected_value": "at the time of enrollment"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Able to read and write English",
+                "criterions": [
+                    {
+                        "exact_snippets": "Able to read and write English",
+                        "criterion": "English language literacy",
+                        "requirement": {
+                            "requirement_type": "ability to read English",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Able to read and write English",
+                        "criterion": "English language literacy",
+                        "requirement": {
+                            "requirement_type": "ability to write English",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "Able to read and write English",
+                        "criterion": "English language literacy",
+                        "requirement": {
+                            "requirement_type": "ability to read English",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Able to read and write English",
+                        "criterion": "English language literacy",
+                        "requirement": {
+                            "requirement_type": "ability to write English",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "Must have minimum age of 15 Years",
+                "criterions": [
+                    {
+                        "exact_snippets": "minimum age of 15 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "minimum age of 15 Years",
+                        "criterion": "age",
+                        "requirement": {
+                            "requirement_type": "minimum",
+                            "expected_value": {
+                                "operator": ">=",
+                                "value": 15,
+                                "unit": "Years"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* All cancer treatment must have been completed within 3-36 calendar months prior to enrollment",
+                "criterions": [
+                    {
+                        "exact_snippets": "All cancer treatment must have been completed within 3-36 calendar months prior to enrollment",
+                        "criterion": "cancer treatment completion",
+                        "requirement": {
+                            "requirement_type": "completion_time_before_enrollment",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 36,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "exact_snippets": "All cancer treatment must have been completed within 3-36 calendar months prior to enrollment",
+                        "criterion": "cancer treatment completion",
+                        "requirement": {
+                            "requirement_type": "completion_time_before_enrollment",
+                            "expected_value": {
+                                "comparisons": [
+                                    {
+                                        "operator": ">=",
+                                        "value": 3,
+                                        "unit": "months"
+                                    },
+                                    {
+                                        "operator": "<=",
+                                        "value": 36,
+                                        "unit": "months"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Note: Patients with amputation, rotationplasty, or other prothesis are not automatically excluded as long as they are ambulatory and have no known medical contraindications to increasing physical activity and all other eligibility criteria are satisfied",
+                "criterions": [
+                    {
+                        "exact_snippets": "amputation, rotationplasty, or other prothesis are not automatically excluded as long as they are ambulatory",
+                        "criterion": "ambulation",
+                        "requirement": {
+                            "requirement_type": "ability",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "no known medical contraindications to increasing physical activity",
+                        "criterion": "medical contraindications to increasing physical activity",
+                        "requirement": {
+                            "requirement_type": "presence",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "amputation, rotationplasty, or other prothesis are not automatically excluded as long as they are ambulatory",
+                                "criterion": "ambulation",
+                                "requirement": {
+                                    "requirement_type": "ability",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "no known medical contraindications to increasing physical activity",
+                                "criterion": "medical contraindications to increasing physical activity",
+                                "requirement": {
+                                    "requirement_type": "presence",
+                                    "expected_value": false
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Curative cancer treatment must have included chemotherapy (including cellular therapy) and/or radiation (including radioactive iodine)",
+                "criterions": [
+                    {
+                        "exact_snippets": "Curative cancer treatment must have included chemotherapy (including cellular therapy)",
+                        "criterion": "curative cancer treatment",
+                        "requirement": {
+                            "requirement_type": "inclusion of chemotherapy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Curative cancer treatment must have included ... radiation (including radioactive iodine)",
+                        "criterion": "curative cancer treatment",
+                        "requirement": {
+                            "requirement_type": "inclusion of radiation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "exact_snippets": "Curative cancer treatment must have included chemotherapy (including cellular therapy)",
+                        "criterion": "curative cancer treatment",
+                        "requirement": {
+                            "requirement_type": "inclusion of chemotherapy",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Curative cancer treatment must have included ... radiation (including radioactive iodine)",
+                        "criterion": "curative cancer treatment",
+                        "requirement": {
+                            "requirement_type": "inclusion of radiation",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exclusion_lines": [
+        {
+            "identified_line": {
+                "line": "* Patients with previous hematopoietic stem cell transplant (HSCT) are excluded",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with previous hematopoietic stem cell transplant (HSCT) are excluded",
+                        "criterion": "previous hematopoietic stem cell transplant (HSCT)",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "not_criteria": {
+                    "exact_snippets": "Patients with previous hematopoietic stem cell transplant (HSCT) are excluded",
+                    "criterion": "previous hematopoietic stem cell transplant (HSCT)",
+                    "requirement": {
+                        "requirement_type": "history",
+                        "expected_value": false
+                    }
+                }
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Note: Pregnancy status can be established by clinical history with patient. Post-menarchal female patients are eligible as long as they agree to use an effective contraceptive method (including abstinence) during study participation",
+                "criterions": [
+                    {
+                        "exact_snippets": "Pregnancy status can be established by clinical history with patient",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "establishment method",
+                            "expected_value": "clinical history with patient"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Post-menarchal female patients are eligible as long as they agree to use an effective contraceptive method (including abstinence) during study participation",
+                        "criterion": "contraceptive method use during study participation (post-menarchal females)",
+                        "requirement": {
+                            "requirement_type": "agreement to use effective contraceptive method (including abstinence)",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Pregnancy status can be established by clinical history with patient",
+                            "criterion": "pregnancy status",
+                            "requirement": {
+                                "requirement_type": "establishment method",
+                                "expected_value": "clinical history with patient"
+                            }
+                        }
+                    },
+                    {
+                        "not_criteria": {
+                            "exact_snippets": "Post-menarchal female patients are eligible as long as they agree to use an effective contraceptive method (including abstinence) during study participation",
+                            "criterion": "contraceptive method use during study participation (post-menarchal females)",
+                            "requirement": {
+                                "requirement_type": "agreement to use effective contraceptive method (including abstinence)",
+                                "expected_value": true
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "miscellaneous_lines": [],
+    "failed_inclusion": [],
+    "failed_exclusion": [
+        {
+            "identified_line": {
+                "line": "* Note: Patients with previous autologous HSCT, chimeric antigen receptor T-cell (CAR T-cell) therapy, and other cellular cancer therapies can participate as long as all other eligibility criteria are satisfied",
+                "criterions": [
+                    {
+                        "exact_snippets": "Patients with previous autologous HSCT ... can participate as long as all other eligibility criteria are satisfied",
+                        "criterion": "previous autologous HSCT",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients with previous ... chimeric antigen receptor T-cell (CAR T-cell) therapy ... can participate as long as all other eligibility criteria are satisfied",
+                        "criterion": "previous chimeric antigen receptor T-cell (CAR T-cell) therapy",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    },
+                    {
+                        "exact_snippets": "Patients with previous ... other cellular cancer therapies can participate as long as all other eligibility criteria are satisfied",
+                        "criterion": "previous other cellular cancer therapies",
+                        "requirement": {
+                            "requirement_type": "history",
+                            "expected_value": true
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "or_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Patients with previous autologous HSCT ... can participate as long as all other eligibility criteria are satisfied",
+                                "criterion": "previous autologous HSCT",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Patients with previous chimeric antigen receptor T-cell (CAR T-cell) therapy ... can participate as long as all other eligibility criteria are satisfied",
+                                "criterion": "previous chimeric antigen receptor T-cell (CAR T-cell) therapy",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "Patients with previous other cellular cancer therapies can participate as long as all other eligibility criteria are satisfied",
+                                "criterion": "previous other cellular cancer therapies",
+                                "requirement": {
+                                    "requirement_type": "history",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "identified_line": {
+                "line": "* Post-menarchal female patients who are pregnant or planning to become pregnant in the next year are excluded",
+                "criterions": [
+                    {
+                        "exact_snippets": "Post-menarchal female patients",
+                        "criterion": "sex and menarchal status",
+                        "requirement": {
+                            "requirement_type": "sex",
+                            "expected_value": "female"
+                        }
+                    },
+                    {
+                        "exact_snippets": "Post-menarchal female patients",
+                        "criterion": "sex and menarchal status",
+                        "requirement": {
+                            "requirement_type": "menarchal status",
+                            "expected_value": "post-menarchal"
+                        }
+                    },
+                    {
+                        "exact_snippets": "pregnant",
+                        "criterion": "pregnancy status",
+                        "requirement": {
+                            "requirement_type": "pregnancy",
+                            "expected_value": false
+                        }
+                    },
+                    {
+                        "exact_snippets": "planning to become pregnant in the next year",
+                        "criterion": "pregnancy intention",
+                        "requirement": {
+                            "requirement_type": "intention to become pregnant within next year",
+                            "expected_value": false
+                        }
+                    }
+                ]
+            },
+            "logical_structure": {
+                "and_criteria": [
+                    {
+                        "and_criteria": [
+                            {
+                                "exact_snippets": "Post-menarchal female patients",
+                                "criterion": "sex and menarchal status",
+                                "requirement": {
+                                    "requirement_type": "sex",
+                                    "expected_value": "female"
+                                }
+                            },
+                            {
+                                "exact_snippets": "Post-menarchal female patients",
+                                "criterion": "sex and menarchal status",
+                                "requirement": {
+                                    "requirement_type": "menarchal status",
+                                    "expected_value": "post-menarchal"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "or_criteria": [
+                            {
+                                "exact_snippets": "pregnant",
+                                "criterion": "pregnancy status",
+                                "requirement": {
+                                    "requirement_type": "pregnancy",
+                                    "expected_value": true
+                                }
+                            },
+                            {
+                                "exact_snippets": "planning to become pregnant in the next year",
+                                "criterion": "pregnancy intention",
+                                "requirement": {
+                                    "requirement_type": "intention to become pregnant within next year",
+                                    "expected_value": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "failed_miscellaneous": []
+}
